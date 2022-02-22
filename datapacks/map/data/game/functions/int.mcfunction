@@ -47,6 +47,8 @@ scoreboard players set .new ID 0
 scoreboard objectives add ID.item dummy
 scoreboard players set .new ID.item 0
 
+scoreboard objectives add .data dummy
+
 scoreboard objectives add .stats dummy
 scoreboard players set .10000 .stats 10000
 
@@ -54,6 +56,7 @@ scoreboard objectives add health health
 
 scoreboard objectives add deaths deathCount
 scoreboard objectives add kill minecraft.custom:minecraft.player_kills
+scoreboard objectives add killP minecraft.custom:minecraft.player_kills
 
 scoreboard objectives add kills dummy
 scoreboard objectives add killStreak dummy
@@ -63,6 +66,8 @@ scoreboard objectives add respawn dummy
 scoreboard objectives add Scores dummy
 
 scoreboard objectives add flagtime dummy
+scoreboard objectives add invul dummy
+scoreboard objectives add danger dummy
 
 scoreboard objectives add t dummy
 scoreboard objectives add t2 dummy
@@ -77,4 +82,23 @@ scoreboard objectives add crossbowTime dummy
 scoreboard players set .CrossKills .stats 15
 scoreboard players set .GrenadeKills .stats 4
 scoreboard players set .WallKills .stats 5
-scoreboard players set .endscore .stats 5
+scoreboard players set .endscore .stats 3
+
+scoreboard objectives add .num dummy
+scoreboard players set .1 .num 1
+scoreboard players set .2 .num 2
+scoreboard players set .3 .num 3
+scoreboard players set .4 .num 4
+scoreboard players set .5 .num 5
+scoreboard players set .6 .num 6
+scoreboard players set .7 .num 7
+
+scoreboard players set .n1 .num -1
+scoreboard players set .n2 .num -2
+scoreboard players set .n3 .num -3
+scoreboard players set .n4 .num -4
+scoreboard players set .n5 .num -5
+scoreboard players set .n6 .num -6
+scoreboard players set .n7 .num -7
+
+scoreboard players set .map .data 1

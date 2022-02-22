@@ -1,0 +1,27 @@
+Removed world/.gitattributes: not used
+Removed world/.idea/.gitignore: not used
+Removed world/.idea/Bolt2-goomb.iml: not used
+Removed world/.idea/misc.xml: not used
+Removed world/.idea/modules.xml: not used
+Removed world/.idea/runConfigurations.xml: not used
+Removed world/.idea/workspace.xml: not used
+Removed world/Bolt2.iml: not used
+Removed world/datapacks/map/data/game/functions/new 1.txt: not used
+Removed world/datapacks/map/data/game/functions/trap: 0 size
+Removed world/DIM-1/data/raids.dat: not used
+Removed world/entities/r.0.-1.mca: 0 size
+Removed world/entities/r.0.0.mca: 0 size
+Removed world/level9037368515311646040.dat: not used
+Removed world/level9757142201670917391.dat: not used
+Removed world/playerdata/982d4b28-048e-47e7-9d97-10922bea6762.dat_old: not used
+Removed world/playerdata/a648628b-c8fb-4041-9429-604da9f6cb21.dat_old: not used
+Removed world/poi/r.-1.-1.mca: 0 size
+Removed world/poi/r.-1.0.mca: 0 size
+Removed world/poi/r.-1.1.mca: 0 size
+Removed world/poi/r.-2.-1.mca: 0 size
+Removed world/poi/r.-2.0.mca: 0 size
+Removed world/poi/r.-2.1.mca: 0 size
+Removed world/poi/r.0.-1.mca: 0 size
+Removed world/poi/r.0.0.mca: 0 size
+Removed world/poi/r.0.1.mca: 0 size
+Validated 90 files, 64 accepted, 26 rejected.
