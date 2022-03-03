@@ -26,43 +26,44 @@ execute as @s[scores={timer=0},team=blue] at @s if entity @a[team=red,distance=.
 
 effect give @s[scores={timer=1..}] minecraft:glowing 30 30 true
 
-execute as @s[scores={timer=21..}] at @s run particle minecraft:explosion_emitter ~ ~1.6 ~ 0.5 0.5 0.5 0 6 force
-execute as @s[scores={timer=21..}] at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 1 0.5
-execute as @s[scores={timer=21..}] at @s run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
-execute as @s[scores={timer=21..}] at @s if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0}] minecraft:instant_damage 1 100 true
+execute as @s[scores={timer=20..}] at @s run particle minecraft:explosion_emitter ~ ~1.6 ~ 0.5 0.5 0.5 0 6 force
+execute as @s[scores={timer=20..}] at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 1 0.5
+execute as @s[scores={timer=20..}] at @s run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
+execute as @s[scores={timer=20..}] at @s if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0}] minecraft:instant_damage 1 100 true
 
 scoreboard players operation @a ID -= @s ID
-execute as @s[scores={timer=2}] at @s run tellraw @a[scores={ID=0}] [{"text":"[Trap Triggered]","color":"gray"}]
+execute as @s[scores={timer=1}] at @s run tellraw @a[scores={ID=0}] [{"text":"[Trap Triggered]","color":"gray"}]
 
-execute as @s[scores={timer=21..}] at @s if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0}] minecraft:instant_damage 1 100 true
-execute as @s[scores={timer=21..}] at @s if entity @a[distance=..4.8] run tellraw @a [{"selector":"@a[scores={ID=0}]"},{"text":"'s Trap hit ","color":"white"},{"selector":"@a[distance=..4.8,scores={respawn=..0}]"}]
-execute as @s[scores={timer=21..}] at @s if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0},team=blue] run scoreboard players add @a[scores={ID=0},team=red] kill 1
-execute as @s[scores={timer=21..}] at @s if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0},team=red] run scoreboard players add @a[scores={ID=0},team=blue] kill 1
+execute as @s[scores={timer=20..}] at @s if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0}] minecraft:instant_damage 1 100 true
+execute as @s[scores={timer=20..}] at @s if entity @a[distance=..4.8,scores={respawn=..0,invul=..0}] run tellraw @a [{"selector":"@a[scores={ID=0}]"},{"text":"'s Trap hit ","color":"white"},{"selector":"@a[distance=..4.8,scores={respawn=..0}]"}]
+execute as @s[scores={timer=20..}] at @s if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue] run scoreboard players add @a[scores={ID=0},team=red] kill 1
+execute as @s[scores={timer=20..}] at @s if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red] run scoreboard players add @a[scores={ID=0},team=blue] kill 1
 scoreboard players operation @a ID += @s ID
 
-execute as @s[scores={timer=21..}] at @s run effect give @e[distance=..4.8,type=magma_cube] glowing 10 10 true
-execute as @s[scores={timer=21..}] at @s run effect give @e[distance=..4.8,type=slime] glowing 10 10 true
-execute as @s[scores={timer=21..}] at @s run effect give @e[distance=..4.8,type=creeper] glowing 10 10 true
+execute as @s[scores={timer=20..}] at @s run effect give @e[distance=..4.8,type=magma_cube] glowing 10 10 true
+execute as @s[scores={timer=20..}] at @s run effect give @e[distance=..4.8,type=slime] glowing 10 10 true
+execute as @s[scores={timer=20..}] at @s run effect give @e[distance=..4.8,type=creeper] glowing 10 10 true
 
-execute as @s[scores={timer=21..}] at @s run tag @e[distance=..4.8,type=creeper] add kill
-execute as @s[scores={timer=21..}] at @s run tag @e[distance=..4.8,type=magma_cube] add kill
-execute as @s[scores={timer=21..}] at @s run tag @e[distance=..4.8,type=slime] add kill
-execute as @s[scores={timer=21..}] at @s run kill @e[distance=..3.0,type=minecraft:falling_block]
+execute as @s[scores={timer=20..}] at @s run tag @e[distance=..4.8,type=creeper] add kill
+execute as @s[scores={timer=20..}] at @s run tag @e[distance=..4.8,type=magma_cube] add kill
+execute as @s[scores={timer=20..}] at @s run tag @e[distance=..4.8,type=slime] add kill
+execute as @s[scores={timer=20..}] at @s run kill @e[distance=..3.0,type=minecraft:falling_block]
 
-execute as @s[scores={timer=1}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.3
-execute as @s[scores={timer=2}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.2
-execute as @s[scores={timer=4}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.3
-execute as @s[scores={timer=6}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.2
-execute as @s[scores={timer=8}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.1
-execute as @s[scores={timer=10}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.2
-execute as @s[scores={timer=12}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.1
-execute as @s[scores={timer=14}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.2
-execute as @s[scores={timer=16}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.4
-execute as @s[scores={timer=18}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.6
-execute as @s[scores={timer=20}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.7
-execute as @s[scores={timer=21}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.3
-execute as @s[scores={timer=22}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.6
-execute as @s[scores={timer=23}] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.6
+execute as @s[scores={timer=1}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.3
+execute as @s[scores={timer=2}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.2
+execute as @s[scores={timer=4}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.3
+execute as @s[scores={timer=6}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.2
+execute as @s[scores={timer=8}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.1
+execute as @s[scores={timer=10}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.2
+execute as @s[scores={timer=12}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.1
+execute as @s[scores={timer=14}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.3
+execute as @s[scores={timer=16}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.5
+execute as @s[scores={timer=18}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.7
+execute as @s[scores={timer=20}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.4
+
+#execute as @s[scores={timer=21}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.3
+#execute as @s[scores={timer=22}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.6
+#execute as @s[scores={timer=23}] at @s run playsound minecraft:block.note_block.bit master @a[distance=..4.8,scores={respawn=..0}] ~ ~ ~ 1 0.6
 
 execute as @s[scores={timer=1},team=red] at @s run playsound minecraft:block.note_block.bass master @a[distance=5.0..,scores={respawn=..0},team=red] ~ ~ ~ 1 1.7
 execute as @s[scores={timer=3},team=red] at @s run playsound minecraft:block.note_block.bass master @a[distance=5.0..,scores={respawn=..0},team=red] ~ ~ ~ 1 1.8
@@ -92,7 +93,7 @@ execute as @s[scores={timer=1..}] at @s run title @a[distance=..4.8,scores={resp
 execute as @s[scores={timer=1..}] at @s run title @a[distance=..4.8,scores={respawn=..0}] title {"text":"! ! !"}
 execute as @s[scores={timer=1..}] at @s run title @a[distance=..4.8,scores={respawn=..0}] subtitle {"text":"TRAP","color":"gray"}
 
-kill @s[scores={timer=21..}]
+kill @s[scores={timer=20..}]
 
 scoreboard players add @s t4 1
 execute as @s[scores={t4=4}] at @s run function game:items/trap/particle

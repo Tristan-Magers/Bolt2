@@ -11,11 +11,18 @@ execute if score .map .data = .1 .num run tp @s[team=red] -83.5 -50.00 51.5 -135
 execute if score .map .data = .2 .num run tp @s[team=red] -156.5 -54.00 51.5 -135 0
 execute if score .map .data = .2 .num run tp @s[team=blue] -156.5 -54.00 -8.5 -45 0
 
+execute if score .map .data = .3 .num run tp @s[team=red] -211 -53.00 -12.5 0 0
+execute if score .map .data = .3 .num run tp @s[team=blue] -211 -53.00 39.5 180 0
+
 effect give @s[scores={respawn=35..}] blindness 2 1 true
 effect give @s[scores={respawn=10..}] resistance 3 50 true
 
 effect give @s[tag=hasspawn] minecraft:invisibility 2 50 true
 
+title @s[scores={respawn=110},tag=!hasspawn] times 5 10 5
+title @s[scores={respawn=110},tag=hasspawn] times 10 20 10
+title @s[scores={respawn=90},tag=!hasspawn] times 5 10 5
+title @s[scores={respawn=90},tag=hasspawn] times 10 20 10
 title @s[scores={respawn=70},tag=!hasspawn] times 5 10 5
 title @s[scores={respawn=70},tag=hasspawn] times 10 20 10
 title @s[scores={respawn=150},tag=hasspawn] title {"text":"SPAWN POINT"}

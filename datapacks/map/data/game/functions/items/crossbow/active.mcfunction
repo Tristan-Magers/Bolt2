@@ -1,9 +1,9 @@
 title @s[scores={crossbowTime=240}] actionbar [{"text":"","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
-title @s[scores={crossbowTime=218}] actionbar [{"text":"⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
-title @s[scores={crossbowTime=206}] actionbar [{"text":"⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
-title @s[scores={crossbowTime=194}] actionbar [{"text":"⬜⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
-title @s[scores={crossbowTime=182}] actionbar [{"text":"⬜⬜⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
-title @s[scores={crossbowTime=170}] actionbar [{"text":"⬜⬜⬜⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
+title @s[scores={crossbowTime=228}] actionbar [{"text":"⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
+title @s[scores={crossbowTime=216}] actionbar [{"text":"⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
+title @s[scores={crossbowTime=204}] actionbar [{"text":"⬜⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
+title @s[scores={crossbowTime=192}] actionbar [{"text":"⬜⬜⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
+title @s[scores={crossbowTime=180}] actionbar [{"text":"⬜⬜⬜⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
 title @s[scores={crossbowTime=168}] actionbar [{"text":"⬜⬜⬜⬜⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
 title @s[scores={crossbowTime=156}] actionbar [{"text":"⬜⬜⬜⬜⬜⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
 title @s[scores={crossbowTime=144}] actionbar [{"text":"⬜⬜⬜⬜⬜⬜⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
@@ -20,6 +20,14 @@ title @s[scores={crossbowTime=24}] actionbar [{"text":"⬜⬜⬜⬜⬜⬜⬜⬜�
 title @s[scores={crossbowTime=12}] actionbar [{"text":"⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜","color":"gray"},{"text":"⬛","color":"dark_green"}]
 title @s[scores={crossbowTime=1}] actionbar [{"text":"","color":"gray"},{"text":"","color":"dark_green"}]
 
-clear @s[scores={crossbowTime=1}] crossbow
+execute as @s[scores={crossbowTime=240}] at @s run tellraw @a [{"selector":"@s"},{"text":" activated","color":"white"},{"text":" CROSSBOW","color":"green"}]
+
+tag @s remove loadedCross
+
+tag @s[scores={crossbowTime=1},nbt={Inventory:{id:"minecraft:crossbow",tag:{Charged:1b}}}] add loadedCross
+clear @s[scores={crossbowTime=1},tag=loadedCross] crossbow{Charged:1b}
+clear @s[scores={crossbowTime=1},tag=!loadedCross] crossbow 1
 scoreboard players set @s[scores={crossbowTime=1}] crossbowReload 0
 scoreboard players remove @s[scores={crossbowTime=1..}] crossbowTime 1
+
+

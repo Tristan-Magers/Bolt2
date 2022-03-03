@@ -1,4 +1,5 @@
 gamemode adventure @a[gamemode=survival]
+effect give @a minecraft:resistance 999 255 true
 
 kill @e[type=item]
 
@@ -6,11 +7,26 @@ execute as @a run attribute @s minecraft:generic.max_health base set 2
 
 execute as @e[type=arrow] run data merge entity @s {damage:1000.0}
 
-execute as @a[team=red,scores={killP=1..}] run tellraw @a[team=red] [{"selector":"@s"},{"text":" shot ","color":"white"},{"selector":"@a[team=blue,scores={deaths=1..}]"}]
-execute as @a[team=blue,scores={killP=1..}] run tellraw @a[team=blue] [{"selector":"@s"},{"text":" shot ","color":"white"},{"selector":"@a[team=red,scores={deaths=1..}]"}]
+#hurtime
+scoreboard players set @a hurt 0
+execute as @a run execute store result score @s hurt run data get entity @s HurtTime 1
+scoreboard players set @a[scores={hurt=9,invul=..0}] deaths 1
 
-execute as @a[team=red,scores={killP=1..}] run tellraw @a[team=blue] [{"selector":"@s"},{"text":" shot ","color":"gray"},{"selector":"@a[team=blue,scores={deaths=1..}]"}]
-execute as @a[team=blue,scores={killP=1..}] run tellraw @a[team=red] [{"selector":"@s"},{"text":" shot ","color":"gray"},{"selector":"@a[team=red,scores={deaths=1..}]"}]
+#
+scoreboard players add @e[type=arrow] ID 0
+execute as @a[scores={bowUse=1..}] at @s run scoreboard players operation @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] ID = @s ID
+execute as @a[scores={crossUse=1..}] at @s run scoreboard players operation @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] ID = @s ID
+tag @e[type=arrow] add shot
+execute as @a at @s run function game:player/arrowcheck
+scoreboard players set @a bowUse 0
+scoreboard players set @a crossUseUse 0
+
+# death messages
+execute as @a[team=red,scores={killP=1..}] run tellraw @a[team=red] [{"selector":"@s"},{"text":" shot ","color":"white"},{"selector":"@a[team=blue,scores={hurt=9}]"}]
+execute as @a[team=blue,scores={killP=1..}] run tellraw @a[team=blue] [{"selector":"@s"},{"text":" shot ","color":"white"},{"selector":"@a[team=red,scores={hurt=9}]"}]
+
+execute as @a[team=red,scores={killP=1..}] run tellraw @a[team=blue] [{"selector":"@s"},{"text":" shot ","color":"gray"},{"selector":"@a[team=blue,scores={hurt=9}]"}]
+execute as @a[team=blue,scores={killP=1..}] run tellraw @a[team=red] [{"selector":"@s"},{"text":" shot ","color":"gray"},{"selector":"@a[team=red,scores={hurt=9}]"}]
 
 scoreboard players set @a killP 0
 
@@ -26,21 +42,53 @@ scoreboard players operation .teamdif .data = .redplayers .data
 scoreboard players operation .teamdif .data -= .blueplayers .data
 
 #lobby
-effect give @a[x=-43,y=-60,z=16,distance=..10] minecraft:resistance 2 10 true
+scoreboard players set @a[x=-43,y=-60,z=16,distance=..10] invul 40
 
 #red spawn
-effect give @a[x=-86,z=53,y=-50.5,dx=7,dy=4,dz=-7] minecraft:resistance 2 10
-effect give @a[x=-78,z=53,y=-50.5,dx=2.5,dy=4,dz=-7] minecraft:resistance 2 10
-effect give @a[x=-84,z=46,y=-50.5,dx=4,dy=4,dz=-3] minecraft:resistance 2 10
+#towers
+scoreboard players set @a[x=-86,z=53,y=-50.5,dx=7,dy=4,dz=-7] invul 40
+scoreboard players set @a[x=-78,z=53,y=-50.5,dx=2.5,dy=4,dz=-7] invul 40
+scoreboard players set @a[x=-84,z=46,y=-50.5,dx=4,dy=4,dz=-3] invul 40
+
+#caves
+tag @a[x=-156,y=-54,z=40,distance=..7] add area1
+tag @a[x=-156,y=-54,z=40,distance=..7] remove area2
+
+tag @a[x=-146,y=-55,z=51,distance=..7] add area2
+tag @a[x=-146,y=-55,z=51,distance=..7] remove area1
+
+title @a[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6,team=blue] title {"text":"Enemy Spawn"}
+
+tp @a[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6,team=blue,tag=area1] -157 -54.0 45
+tp @a[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6,team=blue,tag=area2] -149.5 -54.50 51.5
 
 tag @a[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6,team=blue] add danger
 
+#divide
+scoreboard players set @a[x=-219,y=-54,z=-8,distance=..100,dx=20,dy=10,dz=-10] invul 40
+
 #blue spawn
-effect give @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] minecraft:resistance 2 10
-effect give @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] minecraft:resistance 2 10
-effect give @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] minecraft:resistance 2 10
+#towers
+scoreboard players set @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] invul 40
+scoreboard players set @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] invul 40
+scoreboard players set @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] invul 40
+
+#caves
+tag @a[x=-156,y=-54,z=3,distance=..7] add area1
+tag @a[x=-156,y=-54,z=3,distance=..7] remove area2
+
+tag @a[x=-146,y=-55,z=-8,distance=..7] add area2
+tag @a[x=-146,y=-55,z=-8,distance=..7] remove area1
+
+title @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=red] title {"text":"Enemy Spawn"}
+
+tp @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=red,tag=area1] -157 -54.0 -3
+tp @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=red,tag=area2] -149.5 -54.50 -8.5
 
 tag @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=red] add danger
+
+#divide
+scoreboard players set @a[x=-219,y=-54,z=35,distance=..100,dx=20,dy=10,dz=10] invul 40
 
 #walls
 execute as @e[type=minecraft:falling_block] at @s if block ~ ~-1 ~ air run data merge entity @s {Motion:[0.0,-10.0,0.0]}
@@ -79,13 +127,19 @@ execute as @a store result score @s arrowCount run clear @s arrow 0
 scoreboard players add @a[scores={arrowCount=..2}] arrowReload 1
 scoreboard players set @a[scores={arrowCount=3..}] arrowReload 0
 
-clear @a[scores={arrowReload=42..}] arrow
+clear @a[scores={arrowReload=40..}] arrow
 item replace entity @a[scores={arrowReload=40..,arrowCount=0}] hotbar.8 with minecraft:arrow
 item replace entity @a[scores={arrowReload=40..,arrowCount=1}] hotbar.8 with minecraft:arrow 2
 item replace entity @a[scores={arrowReload=40..,arrowCount=2}] hotbar.8 with minecraft:arrow 3
 scoreboard players set @a[scores={arrowReload=40..}] arrowReload 0
 
 effect give @a[scores={health=1..19}] minecraft:instant_health 1 10 true
+
+scoreboard players add @a invul 0
+scoreboard players remove @a[scores={invul=1..}] invul 1
+
+item replace entity @a[scores={invul=2..},nbt=!{Inventory:[{id:"minecraft:chainmail_helmet",Slot:103b}]}] armor.head with minecraft:chainmail_helmet
+item replace entity @a[scores={invul=1}] armor.head with minecraft:air
 
 effect give @a[scores={deaths=1..}] minecraft:wither 1 1
 scoreboard players set @a[scores={deaths=1..}] respawn 70
@@ -100,10 +154,6 @@ scoreboard players set @a deaths 0
 execute as @a[scores={respawn=1..}] at @s run function game:player/ded
 scoreboard players add @a respawn 0
 
-execute as @a[scores={kill=1..}] at @s run function game:player/kill
-execute as @a[scores={kill=1..}] at @s run function game:player/kill
-execute as @a[scores={kill=1..}] at @s run function game:player/kill
-execute as @a[scores={kill=1..}] at @s run function game:player/kill
 execute as @a[scores={kill=1..}] at @s run function game:player/kill
 
 execute as @a at @s run function game:player/spawncheck
@@ -134,14 +184,14 @@ execute as @e[tag=blueflag] at @s run function game:flags/main
 clear @a[tag=!hasflag] red_banner
 clear @a[tag=!hasflag] blue_banner
 
-item replace entity @a[tag=!hasflag] armor.head with minecraft:air
+item replace entity @a[tag=!hasflag,scores={invul=..0}] armor.head with minecraft:air
 
 clear @a[tag=!hasflag,team=blue] red_banner
-item replace entity @a[tag=!hasflag,team=blue] armor.head with minecraft:air
+item replace entity @a[tag=!hasflag,team=blue,scores={invul=..0}] armor.head with minecraft:air
 item replace entity @a[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_banner",Slot:103b}]},team=blue] armor.head with minecraft:red_banner
 
 clear @a[tag=!hasflag,team=red] blue_banner
-item replace entity @a[tag=!hasflag,team=red] armor.head with minecraft:air
+item replace entity @a[tag=!hasflag,team=red,scores={invul=..0}] armor.head with minecraft:air
 item replace entity @a[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_banner",Slot:103b}]},team=red] armor.head with minecraft:blue_banner
 
 #trap
@@ -158,12 +208,10 @@ give @a[nbt=!{Inventory:[{id:"minecraft:bow"}]},team=red] bow{Unbreakable:1b,Enc
 scoreboard players add @a crossbowTime 0
 scoreboard players add @a[scores={crossbowTime=0},nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Charged:1b}}}] crossbowTime 240
 
-execute as @a[scores={crossbowTime=200}] at @s run tellraw @a [{"selector":"@s"},{"text":" activated","color":"white"},{"text":" CROSSBOW","color":"green"}]
-
 scoreboard players add @a[scores={crossbowReload=1..}] crossbowReload 1
 scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1
-tag @a[scores={crossbowReload=4..},nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Charged:0b}}}] add reloadCross
-clear @a[tag=reloadCross] crossbow
+tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Charged:0b}}}] add reloadCross
+#clear @a[tag=reloadCross] crossbow
 item replace entity @a[tag=reloadCross] weapon.mainhand with crossbow{Unbreakable:1b,ChargedProjectiles:[{id:"minecraft:arrow",Count:1b},{},{}],Charged:1b} 1
 scoreboard players set @a[tag=reloadCross] crossbowReload 0
 
@@ -185,9 +233,9 @@ tag @a remove danger
 #map
 clear @a minecraft:filled_map
 
-#
-execute as @a at @s if block ~ ~ ~ minecraft:ladder run effect give @s minecraft:levitation 1 9 true
-execute as @a at @s unless block ~ ~ ~ minecraft:ladder run effect clear @s minecraft:levitation
+#ladders
+execute as @a at @s if block ~ ~0.2 ~ minecraft:ladder run effect give @s minecraft:levitation 1 9 true
+execute as @a at @s unless block ~ ~0.2 ~ minecraft:ladder run effect clear @s minecraft:levitation
 
 #
 kill @e[tag=kill]

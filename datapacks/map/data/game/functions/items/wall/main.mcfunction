@@ -17,7 +17,7 @@ execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..50] run scoreboard 
 #execute as @s[scores={timer=1}] at @s if block ~ ~-1 ~ gravel run scoreboard players set @s timer 8
 
 execute as @s[scores={timer=1}] at @s run function game:items/wall/blockup
-execute as @s[scores={timer=6}] at @s run function game:items/wall/blockup
-execute as @s[scores={timer=11}] at @s run function game:items/wall/blockup
-execute as @s[scores={timer=16}] at @s run function game:items/wall/blockup
-kill @s[scores={timer=16..}]
+execute as @s[scores={timer=5}] at @s run function game:items/wall/blockup
+execute as @s[scores={timer=9}] at @s run function game:items/wall/blockup
+execute as @s[scores={timer=13}] at @s run function game:items/wall/blockup
+kill @s[scores={timer=13..}]

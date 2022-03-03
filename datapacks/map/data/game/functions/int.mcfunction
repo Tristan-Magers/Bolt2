@@ -36,6 +36,10 @@ scoreboard objectives add snowball minecraft.used:minecraft.snowball
 
 scoreboard objectives add snowballCount dummy
 
+scoreboard objectives add bowUse minecraft.used:minecraft.bow
+scoreboard objectives add crossUse minecraft.used:minecraft.crossbow
+scoreboard objectives add arrowsOut dummy
+scoreboard objectives add arrowsOutT dummy
 scoreboard objectives add arrowCount dummy
 scoreboard objectives add arrowReload dummy
 
@@ -78,6 +82,8 @@ scoreboard objectives add t5 dummy
 scoreboard objectives add crossbowUse minecraft.used:minecraft.crossbow
 scoreboard objectives add crossbowReload dummy
 scoreboard objectives add crossbowTime dummy
+
+scoreboard objectives add hurt dummy
 
 scoreboard players set .CrossKills .stats 15
 scoreboard players set .GrenadeKills .stats 4

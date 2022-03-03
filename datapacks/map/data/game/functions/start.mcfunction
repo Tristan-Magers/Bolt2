@@ -19,8 +19,8 @@ team join red @r[team=]
 team join blue @r[team=]
 team join red @r[team=]
 
-kill @a[team=red]
-kill @a[team=blue]
+scoreboard players set @a[team=red] deaths 1
+scoreboard players set @a[team=blue] deaths 1
 
 scoreboard players set @a kill 0
 
@@ -44,6 +44,7 @@ kill @e[tag=blueflag]
 
 execute if score .map .data = .1 .num run function game:map/towers/start
 execute if score .map .data = .2 .num run function game:map/caves/start
+execute if score .map .data = .3 .num run function game:map/divide/start
 
 tag @a remove hasflag
 tag @a remove hasspawn
