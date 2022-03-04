@@ -14,8 +14,11 @@ execute if score .map .data = .2 .num run tp @s[team=blue] -156.5 -54.00 -8.5 -4
 execute if score .map .data = .3 .num run tp @s[team=red] -211 -53.00 -12.5 0 0
 execute if score .map .data = .3 .num run tp @s[team=blue] -211 -53.00 39.5 180 0
 
+execute if score .map .data = .4 .num run tp @s[team=red] -306.5 -51.00 27.5 180 0
+execute if score .map .data = .4 .num run tp @s[team=blue] -306.5 -51.00 -3 0 0
+
 effect give @s[scores={respawn=35..}] blindness 2 1 true
-effect give @s[scores={respawn=10..}] resistance 3 50 true
+scoreboard players set @s[scores={respawn=10..}] invul 60
 
 effect give @s[tag=hasspawn] minecraft:invisibility 2 50 true
 

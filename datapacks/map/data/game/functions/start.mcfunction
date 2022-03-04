@@ -45,6 +45,7 @@ kill @e[tag=blueflag]
 execute if score .map .data = .1 .num run function game:map/towers/start
 execute if score .map .data = .2 .num run function game:map/caves/start
 execute if score .map .data = .3 .num run function game:map/divide/start
+execute if score .map .data = .4 .num run function game:map/corners/start
 
 tag @a remove hasflag
 tag @a remove hasspawn
