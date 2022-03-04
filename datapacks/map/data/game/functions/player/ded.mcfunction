@@ -17,6 +17,9 @@ execute if score .map .data = .3 .num run tp @s[team=blue] -211 -53.00 39.5 180 
 execute if score .map .data = .4 .num run tp @s[team=red] -306.5 -51.00 27.5 180 0
 execute if score .map .data = .4 .num run tp @s[team=blue] -306.5 -51.00 -3 0 0
 
+execute if score .map .data = .5 .num run tp @s[team=red] -280.5 -54.00 53.5 -135 0
+execute if score .map .data = .5 .num run tp @s[team=blue] -251.5 -54.00 7.5 45 0
+
 effect give @s[scores={respawn=35..}] blindness 2 1 true
 scoreboard players set @s[scores={respawn=10..}] invul 60
 

@@ -4,7 +4,7 @@ effect give @s minecraft:glowing 30 30 true
 
 execute as @s[scores={timer=16..}] at @s run particle minecraft:explosion_emitter ~ ~0.6 ~ 0.5 0.5 0.5 0 6 force
 execute as @s[scores={timer=16..}] at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 1 0.5
-execute as @s[scores={timer=16..}] at @s positioned ~ ~0.6 ~ run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
+execute as @s[scores={timer=16..}] at @s positioned ~ ~1.4 ~ run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
 
 scoreboard players operation @a ID -= @s ID
 execute as @s[scores={timer=16..}] at @s positioned ~ ~0.6 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0}] minecraft:instant_damage 1 100 true

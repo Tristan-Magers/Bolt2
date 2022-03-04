@@ -10,7 +10,7 @@ execute as @e[type=arrow] run data merge entity @s {damage:1000.0}
 #hurtime
 scoreboard players set @a hurt 0
 execute as @a run execute store result score @s hurt run data get entity @s HurtTime 1
-scoreboard players set @a[scores={hurt=9,invul=..0}] deaths 1
+scoreboard players set @a[scores={hurt=9..,invul=..0}] deaths 1
 
 #
 scoreboard players add @e[type=arrow] ID 0
