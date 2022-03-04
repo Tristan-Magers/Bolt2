@@ -91,7 +91,9 @@ tag @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=red] add danger
 scoreboard players set @a[x=-219,y=-54,z=35,distance=..100,dx=20,dy=10,dz=10] invul 40
 
 #walls
-execute as @e[type=minecraft:falling_block] at @s if block ~ ~-1 ~ air run data merge entity @s {Motion:[0.0,-10.0,0.0]}
+execute as @e[type=minecraft:falling_block] at @s run function game:items/lower
+execute as @e[type=minecraft:falling_block] at @s run setblock ~ ~ ~ gravel
+kill @e[type=minecraft:falling_block]
 
 #spawn placing
 tag @e[type=minecraft:magma_cube] add spawn
