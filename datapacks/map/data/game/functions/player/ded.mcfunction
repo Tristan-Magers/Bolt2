@@ -17,8 +17,14 @@ execute if score .map .data = .3 .num run tp @s[team=blue] -211 -53.00 39.5 180 
 execute if score .map .data = .4 .num run tp @s[team=red] -306.5 -51.00 27.5 180 0
 execute if score .map .data = .4 .num run tp @s[team=blue] -306.5 -51.00 -3 0 0
 
-execute if score .map .data = .5 .num run tp @s[team=red] -280.5 -54.00 53.5 -135 0
-execute if score .map .data = .5 .num run tp @s[team=blue] -251.5 -54.00 7.5 45 0
+execute if score .map .data = .5 .num run tp @s[team=red] -277.5 -54.00 50.5 -135 0
+execute if score .map .data = .5 .num run tp @s[team=blue] -254.5 -54.00 10.5 45 0
+
+execute if score .map .data = .6 .num run tp @s[team=red] -398.5 -49.00 62.5 180 0
+execute if score .map .data = .6 .num run tp @s[team=blue] -398.5 -49.00 -29.5 0 0
+
+execute if score .map .data = .7 .num run tp @s[team=red] -363.5 -54.00 -18.5 -35 0
+execute if score .map .data = .7 .num run tp @s[team=blue] -363.5 -54.00 37.5 -135 0
 
 effect give @s[scores={respawn=35..}] blindness 2 1 true
 scoreboard players set @s[scores={respawn=10..}] invul 60
@@ -61,8 +67,12 @@ title @s[scores={respawn=70}] subtitle {"text":"RESPAWNING","color":"gold"}
 title @s[scores={respawn=50}] subtitle {"text":"RESPAWNING","color":"gold"}
 title @s[scores={respawn=30}] subtitle {"text":"RESPAWNING","color":"gold"}
 
+scoreboard players set @s[scores={crossbowTime=3..}] crossbowTime 2
+
 scoreboard players remove @s respawn 1
 
 tag @s remove hasflag
 
 execute as @s[scores={respawn=30}] at @s run function game:player/tryspawn
+
+scoreboard players set @s speedrun 0

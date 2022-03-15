@@ -1,7 +1,7 @@
 fill -318 -50 -6 -296 -60 30 air replace gravel
 
-fill -313 -56 12 -311 -59 12 gravel replace air
-fill -301 -56 12 -303 -59 12 gravel replace air
+fill -313 -53 12 -311 -59 12 gravel replace air
+fill -301 -53 12 -303 -59 12 gravel replace air
 
 summon armor_stand -307 -56 -2 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",Count:1b}],Tags:["blueflag","flag"]}
 summon armor_stand -307 -56 26 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:red_banner",Count:1b}],Tags:["redflag","flag"]}

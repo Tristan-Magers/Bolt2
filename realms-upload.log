@@ -1,27 +1,27 @@
-Removed world/.gitattributes: not used
 Removed world/.idea/.gitignore: not used
-Removed world/.idea/Bolt2-goomb.iml: not used
-Removed world/.idea/misc.xml: not used
 Removed world/.idea/modules.xml: not used
 Removed world/.idea/runConfigurations.xml: not used
 Removed world/.idea/workspace.xml: not used
-Removed world/Bolt2.iml: not used
-Removed world/datapacks/map/data/game/functions/new 1.txt: not used
-Removed world/datapacks/map/data/game/functions/trap: 0 size
+Removed world/.idea/?6?k?ltt?r?6Chainsaw?cNinja?ktt (Bolt)-14.iml: not used
 Removed world/DIM-1/data/raids.dat: not used
+Removed world/entities/r.-2.-1.mca: 0 size
+Removed world/entities/r.-2.0.mca: 0 size
 Removed world/entities/r.0.-1.mca: 0 size
 Removed world/entities/r.0.0.mca: 0 size
-Removed world/level9037368515311646040.dat: not used
-Removed world/level9757142201670917391.dat: not used
+Removed world/gc-logs/gc-20220312_0129.log: not used
+Removed world/gc-logs/gc-20220312_0445.log: not used
+Removed world/gc-logs/gc-20220312_0618.log: not used
+Removed world/playerdata/296923b7-5800-4d8a-bc12-0e06002e68f9.dat_old: not used
+Removed world/playerdata/3184a2a5-8544-4135-89ec-e63fd7a3f12f.dat_old: not used
+Removed world/playerdata/3994c1ef-ecc6-4e98-9d9c-aad8f996bbe2.dat_old: not used
+Removed world/playerdata/454b5f00-ac68-4906-8421-a879936e1fec.dat_old: not used
+Removed world/playerdata/50ece889-b814-4102-8725-134f47229aec.dat_old: not used
 Removed world/playerdata/982d4b28-048e-47e7-9d97-10922bea6762.dat_old: not used
+Removed world/playerdata/a1d5f8a5-2555-4422-9237-03f2f2618ebb.dat_old: not used
 Removed world/playerdata/a648628b-c8fb-4041-9429-604da9f6cb21.dat_old: not used
 Removed world/poi/r.-1.-1.mca: 0 size
-Removed world/poi/r.-1.0.mca: 0 size
-Removed world/poi/r.-1.1.mca: 0 size
 Removed world/poi/r.-2.-1.mca: 0 size
 Removed world/poi/r.-2.0.mca: 0 size
-Removed world/poi/r.-2.1.mca: 0 size
 Removed world/poi/r.0.-1.mca: 0 size
 Removed world/poi/r.0.0.mca: 0 size
-Removed world/poi/r.0.1.mca: 0 size
-Validated 90 files, 64 accepted, 26 rejected.
+Validated 247 files, 221 accepted, 26 rejected.

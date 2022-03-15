@@ -73,6 +73,8 @@ scoreboard objectives add flagtime dummy
 scoreboard objectives add invul dummy
 scoreboard objectives add danger dummy
 
+scoreboard objectives add removeBlind dummy
+
 scoreboard objectives add t dummy
 scoreboard objectives add t2 dummy
 scoreboard objectives add t3 dummy
@@ -91,6 +93,7 @@ scoreboard players set .WallKills .stats 5
 scoreboard players set .endscore .stats 3
 
 scoreboard objectives add .num dummy
+scoreboard players set .1 .num 0
 scoreboard players set .1 .num 1
 scoreboard players set .2 .num 2
 scoreboard players set .3 .num 3
@@ -98,6 +101,11 @@ scoreboard players set .4 .num 4
 scoreboard players set .5 .num 5
 scoreboard players set .6 .num 6
 scoreboard players set .7 .num 7
+scoreboard players set .8 .num 8
+scoreboard players set .9 .num 9
+scoreboard players set .10 .num 10
+
+scoreboard players set .40 .num 40
 
 scoreboard players set .n1 .num -1
 scoreboard players set .n2 .num -2

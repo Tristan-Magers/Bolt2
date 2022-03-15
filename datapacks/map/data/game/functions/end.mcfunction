@@ -9,3 +9,5 @@ tag @a remove hasflag
 tag @a remove hasspawn
 
 scoreboard players set @a ded -1
+
+scoreboard players set .gametime .data 0

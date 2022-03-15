@@ -5,7 +5,8 @@ effect give @s minecraft:resistance 100 10 true
 execute as @s[scores={timer=1}] at @s run function game:items/lower
 
 #height cap
-execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..50] run scoreboard players set @s timer 30
+execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..50] unless score .map .data = .6 .num run scoreboard players set @s timer 30
+execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..40] if score .map .data = .6 .num run scoreboard players set @s timer 30
 
 #wall reset
 #execute as @s[scores={timer=1}] at @s run fill ~ -60 ~ ~ 100 ~ air replace gravel
