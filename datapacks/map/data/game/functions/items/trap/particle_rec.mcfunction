@@ -1,9 +1,9 @@
 tp @s ~ ~ ~ ~4 0
-execute as @s[team=red] run particle minecraft:wax_on ^ ^0.8 ^3.65 0 0 0 0 1 force @a[team=red]
-execute as @s[team=red] run particle minecraft:wax_off ^ ^0.8 ^4.8 0 0 0 0 1 force @a[team=red]
+execute as @s[team=red] run particle minecraft:wax_on ^ ^1.1 ^3.65 0 0 0 0 1 force @a[team=red]
+execute as @s[team=red] run particle minecraft:wax_off ^ ^1.1 ^4.8 0 0 0 0 1 force @a[team=red]
 
-execute as @s[team=blue] run particle minecraft:wax_on ^ ^0.8 ^3.65 0 0 0 0 1 force @a[team=blue]
-execute as @s[team=blue] run particle minecraft:wax_off ^ ^0.8 ^4.8 0 0 0 0 1 force @a[team=blue]
+execute as @s[team=blue] run particle minecraft:wax_on ^ ^1.1 ^3.65 0 0 0 0 1 force @a[team=blue]
+execute as @s[team=blue] run particle minecraft:wax_off ^ ^1.1 ^4.8 0 0 0 0 1 force @a[team=blue]
 
 scoreboard players remove @s t5 1
 

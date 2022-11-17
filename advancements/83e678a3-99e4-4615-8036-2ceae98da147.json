@@ -197,12 +197,6 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/snow_block": {
-    "criteria": {
-      "has_snowball": "2022-03-06 00:57:32 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/redstone/spruce_button": {
     "criteria": {
       "has_planks": "2022-03-06 00:54:05 +0000"
@@ -212,6 +206,12 @@
   "minecraft:recipes/decorations/barrel": {
     "criteria": {
       "has_planks": "2022-03-06 00:54:05 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/snow_block": {
+    "criteria": {
+      "has_snowball": "2022-03-06 00:57:32 +0000"
     },
     "done": true
   },
@@ -287,5 +287,5 @@
     },
     "done": true
   },
-  "DataVersion": 2975
+  "DataVersion": 3120
 }

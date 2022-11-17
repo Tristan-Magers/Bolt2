@@ -1,3 +1,6 @@
+kill @e[tag=gen]
+kill @e[type=item]
+
 kill @e[type=minecraft:creeper]
 kill @e[type=minecraft:slime]
 kill @e[type=minecraft:magma_cube]
@@ -13,6 +16,10 @@ execute if score .map .data = .4 .num run function game:map/corners/start
 execute if score .map .data = .5 .num run function game:map/hex/start
 execute if score .map .data = .6 .num run function game:map/valley/start
 execute if score .map .data = .7 .num run function game:map/dream/start
+execute if score .map .data = .8 .num run function game:map/bar/start
+execute if score .map .data = .9 .num run function game:map/basin/start
+execute if score .map .data = .10 .num run function game:map/corners2/start
+execute if score .map .data = .11 .num run function game:map/sidelines/start
 
 tag @a remove hasflag
 tag @a remove hasspawn

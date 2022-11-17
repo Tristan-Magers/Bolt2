@@ -18,14 +18,18 @@ tp @a[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6,team=blue,tag=area2] -149.5 -54.50 51.5
 
 tag @a[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6,team=blue] add danger
 
+tag @a[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6,team=red,scores={respawn=1..}] add not_left
+execute as @a[team=red] unless entity @s[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6] run tag @s remove not_left
+scoreboard players set @a[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6,team=red,tag=not_left] invul 48
+
 #divide
 scoreboard players set @a[x=-219,y=-54,z=-8,distance=..100,dx=20,dy=10,dz=-10] invul 40
 
 #hex
-scoreboard players set @a[x=-271,y=-54,z=44,dx=-16,dy=10,dz=10] invul 44
+scoreboard players set @a[x=-354,y=-55,z=-48,dx=9,dy=10,dz=-11,team=red] invul 44
 
 #valley
-scoreboard players set @a[x=-406,y=-49,z=57,dx=15,dy=10,dz=10,team=red] invul 40
+scoreboard players set @a[x=-401,y=-49,z=57,dx=15,dy=10,dz=10,team=red] invul 40
 
 #blue spawn
 #towers
@@ -47,11 +51,15 @@ tp @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=red,tag=area2] -149.5 -54.50 -8.5
 
 tag @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=red] add danger
 
+tag @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=blue,scores={respawn=1..}] add not_left
+execute as @a[team=blue] unless entity @s[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6] run tag @s remove not_left
+scoreboard players set @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=blue,tag=not_left] invul 48
+
 #divide
 scoreboard players set @a[x=-219,y=-54,z=35,distance=..100,dx=20,dy=10,dz=10] invul 40
 
 #hex
-scoreboard players set @a[x=-261,y=-54,z=16,dx=17,dy=10,dz=-10] invul 44
+scoreboard players set @a[x=-325,y=-55,z=-94,dx=-11,dy=10,dz=9,team=blue] invul 44
 
 #valley
-scoreboard players set @a[x=-406,y=-49,z=-23,dx=15,dy=10,dz=-10,team=blue] invul 40
+scoreboard players set @a[x=-401,y=-49,z=-23,dx=15,dy=10,dz=-10,team=blue] invul 40
