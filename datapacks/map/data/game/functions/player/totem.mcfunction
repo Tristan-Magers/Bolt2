@@ -5,10 +5,10 @@ effect give @s minecraft:slowness 1 1 true
 playsound minecraft:item.totem.use master @a ~ ~ ~ 0.6 1
 particle minecraft:totem_of_undying ~ ~1 ~ 0.3 0.3 0.3 0.6 100 force
 
-clear @s totem_of_undying 1
+clear @s iron_ingot 1
 scoreboard players set @s deaths 0
 scoreboard players set @s invul 17
-scoreboard players set @s no_cap 21
+scoreboard players set @s no_cap 26
 
 execute at @s[tag=hasflag] run title @s times 4 10 4
 execute at @s[tag=hasflag] run title @s title {"text":"FLAG DROPPED","color":"gold"}

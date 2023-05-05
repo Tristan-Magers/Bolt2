@@ -4,8 +4,8 @@ tag @s remove killed
 scoreboard players set @s KILL_ID -1
 
 #
-execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] totem_of_undying
-execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red] totem_of_undying{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
+execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] iron_ingot
+execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
 
 #
 scoreboard players set @a[scores={crossbowTime=3..}] crossbowReload 2
@@ -14,7 +14,7 @@ scoreboard players set @s killStreak 0
 scoreboard players set @s arrowReload 20
 #set 1 seconds before reload
 clear @s arrow
-#clear @s totem_of_undying
+#clear @s iron_ingot
 
 execute if score .map .data = .1 .num run tp @s[team=blue] -83.5 -50.00 51.5 -135 0
 execute if score .map .data = .1 .num run tp @s[team=red] -83.5 -50.00 -8.5 -45 0
@@ -43,11 +43,17 @@ execute if score .map .data = .8 .num run tp @s[team=blue] -27.5 -55.00 134.5 13
 execute if score .map .data = .9 .num run tp @s[team=red] -314.50 -48.00 105.5 0 0
 execute if score .map .data = .9 .num run tp @s[team=blue] -320.5 -48.00 161.5 180 0
 
-execute if score .map .data = .10 .num run tp @s[team=red] -28.5 -45.00 -154.5 0 0
-execute if score .map .data = .10 .num run tp @s[team=blue] -28.5 -45.00 -108.5 180 0
+execute if score .map .data = .10 .num run tp @s[team=red] -228.5 -45.00 -454.5 0 0
+execute if score .map .data = .10 .num run tp @s[team=blue] -228.5 -45.00 -408.5 180 0
 
 execute if score .map .data = .11 .num run tp @s[team=red] 93.5 -55.00 -44.5 -90 0
 execute if score .map .data = .11 .num run tp @s[team=blue] 165.5 -55.00 -44.5 90 0
+
+execute if score .map .data = .12 .num run tp @s[team=red] -16.5 -53.00 -255.5 -135 0
+execute if score .map .data = .12 .num run tp @s[team=blue] 15.5 -53.00 -343.5 45 0
+
+execute if score .map .data = .13 .num run tp @s[team=red] 1.5 -34.00 241.5 90 0
+execute if score .map .data = .13 .num run tp @s[team=blue] -80.5 -34.00 241.5 -90 0
 
 effect give @s[scores={respawn=45..}] blindness 2 1 true
 effect clear @s[scores={respawn=30}] blindness

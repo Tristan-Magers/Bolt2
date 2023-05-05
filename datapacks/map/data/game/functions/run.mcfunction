@@ -1,18 +1,29 @@
+#
+execute as @a[scores={Leave=1..}] at @s if score @s game_id = .current_id .data if score .running .data = .1 .num run function game:player/relog_game
+execute as @a[scores={Leave=1..}] at @s run function game:player/leave_game
+
+#
+execute as @a[tag=loading] at @s run function game:player/leave_gamee
+
+#
 execute as @e[type=egg] at @s run execute as @p at @s run function game:test
 kill @e[type=egg]
 
 #stopsound @a * minecraft:entity.generic.explode
 
 #
-kill @e[tag=kill]
+kill @e[tag=kill,tag=dead]
 
 #
 execute as @e[tag=teleport_down] at @s run tp @s ~ ~-100 ~
 tag @e remove teleport_down
 
 #
-scoreboard players add .ran_team .data 1
-execute if score .ran_team .data = .2 .num run scoreboard players set .ran_team .data 0
+scoreboard players add .ran_team .random 1
+execute if score .ran_team .random = .2 .num run scoreboard players set .ran_team .random 0
+
+scoreboard players set .players .data 0
+execute as @a run scoreboard players add .players .data 1
 
 #
 gamemode adventure @a[gamemode=survival]
@@ -28,16 +39,29 @@ execute as @e[type=arrow] run data merge entity @s {damage:1000.0}
 execute if score .gametime .data >= .1 .num run scoreboard players add .gametime .data 1
 
 #hurtime
+#scoreboard players set @a hurt 0
+#execute as @a run execute store result score @s hurt run data get entity @s HurtTime 1
+#scoreboard players set @a[scores={hurt=9..,invul=..0,respawn=..0}] deaths 1
+#execute as @a[scores={hurt=9..,invul=1..,respawn=..0,break_invul=1..}] run say test
+#scoreboard players set @a break_invul 0
+
 scoreboard players set @a hurt 0
 execute as @a run execute store result score @s hurt run data get entity @s HurtTime 1
-scoreboard players set @a[scores={hurt=9..,invul=..0}] deaths 1
+scoreboard players set @a[scores={hurt=9..,invul=..0,respawn=..0}] deaths 1
+scoreboard players set @a[scores={hurt=9..,invul=1..,respawn=..0,break_invul=1..,wall_invul=1..}] deaths 1
+scoreboard players set @a break_invul 0
+
+scoreboard players remove @a[scores={wall_invul=0..}] wall_invul 1
 
 #lobby
+tag @a remove lobby
+tag @a[x=245,y=-50,z=-235,distance=..60] add lobby
 scoreboard players set @a[x=245,y=-50,z=-235,distance=..60] invul 40
 scoreboard players set @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrowReload 32
 clear @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrow
 team join red @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=1}]
 team join blue @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=2}]
+team join Spectator @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=-1}]
 
 tp @a[x=249,y=-56,z=-250,dx=30,dy=3,dz=30,gamemode=adventure] 243.5 -44.00 -235.5 -90 13
 
@@ -66,6 +90,9 @@ execute as @e[tag=cutscene] at @s run function game:cutscene/main
 
 # generator
 execute if score .running .data = .1 .num as @e[type=marker,tag=gen] at @s run function game:generator/main
+
+#placed_blocks
+execute as @e[type=marker,tag=temp_block] at @s run function game:items/temp_block/main
 
 #walls
 execute as @e[type=minecraft:falling_block] at @s run function game:items/lower
@@ -131,12 +158,16 @@ clear @a[tag=!hasflag] blue_banner
 item replace entity @a[tag=!hasflag,scores={invul=..0}] armor.head with minecraft:air
 
 clear @a[tag=!hasflag,team=blue] red_banner
+clear @a[tag=!hasflag,team=blue] red_dye
 item replace entity @a[tag=!hasflag,team=blue,scores={invul=..0}] armor.head with minecraft:air
 item replace entity @a[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_banner",Slot:103b}]},team=blue] armor.head with minecraft:red_banner
+item replace entity @a[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_dye",Slot:99b}]},team=blue] weapon.offhand with minecraft:red_dye
 
 clear @a[tag=!hasflag,team=red] blue_banner
+clear @a[tag=!hasflag,team=red] blue_dye
 item replace entity @a[tag=!hasflag,team=red,scores={invul=..0}] armor.head with minecraft:air
 item replace entity @a[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_banner",Slot:103b}]},team=red] armor.head with minecraft:blue_banner
+item replace entity @a[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_dye",Slot:99b}]},team=red] weapon.offhand with minecraft:blue_dye
 
 #trap
 effect give @e[tag=trap] resistance 999 10 true
@@ -152,6 +183,7 @@ execute as @a[scores={useMap=1..}] run function game:items/reveal/use
 give @a[nbt=!{Inventory:[{id:"minecraft:bow"}]},team=blue] bow{Unbreakable:1b,Enchantments:[{id:"minecraft:power",lvl:999s}],HideFlags:1} 1
 give @a[nbt=!{Inventory:[{id:"minecraft:bow"}]},team=red] bow{Unbreakable:1b,Enchantments:[{id:"minecraft:power",lvl:999s}],HideFlags:1} 1
 give @a[nbt=!{Inventory:[{id:"minecraft:bow"}]},team=] bow{Unbreakable:1b,Enchantments:[{id:"minecraft:power",lvl:999s}],HideFlags:1} 1
+clear @a[team=Spectator] bow
 
 #crossbow test
 scoreboard players add @a crossbowTime 0
@@ -188,9 +220,7 @@ clear @a minecraft:filled_map
 #run maps
 execute if score .map .data = .5 .num run function game:map/hex/run
 
-#
-tp @e[tag=kill] ~ ~-10000 ~
-
+#test
 #
 #execute as @a run attribute @s minecraft:generic.movement_speed base set .1
 #execute as @a run attribute @s minecraft:generic.movement_speed base set .13
@@ -198,6 +228,23 @@ tp @e[tag=kill] ~ ~-10000 ~
 
 #
 execute if score .running .data = .1 .num run scoreboard players add .Time .metric 1
+
+execute if score .running .data = .1 .num run scoreboard players add .no_players .timer 1
+execute if score .running .data = .1 .num if entity @a[team=red,tag=playing] if entity @a[team=blue,tag=playing] run scoreboard players set .no_players .timer 0
+execute if score .running .data = .1 .num if score .mode .data = .6 .num if entity @a[team=red,tag=playing] run scoreboard players set .no_players .timer 0
+execute if score .running .data = .1 .num if score .mode .data = .7 .num if entity @a[team=blue,tag=playing] run scoreboard players set .no_players .timer 0
+
+execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .10 .num run say NO PLAYERS ON A TEAM. RESTARTING IN 10 SECONDS
+execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .200 .num run function game:end
+
+execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .10 .num run say NO PLAYERS INFECTED. RESTARTING IN 10 SECONDS
+execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .200 .num run function game:end
+
+execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .10 .num run say NO PLAYERS. RESTARTING IN 10 SECONDS
+execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .200 .num run function game:end
+
+execute if score .running .data = .0 .num run scoreboard players set .no_players .timer -60
+execute if score .no_players .timer > .200 .num run scoreboard players set .no_players .timer -60
 
 #
 execute if score .start_cd .data = .100 .num run title @a times 4 8 5
@@ -211,3 +258,7 @@ execute if score .start_cd .data = .0 .num run function game:start2
 
 execute if score .start_cd .data >= .0 .num run scoreboard players remove .start_cd .data 1
 execute if score .start_cd .data = .n5 .num run scoreboard players set .start_cd .data -1
+
+#
+tp @e[tag=kill] ~ ~-10000 ~
+tag @e[tag=kill] add dead

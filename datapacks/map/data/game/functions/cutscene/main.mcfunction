@@ -73,3 +73,6 @@ execute as @s[scores={t=99}] run function game:game/mapstart
 
 #
 execute as @s[scores={t=200..}] run kill @s
+
+#
+execute as @s[scores={t=100..160}] run gamemode spectator @a[scores={team_pref=-1}]

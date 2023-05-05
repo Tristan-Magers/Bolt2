@@ -11,10 +11,12 @@ execute as @s[scores={timer=1}] at @s run function game:items/lower
 execute as @s[scores={timer=1}] at @s if block ~ ~ ~ #minecraft:slabs[type=bottom] if block ~ ~0.6 ~ air run tp @s ~ ~0.6 ~
 
 #height cap
-execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..50] unless score .map .data = .10 .num unless score .map .data = .9 .num unless score .map .data = .6 .num run scoreboard players set @s timer 30
+execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..50] unless score .map .data = .1 .num unless score .map .data = .13 .num unless score .map .data = .10 .num unless score .map .data = .9 .num unless score .map .data = .6 .num run scoreboard players set @s timer 30
+execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..48] if score .map .data = .1 .num run scoreboard players set @s timer 30
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..40] if score .map .data = .6 .num run scoreboard players set @s timer 30
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..40] if score .map .data = .9 .num run scoreboard players set @s timer 30
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..43] if score .map .data = .10 .num run scoreboard players set @s timer 30
+execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..33] if score .map .data = .13 .num run scoreboard players set @s timer 30
 
 #wall reset
 #execute as @s[scores={timer=1}] at @s run fill ~ -60 ~ ~ 100 ~ air replace gravel
@@ -24,6 +26,11 @@ execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..43] if score .map .
 #execute as @s[scores={timer=1}] at @s if block ~ ~-1 ~ gravel if block ~ ~-2 ~ gravel if block ~ ~-3 ~ gravel run scoreboard players set @s timer 22
 #execute as @s[scores={timer=1}] at @s if block ~ ~-1 ~ gravel if block ~ ~-2 ~ gravel run scoreboard players set @s timer 15
 #execute as @s[scores={timer=1}] at @s if block ~ ~-1 ~ gravel run scoreboard players set @s timer 8
+
+execute as @s[scores={timer=1},tag=!kill] at @s run particle minecraft:mycelium ~0.52 ~1.5 ~0.52 0 1 0 0 10 force
+execute as @s[scores={timer=1},tag=!kill] at @s run particle minecraft:mycelium ~-0.52 ~1.5 ~0.52 0 1 0 0 10 force
+execute as @s[scores={timer=1},tag=!kill] at @s run particle minecraft:mycelium ~0.52 ~1.5 ~-0.52 0 1 0 0 10 force
+execute as @s[scores={timer=1},tag=!kill] at @s run particle minecraft:mycelium ~-0.52 ~1.5 ~-0.52 0 1 0 0 10 force
 
 execute as @s[scores={timer=1},tag=!kill] at @s run function game:items/wall/blockup
 execute as @s[scores={timer=5}] at @s run function game:items/wall/blockup

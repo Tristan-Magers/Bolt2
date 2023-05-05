@@ -19,3 +19,5 @@ execute as @s[type=slime] at @s run tp @s ~ ~ ~ facing entity @p[scores={placeSl
 execute as @s[type=magma_cube] at @s run tp @s ~ ~ ~ facing entity @p[scores={placeMagma=1..}]
 
 #execute as @s at @s if block ^ ^1 ^-1 air if block ^1 ^1 ^-1 air if block ^-1 ^1 ^-1 air run tp @s ~ ~ ~ ~180 ~
+
+execute as @s at @s run function game:items/spawn/tracker_new

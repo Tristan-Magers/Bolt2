@@ -1,8 +1,15 @@
+#
+tag @a remove inspawn
+
 #red spawn
 #towers
 scoreboard players set @a[x=-86,z=53,y=-50.5,dx=7,dy=4,dz=-7] invul 40
 scoreboard players set @a[x=-78,z=53,y=-50.5,dx=2.5,dy=4,dz=-7] invul 40
 scoreboard players set @a[x=-84,z=46,y=-50.5,dx=4,dy=4,dz=-3] invul 40
+
+tag @a[x=-86,z=53,y=-50.5,dx=7,dy=4,dz=-7] add inspawn
+tag @a[x=-78,z=53,y=-50.5,dx=2.5,dy=4,dz=-7] add inspawn
+tag @a[x=-84,z=46,y=-50.5,dx=4,dy=4,dz=-3] add inspawn
 
 #caves
 tag @a[x=-156,y=-54,z=40,distance=..7] add area1
@@ -22,20 +29,42 @@ tag @a[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6,team=red,scores={respawn=1..}] add not_
 execute as @a[team=red] unless entity @s[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6] run tag @s remove not_left
 scoreboard players set @a[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6,team=red,tag=not_left] invul 48
 
+tag @a[z=53,y=-54,x=-158,dz=-6,dy=5,dx=6,team=red,tag=not_left] add inspawn
+
 #divide
 scoreboard players set @a[x=-219,y=-54,z=-8,distance=..100,dx=20,dy=10,dz=-10] invul 40
+
+tag @a[x=-219,y=-54,z=-8,distance=..100,dx=20,dy=10,dz=-10] add inspawn
 
 #hex
 scoreboard players set @a[x=-354,y=-55,z=-48,dx=9,dy=10,dz=-11,team=red] invul 44
 
+tag @a[x=-354,y=-55,z=-48,dx=9,dy=10,dz=-11,team=red] add inspawn
+
 #valley
 scoreboard players set @a[x=-401,y=-49,z=57,dx=15,dy=10,dz=10,team=red] invul 40
+
+tag @a[x=-401,y=-49,z=57,dx=15,dy=10,dz=10,team=red] add inspawn
+
+#garden
+scoreboard players set @a[x=-19,y=-54,z=-254,dx=7,dy=7,dz=-7,team=red] invul 35
+
+tag @a[x=-19,y=-54,z=-254,dx=7,dy=7,dz=-7,team=red] add inspawn
+
+#lookout
+scoreboard players set @a[x=3,y=-35,z=250,dx=-8,dy=7,dz=-18,team=red] invul 40
+
+tag @a[x=3,y=-35,z=250,dx=-8,dy=7,dz=-18,team=red] add inspawn
 
 #blue spawn
 #towers
 scoreboard players set @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] invul 40
 scoreboard players set @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] invul 40
 scoreboard players set @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] invul 40
+
+tag @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] add inspawn
+tag @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] add inspawn
+tag @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] add inspawn
 
 #caves
 tag @a[x=-156,y=-54,z=3,distance=..7] add area1
@@ -55,11 +84,29 @@ tag @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=blue,scores={respawn=1..}] add not
 execute as @a[team=blue] unless entity @s[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6] run tag @s remove not_left
 scoreboard players set @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=blue,tag=not_left] invul 48
 
+tag @a[z=-11,y=-54,x=-158,dz=6,dy=5,dx=6,team=blue,tag=not_left] add inspawn
+
 #divide
 scoreboard players set @a[x=-219,y=-54,z=35,distance=..100,dx=20,dy=10,dz=10] invul 40
+
+tag @a[x=-219,y=-54,z=35,distance=..100,dx=20,dy=10,dz=10] add inspawn
 
 #hex
 scoreboard players set @a[x=-325,y=-55,z=-94,dx=-11,dy=10,dz=9,team=blue] invul 44
 
+tag @a[x=-325,y=-55,z=-94,dx=-11,dy=10,dz=9,team=blue] add inspawn
+
 #valley
 scoreboard players set @a[x=-401,y=-49,z=-23,dx=15,dy=10,dz=-10,team=blue] invul 40
+
+tag @a[x=-401,y=-49,z=-23,dx=15,dy=10,dz=-10,team=blue] add inspawn
+
+#garden
+scoreboard players set @a[x=17,y=-54,z=-346,dx=-7,dy=7,dz=7,team=blue] invul 35
+
+tag @a[x=17,y=-54,z=-346,dx=-7,dy=7,dz=7,team=blue] add inspawn
+
+#lookout
+scoreboard players set @a[x=-83,y=-35,z=250,dx=8,dy=7,dz=-18,team=blue] invul 40
+
+tag @a[x=-83,y=-35,z=250,dx=8,dy=7,dz=-18,team=blue] add inspawn

@@ -18,3 +18,6 @@ execute as @s[scores={ID=1..,t3=..20},tag=!decoy] at @s run summon snowball ~ ~ 
 
 tag @s remove new_nade
 execute as @s[scores={t3=0..},tag=decoy] at @s run kill @s
+
+#
+playsound minecraft:block.growing_plant.crop master @a ~ ~ ~ 0.6 2 0

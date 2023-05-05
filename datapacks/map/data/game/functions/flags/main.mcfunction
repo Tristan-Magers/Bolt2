@@ -31,20 +31,25 @@ tag @s[tag=flag2] remove scored
 
 #
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag,tag=flag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1] run execute as @a[team=blue] at @s run playsound minecraft:item.goat_horn.sound.1 master @s ~ ~ ~ 0.4 2
-execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag,tag=flag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1] run execute as @a[team=red] at @s run playsound minecraft:item.goat_horn.sound.3 master @s ~ ~ ~ 0.4 2
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag,tag=flag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1] run execute as @a[team=red] at @s run playsound minecraft:item.goat_horn.sound.2 master @s ~ ~ ~ 0.4 2
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag,tag=flag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1] run execute as @a[team=red] at @s run playsound minecraft:entity.wither.hurt master @s ~ ~ ~ 0.23 0
+
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag,tag=flag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1] run title @a times 2 16 8
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag,tag=flag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1] run title @a title {"text":"Red Flag Taken!","color":"red"}
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag,tag=flag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1] run tag @p[team=blue,distance=..10,dx=1,dy=1.5,dz=1] add hasflag
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag,tag=flag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1] run tag @s remove flag
 
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag,tag=flag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1] run execute as @a[team=red] at @s run playsound minecraft:item.goat_horn.sound.1 master @s ~ ~ ~ 0.4 2
-execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag,tag=flag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1] run execute as @a[team=blue] at @s run playsound minecraft:item.goat_horn.sound.3 master @s ~ ~ ~ 0.4 2
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag,tag=flag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1] run execute as @a[team=blue] at @s run playsound minecraft:item.goat_horn.sound.2 master @s ~ ~ ~ 0.4 2
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag,tag=flag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1] run execute as @a[team=blue] at @s run playsound minecraft:entity.wither.hurt master @s ~ ~ ~ 0.23 0
+
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag,tag=flag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1] run title @a times 2 16 8
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag,tag=flag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1] run title @a title {"text":"Blue Flag Taken!","color":"dark_aqua"}
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag,tag=flag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1] run tag @p[team=red,distance=..10,dx=1,dy=1.5,dz=1] add hasflag
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag,tag=flag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1] run tag @s remove flag
 
-execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run give @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] totem_of_undying{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run scoreboard players add @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] stats_captures 1
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run give @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run execute as @a[team=red] at @s run playsound minecraft:block.conduit.deactivate master @a ~ ~ ~ 1 1
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run execute as @a[team=red] at @s run playsound minecraft:block.conduit.activate master @s ~ ~ ~ 1 2
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run execute as @a[team=blue] at @s run playsound minecraft:entity.ender_dragon.growl master @a ~ ~ ~ 1 2
@@ -56,7 +61,8 @@ execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adve
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run title @a title {"text":"RED SCORES!","color":"red"}
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run tag @a[team=red] remove hasflag
 
-execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run give @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] totem_of_undying{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run scoreboard players add @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] stats_captures 1
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run give @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run execute as @a[team=blue] at @s run playsound minecraft:block.conduit.deactivate master @a ~ ~ ~ 1 1
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run execute as @a[team=blue] at @s run playsound minecraft:block.conduit.activate master @s ~ ~ ~ 1 2
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run execute as @a[team=red] at @s run playsound minecraft:entity.ender_dragon.growl master @a ~ ~ ~ 1 2
@@ -70,6 +76,9 @@ execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[team=blue,di
 
 execute if score Blue Scores >= .endscore .stats run function game:end
 execute if score Red Scores >= .endscore .stats run function game:end
+
+scoreboard players operation .point_blue .metric = Blue Scores
+scoreboard players operation .point_red .metric = Red Scores
 
 bossbar set minecraft:status visible false
 

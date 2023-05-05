@@ -29,17 +29,19 @@
     },
     "done": true
   },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:magma_cube": "2022-11-20 02:32:27 +0000",
+      "minecraft:creeper": "2022-11-15 01:45:43 +0000",
+      "minecraft:slime": "2022-11-20 03:26:32 +0000"
+    },
+    "done": false
+  },
   "minecraft:recipes/food/cake": {
     "criteria": {
       "has_egg": "2022-11-15 01:47:28 +0000"
     },
     "done": true
-  },
-  "minecraft:adventure/kill_all_mobs": {
-    "criteria": {
-      "minecraft:creeper": "2022-11-15 01:45:43 +0000"
-    },
-    "done": false
   },
   "minecraft:recipes/misc/iron_nugget_from_smelting": {
     "criteria": {
@@ -47,15 +49,15 @@
     },
     "done": true
   },
-  "minecraft:adventure/shoot_arrow": {
-    "criteria": {
-      "shot_arrow": "2022-11-15 01:45:43 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/snow_block": {
     "criteria": {
       "has_snowball": "2022-11-15 01:44:55 +0000"
+    },
+    "done": true
+  },
+  "minecraft:adventure/shoot_arrow": {
+    "criteria": {
+      "shot_arrow": "2022-11-15 01:45:43 +0000"
     },
     "done": true
   },

@@ -1,8 +1,11 @@
 team add blue
 team add red
 
+team add Spectator
+
 team modify blue color dark_aqua
 team modify red color red
+team modify Spectator color gray
 
 team modify blue friendlyFire false
 team modify red friendlyFire false
@@ -12,6 +15,8 @@ team modify blue nametagVisibility hideForOtherTeams
 
 team modify red seeFriendlyInvisibles true
 team modify blue seeFriendlyInvisibles true
+
+
 
 team add noCol
 team modify noCol collisionRule never
@@ -45,6 +50,8 @@ scoreboard objectives add place_bat_temp minecraft.used:minecraft.bat_spawn_egg
 scoreboard objectives add place_slime_temp minecraft.used:minecraft.slime_spawn_egg
 scoreboard objectives add place_magmac_temp minecraft.used:minecraft.magma_cube_spawn_egg
 
+scoreboard objectives add place_block minecraft.used:minecraft.deepslate_coal_ore
+
 scoreboard objectives add snowballCount dummy
 
 scoreboard objectives add bowUse minecraft.used:minecraft.bow
@@ -68,6 +75,12 @@ scoreboard objectives add ID.item dummy
 scoreboard players set .new ID.item 0
 
 scoreboard objectives add .data dummy
+scoreboard objectives add .metric dummy
+scoreboard objectives add .calc dummy
+scoreboard objectives add .random dummy
+scoreboard objectives add .rank dummy
+scoreboard objectives add .stats dummy
+scoreboard objectives add .timer dummy
 
 scoreboard objectives add .stats dummy
 scoreboard players set .10000 .stats 10000
@@ -78,10 +91,24 @@ scoreboard objectives add deaths deathCount
 scoreboard objectives add kill minecraft.custom:minecraft.player_kills
 scoreboard objectives add killP minecraft.custom:minecraft.player_kills
 
+scoreboard objectives add rank dummy
+scoreboard objectives add rank_delta dummy
+scoreboard objectives add rank_delta_up dummy
+scoreboard objectives add rank_delta_down dummy
+scoreboard objectives add rank_raw dummy
+scoreboard objectives add rank_strength dummy
+
+scoreboard objectives add kills_ranked dummy
+scoreboard objectives add score_ranked dummy
+scoreboard objectives add captures_ranked dummy
+
+scoreboard objectives add random dummy
+
 scoreboard objectives add kills dummy
 scoreboard objectives add killStreak dummy
 
 scoreboard objectives add respawn dummy
+scoreboard objectives add respawn_assist dummy
 
 scoreboard objectives add Scores dummy
 
@@ -93,6 +120,7 @@ scoreboard objectives add time_dead dummy
 
 scoreboard objectives add flagtime dummy
 scoreboard objectives add invul dummy
+scoreboard objectives add wall_invul dummy
 scoreboard objectives add danger dummy
 
 scoreboard objectives add removeBlind dummy
@@ -110,6 +138,7 @@ scoreboard objectives add y dummy
 scoreboard objectives add z dummy
 
 scoreboard objectives add t dummy
+scoreboard objectives add t1 dummy
 scoreboard objectives add t2 dummy
 scoreboard objectives add t3 dummy
 scoreboard objectives add t4 dummy

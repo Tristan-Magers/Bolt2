@@ -1,6 +1,6 @@
 #
 scoreboard players add .map_display .data 1
-execute if score .map_display .data >= .6 .num run scoreboard players set .map_display .data 1
+execute if score .map_display .data >= .8 .num run scoreboard players set .map_display .data 1
 
 #
 function game:menu/map_display
