@@ -211,6 +211,11 @@ execute as @a[scores={danger=1}] at @s run playsound minecraft:entity.blaze.deat
 effect give @a[scores={danger=18..}] minecraft:instant_damage 1 100 true
 tag @a remove danger
 
+#> Begin Viral zone
+# set fakeplayer .ffa .data to 1 to activate; 0 to deactivate
+execute if score .ffa .data matches 1 run function game:ffa/main
+scoreboard players set @a click 0
+
 #map
 clear @a minecraft:filled_map
 

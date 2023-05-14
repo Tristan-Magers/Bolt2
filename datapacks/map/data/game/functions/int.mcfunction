@@ -61,6 +61,11 @@ scoreboard objectives add arrowsOutT dummy
 scoreboard objectives add arrowCount dummy
 scoreboard objectives add arrowReload dummy
 
+#> Viral zone
+scoreboard objectives add speedTimer dummy
+scoreboard objectives add deflectTimer dummy
+#> End viral zone
+
 scoreboard objectives add timer dummy
 
 scoreboard objectives add ID dummy
