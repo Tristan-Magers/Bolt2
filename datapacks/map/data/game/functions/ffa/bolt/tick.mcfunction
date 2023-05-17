@@ -8,7 +8,7 @@ scoreboard players operation @a ID -= @s ID
 tag @a[scores={ID=0}] add boltOwner
 execute at @s[tag=!boltKill] run tag @e[dx=0,dy=0.001,dz=0,limit=1,tag=!boltOwner] add boltTarget
 execute if entity @e[tag=boltTarget] run tag @s add boltKill
-damage @e[tag=boltTarget,limit=1] 1000 arrow
+execute as @a[tag=boltOwner] run damage @e[tag=boltTarget,limit=1] 1000 arrow
 tag @a remove boltOwner
 scoreboard players operation @a ID += @s ID
 
