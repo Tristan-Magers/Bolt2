@@ -1,4 +1,4 @@
-say running use.mcfunction
+# say running use.mcfunction
 
 #> Set timer
 scoreboard players set @s deflectTimer 51
@@ -6,7 +6,7 @@ scoreboard players set @s deflectTimer 51
 #> Particle display setup
 summon armor_stand ~ ~ ~ {Marker:1b,Tags:["shieldID","shieldDisplay"],Invisible:1b,Rotation:[0f,-90f]}
 scoreboard players operation @e[tag=shieldID] ID = @s ID
-scoreboard players set @e[tag=shieldID] deflectTimer 10
+scoreboard players set @e[tag=shieldID] deflectTimer 13
 tag @e[tag=shieldID] remove shieldID
 
 #> FX

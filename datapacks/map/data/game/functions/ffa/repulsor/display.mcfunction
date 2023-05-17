@@ -1,5 +1,5 @@
 #> Particle
-execute at @s run particle enchanted_hit ^ ^ ^3.5 0 0 0 0 1 force @a
+particle enchanted_hit ^ ^ ^2.5 0 0 0 0 1 force @a
 
 #> Speen
 tp @s ~ ~ ~ ~10 ~

@@ -1,4 +1,4 @@
-say running end.mcfunction
+# say running end.mcfunction
 
 #> FX
 playsound minecraft:block.conduit.deactivate master @a ~ ~ ~ 1 2

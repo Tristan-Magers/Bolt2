@@ -1,4 +1,4 @@
-say running check_owner.mcfunction
+# say running check_owner.mcfunction
 
 execute store result score .targetUUID_0 .num run data get entity @s UUID[0]
 execute store result score .targetUUID_1 .num run data get entity @s UUID[1]

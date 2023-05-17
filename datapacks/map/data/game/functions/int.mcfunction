@@ -64,6 +64,7 @@ scoreboard objectives add arrowReload dummy
 #> Viral zone
 scoreboard objectives add speedTimer dummy
 scoreboard objectives add deflectTimer dummy
+scoreboard objectives add boltDelay dummy
 #> End viral zone
 
 scoreboard objectives add timer dummy

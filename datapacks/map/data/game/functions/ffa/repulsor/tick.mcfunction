@@ -1,22 +1,33 @@
-say running tick.mcfunction
+# say running tick.mcfunction
 
 #> Reflect
 tag @s add shieldDeflector
-execute positioned ~ ~1 ~ as @e[tag=arrow,distance=..3.5] run function game:ffa/repulsor/reflect
+#! Commented out because delta isn't added yet, see bottom of game:ffa/main.mcfunction
+# tag @a[gamemode=!spectator,distance=..2.5,tag=!shieldDeflector] add shieldDelta
+execute positioned ~ ~1 ~ as @e[type=arrow,distance=..2.5] run function game:ffa/repulsor/reflect
+# execute unless entity @a[gamemode=!spectator,distance=..2.5,tag=!shieldDeflector] run tag @s remove shieldDeflector
+tag @a remove shieldDeflector
 
 #> FX
-tellraw @a [{"text":"Shield display step: "},{"score":{"objective":"deflectTimer","name":"@e[tag=shieldDisplay,limit=1]"}}]
-
 execute as @e[tag=shieldDisplay] if score @p ID = @s ID run tag @s add shieldTick
-execute at @s positioned ~ ~2 ~ run tp @e[tag=shieldTick] ~ ~ ~ 
-execute as @e[tag=shieldTick] run function game:ffa/repulsor/display
+
+# tellraw @a [{"text":"Shield display step: "},{"score":{"objective":"deflectTimer","name":"@e[tag=shieldDisplay,limit=1]"}},{"text":" Shield up: "},{"selector":"@e[tag=shieldUp,limit=1]"},{"text":" Shield down: "},{"selector":"@e[tag=!shieldUp,tag=shieldTick,limit=1]"}]
+
+tag @e[tag=shieldTick,scores={deflectTimer=0},tag=!shieldUp] add shieldSwitchUp
+tag @e[tag=shieldTick,scores={deflectTimer=0},tag=shieldUp] add shieldSwitchDown
+
+tag @e[tag=shieldSwitchUp] add shieldUp
+tag @e[tag=shieldSwitchDown] remove shieldUp
+tag @e remove shieldSwitchUp
+tag @e remove shieldSwitchDown
+
+scoreboard players set @e[scores={deflectTimer=0},tag=shieldTick] deflectTimer 13
+
+execute as @e[tag=shieldTick,tag=!shieldUp] at @s run tp @s ~ ~ ~ ~ ~15
+execute as @e[tag=shieldTick,tag=shieldUp] at @s run tp @s ~ ~ ~ ~ ~-15
+
+tp @e[tag=shieldTick] ~ ~2 ~
+execute as @e[tag=shieldTick] at @s positioned ~ ~-0.9 ~ run function game:ffa/repulsor/display
 scoreboard players reset .rotateStep .num
 
-tag @e[tag=shieldTick,tag=!shieldUp,scores={deflectTimer=0}] add shieldUp
-tag @e[tag=shieldTick,tag=shieldUp,scores={deflectTimer=0}] remove shieldUp
-scoreboard players remove @e[tag=shieldTick,scores={deflectTimer=1..}] deflectTimer 1
-scoreboard players set @e[tag=shieldTick,scores={deflectTimer=0}] deflectTimer 9
-
-tp @e[tag=shieldTick,tag=!shieldUp] ~ ~ ~ ~ ~20
-tp @e[tag=shieldTick,tag=shieldUp] ~ ~ ~ ~ ~-20
 tag @e[tag=shieldTick] remove shieldTick
