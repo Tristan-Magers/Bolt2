@@ -104,7 +104,7 @@ scoreboard players set @s[scores={crossbowTime=3..}] crossbowTime 2
 scoreboard players remove @s respawn 1
 
 #
-execute if score .mode .data = .7 .num run item replace entity @s[scores={respawn=0},team=blue] hotbar.8 with minecraft:arrow 3
+execute if score .mode .data = .7 .num run item replace entity @s[scores={respawn=0},team=blue] hotbar.8 with minecraft:arrow 2
 
 tag @s remove hasflag
 
