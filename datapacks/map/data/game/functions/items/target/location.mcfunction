@@ -1,4 +1,4 @@
-execute as @s at @s run function game:algor/random
+execute as @s at @s run function game:algor/random_64
 execute as @s at @s run function game:map/towers/target
 
 scoreboard players add @s timer 1

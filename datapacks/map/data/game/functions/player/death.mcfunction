@@ -1,4 +1,37 @@
 #
+gamemode spectator @s
+execute as @s at @s run tp @s ~ ~ ~ ~ 0
+clear @s arrow
+clear @s iron_ingot
+clear @s bow
+give @s bow{Unbreakable:1b,Enchantments:[{id:"minecraft:power",lvl:999s}],HideFlags:1} 1
+effect give @s minecraft:wither 1 1
+scoreboard players set @s time_dead 0
+scoreboard players set @s respawn 70
+scoreboard players set @s respawning_time 0
+execute if score .team_dif .data >= .1 .num run scoreboard players set @s[team=red] respawn 110
+execute if score .team_dif .data >= .2 .num run scoreboard players set @s[team=red] respawn 150
+execute if score .team_dif .data >= .3 .num run scoreboard players set @s[team=red] respawn 190
+execute if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=blue] respawn 110
+execute if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 150
+execute if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 190
+
+execute as @s run scoreboard players remove @s respawn_assist 180
+execute as @s run scoreboard players operation @s respawn_assist /= .6 .num
+execute as @s run scoreboard players operation @s respawn += @s respawn_assist
+scoreboard players set @s[scores={deaths=1..,respawn=..31}] respawn 31
+
+execute if score .mode .data = .6 .num run clear @s[team=blue]
+execute if score .mode .data = .6 .num run team join red @s[team=blue]
+execute if score .mode .data = .6 .num if score .zombie_evolve_level .data = .0 .num run scoreboard players set @s respawn 40
+execute if score .mode .data = .6 .num if score .zombie_evolve_level .data = .1 .num run scoreboard players set @s respawn 60
+execute if score .mode .data = .6 .num if score .zombie_evolve_level .data = .2 .num run scoreboard players set @s respawn 80
+execute if score .mode .data = .6 .num if score .zombie_evolve_level .data = .3 .num run scoreboard players set @s respawn 100
+execute if score .mode .data = .6 .num if score .zombie_evolve_level .data >= .4 .num run scoreboard players set @s respawn 120
+
+scoreboard players set @s deaths 0
+
+#
 clear @s arrow
 
 execute at @s[tag=hasflag,team=red] run summon armor_stand ~ ~-1 ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",Count:1b}],Tags:["blueflag","flag","drop"]}
@@ -7,7 +40,15 @@ execute at @s[tag=hasflag,team=blue] run summon armor_stand ~ ~-1 ~ {NoGravity:1
 tag @s remove hasflag
 
 #
+particle minecraft:flash ~ ~1 ~
 particle minecraft:damage_indicator ~ ~1 ~ 0.2 0.2 0.2 .5 7 force
+
+playsound minecraft:entity.player.big_fall master @a ~ ~ ~ 1 0
+playsound minecraft:entity.player.big_fall master @a ~ ~ ~ 1 2
+playsound minecraft:entity.player.hurt_freeze master @a
+playsound minecraft:entity.player.death master @a ~ ~ ~ 1 0.65
+playsound minecraft:entity.evoker.death master @a ~ ~ ~ 0.4 1.7
+playsound minecraft:entity.dragon_fireball.explode master @a ~ ~ ~ 0.15 2
 
 execute as @s[scores={death_ani=0}] at @s positioned ~ ~1 ~ run summon item ^0.1 ^-0.1 ^0.1 {Motion:[-0.16,0.3,0.06],Age:5800,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:bow",Count:1b}}
 execute as @s[scores={death_ani=0},team=red] at @s positioned ~ ~1 ~ run summon item ^0.2 ^0.1 ^-0.2 {Motion:[0.14,0.25,-0.07],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",Count:1b,tag:{display:{color:16711680}}}}
@@ -32,3 +73,7 @@ execute as @s[scores={death_ani=3},team=red] at @s positioned ~ ~1 ~ run summon 
 execute as @s[scores={death_ani=3},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^-0.1 ^0.0 {Motion:[0.12,0.2,-0.13],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",Count:1b,tag:{display:{color:16711680}}}}
 execute as @s[scores={death_ani=3},team=blue] at @s positioned ~ ~1 ~ run summon item ^0.2 ^0.2 ^-0.2 {Motion:[-0.12,0.25,0.1],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",Count:1b,tag:{display:{color:22015}}}}
 execute as @s[scores={death_ani=3},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^-0.1 ^0.0 {Motion:[0.12,0.2,-0.13],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",Count:1b,tag:{display:{color:22015}}}}
+
+#
+execute as @s[team=red] if score .mode .data = .6 .num at @s positioned ~ ~1 ~ run summon item ~ ~ ~ {Team:"purple",Glowing:1b,Motion:[0.0,0.3,0.00],Age:5600,PickupDelay:32767,Tags:["no_kill","death_obj","scrap"],Item:{id:"minecraft:netherite_scrap",Count:1b,tag:{display:{Name:'{"text":"Scrap (Return to crafting table)","italic":false}'}}}}
+team join purple @e[type=minecraft:item,tag=scrap]

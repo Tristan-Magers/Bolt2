@@ -3,13 +3,17 @@ tag @a remove inspawn
 
 #red spawn
 #towers
-scoreboard players set @a[x=-86,z=53,y=-50.5,dx=7,dy=4,dz=-7] invul 40
-scoreboard players set @a[x=-78,z=53,y=-50.5,dx=2.5,dy=4,dz=-7] invul 40
-scoreboard players set @a[x=-84,z=46,y=-50.5,dx=4,dy=4,dz=-3] invul 40
+scoreboard players set @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] invul 40
+scoreboard players set @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] invul 40
+scoreboard players set @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] invul 40
 
-tag @a[x=-86,z=53,y=-50.5,dx=7,dy=4,dz=-7] add inspawn
-tag @a[x=-78,z=53,y=-50.5,dx=2.5,dy=4,dz=-7] add inspawn
-tag @a[x=-84,z=46,y=-50.5,dx=4,dy=4,dz=-3] add inspawn
+tag @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] add inspawn
+tag @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] add inspawn
+tag @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] add inspawn
+
+execute if score .mode .data = .6 .num run scoreboard players set @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] invul 80
+execute if score .mode .data = .6 .num run scoreboard players set @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] invul 80
+execute if score .mode .data = .6 .num run scoreboard players set @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] invul 80
 
 #caves
 tag @a[x=-156,y=-54,z=40,distance=..7] add area1
@@ -41,6 +45,11 @@ scoreboard players set @a[x=-354,y=-55,z=-48,dx=9,dy=10,dz=-11,team=red] invul 4
 
 tag @a[x=-354,y=-55,z=-48,dx=9,dy=10,dz=-11,team=red] add inspawn
 
+#tiny town
+scoreboard players set @a[x=-226,y=-40,z=-456,dx=-5,dy=-10,dz=4.5,team=red] invul 35
+scoreboard players set @a[x=-226,y=-40,z=-456,dx=-5,dy=-5,dz=4.5,team=red] no_slow 10
+effect give @a[x=-226,y=-40,z=-456,dx=-5,dy=-5,dz=4.5,team=red] minecraft:slowness 1 0 true
+
 #valley
 scoreboard players set @a[x=-401,y=-49,z=57,dx=15,dy=10,dz=10,team=red] invul 40
 
@@ -58,13 +67,13 @@ tag @a[x=3,y=-35,z=250,dx=-8,dy=7,dz=-18,team=red] add inspawn
 
 #blue spawn
 #towers
-scoreboard players set @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] invul 40
-scoreboard players set @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] invul 40
-scoreboard players set @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] invul 40
+scoreboard players set @a[x=-86,z=53,y=-50.5,dx=7,dy=4,dz=-7] invul 40
+scoreboard players set @a[x=-78,z=53,y=-50.5,dx=2.5,dy=4,dz=-7] invul 40
+scoreboard players set @a[x=-84,z=46,y=-50.5,dx=4,dy=4,dz=-3] invul 40
 
-tag @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] add inspawn
-tag @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] add inspawn
-tag @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] add inspawn
+tag @a[x=-86,z=53,y=-50.5,dx=7,dy=4,dz=-7] add inspawn
+tag @a[x=-78,z=53,y=-50.5,dx=2.5,dy=4,dz=-7] add inspawn
+tag @a[x=-84,z=46,y=-50.5,dx=4,dy=4,dz=-3] add inspawn
 
 #caves
 tag @a[x=-156,y=-54,z=3,distance=..7] add area1
@@ -95,6 +104,11 @@ tag @a[x=-219,y=-54,z=35,distance=..100,dx=20,dy=10,dz=10] add inspawn
 scoreboard players set @a[x=-325,y=-55,z=-94,dx=-11,dy=10,dz=9,team=blue] invul 44
 
 tag @a[x=-325,y=-55,z=-94,dx=-11,dy=10,dz=9,team=blue] add inspawn
+
+#tiny town
+scoreboard players set @a[x=-226,y=-40,z=-408,dx=-5,dy=-10,dz=-4.5,team=blue] invul 35
+scoreboard players set @a[x=-226,y=-40,z=-408,dx=-5,dy=-5,dz=-4.5,team=blue] no_slow 10
+effect give @a[x=-226,y=-40,z=-408,dx=-5,dy=-5,dz=-4.5,team=blue] minecraft:slowness 1 0 true
 
 #valley
 scoreboard players set @a[x=-401,y=-49,z=-23,dx=15,dy=10,dz=-10,team=blue] invul 40

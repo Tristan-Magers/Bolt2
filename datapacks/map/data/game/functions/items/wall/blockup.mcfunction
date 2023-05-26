@@ -1,4 +1,8 @@
 #
+tag @e[type=creeper] add low_position
+tag @e[tag=grenadehit] add low_position
+
+#
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace brown_mushroom
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace dead_bush
 execute as @s at @s run fill ~ ~ ~ ~ ~1 ~ minecraft:air replace hanging_roots
@@ -15,17 +19,29 @@ execute unless entity @a[tag=suff] as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:gr
 
 tag @e remove ingravel
 
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~ ~ ~ minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~0.3 ~ ~0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~0.3 ~ ~-0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~-0.3 ~ ~0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~-0.3 ~ ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~ ~2 ~ minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~0.3 ~2 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~0.3 ~2 ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~-0.3 ~2 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~-0.3 ~2 ~-0.3 minecraft:gravel run tag @s add ingravel
 
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~ ~0.9 ~ minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~0.3 ~0.9 ~0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~0.3 ~0.9 ~-0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~-0.3 ~0.9 ~0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~-0.3 ~0.9 ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~ ~1 ~ minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~0.3 ~1 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~0.3 ~1 ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~-0.3 ~1 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~-0.3 ~1 ~-0.3 minecraft:gravel run tag @s add ingravel
+
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~ ~ ~ minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~0.3 ~ ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~0.3 ~ ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~ ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~ ~-0.3 minecraft:gravel run tag @s add ingravel
+
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~ ~0.9 ~ minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~0.3 ~0.9 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~0.3 ~0.9 ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~0.9 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~0.9 ~-0.3 minecraft:gravel run tag @s add ingravel
 
 execute as @e[tag=ingravel] at @s run tp @s ~ ~1 ~
 
@@ -40,17 +56,29 @@ scoreboard players set @a[tag=ingravel] wall_invul 2
 #
 tag @e remove ingravel
 
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~ ~ ~ minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~0.3 ~ ~0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~0.3 ~ ~-0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~-0.3 ~ ~0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~-0.3 ~ ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~ ~2 ~ minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~0.3 ~2 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~0.3 ~2 ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~-0.3 ~2 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~-0.3 ~2 ~-0.3 minecraft:gravel run tag @s add ingravel
 
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~ ~0.9 ~ minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~0.3 ~0.9 ~0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~0.3 ~0.9 ~-0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~-0.3 ~0.9 ~0.3 minecraft:gravel run tag @s add ingravel
-execute as @s at @s run execute as @e[distance=..2.5,tag=!me] at @s if block ~-0.3 ~0.9 ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~ ~1 ~ minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~0.3 ~1 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~0.3 ~1 ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~-0.3 ~1 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=low_position] at @s if block ~-0.3 ~1 ~-0.3 minecraft:gravel run tag @s add ingravel
+
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~ ~ ~ minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~0.3 ~ ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~0.3 ~ ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~ ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~ ~-0.3 minecraft:gravel run tag @s add ingravel
+
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~ ~0.9 ~ minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~0.3 ~0.9 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~0.3 ~0.9 ~-0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~0.9 ~0.3 minecraft:gravel run tag @s add ingravel
+execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~0.9 ~-0.3 minecraft:gravel run tag @s add ingravel
 
 execute as @e[tag=ingravel] at @s run tp @s ~ ~1 ~
 

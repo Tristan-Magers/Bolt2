@@ -27,4 +27,4 @@ execute as @s[scores={t5=..-1}] run function game:test2
 #scoreboard players set @s kill 10
 #scoreboard players set @s deaths 1
 
-scoreboard players set @a[distance=..3,scores={invul=..2}] invul 2
+scoreboard players set @a[distance=..4,scores={invul=..2}] invul 2

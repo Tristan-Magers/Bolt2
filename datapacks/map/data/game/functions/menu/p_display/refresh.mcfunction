@@ -1,0 +1,1 @@
+scoreboard players add @a p_display_num 0

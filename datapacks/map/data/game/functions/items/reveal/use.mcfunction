@@ -8,6 +8,24 @@ execute as @s[team=blue] run title @a[team=red] times 6 20 14
 execute as @s[team=red] run title @a[team=blue] title {"text":"!! REVEALED !!","bold":"true"}
 execute as @s[team=blue] run title @a[team=red] title {"text":"!! REVEALED !!","bold":"true"}
 
+execute as @s[team=red] as @a[team=blue,tag=playing] at @s run playsound minecraft:entity.elder_guardian.death master @s ~ ~ ~ 1 1
+execute as @s[team=blue] as @a[team=red,tag=playing] at @s run playsound minecraft:entity.elder_guardian.death master @s ~ ~ ~ 1 1
+
+execute as @s[team=red] as @a[team=blue,tag=playing] at @s run playsound minecraft:entity.elder_guardian.curse master @s ~ ~ ~ 1 1
+execute as @s[team=blue] as @a[team=red,tag=playing] at @s run playsound minecraft:entity.elder_guardian.curse master @s ~ ~ ~ 1 1
+
+execute as @s[team=red] as @a[team=red,tag=playing] at @s run playsound minecraft:block.beacon.activate master @a ~ ~ ~ 1 1.5
+execute as @s[team=red] as @a[team=red,tag=playing] at @s run playsound minecraft:block.beacon.power_select master @a ~ ~ ~ 1 0.5
+
+execute as @s[team=blue] as @a[team=blue,tag=playing] at @s run playsound minecraft:block.beacon.activate master @a ~ ~ ~ 1 1.5
+execute as @s[team=blue] as @a[team=blue,tag=playing] at @s run playsound minecraft:block.beacon.power_select master @a ~ ~ ~ 1 0.5
+
+execute as @s[team=red] as @a[team=blue,tag=playing] at @s run particle minecraft:elder_guardian ~ ~ ~ 0 0 0 1 1 force @s
+execute as @s[team=blue] as @a[team=red,tag=playing] at @s run particle minecraft:elder_guardian ~ ~ ~ 0 0 0 1 1 force @s
+
 scoreboard players set @s useMap 0
 
 tellraw @a [{"selector":"@s"},{"text":" used","color":"white"},{"text":" REVEAL","color":"light_purple"}]
+
+#
+clear @s minecraft:filled_map

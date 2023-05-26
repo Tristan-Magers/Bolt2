@@ -53,14 +53,17 @@ execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ run fill ~-2
 
 # EXPLODES KILLING PLAYERS (controls tellraw in chat for this occurance as well)
 
+tag @a remove gre_immune
+execute if score .mode .data = .6 .num run tag @a[team=blue] add gre_immune
+
 scoreboard players operation @a ID -= @s ID
 execute if entity @s[scores={timer=1}] at @s positioned ~ ~0.4 ~ run tellraw @a[scores={ID=0}] [{"text":"[Trap Triggered]","color":"gray"}]
 
 execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[scores={ID=0},team=red] killStreak 1
 execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[scores={ID=0},team=blue] killStreak 1
 
-execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed] unless entity @a[scores={ID=0,killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"green"},{"selector":"@a[scores={ID=0}]"},{"text":"'s ","color":"gray"},{"text":"Trap","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[distance=..4.8,scores={respawn=..0}]"}]
-execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed] if entity @a[scores={ID=0,killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"green"},{"selector":"@a[scores={ID=0}]"},{"text":"'s ","color":"gray"},{"text":"Trap","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[distance=..4.8,scores={respawn=..0}]"},{"text":" (","color":"dark_gray"},{"score":{"name":"@p[scores={ID=0}]","objective":"killStreak"},"color":"dark_gray"},{"text":")","color":"dark_gray"}]
+execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed,tag=!gre_immune] unless entity @a[scores={ID=0,killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"green"},{"selector":"@a[scores={ID=0}]"},{"text":"'s ","color":"gray"},{"text":"Trap","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[distance=..4.8,scores={respawn=..0},tag=!gre_immune]"}]
+execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed,tag=!gre_immune] if entity @a[scores={ID=0,killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"green"},{"selector":"@a[scores={ID=0}]"},{"text":"'s ","color":"gray"},{"text":"Trap","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[distance=..4.8,scores={respawn=..0},tag=!gre_immune]"},{"text":" (","color":"dark_gray"},{"score":{"name":"@p[scores={ID=0}]","objective":"killStreak"},"color":"dark_gray"},{"text":")","color":"dark_gray"}]
 
 execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players remove @a[scores={ID=0},team=red] killStreak 1
 execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players remove @a[scores={ID=0},team=blue] killStreak 1
@@ -71,9 +74,16 @@ execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a
 execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[scores={ID=0},team=red] stats_trap_kills 1
 execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[scores={ID=0},team=blue] stats_trap_kills 1
 
-execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run tag @a[distance=..4.8,scores={respawn=..0,invul=..0}] add exploded
-execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run tag @a[distance=..4.8,scores={respawn=..0,invul=..0}] add killed
-execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0}] minecraft:instant_damage 1 100 true
+execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run tag @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add exploded
+execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run tag @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add killed
+
+execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run playsound minecraft:item.shield.block master @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] ~ ~ ~ 1 0
+execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:blindness 4 100 true
+execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:slowness 3 2 true
+execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:glowing 3 2 true
+execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] minecraft:instant_damage 1 100 true
+
+tag @a remove gre_immune
 
 scoreboard players operation @a ID += @s ID
 

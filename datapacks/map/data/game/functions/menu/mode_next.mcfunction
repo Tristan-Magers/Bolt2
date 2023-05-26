@@ -9,8 +9,11 @@ execute if score .mode_display .data = .3 .num run scoreboard players set .mode_
 execute if score .mode_display .data = .4 .num run scoreboard players set .mode_screen .data 3
 execute if score .mode_display .data = .5 .num run scoreboard players set .mode_screen .data 7
 
-execute unless score .map .data = .1 .num if score .mode_screen .data = .7 .num run scoreboard players set .mode_display .data 1
-execute unless score .map .data = .1 .num if score .mode_screen .data = .7 .num run scoreboard players set .mode_screen .data 1
+execute unless score .map_display .data = .3 .num if score .mode_screen .data = .6 .num run scoreboard players set .mode_display .data 1
+execute unless score .map_display .data = .3 .num if score .mode_screen .data = .6 .num run scoreboard players set .mode_screen .data 1
+
+execute unless score .map_display .data = .3 .num if score .mode_screen .data = .7 .num run scoreboard players set .mode_display .data 1
+execute unless score .map_display .data = .3 .num if score .mode_screen .data = .7 .num run scoreboard players set .mode_screen .data 1
 
 #
 fill 265 -51 -236 265 -54 -226 air

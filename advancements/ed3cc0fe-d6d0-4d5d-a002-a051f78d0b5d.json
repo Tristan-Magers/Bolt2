@@ -229,6 +229,90 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2023-04-25 00:49:25 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/light_blue_dye_from_blue_white_dye": {
+    "criteria": {
+      "has_blue_dye": "2023-04-25 00:50:22 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/cyan_dye": {
+    "criteria": {
+      "has_blue_dye": "2023-04-25 00:50:22 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/purple_dye": {
+    "criteria": {
+      "has_blue_dye": "2023-04-25 00:50:22 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/blue_candle": {
+    "criteria": {
+      "has_blue_dye": "2023-04-25 00:50:22 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/blue_stained_glass_pane_from_glass_pane": {
+    "criteria": {
+      "has_blue_dye": "2023-04-25 00:50:22 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/magenta_dye_from_blue_red_pink": {
+    "criteria": {
+      "has_blue_dye": "2023-04-25 00:50:22 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/blue_carpet_from_white_carpet": {
+    "criteria": {
+      "has_blue_dye": "2023-04-25 00:50:22 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/magenta_dye_from_blue_red_white_dye": {
+    "criteria": {
+      "has_blue_dye": "2023-04-25 00:50:22 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/orange_dye_from_red_yellow": {
+    "criteria": {
+      "has_red_dye": "2023-04-25 00:53:35 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/red_candle": {
+    "criteria": {
+      "has_red_dye": "2023-04-25 00:53:35 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/red_stained_glass_pane_from_glass_pane": {
+    "criteria": {
+      "has_red_dye": "2023-04-25 00:53:35 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/pink_dye_from_red_white_dye": {
+    "criteria": {
+      "has_red_dye": "2023-04-25 00:53:35 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/red_carpet_from_white_carpet": {
+    "criteria": {
+      "has_red_dye": "2023-04-25 00:53:35 +0000"
+    },
+    "done": true
+  },
   "minecraft:recipes/combat/iron_sword": {
     "criteria": {
       "has_iron_ingot": "2023-04-25 00:57:37 +0000"
@@ -265,60 +349,6 @@
     },
     "done": true
   },
-  "minecraft:recipes/redstone/crimson_button": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:07:51 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/mangrove_pressure_plate": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:08:02 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/red_carpet": {
-    "criteria": {
-      "has_red_wool": "2023-04-25 02:42:56 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/light_blue_dye_from_blue_white_dye": {
-    "criteria": {
-      "has_blue_dye": "2023-04-25 00:50:22 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/cyan_dye": {
-    "criteria": {
-      "has_blue_dye": "2023-04-25 00:50:22 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/crimson_slab": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:07:51 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/crimson_stairs": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:07:51 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/yellow_glazed_terracotta": {
-    "criteria": {
-      "has_yellow_terracotta": "2023-04-25 02:07:22 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/red_banner": {
-    "criteria": {
-      "has_red_wool": "2023-04-25 02:42:56 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/combat/iron_boots": {
     "criteria": {
       "has_iron_ingot": "2023-04-25 00:57:37 +0000"
@@ -331,63 +361,15 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/magenta_glazed_terracotta": {
-    "criteria": {
-      "has_magenta_terracotta": "2023-04-25 02:07:24 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/purple_dye": {
-    "criteria": {
-      "has_blue_dye": "2023-04-25 00:50:22 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/red_stained_glass_pane": {
-    "criteria": {
-      "has_glass": "2023-04-25 03:35:14 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/lantern": {
     "criteria": {
       "has_iron_ingot": "2023-04-25 00:57:37 +0000"
     },
     "done": true
   },
-  "minecraft:recipes/decorations/mangrove_fence": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:08:02 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/orange_dye_from_red_yellow": {
-    "criteria": {
-      "has_red_dye": "2023-04-25 00:53:35 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/blue_candle": {
-    "criteria": {
-      "has_blue_dye": "2023-04-25 00:50:22 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/blue_bed": {
-    "criteria": {
-      "has_blue_wool": "2023-04-25 03:11:44 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/misc/iron_nugget": {
     "criteria": {
       "has_iron_ingot": "2023-04-25 00:57:37 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/blue_stained_glass_pane_from_glass_pane": {
-    "criteria": {
-      "has_blue_dye": "2023-04-25 00:50:22 +0000"
     },
     "done": true
   },
@@ -409,27 +391,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/misc/charcoal": {
-    "criteria": {
-      "has_log": "2023-04-25 02:07:46 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/tools/iron_hoe": {
     "criteria": {
       "has_iron_ingot": "2023-04-25 00:57:37 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/redstone_torch": {
-    "criteria": {
-      "has_redstone": "2023-04-25 04:17:11 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/warped_pressure_plate": {
-    "criteria": {
-      "has_planks": "2023-04-25 03:45:41 +0000"
     },
     "done": true
   },
@@ -439,99 +403,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/tools/clock": {
-    "criteria": {
-      "has_redstone": "2023-04-25 04:17:11 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/red_glazed_terracotta": {
-    "criteria": {
-      "has_red_terracotta": "2023-04-25 02:07:18 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/red_candle": {
-    "criteria": {
-      "has_red_dye": "2023-04-25 00:53:35 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/mangrove_stairs": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:08:02 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/painting": {
-    "criteria": {
-      "has_wool": "2023-04-25 02:42:56 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/mangrove_trapdoor": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:08:02 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/dropper": {
-    "criteria": {
-      "has_redstone": "2023-04-25 04:17:11 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/mangrove_fence_gate": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:08:02 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/magenta_dye_from_blue_red_pink": {
-    "criteria": {
-      "has_blue_dye": "2023-04-25 00:50:22 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/blue_carpet_from_white_carpet": {
-    "criteria": {
-      "has_blue_dye": "2023-04-25 00:50:22 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/composter": {
-    "criteria": {
-      "has_wood_slab": "2023-04-25 04:10:31 +0000"
-    },
-    "done": true
-  },
   "minecraft:story/smelt_iron": {
     "criteria": {
       "iron": "2023-04-25 00:57:37 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/warped_slab": {
-    "criteria": {
-      "has_planks": "2023-04-25 03:45:41 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/crafting_table": {
-    "criteria": {
-      "unlock_right_away": "2023-04-25 00:49:25 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/chest": {
-    "criteria": {
-      "has_lots_of_items": "2023-04-25 03:53:29 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/mangrove_sign": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:08:02 +0000"
     },
     "done": true
   },
@@ -541,57 +415,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/misc/stick": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:07:51 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/crimson_pressure_plate": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:07:51 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/blue_carpet": {
-    "criteria": {
-      "has_blue_wool": "2023-04-25 03:11:44 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/crimson_fence": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:07:51 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/warped_fence_gate": {
-    "criteria": {
-      "has_planks": "2023-04-25 03:45:41 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/mangrove_button": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:08:02 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/redstone/iron_trapdoor": {
     "criteria": {
       "has_iron_ingot": "2023-04-25 00:57:37 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/redstone_block": {
-    "criteria": {
-      "has_redstone": "2023-04-25 04:17:11 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/crimson_sign": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:07:51 +0000"
     },
     "done": true
   },
@@ -601,39 +427,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/red_stained_glass_pane_from_glass_pane": {
-    "criteria": {
-      "has_red_dye": "2023-04-25 00:53:35 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/mangrove_door": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:08:02 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/pink_dye_from_red_white_dye": {
-    "criteria": {
-      "has_red_dye": "2023-04-25 00:53:35 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/iron_block": {
     "criteria": {
       "has_iron_ingot": "2023-04-25 00:57:37 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/crimson_fence_gate": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:07:51 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/oak_planks": {
-    "criteria": {
-      "has_logs": "2023-04-25 02:07:46 +0000"
     },
     "done": true
   },
@@ -649,51 +445,117 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/warped_fence": {
-    "criteria": {
-      "has_planks": "2023-04-25 03:45:41 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/barrel": {
-    "criteria": {
-      "has_planks": "2023-04-25 02:07:51 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/smithing_table": {
     "criteria": {
       "has_iron_ingot": "2023-04-25 00:57:37 +0000"
     },
     "done": true
   },
-  "minecraft:recipes/decorations/blue_banner": {
+  "minecraft:recipes/redstone/iron_door": {
     "criteria": {
-      "has_blue_wool": "2023-04-25 03:11:44 +0000"
+      "has_iron_ingot": "2023-04-25 00:57:37 +0000"
     },
     "done": true
   },
-  "minecraft:recipes/decorations/red_carpet_from_white_carpet": {
+  "minecraft:recipes/redstone/heavy_weighted_pressure_plate": {
     "criteria": {
-      "has_red_dye": "2023-04-25 00:53:35 +0000"
+      "has_iron_ingot": "2023-04-25 00:57:37 +0000"
     },
     "done": true
   },
-  "minecraft:recipes/redstone/note_block": {
+  "minecraft:recipes/decorations/blue_glazed_terracotta": {
     "criteria": {
-      "has_redstone": "2023-04-25 04:17:11 +0000"
+      "has_blue_terracotta": "2023-04-25 02:07:17 +0000"
     },
     "done": true
   },
-  "minecraft:recipes/misc/magenta_dye_from_blue_red_white_dye": {
+  "minecraft:recipes/decorations/red_glazed_terracotta": {
     "criteria": {
-      "has_blue_dye": "2023-04-25 00:50:22 +0000"
+      "has_red_terracotta": "2023-04-25 02:07:18 +0000"
     },
     "done": true
   },
-  "minecraft:recipes/redstone/target": {
+  "minecraft:recipes/decorations/yellow_glazed_terracotta": {
     "criteria": {
-      "has_redstone": "2023-04-25 04:17:11 +0000"
+      "has_yellow_terracotta": "2023-04-25 02:07:22 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/magenta_glazed_terracotta": {
+    "criteria": {
+      "has_magenta_terracotta": "2023-04-25 02:07:24 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/charcoal": {
+    "criteria": {
+      "has_log": "2023-04-25 02:07:46 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oak_planks": {
+    "criteria": {
+      "has_logs": "2023-04-25 02:07:46 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oak_wood": {
+    "criteria": {
+      "has_log": "2023-04-25 02:07:46 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/crimson_button": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:07:51 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/crimson_slab": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:07:51 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/crimson_stairs": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:07:51 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/stick": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:07:51 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/crimson_pressure_plate": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:07:51 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crimson_fence": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:07:51 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crimson_sign": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:07:51 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/crimson_fence_gate": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:07:51 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/barrel": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:07:51 +0000"
     },
     "done": true
   },
@@ -709,15 +571,135 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/green_glazed_terracotta": {
+  "minecraft:recipes/redstone/mangrove_pressure_plate": {
     "criteria": {
-      "has_green_terracotta": "2023-04-25 02:12:34 +0000"
+      "has_planks": "2023-04-25 02:08:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/mangrove_fence": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:08:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mangrove_stairs": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:08:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_trapdoor": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:08:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_fence_gate": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:08:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/mangrove_sign": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:08:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_button": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:08:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/mangrove_door": {
+    "criteria": {
+      "has_planks": "2023-04-25 02:08:02 +0000"
     },
     "done": true
   },
   "minecraft:recipes/building_blocks/mangrove_slab": {
     "criteria": {
       "has_planks": "2023-04-25 02:08:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/green_glazed_terracotta": {
+    "criteria": {
+      "has_green_terracotta": "2023-04-25 02:12:34 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/red_carpet": {
+    "criteria": {
+      "has_red_wool": "2023-04-25 02:42:56 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/red_banner": {
+    "criteria": {
+      "has_red_wool": "2023-04-25 02:42:56 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/painting": {
+    "criteria": {
+      "has_wool": "2023-04-25 02:42:56 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/red_bed": {
+    "criteria": {
+      "has_red_wool": "2023-04-25 02:42:56 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/blue_bed": {
+    "criteria": {
+      "has_blue_wool": "2023-04-25 03:11:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/blue_carpet": {
+    "criteria": {
+      "has_blue_wool": "2023-04-25 03:11:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/blue_banner": {
+    "criteria": {
+      "has_blue_wool": "2023-04-25 03:11:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/red_stained_glass_pane": {
+    "criteria": {
+      "has_glass": "2023-04-25 03:35:14 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/warped_pressure_plate": {
+    "criteria": {
+      "has_planks": "2023-04-25 03:45:41 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/warped_slab": {
+    "criteria": {
+      "has_planks": "2023-04-25 03:45:41 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/warped_fence_gate": {
+    "criteria": {
+      "has_planks": "2023-04-25 03:45:41 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/warped_fence": {
+    "criteria": {
+      "has_planks": "2023-04-25 03:45:41 +0000"
     },
     "done": true
   },
@@ -739,27 +721,63 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/blue_glazed_terracotta": {
-    "criteria": {
-      "has_blue_terracotta": "2023-04-25 02:07:17 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/warped_sign": {
     "criteria": {
       "has_planks": "2023-04-25 03:45:41 +0000"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/oak_wood": {
+  "minecraft:recipes/redstone/warped_door": {
     "criteria": {
-      "has_log": "2023-04-25 02:07:46 +0000"
+      "has_planks": "2023-04-25 03:45:41 +0000"
     },
     "done": true
   },
-  "minecraft:recipes/redstone/repeater": {
+  "minecraft:recipes/decorations/chest": {
     "criteria": {
-      "has_redstone_torch": "2023-04-25 04:18:23 +0000"
+      "has_lots_of_items": "2023-04-25 03:53:29 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/composter": {
+    "criteria": {
+      "has_wood_slab": "2023-04-25 04:10:31 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone_torch": {
+    "criteria": {
+      "has_redstone": "2023-04-25 04:17:11 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/clock": {
+    "criteria": {
+      "has_redstone": "2023-04-25 04:17:11 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dropper": {
+    "criteria": {
+      "has_redstone": "2023-04-25 04:17:11 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone_block": {
+    "criteria": {
+      "has_redstone": "2023-04-25 04:17:11 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/note_block": {
+    "criteria": {
+      "has_redstone": "2023-04-25 04:17:11 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/target": {
+    "criteria": {
+      "has_redstone": "2023-04-25 04:17:11 +0000"
     },
     "done": true
   },
@@ -769,33 +787,15 @@
     },
     "done": true
   },
-  "minecraft:recipes/redstone/iron_door": {
-    "criteria": {
-      "has_iron_ingot": "2023-04-25 00:57:37 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/red_bed": {
-    "criteria": {
-      "has_red_wool": "2023-04-25 02:42:56 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/heavy_weighted_pressure_plate": {
-    "criteria": {
-      "has_iron_ingot": "2023-04-25 00:57:37 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/redstone/piston": {
     "criteria": {
       "has_redstone": "2023-04-25 04:17:11 +0000"
     },
     "done": true
   },
-  "minecraft:recipes/redstone/warped_door": {
+  "minecraft:recipes/redstone/repeater": {
     "criteria": {
-      "has_planks": "2023-04-25 03:45:41 +0000"
+      "has_redstone_torch": "2023-04-25 04:18:23 +0000"
     },
     "done": true
   },

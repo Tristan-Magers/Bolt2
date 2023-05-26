@@ -32,6 +32,12 @@ team modify noColBlue color dark_aqua
 team add gray
 team modify gray color gray
 
+team add purple
+team modify purple color dark_purple
+
+team add black
+team modify black color black
+
 # objectives remove
 
 scoreboard objectives remove ID
@@ -123,6 +129,8 @@ scoreboard objectives add invul dummy
 scoreboard objectives add wall_invul dummy
 scoreboard objectives add danger dummy
 
+scoreboard objectives add no_slow dummy
+
 scoreboard objectives add removeBlind dummy
 
 scoreboard objectives add DirX dummy
@@ -152,6 +160,16 @@ scoreboard objectives add hurt dummy
 
 scoreboard objectives add team_pref dummy
 scoreboard objectives add team_pref_temp dummy
+
+scoreboard objectives add item_minion dummy
+scoreboard objectives add item_boost dummy
+scoreboard objectives add item_acid dummy
+
+scoreboard objectives add bow_texture dummy
+scoreboard objectives add bow_texture_place dummy
+scoreboard objectives add bow_throw minecraft.dropped:minecraft.bow
+
+scoreboard objectives add scrap_count dummy
 
 scoreboard players set .CrossKills .stats 15
 scoreboard players set .GrenadeKills .stats 4
@@ -314,6 +332,11 @@ scoreboard players set .200 .num 200
 
 scoreboard players set .300 .num 300
 
+scoreboard players set .800 .num 800
+scoreboard players set .900 .num 900
+
+scoreboard players set .1200 .num 1200
+
 scoreboard players set .n1 .num -1
 scoreboard players set .n2 .num -2
 scoreboard players set .n3 .num -3
@@ -330,3 +353,17 @@ scoreboard objectives add .timer dummy
 #scoreboard players set .hexdoor2 .timer 0
 
 scoreboard objectives add .metric dummy
+
+scoreboard objectives add .menu dummy
+scoreboard players set .1 .menu 0
+scoreboard players set .2 .menu 0
+scoreboard players set .3 .menu 0
+scoreboard players set .4 .menu 0
+scoreboard players set .5 .menu 0
+scoreboard players set .6 .menu 0
+scoreboard players set .7 .menu 0
+scoreboard players set .8 .menu 0
+scoreboard players set .9 .menu 0
+scoreboard players set .10 .menu 0
+scoreboard players set .11 .menu 0
+scoreboard players set .12 .menu 0

@@ -314,11 +314,13 @@
   },
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
+      "minecraft:elder_guardian": "2023-05-25 15:30:10 -0600",
       "minecraft:magma_cube": "2022-02-02 23:29:58 -0700",
       "minecraft:creeper": "2022-02-06 13:42:51 -0700",
       "minecraft:slime": "2022-02-02 18:33:12 -0700",
       "minecraft:silverfish": "2022-02-02 16:11:57 -0700",
-      "minecraft:zombie": "2022-03-26 18:38:00 -0600"
+      "minecraft:zombie": "2022-03-26 18:38:00 -0600",
+      "minecraft:zombie_villager": "2023-05-15 23:05:46 -0600"
     },
     "done": false
   },
@@ -5017,6 +5019,54 @@
   "minecraft:recipes/decorations/black_candle": {
     "criteria": {
       "has_black_dye": "2023-04-25 14:57:09 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/observer": {
+    "criteria": {
+      "has_quartz": "2023-05-17 14:06:25 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/comparator": {
+    "criteria": {
+      "has_quartz": "2023-05-17 14:06:25 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/diorite": {
+    "criteria": {
+      "has_quartz": "2023-05-17 14:06:25 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/granite": {
+    "criteria": {
+      "has_quartz": "2023-05-17 14:06:25 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/quartz_block": {
+    "criteria": {
+      "has_quartz": "2023-05-17 14:06:25 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/daylight_detector": {
+    "criteria": {
+      "has_quartz": "2023-05-17 14:06:25 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/netherite_ingot": {
+    "criteria": {
+      "has_netherite_scrap": "2023-05-17 21:38:48 -0600"
+    },
+    "done": true
+  },
+  "minecraft:story/shiny_gear": {
+    "criteria": {
+      "diamond_chestplate": "2023-05-25 13:09:36 -0600"
     },
     "done": true
   },

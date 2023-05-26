@@ -1,11 +1,17 @@
 kill @e[tag=gen]
 kill @e[type=item]
+kill @e[type=minecraft:zombie_villager]
 
 kill @e[type=minecraft:creeper]
 kill @e[type=minecraft:slime]
 kill @e[type=minecraft:magma_cube]
 kill @e[tag=wall]
 kill @e[tag=spawn_tracker]
+kill @e[tag=crate_marker]
+execute as @e[tag=crate] at @s run function game:game/infected/crates/despawn
+execute as @e[tag=survivor_generator] at @s run function game:game/infected/generator/despawn
+
+kill @e[type=minecraft:area_effect_cloud]
 
 kill @e[tag=redflag]
 kill @e[tag=blueflag]
@@ -26,3 +32,8 @@ execute if score .map .data = .13 .num run function game:map/lookout/start
 
 tag @a remove hasflag
 tag @a remove hasspawn
+
+gamerule reducedDebugInfo true
+
+schedule clear game:player/subtitle_scramble/schedule_trig
+function game:player/subtitle_scramble/schedule_trig

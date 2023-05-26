@@ -74,8 +74,11 @@ execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[team=blue,di
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run title @a title {"text":"BLUE SCORES!","color":"aqua"}
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run tag @a[team=blue] remove hasflag
 
-execute if score Blue Scores >= .endscore .stats run function game:end
-execute if score Red Scores >= .endscore .stats run function game:end
+execute if score Blue Scores >= .endscore .stats run scoreboard players set .stats_end .data 1
+execute if score Red Scores >= .endscore .stats run scoreboard players set .stats_end .data 1
+
+execute if score Blue Scores >= .endscore .stats run function game:game/end_ctf
+execute if score Red Scores >= .endscore .stats run function game:game/end_ctf
 
 scoreboard players operation .point_blue .metric = Blue Scores
 scoreboard players operation .point_red .metric = Red Scores

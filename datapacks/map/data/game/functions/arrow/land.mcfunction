@@ -16,4 +16,6 @@ execute at @s[tag=!gravel] at @s run fill ~0.2 ~0.2 ~0.2 ~-0.2 ~-0.2 ~-0.2 minec
 
 execute at @s[tag=gravel] at @s run playsound minecraft:block.gravel.break master @a
 
+function game:arrow/particle
+
 kill @s

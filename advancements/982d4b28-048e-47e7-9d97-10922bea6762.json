@@ -46,7 +46,8 @@
       "minecraft:slime": "2022-02-15 05:36:05 +0000",
       "minecraft:silverfish": "2022-03-09 03:19:30 +0000",
       "minecraft:endermite": "2022-03-09 03:19:33 +0000",
-      "minecraft:zombie": "2022-03-27 00:36:56 +0000"
+      "minecraft:zombie": "2022-03-27 00:36:56 +0000",
+      "minecraft:zombie_villager": "2023-05-20 05:27:04 +0000"
     },
     "done": false
   },
@@ -4585,6 +4586,48 @@
   "minecraft:recipes/building_blocks/glass": {
     "criteria": {
       "has_smelts_to_glass": "2023-04-25 02:06:12 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/green_stained_glass_pane": {
+    "criteria": {
+      "has_glass": "2023-04-26 02:52:49 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/wheat": {
+    "criteria": {
+      "has_hay_block": "2023-04-26 02:57:43 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/chiseled_deepslate": {
+    "criteria": {
+      "has_cobbled_deepslate_slab": "2023-04-26 20:22:22 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/lapis_lazuli_from_smelting_deepslate_lapis_ore": {
+    "criteria": {
+      "has_deepslate_lapis_ore": "2023-04-26 23:22:25 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/lapis_lazuli_from_blasting_deepslate_lapis_ore": {
+    "criteria": {
+      "has_deepslate_lapis_ore": "2023-04-26 23:22:25 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/netherite_ingot": {
+    "criteria": {
+      "has_netherite_scrap": "2023-05-20 05:13:55 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/glow_item_frame": {
+    "criteria": {
+      "has_item_frame": "2023-05-20 05:35:10 +0000"
     },
     "done": true
   },
