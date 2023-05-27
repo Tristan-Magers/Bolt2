@@ -17,9 +17,11 @@ execute as @s[tag=boltKill] run playsound minecraft:entity.dragon_fireball.explo
 execute as @s[tag=boltKill] run playsound minecraft:entity.dragon_fireball.explode master @a ~ ~ ~ .3 1
 execute as @s[tag=boltKill] run playsound minecraft:entity.firework_rocket.blast master @a ~ ~ ~ .3 2
 execute as @s[tag=boltKill] run particle minecraft:end_rod ~ ~ ~ 0.1 0.1 0.1 0.25 80 force @a
+execute as @s[tag=boltKill] run scoreboard players reset .boltTick .num
 kill @s[tag=boltKill]
 
 #> Loop
 scoreboard players add .boltTick .num 1
 tp @s ^ ^ ^0.2
 execute at @s[tag=!boltKill] if score .boltTick .num matches ..14 run function game:ffa/bolt/tick
+execute if score .boltTick .num matches 14.. run scoreboard players reset .boltTick .num

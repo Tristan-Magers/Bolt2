@@ -1,0 +1,1 @@
+function game:ffa/turret/remove_target

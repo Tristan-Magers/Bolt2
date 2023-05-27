@@ -29,6 +29,13 @@ tag @a[scores={crossUse=1..}] remove chargedCross
 item modify entity @a[scores={crossUse=1..}] weapon.mainhand game:ffa/crossbow/damage
 scoreboard players set @a[scores={crossUse=1..}] crossUse 0
 
+#> Calverin
+tag @a[scores={turret_use=1..}] add turretSpawn
+execute as @e[type=blaze,tag=!turret] run function game:ffa/turret/spawn
+scoreboard players remove @e[tag=turret,scores={turretCooldown=1..}] turretCooldown 1
+execute as @e[type=blaze,tag=turret,tag=!hasTarget,scores={turretCooldown=0}] run function game:ffa/turret/find_target
+execute as @e[type=blaze,tag=turret,tag=hasTarget,scores={turretCooldown=0}] run function game:ffa/turret/attack_target
+
 #> Delta
 #! Currently commented out because delta api isn't added right now, will finish once it is (or you can do it yourself); ideally should launch players like 3 blocks away 
 # scoreboard players set $strength delta.api.launch 1000

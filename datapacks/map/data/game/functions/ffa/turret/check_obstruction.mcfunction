@@ -1,0 +1,2 @@
+execute if block ~ ~ ~ #game:bolt_place run scoreboard players set #obstruction 1
+execute unless entity @e[tag=targeting,dx=1,dy=1,dz=1] run execute positioned ^ ^ ^0.5 run function game:ffa/turret/check_obustruction

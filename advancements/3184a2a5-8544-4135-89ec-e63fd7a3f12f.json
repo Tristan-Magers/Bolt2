@@ -26,10 +26,13 @@
   },
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
+      "minecraft:blaze": "2023-05-26 17:44:02 -0700",
       "minecraft:skeleton": "2023-05-16 18:12:18 -0700",
+      "minecraft:zoglin": "2023-05-26 18:11:49 -0700",
       "minecraft:magma_cube": "2022-02-14 21:27:07 -0800",
       "minecraft:creeper": "2022-02-14 21:18:37 -0800",
-      "minecraft:slime": "2022-02-14 22:16:53 -0800"
+      "minecraft:slime": "2022-02-14 22:16:53 -0800",
+      "minecraft:husk": "2023-05-26 18:11:48 -0700"
     },
     "done": false
   },
@@ -2376,6 +2379,12 @@
   "minecraft:recipes/combat/spectral_arrow": {
     "criteria": {
       "has_glowstone_dust": "2023-05-24 17:27:41 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/chiseled_deepslate": {
+    "criteria": {
+      "has_cobbled_deepslate_slab": "2023-05-26 19:21:08 -0700"
     },
     "done": true
   },
