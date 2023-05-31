@@ -1,3 +1,5 @@
+# say running spawn.mcfunction ...
+
 #> ID + tags
 scoreboard players operation @s ID = @a[tag=turretSpawn] ID
 tag @a[tag=turretSpawn] add hasTurret
@@ -15,10 +17,10 @@ scoreboard players set @s .num 2
 
 #> Down
 function game:items/lower
-tp @s ~ ~-1 ~
+execute at @s run tp @s ~ ~-1 ~
 
 #> Punch detection
-summon interaction ~ ~1 ~ {Tags:["turretPunch"]}
+execute at @s run summon interaction ~ ~0.8 ~ {Tags:["turretPunch"]}
 
 #> FX
 playsound minecraft:block.anvil.use master @s ~ ~ ~ 1 2

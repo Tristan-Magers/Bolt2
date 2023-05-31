@@ -30,11 +30,18 @@ item modify entity @a[scores={crossUse=1..}] weapon.mainhand game:ffa/crossbow/d
 scoreboard players set @a[scores={crossUse=1..}] crossUse 0
 
 #> Calverin
+tag @a remove executioner
+tag @a remove turretDead
 tag @a[scores={turret_use=1..}] add turretSpawn
-execute as @e[type=blaze,tag=!turret] run function game:ffa/turret/spawn
+execute as @e[type=blaze,tag=!turret] at @s run function game:ffa/turret/spawn
+execute as @e[tag=turret,scores={turretCooldown=1}] at @s run data remove entity @e[type=interaction,tag=turretPunch,sort=nearest,limit=1] attack 
 scoreboard players remove @e[tag=turret,scores={turretCooldown=1..}] turretCooldown 1
-execute as @e[type=blaze,tag=turret,tag=!hasTarget,scores={turretCooldown=0}] run function game:ffa/turret/find_target
-execute as @e[type=blaze,tag=turret,tag=hasTarget,scores={turretCooldown=0}] run function game:ffa/turret/attack_target
+execute as @e[tag=turret,tag=!hasTarget,scores={turretCooldown=0}] at @s run function game:ffa/turret/find_target
+execute as @e[tag=turret,tag=hasTarget,scores={turretCooldown=0}] at @s run function game:ffa/turret/attack_target
+scoreboard players set @a[scores={turret_use=1..}] turret_use 0
+execute as @e[tag=turret,nbt={HurtTime:7s}] at @s run playsound minecraft:entity.blaze.hurt master @a ~ ~ ~ 1 1
+execute as @e[tag=turret,nbt={HurtTime:7s}] run scoreboard players remove @s .num 1
+execute as @e[tag=turret,scores={.num=..0}] at @s run function game:ffa/turret/kill_self 
 
 #> Delta
 #! Currently commented out because delta api isn't added right now, will finish once it is (or you can do it yourself); ideally should launch players like 3 blocks away 

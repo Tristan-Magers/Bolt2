@@ -1,9 +1,9 @@
 #> FX
 effect clear @s[tag=!boltNoClear] glowing
 stopsound @a master minecraft:block.portal.trigger
-playsound minecraft:entity.blaze.shoot master @s ~ ~ ~ 1 .8
-playsound minecraft:entity.firework_rocket.shoot master @s ~ ~ ~ 1 2
-playsound minecraft:entity.firework_rocket.shoot master @s ~ ~ ~ 1 1
+playsound minecraft:entity.blaze.shoot master @a ~ ~ ~ 2 .8
+playsound minecraft:entity.firework_rocket.shoot master @a ~ ~ ~ 2 2
+playsound minecraft:entity.firework_rocket.shoot master @a ~ ~ ~ 2 1
 
 #> Summon projectile
 summon marker ~ ~ ~ {Tags:["bolt","boltSpawn"]}

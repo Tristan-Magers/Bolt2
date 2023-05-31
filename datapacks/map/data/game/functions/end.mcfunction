@@ -32,3 +32,12 @@ scoreboard objectives setdisplay list rank
 
 #
 bossbar remove minecraft:status
+
+#> THE viral
+scoreboard players reset @a boltDelay
+scoreboard players set @a[scores={deflectTimer=2..}] deflectTimer 1
+scoreboard players set @a[scores={speedTimer=2..}] speedTimer 1
+effect clear @a slow_falling
+execute as @e[tag=turret] run function game:ffa/turret/kill_self
+tag @a remove turretDead
+tag @a remove executioner
