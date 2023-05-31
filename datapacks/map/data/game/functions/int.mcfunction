@@ -74,6 +74,16 @@ scoreboard objectives add arrowsOutT dummy
 scoreboard objectives add arrowCount dummy
 scoreboard objectives add arrowReload dummy
 
+#> Viral zone
+scoreboard objectives add speedTimer dummy
+scoreboard objectives add deflectTimer dummy
+scoreboard objectives add boltDelay dummy
+scoreboard objectives add turret_use minecraft.used:minecraft.blaze_spawn_egg
+scoreboard objectives add ID.target dummy
+scoreboard objectives add turretCooldown dummy
+scoreboard objectives add turretTimer dummy
+#> End viral zone
+
 scoreboard objectives add timer dummy
 
 scoreboard objectives add ID dummy

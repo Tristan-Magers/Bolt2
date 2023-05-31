@@ -75,10 +75,11 @@ execute as @a[scores={crossUse=1..}] at @s run scoreboard players operation @e[t
 
 execute as @e[type=arrow] at @s run function game:items/arrow/main
 
+execute as @a[scores={crossUse=1..}] unless score .ffa .data matches 1 at @s run scoreboard players operation @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] ID = @s ID
 tag @e[type=arrow] add shot
 execute as @a at @s run function game:player/arrowcheck
 scoreboard players set @a bowUse 0
-scoreboard players set @a crossUse 0
+execute unless score .ffa .data matches 1 run scoreboard players set @a crossUse 0
 
 #team count
 function game:game/team_dif
@@ -172,13 +173,13 @@ kill @e[tag=trap,scores={hurt=2..}]
 
 #crossbow test
 scoreboard players add @a crossbowTime 0
-scoreboard players add @a[scores={crossbowTime=0},nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Charged:1b}}}] crossbowTime 240
+execute unless score .ffa .data matches 1 run scoreboard players add @a[scores={crossbowTime=0},nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Charged:1b}}}] crossbowTime 240
 
 scoreboard players add @a[scores={crossbowReload=1..}] crossbowReload 1
 scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1
 tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Charged:0b}}}] add reloadCross
 #clear @a[tag=reloadCross] crossbow
-item replace entity @a[tag=reloadCross] weapon.mainhand with crossbow{Unbreakable:1b,ChargedProjectiles:[{id:"minecraft:arrow",Count:1b},{},{}],Charged:1b} 1
+execute unless score .ffa .data matches 1 run item replace entity @a[tag=reloadCross] weapon.mainhand with crossbow{Unbreakable:1b,ChargedProjectiles:[{id:"minecraft:arrow",Count:1b},{},{}],Charged:1b} 1
 scoreboard players set @a[tag=reloadCross] crossbowReload 0
 
 tag @a remove reloadCross
@@ -222,6 +223,11 @@ execute if score .no_players .timer > .200 .num run scoreboard players set .no_p
 #
 execute if score .start_cd .data >= .0 .num run function game:game/start_countdown
 execute if score .start_cd .data = .n5 .num run scoreboard players set .start_cd .data -1
+
+#> Begin Viral zone
+# set fakeplayer .ffa .data to 1 to activate; 0 to deactivate
+execute if score .ffa .data matches 1 run function game:ffa/main
+scoreboard players set @a click 0
 
 #
 execute as @e[tag=scrap,type=item] at @s positioned ~ ~-1 ~ run give @p[team=blue,gamemode=adventure,distance=..1.2] minecraft:netherite_scrap{display:{Name:'{"text":"Scrap (Return to crafting table)","italic":false}'}} 1

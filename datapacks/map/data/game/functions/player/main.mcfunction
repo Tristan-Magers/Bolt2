@@ -83,7 +83,6 @@ scoreboard players set @s[scores={arrowCount=3..}] arrowReload 0
 clear @s[scores={arrowReload=40..}] arrow
 item replace entity @s[scores={arrowReload=40..,arrowCount=0}] hotbar.8 with minecraft:arrow
 item replace entity @s[scores={arrowReload=40..,arrowCount=1}] hotbar.8 with minecraft:arrow 2
-item replace entity @s[scores={arrowReload=40..,arrowCount=2}] hotbar.8 with minecraft:arrow 3
 scoreboard players remove @s[scores={arrowReload=40..}] arrowReload 40
 
 #execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowReload=..10},team=red] arrowReload 10
