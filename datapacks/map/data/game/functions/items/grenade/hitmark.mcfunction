@@ -75,6 +75,8 @@ execute as @s[scores={timer=16..}] at @s positioned ~ ~0.6 ~ if entity @a[distan
 execute as @s[scores={timer=16..}] at @s positioned ~ ~0.6 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:glowing 3 2 true
 execute as @s[scores={timer=16..}] at @s positioned ~ ~0.6 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] minecraft:instant_damage 1 100 true
 
+execute as @s[scores={timer=16..}] at @s run kill @e[distance=..4.8,type=minecraft:zombie_villager]
+
 tag @a remove gre_immune
 
 ### HIT TRAGET

@@ -27,20 +27,21 @@ execute if data entity @s[tag=scrap_added] interaction on target run execute as 
 execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .0 .num run give @s[team=blue] bat_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b},HideFlags:48} 2
 execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .1 .num run give @s[team=blue] creeper_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Trap","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b},HideFlags:48} 1
 execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .2 .num run give @s[team=blue] snowball{display:{Name:'{"text":"Grenade","italic":false,"color":"gray"}'}} 1
-execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .3 .num run clear @s[team=blue] iron_ingot
-execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .3 .num run give @s[team=blue] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
-execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .4 .num run give @s[team=blue] bat_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b},HideFlags:48} 2
+execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .3 .num run give @s[team=blue,nbt={Inventory:[{id:"minecraft:iron_ingot"}]}] creeper_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Trap","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b},HideFlags:48} 1
+execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .3 .num run give @s[team=blue,nbt=!{Inventory:[{id:"minecraft:iron_ingot"}]}] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
+execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .4 .num run give @s[team=blue,nbt={Inventory:[{id:"minecraft:iron_ingot"}]}] bat_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b},HideFlags:48} 2
+execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .4 .num run give @s[team=blue,nbt=!{Inventory:[{id:"minecraft:iron_ingot"}]}] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
 execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .5 .num run give @s[team=blue] creeper_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Trap","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b},HideFlags:48} 1
 execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .6 .num run give @s[team=blue] snowball{display:{Name:'{"text":"Grenade","italic":false,"color":"gray"}'}} 1
-execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .7 .num run clear @s[team=blue] iron_ingot
-execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .7 .num run give @s[team=blue] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
+execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .7 .num run give @s[team=blue,nbt={Inventory:[{id:"minecraft:iron_ingot"}]}] snowball{display:{Name:'{"text":"Grenade","italic":false,"color":"gray"}'}} 1
+execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .7 .num run give @s[team=blue,nbt=!{Inventory:[{id:"minecraft:iron_ingot"}]}] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
 
 execute if data entity @s[tag=scrap_added] interaction on target run tag @a remove processor
 
 execute if data entity @s[tag=scrap_added] interaction run execute store result bossbar scrap value run scoreboard players get @s scrap_count
 
-execute if data entity @s[tag=scrap_added] interaction run tellraw @a [{"text":"SCRAP ADDED: "},{"score":{"objective":"scrap_count","name":"@s"}},{"text":"/10"}]
-execute if data entity @s[tag=scrap_added,scores={scrap_count=10..}] interaction run function game:end
+execute if data entity @s[tag=scrap_added] interaction run tellraw @a [{"text":"SCRAP ADDED: "},{"score":{"objective":"scrap_count","name":"@s"}},{"text":"/12"}]
+execute if data entity @s[tag=scrap_added,scores={scrap_count=12..}] interaction run function game:end
 
 data remove entity @s interaction
 

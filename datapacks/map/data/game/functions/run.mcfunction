@@ -37,12 +37,6 @@ execute as @e[type=arrow] run data merge entity @s {damage:1000.0}
 execute if score .gametime .data >= .1 .num run scoreboard players add .gametime .data 1
 
 #hurtime
-#scoreboard players set @a hurt 0
-#execute as @a run execute store result score @s hurt run data get entity @s HurtTime 1
-#scoreboard players set @a[scores={hurt=9..,invul=..0,respawn=..0}] deaths 1
-#execute as @a[scores={hurt=9..,invul=1..,respawn=..0,break_invul=1..}] run say test
-#scoreboard players set @a break_invul 0
-
 scoreboard players set @a hurt 0
 execute as @a run execute store result score @s hurt run data get entity @s HurtTime 1
 scoreboard players set @a[scores={hurt=9..,invul=..0,respawn=..0}] deaths 1
@@ -50,6 +44,8 @@ scoreboard players set @a[scores={hurt=9..,invul=1..,respawn=..0,break_invul=1..
 scoreboard players set @a break_invul 0
 
 scoreboard players remove @a[scores={wall_invul=0..}] wall_invul 1
+
+scoreboard players set @a[scores={deaths=1..}] KILL_ID 0
 
 #lobby
 tag @a remove lobby
@@ -142,6 +138,10 @@ execute as @e[tag=blueflag,tag=!drop] at @s run function game:flags/main
 #### PLAYERS ###
 execute as @a at @s run function game:player/main
 
+scoreboard players set @a DamageTaken 0
+scoreboard players set @a DamageDealt 0
+scoreboard players set @a sword_break 0
+
 #tags
 tag @e[type=slime] add old
 tag @e[type=magma_cube] add old
@@ -224,9 +224,14 @@ execute if score .start_cd .data >= .0 .num run function game:game/start_countdo
 execute if score .start_cd .data = .n5 .num run scoreboard players set .start_cd .data -1
 
 #
+execute as @e[tag=scrap,type=item] at @s positioned ~ ~-1 ~ run give @p[team=blue,gamemode=adventure,distance=..1.2] minecraft:netherite_scrap{display:{Name:'{"text":"Scrap (Return to crafting table)","italic":false}'}} 1
+execute as @e[tag=scrap,type=item] at @s positioned ~ ~-1 ~ if entity @a[team=blue,gamemode=adventure,distance=..1.2] run kill @s
 execute as @e[tag=scrap,type=item] at @s run give @p[team=blue,gamemode=adventure,distance=..1.2] minecraft:netherite_scrap{display:{Name:'{"text":"Scrap (Return to crafting table)","italic":false}'}} 1
 execute as @e[tag=scrap,type=item] at @s if entity @a[team=blue,gamemode=adventure,distance=..1.2] run kill @s
 effect give @e[tag=scrap,type=item] minecraft:glowing infinite 10 true
+
+#
+execute as @e[type=minecraft:area_effect_cloud] run data merge entity @s {RadiusPerTick:-0.01f,Duration:140}
 
 #
 tp @e[tag=kill] ~ ~-10000 ~

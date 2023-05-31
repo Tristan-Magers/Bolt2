@@ -7,9 +7,9 @@ tag @s remove killed
 scoreboard players set @s KILL_ID -1
 
 #
-scoreboard players set @s item_acid 0
-scoreboard players set @s item_minion 0
-scoreboard players set @s item_boost 0
+scoreboard players set @a item_acid 100
+scoreboard players set @a item_minion 100
+scoreboard players set @a item_boost 80
 
 tag @s remove dark
 
@@ -25,7 +25,7 @@ execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red]
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] iron_ingot
 #execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
 execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red,tag=more_armor] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
-execute if score .mode .data = .6 .num if score .zombie_evolve_type_2 .data = .1 .num run give @s[scores={respawn=2},team=red] minecraft:netherite_sword{CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:6,Unbreakable:1b,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1
+execute if score .mode .data = .6 .num if score .zombie_evolve_type_2 .data = .1 .num run give @s[scores={respawn=2},team=red] minecraft:netherite_sword{Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:6,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1
 
 #
 scoreboard players set @a[scores={crossbowTime=3..}] crossbowReload 2
@@ -77,7 +77,7 @@ execute if score .map .data = .13 .num run tp @s[team=blue] -80.5 -34.00 241.5 -
 
 effect give @s[scores={respawn=45..}] blindness 2 1 true
 effect clear @s[scores={respawn=30}] blindness
-execute unless score .mode .data = .6 .num run effect give @s[scores={respawn=45..}] darkness 5 1 true
+execute unless score .mode .data = .6 .num unless entity @s[tag=dark_immune] run effect give @s[scores={respawn=45..}] darkness 5 1 true
 
 scoreboard players set @s[scores={respawn=10..}] invul 60
 

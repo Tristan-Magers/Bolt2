@@ -11,9 +11,9 @@ tag @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] add inspawn
 tag @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] add inspawn
 tag @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] add inspawn
 
-execute if score .mode .data = .6 .num run scoreboard players set @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] invul 80
-execute if score .mode .data = .6 .num run scoreboard players set @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] invul 80
-execute if score .mode .data = .6 .num run scoreboard players set @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] invul 80
+execute if score .mode .data = .6 .num run scoreboard players set @a[x=-86,z=-10,y=-50.5,dx=7,dy=4,dz=7] invul 70
+execute if score .mode .data = .6 .num run scoreboard players set @a[x=-84,z=-3,y=-50.5,dx=4,dy=4,dz=2.5] invul 70
+execute if score .mode .data = .6 .num run scoreboard players set @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] invul 70
 
 #caves
 tag @a[x=-156,y=-54,z=40,distance=..7] add area1

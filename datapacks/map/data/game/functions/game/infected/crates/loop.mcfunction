@@ -22,7 +22,7 @@ execute if data entity @s interaction on target if entity @s[team=red] run title
 execute if data entity @s interaction on target if entity @s[team=red] as @e[tag=me] run data remove entity @s interaction
 
 execute if data entity @s interaction run scoreboard players add @s t 1
-execute if data entity @s interaction run playsound minecraft:block.chest.locked master @a ~ ~ ~ 1 2
+execute if data entity @s interaction run playsound minecraft:block.chest.locked master @a[team=!red] ~ ~ ~ 1 2
 
 execute if data entity @s[scores={t=1}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □□□□□□□□□■"}]
 execute if data entity @s[scores={t=2}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □□□□□□□□■■"}]
@@ -50,7 +50,7 @@ execute if data entity @s[scores={t=10}] interaction on target run execute if sc
 
 data remove entity @s interaction
 
-execute as @s[scores={t=10}] run playsound minecraft:block.ender_chest.open master @a
+execute as @s[scores={t=10}] run playsound minecraft:block.ender_chest.open master @a[team=!red]
 execute as @s[scores={t=10..}] run function game:game/infected/crates/despawn
 
 tag @s remove me

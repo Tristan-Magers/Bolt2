@@ -15,8 +15,8 @@ execute as @a[scores={ID=0}] at @s run playsound minecraft:block.grass.break mas
 execute as @a[scores={ID=0},distance=18..30] at @s run title @s actionbar {"text":"SNIPER SHOT [+2]","color":"gold"}
 execute as @a[scores={ID=0},distance=18..30] at @s run scoreboard players add @s Scores 1
 execute as @a[scores={ID=0},distance=18..30] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 2
-execute as @a[scores={ID=0},distance=30..] at @s run title @s actionbar {"text":"SUPER SNIPER SHOT [+3]","color":"gold"}
-execute as @a[scores={ID=0},distance=30..] at @s run scoreboard players add @s Scores 2
+execute as @a[scores={ID=0},distance=30..] at @s run title @s actionbar {"text":"SUPER SNIPER SHOT [+4]","color":"gold"}
+execute as @a[scores={ID=0},distance=30..] at @s run scoreboard players add @s Scores 3
 execute as @a[scores={ID=0},distance=30..] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.2
 
 scoreboard players operation @a ID += @s ID

@@ -1,15 +1,21 @@
 #
-#scoreboard players set @s hurt 0
-#execute store result score @s hurt run data get entity @s HurtTime 1
-#scoreboard players set @s[scores={hurt=9..,invul=..0,respawn=..0}] deaths 1
-#scoreboard players set @s[scores={hurt=9..,invul=1..,respawn=..0,break_invul=1..,wall_invul=1..}] deaths 1
-#scoreboard players set @s break_invul 0
+#execute as @a at @s positioned ~ ~1.6 ~ run particle minecraft:bubble ^ ^ ^-0.5 0 0 0 0 1 normal @s
+#execute as @a at @s positioned ~ ~1.6 ~ run particle minecraft:bubble ^ ^ ^-1.0 0 0 0 0 1 normal @s
+#execute as @a at @s positioned ~ ~1.6 ~ run particle minecraft:bubble ^ ^ ^-1.5 0 0 0 0 1 normal @s
+#execute as @a at @s positioned ~ ~1.6 ~ run particle minecraft:bubble ^ ^ ^-2.0 0 0 0 0 1 normal @s
+#execute as @a at @s positioned ~ ~1.6 ~ run particle minecraft:bubble ^ ^ ^-2.5 0 0 0 0 1 normal @s
+#execute as @a at @s positioned ~ ~1.6 ~ run particle minecraft:bubble ^ ^ ^-3.0 0 0 0 0 1 normal @s
+#execute as @a at @s positioned ~ ~1.6 ~ run particle minecraft:bubble ^ ^ ^-3.5 0 0 0 0 1 normal @s
+#execute as @a at @s positioned ~ ~1.6 ~ run particle minecraft:bubble ^ ^ ^-3.95 0 0 0 0 1 normal @s
 
 #
 execute if score .mode .data = .7 .num run scoreboard players set @s invul 100
 
 #
 execute as @s[scores={bow_throw=1..},tag=!playing] run function game:player/bow/throw
+
+#
+#spawn_zombie_villager
 
 #dead
 execute as @s[gamemode=spectator,scores={respawn=1..}] at @s run clear @s arrow
@@ -29,8 +35,8 @@ gamemode spectator @s[scores={cutscene_time=1..}]
 gamemode adventure @s[scores={cutscene_time=0,team_pref=0..}]
 execute as @s[gamemode=spectator,scores={cutscene_time=1..}] run spectate @e[tag=cutscene,type=armor_stand,limit=1]
 scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..}] respawn 70
-execute if score .mode .data = .6 .num run scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..},team=red] respawn 100
-execute if score .mode .data = .6 .num run scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..},team=blue] respawn 20
+execute if score .mode .data = .6 .num run scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..},team=red] respawn 120
+execute if score .mode .data = .6 .num run scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..},team=blue] respawn 10
 execute if score .mode .data = .7 .num run scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..}] respawn 20
 
 execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] bat_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b},HideFlags:48} 10
@@ -72,6 +78,7 @@ item replace entity @s[team=blue,nbt=!{Inventory:[{id:"minecraft:leather_chestpl
 execute as @s store result score @s arrowCount run clear @s arrow 0
 scoreboard players add @s[scores={arrowCount=..2}] arrowReload 1
 scoreboard players set @s[scores={arrowCount=3..}] arrowReload 0
+#execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowCount=2..},team=red] arrowReload 0
 
 clear @s[scores={arrowReload=40..}] arrow
 item replace entity @s[scores={arrowReload=40..,arrowCount=0}] hotbar.8 with minecraft:arrow
@@ -79,7 +86,9 @@ item replace entity @s[scores={arrowReload=40..,arrowCount=1}] hotbar.8 with min
 item replace entity @s[scores={arrowReload=40..,arrowCount=2}] hotbar.8 with minecraft:arrow 3
 scoreboard players remove @s[scores={arrowReload=40..}] arrowReload 40
 
-execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowReload=..10},team=red] arrowReload 10
+#execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowReload=..10},team=red] arrowReload 10
+
+effect clear @s[scores={invul=1..}] poison
 
 effect give @s[scores={health=1..19}] minecraft:instant_health 1 10 true
 
@@ -103,11 +112,11 @@ scoreboard players add @s[tag=item_acid] item_acid 1
 
 scoreboard players set @s[tag=item_acid,nbt={Inventory:[{id:"minecraft:lingering_potion"}]},scores={item_acid=100..}] item_acid 140
 
-give @s[scores={item_boost=180..}] egg{display:{Name:'{"text":"Boost"}'},HideFlags:32} 1
+give @s[scores={item_boost=220}] egg{display:{Name:'{"text":"Boost"}'},HideFlags:32} 1
 give @s[scores={item_acid=220..}] lingering_potion{display:{Name:'{"text":"Acid"}'},HideFlags:32,Potion:"minecraft:poison",CustomPotionColor:65314} 1
 give @s[scores={item_minion=260..}] minecraft:zombie_villager_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Minion"}'},HideFlags:6,EntityTag:{Team:"red",PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:1f,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",Count:1b}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.3}]}} 1
 
-scoreboard players set @s[scores={item_boost=180..}] item_boost 0
+scoreboard players set @s[scores={item_boost=220..}] item_boost 0
 scoreboard players set @s[scores={item_minion=260..}] item_minion 0
 scoreboard players set @s[scores={item_acid=220..}] item_acid 0
 
@@ -120,6 +129,9 @@ execute as @s[tag=totem,scores={deaths=1..},tag=!exploded] at @s run function ga
 
 # No Cap
 scoreboard players remove @s[scores={no_cap=1..}] no_cap 1
+
+# death messages
+execute as @s[scores={killP=1..}] run function game:player/kill_message
 
 #
 execute as @s[scores={deaths=1..}] at @s run function game:player/death
@@ -142,9 +154,6 @@ scoreboard players set @s placeCreeper 0
 #
 scoreboard players add @r death_ani 1
 scoreboard players operation @a[scores={death_ani=4..}] death_ani %= .4 .num
-
-# death messages
-execute as @s[scores={killP=1..}] run function game:player/kill_message
 
 scoreboard players set @s killP 0
 
@@ -222,3 +231,6 @@ function game:player/bow_model
 
 #reveal
 execute as @s[scores={useMap=1..}] run function game:items/reveal/use
+
+#claws
+give @s[scores={sword_break=1..}] minecraft:netherite_sword{Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:6,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1

@@ -90,8 +90,12 @@ execute as @s[scores={t=20}] run effect give @a darkness 4 10 true
 execute as @s[scores={t=99}] run scoreboard players set .cutscene_running .data 0
 execute as @s[scores={t=99}] run function game:game/mapstart
 
+execute if score .mode .data = .7 .num as @s[scores={t=99}] run function game:game/spawn_targets
+
+execute if score .mode .data = .7 .num as @s[scores={t=6}] as @a at @s run playsound minecraft:music.credits record @s ~ ~ ~ 0.8 1
+
 #
-execute as @s[scores={t=200..}] run kill @s
+execute as @s[scores={t=119..}] run kill @s
 
 #
 execute as @s[scores={t=100..160}] run gamemode spectator @a[scores={team_pref=-1}]

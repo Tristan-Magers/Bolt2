@@ -5,13 +5,27 @@ scoreboard players set .stats_end .data 0
 tag @a remove playing
 tag @a[scores={team_pref=0..}] add playing
 
+scoreboard players set .players_in .data 0
+execute as @a[tag=playing] run scoreboard players add .players_in .data 1
+
+scoreboard players set .even_players .data 1
+execute if score .players_in .data = .1 .num run scoreboard players set .even_players .data 0
+execute if score .players_in .data = .3 .num run scoreboard players set .even_players .data 0
+execute if score .players_in .data = .5 .num run scoreboard players set .even_players .data 0
+execute if score .players_in .data = .7 .num run scoreboard players set .even_players .data 0
+execute if score .players_in .data = .9 .num run scoreboard players set .even_players .data 0
+execute if score .players_in .data = .11 .num run scoreboard players set .even_players .data 0
+
 team leave @a
 
 team join red @a[team=,scores={team_pref=1},gamemode=adventure]
 team join blue @a[team=,scores={team_pref=2},gamemode=adventure]
 
 function game:game/team_dif
-execute if score .ranked_random .data = .0 .num if score .team_dif .data >= .0 .num if score .ran_team .random = .1 .num run team join blue @a[limit=1,sort=random,team=,scores={team_pref=0},gamemode=adventure]
+execute if score .even_players .data = .1 .num if score .ranked_random .data = .0 .num if score .team_dif .data >= .0 .num if score .ran_team .random = .1 .num run team join blue @a[limit=1,sort=random,team=,scores={team_pref=0},gamemode=adventure]
+
+execute if score .even_players .data = .0 .num run function game:game/fill_player_max
+execute if score .even_players .data = .0 .num run function game:game/fill_player_max
 
 function game:game/fill_player_random
 function game:game/fill_player_random
@@ -24,9 +38,6 @@ function game:game/fill_player_random
 function game:game/fill_player_random
 function game:game/fill_player_random
 function game:game/fill_player_random
-
-execute if score .mode .data = .6 .num run scoreboard players set .players_in .data
-execute if score .mode .data = .6 .num as @a[tag=playing] run scoreboard players add .players_in .data 1
 
 execute if score .mode .data = .6 .num run team join blue @a[scores={team_pref=0..}]
 
@@ -60,7 +71,7 @@ execute if score .mode .data = .1 .num run scoreboard players set Blue Scores 0
 
 # timers for modes with time
 execute if score .mode .data = .6 .num run scoreboard players set TIME Scores 195
-execute if score .mode .data = .7 .num run scoreboard players set TIME Scores 120
+execute if score .mode .data = .7 .num run scoreboard players set TIME Scores 70
 
 execute as @a at @s run function game:player/getitems
 
@@ -92,10 +103,10 @@ execute if score .mode .data = .6 .num run bossbar set minecraft:time visible tr
 
 bossbar add scrap {"text":"Scrap Collected","color":"white"}
 bossbar set minecraft:scrap players @a
-bossbar set minecraft:scrap style notched_10
+bossbar set minecraft:scrap style notched_12
 bossbar set minecraft:scrap color blue
 bossbar set minecraft:scrap value 0
-bossbar set minecraft:scrap max 10
+bossbar set minecraft:scrap max 12
 execute unless score .mode .data = .6 .num run bossbar set minecraft:scrap visible false
 execute if score .mode .data = .6 .num run bossbar set minecraft:scrap visible true
 
@@ -145,8 +156,8 @@ execute if score .mode .data = .6 .num run scoreboard players set .CrossKills .s
 execute if score .mode .data = .6 .num run scoreboard players set .GrenadeKills .stats 1000
 execute if score .mode .data = .6 .num run scoreboard players set .WallKills .stats 1000
 
-execute if score .mode .data = .7 .num run scoreboard players set .CrossKills .stats 1000
-execute if score .mode .data = .7 .num run scoreboard players set .GrenadeKills .stats 6
+execute if score .mode .data = .7 .num run scoreboard players set .CrossKills .stats 45
+execute if score .mode .data = .7 .num run scoreboard players set .GrenadeKills .stats 8
 execute if score .mode .data = .7 .num run scoreboard players set .BoostKills .stats 12
 execute if score .mode .data = .7 .num run scoreboard players set .WallKills .stats 1000
 
@@ -170,7 +181,7 @@ scoreboard players set .no_players .timer -60
 #
 scoreboard players set .zombie_crates .data 0
 
-scoreboard players set .zombie_evolve_timer .timer 0
+scoreboard players set .zombie_evolve_timer .timer 300
 scoreboard players set .zombie_evolve_level .data 0
 scoreboard players set .zombie_evolve_type_0 .data 0
 scoreboard players set .zombie_evolve_type_1 .data 0

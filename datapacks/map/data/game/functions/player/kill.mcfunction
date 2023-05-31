@@ -22,7 +22,8 @@ give @s[scores={killStreak=10}] map{display:{Name:'{"text":"Reveal","italic":fal
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .CrossKills .stats
 
-give @s[scores={t=0}] crossbow{display:{Name:'{"text":"Crossbow (lasts 11 seconds)","italic":false,"color":"gray"}'}} 1
+execute if score .mode .data = .1 .num run give @s[scores={t=0}] crossbow{display:{Name:'{"text":"Crossbow (lasts 11 seconds)","italic":false,"color":"gray"}'}} 1
+execute if score .mode .data = .7 .num run give @s[scores={t=0}] crossbow{display:{Name:'{"text":"Crossbow (lasts 11 seconds)","italic":false,"color":"gray"}'},Enchantments:[{id:"minecraft:quick_charge",lvl:4s}]} 1
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .GrenadeKills .stats

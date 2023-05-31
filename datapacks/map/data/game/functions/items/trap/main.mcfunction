@@ -83,6 +83,8 @@ execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a
 execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:glowing 3 2 true
 execute if entity @s[scores={timer=19..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] minecraft:instant_damage 1 100 true
 
+execute if entity @s[scores={timer=19..}] at @s run kill @e[distance=..4.8,type=minecraft:zombie_villager]
+
 tag @a remove gre_immune
 
 scoreboard players operation @a ID += @s ID

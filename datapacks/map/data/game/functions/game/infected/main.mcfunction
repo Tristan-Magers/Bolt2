@@ -3,7 +3,7 @@ scoreboard players add .zombie_evolve_timer .timer 1
 
 execute if score .zombie_evolve_timer .timer >= .800 .num run scoreboard players add .zombie_evolve_level .data 1
 execute if score .zombie_evolve_timer .timer >= .800 .num run function game:game/infected/zombies_evolve
-execute if score .zombie_evolve_timer .timer >= .800 .num run scoreboard players set .zombie_evolve_timer .timer 200
+execute if score .zombie_evolve_timer .timer >= .800 .num run scoreboard players set .zombie_evolve_timer .timer 100
 
 scoreboard players set .zombie_crate_spawn_count .data 0
 scoreboard players set .zombie_crate_count .data 0
@@ -18,5 +18,5 @@ execute if score .zombie_crate_spawn_count .data = .0 .num if score .zombie_crat
 execute if score .zombie_crate_spawn_count .data = .0 .num if score .zombie_crate_count .data = .2 .num run tag @e[tag=crate_marker,limit=1,sort=random,tag=!spawning] add spawning
 
 scoreboard players add @e[tag=crate_marker,tag=spawning] t4 1
-execute if score .zombie_crate_spawn_count .data = .0 .num run scoreboard players set @e[tag=crate_marker,tag=spawning,scores={t4=..100}] t4 140
+execute if score .zombie_crate_spawn_count .data = .0 .num run scoreboard players set @e[tag=crate_marker,tag=spawning,scores={t4=..100}] t4 160
 execute as @e[tag=crate_marker,scores={t4=300..}] at @s run function game:game/infected/crates/spawn

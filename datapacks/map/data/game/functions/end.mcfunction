@@ -2,6 +2,9 @@
 schedule clear game:player/subtitle_scramble/schedule_trig
 
 #
+stopsound @a * minecraft:music.credits
+
+#
 gamerule reducedDebugInfo false
 
 #

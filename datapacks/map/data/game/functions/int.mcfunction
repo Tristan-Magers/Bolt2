@@ -56,6 +56,13 @@ scoreboard objectives add place_bat_temp minecraft.used:minecraft.bat_spawn_egg
 scoreboard objectives add place_slime_temp minecraft.used:minecraft.slime_spawn_egg
 scoreboard objectives add place_magmac_temp minecraft.used:minecraft.magma_cube_spawn_egg
 
+scoreboard objectives add spawn_zombie_villager minecraft.used:minecraft.zombie_villager_spawn_egg
+
+scoreboard objectives add DamageTaken minecraft.custom:minecraft.damage_taken
+scoreboard objectives add DamageDealt minecraft.custom:minecraft.damage_dealt
+
+scoreboard objectives add sword_break minecraft.broken:minecraft.netherite_sword
+
 scoreboard objectives add place_block minecraft.used:minecraft.deepslate_coal_ore
 
 scoreboard objectives add snowballCount dummy

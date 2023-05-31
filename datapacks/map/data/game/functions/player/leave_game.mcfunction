@@ -7,8 +7,8 @@ execute if entity @s[scores={ID=..0}] run scoreboard players operation @p[scores
 #
 scoreboard players add @s team_pref 0
 
-scoreboard players set @s[tag=!has_rank_v7] rank 500
-tag @s add has_rank_v7
+scoreboard players set @s[tag=!has_rank_v8] rank 500
+tag @s add has_rank_v8
 
 tp @s 243.50 -50.00 -226.99 -110 0
 

@@ -19,7 +19,7 @@ execute if score .mode .data = .1 .num run summon armor_stand -64 -58 -7 {NoGrav
 execute if score .mode .data = .1 .num run summon marker -79 -50 46 {Tags:["gen"]}
 execute if score .mode .data = .1 .num run summon marker -79 -50 -4 {Rotation:[180F,0F],Tags:["gen"]}
 
-execute if score .mode .data = .7 .num if score TIME Scores < .123 .num run function game:game/spawn_targets
+#execute if score .mode .data = .7 .num if score TIME Scores < .123 .num run function game:game/spawn_targets
 execute if score .mode .data = .6 .num run function game:game/infected/crates/setup_markers
 
 execute if score .mode .data = .6 .num run execute positioned -63.47 -57.00 49.44 run function game:game/infected/generator/spawn
