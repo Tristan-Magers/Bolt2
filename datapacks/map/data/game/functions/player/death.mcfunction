@@ -51,33 +51,33 @@ scoreboard players set @s time_dead 0
 scoreboard players set @s respawn 70
 scoreboard players set @s respawning_time 0
 
-execute if .blue_players .data matches 1 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=blue] respawn 60
-execute if .blue_players .data matches 1 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=blue] respawn 50
-execute if .blue_players .data matches 1 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=blue] respawn 40
-execute if .red_players .data matches 1 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=red] respawn 60
-execute if .red_players .data matches 1 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=red] respawn 50
-execute if .red_players .data matches 1 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=red] respawn 40
+execute if score .blue_players .data matches 1 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=blue] respawn 60
+execute if score .blue_players .data matches 1 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=blue] respawn 50
+execute if score .blue_players .data matches 1 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=blue] respawn 40
+execute if score .red_players .data matches 1 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=red] respawn 60
+execute if score .red_players .data matches 1 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=red] respawn 50
+execute if score .red_players .data matches 1 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=red] respawn 40
 
-execute if .blue_players .data matches 1 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=red] respawn 100
-execute if .blue_players .data matches 1 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=red] respawn 130
-execute if .blue_players .data matches 1 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=red] respawn 160
-execute if .red_players .data matches 1 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=blue] respawn 100
-execute if .red_players .data matches 1 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 130
-execute if .red_players .data matches 1 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 160
+execute if score .blue_players .data matches 1 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=red] respawn 100
+execute if score .blue_players .data matches 1 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=red] respawn 130
+execute if score .blue_players .data matches 1 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=red] respawn 160
+execute if score .red_players .data matches 1 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=blue] respawn 100
+execute if score .red_players .data matches 1 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 130
+execute if score .red_players .data matches 1 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 160
 
-execute if .blue_players .data matches 2 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=red] respawn 90
-execute if .blue_players .data matches 2 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=red] respawn 110
-execute if .blue_players .data matches 2 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=red] respawn 130
-execute if .red_players .data matches 2 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=blue] respawn 90
-execute if .red_players .data matches 2 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 110
-execute if .red_players .data matches 2 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 130
+execute if score .blue_players .data matches 2 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=red] respawn 90
+execute if score .blue_players .data matches 2 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=red] respawn 110
+execute if score .blue_players .data matches 2 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=red] respawn 130
+execute if score .red_players .data matches 2 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=blue] respawn 90
+execute if score .red_players .data matches 2 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 110
+execute if score .red_players .data matches 2 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 130
 
-execute if .blue_players .data matches 3 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=red] respawn 80
-execute if .blue_players .data matches 3 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=red] respawn 90
-execute if .blue_players .data matches 3 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=red] respawn 100
-execute if .red_players .data matches 3 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=blue] respawn 80
-execute if .red_players .data matches 3 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 90
-execute if .red_players .data matches 3 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 100
+execute if score .blue_players .data matches 3 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=red] respawn 80
+execute if score .blue_players .data matches 3 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=red] respawn 90
+execute if score .blue_players .data matches 3 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=red] respawn 100
+execute if score .red_players .data matches 3 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=blue] respawn 80
+execute if score .red_players .data matches 3 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 90
+execute if score .red_players .data matches 3 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 100
 
 execute as @s run scoreboard players remove @s respawn_assist 180
 execute as @s run scoreboard players operation @s respawn_assist /= .6 .num
