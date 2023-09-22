@@ -1,0 +1,4 @@
+{
+	"function" : "minecraft:set_name",
+	"name" : [{"text":"Plasma Bow","italic":false,"color":"white"}]
+}

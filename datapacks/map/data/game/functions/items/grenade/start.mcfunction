@@ -1,4 +1,7 @@
 #
+tag @s add started
+
+#
 playsound minecraft:item.firecharge.use master @a ~ ~-2 ~ 0.3 1.5
 playsound minecraft:item.shield.break master @a ~ ~-2 ~ 0.5 1.5
 playsound minecraft:entity.player.attack.knockback master @a ~ ~ ~ 0.4 1.4

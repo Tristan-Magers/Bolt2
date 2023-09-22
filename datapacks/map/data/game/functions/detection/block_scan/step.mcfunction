@@ -1,7 +1,7 @@
 #
 execute at @s if block ~ ~ ~ minecraft:deepslate_coal_ore unless entity @e[type=marker,tag=temp_block,distance=..0.3] unless block ~ -64 ~ redstone_block run fill ~ ~ ~ ~ ~ ~ gravel replace minecraft:deepslate_coal_ore
 #execute at @s if block ~ ~ ~ minecraft:deepslate_coal_ore unless entity @e[type=marker,tag=temp_block,distance=..0.3] unless block ~ -64 ~ redstone_block run summon marker ~ ~ ~ {Tags:["temp_block"]}
-execute at @s if block ~ ~ ~ minecraft:deepslate_coal_ore unless entity @e[type=marker,tag=temp_block,distance=..0.3] if block ~ -64 ~ redstone_block run tell @p[scores={place_block=1..}] can't place there!
+execute at @s if block ~ ~ ~ minecraft:deepslate_coal_ore unless entity @e[type=marker,tag=temp_block,distance=..0.3] if block ~ -64 ~ redstone_block run tellraw @p[scores={place_block=1..}] {"text":"Can't place there!","color":"dark_gray"}
 execute at @s if block ~ ~ ~ minecraft:deepslate_coal_ore unless entity @e[type=marker,tag=temp_block,distance=..0.3] if block ~ -64 ~ redstone_block run fill ~ ~ ~ ~ ~ ~ air replace minecraft:deepslate_coal_ore
 
 #

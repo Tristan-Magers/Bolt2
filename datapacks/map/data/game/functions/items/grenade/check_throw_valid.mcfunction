@@ -1,0 +1,2 @@
+execute if entity @p[scores={ID=1..,snowball=1..,respawn=1..},distance=..8] run give @p[scores={ID=1..,snowball=1..,respawn=1..}] snowball{display:{Name:'{"text":"Grenade","italic":false,"color":"gray"}'}} 1
+execute if entity @p[scores={ID=1..,snowball=1..,respawn=1..},distance=..8] run kill @s

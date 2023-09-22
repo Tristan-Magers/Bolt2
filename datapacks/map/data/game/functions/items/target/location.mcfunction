@@ -1,5 +1,8 @@
 execute as @s at @s run function game:algor/random_64
-execute as @s at @s run function game:map/towers/target
+
+execute as @s at @s if score .map .data = .1 .num run function game:map/towers/target
+execute as @s at @s if score .map .data = .5 .num run function game:map/hex/target
+execute as @s at @s if score .map .data = .6 .num run function game:map/valley/target
 
 scoreboard players add @s timer 1
 

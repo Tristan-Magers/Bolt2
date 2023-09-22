@@ -1,7 +1,12 @@
 execute as @s[scores={killP=1..}] run scoreboard players operation @a KILL_ID -= @s ID
 
 tag @a remove red_temp
-tag @a[team=red] add red_temp
+tag @a[team=red,tag=blue_died] add red_temp
+tag @a[team=red,scores={respawn=1..}] add red_temp
+tag @a[team=red,scores={deaths=1..}] add red_temp
+
+scoreboard players set @a[tag=close_hit] hurt 9
+tag @a remove close_hit
 
 execute if score .mode .data = .6 .num as @s[team=red] run team join blue @a[tag=red_temp]
 

@@ -91,6 +91,8 @@ execute as @s[scores={t=99}] run scoreboard players set .cutscene_running .data 
 execute as @s[scores={t=99}] run function game:game/mapstart
 
 execute if score .mode .data = .7 .num as @s[scores={t=99}] run function game:game/spawn_targets
+execute if score .mode .data = .7 .num if score .map .data = .1 .num as @s[scores={t=99}] run function game:game/spawn_targets
+execute if score .mode .data = .7 .num if score .map .data = .6 .num as @s[scores={t=99}] run function game:game/spawn_targets
 
 execute if score .mode .data = .7 .num as @s[scores={t=6}] as @a at @s run playsound minecraft:music.credits record @s ~ ~ ~ 0.8 1
 

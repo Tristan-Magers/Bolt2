@@ -1,7 +1,7 @@
 execute at @s if block ~ -64 ~ redstone_block run tag @s add kill
-execute as @s[type=slime] at @s if block ~ -64 ~ redstone_block run tell @p[scores={place_slime_temp=1..}] can't place there!
+execute as @s[type=slime] at @s if block ~ -64 ~ redstone_block run tellraw @p[scores={place_slime_temp=1..}] {"text":"Can't place there!","color":"dark_gray"}
 execute as @s[type=slime] at @s if block ~ -64 ~ redstone_block run give @p[scores={place_slime_temp=1..}] slime_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Spawn Point","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b,Size:0},HideFlags:48} 1
-execute as @s[type=magma_cube] at @s if block ~ -64 ~ redstone_block run tell @p[scores={place_magmac_temp=1..}] can't place there!
+execute as @s[type=magma_cube] at @s if block ~ -64 ~ redstone_block run tellraw @p[scores={place_magmac_temp=1..}] {"text":"Can't place there!","color":"dark_gray"}
 execute as @s[type=magma_cube] at @s if block ~ -64 ~ redstone_block run give @p[scores={place_magmac_temp=1..}] magma_cube_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Spawn Point","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b,Size:0},HideFlags:48} 1
 
 execute as @s at @s run function game:items/lower

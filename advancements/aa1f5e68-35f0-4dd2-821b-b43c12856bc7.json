@@ -102,17 +102,11 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/blue_carpet_from_white_carpet": {
-    "criteria": {
-      "has_blue_dye": "2023-05-05 02:41:25 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/misc/magenta_dye_from_blue_red_white_dye": {
     "criteria": {
       "has_blue_dye": "2023-05-05 02:41:25 +0000"
     },
     "done": true
   },
-  "DataVersion": 3337
+  "DataVersion": 3465
 }

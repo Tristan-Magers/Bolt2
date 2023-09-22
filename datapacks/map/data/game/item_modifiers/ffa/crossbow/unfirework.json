@@ -1,4 +1,0 @@
-{
-    "function": "minecraft:set_nbt",
-    "tag": "{Firework:0b,ChargedProjectiles:[{}],Charged:0b,Enchantments:[{lvl:2,id:\"minecraft:quick_charge\"}]}"
-}

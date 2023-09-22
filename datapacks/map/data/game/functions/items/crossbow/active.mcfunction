@@ -22,11 +22,11 @@ title @s[scores={crossbowTime=1}] actionbar [{"text":"","color":"gray"},{"text":
 
 execute as @s[scores={crossbowTime=240}] at @s run tellraw @a [{"selector":"@s"},{"text":" activated","color":"white"},{"text":" CROSSBOW","color":"green"}]
 
-tag @s remove loadedCross
+execute as @s[scores={crossbowTime=1}] run scoreboard players set .success .calc 0
+execute as @s[scores={crossbowTime=1}] store success score .success .calc run clear @s crossbow{Charged:1b}
 
-tag @s[scores={crossbowTime=1},nbt={Inventory:{id:"minecraft:crossbow",tag:{Charged:1b}}}] add loadedCross
-clear @s[scores={crossbowTime=1},tag=loadedCross] crossbow{Charged:1b}
-clear @s[scores={crossbowTime=1},tag=!loadedCross] crossbow 1
+execute as @s[scores={crossbowTime=1}] if score .success .calc = .0 .num run clear @s crossbow 1
+
 scoreboard players set @s[scores={crossbowTime=1}] crossbowReload 0
 scoreboard players remove @s[scores={crossbowTime=1..}] crossbowTime 1
 

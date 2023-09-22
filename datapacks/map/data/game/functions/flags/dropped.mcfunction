@@ -25,7 +25,7 @@ scoreboard players add @s t 1
 execute as @s[scores={t=50..58}] at @s run particle minecraft:smoke ~ ~2 ~ 0.3 0.8 0.3 0 10 force
 execute as @s[scores={t=59..}] at @s run particle minecraft:large_smoke ~ ~2 ~ 0.3 0.8 0.3 0 10 force
 
-kill @s[scores={t=66..}]
+kill @s[scores={t=70..}]
 
 #
 execute at @s positioned ~ ~1.5 ~ if block ~-0.3 ~-0.2 ~-0.3 air if block ~0.3 ~-0.2 ~-0.3 air if block ~-0.3 ~-0.2 ~0.3 air if block ~0.3 ~-0.2 ~0.3 air run tp @s ~ ~-1.55 ~

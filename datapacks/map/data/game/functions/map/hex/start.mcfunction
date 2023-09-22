@@ -3,6 +3,9 @@ execute if score .mode .data = .1 .num run summon armor_stand -330 -55 -53 {NoGr
 
 fill -355 -40 -95 -326 -60 -49 air replace minecraft:gravel
 
+fill -354 -50 -94 -327 -60 -50 air replace minecraft:target
+fill -354 -50 -94 -327 -60 -50 air replace minecraft:emerald_block
+
 #scoreboard players set .hexdoor1 .timer 1
 #scoreboard players set .hexdoor2 .timer 1
 

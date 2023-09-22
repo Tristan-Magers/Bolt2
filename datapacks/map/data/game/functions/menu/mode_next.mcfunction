@@ -1,24 +1,30 @@
 #
 scoreboard players add .mode_display .data 1
-execute if score .mode_display .data >= .4 .num run scoreboard players set .mode_display .data 1
+execute if score .mode_display .data >= .5 .num run scoreboard players set .mode_display .data 1
 
 #
 execute if score .mode_display .data = .1 .num run scoreboard players set .mode_screen .data 1
 execute if score .mode_display .data = .2 .num run scoreboard players set .mode_screen .data 6
-execute if score .mode_display .data = .3 .num run scoreboard players set .mode_screen .data 7
-execute if score .mode_display .data = .4 .num run scoreboard players set .mode_screen .data 3
-execute if score .mode_display .data = .5 .num run scoreboard players set .mode_screen .data 7
+execute if score .mode_display .data = .3 .num run scoreboard players set .mode_screen .data 3
+execute if score .mode_display .data = .4 .num run scoreboard players set .mode_screen .data 7
 
-execute unless score .map_display .data = .3 .num if score .mode_screen .data = .6 .num run scoreboard players set .mode_display .data 1
-execute unless score .map_display .data = .3 .num if score .mode_screen .data = .6 .num run scoreboard players set .mode_screen .data 1
+#execute if score .map_display .data = .2 .num if score .mode_screen .data = .6 .num run scoreboard players set .mode_display .data 7
+#execute if score .map_display .data = .2 .num if score .mode_screen .data = .6 .num run scoreboard players set .mode_screen .data 7
 
-execute unless score .map_display .data = .3 .num if score .mode_screen .data = .7 .num run scoreboard players set .mode_display .data 1
-execute unless score .map_display .data = .3 .num if score .mode_screen .data = .7 .num run scoreboard players set .mode_screen .data 1
+#execute unless score .map_display .data = .3 .num if score .mode_screen .data = .6 .num run scoreboard players set .mode_display .data 1
+#execute unless score .map_display .data = .3 .num if score .mode_screen .data = .6 .num run scoreboard players set .mode_screen .data 1
+
+#execute unless score .map_display .data = .6 .num unless score .map_display .data = .2 .num unless score .map_display .data = .3 .num if score .mode_screen .data = .7 .num run scoreboard players set .mode_display .data 1
+#execute unless score .map_display .data = .6 .num unless score .map_display .data = .2 .num unless score .map_display .data = .3 .num if score .mode_screen .data = .7 .num run scoreboard players set .mode_screen .data 1
 
 #
 fill 265 -51 -236 265 -54 -226 air
 fill 266 -51 -235 266 -54 -226 air
 
+# clones in the correct visual
+function game:menu/clone_menu
+
+#
 execute if score .mode_screen .data = .1 .num run clone 310 -48 -194 311 -51 -184 265 -54 -236 masked force
 execute if score .mode_screen .data = .2 .num run clone 305 -48 -194 306 -51 -184 265 -54 -236 masked force
 execute if score .mode_screen .data = .3 .num run clone 301 -48 -194 302 -51 -184 265 -54 -236 masked force

@@ -38,6 +38,9 @@ team modify purple color dark_purple
 team add black
 team modify black color black
 
+team add gold
+team modify gold color gold
+
 # objectives remove
 
 scoreboard objectives remove ID
@@ -52,7 +55,7 @@ scoreboard objectives add placeMagma minecraft.used:minecraft.magma_cube_spawn_e
 scoreboard objectives add snowball minecraft.used:minecraft.snowball
 
 scoreboard objectives add place_creeper_temp minecraft.used:minecraft.creeper_spawn_egg
-scoreboard objectives add place_bat_temp minecraft.used:minecraft.bat_spawn_egg
+scoreboard objectives add place_bat_temp minecraft.used:minecraft.silverfish_spawn_egg
 scoreboard objectives add place_slime_temp minecraft.used:minecraft.slime_spawn_egg
 scoreboard objectives add place_magmac_temp minecraft.used:minecraft.magma_cube_spawn_egg
 
@@ -73,6 +76,8 @@ scoreboard objectives add arrowsOut dummy
 scoreboard objectives add arrowsOutT dummy
 scoreboard objectives add arrowCount dummy
 scoreboard objectives add arrowReload dummy
+
+scoreboard objectives add glow_count dummy
 
 #> Viral zone
 scoreboard objectives add speedTimer dummy
@@ -114,12 +119,21 @@ scoreboard objectives add deaths deathCount
 scoreboard objectives add kill minecraft.custom:minecraft.player_kills
 scoreboard objectives add killP minecraft.custom:minecraft.player_kills
 
+scoreboard objectives add stats_captures dummy
+scoreboard objectives add stats_attempts dummy
+
 scoreboard objectives add rank dummy
+scoreboard objectives add rank_delta_order dummy
 scoreboard objectives add rank_delta dummy
 scoreboard objectives add rank_delta_up dummy
 scoreboard objectives add rank_delta_down dummy
 scoreboard objectives add rank_raw dummy
 scoreboard objectives add rank_strength dummy
+
+scoreboard objectives add rank_real dummy
+scoreboard objectives add rank_order dummy
+
+scoreboard objectives add win_streak dummy
 
 scoreboard objectives add kills_ranked dummy
 scoreboard objectives add score_ranked dummy
@@ -168,6 +182,20 @@ scoreboard objectives add t2 dummy
 scoreboard objectives add t3 dummy
 scoreboard objectives add t4 dummy
 scoreboard objectives add t5 dummy
+
+scoreboard objectives add drop_snowball minecraft.dropped:minecraft.snowball
+scoreboard objectives add drop_silver minecraft.dropped:minecraft.silverfish_spawn_egg
+scoreboard objectives add drop_slime minecraft.dropped:minecraft.slime_spawn_egg
+scoreboard objectives add drop_magma minecraft.dropped:minecraft.magma_cube_spawn_egg
+scoreboard objectives add drop_creeper minecraft.dropped:minecraft.creeper_spawn_egg
+scoreboard objectives add drop_scrap minecraft.dropped:minecraft.netherite_scrap
+scoreboard objectives add drop_iron minecraft.dropped:minecraft.iron_ingot
+scoreboard objectives add drop_map minecraft.dropped:minecraft.map
+scoreboard objectives add drop_crossbow minecraft.dropped:minecraft.crossbow
+scoreboard objectives add drop_zombie minecraft.dropped:minecraft.zombie_villager_spawn_egg
+scoreboard objectives add drop_sword minecraft.dropped:minecraft.netherite_sword
+scoreboard objectives add drop_lingering minecraft.dropped:minecraft.lingering_potion
+scoreboard objectives add drop_egg minecraft.dropped:minecraft.egg
 
 scoreboard objectives add crossbowUse minecraft.used:minecraft.crossbow
 scoreboard objectives add crossbowReload dummy

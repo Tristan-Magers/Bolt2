@@ -14,8 +14,12 @@ execute as @s at @s if entity @e[tag=spawn,scores={ID=0},limit=1] run tag @s rem
 execute as @s at @s if entity @e[tag=spawn,scores={ID=0},limit=1] run scoreboard players set @s respawn 0
 
 execute as @s at @s run tp @e[tag=spawn,scores={ID=0},limit=1]
-execute as @s at @s if entity @e[tag=spawn,scores={ID=0},limit=1] run tp @s ~ ~100 ~
+execute as @s at @s if entity @e[tag=spawn,scores={ID=0},limit=1] run gamemode spectator
+execute as @s at @s if entity @e[tag=spawn,scores={ID=0},limit=1] run tp @s ~ ~50 ~
 execute as @s at @s if entity @e[tag=spawn,scores={ID=0},limit=1] run tag @s add teleport_down
+
+execute as @e[tag=spawn,scores={ID=0}] at @s run particle minecraft:ash ~ ~0.8 ~ 0.12 0.39 0.12 1.1 20 force
+
 execute as @s at @s run tag @e[tag=spawn,scores={ID=0}] add kill
 
 execute as @s at @s run scoreboard players operation @e[tag=spawn] ID += @s ID

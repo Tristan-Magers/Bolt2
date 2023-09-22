@@ -9,7 +9,10 @@ kill @e[tag=wall]
 kill @e[tag=spawn_tracker]
 kill @e[tag=crate_marker]
 execute as @e[tag=crate] at @s run function game:game/infected/crates/despawn
+kill @e[type=block_display,tag=survivor_generator_dis]
 execute as @e[tag=survivor_generator] at @s run function game:game/infected/generator/despawn
+
+kill @e[tag=grenadehit]
 
 kill @e[type=minecraft:area_effect_cloud]
 
@@ -34,6 +37,3 @@ tag @a remove hasflag
 tag @a remove hasspawn
 
 gamerule reducedDebugInfo true
-
-schedule clear game:player/subtitle_scramble/schedule_trig
-function game:player/subtitle_scramble/schedule_trig

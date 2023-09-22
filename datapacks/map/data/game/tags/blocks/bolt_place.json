@@ -1,6 +1,7 @@
 {
   "replace": true,
   "values": [
+    "minecraft:redstone_lamp",
     "minecraft:gravel",
     "minecraft:quartz_block",
     "minecraft:crimson_planks",

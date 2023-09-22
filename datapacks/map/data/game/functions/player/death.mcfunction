@@ -1,7 +1,10 @@
 #
-execute as @s[team=blue,nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] if score .mode .data = .6 .num at @s positioned ~ ~1 ~ run summon item ~ ~ ~ {Team:"purple",Glowing:1b,Motion:[0.0,0.3,0.00],Age:5600,PickupDelay:32767,Tags:["no_kill","death_obj","scrap"],Item:{id:"minecraft:netherite_scrap",Count:1b,tag:{display:{Name:'{"text":"Scrap (Return to crafting table)","italic":false}'}}}}
-execute as @s[team=red] if score .mode .data = .6 .num at @s positioned ~ ~1 ~ run summon item ~ ~ ~ {Team:"purple",Glowing:1b,Motion:[0.0,0.3,0.00],Age:5600,PickupDelay:32767,Tags:["no_kill","death_obj","scrap"],Item:{id:"minecraft:netherite_scrap",Count:1b,tag:{display:{Name:'{"text":"Scrap (Return to crafting table)","italic":false}'}}}}
-team join purple @e[type=minecraft:item,tag=scrap]
+scoreboard players set @s invul 20
+
+#
+execute as @s[team=blue,nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] if score .mode .data = .6 .num at @s positioned ~ ~1 ~ run summon item ~ ~ ~ {Team:"purple",Glowing:1b,Motion:[0.0,0.3,0.00],Age:5600,PickupDelay:32767,Tags:["no_kill","death_obj","scrap"],Item:{id:"minecraft:netherite_scrap",Count:1b,tag:{display:{Name:'{"text":"Scrap (Return to Generator)","italic":false}'}}}}
+execute as @s[team=red] if score .mode .data = .6 .num at @s positioned ~ ~1 ~ run summon item ~ ~ ~ {Team:"purple",Glowing:1b,Motion:[0.0,0.3,0.00],Age:5600,PickupDelay:32767,Tags:["no_kill","death_obj","scrap"],Item:{id:"minecraft:netherite_scrap",Count:1b,tag:{display:{Name:'{"text":"Scrap (Return to Generator)","italic":false}'}}}}
+team join gold @e[type=minecraft:item,tag=scrap]
 
 #
 tag @a remove me
@@ -14,7 +17,7 @@ scoreboard players set .success .calc 0
 execute store success score .success .calc run effect clear @s minecraft:poison
 
 tag @s remove killed_by_poison
-execute if score .success .calc = .1 .num run tag @s add killed_by_poison
+execute if score .success .calc = .1 .num run tag @s[tag=poison_range] add killed_by_poison
 
 tag @s remove killed_by_zombie
 execute on attacker as @s[type=zombie_villager] run scoreboard players operation @p[tag=no_killer,tag=me] KILL_ID = @s ID
@@ -22,10 +25,19 @@ execute on attacker as @s[type=zombie_villager] run tag @p[tag=no_killer,tag=me]
 
 tag @s remove killed_by_claw
 execute as @a[tag=!me,scores={sword_break=1..}] at @s run tag @p[tag=no_killer,tag=me,distance=..8] add killed_by_claw
+execute as @a[tag=!me,scores={sword_break=1..}] if entity @p[tag=no_killer,tag=me,distance=..8] run scoreboard players operation @p[tag=no_killer,tag=me,distance=..8] KILL_ID = @s ID
 
-execute as @s[tag=killed_by_poison] run tellraw @a [{"text":"☣ ","color":"dark_green"},{"text":"Acid disolved ","color":"white"},{"selector":"@s"}]
-execute as @s[tag=killed_by_zombie] run tellraw @a [{"text":"☻ ","color":"dark_green"},{"text":"Minion bit ","color":"white"},{"selector":"@s"}]
-execute as @s[tag=killed_by_claw] run tellraw @a [{"text":"⚚ ","color":"gray"},{"text":"Infected clawed ","color":"white"},{"selector":"@s"}]
+scoreboard players operation @a ID -= @s KILL_ID
+
+execute as @s[tag=killed_by_poison] run tellraw @a [{"text":"☣ ","color":"dark_green"},{"selector":"@p[scores={ID=0}]"},{"text":"'s Acid disolved ","color":"white"},{"selector":"@s"}]
+execute as @s[tag=killed_by_zombie] run tellraw @a [{"text":"☻ ","color":"dark_green"},{"selector":"@p[scores={ID=0}]"},{"text":"'s Minion bit ","color":"white"},{"selector":"@s"}]
+execute as @s[tag=killed_by_claw] run tellraw @a [{"text":"⚚ ","color":"gray"},{"selector":"@p[scores={ID=0}]"},{"text":" Clawed ","color":"white"},{"selector":"@s"}]
+
+execute as @s[tag=killed_by_poison,team=blue] run scoreboard players add @p[scores={ID=0}] kills 1
+execute as @s[tag=killed_by_zombie,team=blue] run scoreboard players add @p[scores={ID=0}] kills 1
+execute as @s[tag=killed_by_claw,team=blue] run scoreboard players add @p[scores={ID=0}] kills 1
+
+scoreboard players operation @a ID += @s KILL_ID
 
 #
 gamemode spectator @s
@@ -38,19 +50,47 @@ effect give @s minecraft:wither 1 1
 scoreboard players set @s time_dead 0
 scoreboard players set @s respawn 70
 scoreboard players set @s respawning_time 0
-execute if score .team_dif .data >= .1 .num run scoreboard players set @s[team=red] respawn 110
-execute if score .team_dif .data >= .2 .num run scoreboard players set @s[team=red] respawn 150
-execute if score .team_dif .data >= .3 .num run scoreboard players set @s[team=red] respawn 190
-execute if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=blue] respawn 110
-execute if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 150
-execute if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 190
+
+execute if .blue_players .data matches 1 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=blue] respawn 60
+execute if .blue_players .data matches 1 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=blue] respawn 50
+execute if .blue_players .data matches 1 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=blue] respawn 40
+execute if .red_players .data matches 1 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=red] respawn 60
+execute if .red_players .data matches 1 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=red] respawn 50
+execute if .red_players .data matches 1 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=red] respawn 40
+
+execute if .blue_players .data matches 1 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=red] respawn 100
+execute if .blue_players .data matches 1 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=red] respawn 130
+execute if .blue_players .data matches 1 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=red] respawn 160
+execute if .red_players .data matches 1 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=blue] respawn 100
+execute if .red_players .data matches 1 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 130
+execute if .red_players .data matches 1 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 160
+
+execute if .blue_players .data matches 2 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=red] respawn 90
+execute if .blue_players .data matches 2 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=red] respawn 110
+execute if .blue_players .data matches 2 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=red] respawn 130
+execute if .red_players .data matches 2 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=blue] respawn 90
+execute if .red_players .data matches 2 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 110
+execute if .red_players .data matches 2 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 130
+
+execute if .blue_players .data matches 3 if score .team_dif .data >= .1 .num run scoreboard players set @s[team=red] respawn 80
+execute if .blue_players .data matches 3 if score .team_dif .data >= .2 .num run scoreboard players set @s[team=red] respawn 90
+execute if .blue_players .data matches 3 if score .team_dif .data >= .3 .num run scoreboard players set @s[team=red] respawn 100
+execute if .red_players .data matches 3 if score .team_dif .data <= .n1 .num run scoreboard players set @s[team=blue] respawn 80
+execute if .red_players .data matches 3 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 90
+execute if .red_players .data matches 3 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 100
 
 execute as @s run scoreboard players remove @s respawn_assist 180
 execute as @s run scoreboard players operation @s respawn_assist /= .6 .num
 execute as @s run scoreboard players operation @s respawn += @s respawn_assist
 scoreboard players set @s[scores={deaths=1..,respawn=..31}] respawn 31
 
+execute if score .mode .data = .6 .num as @s[team=blue] run title @a times 5 20 10
+execute if score .mode .data = .6 .num as @s[team=blue] run title @a title {"text":" "}
+execute if score .mode .data = .6 .num as @s[team=blue] run title @a subtitle {"text":"☠ Survivor Died ☠"}
+execute if score .mode .data = .6 .num as @s[team=blue] as @a at @s run playsound minecraft:entity.ender_dragon.growl master @s ~ ~ ~ 1 2
+
 execute if score .mode .data = .6 .num run clear @s[team=blue]
+execute if score .mode .data = .6 .num run tag @s[team=blue] add blue_
 execute if score .mode .data = .6 .num run team join red @s[team=blue]
 execute if score .mode .data = .6 .num run scoreboard players set @s respawn 20
 execute if score .mode .data = .6 .num if score .zombie_evolve_level .data = .1 .num run scoreboard players add @s respawn 15

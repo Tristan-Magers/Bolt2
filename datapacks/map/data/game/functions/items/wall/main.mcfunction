@@ -1,8 +1,8 @@
 scoreboard players add @s timer 1
 
 execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ redstone_block run tag @s add kill
-execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ redstone_block run tell @p[scores={place_bat_temp=1..}] can't place there!
-execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ redstone_block run give @p[scores={place_bat_temp=1..}] bat_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b},HideFlags:48} 1
+execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ redstone_block run tellraw @p[scores={place_bat_temp=1..}] {"text":"Can't place there!","color":"dark_gray"}
+execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ redstone_block run give @p[scores={place_bat_temp=1..}] silverfish_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b,NoAI:1},HideFlags:48} 1
 
 execute as @s at @s run data merge entity @s {Size:0,Silent:1,NoAI:1,Health:1}
 effect give @s minecraft:resistance 100 10 true
@@ -13,10 +13,15 @@ execute as @s[scores={timer=1}] at @s if block ~ ~ ~ #minecraft:slabs[type=botto
 #height cap
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..50] unless score .map .data = .1 .num unless score .map .data = .13 .num unless score .map .data = .10 .num unless score .map .data = .9 .num unless score .map .data = .6 .num run scoreboard players set @s timer 30
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..48] if score .map .data = .1 .num run scoreboard players set @s timer 30
-execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..40] if score .map .data = .6 .num run scoreboard players set @s timer 30
+execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..41] if score .map .data = .6 .num run scoreboard players set @s timer 30
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..40] if score .map .data = .9 .num run scoreboard players set @s timer 30
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..43] if score .map .data = .10 .num run scoreboard players set @s timer 30
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..33] if score .map .data = .13 .num run scoreboard players set @s timer 30
+
+execute if entity @s[scores={timer=30},tag=!height_tested,tag=!kill] at @s run tellraw @p[scores={place_bat_temp=1..}] {"text":"Too high!","color":"dark_gray"}
+execute if entity @s[scores={timer=30},tag=!height_tested,tag=!kill] at @s run give @p[scores={place_bat_temp=1..}] silverfish_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b,NoAI:1},HideFlags:48} 1
+
+tag @s add height_tested
 
 #wall reset
 #execute as @s[scores={timer=1}] at @s run fill ~ -60 ~ ~ 100 ~ air replace gravel

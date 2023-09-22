@@ -5,14 +5,16 @@ Removed world/entities/r.0.-2.mca: 0 size
 Removed world/entities/r.1.-1.mca: 0 size
 Removed world/entities/r.1.-2.mca: 0 size
 Removed world/entities/r.1.0.mca: 0 size
-Removed world/gc-logs/gc-20230527_0552.log: not used
-Removed world/gc-logs/gc-20230527_1848.log: not used
-Removed world/gc-logs/gc-20230527_2216.log: not used
-Removed world/playerdata/296923b7-5800-4d8a-bc12-0e06002e68f9.dat_old: not used
-Removed world/playerdata/3f522c30-5912-46dc-833d-45581c5b8f2d.dat_old: not used
+Removed world/gc-logs/gc-20230919_0021.log: not used
+Removed world/gc-logs/gc-20230919_0153.log: not used
+Removed world/gc-logs/gc-20230919_1434.log: not used
+Removed world/playerdata/14a78955-817e-4d7f-84e6-1040bf150118.dat_old: not used
+Removed world/playerdata/3184a2a5-8544-4135-89ec-e63fd7a3f12f.dat_old: not used
+Removed world/playerdata/3adddfe5-b3fb-4078-822c-d95fea28b1a1.dat_old: not used
 Removed world/playerdata/454b5f00-ac68-4906-8421-a879936e1fec.dat_old: not used
-Removed world/playerdata/982d4b28-048e-47e7-9d97-10922bea6762.dat_old: not used
+Removed world/playerdata/6cb4810e-01ad-42fb-a5b7-3397ad9359ff.dat_old: not used
 Removed world/playerdata/a648628b-c8fb-4041-9429-604da9f6cb21.dat_old: not used
+Removed world/playerdata/aa1f5e68-35f0-4dd2-821b-b43c12856bc7.dat_old: not used
 Removed world/playerdata/ed3cc0fe-d6d0-4d5d-a002-a051f78d0b5d.dat_old: not used
 Removed world/poi/r.-1.-2.mca: 0 size
 Removed world/poi/r.-1.1.mca: 0 size
@@ -21,8 +23,7 @@ Removed world/poi/r.-2.-2.mca: 0 size
 Removed world/poi/r.-2.0.mca: 0 size
 Removed world/poi/r.-2.1.mca: 0 size
 Removed world/poi/r.0.-2.mca: 0 size
-Removed world/poi/r.0.1.mca: 0 size
 Removed world/poi/r.1.-1.mca: 0 size
 Removed world/poi/r.1.-2.mca: 0 size
 Removed world/poi/r.1.0.mca: 0 size
-Validated 1085 files, 1058 accepted, 27 rejected.
+Validated 1398 files, 1370 accepted, 28 rejected.

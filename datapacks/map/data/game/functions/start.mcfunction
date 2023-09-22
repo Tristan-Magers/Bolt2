@@ -22,30 +22,32 @@ team join red @a[team=,scores={team_pref=1},gamemode=adventure]
 team join blue @a[team=,scores={team_pref=2},gamemode=adventure]
 
 function game:game/team_dif
-execute if score .even_players .data = .1 .num if score .ranked_random .data = .0 .num if score .team_dif .data >= .0 .num if score .ran_team .random = .1 .num run team join blue @a[limit=1,sort=random,team=,scores={team_pref=0},gamemode=adventure]
+#execute if score .even_players .data = .1 .num if score .ranked_random .data = .0 .num if score .team_dif .data >= .0 .num if score .ran_team .random = .1 .num run team join blue @a[limit=1,sort=random,team=,scores={team_pref=0},gamemode=adventure]
 
-execute if score .even_players .data = .0 .num run function game:game/fill_player_max
-execute if score .even_players .data = .0 .num run function game:game/fill_player_max
+#execute if score .even_players .data = .0 .num run function game:game/fill_player_max
+#execute if score .even_players .data = .0 .num run function game:game/fill_player_max
 
-function game:game/fill_player_random
-function game:game/fill_player_random
-function game:game/fill_player_random
-function game:game/fill_player_random
-function game:game/fill_player_random
-function game:game/fill_player_random
-function game:game/fill_player_random
-function game:game/fill_player_random
-function game:game/fill_player_random
-function game:game/fill_player_random
-function game:game/fill_player_random
+function game:game/rank_sort/start
+
+#function game:game/fill_player_random
+#function game:game/fill_player_random
+#function game:game/fill_player_random
+#function game:game/fill_player_random
+#function game:game/fill_player_random
+#function game:game/fill_player_random
+#function game:game/fill_player_random
+#function game:game/fill_player_random
+#function game:game/fill_player_random
+#function game:game/fill_player_random
+#function game:game/fill_player_random
 
 execute if score .mode .data = .6 .num run team join blue @a[scores={team_pref=0..}]
 
 execute if score .mode .data = .6 .num run function game:game/fill_player_infected
-execute if score .mode .data = .6 .num if score .players_in .data >= .5 .num run function game:game/fill_player_infected
-execute if score .mode .data = .6 .num if score .players_in .data >= .8 .num run function game:game/fill_player_infected
-execute if score .mode .data = .6 .num if score .players_in .data >= .11 .num run function game:game/fill_player_infected
-execute if score .mode .data = .6 .num if score .players_in .data >= .14 .num run function game:game/fill_player_infected
+execute if score .mode .data = .6 .num if score .players_in .data >= .4 .num run function game:game/fill_player_infected
+execute if score .mode .data = .6 .num if score .players_in .data >= .7 .num run function game:game/fill_player_infected
+execute if score .mode .data = .6 .num if score .players_in .data >= .10 .num run function game:game/fill_player_infected
+execute if score .mode .data = .6 .num if score .players_in .data >= .13 .num run function game:game/fill_player_infected
 
 execute if score .mode .data = .7 .num run team join blue @a[scores={team_pref=0..}]
 
@@ -53,6 +55,9 @@ scoreboard players set @a kill 0
 
 scoreboard objectives remove Scores
 scoreboard objectives add Scores dummy
+
+scoreboard objectives remove evolutions
+scoreboard objectives add evolutions dummy {"text":"Evolutions:"}
 
 tag @a remove hasspawn
 tag @a remove used_spawn
@@ -63,6 +68,7 @@ scoreboard players set @a kills 0
 scoreboard players set @a killStreak 0
 scoreboard objectives setdisplay list kills
 scoreboard objectives setdisplay sidebar Scores
+execute if score .mode .data = .6 .num run scoreboard objectives setdisplay sidebar evolutions
 
 scoreboard players set @a respawn_assist 0
 
@@ -70,8 +76,11 @@ execute if score .mode .data = .1 .num run scoreboard players set Red Scores 0
 execute if score .mode .data = .1 .num run scoreboard players set Blue Scores 0
 
 # timers for modes with time
-execute if score .mode .data = .6 .num run scoreboard players set TIME Scores 195
-execute if score .mode .data = .7 .num run scoreboard players set TIME Scores 70
+execute if score .mode .data = .1 .num run scoreboard players set .TIME .data 240
+execute if score .mode .data = .6 .num run scoreboard players set .TIME .data 215
+execute if score .mode .data = .7 .num run scoreboard players set .TIME .data 71
+
+#execute if score .mode .data = .1 .num run scoreboard players set .TIME .data -100
 
 execute as @a at @s run function game:player/getitems
 
@@ -89,17 +98,28 @@ bossbar set minecraft:status players @a
 bossbar set minecraft:status style progress
 bossbar set minecraft:status value 1
 bossbar set minecraft:status max 1
-bossbar set minecraft:status color red
+bossbar set minecraft:status color purple
 bossbar set minecraft:status visible false
 
-bossbar add time {"text":"Time","color":"white"}
+bossbar add time [{"text":"Time","color":"white"}]
 bossbar set minecraft:time players @a
 bossbar set minecraft:time style progress
-bossbar set minecraft:time color white
-bossbar set minecraft:time value 190
-bossbar set minecraft:time max 190
-execute unless score .mode .data = .6 .num run bossbar set minecraft:time visible false
+bossbar set minecraft:time color purple
+bossbar set minecraft:time value 210
+bossbar set minecraft:time max 210
+bossbar set minecraft:time name [{"text":""}]
+
+bossbar set minecraft:time visible false
+
+execute if score .mode .data = .1 .num run bossbar set minecraft:time visible true
 execute if score .mode .data = .6 .num run bossbar set minecraft:time visible true
+execute if score .mode .data = .7 .num run bossbar set minecraft:time visible true
+
+execute unless score .mode .data = .7 .num run bossbar set minecraft:time value 69
+execute if score .mode .data = .7 .num run bossbar set minecraft:time max 69
+
+execute if score .mode .data = .1 .num run bossbar set minecraft:time value 240
+execute if score .mode .data = .1 .num run bossbar set minecraft:time max 240
 
 bossbar add scrap {"text":"Scrap Collected","color":"white"}
 bossbar set minecraft:scrap players @a
@@ -152,6 +172,8 @@ scoreboard players set .CrossKills .stats 15
 scoreboard players set .GrenadeKills .stats 4
 scoreboard players set .WallKills .stats 5
 
+execute if score .map .data matches 3 run scoreboard players set .WallKills .stats 1000
+
 execute if score .mode .data = .6 .num run scoreboard players set .CrossKills .stats 1000
 execute if score .mode .data = .6 .num run scoreboard players set .GrenadeKills .stats 1000
 execute if score .mode .data = .6 .num run scoreboard players set .WallKills .stats 1000
@@ -166,6 +188,7 @@ scoreboard players set @a has_lev 0
 
 #
 scoreboard players set @a stats_captures 0
+scoreboard players set @a stats_attempts 0
 scoreboard players set @a stats_deaths 0
 scoreboard players set @a stats_bow_kills 0
 scoreboard players set @a stats_ger_kills 0
@@ -181,7 +204,7 @@ scoreboard players set .no_players .timer -60
 #
 scoreboard players set .zombie_crates .data 0
 
-scoreboard players set .zombie_evolve_timer .timer 300
+scoreboard players set .zombie_evolve_timer .timer 320 
 scoreboard players set .zombie_evolve_level .data 0
 scoreboard players set .zombie_evolve_type_0 .data 0
 scoreboard players set .zombie_evolve_type_1 .data 0
@@ -202,3 +225,5 @@ tag @a remove item_acid
 scoreboard players set @a item_acid 100
 scoreboard players set @a item_minion 100
 scoreboard players set @a item_boost 80
+
+scoreboard players set @a crossbowTime 1

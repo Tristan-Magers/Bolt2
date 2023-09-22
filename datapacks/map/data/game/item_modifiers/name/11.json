@@ -1,0 +1,4 @@
+{
+	"function" : "minecraft:set_name",
+	"name" : [{"text":"Rust Bow","italic":false,"color":"white"}]
+}

@@ -15,17 +15,20 @@ tag @s remove dark
 
 function game:game/infected/zombie_bonuses
 
+#execute if score .mode .data = .1 .num run clear @s[scores={kills=0,respawn=2}] written_book
+execute if score .mode .data = .1 .num run give @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] written_book{pages:['["",{"text":"Every _ Kills","bold":true},{"text":"\\nx4 = Grenade\\nx5 = Walls\\nx15 = Crossbow\\n\\n","color":"reset"},{"text":"Kill Streak","bold":true},{"text":"\\n2 = Spawnpoint\\n3 = Traps\\n5 = Reveal\\n7 = Traps\\n10 = Reveal\\n11+ = Touch Grass\\n\\n","color":"reset"},{"text":"Capture","bold":true},{"text":" = Shield","color":"reset"}]'],title:"Item Aquirement",author:"Space Bleps"}
+
 execute if score .mode .data = .6 .num run tag @s[tag=!dark_immune] add dark
 
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] snowball
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] creeper_spawn_egg
-execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] bat_spawn_egg
+execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] silverfish_spawn_egg
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] netherite_sword
 
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] iron_ingot
 #execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
-execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red,tag=more_armor] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
-execute if score .mode .data = .6 .num if score .zombie_evolve_type_2 .data = .1 .num run give @s[scores={respawn=2},team=red] minecraft:netherite_sword{Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:6,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1
+#execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red,tag=more_armor] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
+execute if score .mode .data = .6 .num if score .zombie_evolve_type_2 .data = .1 .num run give @s[scores={respawn=2},team=red] minecraft:netherite_sword{display:{Name:'{"text":"Claws"}'},Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:6,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1
 
 #
 scoreboard players set @a[scores={crossbowTime=3..}] crossbowReload 2

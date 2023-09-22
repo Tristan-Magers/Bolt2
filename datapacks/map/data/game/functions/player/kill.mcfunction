@@ -10,13 +10,18 @@ scoreboard players add @s killStreak 1
 execute if score .mode .data = .6 .num run scoreboard players set @s killStreak 0
 execute if score .mode .data = .7 .num run scoreboard players set @s killStreak 0
 
+#
+execute if score .mode .data = .1 .num run clear @s[scores={kills=1}] written_book
+execute if score .mode .data = .1 .num run clear @s[scores={kills=15}] written_book
+execute if score .mode .data = .1 .num run item replace entity @s[scores={kills=1}] hotbar.7 with written_book{pages:['["",{"text":"Every _ Kills","bold":true},{"text":"\\nx4 = Grenade\\nx5 = Walls\\nx15 = Crossbow\\n\\n","color":"reset"},{"text":"Kill Streak","bold":true},{"text":"\\n2 = Spawnpoint\\n3 = Traps\\n5 = Reveal\\n7 = Traps\\n10 = Reveal\\n11+ = Touch Grass\\n\\n","color":"reset"},{"text":"Capture","bold":true},{"text":" = Shield","color":"reset"}]'],title:"Item Aquirement",author:"Space Bleps"}
+
 # kill items
 give @s[scores={killStreak=2},team=blue] slime_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Spawn Point","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b,Size:0},HideFlags:48} 1
 give @s[scores={killStreak=2},team=red] magma_cube_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Spawn Point","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b,Size:0},HideFlags:48} 1
 
 give @s[scores={killStreak=3}] creeper_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Trap","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b},HideFlags:48} 2
 give @s[scores={killStreak=5}] map{display:{Name:'{"text":"Reveal","italic":false,"color":"gray"}'}} 1
-give @s[scores={killStreak=7}] creeper_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Trap","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b},HideFlags:48} 3
+give @s[scores={killStreak=7}] creeper_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Trap","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b},HideFlags:48} 2
 give @s[scores={killStreak=10}] map{display:{Name:'{"text":"Reveal","italic":false,"color":"gray"}'}} 1
 
 scoreboard players operation @s t = @s kills
@@ -34,7 +39,7 @@ execute if score .mode .data = .7 .num run give @s[scores={t=0}] snowball{displa
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .WallKills .stats
 
-give @s[scores={t=0}] bat_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b},HideFlags:48} 5
+give @s[scores={t=0}] silverfish_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b,NoAI:1},HideFlags:48} 5
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .BoostKills .stats

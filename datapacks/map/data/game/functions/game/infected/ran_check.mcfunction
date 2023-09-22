@@ -6,10 +6,3 @@ execute if score @p[tag=processor] random = .4 .num if score .zombie_evolve_type
 execute if score @p[tag=processor] random = .5 .num if score .zombie_evolve_type_5 .data = .1 .num as @p[tag=processor] run function game:algor/random_8
 execute if score @p[tag=processor] random = .6 .num if score .zombie_evolve_type_6 .data = .1 .num as @p[tag=processor] run function game:algor/random_8
 execute if score @p[tag=processor] random = .7 .num if score .zombie_evolve_type_7 .data = .1 .num as @p[tag=processor] run function game:algor/random_8
-
-execute if score @p[tag=processor] random = .6 .num as @p[tag=processor] run function game:algor/random_8
-execute if score @p[tag=processor] random = .6 .num as @p[tag=processor] run function game:algor/random_8
-execute if score @p[tag=processor] random = .6 .num as @p[tag=processor] run function game:algor/random_8
-execute if score @p[tag=processor] random = .6 .num as @p[tag=processor] run function game:algor/random_8
-execute if score @p[tag=processor] random = .6 .num as @p[tag=processor] run function game:algor/random_8
-execute if score @p[tag=processor] random = .6 .num as @p[tag=processor] run function game:algor/random_8

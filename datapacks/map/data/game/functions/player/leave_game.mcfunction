@@ -7,8 +7,8 @@ execute if entity @s[scores={ID=..0}] run scoreboard players operation @p[scores
 #
 scoreboard players add @s team_pref 0
 
-scoreboard players set @s[tag=!has_rank_v8] rank 500
-tag @s add has_rank_v8
+scoreboard players set @s[tag=!has_rank_v13] rank 500
+tag @s add has_rank_v13
 
 tp @s 243.50 -50.00 -226.99 -110 0
 
@@ -48,3 +48,14 @@ tag @s remove item_acid
 tag @s remove dark
 
 scoreboard players add @s bow_texture 0
+
+scoreboard players set @s crossbowTime 1
+
+scoreboard players set @s drop_creeper 0
+scoreboard players set @s drop_snowball 0
+scoreboard players set @s drop_silver 0
+scoreboard players set @s drop_slime 0
+scoreboard players set @s drop_magma 0
+scoreboard players set @s drop_map 0
+scoreboard players set @s drop_scrap 0
+scoreboard players set @s drop_egg 0
