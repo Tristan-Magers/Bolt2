@@ -20,20 +20,20 @@ data merge entity @s {Size:0,Silent:1,NoAI:1,Health:1}
 
 ##### VISIBILITY AND TRIGGER CHECK
 
-execute if entity @s[scores={timer=0},team=red,tag=hidden] at @s positioned ~ ~0.4 ~ if entity @a[team=blue,distance=..5.1] run playsound minecraft:entity.creeper.primed master @a ~ ~ ~
-execute if entity @s[scores={timer=0},team=blue,tag=hidden] at @s positioned ~ ~0.4 ~ if entity @a[team=red,distance=..5.1] run playsound minecraft:entity.creeper.primed master @a ~ ~ ~
+execute if entity @s[scores={timer=0},team=red,tag=hidden] at @s positioned ~ ~0.4 ~ if entity @a[team=blue,distance=..4.9] run playsound minecraft:entity.creeper.primed master @a ~ ~ ~
+execute if entity @s[scores={timer=0},team=blue,tag=hidden] at @s positioned ~ ~0.4 ~ if entity @a[team=red,distance=..4.9] run playsound minecraft:entity.creeper.primed master @a ~ ~ ~
 
-execute if entity @s[scores={timer=0,t4=6..},team=red] at @s positioned ~ ~0.4 ~ unless entity @a[team=blue,distance=..5.1] run effect give @s minecraft:invisibility 999 10 true
-execute if entity @s[scores={timer=0,t4=6..},team=blue] at @s positioned ~ ~0.4 ~ unless entity @a[team=red,distance=..5.1] run effect give @s minecraft:invisibility 999 10 true
+execute if entity @s[scores={timer=0,t4=6..},team=red] at @s positioned ~ ~0.4 ~ unless entity @a[team=blue,distance=..4.9] run effect give @s minecraft:invisibility 999 10 true
+execute if entity @s[scores={timer=0,t4=6..},team=blue] at @s positioned ~ ~0.4 ~ unless entity @a[team=red,distance=..4.9] run effect give @s minecraft:invisibility 999 10 true
 
-execute if entity @s[scores={timer=0,t4=6..},team=red] at @s positioned ~ ~0.4 ~ if entity @a[team=blue,distance=..5.1] run effect clear @s minecraft:invisibility
-execute if entity @s[scores={timer=0,t4=6..},team=blue] at @s positioned ~ ~0.4 ~ if entity @a[team=red,distance=..5.1] run effect clear @s minecraft:invisibility
+execute if entity @s[scores={timer=0,t4=6..},team=red] at @s positioned ~ ~0.4 ~ if entity @a[team=blue,distance=..4.9] run effect clear @s minecraft:invisibility
+execute if entity @s[scores={timer=0,t4=6..},team=blue] at @s positioned ~ ~0.4 ~ if entity @a[team=red,distance=..4.9] run effect clear @s minecraft:invisibility
 
-execute if entity @s[scores={timer=0},team=red] at @s positioned ~ ~0.4 ~ unless entity @a[team=blue,distance=..5.1] run tag @s add hidden
-execute if entity @s[scores={timer=0},team=blue] at @s positioned ~ ~0.4 ~ unless entity @a[team=red,distance=..5.1] run tag @s add hidden
+execute if entity @s[scores={timer=0},team=red] at @s positioned ~ ~0.4 ~ unless entity @a[team=blue,distance=..4.9] run tag @s add hidden
+execute if entity @s[scores={timer=0},team=blue] at @s positioned ~ ~0.4 ~ unless entity @a[team=red,distance=..4.9] run tag @s add hidden
 
-execute if entity @s[scores={timer=0},team=red] at @s positioned ~ ~0.4 ~ if entity @a[team=blue,distance=..5.1] run tag @s remove hidden
-execute if entity @s[scores={timer=0},team=blue] at @s positioned ~ ~0.4 ~ if entity @a[team=red,distance=..5.1] run tag @s remove hidden
+execute if entity @s[scores={timer=0},team=red] at @s positioned ~ ~0.4 ~ if entity @a[team=blue,distance=..4.9] run tag @s remove hidden
+execute if entity @s[scores={timer=0},team=blue] at @s positioned ~ ~0.4 ~ if entity @a[team=red,distance=..4.9] run tag @s remove hidden
 
 scoreboard players add @s timer 0
 scoreboard players add @s[scores={timer=1..}] timer 1
@@ -47,9 +47,9 @@ effect give @s[scores={timer=1..}] minecraft:glowing 30 30 true
 
 # EXPLODE EFFECT AND BLOCK REMOVAL
 
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ run particle minecraft:explosion_emitter ~ ~1.6 ~ 0.5 0.5 0.5 0 6 force
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 1 0.5
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run particle minecraft:explosion_emitter ~ ~1.6 ~ 0.5 0.5 0.5 0 6 force
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 1 0.5
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
 
 # EXPLODES KILLING PLAYERS (controls tellraw in chat for this occurance as well)
 
@@ -60,31 +60,31 @@ execute if score .mode .data = .6 .num if score .zombie_evolve_type_6 .data = .1
 scoreboard players operation @a ID -= @s ID
 execute if entity @s[scores={timer=1}] at @s positioned ~ ~0.4 ~ run tellraw @a[scores={ID=0}] [{"text":"[Trap Triggered]","color":"gray"}]
 
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[scores={ID=0},team=red] killStreak 1
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[scores={ID=0},team=blue] killStreak 1
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[scores={ID=0},team=red] killStreak 1
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[scores={ID=0},team=blue] killStreak 1
 
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed,tag=!gre_immune] unless entity @a[scores={ID=0,killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"green"},{"selector":"@a[scores={ID=0}]"},{"text":"'s ","color":"gray"},{"text":"Trap","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[distance=..4.8,scores={respawn=..0},tag=!gre_immune]"}]
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed,tag=!gre_immune] if entity @a[scores={ID=0,killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"green"},{"selector":"@a[scores={ID=0}]"},{"text":"'s ","color":"gray"},{"text":"Trap","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[distance=..4.8,scores={respawn=..0},tag=!gre_immune]"},{"text":" (","color":"dark_gray"},{"score":{"name":"@p[scores={ID=0}]","objective":"killStreak"},"color":"dark_gray"},{"text":")","color":"dark_gray"}]
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed,tag=!gre_immune] unless entity @a[scores={ID=0,killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"green"},{"selector":"@a[scores={ID=0}]"},{"text":"'s ","color":"gray"},{"text":"Trap","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[distance=..4.8,scores={respawn=..0},tag=!gre_immune]"}]
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed,tag=!gre_immune] if entity @a[scores={ID=0,killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"green"},{"selector":"@a[scores={ID=0}]"},{"text":"'s ","color":"gray"},{"text":"Trap","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[distance=..4.8,scores={respawn=..0},tag=!gre_immune]"},{"text":" (","color":"dark_gray"},{"score":{"name":"@p[scores={ID=0}]","objective":"killStreak"},"color":"dark_gray"},{"text":")","color":"dark_gray"}]
 
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players remove @a[scores={ID=0},team=red] killStreak 1
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players remove @a[scores={ID=0},team=blue] killStreak 1
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players remove @a[scores={ID=0},team=red] killStreak 1
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players remove @a[scores={ID=0},team=blue] killStreak 1
 
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[scores={ID=0},team=red] kill 1
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[scores={ID=0},team=blue] kill 1
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[scores={ID=0},team=red] kill 1
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[scores={ID=0},team=blue] kill 1
 
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[scores={ID=0},team=red] stats_trap_kills 1
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[scores={ID=0},team=blue] stats_trap_kills 1
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[scores={ID=0},team=red] stats_trap_kills 1
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[scores={ID=0},team=blue] stats_trap_kills 1
 
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run tag @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add exploded
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run tag @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add killed
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run tag @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add exploded
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run tag @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add killed
 
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run playsound minecraft:item.shield.block master @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] ~ ~ ~ 1 0
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:blindness 4 100 true
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:slowness 3 2 true
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:glowing 3 2 true
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] minecraft:instant_damage 1 100 true
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run playsound minecraft:item.shield.block master @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] ~ ~ ~ 1 0
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:blindness 4 100 true
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:slowness 3 2 true
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:glowing 3 2 true
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] minecraft:instant_damage 1 100 true
 
-execute if entity @s[scores={timer=21..}] at @s run kill @e[distance=..4.8,type=minecraft:zombie_villager]
+execute if entity @s[scores={timer=20..}] at @s run kill @e[distance=..4.8,type=minecraft:zombie_villager]
 
 tag @a remove gre_immune
 
@@ -92,14 +92,14 @@ scoreboard players operation @a ID += @s ID
 
 # DESTROY GROUND ENTITIES ON EXPLOSION
 
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ run effect give @e[distance=..4.8,type=magma_cube] glowing 10 10 true
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ run effect give @e[distance=..4.8,type=slime] glowing 10 10 true
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ run effect give @e[distance=..4.8,type=creeper] glowing 10 10 true
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run effect give @e[distance=..4.8,type=magma_cube] glowing 10 10 true
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run effect give @e[distance=..4.8,type=slime] glowing 10 10 true
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run effect give @e[distance=..4.8,type=creeper] glowing 10 10 true
 
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ run tag @e[distance=..4.8,type=creeper] add kill
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ run tag @e[distance=..4.8,type=magma_cube] add kill
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ run tag @e[distance=..4.8,type=slime] add kill
-execute if entity @s[scores={timer=21..}] at @s positioned ~ ~0.4 ~ run kill @e[distance=..3.0,type=minecraft:falling_block]
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run tag @e[distance=..4.8,type=creeper] add kill
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run tag @e[distance=..4.8,type=magma_cube] add kill
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run tag @e[distance=..4.8,type=slime] add kill
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run kill @e[distance=..3.0,type=minecraft:falling_block]
 
 # PLAYSOUNDS WHEN TRIGGERED (note: different depending on team)
 
@@ -150,5 +150,5 @@ execute if entity @s[scores={timer=1..}] at @s positioned ~ ~0.4 ~ run title @a[
 
 # KILL SELF
 
-kill @s[scores={timer=21..}]
+kill @s[scores={timer=20..}]
 

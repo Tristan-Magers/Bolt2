@@ -40,9 +40,9 @@ effect give @s[scores={timer=12}] minecraft:glowing 30 30 true
 
 ### EXPLODE EFFECTS
 
-execute as @s[scores={timer=18..}] at @s run particle minecraft:explosion_emitter ~ ~0.6 ~ 0.5 0.5 0.5 0 6 force
-execute as @s[scores={timer=18..}] at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 1 0.5
-execute as @s[scores={timer=18..}] at @s positioned ~ ~1.4 ~ run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
+execute as @s[scores={timer=17..}] at @s run particle minecraft:explosion_emitter ~ ~0.6 ~ 0.5 0.5 0.5 0 6 force
+execute as @s[scores={timer=17..}] at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 1 0.5
+execute as @s[scores={timer=17..}] at @s positioned ~ ~1.4 ~ run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
 
 ### KILL PLAYERS AND EXPLOSION (controls tellraw text as well)
 
@@ -54,7 +54,7 @@ scoreboard players operation @a ID -= @s ID
 
 ### HIT TRAGET
 
-execute as @s[scores={timer=18..}] at @s positioned ~ ~0.6 ~ if score .mode .data = .7 .num run function game:items/grenade/target
+execute as @s[scores={timer=17..}] at @s positioned ~ ~0.6 ~ if score .mode .data = .7 .num run function game:items/grenade/target
 
 ### EXPLODING
 
@@ -64,11 +64,11 @@ execute as @s at @s positioned ~ ~1.25 ~ run function game:items/grenade/explodi
 
 ### HIT TRAGET
 
-execute as @s[scores={timer=18..}] at @s positioned ~ ~1.1 ~ if score .mode .data = .7 .num run function game:items/grenade/target
+execute as @s[scores={timer=17..}] at @s positioned ~ ~1.1 ~ if score .mode .data = .7 .num run function game:items/grenade/target
 
 ####
 
 tag @a remove gre_immune
 scoreboard players operation @a ID += @s ID
 
-kill @s[scores={timer=18..}]
+kill @s[scores={timer=17..}]
