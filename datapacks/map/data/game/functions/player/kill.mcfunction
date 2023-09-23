@@ -39,7 +39,7 @@ execute if score .mode .data = .7 .num run give @s[scores={t=0}] snowball{displa
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .WallKills .stats
 
-give @s[scores={t=0}] silverfish_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b,NoAI:1},HideFlags:48} 5
+give @s[scores={t=0}] silverfish_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b,NoAI:1},HideFlags:48} 4
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .BoostKills .stats

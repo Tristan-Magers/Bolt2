@@ -185,14 +185,14 @@ execute unless score .end_countdown .data > .0 .num unless score .cutscene_runni
 execute if entity @a[tag=hasflag] if score .time_tick .data < .21 .num run scoreboard players set .time_tick .data 21
 execute if score .end_countdown .data > .0 .num run scoreboard players set .time_tick .data 0
 execute store result bossbar time value run scoreboard players get .TIME .data
-execute if score .running .data = .1 .num if score .TIME .data > .0 .num if score .time_tick .data = .21 .num run scoreboard players remove .TIME .data 1
-execute if score .running .data = .1 .num if score .TIME .data > .0 .num if score .time_tick .data = .21 .num run scoreboard players operation .TIME_sec .data = .TIME .data
-execute if score .running .data = .1 .num if score .TIME .data > .0 .num if score .time_tick .data = .21 .num run scoreboard players operation .TIME_min .data = .TIME .data
-execute if score .running .data = .1 .num if score .TIME .data > .0 .num if score .time_tick .data = .21 .num run scoreboard players operation .TIME_min .data /= .60 .num
-execute if score .running .data = .1 .num if score .TIME .data > .0 .num if score .time_tick .data = .21 .num run scoreboard players operation .TIME_sec .data %= .60 .num
-execute if score .running .data = .1 .num if score .TIME .data > .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data >= .10 .num run bossbar set minecraft:time name [{"text":""},{"score":{"name":".TIME_min","objective":".data"}},{"text":":"},{"score":{"name":".TIME_sec","objective":".data"}}]
-execute if score .running .data = .1 .num if score .TIME .data > .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data < .10 .num run bossbar set minecraft:time name [{"text":""},{"score":{"name":".TIME_min","objective":".data"}},{"text":":0"},{"score":{"name":".TIME_sec","objective":".data"}}]
-execute if score .running .data = .1 .num if score .TIME .data > .0 .num if score .time_tick .data >= .21 .num unless entity @a[tag=hasflag] run scoreboard players set .time_tick .data 0
+execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num run scoreboard players remove .TIME .data 1
+execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num run scoreboard players operation .TIME_sec .data = .TIME .data
+execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num run scoreboard players operation .TIME_min .data = .TIME .data
+execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num run scoreboard players operation .TIME_min .data /= .60 .num
+execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num run scoreboard players operation .TIME_sec .data %= .60 .num
+execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data >= .10 .num run bossbar set minecraft:time name [{"text":""},{"score":{"name":".TIME_min","objective":".data"}},{"text":":"},{"score":{"name":".TIME_sec","objective":".data"}}]
+execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data < .10 .num run bossbar set minecraft:time name [{"text":""},{"score":{"name":".TIME_min","objective":".data"}},{"text":":0"},{"score":{"name":".TIME_sec","objective":".data"}}]
+execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data >= .21 .num unless entity @a[tag=hasflag] run scoreboard players set .time_tick .data 0
 execute if score .TIME .data = .0 .num if score .mode .data matches 1 run function game:game/end_ctf
 execute if score .TIME .data = .0 .num unless score .mode .data matches 1 run function game:end
 execute if score .TIME .data = .0 .num run scoreboard players reset .TIME .data

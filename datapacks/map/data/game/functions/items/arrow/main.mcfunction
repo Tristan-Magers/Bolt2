@@ -1,7 +1,7 @@
 #
 scoreboard players add @s t1 1
 
-data merge entity @s[scores={t1=2..7}] {LeftOwner:1b}
+data merge entity @s[scores={t1=1..7}] {LeftOwner:1b}
 
 scoreboard players operation @a ID -= @s ID
 

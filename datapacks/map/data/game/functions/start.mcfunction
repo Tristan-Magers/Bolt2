@@ -1,3 +1,7 @@
+#
+execute if score .mode .data = .1 .num if score .map .data = .3 .num run tellraw @a [{"text":"NOTICE!","color":"#8F2929","bold":true},{"text":" Walls Item disabled on map.","bold":false}]
+
+#
 scoreboard players add @a team_pref 0
 
 scoreboard players set .stats_end .data 0
