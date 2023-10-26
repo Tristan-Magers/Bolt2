@@ -55,6 +55,7 @@
   },
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
+      "minecraft:magma_cube": "2023-10-07 20:53:56 +0000",
       "minecraft:creeper": "2022-09-17 03:30:54 +0000",
       "minecraft:slime": "2022-09-17 03:14:54 +0000"
     },
@@ -97,12 +98,6 @@
     "done": true
   },
   "minecraft:recipes/misc/magenta_dye_from_blue_red_pink": {
-    "criteria": {
-      "has_blue_dye": "2023-05-04 03:15:15 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/blue_carpet_from_white_carpet": {
     "criteria": {
       "has_blue_dye": "2023-05-04 03:15:15 +0000"
     },
@@ -288,11 +283,47 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/red_carpet_from_white_carpet": {
+  "minecraft:recipes/building_blocks/dye_blue_wool": {
     "criteria": {
-      "has_red_dye": "2023-05-05 02:37:40 +0000"
+      "has_needed_dye": "2023-10-06 23:43:18 +0000"
     },
     "done": true
   },
-  "DataVersion": 3337
+  "minecraft:recipes/building_blocks/dye_blue_carpet": {
+    "criteria": {
+      "has_needed_dye": "2023-10-06 23:43:18 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_blue_bed": {
+    "criteria": {
+      "has_needed_dye": "2023-10-06 23:43:18 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2023-10-06 23:46:52 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_red_bed": {
+    "criteria": {
+      "has_needed_dye": "2023-10-07 20:55:41 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_red_wool": {
+    "criteria": {
+      "has_needed_dye": "2023-10-07 20:55:41 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_red_carpet": {
+    "criteria": {
+      "has_needed_dye": "2023-10-07 20:55:41 +0000"
+    },
+    "done": true
+  },
+  "DataVersion": 3578
 }

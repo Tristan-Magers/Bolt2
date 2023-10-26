@@ -27,4 +27,4 @@ execute if score .mode .data = .1 .num run summon marker -398 -49 -25 {Rotation:
 
 execute if score .mode .data = .6 .num run function game:map/valley/crates
 
-execute if score .mode .data = .6 .num run execute positioned -419 -49 -14 run function game:game/infected/generator/spawn
+execute if score .mode .data = .6 .num run execute positioned -419 -51 -14 run function game:game/infected/generator/spawn

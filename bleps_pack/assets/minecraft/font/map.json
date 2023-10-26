@@ -1,0 +1,11 @@
+{
+    "providers": [
+      {
+        "type": "bitmap",
+        "file": "minecraft:font/towers.png",
+        "ascent": 0,
+        "height": 76,
+        "chars": ["\u0001"]
+      }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "item/bow/bow_3d",
+    "textures": {
+        "bow": "item/bow/bow_3d_pulling_2",
+        "arrow": "item/bow/bow_3d_arrow_pulling_2"
+    }
+}

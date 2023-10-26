@@ -13,7 +13,13 @@ execute if entity @a[scores={ID=..0}] run scoreboard players add .new ID 1
 execute if entity @a[scores={ID=..0}] run scoreboard players operation @p[scores={ID=..0}] ID = .new ID
 
 #
+function game:player/item_count
+
+#
 execute as @e[type=minecraft:zombie_villager] run data merge entity @s {Team:"red",IsBaby:0b}
+
+#
+execute as @e[type=marker,tag=door] at @s run function game:doors/main
 
 #
 execute as @e[type=egg] at @s run execute as @p at @s run function game:test
@@ -40,11 +46,19 @@ scoreboard players add .ran_team .random 1
 execute if score .ran_team .random = .2 .num run scoreboard players set .ran_team .random 0
 
 scoreboard players set .players .data 0
+scoreboard players set .players_playing .data 0
 execute as @a run scoreboard players add .players .data 1
+execute as @a[tag=playing] run scoreboard players add .players_playing .data 1
 
 #
 gamemode adventure @a[gamemode=survival]
 effect give @a minecraft:resistance 999 255 true
+
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{CustomModelData:0}}}] at @s as @p[tag=trap_dif] run scoreboard players operation @s drop_creeper = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{CustomModelData:1}}}] at @s as @p[tag=wall_dif] run scoreboard players operation @s drop_silver = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{CustomModelData:2}}}] at @s as @p[tag=magma_dif] run scoreboard players operation @s drop_magma = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{CustomModelData:3}}}] at @s as @p[tag=slime_dif] run scoreboard players operation @s drop_slime = @s drop_egg_generic
+scoreboard players set @a drop_egg_generic 0
 
 kill @e[type=item,tag=!no_kill]
 
@@ -193,6 +207,15 @@ execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if sco
 execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data >= .10 .num run bossbar set minecraft:time name [{"text":""},{"score":{"name":".TIME_min","objective":".data"}},{"text":":"},{"score":{"name":".TIME_sec","objective":".data"}}]
 execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data < .10 .num run bossbar set minecraft:time name [{"text":""},{"score":{"name":".TIME_min","objective":".data"}},{"text":":0"},{"score":{"name":".TIME_sec","objective":".data"}}]
 execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data >= .21 .num unless entity @a[tag=hasflag] run scoreboard players set .time_tick .data 0
+execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a times 6 20 6
+execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a subtitle {"text":"60 REMAINING"}
+execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a title {"text":""}
+execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run scoreboard players set .announce_60s .data 1
+execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a times 6 20 6
+execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a subtitle {"text":"30 REMAINING"}
+execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a title {"text":""}
+execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run scoreboard players set .announce_30s .data 1
+execute if score .TIME .data = .0 .num unless score .mode .data matches 1 run function game:end
 execute if score .TIME .data = .0 .num if score .mode .data matches 1 run function game:game/end_ctf
 execute if score .TIME .data = .0 .num unless score .mode .data matches 1 run function game:end
 execute if score .TIME .data = .0 .num run scoreboard players reset .TIME .data
@@ -276,6 +299,9 @@ execute as @e[tag=scrap,type=item] at @s positioned ~ ~-1 ~ if entity @a[team=bl
 execute as @e[tag=scrap,type=item] at @s run give @p[team=blue,gamemode=adventure,distance=..1.2] minecraft:netherite_scrap{display:{Name:'{"text":"Scrap (Return to Generator)","italic":false}'}} 1
 execute as @e[tag=scrap,type=item] at @s if entity @a[team=blue,gamemode=adventure,distance=..1.2] run kill @s
 effect give @e[tag=scrap,type=item] minecraft:glowing infinite 10 true
+
+#
+execute as @e[type=minecraft:snowball] run data merge entity @s {Item:{id:"minecraft:kelp",Count:1b}}
 
 #
 tag @a remove blue_died

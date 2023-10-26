@@ -50,7 +50,7 @@ tag @a remove gre_immune
 execute if score .mode .data = .6 .num run tag @a[team=blue] add gre_immune
 execute if score .mode .data = .6 .num if score .zombie_evolve_type_6 .data = .1 .num run tag @a[team=red] add gre_immune
 
-scoreboard players operation @a ID -= @s ID
+function game:id/player
 
 ### HIT TRAGET
 
@@ -69,6 +69,5 @@ execute as @s[scores={timer=17..}] at @s positioned ~ ~1.1 ~ if score .mode .dat
 ####
 
 tag @a remove gre_immune
-scoreboard players operation @a ID += @s ID
 
 kill @s[scores={timer=17..}]

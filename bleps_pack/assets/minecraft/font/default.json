@@ -1,0 +1,68 @@
+{
+    "providers": [
+      {
+        "type": "bitmap",
+        "file": "minecraft:blank.png",
+        "ascent": 16,
+        "height": 16,
+        "chars": [ "ބ" ]
+      },
+        {
+            "type": "bitmap",
+            "file": "minecraft:effects/vision.png",
+            "ascent": 11,
+            "height": 16,
+            "chars": ["δ"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:effects/minion.png",
+            "ascent": 11,
+            "height": 16,
+            "chars": ["Ϫ"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:effects/resistance.png",
+            "ascent": 11,
+            "height": 16,
+            "chars": ["Ϯ"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:effects/claw.png",
+            "ascent": 11,
+            "height": 16,
+            "chars": ["ϯ"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:effects/speed.png",
+            "ascent": 11,
+            "height": 16,
+            "chars": ["ϰ"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:effects/jump.png",
+            "ascent": 11,
+            "height": 16,
+            "chars": ["Ϡ"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:effects/boost.png",
+            "ascent": 11,
+            "height": 16,
+            "chars": ["ϻ"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:effects/acid.png",
+            "ascent": 11,
+            "height": 16,
+            "chars": ["ϼ"]
+        }
+    ]
+}
+

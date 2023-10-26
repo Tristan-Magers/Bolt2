@@ -1,0 +1,1 @@
+execute on passengers run function animated_java:shutter/zzzzzzzz/apply_variant/blue/as_bone

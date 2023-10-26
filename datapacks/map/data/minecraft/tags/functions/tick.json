@@ -1,6 +1,6 @@
 {
-
-  "values":["game:main"
-  ]
-
+	"values": [
+		"game:main",
+		"animated_java:tick"
+	]
 }

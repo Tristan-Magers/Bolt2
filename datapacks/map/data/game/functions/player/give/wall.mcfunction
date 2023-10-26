@@ -1,4 +1,4 @@
-give @s silverfish_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b,NoAI:1},HideFlags:48} 1
+give @s panda_spawn_egg{CustomModelData:1,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1},HideFlags:48} 1
 
 scoreboard players remove @s drop_silver 1
 

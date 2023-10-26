@@ -1,0 +1,1284 @@
+{
+  "block.amethyst_block.step": {
+      "replace": "true",
+      "sounds": [
+        "step/stone1",
+        "step/stone2",
+        "step/stone3",
+        "step/stone4",
+        "step/stone5",
+        "step/stone6"
+      ]
+  },
+  "block.amethyst_cluster.step": {
+      "replace": "true",
+      "sounds": [
+        "step/stone1",
+        "step/stone2",
+        "step/stone3",
+        "step/stone4",
+        "step/stone5",
+        "step/stone6"
+      ]
+  },
+  "block.ancient_debris.step": {
+      "replace": "true",
+      "sounds": [
+        "step/stone1",
+        "step/stone2",
+        "step/stone3",
+        "step/stone4",
+        "step/stone5",
+        "step/stone6"
+     ]
+  },
+  "block.anvil.step": {
+      "replace": "true",
+      "sounds": [
+          "step/stone1",
+          "step/stone2",
+          "step/stone3",
+          "step/stone4",
+          "step/stone5",
+          "step/stone6"
+      ]
+  },
+  "block.azalea.step": {
+      "replace": "true",
+      "sounds": [
+          "block/azalea/step1",
+          "block/azalea/step2",
+          "block/azalea/step3",
+          "block/azalea/step4",
+          "block/azalea/step5",
+          "block/azalea/step6"
+      ]
+  },
+  "block.azalea_leaves.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "block/azalea_leaves/step1",
+              "volume": 0.85
+          },
+          {
+              "name": "block/azalea_leaves/step2",
+              "volume": 0.85
+          },
+          {
+              "name": "block/azalea_leaves/step3",
+              "volume": 0.85
+          },
+          {
+              "name": "block/azalea_leaves/step4",
+              "volume": 0.85
+          },
+          {
+              "name": "block/azalea_leaves/step5",
+              "volume": 0.85
+          }
+      ]
+  },
+  "block.bamboo.step": {
+      "replace": "true",
+      "sounds": [
+          "block/bamboo/step1",
+          {
+              "name": "block/bamboo/step2",
+              "pitch": 0.7
+          },
+          "block/bamboo/step3",
+          {
+              "name": "block/bamboo/step4",
+              "pitch": 0.7
+          },
+          "block/bamboo/step5",
+          "block/bamboo/step6"
+      ]
+  },
+  "block.bamboo_wood.step": {
+      "replace": "true",
+      "sounds": [
+          "block/bamboo_wood/step1",
+          "block/bamboo_wood/step2",
+          "block/bamboo_wood/step3",
+          "block/bamboo_wood/step4",
+          "block/bamboo_wood/step5",
+          "block/bamboo_wood/step6"
+      ]
+  },
+  "block.bamboo_wood_hanging_sign.step": {
+      "replace": "true",
+      "sounds": [
+          "block/bamboo_wood_hanging_sign/step1",
+          "block/bamboo_wood_hanging_sign/step2",
+          "block/bamboo_wood_hanging_sign/step3",
+          "block/bamboo_wood_hanging_sign/step4"
+      ]
+  },
+  "block.basalt.step": {
+      "replace": "true",
+      "sounds": [
+          "block/basalt/step1",
+          "block/basalt/step2",
+          "block/basalt/step3",
+          "block/basalt/step4",
+          "block/basalt/step5",
+          "block/basalt/step6"
+      ]
+  },
+  "block.big_dripleaf.step": {
+      "replace": "true",
+      "sounds": [
+          "block/big_dripleaf/step1",
+          "block/big_dripleaf/step2",
+          "block/big_dripleaf/step3",
+          "block/big_dripleaf/step4",
+          "block/big_dripleaf/step5",
+          "block/big_dripleaf/step6"
+      ]
+  },
+  "block.bone_block.step": {
+      "replace": "true",
+      "sounds": [
+          "block/bone_block/step1",
+          "block/bone_block/step2",
+          "block/bone_block/step3",
+          "block/bone_block/step4",
+          "block/bone_block/step5"
+      ]
+  },
+  "block.calcite.step": {
+      "replace": "true",
+      "sounds": [
+          "block/calcite/step1",
+          "block/calcite/step2",
+          "block/calcite/step3",
+          "block/calcite/step4",
+          "block/calcite/step5",
+          "block/calcite/step6"
+      ]
+  },
+  "block.candle.step": {
+      "replace": "true",
+      "sounds": [
+          "block/candle/step1",
+          "block/candle/step2",
+          "block/candle/step3",
+          "block/candle/step4",
+          "block/candle/step5"
+      ]
+  },
+  "block.cave_vines.step": {
+      "replace": "true",
+      "sounds": [
+          "block/vine/climb1",
+          "block/vine/climb2",
+          "block/vine/climb3",
+          "block/vine/climb4",
+          "block/vine/climb5"
+      ]
+  },
+  "block.chain.step": {
+      "replace": "true",
+      "sounds": [
+          "block/chain/step1",
+          "block/chain/step2",
+          "block/chain/step3",
+          "block/chain/step4",
+          "block/chain/step5",
+          "block/chain/step6"
+      ]
+  },
+  "block.cherry_leaves.step": {
+      "replace": "true",
+      "sounds": [
+          "block/cherry_leaves/step1",
+          "block/cherry_leaves/step2",
+          "block/cherry_leaves/step3",
+          "block/cherry_leaves/step4",
+          "block/cherry_leaves/step5"
+      ]
+  },
+  "block.cherry_sapling.step": {
+      "replace": "true",
+      "sounds": [
+          "block/bamboo/sapling_hit1",
+          "block/bamboo/sapling_hit2",
+          "block/bamboo/sapling_hit3",
+          "block/bamboo/sapling_hit4",
+          "block/bamboo/sapling_hit5"
+      ]
+  },
+  "block.cherry_wood.step": {
+      "replace": "true",
+      "sounds": [
+          "block/cherry_wood/step1",
+          "block/cherry_wood/step2",
+          "block/cherry_wood/step3",
+          "block/cherry_wood/step4",
+          "block/cherry_wood/step5",
+          "block/cherry_wood/step6"
+      ]
+  },
+  "block.cherry_wood_hanging_sign.step": {
+      "replace": "true",
+      "sounds": [
+          "block/cherry_wood_hanging_sign/step1",
+          "block/cherry_wood_hanging_sign/step2",
+          "block/cherry_wood_hanging_sign/step3",
+          "block/cherry_wood_hanging_sign/step4"
+      ]
+  },
+  "block.chiseled_bookshelf.step": {
+      "replace": "true",
+      "sounds": [
+          "block/chiseled_bookshelf/step1",
+          "block/chiseled_bookshelf/step2",
+          "block/chiseled_bookshelf/step3",
+          "block/chiseled_bookshelf/step4",
+          "block/chiseled_bookshelf/step5"
+      ]
+  },
+  "block.copper.step": {
+      "replace": "true",
+      "sounds": [
+          "block/copper/step1",
+          "block/copper/step2",
+          "block/copper/step3",
+          "block/copper/step4",
+          "block/copper/step5",
+          "block/copper/step6"
+      ]
+  },
+  "block.coral_block.step": {
+      "replace": "true",
+      "sounds": [
+          "step/coral1",
+          "step/coral2",
+          "step/coral3",
+          "step/coral4",
+          "step/coral5",
+          "step/coral6"
+      ]
+  },
+  "block.decorated_pot.step": {
+      "replace": "true",
+      "sounds": [
+          "block/decorated_pot/step1",
+          "block/decorated_pot/step2",
+          "block/decorated_pot/step3",
+          "block/decorated_pot/step4",
+          "block/decorated_pot/step5"
+      ]
+  },
+  "block.deepslate.step": {
+      "replace": "true",
+      "sounds": [
+          "block/deepslate/step1",
+          "block/deepslate/step2",
+          "block/deepslate/step3",
+          "block/deepslate/step4",
+          "block/deepslate/step5",
+          "block/deepslate/step6"
+      ]
+  },
+  "block.deepslate_bricks.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "block/deepslate_bricks/step1",
+              "pitch": 0.9
+          },
+          {
+              "name": "block/deepslate_bricks/step2",
+              "pitch": 0.9
+          },
+          {
+              "name": "block/deepslate_bricks/step3",
+              "pitch": 0.9
+          },
+          {
+              "name": "block/deepslate_bricks/step4",
+              "pitch": 0.9
+          },
+          {
+              "name": "block/deepslate_bricks/step5",
+              "pitch": 0.9
+          }
+      ]
+  },
+  "block.deepslate_tiles.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "block/deepslate_bricks/step1",
+              "pitch": 1.2
+          },
+          {
+              "name": "block/deepslate_bricks/step2",
+              "pitch": 1.2
+          },
+          {
+              "name": "block/deepslate_bricks/step3",
+              "pitch": 1.2
+          },
+          {
+              "name": "block/deepslate_bricks/step4",
+              "pitch": 1.2
+          },
+          {
+              "name": "block/deepslate_bricks/step5",
+              "pitch": 1.2
+          }
+      ]
+  },
+  "block.dripstone_block.step": {
+      "replace": "true",
+      "sounds": [
+          "block/dripstone/step1",
+          "block/dripstone/step2",
+          "block/dripstone/step3",
+          "block/dripstone/step4",
+          "block/dripstone/step5",
+          "block/dripstone/step6"
+      ]
+  },
+  "block.flowering_azalea.step": {
+      "replace": "true",
+      "sounds": [
+          "block/azalea/step1",
+          "block/azalea/step2",
+          "block/azalea/step3",
+          "block/azalea/step4",
+          "block/azalea/step5",
+          "block/azalea/step6"
+      ]
+  },
+  "block.froglight.step": {
+      "replace": "true",
+      "sounds": [
+          "block/froglight/step1",
+          "block/froglight/step2",
+          "block/froglight/step3",
+          "block/froglight/step4",
+          "block/froglight/step5",
+          "block/froglight/step6"
+      ]
+  },
+  "block.frogspawn.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "block/frogspawn/step1",
+              "volume": 0.3
+          },
+          {
+              "name": "block/frogspawn/step2",
+              "volume": 0.3
+          },
+          {
+              "name": "block/frogspawn/step3",
+              "volume": 0.3
+          },
+          {
+              "name": "block/frogspawn/step4",
+              "volume": 0.3
+          },
+          {
+              "name": "block/frogspawn/step5",
+              "volume": 0.3
+          },
+          {
+              "name": "block/frogspawn/step6",
+              "volume": 0.3
+          }
+      ]
+  },
+  "block.fungus.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "item/plant/netherwart1",
+              "pitch": 0.9,
+              "volume": 0.9
+          },
+          {
+              "name": "item/plant/netherwart1",
+              "pitch": 1.12,
+              "volume": 0.9
+          },
+          {
+              "name": "item/plant/netherwart2",
+              "pitch": 0.9,
+              "volume": 0.9
+          },
+          {
+              "name": "item/plant/netherwart2",
+              "pitch": 1.12,
+              "volume": 0.9
+          },
+          {
+              "name": "item/plant/netherwart3",
+              "pitch": 0.9,
+              "volume": 0.9
+          },
+          {
+              "name": "item/plant/netherwart3",
+              "pitch": 1.12,
+              "volume": 0.9
+          },
+          {
+              "name": "item/plant/netherwart4",
+              "pitch": 0.9,
+              "volume": 0.9
+          },
+          {
+              "name": "item/plant/netherwart4",
+              "pitch": 1.12,
+              "volume": 0.9
+          },
+          {
+              "name": "item/plant/netherwart5",
+              "pitch": 0.9,
+              "volume": 0.9
+          },
+          {
+              "name": "item/plant/netherwart5",
+              "pitch": 1.12,
+              "volume": 0.9
+          },
+          {
+              "name": "item/plant/netherwart6",
+              "pitch": 0.9,
+              "volume": 0.9
+          },
+          {
+              "name": "item/plant/netherwart6",
+              "pitch": 1.12,
+              "volume": 0.9
+          }
+      ]
+  },
+  "block.gilded_blackstone.step": {
+      "replace": "true",
+      "sounds": [
+          "block/nether_ore/step1",
+          "block/nether_ore/step2",
+          "block/nether_ore/step3",
+          "block/nether_ore/step4",
+          "block/nether_ore/step5"
+      ]
+  },
+  "block.glass.step": {
+      "replace": "true",
+      "sounds": [
+          "step/stone1",
+          "step/stone2",
+          "step/stone3",
+          "step/stone4",
+          "step/stone5",
+          "step/stone6"
+      ]
+  },
+  "block.grass.step": {
+      "replace": "true",
+      "sounds": [
+          "step/grass1",
+          "step/grass2",
+          "step/grass3",
+          "step/grass4",
+          "step/grass5",
+          "step/grass6"
+      ]
+  },
+  "block.gravel.step": {
+      "replace": "true",
+      "sounds": [
+          "step/gravel1",
+          "step/gravel2",
+          "step/gravel3",
+          "step/gravel4"
+      ]
+  },
+  "block.hanging_roots.step": {
+      "replace": "true",
+      "sounds": [
+          "block/hanging_roots/step1",
+          "block/hanging_roots/step2",
+          "block/hanging_roots/step3",
+          "block/hanging_roots/step4",
+          "block/hanging_roots/step5",
+          "block/hanging_roots/step6"
+      ]
+  },
+  "block.hanging_sign.step": {
+      "replace": "true",
+      "sounds": [
+          "block/hanging_sign/step1",
+          "block/hanging_sign/step2",
+          "block/hanging_sign/step3",
+          "block/hanging_sign/step4"
+      ]
+  },
+  "block.honey_block.step": {
+      "replace": "true",
+      "sounds": [
+          "block/honeyblock/step1",
+          "block/honeyblock/step2",
+          "block/honeyblock/step3",
+          "block/honeyblock/step4",
+          "block/honeyblock/step5"
+      ]
+  },
+  "block.ladder.step": {
+      "replace": "true",
+      "sounds": [
+          "step/ladder1",
+          "step/ladder2",
+          "step/ladder3",
+          "step/ladder4",
+          "step/ladder5"
+      ]
+  },
+  "block.lantern.step": {
+      "replace": "true",
+      "sounds": [
+          "block/lantern/break1",
+          "block/lantern/break2",
+          "block/lantern/break3",
+          "block/lantern/break4",
+          "block/lantern/break5",
+          "block/lantern/break6"
+      ]
+  },
+  "block.lodestone.step": {
+      "replace": "true",
+      "sounds": [
+          "step/stone1",
+          "step/stone2",
+          "step/stone3",
+          "step/stone4",
+          "step/stone5",
+          "step/stone6"
+      ]
+  },
+  "block.mangrove_roots.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "block/mangrove_roots/step1",
+              "volume": 0.25
+          },
+          {
+              "name": "block/mangrove_roots/step2",
+              "volume": 0.25
+          },
+          {
+              "name": "block/mangrove_roots/step3",
+              "volume": 0.25
+          },
+          {
+              "name": "block/mangrove_roots/step4",
+              "volume": 0.25
+          },
+          {
+              "name": "block/mangrove_roots/step5",
+              "volume": 0.25
+          },
+          {
+              "name": "block/mangrove_roots/step6",
+              "volume": 0.25
+          }
+      ]
+  },
+  "block.metal.step": {
+      "replace": "true",
+      "sounds": [
+          "step/stone1",
+          "step/stone2",
+          "step/stone3",
+          "step/stone4",
+          "step/stone5",
+          "step/stone6"
+      ]
+  },
+  "block.moss.step": {
+      "replace": "true",
+      "sounds": [
+          "block/moss/step1",
+          "block/moss/step2",
+          "block/moss/step3",
+          "block/moss/step4",
+          "block/moss/step5",
+          "block/moss/step6"
+      ]
+  },
+  "block.moss_carpet.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "block/moss/step1",
+              "pitch": 1.1,
+              "volume": 0.9
+          },
+          {
+              "name": "block/moss/step2",
+              "pitch": 1.1,
+              "volume": 0.9
+          },
+          {
+              "name": "block/moss/step3",
+              "pitch": 1.1,
+              "volume": 0.9
+          },
+          {
+              "name": "block/moss/step4",
+              "pitch": 1.1,
+              "volume": 0.9
+          },
+          {
+              "name": "block/moss/step5",
+              "pitch": 1.1,
+              "volume": 0.9
+          },
+          {
+              "name": "block/moss/step6",
+              "pitch": 1.1,
+              "volume": 0.9
+          }
+      ]
+  },
+  "block.mud.step": {
+      "replace": "true",
+      "sounds": [
+        "step/stone1",
+        "step/stone2",
+        "step/stone3",
+        "step/stone4",
+        "step/stone5",
+        "step/stone6"
+      ]
+  },
+  "block.mud_bricks.step": {
+      "replace": "true",
+      "sounds": [
+        "step/stone1",
+        "step/stone2",
+        "step/stone3",
+        "step/stone4",
+        "step/stone5",
+        "step/stone6"
+      ]
+  },
+  "block.muddy_mangrove_roots.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "block/muddy_mangrove_roots/step1",
+              "volume": 0.25
+          },
+          {
+              "name": "block/muddy_mangrove_roots/step2",
+              "volume": 0.25
+          },
+          {
+              "name": "block/muddy_mangrove_roots/step3",
+              "volume": 0.25
+          },
+          {
+              "name": "block/muddy_mangrove_roots/step4",
+              "volume": 0.25
+          },
+          {
+              "name": "block/muddy_mangrove_roots/step5",
+              "volume": 0.25
+          },
+          {
+              "name": "block/muddy_mangrove_roots/step6",
+              "volume": 0.25
+          }
+      ]
+  },
+  "block.nether_bricks.step": {
+      "replace": "true",
+      "sounds": [
+          "block/nether_bricks/step1",
+          "block/nether_bricks/step2",
+          "block/nether_bricks/step3",
+          "block/nether_bricks/step4",
+          "block/nether_bricks/step5",
+          "block/nether_bricks/step6"
+      ]
+  },
+  "block.nether_gold_ore.step": {
+      "replace": "true",
+      "sounds": [
+          "block/nether_ore/step1",
+          "block/nether_ore/step2",
+          "block/nether_ore/step3",
+          "block/nether_ore/step4",
+          "block/nether_ore/step5"
+      ]
+  },
+  "block.nether_ore.step": {
+      "replace": "true",
+      "sounds": [
+          "block/nether_ore/step1",
+          "block/nether_ore/step2",
+          "block/nether_ore/step3",
+          "block/nether_ore/step4",
+          "block/nether_ore/step5"
+      ]
+  },
+  "block.nether_sprouts.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "block/nether_sprouts/step1",
+              "volume": 0.5
+          },
+          {
+              "name": "block/nether_sprouts/step2",
+              "volume": 0.5
+          },
+          {
+              "name": "block/nether_sprouts/step3",
+              "volume": 0.5
+          },
+          {
+              "name": "block/nether_sprouts/step4",
+              "volume": 0.5
+          },
+          {
+              "name": "block/nether_sprouts/step5",
+              "volume": 0.5
+          }
+      ]
+  },
+  "block.nether_wood.step": {
+      "replace": "true",
+      "sounds": [
+          "block/nether_wood/step1",
+          "block/nether_wood/step2",
+          "block/nether_wood/step3",
+          "block/nether_wood/step4",
+          "block/nether_wood/step5"
+      ]
+  },
+  "block.nether_wood_hanging_sign.step": {
+      "replace": "true",
+      "sounds": [
+          "block/nether_wood_hanging_sign/step1",
+          "block/nether_wood_hanging_sign/step2",
+          "block/nether_wood_hanging_sign/step3",
+          "block/nether_wood_hanging_sign/step4"
+      ]
+  },
+  "block.netherite_block.step": {
+      "replace": "true",
+      "sounds": [
+          "block/netherite/step1",
+          "block/netherite/step2",
+          "block/netherite/step3",
+          "block/netherite/step4",
+          "block/netherite/step5",
+          "block/netherite/step6"
+      ]
+  },
+  "block.netherrack.step": {
+      "replace": "true",
+      "sounds": [
+          "block/netherrack/step1",
+          "block/netherrack/step2",
+          "block/netherrack/step3",
+          "block/netherrack/step4",
+          "block/netherrack/step5",
+          "block/netherrack/step6"
+      ]
+  },
+  "block.nylium.step": {
+      "replace": "true",
+      "sounds": [
+          "block/nylium/step1",
+          "block/nylium/step2",
+          "block/nylium/step3",
+          "block/nylium/step4",
+          "block/nylium/step5",
+          "block/nylium/step6"
+      ]
+  },
+  "block.packed_mud.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "block/packed_mud/step1",
+              "pitch": 0.95,
+              "volume": 0.3
+          },
+          {
+              "name": "block/packed_mud/step2",
+              "pitch": 0.95,
+              "volume": 0.3
+          },
+          {
+              "name": "block/packed_mud/step3",
+              "pitch": 0.95,
+              "volume": 0.3
+          },
+          {
+              "name": "block/packed_mud/step4",
+              "pitch": 0.95,
+              "volume": 0.3
+          },
+          {
+              "name": "block/packed_mud/step5",
+              "pitch": 0.95,
+              "volume": 0.3
+          },
+          {
+              "name": "block/packed_mud/step6",
+              "pitch": 0.95,
+              "volume": 0.3
+          }
+      ]
+  },
+  "block.pink_petals.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "block/cherry_leaves/step1",
+              "pitch": 1.2,
+              "volume": 0.8
+          },
+          {
+              "name": "block/cherry_leaves/step2",
+              "pitch": 1.2,
+              "volume": 0.8
+          },
+          {
+              "name": "block/cherry_leaves/step3",
+              "pitch": 1.2,
+              "volume": 0.8
+          },
+          {
+              "name": "block/cherry_leaves/step4",
+              "pitch": 1.2,
+              "volume": 0.8
+          },
+          {
+              "name": "block/cherry_leaves/step5",
+              "pitch": 1.2,
+              "volume": 0.8
+          }
+      ]
+  },
+  "block.pointed_dripstone.step": {
+      "replace": "true",
+      "sounds": [
+          "block/dripstone/step1",
+          "block/dripstone/step2",
+          "block/dripstone/step3",
+          "block/dripstone/step4",
+          "block/dripstone/step5",
+          "block/dripstone/step6"
+      ]
+  },
+  "block.polished_deepslate.step": {
+      "replace": "true",
+      "sounds": [
+          "block/deepslate/step1",
+          "block/deepslate/step2",
+          "block/deepslate/step3",
+          "block/deepslate/step4",
+          "block/deepslate/step5",
+          "block/deepslate/step6"
+      ]
+  },
+  "block.powder_snow.step": {
+      "replace": "true",
+      "sounds": [
+          "block/powder_snow/step1",
+          "block/powder_snow/step2",
+          "block/powder_snow/step3",
+          "block/powder_snow/step4",
+          "block/powder_snow/step5",
+          "block/powder_snow/step6",
+          "block/powder_snow/step7",
+          "block/powder_snow/step8",
+          "block/powder_snow/step9",
+          "block/powder_snow/step10"
+      ]
+  },
+  "block.rooted_dirt.step": {
+      "replace": "true",
+      "sounds": [
+          "block/rooted_dirt/step1",
+          "block/rooted_dirt/step2",
+          "block/rooted_dirt/step3",
+          "block/rooted_dirt/step4",
+          "block/rooted_dirt/step5",
+          "block/rooted_dirt/step6"
+      ]
+  },
+  "block.roots.step": {
+      "replace": "true",
+      "sounds": [
+          "block/roots/step1",
+          "block/roots/step2",
+          "block/roots/step3",
+          "block/roots/step4",
+          "block/roots/step5"
+      ]
+  },
+  "block.sand.step": {
+      "replace": "true",
+      "sounds": [
+          "step/sand1",
+          "step/sand2",
+          "step/sand3",
+          "step/sand4",
+          "step/sand5"
+      ]
+  },
+  "block.scaffolding.step": {
+      "replace": "true",
+      "sounds": [
+          "step/scaffold1",
+          "step/scaffold2",
+          "step/scaffold3",
+          "step/scaffold4",
+          "step/scaffold5",
+          "step/scaffold6",
+          "step/scaffold7"
+      ]
+  },
+  "block.sculk.step": {
+      "replace": "true",
+      "sounds": [
+          "block/sculk/step1",
+          "block/sculk/step2",
+          "block/sculk/step3",
+          "block/sculk/step4",
+          "block/sculk/step5",
+          "block/sculk/step6"
+      ]
+  },
+  "block.sculk_catalyst.step": {
+      "replace": "true",
+      "sounds": [
+          "block/sculk_catalyst/step1",
+          "block/sculk_catalyst/step2",
+          "block/sculk_catalyst/step3",
+          "block/sculk_catalyst/step4",
+          "block/sculk_catalyst/step5",
+          "block/sculk_catalyst/step6"
+      ]
+  },
+  "block.sculk_sensor.step": {
+      "replace": "true",
+      "sounds": [
+          "block/sculk/step1",
+          "block/sculk/step2",
+          "block/sculk/step3",
+          "block/sculk/step4",
+          "block/sculk/step5",
+          "block/sculk/step6"
+      ]
+  },
+  "block.sculk_shrieker.step": {
+      "replace": "true",
+      "sounds": [
+          "block/sculk/step1",
+          "block/sculk/step2",
+          "block/sculk/step3",
+          "block/sculk/step4",
+          "block/sculk/step5",
+          "block/sculk/step6"
+      ]
+  },
+  "block.sculk_vein.step": {
+      "replace": "true",
+      "sounds": [
+          "block/sculk/step1",
+          "block/sculk/step2",
+          "block/sculk/step3",
+          "block/sculk/step4",
+          "block/sculk/step5",
+          "block/sculk/step6"
+      ]
+  },
+  "block.shroomlight.step": {
+      "replace": "true",
+      "sounds": [
+          "block/shroomlight/step1",
+          "block/shroomlight/step2",
+          "block/shroomlight/step3",
+          "block/shroomlight/step4",
+          "block/shroomlight/step5",
+          "block/shroomlight/step6"
+      ]
+  },
+  "block.slime_block.step": {
+      "replace": "true",
+      "sounds": [
+          "mob/slime/small1",
+          "mob/slime/small2",
+          "mob/slime/small3",
+          "mob/slime/small4",
+          "mob/slime/small5"
+      ]
+  },
+  "block.small_dripleaf.step": {
+      "replace": "true",
+      "sounds": [
+          {
+              "name": "block/big_dripleaf/step1",
+              "pitch": 1.2,
+              "volume": 0.9
+          },
+          {
+              "name": "block/big_dripleaf/step2",
+              "pitch": 1.2,
+              "volume": 0.9
+          },
+          {
+              "name": "block/big_dripleaf/step3",
+              "pitch": 1.2,
+              "volume": 0.9
+          },
+          {
+              "name": "block/big_dripleaf/step4",
+              "pitch": 1.2,
+              "volume": 0.9
+          },
+          {
+              "name": "block/big_dripleaf/step5",
+              "pitch": 1.2,
+              "volume": 0.9
+          },
+          {
+              "name": "block/big_dripleaf/step6",
+              "pitch": 1.2,
+              "volume": 0.9
+          }
+      ]
+  },
+  "block.snow.step": {
+      "replace": "true",
+      "sounds": [
+          "step/snow1",
+          "step/snow2",
+          "step/snow3",
+          "step/snow4"
+      ]
+  },
+  "block.soul_sand.step": {
+      "replace": "true",
+      "sounds": [
+          "block/soul_sand/step1",
+          "block/soul_sand/step2",
+          "block/soul_sand/step3",
+          "block/soul_sand/step4",
+          "block/soul_sand/step5"
+      ]
+  },
+  "block.soul_soil.step": {
+      "replace": "true",
+      "sounds": [
+          "block/soul_soil/step1",
+          "block/soul_soil/step2",
+          "block/soul_soil/step3",
+          "block/soul_soil/step4",
+          "block/soul_soil/step5"
+      ]
+  },
+  "block.spore_blossom.step": {
+      "replace": "true",
+      "sounds": [
+          "block/spore_blossom/step1",
+          "block/spore_blossom/step2",
+          "block/spore_blossom/step3",
+          "block/spore_blossom/step4",
+          "block/spore_blossom/step5",
+          "block/spore_blossom/step6"
+      ]
+  },
+  "block.stem.step": {
+      "replace": "true",
+      "sounds": [
+          "block/stem/step1",
+          "block/stem/step2",
+          "block/stem/step3",
+          "block/stem/step4",
+          "block/stem/step5",
+          "block/stem/step6"
+      ]
+  },
+  "block.stone.step": {
+      "replace": "true",
+      "sounds": [
+          "step/stone1",
+          "step/stone2",
+          "step/stone3",
+          "step/stone4",
+          "step/stone5",
+          "step/stone6"
+      ]
+  },
+  "block.suspicious_gravel.step": {
+      "replace": "true",
+      "sounds": [
+          "block/suspicious_gravel/step1",
+          "block/suspicious_gravel/step2",
+          "block/suspicious_gravel/step3",
+          "block/suspicious_gravel/step4"
+      ]
+  },
+  "block.suspicious_sand.step": {
+      "replace": "true",
+      "sounds": [
+          "block/suspicious_sand/step1",
+          "block/suspicious_sand/step2",
+          "block/suspicious_sand/step3",
+          "block/suspicious_sand/step4",
+          "block/suspicious_sand/step5"
+      ]
+  },
+  "block.tuff.step": {
+      "replace": "true",
+      "sounds": [
+          "block/tuff/step1",
+          "block/tuff/step2",
+          "block/tuff/step3",
+          "block/tuff/step4",
+          "block/tuff/step5",
+          "block/tuff/step6"
+      ]
+  },
+  "block.vine.step": {
+      "replace": "true",
+      "sounds": [
+          "block/vine/climb1",
+          "block/vine/climb2",
+          "block/vine/climb3",
+          "block/vine/climb4",
+          "block/vine/climb5"
+      ]
+  },
+  "block.wart_block.step": {
+      "replace": "true",
+      "sounds": [
+          "block/netherwart/step1",
+          "block/netherwart/step2",
+          "block/netherwart/step3",
+          "block/netherwart/step4",
+          "block/netherwart/step5"
+      ]
+  },
+  "block.weeping_vines.step": {
+      "replace": "true",
+      "sounds": [
+          "block/roots/step1",
+          "block/roots/step2",
+          "block/roots/step3",
+          "block/roots/step4",
+          "block/roots/step5"
+      ]
+  },
+  "block.wet_grass.step": {
+      "replace": "true",
+      "sounds": [
+          "step/wet_grass1",
+          "step/wet_grass2",
+          "step/wet_grass3",
+          "step/wet_grass4",
+          "step/wet_grass5",
+          "step/wet_grass6"
+      ]
+  },
+  "block.wood.step": {
+      "replace": "true",
+      "sounds": [
+          "step/wood1",
+          "step/wood2",
+          "step/wood3",
+          "step/wood4",
+          "step/wood5",
+          "step/wood6"
+      ]
+  },
+  "block.wool.step": {
+      "replace": "true",
+      "sounds": [
+          "step/cloth1",
+          "step/cloth2",
+          "step/cloth3",
+          "step/cloth4"
+      ]
+  },
+
+  "entity.creeper.primed": {
+    "sounds": [
+      "random/fuse"
+    ],
+    "replace": "true"
+  },
+  "entity.player.big_fall": {
+    "sounds": [
+      "damage/fallbig"
+    ],
+    "replace": "true"
+  },
+  "entity.armor_stand.fall": {
+    "sounds": [
+      "dig/wood1",
+      "dig/wood2",
+      "dig/wood3",
+      "dig/wood4"
+    ],
+    "replace": "true"
+  },
+  "entity.generic.small_fall": {
+    "sounds": [
+      "damage/fallsmall"
+    ],
+    "replace": "true"
+  },
+  "entity.player.small_fall": {
+    "sounds": [
+      "damage/fallsmall"
+    ],
+    "replace": "true"
+  },
+  "item.crossbow.hit": {
+    "sounds": [
+      "random/bowhit1",
+      "random/bowhit2",
+      "random/bowhit3",
+      "random/bowhit4"
+    ],
+    "replace": "true"
+  },
+  "entity.arrow.hit": {
+    "sounds": [
+      "random/bowhit1",
+      "random/bowhit2",
+      "random/bowhit3",
+      "random/bowhit4"
+    ],
+    "replace": "true"
+  },
+  "entity.arrow.hit_player": {
+    "sounds": [
+      "random/successful_hit"
+    ],
+    "replace": "true"
+  },
+  "entity.arrow.shoot": {
+    "sounds": [
+      "random/bow"
+    ],
+    "replace": "true"
+  }
+}

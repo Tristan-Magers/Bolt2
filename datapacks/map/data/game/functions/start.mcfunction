@@ -6,6 +6,10 @@ scoreboard players add @a team_pref 0
 
 scoreboard players set .stats_end .data 0
 
+#
+scoreboard players set .announce_30s .data 0
+scoreboard players set .announce_60s .data 0
+
 tag @a remove playing
 tag @a[scores={team_pref=0..}] add playing
 
@@ -31,7 +35,17 @@ function game:game/team_dif
 #execute if score .even_players .data = .0 .num run function game:game/fill_player_max
 #execute if score .even_players .data = .0 .num run function game:game/fill_player_max
 
+# win streak change
+execute as @a run scoreboard players operation @s win_streak *= .10 .num
+execute as @a run scoreboard players operation @s rank += @s win_streak
+
+#
 function game:game/rank_sort/start
+
+# undo win streak change
+execute as @a run scoreboard players operation @s rank -= @s win_streak
+execute as @a run scoreboard players operation @s win_streak /= .10 .num
+
 
 #function game:game/fill_player_random
 #function game:game/fill_player_random
@@ -81,8 +95,8 @@ execute if score .mode .data = .1 .num run scoreboard players set Blue Scores 0
 
 # timers for modes with time
 execute if score .mode .data = .1 .num run scoreboard players set .TIME .data 240
-execute if score .mode .data = .6 .num run scoreboard players set .TIME .data 215
-execute if score .mode .data = .7 .num run scoreboard players set .TIME .data 71
+execute if score .mode .data = .6 .num run scoreboard players set .TIME .data 180
+execute if score .mode .data = .7 .num run scoreboard players set .TIME .data 60
 
 #execute if score .mode .data = .1 .num run scoreboard players set .TIME .data -100
 
@@ -164,6 +178,8 @@ execute if score .map .data = .6 .num run summon armor_stand -387 -42 16 {Rotati
 execute if score .map .data = .10 .num run summon armor_stand -245.0 -44.5 -432 {Rotation:[-90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro","rev"]}
 execute if score .map .data = .12 .num run summon armor_stand 8 -49.5 -300 {Rotation:[90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro"]}
 execute if score .map .data = .13 .num run summon armor_stand -28 -34 231 {Rotation:[90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro"]}
+execute if score .map .data = .14 .num run summon armor_stand -515 -17 -303 {Rotation:[-90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro","rev"]}
+execute if score .map .data = .15 .num run summon armor_stand -435 -33 197 {Rotation:[90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro"]}
 
 #execute unless entity @e[tag=cutscene] run summon armor_stand -68 -53 21 {Rotation:[90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro"]}
 
@@ -183,8 +199,8 @@ execute if score .mode .data = .6 .num run scoreboard players set .GrenadeKills 
 execute if score .mode .data = .6 .num run scoreboard players set .WallKills .stats 1000
 
 execute if score .mode .data = .7 .num run scoreboard players set .CrossKills .stats 45
-execute if score .mode .data = .7 .num run scoreboard players set .GrenadeKills .stats 8
-execute if score .mode .data = .7 .num run scoreboard players set .BoostKills .stats 12
+execute if score .mode .data = .7 .num run scoreboard players set .GrenadeKills .stats 6
+execute if score .mode .data = .7 .num run scoreboard players set .BoostKills .stats 10
 execute if score .mode .data = .7 .num run scoreboard players set .WallKills .stats 1000
 
 #

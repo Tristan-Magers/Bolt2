@@ -1,0 +1,18 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "item/bow/orbr_bow"
+    },
+    "display": {
+        "thirdperson_righthand": {
+        "rotation": [ -80, 260, -40 ],
+        "translation": [ 0.5, -3, -0.5 ],
+        "scale": [ 0.9, 0.9, 0.9 ]
+        },
+        "thirdperson_lefthand": {
+            "rotation": [ -80, 260, -40 ],
+            "translation": [ 0.5, -3, -0.5 ],
+            "scale": [ 0.9, 0.9, 0.9 ]
+        }
+    }
+}

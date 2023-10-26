@@ -8,14 +8,6 @@ gamerule reducedDebugInfo false
 execute as @e[tag=crate] at @s run function game:game/infected/crates/despawn
 
 #
-tag @a remove change_rank
-tag @a[team=red] add change_rank
-tag @a[team=blue] add change_rank
-tag @a[tag=lobby] remove change_rank
-execute if score Blue Scores >= .endscore .stats if score .mode .data = .1 .num run function game:game/rank_changes
-execute if score Red Scores >= .endscore .stats if score .mode .data = .1 .num run function game:game/rank_changes
-
-#
 execute if score .mode .data = .6 .num as @a[team=red] run tellraw @a [{"selector":"@s"},{"text":"\n  "},{"score":{"name":"@s","objective":"kills"},"color":"white","hoverEvent":{"action":"show_text","contents":[{"text":"Kills"}]}},{"text":"/","color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"Kills"}]}},{"score":{"name":"@s","objective":"stats_deaths"},"color":"white","hoverEvent":{"action":"show_text","contents":[{"text":"Deaths"}]}}]
 execute if score .mode .data = .6 .num as @a[team=blue] run tellraw @a [{"selector":"@s"},{"text":"\n  "},{"score":{"name":"@s","objective":"kills"},"color":"white","hoverEvent":{"action":"show_text","contents":[{"text":"Kills"}]}},{"text":"/","color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"Kills"}]}},{"score":{"name":"@s","objective":"stats_deaths"},"color":"white","hoverEvent":{"action":"show_text","contents":[{"text":"Deaths"}]}}]
 

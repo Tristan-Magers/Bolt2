@@ -65,6 +65,16 @@ scoreboard players set @a[x=3,y=-35,z=250,dx=-8,dy=7,dz=-18,team=red] invul 40
 
 tag @a[x=3,y=-35,z=250,dx=-8,dy=7,dz=-18,team=red] add inspawn
 
+#river
+scoreboard players set @a[x=-529,y=-19,z=-260,dx=9,dy=10,dz=-9,team=red] invul 40
+
+tag @a[x=-529,y=-19,z=-260,dx=9,dy=10,dz=-9,team=red] add inspawn
+
+#
+scoreboard players set @a[x=-406,y=-45,z=207,dx=-12,dy=10,dz=-7,team=red] invul 30
+
+tag @a[x=-406,y=-45,z=207,dx=-12,dy=10,dz=-7,team=red] add inspawn
+
 #blue spawn
 #towers
 scoreboard players set @a[x=-86,z=53,y=-50.5,dx=7,dy=4,dz=-7] invul 40
@@ -124,3 +134,13 @@ tag @a[x=17,y=-54,z=-346,dx=-7,dy=7,dz=7,team=blue] add inspawn
 scoreboard players set @a[x=-83,y=-35,z=250,dx=8,dy=7,dz=-18,team=blue] invul 40
 
 tag @a[x=-83,y=-35,z=250,dx=8,dy=7,dz=-18,team=blue] add inspawn
+
+#river
+scoreboard players set @a[x=-487,y=-19,z=-346,dx=-9,dy=10,dz=9,team=blue] invul 40
+
+tag @a[x=-487,y=-19,z=-346,dx=-9,dy=10,dz=9,team=blue] add inspawn
+
+#lighthouse
+scoreboard players set @a[x=-486,y=-45,z=187,dx=12,dy=10,dz=7,team=blue] invul 30
+
+tag @a[x=-486,y=-45,z=187,dx=12,dy=10,dz=7,team=blue] add inspawn

@@ -3,6 +3,8 @@ scoreboard players add .rep .calc 1
 
 #
 scoreboard players set .red_rank .calc 0
+execute as @a[tag=playing,scores={team_pref=1}] run scoreboard players operation .red_rank .calc += @s rank
+execute as @a[tag=playing,scores={team_pref=2}] run scoreboard players operation .red_rank .calc -= @s rank
 execute as @e[tag=rank_dummy,team=red] run scoreboard players operation .red_rank .calc += @s rank_real
 
 scoreboard players set .neg .calc 0
@@ -34,6 +36,8 @@ execute if score .neg .calc = .1 .num run scoreboard players reset @e[tag=rank_d
 
 execute if score .neg .calc = .0 .num as @e[tag=rank_dummy,scores={rank_delta_order=0}] run scoreboard players operation @s t4 = @s rank_delta_up
 execute if score .neg .calc = .1 .num as @e[tag=rank_dummy,scores={rank_delta_order=0}] run scoreboard players operation @s t4 = @s rank_delta_down
+
+## t4 = the delta in the direction it is "applying" for
 
 execute as @e[tag=rank_dummy,scores={rank_delta_order=0}] run scoreboard players operation @s t4 -= .dif .calc
 execute as @e[tag=rank_dummy,scores={rank_delta_order=0}] if score @s t4 < .0 .num run tag @s add overshoot

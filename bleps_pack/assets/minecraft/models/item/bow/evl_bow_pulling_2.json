@@ -1,0 +1,13 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "item/bow/evl_bow_pulling_2"
+    },
+    "display": {
+      "firstperson_righthand": {
+        "rotation": [ 0, -90, 24 ],
+        "translation": [ 1.13, 3.2, 1.13],
+        "scale": [0.9,0.9,0.9]
+      }
+    }
+}

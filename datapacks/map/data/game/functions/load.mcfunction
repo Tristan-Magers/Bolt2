@@ -15,6 +15,8 @@ execute if score .map .data = .7 .num run tp @a[tag=!loading] -392.5 -59.00 16.5
 execute if score .map .data = .10 .num run tp @a[tag=!loading] -220.5 -50.00 -431.5 0 0
 execute if score .map .data = .12 .num run tp @a[tag=!loading] -18.5 -53.00 -299.50 0 0
 execute if score .map .data = .13 .num run tp @a[tag=!loading] -39.5 -37.00 210.5 0 0
+execute if score .map .data = .14 .num run tp @a[tag=!loading] -551.5 -20.00 -291.5 0 0
+execute if score .map .data = .15 .num run tp @a[tag=!loading] -453.5 -39.00 174.5 0 0
 
 execute as @a[tag=loading] at @s run tp @s @s
 

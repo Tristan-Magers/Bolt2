@@ -1,6 +1,6 @@
 scoreboard players add @s[tag=!playing] bow_texture_place 1
 
-scoreboard players set @s[scores={bow_texture_place=45..}] bow_texture_place 0
+scoreboard players set @s[scores={bow_texture_place=79..}] bow_texture_place 0
 
 scoreboard players set @s[scores={bow_texture_place=0}] bow_texture 0
 scoreboard players set @s[scores={bow_texture_place=1}] bow_texture 15
@@ -47,5 +47,39 @@ scoreboard players set @s[scores={bow_texture_place=41}] bow_texture 42
 scoreboard players set @s[scores={bow_texture_place=42}] bow_texture 43
 scoreboard players set @s[scores={bow_texture_place=43}] bow_texture 44
 scoreboard players set @s[scores={bow_texture_place=44}] bow_texture 45
+scoreboard players set @s[scores={bow_texture_place=45}] bow_texture 46
+scoreboard players set @s[scores={bow_texture_place=46}] bow_texture 47
+scoreboard players set @s[scores={bow_texture_place=47}] bow_texture 48
+scoreboard players set @s[scores={bow_texture_place=48}] bow_texture 49
+scoreboard players set @s[scores={bow_texture_place=49}] bow_texture 50
+scoreboard players set @s[scores={bow_texture_place=50}] bow_texture 51
+scoreboard players set @s[scores={bow_texture_place=51}] bow_texture 52
+scoreboard players set @s[scores={bow_texture_place=52}] bow_texture 53
+scoreboard players set @s[scores={bow_texture_place=53}] bow_texture 54
+scoreboard players set @s[scores={bow_texture_place=54}] bow_texture 55
+scoreboard players set @s[scores={bow_texture_place=55}] bow_texture 56
+scoreboard players set @s[scores={bow_texture_place=56}] bow_texture 57
+scoreboard players set @s[scores={bow_texture_place=57}] bow_texture 58
+scoreboard players set @s[scores={bow_texture_place=58}] bow_texture 59
+scoreboard players set @s[scores={bow_texture_place=59}] bow_texture 60
+scoreboard players set @s[scores={bow_texture_place=60}] bow_texture 61
+scoreboard players set @s[scores={bow_texture_place=61}] bow_texture 62
+scoreboard players set @s[scores={bow_texture_place=62}] bow_texture 63
+scoreboard players set @s[scores={bow_texture_place=63}] bow_texture 64
+scoreboard players set @s[scores={bow_texture_place=64}] bow_texture 65
+scoreboard players set @s[scores={bow_texture_place=65}] bow_texture 66
+scoreboard players set @s[scores={bow_texture_place=66}] bow_texture 67
+scoreboard players set @s[scores={bow_texture_place=67}] bow_texture 68
+scoreboard players set @s[scores={bow_texture_place=68}] bow_texture 69
+scoreboard players set @s[scores={bow_texture_place=69}] bow_texture 70
+scoreboard players set @s[scores={bow_texture_place=70}] bow_texture 71
+scoreboard players set @s[scores={bow_texture_place=71}] bow_texture 72
+scoreboard players set @s[scores={bow_texture_place=72}] bow_texture 73
+scoreboard players set @s[scores={bow_texture_place=73}] bow_texture 74
+scoreboard players set @s[scores={bow_texture_place=74}] bow_texture 75
+scoreboard players set @s[scores={bow_texture_place=75}] bow_texture 76
+scoreboard players set @s[scores={bow_texture_place=76}] bow_texture 77
+scoreboard players set @s[scores={bow_texture_place=77}] bow_texture 78
+scoreboard players set @s[scores={bow_texture_place=78}] bow_texture 79
 
 scoreboard players set @s bow_throw 0

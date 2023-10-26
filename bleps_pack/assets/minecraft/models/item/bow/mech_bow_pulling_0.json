@@ -1,0 +1,13 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "item/bow/mech_bow_pulling_0"
+    },
+    "display": {
+      "firstperson_righthand": {
+        "rotation": [ 0, -92, 24 ],
+        "translation": [ 1.13, 3.2, 1.13],
+        "scale": [0.9,0.9,0.9]
+      }
+    }
+}

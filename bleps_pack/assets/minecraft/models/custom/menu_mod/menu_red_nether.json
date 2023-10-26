@@ -1,0 +1,28 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "custom/menu_pic/menu_red_nether",
+		"particle": "custom/menu_pic/menu_red_nether"
+	},
+	"elements": [
+		{
+			"from": [-16, -16, 5.5],
+			"to": [32, 32, 5.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"up": {"uv": [0, 0, 0, 16], "rotation": 90, "texture": "#missing"},
+				"down": {"uv": [0, 0, 0, 16], "rotation": 270, "texture": "#missing"}
+			}
+		}
+	],
+	"display": {
+		"fixed": {
+			"translation": [0, 0, 3.75],
+			"scale": [2, 2, 2]
+		}
+	}
+}

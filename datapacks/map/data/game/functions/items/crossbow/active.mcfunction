@@ -1,3 +1,5 @@
+execute if score .mode .data = .7 .num run scoreboard players set @s[scores={crossbowTime=181..}] crossbowTime 180
+
 title @s[scores={crossbowTime=240}] actionbar [{"text":"","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
 title @s[scores={crossbowTime=228}] actionbar [{"text":"⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]
 title @s[scores={crossbowTime=216}] actionbar [{"text":"⬜⬜","color":"gray"},{"text":"⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛","color":"dark_green"}]

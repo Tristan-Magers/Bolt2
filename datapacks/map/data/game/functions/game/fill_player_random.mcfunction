@@ -1,5 +1,11 @@
 function game:game/team_dif
 
+# win streak change
+execute as @a run scoreboard players operation @s win_streak *= .10 .num
+execute as @a run scoreboard players operation @s rank += @s win_streak
+
+execute as @a run tellraw @s {"score":{"name":"@s","objective":"rank"}}
+
 # get min and max of random players
 scoreboard players operation .rank_max .random < @a[scores={team_pref=0},gamemode=adventure,team=] rank
 scoreboard players operation .rank_max .random > @a[scores={team_pref=0},gamemode=adventure,team=] rank
@@ -43,3 +49,6 @@ execute if score .ranked_random .data = .1 .num if score .team_dif .data <= .n1 
 execute if score .ranked_random .data = .1 .num if score .team_dif .data >= .1 .num if score .rank_red .rank < .rank_blue .rank run team join blue @r[scores={team_pref=0},gamemode=adventure,team=,tag=min_rank]
 execute if score .ranked_random .data = .1 .num if score .team_dif .data <= .n1 .num if score .rank_red .rank < .rank_blue .rank run team join red @r[scores={team_pref=0},gamemode=adventure,team=,tag=max_rank]
 
+# undo win streak change
+execute as @a run scoreboard players operation @s rank -= @s win_streak
+execute as @a run scoreboard players operation @s win_streak /= .10 .num

@@ -5,6 +5,9 @@ tag @e[tag=blueflag,tag=drop] add low_position
 tag @e[tag=redflag,tag=drop] add low_position
 
 #
+execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace light
+execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace #minecraft:saplings
+execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace #minecraft:flowers
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace brown_mushroom
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace dead_bush
 execute as @s at @s run fill ~ ~ ~ ~ ~1 ~ minecraft:air replace hanging_roots

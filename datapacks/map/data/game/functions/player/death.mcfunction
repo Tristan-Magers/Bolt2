@@ -27,17 +27,15 @@ tag @s remove killed_by_claw
 execute as @a[tag=!me,scores={sword_break=1..}] at @s run tag @p[tag=no_killer,tag=me,distance=..8] add killed_by_claw
 execute as @a[tag=!me,scores={sword_break=1..}] if entity @p[tag=no_killer,tag=me,distance=..8] run scoreboard players operation @p[tag=no_killer,tag=me,distance=..8] KILL_ID = @s ID
 
-scoreboard players operation @a ID -= @s KILL_ID
+function game:id/player
 
-execute as @s[tag=killed_by_poison] run tellraw @a [{"text":"☣ ","color":"dark_green"},{"selector":"@p[scores={ID=0}]"},{"text":"'s Acid disolved ","color":"white"},{"selector":"@s"}]
-execute as @s[tag=killed_by_zombie] run tellraw @a [{"text":"☻ ","color":"dark_green"},{"selector":"@p[scores={ID=0}]"},{"text":"'s Minion bit ","color":"white"},{"selector":"@s"}]
-execute as @s[tag=killed_by_claw] run tellraw @a [{"text":"⚚ ","color":"gray"},{"selector":"@p[scores={ID=0}]"},{"text":" Clawed ","color":"white"},{"selector":"@s"}]
+execute as @s[tag=killed_by_poison] run tellraw @a [{"text":"☣ ","color":"dark_green"},{"selector":"@p[tag=id_share]"},{"text":"'s Acid disolved ","color":"white"},{"selector":"@s"}]
+execute as @s[tag=killed_by_zombie] run tellraw @a [{"text":"☻ ","color":"dark_green"},{"selector":"@p[tag=id_share]"},{"text":"'s Minion bit ","color":"white"},{"selector":"@s"}]
+execute as @s[tag=killed_by_claw] run tellraw @a [{"text":"⚚ ","color":"gray"},{"selector":"@p[tag=id_share]"},{"text":" Clawed ","color":"white"},{"selector":"@s"}]
 
-execute as @s[tag=killed_by_poison,team=blue] run scoreboard players add @p[scores={ID=0}] kills 1
-execute as @s[tag=killed_by_zombie,team=blue] run scoreboard players add @p[scores={ID=0}] kills 1
-execute as @s[tag=killed_by_claw,team=blue] run scoreboard players add @p[scores={ID=0}] kills 1
-
-scoreboard players operation @a ID += @s KILL_ID
+execute as @s[tag=killed_by_poison,team=blue] run scoreboard players add @p[tag=id_share] kills 1
+execute as @s[tag=killed_by_zombie,team=blue] run scoreboard players add @p[tag=id_share] kills 1
+execute as @s[tag=killed_by_claw,team=blue] run scoreboard players add @p[tag=id_share] kills 1
 
 #
 gamemode spectator @s
@@ -45,7 +43,11 @@ execute as @s at @s run tp @s ~ ~ ~ ~ 0
 clear @s arrow
 clear @s iron_ingot
 clear @s bow
-give @s bow{Unbreakable:1b,Enchantments:[{id:"minecraft:power",lvl:999s}],HideFlags:1} 1
+
+execute if score .mode .data = .6 .num run give @s[scores={bow_texture=78}] bow{Unbreakable:1b,Enchantments:[{id:"minecraft:power",lvl:999s}],HideFlags:1} 1
+give @s[scores={bow_texture=78}] bow{Unbreakable:1b,HideFlags:1} 1
+give @s[nbt=!{Inventory:[{id:"minecraft:bow"}]}] bow{Unbreakable:1b,Enchantments:[{id:"minecraft:power",lvl:999s}],HideFlags:1} 1
+
 effect give @s minecraft:wither 1 1
 scoreboard players set @s time_dead 0
 scoreboard players set @s respawn 70

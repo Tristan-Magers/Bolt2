@@ -32,6 +32,8 @@ execute if score .map .data = .10 .num run function game:map/corners2/start
 execute if score .map .data = .11 .num run function game:map/sidelines/start
 execute if score .map .data = .12 .num run function game:map/garden/start
 execute if score .map .data = .13 .num run function game:map/lookout/start
+execute if score .map .data = .14 .num run function game:map/river/start
+execute if score .map .data = .15 .num run function game:map/lighth/start
 
 tag @a remove hasflag
 tag @a remove hasspawn

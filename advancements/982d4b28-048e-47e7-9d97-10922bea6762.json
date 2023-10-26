@@ -7,10 +7,10 @@
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:lush_caves": "2022-12-14 10:55:03 +0000",
       "minecraft:jungle": "2022-12-14 10:50:48 +0000",
-      "minecraft:warm_ocean": "2022-12-14 10:51:35 +0000",
-      "minecraft:plains": "2022-02-14 04:53:13 +0000"
+      "minecraft:lush_caves": "2022-12-14 10:55:03 +0000",
+      "minecraft:plains": "2022-02-14 04:53:13 +0000",
+      "minecraft:warm_ocean": "2022-12-14 10:51:35 +0000"
     },
     "done": false
   },
@@ -40,14 +40,14 @@
   },
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
-      "minecraft:ravager": "2022-03-09 03:20:00 +0000",
-      "minecraft:magma_cube": "2022-02-15 05:46:18 +0000",
-      "minecraft:creeper": "2022-02-15 04:56:59 +0000",
-      "minecraft:slime": "2022-02-15 05:36:05 +0000",
       "minecraft:silverfish": "2022-03-09 03:19:30 +0000",
+      "minecraft:magma_cube": "2022-02-15 05:46:18 +0000",
       "minecraft:endermite": "2022-03-09 03:19:33 +0000",
       "minecraft:zombie": "2022-03-27 00:36:56 +0000",
-      "minecraft:zombie_villager": "2023-05-20 05:27:04 +0000"
+      "minecraft:creeper": "2022-02-15 04:56:59 +0000",
+      "minecraft:zombie_villager": "2023-05-20 05:27:04 +0000",
+      "minecraft:ravager": "2022-03-09 03:20:00 +0000",
+      "minecraft:slime": "2022-02-15 05:36:05 +0000"
     },
     "done": false
   },
@@ -4757,21 +4757,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/misc/pink_dye_from_pink_petals": {
+  "minecraft:recipes/building_blocks/cherry_planks": {
     "criteria": {
-      "has_pink_petals": "2023-06-11 20:44:53 +0000"
-    },
-    "done": true
-  },
-  "minecraft:husbandry/tame_an_animal": {
-    "criteria": {
-      "tamed_animal": "2023-06-11 21:18:55 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/building_blocks/bamboo_mosaic_slab": {
-    "criteria": {
-      "has_bamboo_mosaic": "2023-06-11 21:46:19 +0000"
+      "has_log": "2023-06-11 18:38:16 +0000"
     },
     "done": true
   },
@@ -4781,15 +4769,21 @@
     },
     "done": false
   },
+  "minecraft:recipes/decorations/decorated_pot_simple": {
+    "criteria": {
+      "has_brick": "2023-06-11 18:41:59 +0000"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/bricks": {
     "criteria": {
       "has_brick": "2023-06-11 18:43:21 +0000"
     },
     "done": true
   },
-  "minecraft:recipes/misc/cyan_dye_from_pitcher_plant": {
+  "minecraft:recipes/decorations/flower_pot": {
     "criteria": {
-      "has_pitcher_plant": "2023-06-11 18:58:22 +0000"
+      "has_brick": "2023-06-11 18:43:21 +0000"
     },
     "done": true
   },
@@ -4799,9 +4793,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/transportation/cherry_boat": {
+  "minecraft:recipes/misc/cyan_dye_from_pitcher_plant": {
     "criteria": {
-      "in_water": "2023-06-11 19:56:31 +0000"
+      "has_pitcher_plant": "2023-06-11 18:58:22 +0000"
     },
     "done": true
   },
@@ -4811,9 +4805,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/cherry_planks": {
+  "minecraft:recipes/transportation/cherry_boat": {
     "criteria": {
-      "has_log": "2023-06-11 18:38:16 +0000"
+      "in_water": "2023-06-11 19:56:31 +0000"
     },
     "done": true
   },
@@ -4823,9 +4817,15 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/flower_pot": {
+  "minecraft:recipes/misc/pink_dye_from_pink_petals": {
     "criteria": {
-      "has_brick": "2023-06-11 18:43:21 +0000"
+      "has_pink_petals": "2023-06-11 20:44:53 +0000"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/tame_an_animal": {
+    "criteria": {
+      "tamed_animal": "2023-06-11 21:18:55 +0000"
     },
     "done": true
   },
@@ -4841,17 +4841,71 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/bamboo_mosaic_slab": {
+    "criteria": {
+      "has_bamboo_mosaic": "2023-06-11 21:46:19 +0000"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/bamboo_mosaic_stairs": {
     "criteria": {
       "has_bamboo_mosaic": "2023-06-11 21:46:19 +0000"
     },
     "done": true
   },
-  "minecraft:recipes/decorations/decorated_pot_simple": {
+  "minecraft:recipes/building_blocks/cherry_slab": {
     "criteria": {
-      "has_brick": "2023-06-11 18:41:59 +0000"
+      "has_planks": "2023-10-06 21:30:30 +0000"
     },
     "done": true
   },
-  "DataVersion": 3463
+  "minecraft:recipes/redstone/cherry_fence_gate": {
+    "criteria": {
+      "has_planks": "2023-10-06 21:30:30 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/cherry_sign": {
+    "criteria": {
+      "has_planks": "2023-10-06 21:30:30 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/cherry_pressure_plate": {
+    "criteria": {
+      "has_planks": "2023-10-06 21:30:30 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/cherry_fence": {
+    "criteria": {
+      "has_planks": "2023-10-06 21:30:30 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cherry_stairs": {
+    "criteria": {
+      "has_planks": "2023-10-06 21:30:30 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/cherry_trapdoor": {
+    "criteria": {
+      "has_planks": "2023-10-06 21:30:30 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/cherry_button": {
+    "criteria": {
+      "has_planks": "2023-10-06 21:30:30 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/cherry_door": {
+    "criteria": {
+      "has_planks": "2023-10-06 21:30:30 +0000"
+    },
+    "done": true
+  },
+  "DataVersion": 3578
 }

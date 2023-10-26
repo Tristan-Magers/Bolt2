@@ -49,15 +49,15 @@ scoreboard objectives remove ID.item
 # objectives add
 scoreboard objectives add click minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add useMap minecraft.used:minecraft.map
-scoreboard objectives add placeCreeper minecraft.used:minecraft.creeper_spawn_egg
-scoreboard objectives add placeSlime minecraft.used:minecraft.slime_spawn_egg
-scoreboard objectives add placeMagma minecraft.used:minecraft.magma_cube_spawn_egg
+scoreboard objectives add placeCreeper minecraft.used:minecraft.panda_spawn_egg
+scoreboard objectives add placeSlime minecraft.used:minecraft.panda_spawn_egg
+scoreboard objectives add placeMagma minecraft.used:minecraft.panda_spawn_egg
 scoreboard objectives add snowball minecraft.used:minecraft.snowball
 
-scoreboard objectives add place_creeper_temp minecraft.used:minecraft.creeper_spawn_egg
-scoreboard objectives add place_bat_temp minecraft.used:minecraft.silverfish_spawn_egg
-scoreboard objectives add place_slime_temp minecraft.used:minecraft.slime_spawn_egg
-scoreboard objectives add place_magmac_temp minecraft.used:minecraft.magma_cube_spawn_egg
+scoreboard objectives add place_creeper_temp minecraft.used:minecraft.panda_spawn_egg
+scoreboard objectives add place_bat_temp minecraft.used:minecraft.panda_spawn_egg
+scoreboard objectives add place_slime_temp minecraft.used:minecraft.panda_spawn_egg
+scoreboard objectives add place_magmac_temp minecraft.used:minecraft.panda_spawn_egg
 
 scoreboard objectives add spawn_zombie_villager minecraft.used:minecraft.zombie_villager_spawn_egg
 
@@ -78,6 +78,15 @@ scoreboard objectives add arrowCount dummy
 scoreboard objectives add arrowReload dummy
 
 scoreboard objectives add glow_count dummy
+
+scoreboard objectives add wallCount dummy
+scoreboard objectives add wallCountT dummy
+scoreboard objectives add trapCount dummy
+scoreboard objectives add trapCountT dummy
+scoreboard objectives add magmaCount dummy
+scoreboard objectives add magmaCountT dummy
+scoreboard objectives add slimeCount dummy
+scoreboard objectives add slimeCountT dummy
 
 #> Viral zone
 scoreboard objectives add speedTimer dummy
@@ -122,6 +131,9 @@ scoreboard objectives add killP minecraft.custom:minecraft.player_kills
 scoreboard objectives add stats_captures dummy
 scoreboard objectives add stats_attempts dummy
 
+scoreboard objectives add win_streak dummy
+
+scoreboard objectives add rank_scew dummy
 scoreboard objectives add rank dummy
 scoreboard objectives add rank_delta_order dummy
 scoreboard objectives add rank_delta dummy
@@ -183,6 +195,11 @@ scoreboard objectives add t3 dummy
 scoreboard objectives add t4 dummy
 scoreboard objectives add t5 dummy
 
+scoreboard objectives add icon_x dummy
+scoreboard objectives add icon_y dummy
+scoreboard objectives add icon_t dummy
+
+scoreboard objectives add drop_egg_generic minecraft.dropped:minecraft.panda_spawn_egg
 scoreboard objectives add drop_snowball minecraft.dropped:minecraft.snowball
 scoreboard objectives add drop_silver minecraft.dropped:minecraft.silverfish_spawn_egg
 scoreboard objectives add drop_slime minecraft.dropped:minecraft.slime_spawn_egg
@@ -375,12 +392,16 @@ scoreboard players set .129 .num 129
 
 scoreboard players set .200 .num 200
 
+scoreboard players set .222 .num 222
+
 scoreboard players set .300 .num 300
 
 scoreboard players set .800 .num 800
 scoreboard players set .900 .num 900
 
 scoreboard players set .1200 .num 1200
+
+scoreboard players set .250000 .num 250000
 
 scoreboard players set .n1 .num -1
 scoreboard players set .n2 .num -2

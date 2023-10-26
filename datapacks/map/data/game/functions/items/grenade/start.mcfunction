@@ -1,4 +1,8 @@
 #
+tag @e remove current_nade
+tag @s add current_nade
+
+#
 tag @s add started
 
 #
@@ -29,16 +33,23 @@ scoreboard players operation @s z = @e[limit=1,tag=getdir,tag=!old] DirZ
 
 #scoreboard players add @s y 6
 
-summon snowball ~ ~ ~ {Tags:["new_nade"],Motion:[0.0,-10.0,0.0]}
+summon snowball ~ ~ ~ {Item:{id:"minecraft:kelp",Count:1b},Tags:["new_nade"],Motion:[0.0,-10.0,0.0]}
 #tag @s add new_nade
 
 #
 data modify entity @e[limit=1,tag=new_nade] Owner set from entity @p UUID
 
 #
-execute store result entity @e[limit=1,tag=new_nade] Motion[0] double 0.015 run scoreboard players get @s x
+execute store result score @s x run data get entity @s Motion[0] 100
+execute store result score @s z run data get entity @s Motion[2] 100
+
+#
+#data modify entity @e[limit=1,tag=new_nade] Motion[0] set from entity @e[limit=1,tag=current_nade]
+
+#
+execute store result entity @e[limit=1,tag=new_nade] Motion[0] double 0.01 run scoreboard players get @s x
 execute store result entity @e[limit=1,tag=new_nade] Motion[1] double 0.015 run scoreboard players get @s y
-execute store result entity @e[limit=1,tag=new_nade] Motion[2] double 0.015 run scoreboard players get @s z
+execute store result entity @e[limit=1,tag=new_nade] Motion[2] double 0.01 run scoreboard players get @s z
 
 scoreboard players operation @e[limit=1,tag=new_nade] ID = @s ID
 scoreboard players operation @e[limit=1,tag=new_nade] ID.item = @s ID.item
@@ -50,15 +61,12 @@ scoreboard players set @s ID -1
 scoreboard players set @s ID.item -1
 tag @s add decoy
 
-#execute as @s[scores={ID=0}] at @s run execute store result score @s x run data get entity @s Motion[0] 100
-#execute as @s[scores={ID=0}] at @s run execute store result score @s y run data get entity @s Motion[1] 100
-#execute as @s[scores={ID=0}] at @s run execute store result score @s z run data get entity @s Motion[2] 100
-
 #
 execute as @e[limit=1,tag=new_nade] at @s run function game:items/grenade/main
 
 #
 tag @a remove thrower
+tag @e remove current_nade
 
 #
 #scoreboard player set @s t3 0

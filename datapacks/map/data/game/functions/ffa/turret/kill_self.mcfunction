@@ -8,9 +8,8 @@ scoreboard players reset @e[scores={ID.target=0}] ID.target
 scoreboard players operation @e[tag=targeted] ID.target += @s ID
 
 #> Remove owner
-scoreboard players operation @a ID -= @s ID
-tag @a[tag=hasTurret,scores={ID=0}] remove hasTurret
-scoreboard players operation @a ID += @s ID
+function game:id/player
+tag @a[tag=hasTurret,tag=id_share] remove hasTurret
 
 #> FX
 data merge entity @s {Glowing:1b}

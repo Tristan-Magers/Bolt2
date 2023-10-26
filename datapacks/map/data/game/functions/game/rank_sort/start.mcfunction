@@ -1,5 +1,5 @@
 #
-execute as @a[tag=playing] run function game:game/rank_sort/create_dummy
+execute as @a[tag=playing,scores={team_pref=0}] run function game:game/rank_sort/create_dummy
 
 #
 effect give @e[tag=rank_dummy] minecraft:glowing 999 1 true
@@ -26,7 +26,7 @@ function game:game/rank_sort/random_teams
 
 #
 scoreboard players set .team_ideal .calc 0
-execute as @e[tag=rank_dummy] run scoreboard players operation .team_ideal .calc += @s rank_real
+execute as @a[tag=playing] run scoreboard players operation .team_ideal .calc += @s rank
 scoreboard players operation .team_ideal .calc /= .2 .num
 
 #

@@ -1,0 +1,7 @@
+{
+    "parent": "item/bow",
+    "textures": {
+      "layer0": "item/bow/magic2_bow"
+    }
+  }
+  

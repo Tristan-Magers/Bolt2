@@ -1,0 +1,16 @@
+{
+    "providers": [
+        {
+            "type": "reference",
+            "id": "minecraft:include/space"
+        },
+        {
+            "type": "reference",
+            "id": "minecraft:include/default_low2"
+        },
+        {
+            "type": "reference",
+            "id": "minecraft:include/unifont"
+        }
+    ]
+}

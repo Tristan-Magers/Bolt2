@@ -8,8 +8,8 @@
   "minecraft:adventure/adventuring_time": {
     "criteria": {
       "minecraft:jungle": "2023-05-28 20:38:04 +0000",
-      "minecraft:warm_ocean": "2023-04-26 20:40:57 +0000",
-      "minecraft:plains": "2022-03-05 03:19:47 +0000"
+      "minecraft:plains": "2022-03-05 03:19:47 +0000",
+      "minecraft:warm_ocean": "2023-04-26 20:40:57 +0000"
     },
     "done": false
   },
@@ -729,12 +729,6 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/blue_carpet_from_white_carpet": {
-    "criteria": {
-      "has_blue_dye": "2023-04-26 20:42:36 +0000"
-    },
-    "done": true
-  },
   "minecraft:recipes/misc/magenta_dye_from_blue_red_white_dye": {
     "criteria": {
       "has_blue_dye": "2023-04-26 20:42:36 +0000"
@@ -910,12 +904,6 @@
     "done": true
   },
   "minecraft:recipes/misc/pink_dye_from_red_white_dye": {
-    "criteria": {
-      "has_red_dye": "2023-04-26 20:50:33 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/red_carpet_from_white_carpet": {
     "criteria": {
       "has_red_dye": "2023-04-26 20:50:33 +0000"
     },
@@ -1239,5 +1227,41 @@
     },
     "done": true
   },
-  "DataVersion": 3337
+  "minecraft:recipes/building_blocks/dye_red_bed": {
+    "criteria": {
+      "has_needed_dye": "2023-10-07 18:17:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_red_wool": {
+    "criteria": {
+      "has_needed_dye": "2023-10-07 18:17:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_red_carpet": {
+    "criteria": {
+      "has_needed_dye": "2023-10-07 18:17:02 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_blue_wool": {
+    "criteria": {
+      "has_needed_dye": "2023-10-07 18:40:47 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_blue_carpet": {
+    "criteria": {
+      "has_needed_dye": "2023-10-07 18:40:47 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_blue_bed": {
+    "criteria": {
+      "has_needed_dye": "2023-10-07 18:40:47 +0000"
+    },
+    "done": true
+  },
+  "DataVersion": 3578
 }

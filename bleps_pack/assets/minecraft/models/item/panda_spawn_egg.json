@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/trap"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 0
+      },
+      "model": "item/trap"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "item/wall"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2
+      },
+      "model": "item/red_spawn"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3
+      },
+      "model": "item/blue_spawn"
+    }
+  ]
+}

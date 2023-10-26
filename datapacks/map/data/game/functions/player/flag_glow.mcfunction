@@ -8,3 +8,8 @@ execute as @s[scores={flagtime=1}] at @s run playsound minecraft:block.note_bloc
 execute as @s[scores={flagtime=1}] at @s run scoreboard players add @s glow_count 1
 execute as @s[scores={flagtime=25,glow_count=8}] at @s run tellraw @a [{"selector":"@s"},{"text":"'s Glow Expired","color":"white"}]
 scoreboard players set @s[scores={flagtime=50..,glow_count=..7}] flagtime 0
+
+scoreboard players add @s flag_time 1
+execute as @s[scores={flag_time=700}] at @s run tellraw @a [{"selector":"@s"},{"text":" has 20s to return flag!","color":"white"}]
+execute as @s[scores={flag_time=1100}] at @s run tellraw @a [{"selector":"@s"},{"text":" took too long to return flag!","color":"white"}]
+tag @s[scores={flag_time=1200}] remove hasflag

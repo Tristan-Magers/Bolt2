@@ -1,4 +1,4 @@
-give @s magma_cube_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Spawn Point","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b,Size:0},HideFlags:48} 1
+give @s panda_spawn_egg{CustomModelData:2,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Spawn Point","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:magma_cube",PersistenceRequired:1b,Silent:1b,Size:0},HideFlags:48} 1
 
 scoreboard players remove @s drop_magma 1
 

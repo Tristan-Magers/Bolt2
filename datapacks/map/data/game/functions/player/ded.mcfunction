@@ -7,20 +7,21 @@ tag @s remove killed
 scoreboard players set @s KILL_ID -1
 
 #
-scoreboard players set @a item_acid 100
-scoreboard players set @a item_minion 100
-scoreboard players set @a item_boost 80
+scoreboard players set @a item_acid 120
+scoreboard players set @a item_minion 120
+scoreboard players set @a item_boost 120
 
 tag @s remove dark
 
 function game:game/infected/zombie_bonuses
 
 #execute if score .mode .data = .1 .num run clear @s[scores={kills=0,respawn=2}] written_book
-execute if score .mode .data = .1 .num run give @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] written_book{pages:['["",{"text":"Every _ Kills","bold":true},{"text":"\\nx4 = Grenade\\nx5 = Walls\\nx15 = Crossbow\\n\\n","color":"reset"},{"text":"Kill Streak","bold":true},{"text":"\\n2 = Spawnpoint\\n3 = Traps\\n5 = Reveal\\n7 = Traps\\n10 = Reveal\\n11+ = Touch Grass\\n\\n","color":"reset"},{"text":"Capture","bold":true},{"text":" = Shield","color":"reset"}]'],title:"Item Aquirement",author:"Space Bleps"}
+execute if score .mode .data = .1 .num run item replace entity @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] hotbar.7 with written_book{pages:['["",{"text":"Every _ Kills","bold":true},{"text":"\\nx4 = Grenade\\nx5 = Walls\\nx15 = Crossbow\\n\\n","color":"reset"},{"text":"Kill Streak","bold":true},{"text":"\\n2 = Spawnpoint\\n3 = Traps\\n5 = Reveal\\n7 = Traps\\n10 = Reveal\\n11+ = Touch Grass\\n\\n","color":"reset"},{"text":"Capture","bold":true},{"text":" = Shield","color":"reset"}]'],title:"Item Aquirement",author:"Space Bleps"}
 
 execute if score .mode .data = .6 .num run tag @s[tag=!dark_immune] add dark
 
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] snowball
+execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] panda_spawn_egg
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] creeper_spawn_egg
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] silverfish_spawn_egg
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] netherite_sword
@@ -77,6 +78,12 @@ execute if score .map .data = .12 .num run tp @s[team=blue] 15.5 -53.00 -343.5 4
 
 execute if score .map .data = .13 .num run tp @s[team=red] 1.5 -34.00 241.5 90 0
 execute if score .map .data = .13 .num run tp @s[team=blue] -80.5 -34.00 241.5 -90 0
+
+execute if score .map .data = .14 .num run tp @s[team=red] -525.5 -19.00 -262.5 -135 0
+execute if score .map .data = .14 .num run tp @s[team=blue] -489.5 -19.00 -342.5 45 0
+
+execute if score .map .data = .15 .num run tp @s[team=red] -407.5 -38.50 203.5 90 8.3
+execute if score .map .data = .15 .num run tp @s[team=blue] -483.5 -38.50 191.5 -90 8.3
 
 effect give @s[scores={respawn=45..}] blindness 2 1 true
 effect clear @s[scores={respawn=30}] blindness

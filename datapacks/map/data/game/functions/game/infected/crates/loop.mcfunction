@@ -41,7 +41,7 @@ execute if data entity @s[scores={t=10}] interaction run tellraw @a [{"text":"CR
 
 #execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run clear @s[team=blue] iron_ingot
 
-#execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run give @s[team=blue] silverfish_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{Silent:1b,NoAI:1},HideFlags:48} 2
+#execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run give @s[team=blue] panda_spawn_egg{CustomModelData:1,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1},HideFlags:48} 2
 #execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run give @s[team=blue] snowball{display:{Name:'{"text":"Grenade","italic":false,"color":"gray"}'}} 1
 #execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run give @s[team=blue] creeper_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Trap","italic":false,"color":"gray"}'},EntityTag:{PersistenceRequired:1b,Silent:1b},HideFlags:48} 1
 #execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run give @s[team=blue] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
