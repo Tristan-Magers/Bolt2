@@ -1280,5 +1280,11 @@
       "random/bow"
     ],
     "replace": "true"
+  },
+  "item.armor.equip_generic": {
+    "sounds": [
+      "random/bow"
+    ],
+    "replace": "true"
   }
 }

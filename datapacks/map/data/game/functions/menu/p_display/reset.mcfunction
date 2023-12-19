@@ -11,7 +11,7 @@ tag @a[tag=adjusting_slot] remove has_display_slot
 tag @a remove adjusting_slot
 
 #
-execute as @a[scores={p_display_num=0}] run function game:menu/p_display/find_slot
+execute as @a[scores={p_display_num=0,team_pref=0..}] run function game:menu/p_display/find_slot
 
 #
 execute as @a run function game:menu/p_display/find_slot
@@ -19,10 +19,10 @@ execute as @a[tag=slot_removed] run function game:menu/p_display/find_slot
 tag @a remove slot_removed
 
 #
-execute as @a[scores={p_display_num=1..},tag=!has_display_slot] run function game:menu/p_display/adjust_display
+tag @a[scores={p_display_num=1..}] add has_display_slot
 
 #
-tag @a[scores={p_display_num=1..}] add has_display_slot
+execute as @a[scores={p_display_num=1..}] run function game:menu/p_display/adjust_display
 
 #
 execute if entity @a[scores={p_display_num=1}] run fill 263 -43 -252 264 -45 -251 barrier replace minecraft:black_concrete_powder
@@ -45,7 +45,6 @@ execute as @a[scores={p_display_num=3}] run loot replace entity @e[type=giant,ta
 execute as @a[scores={p_display_num=4}] run loot replace entity @e[type=giant,tag=4] weapon.mainhand loot game:player_head
 execute as @a[scores={p_display_num=5}] run loot replace entity @e[type=giant,tag=5] weapon.mainhand loot game:player_head
 execute as @a[scores={p_display_num=6}] run loot replace entity @e[type=giant,tag=6] weapon.mainhand loot game:player_head
-
 execute as @a[scores={p_display_num=7}] run loot replace entity @e[type=giant,tag=7] weapon.offhand loot game:player_head
 execute as @a[scores={p_display_num=8}] run loot replace entity @e[type=giant,tag=8] weapon.offhand loot game:player_head
 execute as @a[scores={p_display_num=9}] run loot replace entity @e[type=giant,tag=9] weapon.offhand loot game:player_head

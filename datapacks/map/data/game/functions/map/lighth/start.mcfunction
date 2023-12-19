@@ -7,8 +7,8 @@ fill -412 -35 174 -480 -29 220 air replace minecraft:gravel
 #scoreboard players set .hexdoor1 .timer 1
 #scoreboard players set .hexdoor2 .timer 1
 
-execute if score .mode .data = .1 .num run summon marker -474 -40 194 {Rotation:[90F,0F],Tags:["gen"]}
-execute if score .mode .data = .1 .num run summon marker -418 -40 200 {Rotation:[-90F,0F],Tags:["gen"]}
+execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -474 -40 194 {Rotation:[90F,0F],Tags:["gen"]}
+execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -418 -40 200 {Rotation:[-90F,0F],Tags:["gen"]}
 
 data merge block -475 -40 194 {front_text:{messages:['{"text":" ","color":"black"}','{"text":""}','{"text":""}','{"text":""}']}}
 data merge block -417 -40 200 {front_text:{messages:['{"text":" ","color":"black"}','{"text":""}','{"text":""}','{"text":""}']}}

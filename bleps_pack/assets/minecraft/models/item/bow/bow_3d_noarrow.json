@@ -122,14 +122,14 @@
 			}
 		},
 		{
-			"from": [11.001, 7.501, 3.501],
-			"to": [14.999, 8.499, 6.249],
+			"from": [11.001, 7.501, 3.511],
+			"to": [14.999, 8.499, 6.259],
 			"rotation": {"angle": -22.5, "axis": "y", "origin": [11, 7.5, 3.5]},
 			"faces": {
 				"north": {"uv": [1, 0, 5, 1], "texture": "#bow"},
-				"east": {"uv": [0, 0, 0, 0], "texture": "#bow"},
+				"east": {"uv": [12, 5, 12, 5], "texture": "#bow"},
 				"south": {"uv": [1, 4.5, 5, 5.5], "texture": "#bow"},
-				"west": {"uv": [0, 0, 0, 0], "texture": "#bow"},
+				"west": {"uv": [12, 4, 12, 4], "texture": "#bow"},
 				"up": {"uv": [0, 9, 4, 12], "texture": "#bow"},
 				"down": {"uv": [0, 12, 4, 9], "texture": "#bow"}
 			}
@@ -140,9 +140,9 @@
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 7.5, 0.5]},
 			"faces": {
 				"north": {"uv": [0, 0, 6, 1], "texture": "#bow"},
-				"east": {"uv": [0, 0, 0, 0], "texture": "#bow"},
+				"east": {"uv": [15, 5, 15, 5], "texture": "#bow"},
 				"south": {"uv": [0, 4.5, 6, 5.5], "texture": "#bow"},
-				"west": {"uv": [0, 0, 0, 0], "texture": "#bow"},
+				"west": {"uv": [15, 6, 15, 6], "texture": "#bow"},
 				"up": {"uv": [0, 6, 6, 9], "texture": "#bow"},
 				"down": {"uv": [0, 9, 6, 6], "texture": "#bow"}
 			}
@@ -161,14 +161,14 @@
 			}
 		},
 		{
-			"from": [1.001, 7.501, 3.501],
-			"to": [4.999, 8.499, 6.249],
+			"from": [1.001, 7.501, 3.511],
+			"to": [4.999, 8.499, 6.259],
 			"rotation": {"angle": 22.5, "axis": "y", "origin": [5, 7.5, 3.5]},
 			"faces": {
 				"north": {"uv": [0, 0, 4, 1], "texture": "#bow"},
-				"east": {"uv": [0, 0, 0, 0], "texture": "#bow"},
+				"east": {"uv": [12, 2, 12, 2], "texture": "#bow"},
 				"south": {"uv": [1, 4.5, 5, 5.5], "texture": "#bow"},
-				"west": {"uv": [0, 0, 0, 0], "texture": "#bow"},
+				"west": {"uv": [12, 4, 12, 4], "texture": "#bow"},
 				"up": {"uv": [0, 9, 4, 12], "texture": "#bow"},
 				"down": {"uv": [0, 12, 4, 9], "texture": "#bow"}
 			}
@@ -270,29 +270,34 @@
 			"name": "string",
 			"origin": [8, 0.5, 17.125],
 			"color": 0,
+			"nbt": "{}",
 			"children": [
 				{
 					"name": "standby",
 					"origin": [0, 0, 0],
 					"color": 0,
+					"nbt": "{}",
 					"children": [0]
 				},
 				{
 					"name": "pulling_0",
 					"origin": [8, 0.5, 12.875],
 					"color": 0,
+					"nbt": "{}",
 					"children": [1, 2]
 				},
 				{
 					"name": "pulling_1",
 					"origin": [8, 0.5, 12.875],
 					"color": 0,
+					"nbt": "{}",
 					"children": [3, 4, 5, 6]
 				},
 				{
 					"name": "pulling_2",
 					"origin": [8, 0.5, 17.125],
 					"color": 0,
+					"nbt": "{}",
 					"children": [7, 8]
 				}
 			]

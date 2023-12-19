@@ -2,6 +2,11 @@ kill @e[tag=gen]
 kill @e[type=item]
 kill @e[type=minecraft:zombie_villager]
 
+kill @e[type=pig]
+kill @e[tag=turret_head]
+kill @e[tag=turret_stand]
+kill @e[tag=turretPunch]
+
 kill @e[type=minecraft:creeper]
 kill @e[type=minecraft:slime]
 kill @e[type=minecraft:magma_cube]
@@ -18,6 +23,8 @@ kill @e[type=minecraft:area_effect_cloud]
 
 kill @e[tag=redflag]
 kill @e[tag=blueflag]
+
+kill @e[tag=target_marker]
 
 execute if score .map .data = .1 .num run function game:map/towers/start
 execute if score .map .data = .2 .num run function game:map/caves/start

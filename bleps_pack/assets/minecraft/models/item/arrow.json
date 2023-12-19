@@ -1,0 +1,20 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "item/arrow"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "item/arrow_red"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2
+      },
+      "model": "item/arrow_blue"
+    }
+  ]
+}

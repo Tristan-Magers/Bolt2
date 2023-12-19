@@ -1,4 +1,4 @@
-execute if score .70 .num > .load .data if score .20 .num < .load .data as @a at @s if blocks ~ ~ ~ ~ ~ ~ ~ ~ ~ masked run scoreboard players set .load .data 20
+execute if score .70 .num > .load .data if score .22 .num < .load .data as @a at @s if loaded ~ ~ ~ run scoreboard players set .load .data 22
 
 kill @e[tag=head]
 kill @e[tag=cutscene]
@@ -6,7 +6,7 @@ kill @e[tag=cutscene]
 gamemode adventure @a
 
 execute if score .map .data = .1 .num run tp @a[tag=!loading] -54.5 -57.00 8.5 0 0
-execute if score .map .data = .2 .num run tp @a[tag=!loading] -164.5 -59.00 30.5 0 0
+execute if score .map .data = .2 .num run tp @a[tag=!loading] -151.5 -59.00 -122.5
 execute if score .map .data = .3 .num run tp @a[tag=!loading] -226.5 -59.00 20.5 0 0
 execute if score .map .data = .4 .num run tp @a[tag=!loading] -287.5 -59.00 28.5 0 0
 execute if score .map .data = .5 .num run tp @a[tag=!loading] -316.5 -59.00 -69.5 0 0
@@ -29,3 +29,11 @@ execute if score .0 .num = .load .data run tag @a remove loading
 
 effect give @a minecraft:invisibility 2 10 true
 effect give @a minecraft:weakness 2 10 true
+effect give @a minecraft:slowness 2 10 true
+
+scoreboard players add .load_time .data 1
+
+execute if score .load_time .data matches 20.. run title @a times 0 20 10
+execute if score .load_time .data matches 20.. run title @a title {"translate":"\u0001","font":"title"}
+
+clear @a

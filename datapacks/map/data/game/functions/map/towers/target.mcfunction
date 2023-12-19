@@ -1,131 +1,128 @@
-execute if score @s random = .0 .num run tp @s -72 -52 54
-execute if score @s random = .1 .num run tp @s -66 -52 55
-execute if score @s random = .2 .num run tp @s -58 -52 54
-execute if score @s random = .3 .num run tp @s -57 -52 51
-execute if score @s random = .4 .num run tp @s -66 -56 53
-execute if score @s random = .5 .num run tp @s -61 -56 52
-execute if score @s random = .6 .num run tp @s -60 -56 47
-execute if score @s random = .7 .num run tp @s -62 -52 45
-execute if score @s random = .8 .num run tp @s -57 -55 40
-execute if score @s random = .9 .num run tp @s -62 -52 42
-execute if score @s random = .10 .num run tp @s -63 -56 37
-execute if score @s random = .11 .num run tp @s -64 -56 42
-execute if score @s random = .12 .num run tp @s -66 -56 40
-execute if score @s random = .13 .num run tp @s -69 -52 48
-execute if score @s random = .14 .num run tp @s -70 -52 50
-execute if score @s random = .15 .num run tp @s -72 -56 47
-execute if score @s random = .16 .num run tp @s -69 -52 44
-execute if score @s random = .17 .num run tp @s -69 -52 42
-execute if score @s random = .18 .num run tp @s -75 -52 44
-execute if score @s random = .19 .num run tp @s -75 -52 42
-execute if score @s random = .20 .num run tp @s -77 -56 44
-execute if score @s random = .21 .num run tp @s -88 -56 42
-execute if score @s random = .22 .num run tp @s -61 -56 40
-execute if score @s random = .23 .num run tp @s -70 -56 39
-execute if score @s random = .24 .num run tp @s -76 -56 40
-execute if score @s random = .25 .num run tp @s -77 -57 32
-execute if score @s random = .26 .num run tp @s -87 -56 36
-execute if score @s random = .27 .num run tp @s -72 -56 42
-execute if score @s random = .28 .num run tp @s -81 -54 36
-execute if score @s random = .29 .num run tp @s -82 -54 36
-execute if score @s random = .30 .num run tp @s -83 -54 36
-execute if score @s random = .31 .num run tp @s -88 -52 35
-execute if score @s random = .32 .num run tp @s -87 -52 32
-execute if score @s random = .33 .num run tp @s -82 -50 32
-execute if score @s random = .34 .num run tp @s -82 -52 33
-execute if score @s random = .35 .num run tp @s -81 -52 33
-execute if score @s random = .36 .num run tp @s -78 -52 35
-execute if score @s random = .37 .num run tp @s -74 -49 35
-execute if score @s random = .38 .num run tp @s -71 -49 35
-execute if score @s random = .39 .num run tp @s -79 -52 32
-execute if score @s random = .40 .num run tp @s -76 -52 33
-execute if score @s random = .41 .num run tp @s -73 -49 32
-execute if score @s random = .42 .num run tp @s -71 -49 32
-execute if score @s random = .43 .num run tp @s -68 -56 34
-execute if score @s random = .44 .num run tp @s -66 -56 33
-execute if score @s random = .45 .num run tp @s -72 -56 34
-execute if score @s random = .46 .num run tp @s -64 -52 33
-execute if score @s random = .47 .num run tp @s -65 -50 33
-execute if score @s random = .48 .num run tp @s -59 -57 34
-execute if score @s random = .49 .num run tp @s -88 -58 32
-execute if score @s random = .50 .num run tp @s -63 -59 28
-execute if score @s random = .51 .num run tp @s -84 -57 29
-execute if score @s random = .52 .num run tp @s -79 -59 28
-execute if score @s random = .53 .num run tp @s -74 -59 28
-execute if score @s random = .54 .num run tp @s -77 -59 26
-execute if score @s random = .55 .num run tp @s -64 -59 25
-execute if score @s random = .56 .num run tp @s -63 -56 21
-execute if score @s random = .57 .num run tp @s -72 -60 21
-execute if score @s random = .58 .num run tp @s -73 -60 21
-execute if score @s random = .59 .num run tp @s -82 -56 25
-execute if score @s random = .60 .num run tp @s -88 -55 22
-execute if score @s random = .61 .num run tp @s -78 -57 22
-execute if score @s random = .62 .num run tp @s -77 -56 21
-execute if score @s random = .63 .num run tp @s -80 -56 21
-execute if score @s random = .64 .num run tp @s -81 -56 21
-execute if score @s random = .65 .num run tp @s -83 -59 21
-execute if score @s random = .66 .num run tp @s -78 -57 20
-execute if score @s random = .67 .num run tp @s -82 -56 17
-execute if score @s random = .68 .num run tp @s -67 -59 27
-execute if score @s random = .69 .num run tp @s -67 -59 15
-execute if score @s random = .70 .num run tp @s -64 -59 17
-execute if score @s random = .71 .num run tp @s -63 -59 14
-execute if score @s random = .72 .num run tp @s -77 -59 16
-execute if score @s random = .73 .num run tp @s -88 -55 20
-execute if score @s random = .74 .num run tp @s -79 -59 14
-execute if score @s random = .75 .num run tp @s -74 -59 14
-execute if score @s random = .76 .num run tp @s -77 -57 10
-execute if score @s random = .77 .num run tp @s -84 -57 13
-execute if score @s random = .78 .num run tp @s -88 -58 10
-execute if score @s random = .79 .num run tp @s -87 -52 10
-execute if score @s random = .80 .num run tp @s -88 -52 7
-execute if score @s random = .81 .num run tp @s -87 -56 6
-execute if score @s random = .82 .num run tp @s -88 -56 0
-execute if score @s random = .83 .num run tp @s -83 -54 6
-execute if score @s random = .84 .num run tp @s -81 -54 6
-execute if score @s random = .85 .num run tp @s -82 -50 10
-execute if score @s random = .86 .num run tp @s -83 -52 9
-execute if score @s random = .87 .num run tp @s -82 -52 9
-execute if score @s random = .88 .num run tp @s -81 -52 9
-execute if score @s random = .89 .num run tp @s -79 -52 10
-execute if score @s random = .90 .num run tp @s -78 -52 7
-execute if score @s random = .91 .num run tp @s -76 -52 9
-execute if score @s random = .92 .num run tp @s -73 -49 10
-execute if score @s random = .93 .num run tp @s -71 -49 10
-execute if score @s random = .94 .num run tp @s -71 -49 7
-execute if score @s random = .95 .num run tp @s -74 -49 7
-execute if score @s random = .96 .num run tp @s -65 -50 9
-execute if score @s random = .97 .num run tp @s -64 -52 9
-execute if score @s random = .98 .num run tp @s -66 -56 9
-execute if score @s random = .99 .num run tp @s -68 -56 8
-execute if score @s random = .100 .num run tp @s -72 -56 8
-execute if score @s random = .101 .num run tp @s -76 -56 2
-execute if score @s random = .102 .num run tp @s -77 -56 -2
-execute if score @s random = .103 .num run tp @s -70 -56 3
-execute if score @s random = .104 .num run tp @s -72 -56 0
-execute if score @s random = .105 .num run tp @s -63 -56 5
-execute if score @s random = .106 .num run tp @s -66 -56 2
-execute if score @s random = .107 .num run tp @s -64 -56 0
-execute if score @s random = .108 .num run tp @s -61 -56 2
-execute if score @s random = .109 .num run tp @s -57 -55 2
-execute if score @s random = .110 .num run tp @s -62 -52 0
-execute if score @s random = .111 .num run tp @s -62 -52 -3
-execute if score @s random = .112 .num run tp @s -69 -52 -2
-execute if score @s random = .113 .num run tp @s -69 -52 0
-execute if score @s random = .114 .num run tp @s -75 -52 -3
-execute if score @s random = .115 .num run tp @s -75 -52 -2
-execute if score @s random = .116 .num run tp @s -75 -52 0
-execute if score @s random = .117 .num run tp @s -72 -56 -5
-execute if score @s random = .118 .num run tp @s -72 -52 -12
-execute if score @s random = .119 .num run tp @s -66 -52 -13
-execute if score @s random = .120 .num run tp @s -70 -52 -8
-execute if score @s random = .121 .num run tp @s -69 -52 -6
-execute if score @s random = .122 .num run tp @s -58 -52 -12
-execute if score @s random = .123 .num run tp @s -57 -52 -9
-execute if score @s random = .124 .num run tp @s -59 -57 8
-execute if score @s random = .125 .num run tp @s -60 -56 -5
-execute if score @s random = .126 .num run tp @s -61 -56 -10
-execute if score @s random = .127 .num run tp @s -66 -56 -11
-
-
-
+summon minecraft:marker -72 -52 54 {Tags:["target_marker"]}
+summon minecraft:marker -66 -52 55 {Tags:["target_marker"]}
+summon minecraft:marker -58 -52 54 {Tags:["target_marker"]}
+summon minecraft:marker -57 -52 51 {Tags:["target_marker"]}
+summon minecraft:marker -66 -56 53 {Tags:["target_marker"]}
+summon minecraft:marker -61 -56 52 {Tags:["target_marker"]}
+summon minecraft:marker -60 -56 47 {Tags:["target_marker"]}
+summon minecraft:marker -62 -52 45 {Tags:["target_marker"]}
+summon minecraft:marker -57 -55 40 {Tags:["target_marker"]}
+summon minecraft:marker -62 -52 42 {Tags:["target_marker"]}
+summon minecraft:marker -63 -56 37 {Tags:["target_marker"]}
+summon minecraft:marker -64 -56 42 {Tags:["target_marker"]}
+summon minecraft:marker -66 -56 40 {Tags:["target_marker"]}
+summon minecraft:marker -69 -52 48 {Tags:["target_marker"]}
+summon minecraft:marker -70 -52 50 {Tags:["target_marker"]}
+summon minecraft:marker -72 -56 47 {Tags:["target_marker"]}
+summon minecraft:marker -69 -52 44 {Tags:["target_marker"]}
+summon minecraft:marker -69 -52 42 {Tags:["target_marker"]}
+summon minecraft:marker -75 -52 44 {Tags:["target_marker"]}
+summon minecraft:marker -75 -52 42 {Tags:["target_marker"]}
+summon minecraft:marker -77 -56 44 {Tags:["target_marker"]}
+summon minecraft:marker -88 -56 42 {Tags:["target_marker"]}
+summon minecraft:marker -61 -56 40 {Tags:["target_marker"]}
+summon minecraft:marker -70 -56 39 {Tags:["target_marker"]}
+summon minecraft:marker -76 -56 40 {Tags:["target_marker"]}
+summon minecraft:marker -77 -57 32 {Tags:["target_marker"]}
+summon minecraft:marker -87 -56 36 {Tags:["target_marker"]}
+summon minecraft:marker -72 -56 42 {Tags:["target_marker"]}
+summon minecraft:marker -81 -54 36 {Tags:["target_marker"]}
+summon minecraft:marker -82 -54 36 {Tags:["target_marker"]}
+summon minecraft:marker -83 -54 36 {Tags:["target_marker"]}
+summon minecraft:marker -88 -52 35 {Tags:["target_marker"]}
+summon minecraft:marker -87 -52 32 {Tags:["target_marker"]}
+summon minecraft:marker -82 -50 32 {Tags:["target_marker"]}
+summon minecraft:marker -82 -52 33 {Tags:["target_marker"]}
+summon minecraft:marker -81 -52 33 {Tags:["target_marker"]}
+summon minecraft:marker -78 -52 35 {Tags:["target_marker"]}
+summon minecraft:marker -74 -49 35 {Tags:["target_marker"]}
+summon minecraft:marker -71 -49 35 {Tags:["target_marker"]}
+summon minecraft:marker -79 -52 32 {Tags:["target_marker"]}
+summon minecraft:marker -76 -52 33 {Tags:["target_marker"]}
+summon minecraft:marker -73 -49 32 {Tags:["target_marker"]}
+summon minecraft:marker -71 -49 32 {Tags:["target_marker"]}
+summon minecraft:marker -68 -56 34 {Tags:["target_marker"]}
+summon minecraft:marker -66 -56 33 {Tags:["target_marker"]}
+summon minecraft:marker -72 -56 34 {Tags:["target_marker"]}
+summon minecraft:marker -64 -52 33 {Tags:["target_marker"]}
+summon minecraft:marker -65 -50 33 {Tags:["target_marker"]}
+summon minecraft:marker -59 -57 34 {Tags:["target_marker"]}
+summon minecraft:marker -88 -58 32 {Tags:["target_marker"]}
+summon minecraft:marker -63 -59 28 {Tags:["target_marker"]}
+summon minecraft:marker -84 -57 29 {Tags:["target_marker"]}
+summon minecraft:marker -79 -59 28 {Tags:["target_marker"]}
+summon minecraft:marker -74 -59 28 {Tags:["target_marker"]}
+summon minecraft:marker -77 -59 26 {Tags:["target_marker"]}
+summon minecraft:marker -64 -59 25 {Tags:["target_marker"]}
+summon minecraft:marker -63 -56 21 {Tags:["target_marker"]}
+summon minecraft:marker -72 -60 21 {Tags:["target_marker"]}
+summon minecraft:marker -73 -60 21 {Tags:["target_marker"]}
+summon minecraft:marker -82 -56 25 {Tags:["target_marker"]}
+summon minecraft:marker -88 -55 22 {Tags:["target_marker"]}
+summon minecraft:marker -78 -57 22 {Tags:["target_marker"]}
+summon minecraft:marker -77 -56 21 {Tags:["target_marker"]}
+summon minecraft:marker -80 -56 21 {Tags:["target_marker"]}
+summon minecraft:marker -81 -56 21 {Tags:["target_marker"]}
+summon minecraft:marker -83 -59 21 {Tags:["target_marker"]}
+summon minecraft:marker -78 -57 20 {Tags:["target_marker"]}
+summon minecraft:marker -82 -56 17 {Tags:["target_marker"]}
+summon minecraft:marker -67 -59 27 {Tags:["target_marker"]}
+summon minecraft:marker -67 -59 15 {Tags:["target_marker"]}
+summon minecraft:marker -64 -59 17 {Tags:["target_marker"]}
+summon minecraft:marker -63 -59 14 {Tags:["target_marker"]}
+summon minecraft:marker -77 -59 16 {Tags:["target_marker"]}
+summon minecraft:marker -88 -55 20 {Tags:["target_marker"]}
+summon minecraft:marker -79 -59 14 {Tags:["target_marker"]}
+summon minecraft:marker -74 -59 14 {Tags:["target_marker"]}
+summon minecraft:marker -77 -57 10 {Tags:["target_marker"]}
+summon minecraft:marker -84 -57 13 {Tags:["target_marker"]}
+summon minecraft:marker -88 -58 10 {Tags:["target_marker"]}
+summon minecraft:marker -87 -52 10 {Tags:["target_marker"]}
+summon minecraft:marker -88 -52 7 {Tags:["target_marker"]}
+summon minecraft:marker -87 -56 6 {Tags:["target_marker"]}
+summon minecraft:marker -88 -56 0 {Tags:["target_marker"]}
+summon minecraft:marker -83 -54 6 {Tags:["target_marker"]}
+summon minecraft:marker -81 -54 6 {Tags:["target_marker"]}
+summon minecraft:marker -82 -50 10 {Tags:["target_marker"]}
+summon minecraft:marker -83 -52 9 {Tags:["target_marker"]}
+summon minecraft:marker -82 -52 9 {Tags:["target_marker"]}
+summon minecraft:marker -81 -52 9 {Tags:["target_marker"]}
+summon minecraft:marker -79 -52 10 {Tags:["target_marker"]}
+summon minecraft:marker -78 -52 7 {Tags:["target_marker"]}
+summon minecraft:marker -76 -52 9 {Tags:["target_marker"]}
+summon minecraft:marker -73 -49 10 {Tags:["target_marker"]}
+summon minecraft:marker -71 -49 10 {Tags:["target_marker"]}
+summon minecraft:marker -71 -49 7 {Tags:["target_marker"]}
+summon minecraft:marker -74 -49 7 {Tags:["target_marker"]}
+summon minecraft:marker -65 -50 9 {Tags:["target_marker"]}
+summon minecraft:marker -64 -52 9 {Tags:["target_marker"]}
+summon minecraft:marker -66 -56 9 {Tags:["target_marker"]}
+summon minecraft:marker -68 -56 8 {Tags:["target_marker"]}
+summon minecraft:marker -72 -56 8 {Tags:["target_marker"]}
+summon minecraft:marker -76 -56 2 {Tags:["target_marker"]}
+summon minecraft:marker -77 -56 -2 {Tags:["target_marker"]}
+summon minecraft:marker -70 -56 3 {Tags:["target_marker"]}
+summon minecraft:marker -72 -56 0 {Tags:["target_marker"]}
+summon minecraft:marker -63 -56 5 {Tags:["target_marker"]}
+summon minecraft:marker -66 -56 2 {Tags:["target_marker"]}
+summon minecraft:marker -64 -56 0 {Tags:["target_marker"]}
+summon minecraft:marker -61 -56 2 {Tags:["target_marker"]}
+summon minecraft:marker -57 -55 2 {Tags:["target_marker"]}
+summon minecraft:marker -62 -52 0 {Tags:["target_marker"]}
+summon minecraft:marker -62 -52 -3 {Tags:["target_marker"]}
+summon minecraft:marker -69 -52 -2 {Tags:["target_marker"]}
+summon minecraft:marker -69 -52 0 {Tags:["target_marker"]}
+summon minecraft:marker -75 -52 -3 {Tags:["target_marker"]}
+summon minecraft:marker -75 -52 -2 {Tags:["target_marker"]}
+summon minecraft:marker -75 -52 0 {Tags:["target_marker"]}
+summon minecraft:marker -72 -56 -5 {Tags:["target_marker"]}
+summon minecraft:marker -72 -52 -12 {Tags:["target_marker"]}
+summon minecraft:marker -66 -52 -13 {Tags:["target_marker"]}
+summon minecraft:marker -70 -52 -8 {Tags:["target_marker"]}
+summon minecraft:marker -69 -52 -6 {Tags:["target_marker"]}
+summon minecraft:marker -58 -52 -12 {Tags:["target_marker"]}
+summon minecraft:marker -57 -52 -9 {Tags:["target_marker"]}
+summon minecraft:marker -59 -57 8 {Tags:["target_marker"]}
+summon minecraft:marker -60 -56 -5 {Tags:["target_marker"]}
+summon minecraft:marker -61 -56 -10 {Tags:["target_marker"]}
+summon minecraft:marker -66 -56 -11 {Tags:["target_marker"]}

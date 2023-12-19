@@ -2,6 +2,13 @@
 execute if score .mode .data = .1 .num if score .map .data = .3 .num run tellraw @a [{"text":"NOTICE!","color":"#8F2929","bold":true},{"text":" Walls Item disabled on map.","bold":false}]
 
 #
+tag @a remove sur_start
+
+#
+scoreboard players set @a delay_boost 0
+scoreboard players set @a delay_reveal 0
+
+#
 scoreboard players add @a team_pref 0
 
 scoreboard players set .stats_end .data 0
@@ -40,32 +47,24 @@ execute as @a run scoreboard players operation @s win_streak *= .10 .num
 execute as @a run scoreboard players operation @s rank += @s win_streak
 
 #
-function game:game/rank_sort/start
+execute if score .mode .data = .1 .num if score .tmi .data = .0 .num run function game:game/rank_sort/start
 
 # undo win streak change
 execute as @a run scoreboard players operation @s rank -= @s win_streak
 execute as @a run scoreboard players operation @s win_streak /= .10 .num
 
 
-#function game:game/fill_player_random
-#function game:game/fill_player_random
-#function game:game/fill_player_random
-#function game:game/fill_player_random
-#function game:game/fill_player_random
-#function game:game/fill_player_random
-#function game:game/fill_player_random
-#function game:game/fill_player_random
-#function game:game/fill_player_random
-#function game:game/fill_player_random
-#function game:game/fill_player_random
+execute if score .tmi .data = .1 .num as @a[team=] run function game:game/fill_player_random
 
 execute if score .mode .data = .6 .num run team join blue @a[scores={team_pref=0..}]
 
 execute if score .mode .data = .6 .num run function game:game/fill_player_infected
 execute if score .mode .data = .6 .num if score .players_in .data >= .4 .num run function game:game/fill_player_infected
-execute if score .mode .data = .6 .num if score .players_in .data >= .7 .num run function game:game/fill_player_infected
-execute if score .mode .data = .6 .num if score .players_in .data >= .10 .num run function game:game/fill_player_infected
-execute if score .mode .data = .6 .num if score .players_in .data >= .13 .num run function game:game/fill_player_infected
+execute if score .mode .data = .6 .num if score .players_in .data >= .6 .num run function game:game/fill_player_infected
+execute if score .mode .data = .6 .num if score .players_in .data >= .9 .num run function game:game/fill_player_infected
+execute if score .mode .data = .6 .num if score .players_in .data >= .12 .num run function game:game/fill_player_infected
+
+execute if score .mode .data = .6 .num run tag @a[team=blue,tag=playing] add sur_start
 
 execute if score .mode .data = .7 .num run team join blue @a[scores={team_pref=0..}]
 
@@ -85,7 +84,8 @@ scoreboard players set @a no_cap 0
 scoreboard players set @a kills 0
 scoreboard players set @a killStreak 0
 scoreboard objectives setdisplay list kills
-scoreboard objectives setdisplay sidebar Scores
+#scoreboard objectives setdisplay sidebar Scores
+scoreboard objectives setdisplay sidebar
 execute if score .mode .data = .6 .num run scoreboard objectives setdisplay sidebar evolutions
 
 scoreboard players set @a respawn_assist 0
@@ -139,14 +139,13 @@ execute if score .mode .data = .7 .num run bossbar set minecraft:time max 69
 execute if score .mode .data = .1 .num run bossbar set minecraft:time value 240
 execute if score .mode .data = .1 .num run bossbar set minecraft:time max 240
 
-bossbar add scrap {"text":"Scrap Collected","color":"white"}
+bossbar add scrap {"text":"Scrap Collected","color":"white","font":"fancy"}
 bossbar set minecraft:scrap players @a
 bossbar set minecraft:scrap style notched_12
 bossbar set minecraft:scrap color blue
 bossbar set minecraft:scrap value 0
 bossbar set minecraft:scrap max 12
-execute unless score .mode .data = .6 .num run bossbar set minecraft:scrap visible false
-execute if score .mode .data = .6 .num run bossbar set minecraft:scrap visible true
+bossbar set minecraft:scrap visible false
 
 #scoreboard players operation global timer -= 1 math
 #execute store result bossbar timer value run scoreboard players get global timer
@@ -170,21 +169,27 @@ scoreboard players set .Kills .metric 0
 #
 kill @e[tag=cutscene]
 
-execute if score .map .data = .1 .num run summon armor_stand -84 -53 21 {Rotation:[-90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro","rev"]}
-execute if score .map .data = .2 .num run summon armor_stand -134 -50 21 {Rotation:[90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro"]}
-execute if score .map .data = .3 .num run summon armor_stand -222.5 -52 13 {Rotation:[-90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro","rev"]}
-execute if score .map .data = .5 .num run summon armor_stand -327 -52 -72 {Rotation:[90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro"]}
-execute if score .map .data = .6 .num run summon armor_stand -387 -42 16 {Rotation:[90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro"]}
-execute if score .map .data = .10 .num run summon armor_stand -245.0 -44.5 -432 {Rotation:[-90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro","rev"]}
-execute if score .map .data = .12 .num run summon armor_stand 8 -49.5 -300 {Rotation:[90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro"]}
-execute if score .map .data = .13 .num run summon armor_stand -28 -34 231 {Rotation:[90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro"]}
-execute if score .map .data = .14 .num run summon armor_stand -515 -17 -303 {Rotation:[-90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro","rev"]}
-execute if score .map .data = .15 .num run summon armor_stand -435 -33 197 {Rotation:[90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro"]}
+execute if score .map .data = .1 .num run summon armor_stand -84 -55 21 {NoGravity:1,Rotation:[-90F,0F],Marker:0,Invisible:1,Tags:["cutscene","intro","rev"]}
+execute if score .map .data = .2 .num run summon armor_stand -166 -52 -122 {NoGravity:1,Rotation:[90F,0F],Marker:0,Invisible:1,Tags:["cutscene","intro"]}
+execute if score .map .data = .3 .num run summon armor_stand -222.5 -54 13 {NoGravity:1,Rotation:[-90F,0F],Marker:0,Invisible:1,Tags:["cutscene","intro","rev"]}
+execute if score .map .data = .5 .num run summon armor_stand -327 -54 -72 {NoGravity:1,Rotation:[90F,0F],Marker:0,Invisible:1,Tags:["cutscene","intro"]}
+execute if score .map .data = .6 .num run summon armor_stand -387 -44 16 {NoGravity:1,Rotation:[90F,0F],Marker:0,Invisible:1,Tags:["cutscene","intro"]}
+execute if score .map .data = .10 .num run summon armor_stand -245.0 -46.5 -432 {NoGravity:1,Rotation:[-90F,0F],Marker:0,Invisible:1,Tags:["cutscene","intro","rev"]}
+execute if score .map .data = .12 .num run summon armor_stand 8 -51.5 -300 {NoGravity:1,Rotation:[90F,0F],Marker:0,Invisible:1,Tags:["cutscene","intro"]}
+execute if score .map .data = .13 .num run summon armor_stand -28 -36 231 {NoGravity:1,Rotation:[90F,0F],Marker:0,Invisible:1,Tags:["cutscene","intro"]}
+execute if score .map .data = .14 .num run summon armor_stand -515 -19 -303 {NoGravity:1,Rotation:[-90F,0F],Marker:0,Invisible:1,Tags:["cutscene","intro","rev"]}
+execute if score .map .data = .15 .num run summon armor_stand -435 -35 197 {NoGravity:1,Rotation:[90F,0F],Marker:0,Invisible:1,Tags:["cutscene","intro"]}
 
 #execute unless entity @e[tag=cutscene] run summon armor_stand -68 -53 21 {Rotation:[90F,0F],Marker:1,Invisible:1,Tags:["cutscene","intro"]}
 
 scoreboard players set @a cutscene 1
 scoreboard players set @a cutscene_time 80
+
+#
+scoreboard players set .1Kills .stats 1
+scoreboard players set .2Kills .stats 3
+scoreboard players set .3Kills .stats 5
+scoreboard players set .4Kills .stats 10
 
 #
 scoreboard players set .BoostKills .stats 9999
@@ -198,15 +203,23 @@ execute if score .mode .data = .6 .num run scoreboard players set .CrossKills .s
 execute if score .mode .data = .6 .num run scoreboard players set .GrenadeKills .stats 1000
 execute if score .mode .data = .6 .num run scoreboard players set .WallKills .stats 1000
 
-execute if score .mode .data = .7 .num run scoreboard players set .CrossKills .stats 45
-execute if score .mode .data = .7 .num run scoreboard players set .GrenadeKills .stats 6
-execute if score .mode .data = .7 .num run scoreboard players set .BoostKills .stats 10
+execute if score .mode .data = .7 .num run scoreboard players set .CrossKills .stats 30
+execute if score .mode .data = .7 .num run scoreboard players set .GrenadeKills .stats 4
+execute if score .mode .data = .7 .num run scoreboard players set .BoostKills .stats 6
 execute if score .mode .data = .7 .num run scoreboard players set .WallKills .stats 1000
 
+execute if score .tmi .data matches 1 run scoreboard players set .CrossKills .stats 1000
+execute if score .tmi .data matches 1 run scoreboard players set .GrenadeKills .stats 1000
+execute if score .tmi .data matches 1 run scoreboard players set .BoostKills .stats 1000
+execute if score .tmi .data matches 1 run scoreboard players set .WallKills .stats 1000
+ 
 #
 scoreboard players set @a has_lev 0
 
 #
+scoreboard players set @a stats_scrap 0
+scoreboard players set @a stats_inf_kill 0
+scoreboard players set @a stats_sur_kill 0
 scoreboard players set @a stats_captures 0
 scoreboard players set @a stats_attempts 0
 scoreboard players set @a stats_deaths 0
@@ -245,5 +258,16 @@ tag @a remove item_acid
 scoreboard players set @a item_acid 100
 scoreboard players set @a item_minion 100
 scoreboard players set @a item_boost 80
+scoreboard players remove @a spawn_message_delay 20
 
 scoreboard players set @a crossbowTime 1
+
+#
+item replace block 221 -50 -240 container.0 from block 244 -50 -254 container.24
+item replace block 221 -50 -242 container.0 from block 244 -50 -254 container.25
+item replace block 221 -50 -244 container.0 from block 244 -50 -254 container.26
+
+item replace block 219 -50 -238 container.0 from block 244 -50 -254 container.19
+item replace block 219 -50 -240 container.0 from block 244 -50 -254 container.20
+item replace block 219 -50 -242 container.0 from block 244 -50 -254 container.21
+item replace block 219 -50 -244 container.0 from block 244 -50 -254 container.22

@@ -24,6 +24,8 @@ execute if data entity @s interaction on target if entity @s[team=blue,scores={s
 execute if data entity @s[tag=scrap_added] interaction on target run tag @a remove processor
 execute if data entity @s[tag=scrap_added] interaction on target run tag @p add processor
 
+execute if data entity @s[tag=scrap_added,scores={scrap_count=..12}] interaction on target run execute as @p[tag=processor] run scoreboard players add @s stats_scrap 1
+
 execute if data entity @s[tag=scrap_added] interaction on target run execute as @p[tag=processor] run function game:algor/random_8
 
 execute if data entity @s[tag=scrap_added] interaction on target run execute if score @p[tag=processor] random = .0 .num run give @s[team=blue] panda_spawn_egg{CustomModelData:1,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1},HideFlags:48} 2
@@ -40,7 +42,7 @@ execute if data entity @s[tag=scrap_added] interaction on target run tag @a remo
 
 execute if data entity @s[tag=scrap_added] interaction run execute store result bossbar scrap value run scoreboard players get @s scrap_count
 
-execute if data entity @s[tag=scrap_added] interaction run tellraw @a [{"text":"SCRAP ADDED: "},{"score":{"objective":"scrap_count","name":"@s"}},{"text":"/12"}]
+execute if data entity @s[tag=scrap_added,scores={scrap_count=..12}] interaction run tellraw @a [{"text":"SCRAP ADDED: "},{"score":{"objective":"scrap_count","name":"@s"}},{"text":"/12"}]
 execute if data entity @s[tag=scrap_added,scores={scrap_count=12..}] interaction run function game:game/infected/end_scrap
 
 data remove entity @s interaction

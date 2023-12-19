@@ -4,7 +4,7 @@ scoreboard players add .rep .calc 1
 #
 scoreboard players set .red_rank .calc 0
 execute as @a[tag=playing,scores={team_pref=1}] run scoreboard players operation .red_rank .calc += @s rank
-execute as @a[tag=playing,scores={team_pref=2}] run scoreboard players operation .red_rank .calc -= @s rank
+#execute as @a[tag=playing,scores={team_pref=2}] run scoreboard players operation .red_rank .calc -= @s rank
 execute as @e[tag=rank_dummy,team=red] run scoreboard players operation .red_rank .calc += @s rank_real
 
 scoreboard players set .neg .calc 0

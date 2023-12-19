@@ -1,18 +1,23 @@
-execute as @s at @s run function game:algor/random_64
+execute store result score @s random run random value 0..127
 
-execute as @s at @s if score .map .data = .1 .num run function game:map/towers/target
-execute as @s at @s if score .map .data = .5 .num run function game:map/hex/target
-execute as @s at @s if score .map .data = .6 .num run function game:map/valley/target
+tag @e[tag=target_marker,type=marker] remove ideal
+tag @e[tag=target_marker,type=marker] remove valid
+tag @e[tag=target_marker,type=marker] remove bad
+tag @e[tag=target_marker,type=marker] remove taken
 
-scoreboard players add @s timer 1
+execute as @e[tag=target_marker,type=marker] at @s unless block ~ ~ ~ air run tag @s add taken
+execute as @e[tag=target_marker,type=marker] at @s if entity @a[distance=..8,gamemode=!spectator] run tag @s add bad
+execute as @e[tag=target_marker,type=marker,scores={t2=1..}] run tag @s add bad
+execute as @e[tag=target_marker,type=marker] at @s unless entity @a[distance=..15,gamemode=!spectator] if entity @a[distance=15..48,gamemode=!spectator] run tag @s add valid
+execute if score @s random matches 41.. as @e[tag=target_marker,type=marker,tag=valid] at @s unless entity @e[distance=..7,tag=target_marker,type=marker,tag=taken] run tag @s add ideal
+execute if score @s random matches ..40 as @e[tag=target_marker,type=marker,tag=valid] at @s if entity @e[distance=1.8..9,tag=target_marker,type=marker,tag=taken] run tag @s add ideal
 
-tag @s remove valid
-tag @s remove bad
+tag @e[tag=target_marker,type=marker,tag=taken] remove bad
+tag @e[tag=target_marker,type=marker,tag=bad] remove valid
+tag @e[tag=target_marker,type=marker,tag=!valid] remove ideal
 
-execute at @s unless entity @a[distance=..18,gamemode=!spectator] if entity @a[distance=18..44,gamemode=!spectator] run tag @s add valid
-
-execute at @s if entity @a[distance=..10,gamemode=!spectator] run tag @s add bad
-execute at @s if block ~ ~ ~ target run tag @s add bad
-
-execute as @s[tag=!valid,scores={timer=..100}] at @s run function game:items/target/location
-execute as @s[tag=bad,scores={timer=..150}] at @s run function game:items/target/location
+execute unless entity @e[tag=target_marker,type=marker,tag=!taken] run tag @s add fail_spot
+execute if entity @e[tag=target_marker,type=marker,tag=!taken] run tp @s @e[tag=target_marker,type=marker,tag=!taken,limit=1,sort=random]
+execute if entity @e[tag=target_marker,type=marker,tag=bad] run tp @s @e[tag=target_marker,type=marker,tag=bad,limit=1,sort=random]
+execute if entity @e[tag=target_marker,type=marker,tag=valid] run tp @s @e[tag=target_marker,type=marker,tag=valid,limit=1,sort=random]
+execute if entity @e[tag=target_marker,type=marker,tag=ideal] run tp @s @e[tag=target_marker,type=marker,tag=ideal,limit=1,sort=random]

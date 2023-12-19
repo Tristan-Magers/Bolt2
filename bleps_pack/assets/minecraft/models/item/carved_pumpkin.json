@@ -1,3 +1,32 @@
 {
-  "parent": "custom/invisible"
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "block/yellow_stained_glass"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "item/blue_flag"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2
+      },
+      "model": "item/red_flag"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3
+      },
+      "model": "item/chainmail_helmet"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4
+      },
+      "model": "item/banner_parent"
+    }
+  ]
 }

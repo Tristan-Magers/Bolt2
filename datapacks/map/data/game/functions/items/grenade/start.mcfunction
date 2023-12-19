@@ -16,7 +16,7 @@ playsound minecraft:block.note_block.bass master @a ~ ~ ~ 0.2 0.5
 function game:items/newid
 
 tag @a remove thrower
-tag @p[scores={ID=1..,snowball=1..}] add thrower
+execute on origin run tag @s add thrower
 
 scoreboard players set @p[tag=thrower] snowball 0
 scoreboard players operation @s ID = @p[tag=thrower] ID
@@ -33,7 +33,7 @@ scoreboard players operation @s z = @e[limit=1,tag=getdir,tag=!old] DirZ
 
 #scoreboard players add @s y 6
 
-summon snowball ~ ~ ~ {Item:{id:"minecraft:kelp",Count:1b},Tags:["new_nade"],Motion:[0.0,-10.0,0.0]}
+summon snowball ~ ~0.15 ~ {Item:{id:"minecraft:kelp",Count:1b},Tags:["new_nade"],Motion:[0.0,-10.0,0.0]}
 #tag @s add new_nade
 
 #
@@ -41,6 +41,7 @@ data modify entity @e[limit=1,tag=new_nade] Owner set from entity @p UUID
 
 #
 execute store result score @s x run data get entity @s Motion[0] 100
+#execute unless entity @p[tag=thrower] store result score @s z run data get entity @s Motion[1] 67
 execute store result score @s z run data get entity @s Motion[2] 100
 
 #

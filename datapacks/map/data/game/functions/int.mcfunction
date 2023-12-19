@@ -16,8 +16,6 @@ team modify blue nametagVisibility hideForOtherTeams
 team modify red seeFriendlyInvisibles true
 team modify blue seeFriendlyInvisibles true
 
-
-
 team add noCol
 team modify noCol collisionRule never
 
@@ -49,6 +47,7 @@ scoreboard objectives remove ID.item
 # objectives add
 scoreboard objectives add click minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add useMap minecraft.used:minecraft.map
+scoreboard objectives add placeTurret minecraft.used:minecraft.panda_spawn_egg
 scoreboard objectives add placeCreeper minecraft.used:minecraft.panda_spawn_egg
 scoreboard objectives add placeSlime minecraft.used:minecraft.panda_spawn_egg
 scoreboard objectives add placeMagma minecraft.used:minecraft.panda_spawn_egg
@@ -87,13 +86,21 @@ scoreboard objectives add magmaCount dummy
 scoreboard objectives add magmaCountT dummy
 scoreboard objectives add slimeCount dummy
 scoreboard objectives add slimeCountT dummy
+scoreboard objectives add turretCount dummy
+scoreboard objectives add turretCountT dummy
+
+#
+scoreboard objectives add turrets_active dummy
+scoreboard objectives add traps_active dummy
+scoreboard objectives add minions_active dummy
 
 #> Viral zone
 scoreboard objectives add speedTimer dummy
 scoreboard objectives add deflectTimer dummy
 scoreboard objectives add boltDelay dummy
-scoreboard objectives add turret_use minecraft.used:minecraft.blaze_spawn_egg
+scoreboard objectives add turret_use minecraft.used:minecraft.pig_spawn_egg
 scoreboard objectives add ID.target dummy
+scoreboard objectives add ID.turret dummy
 scoreboard objectives add turretCooldown dummy
 scoreboard objectives add turretTimer dummy
 #> End viral zone
@@ -131,6 +138,10 @@ scoreboard objectives add killP minecraft.custom:minecraft.player_kills
 scoreboard objectives add stats_captures dummy
 scoreboard objectives add stats_attempts dummy
 
+scoreboard objectives add stats_scrap dummy
+scoreboard objectives add stats_inf_kill dummy
+scoreboard objectives add stats_sur_kill dummy
+
 scoreboard objectives add win_streak dummy
 
 scoreboard objectives add rank_scew dummy
@@ -156,6 +167,8 @@ scoreboard objectives add random dummy
 scoreboard objectives add kills dummy
 scoreboard objectives add killStreak dummy
 
+scoreboard objectives add inspawn dummy
+
 scoreboard objectives add respawn dummy
 scoreboard objectives add respawn_assist dummy
 
@@ -172,9 +185,15 @@ scoreboard objectives add invul dummy
 scoreboard objectives add wall_invul dummy
 scoreboard objectives add danger dummy
 
+scoreboard objectives add glowing dummy
+
 scoreboard objectives add no_slow dummy
 
+scoreboard objectives add distance dummy
+
 scoreboard objectives add removeBlind dummy
+
+scoreboard objectives add spawn_message_delay dummy
 
 scoreboard objectives add DirX dummy
 scoreboard objectives add DirY dummy
@@ -184,9 +203,17 @@ scoreboard objectives add tDirX dummy
 scoreboard objectives add tDirY dummy
 scoreboard objectives add tDirZ dummy
 
+scoreboard objectives add mot_x dummy
+scoreboard objectives add mot_y dummy
+scoreboard objectives add mot_z dummy
+
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
 scoreboard objectives add z dummy
+
+scoreboard objectives add x_t dummy
+scoreboard objectives add y_t dummy
+scoreboard objectives add z_t dummy
 
 scoreboard objectives add t dummy
 scoreboard objectives add t1 dummy
@@ -194,6 +221,17 @@ scoreboard objectives add t2 dummy
 scoreboard objectives add t3 dummy
 scoreboard objectives add t4 dummy
 scoreboard objectives add t5 dummy
+
+scoreboard objectives add bow_ui_page dummy
+
+scoreboard objectives add temp_bow_id dummy
+scoreboard objectives add temp_bow_value dummy
+
+scoreboard objectives add v_1 dummy
+scoreboard objectives add v_2 dummy
+scoreboard objectives add v_3 dummy
+scoreboard objectives add v_4 dummy
+scoreboard objectives add v_5 dummy
 
 scoreboard objectives add icon_x dummy
 scoreboard objectives add icon_y dummy
@@ -213,12 +251,22 @@ scoreboard objectives add drop_zombie minecraft.dropped:minecraft.zombie_village
 scoreboard objectives add drop_sword minecraft.dropped:minecraft.netherite_sword
 scoreboard objectives add drop_lingering minecraft.dropped:minecraft.lingering_potion
 scoreboard objectives add drop_egg minecraft.dropped:minecraft.egg
+scoreboard objectives add drop_turret minecraft.dropped:minecraft.pig_spawn_egg
+scoreboard objectives add drop_zoom minecraft.dropped:minecraft.ender_pearl
+
+scoreboard objectives add boost_use minecraft.used:minecraft.egg
+scoreboard objectives add speed_use minecraft.used:minecraft.ender_pearl
 
 scoreboard objectives add crossbowUse minecraft.used:minecraft.crossbow
 scoreboard objectives add crossbowReload dummy
 scoreboard objectives add crossbowTime dummy
 
 scoreboard objectives add hurt dummy
+
+scoreboard objectives add zoomies dummy
+
+scoreboard objectives add delay_boost dummy
+scoreboard objectives add delay_reveal dummy
 
 scoreboard objectives add team_pref dummy
 scoreboard objectives add team_pref_temp dummy
@@ -232,6 +280,16 @@ scoreboard objectives add bow_texture_place dummy
 scoreboard objectives add bow_throw minecraft.dropped:minecraft.bow
 
 scoreboard objectives add scrap_count dummy
+
+scoreboard objectives add zombie_egg_count dummy
+scoreboard objectives add zombie_egg_count_t dummy
+
+scoreboard objectives add claw_count dummy
+scoreboard objectives add acid_count dummy
+
+scoreboard objectives add scrap dummy
+
+scoreboard objectives add dead_head dummy
 
 scoreboard players set .CrossKills .stats 15
 scoreboard players set .GrenadeKills .stats 4
@@ -390,11 +448,23 @@ scoreboard players set .127 .num 127
 scoreboard players set .128 .num 128
 scoreboard players set .129 .num 129
 
+scoreboard players set .140 .num 140
+
+scoreboard players set .180 .num 180
+
 scoreboard players set .200 .num 200
 
 scoreboard players set .222 .num 222
 
+scoreboard players set .240 .num 240
+
 scoreboard players set .300 .num 300
+
+scoreboard players set .400 .num 400
+
+scoreboard players set .500 .num 500
+
+scoreboard players set .600 .num 600
 
 scoreboard players set .800 .num 800
 scoreboard players set .900 .num 900

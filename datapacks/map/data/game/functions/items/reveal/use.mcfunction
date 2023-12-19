@@ -1,12 +1,14 @@
-execute as @s[team=red] run effect give @e[team=blue] minecraft:glowing 6 10
-execute as @s[team=red] run effect give @e[type=slime] minecraft:glowing 6 10
-execute as @s[team=blue] run effect give @e[team=red] minecraft:glowing 6 10
-execute as @s[team=blue] run effect give @e[type=magma_cube] minecraft:glowing 6 10
+execute as @s[team=red] run scoreboard players set @e[team=blue] glowing 120
+execute as @s[team=blue] run scoreboard players set @e[team=red] glowing 120
+execute as @s[team=red] run effect give @e[team=blue,type=!pig] minecraft:glowing 6 10 true
+execute as @s[team=red] run effect give @e[type=slime] minecraft:glowing 6 10 true
+execute as @s[team=blue] run effect give @e[team=red,type=!pig] minecraft:glowing 6 10 true
+execute as @s[team=blue] run effect give @e[type=magma_cube] minecraft:glowing 6 10 true
 
 execute as @s[team=red] run title @a[team=blue] times 6 20 14
 execute as @s[team=blue] run title @a[team=red] times 6 20 14
-execute as @s[team=red] run title @a[team=blue] title {"text":"!! REVEALED !!","bold":"true"}
-execute as @s[team=blue] run title @a[team=red] title {"text":"!! REVEALED !!","bold":"true"}
+execute as @s[team=red] run title @a[team=blue] title {"text":"!! REVEALED !!","bold":1}
+execute as @s[team=blue] run title @a[team=red] title {"text":"!! REVEALED !!","bold":1}
 
 execute as @s[team=red] as @a[team=blue,tag=playing] at @s run playsound minecraft:entity.elder_guardian.death master @s ~ ~ ~ 1 1
 execute as @s[team=blue] as @a[team=red,tag=playing] at @s run playsound minecraft:entity.elder_guardian.death master @s ~ ~ ~ 1 1
@@ -29,3 +31,6 @@ tellraw @a [{"selector":"@s"},{"text":" used","color":"white"},{"text":" REVEAL"
 
 #
 clear @s minecraft:filled_map
+
+#
+scoreboard players set @s delay_reveal 80

@@ -1,16 +1,13 @@
 Removed world/DIM-1/data/raids.dat: not used
-Removed world/entities/r.-2.-2.mca: 0 size
 Removed world/entities/r.-2.0.mca: 0 size
 Removed world/entities/r.0.-2.mca: 0 size
-Removed world/gc-logs/gc-20231005_0523.log: not used
-Removed world/gc-logs/gc-20231005_0636.log: not used
-Removed world/playerdata/3adddfe5-b3fb-4078-822c-d95fea28b1a1.dat_old: not used
+Removed world/gc-logs/gc-20231216_1823.log: not used
+Removed world/playerdata/14a78955-817e-4d7f-84e6-1040bf150118.dat_old: not used
 Removed world/playerdata/a648628b-c8fb-4041-9429-604da9f6cb21.dat_old: not used
 Removed world/poi/r.-1.-2.mca: 0 size
-Removed world/poi/r.-2.-2.mca: 0 size
 Removed world/poi/r.-2.0.mca: 0 size
 Removed world/poi/r.0.-2.mca: 0 size
 Removed world/poi/r.1.-1.mca: 0 size
 Removed world/poi/r.1.-2.mca: 0 size
 Removed world/poi/r.1.0.mca: 0 size
-Validated 1466 files, 1451 accepted, 15 rejected.
+Validated 2079 files, 2067 accepted, 12 rejected.

@@ -7,13 +7,16 @@ execute if entity @s[scores={ID=..0}] run scoreboard players operation @p[scores
 #
 scoreboard players add @s team_pref 0
 
-scoreboard players set @s[tag=!has_rank_v19] rank 500
-scoreboard players set @s[tag=!has_rank_v19] win_streak -2
-tag @s add has_rank_v19
+scoreboard players set @s[tag=!has_rank_v23] rank 500
+scoreboard players set @s[tag=!has_rank_v23] win_streak -2
+scoreboard players set @s[tag=!has_rank_v23] team_pref 0
+tag @s add has_rank_v23
 
 tp @s 243.50 -50.00 -226.99 -110 0
 
 clear @s
+
+execute as @s[tag=lobby,tag=has_bow_ui] run function game:bow_ui/make_page
 
 tag @s remove hasflag
 tag @s remove hasspawn
@@ -30,8 +33,7 @@ team leave @s
 
 gamemode adventure @s
 
-function game:menu/p_display/alert_above_slots
-function game:menu/p_display/reset
+function game:menu/p_display/reset_player
 
 scoreboard players set @s Leave 0
 
@@ -61,3 +63,4 @@ scoreboard players set @s drop_magma 0
 scoreboard players set @s drop_map 0
 scoreboard players set @s drop_scrap 0
 scoreboard players set @s drop_egg 0
+scoreboard players set @s drop_turret 0

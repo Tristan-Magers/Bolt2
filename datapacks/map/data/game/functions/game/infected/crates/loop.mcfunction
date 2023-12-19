@@ -35,7 +35,9 @@ execute if data entity @s[scores={t=8}] interaction run title @a[distance=..8] a
 execute if data entity @s[scores={t=9}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □■■■■■■■■■"}]
 execute if data entity @s[scores={t=10}] interaction run title @a[distance=..8] actionbar [{"text":"OPENED!"}]
 execute if data entity @s[scores={t=10}] interaction run scoreboard players add .zombie_crates .data 1
-execute if data entity @s[scores={t=10}] interaction run tellraw @a [{"text":"CRATE OPENED"}]
+execute if data entity @s[scores={t=10}] interaction run tellraw @a[team=blue,tag=playing] [{"text":"CRATE OPENED! "},{"text":"Return scrap to generator","color":"gray"}]
+execute if data entity @s[scores={t=10}] interaction run tellraw @a[team=red,tag=playing] [{"text":"CRATE OPENED!"}]
+execute if data entity @s[scores={t=10}] interaction run tellraw @a[gamemode=spectator,tag=!playing] [{"text":"CRATE OPENED!"}]
 #execute if data entity @s[scores={t=10}] interaction run tellraw @a [{"text":"CRATE OPENED: "},{"score":{"objective":".data","name":".zombie_crates"}},{"text":"/6"}]
 #execute if data entity @s[scores={t=10}] interaction if score .zombie_crates .data > .5 .num run function game:end
 
@@ -47,6 +49,7 @@ execute if data entity @s[scores={t=10}] interaction run tellraw @a [{"text":"CR
 #execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run give @s[team=blue] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
 
 execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run give @s[team=blue] minecraft:netherite_scrap{display:{Name:'{"text":"Scrap (Return to Generator)","italic":false}'}} 1
+execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num as @s[team=blue] run function game:player/scrap_correct
 
 data remove entity @s interaction
 

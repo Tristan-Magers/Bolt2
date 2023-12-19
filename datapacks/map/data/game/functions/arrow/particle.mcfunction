@@ -12,10 +12,12 @@ execute as @s[scores={bow_texture=1}] at @s run particle minecraft:witch ~ ~ ~ 0
 
 execute as @s[scores={bow_texture=2}] at @s run particle minecraft:item carrot ~ ~ ~ 0.2 0.2 0.2 0.15 6 force @a[tag=id_share]
 
-execute as @s[scores={bow_texture=3}] at @s run particle minecraft:wax_off ~ ~ ~ 0.3 0.3 0.3 0.1 7 force @a[tag=id_share]
+# Plasma
+execute as @s[scores={bow_texture=3}] at @s run particle minecraft:scrape ~ ~ ~ 0.2 0.2 0.2 0.1 4 force @a[tag=id_share]
 
 execute as @s[scores={bow_texture=4}] at @s run particle minecraft:bubble_pop ~ ~ ~ 0.2 0.2 0.2 0.1 6 force @a[tag=id_share]
 
+# Auric
 execute as @s[scores={bow_texture=8}] at @s run particle minecraft:item gold_ingot ~ ~ ~ 0.2 0.2 0.2 0.15 6 force @a[tag=id_share]
 
 execute as @s[scores={bow_texture=5..9}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 4 force @a[tag=id_share]
@@ -54,5 +56,155 @@ execute as @s[scores={bow_texture=25}] at @s run particle minecraft:spit ~ ~ ~ 0
 # Turnip
 execute as @s[scores={bow_texture=26}] at @s run particle minecraft:item phantom_membrane ~ ~ ~ 0.2 0.2 0.2 0.15 6 force @a[tag=id_share]
 
+# Shadow
+execute as @s[scores={bow_texture=27}] at @s run particle minecraft:sculk_charge_pop ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=27}] at @s run particle minecraft:smoke ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+
 #
-execute as @s[scores={bow_texture=27..}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 4 force @a[tag=id_share]
+execute as @s[scores={bow_texture=28..29}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 4 force @a[tag=id_share]
+
+# Lunar
+execute as @s[scores={bow_texture=30}] at @s run particle dust_color_transition 1.000 0.941 0.549 1 0.729 0.706 0.635 ~ ~ ~ 0.2 0.2 0.2 0.15 6 force @a[tag=id_share]
+execute as @s[scores={bow_texture=30}] at @s run particle minecraft:wax_off ~ ~ ~ 0.1 0.1 0.1 0.06 3 force @a[tag=id_share]
+
+# Arch
+execute as @s[scores={bow_texture=31}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 4 force @a[tag=id_share]
+
+# Nes orange
+execute as @s[scores={bow_texture=32}] at @s run particle minecraft:item minecraft:orange_terracotta ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=32}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 3 force @a[tag=id_share]
+
+# Nes orange
+execute as @s[scores={bow_texture=33}] at @s run particle minecraft:item minecraft:cyan_wool ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=33}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 3 force @a[tag=id_share]
+
+# Pico
+execute as @s[scores={bow_texture=34}] at @s run particle minecraft:item minecraft:light_gray_terracotta ~ ~ ~ 0.2 0.2 0.2 0.15 2 force @a[tag=id_share]
+execute as @s[scores={bow_texture=34}] at @s run particle minecraft:item minecraft:terracotta ~ ~ ~ 0.2 0.2 0.2 0.15 2 force @a[tag=id_share]
+execute as @s[scores={bow_texture=34}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 2 force @a[tag=id_share]
+
+# Empress
+execute as @s[scores={bow_texture=35}] at @s run particle minecraft:wax_off ~ ~ ~ 0.1 0.1 0.1 0.06 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=35}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 2 force @a[tag=id_share]
+
+# Life
+execute as @s[scores={bow_texture=36}] at @s run particle minecraft:item minecraft:moss_block ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=36}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 2 force @a[tag=id_share]
+
+# Nemo
+execute as @s[scores={bow_texture=37}] at @s run particle minecraft:rain ~ ~ ~ 0.2 0.2 0.2 0.15 5 force @a[tag=id_share]
+execute as @s[scores={bow_texture=37}] at @s run particle minecraft:bubble_pop ~ ~ ~ 0.2 0.2 0.2 0.15 5 force @a[tag=id_share]
+execute as @s[scores={bow_texture=37}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 1 force @a[tag=id_share]
+
+# Purple Bow
+execute as @s[scores={bow_texture=38}] at @s run particle minecraft:item minecraft:purple_terracotta ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=38}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 2 force @a[tag=id_share]
+
+#
+execute as @s[scores={bow_texture=39..45}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.03 4 force @a[tag=id_share]
+
+# Error Bow
+execute as @s[scores={bow_texture=46}] at @s run particle minecraft:item minecraft:magenta_concrete ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=46}] at @s run particle minecraft:item minecraft:black_concrete ~ ~ ~ 0.1 0.1 0.1 0.06 3 force @a[tag=id_share]
+
+#
+execute as @s[scores={bow_texture=47..49}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.03 4 force @a[tag=id_share]
+
+# Nes green
+execute as @s[scores={bow_texture=50}] at @s run particle minecraft:item minecraft:lime_concrete ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=50}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 3 force @a[tag=id_share]
+
+# Lunar Red
+execute as @s[scores={bow_texture=51}] at @s run particle dust_color_transition 0.549 0.275 0.275 1 0.729 0.173 0.129 ~ ~ ~ 0.2 0.2 0.2 0.15 6 force @a[tag=id_share]
+execute as @s[scores={bow_texture=51}] at @s run particle minecraft:warped_spore ~ ~ ~ 0.1 0.1 0.1 0.06 3 force @a[tag=id_share]
+
+#
+execute as @s[scores={bow_texture=52}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.03 4 force @a[tag=id_share]
+
+# Emperor
+execute as @s[scores={bow_texture=53}] at @s run particle minecraft:wax_on ~ ~ ~ 0.1 0.1 0.1 0.06 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=53}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 2 force @a[tag=id_share]
+
+#
+execute as @s[scores={bow_texture=54..55}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.03 4 force @a[tag=id_share]
+
+# Stick Bow
+execute as @s[scores={bow_texture=56}] at @s run particle minecraft:item minecraft:stick ~ ~ ~ 0.2 0.2 0.2 0.15 4 force @a[tag=id_share]
+execute as @s[scores={bow_texture=56}] at @s run particle dust_color_transition 0.549 0.392 0.153 1 0.729 0.596 0.392 ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+
+# Netherite Bow
+execute as @s[scores={bow_texture=57}] at @s run particle minecraft:item minecraft:netherite_ingot ~ ~ ~ 0.2 0.2 0.2 0.15 4 force @a[tag=id_share]
+execute as @s[scores={bow_texture=57}] at @s run particle dust_color_transition 0.169 0.090 0.271 1.3 0.231 0.204 0.204 ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+
+# Midas Bow
+execute as @s[scores={bow_texture=58}] at @s run particle minecraft:item minecraft:gold_block ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=58}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 2 force @a[tag=id_share]
+
+# Ice Bow
+execute as @s[scores={bow_texture=59}] at @s run particle minecraft:item minecraft:ice ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=59}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 2 force @a[tag=id_share]
+
+# Mushroom
+execute as @s[scores={bow_texture=60}] at @s run particle minecraft:item minecraft:red_mushroom_block ~ ~ ~ 0.2 0.2 0.2 0.15 2 force @a[tag=id_share]
+execute as @s[scores={bow_texture=60}] at @s run particle minecraft:item minecraft:mushroom_stem ~ ~ ~ 0.2 0.2 0.2 0.15 4 force @a[tag=id_share]
+execute as @s[scores={bow_texture=60}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.03 3 force @a[tag=id_share]
+
+# Storm
+execute as @s[scores={bow_texture=61}] at @s run particle minecraft:splash ~ ~ ~ 0.2 0.2 0.2 0.15 4 force @a[tag=id_share]
+execute as @s[scores={bow_texture=61}] at @s run particle minecraft:falling_water ~ ~ ~ 0.2 0.2 0.2 0.15 2 force @a[tag=id_share]
+execute as @s[scores={bow_texture=61}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 3 force @a[tag=id_share]
+
+#
+execute as @s[scores={bow_texture=62..65}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.03 4 force @a[tag=id_share]
+
+# Angler
+execute as @s[scores={bow_texture=66}] at @s run particle minecraft:sculk_charge_pop ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=66}] at @s run particle minecraft:smoke ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+
+# Angler
+execute as @s[scores={bow_texture=67}] at @s run particle minecraft:crit ~ ~ ~ 0.2 0.2 0.2 0.15 4 force @a[tag=id_share]
+execute as @s[scores={bow_texture=67}] at @s run particle minecraft:electric_spark ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+
+# Jellyfish
+execute as @s[scores={bow_texture=68}] at @s run particle minecraft:item minecraft:magenta_stained_glass ~ ~ ~ 0.2 0.2 0.2 0.15 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=68}] at @s run particle minecraft:bubble ~ ~ ~ 0.1 0.1 0.1 0.06 4 force @a[tag=id_share]
+
+# Goo
+execute as @s[scores={bow_texture=69}] at @s run particle minecraft:item minecraft:orange_concrete ~ ~ ~ 0.2 0.2 0.2 0.15 2 force @a[tag=id_share]
+execute as @s[scores={bow_texture=69}] at @s run particle minecraft:item minecraft:light_blue_terracotta ~ ~ ~ 0.2 0.2 0.2 0.15 2 force @a[tag=id_share]
+execute as @s[scores={bow_texture=69}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.03 2 force @a[tag=id_share]
+
+# Neopolitan
+execute as @s[scores={bow_texture=70}] at @s run particle minecraft:item minecraft:pink_concrete ~ ~ ~ 0.2 0.2 0.2 0.15 1 force @a[tag=id_share]
+execute as @s[scores={bow_texture=70}] at @s run particle minecraft:item minecraft:white_terracotta ~ ~ ~ 0.2 0.2 0.2 0.15 1 force @a[tag=id_share]
+execute as @s[scores={bow_texture=70}] at @s run particle minecraft:item minecraft:brown_terracotta ~ ~ ~ 0.2 0.2 0.2 0.15 1 force @a[tag=id_share]
+execute as @s[scores={bow_texture=70}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.03 3 force @a[tag=id_share]
+
+# Mech
+execute as @s[scores={bow_texture=71}] at @s run particle minecraft:smoke ~ ~ ~ 0.1 0.1 0.1 0.03 4 force @a[tag=id_share]
+execute as @s[scores={bow_texture=71}] at @s run particle minecraft:ash ~ ~ ~ 0.1 0.1 0.1 0.1 4 force @a[tag=id_share]
+
+#
+execute as @s[scores={bow_texture=72}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.03 4 force @a[tag=id_share]
+
+# Orbit
+execute as @s[scores={bow_texture=73}] at @s run particle minecraft:spit ~ ~ ~ 0.2 0.2 0.2 0.1 3 force @a[tag=id_share]
+execute as @s[scores={bow_texture=73}] at @s run particle minecraft:item minecraft:light_blue_terracotta ~ ~ ~ 0.2 0.2 0.2 0.1 3 force @a[tag=id_share]
+
+# Pink Plasma
+execute as @s[scores={bow_texture=74}] at @s run particle minecraft:wax_off ~ ~ ~ 0.2 0.2 0.2 0.1 4 force @a[tag=id_share]
+
+# Silver
+execute as @s[scores={bow_texture=75}] at @s run particle minecraft:item gunpowder ~ ~ ~ 0.2 0.2 0.2 0.15 6 force @a[tag=id_share]
+execute as @s[scores={bow_texture=75}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 4 force @a[tag=id_share]
+
+# Unstable
+execute as @s[scores={bow_texture=76}] at @s run particle ambient_entity_effect ~ ~ ~ 0.463 0.329 1.000 0.15 5 force @a[tag=id_share]
+execute as @s[scores={bow_texture=76}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 3 force @a[tag=id_share]
+
+# Chain
+execute as @s[scores={bow_texture=77}] at @s run particle minecraft:item chain ~ ~ ~ 0.2 0.2 0.2 0.15 6 force @a[tag=id_share]
+execute as @s[scores={bow_texture=77}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 2 force @a[tag=id_share]
+
+#
+execute as @s[scores={bow_texture=78..}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.03 4 force @a[tag=id_share]

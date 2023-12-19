@@ -13,8 +13,8 @@ execute if score .team_dif .data < .0 .num run team join red @e[tag=rank_dummy,t
 execute if score .team_dif .data = .0 .num if score .rank_dif .data matches 0 if score .ran_team .random = .0 .num run team join blue @e[tag=rank_dummy,team=,limit=1,sort=random]
 execute if score .team_dif .data = .0 .num if score .rank_dif .data matches 0 if score .ran_team .random = .1 .num run team join red @e[tag=rank_dummy,team=,limit=1,sort=random]
 
-execute if score .team_dif .data = .0 .num if score .rank_dif .data matches 1.. run team join blue @e[tag=rank_dummy,team=,limit=1,sort=random]
-execute if score .team_dif .data = .0 .num if score .rank_dif .data matches ..-1 run team join red @e[tag=rank_dummy,team=,limit=1,sort=random]
+execute if score .team_dif .data = .0 .num if score .rank_dif .data matches 1.. run team join red @e[tag=rank_dummy,team=,limit=1,sort=random]
+execute if score .team_dif .data = .0 .num if score .rank_dif .data matches ..-1 run team join blue @e[tag=rank_dummy,team=,limit=1,sort=random]
 
 #execute if score .team_dif .data > .0 .num run say add blue
 #execute if score .team_dif .data < .0 .num run say add red

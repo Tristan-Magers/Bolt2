@@ -1,29 +1,29 @@
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[tag=id_share,team=red] killStreak 1
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[tag=id_share,team=blue] killStreak 1
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[tag=id_share,team=red] killStreak 1
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[tag=id_share,team=blue] killStreak 1
 
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] as @a[tag=id_share,team=red] at @s run playsound minecraft:entity.arrow.hit_player master @s ~ ~ ~ 0.2 0.5
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] as @a[tag=id_share,team=blue] at @s run playsound minecraft:entity.arrow.hit_player master @s ~ ~ ~ 0.2 0.5
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] as @a[tag=id_share,team=red] at @s run playsound minecraft:entity.arrow.hit_player master @s ~ ~ ~ 0.2 0.5
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] as @a[tag=id_share,team=blue] at @s run playsound minecraft:entity.arrow.hit_player master @s ~ ~ ~ 0.2 0.5
 
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed,tag=!gre_immune] unless entity @a[tag=id_share,scores={killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"white"},{"selector":"@a[tag=id_share]"},{"text":"'s ","color":"gray"},{"text":"Grenade","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune,tag=playing]"}]
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed,tag=!gre_immune] if entity @a[tag=id_share,scores={killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"white"},{"selector":"@a[tag=id_share]"},{"text":"'s ","color":"gray"},{"text":"Grenade","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune,tag=playing]"},{"text":" (","color":"dark_gray"},{"score":{"name":"@p[tag=id_share]","objective":"killStreak"},"color":"dark_gray"},{"text":")","color":"dark_gray"}]
+execute as @s[scores={timer=17..}] if entity @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed,tag=!gre_immune] unless entity @a[tag=id_share,scores={killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"white"},{"selector":"@a[tag=id_share]"},{"text":"'s ","color":"gray"},{"text":"Grenade","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune,tag=playing]"}]
+execute as @s[scores={timer=17..}] if entity @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=!killed,tag=!gre_immune] if entity @a[tag=id_share,scores={killStreak=2..}] run tellraw @a [{"text":"☠ ","color":"white"},{"selector":"@a[tag=id_share]"},{"text":"'s ","color":"gray"},{"text":"Grenade","color":"white"},{"text":" hit ","color":"gray"},{"selector":"@a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune,tag=playing]"},{"text":" (","color":"dark_gray"},{"score":{"name":"@p[tag=id_share]","objective":"killStreak"},"color":"dark_gray"},{"text":")","color":"dark_gray"}]
 
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players remove @a[tag=id_share,team=red] killStreak 1
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players remove @a[tag=id_share,team=blue] killStreak 1
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players remove @a[tag=id_share,team=red] killStreak 1
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players remove @a[tag=id_share,team=blue] killStreak 1
 
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[tag=id_share,team=red] kill 1
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[tag=id_share,team=blue] kill 1
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[tag=id_share,team=red] kill 1
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[tag=id_share,team=blue] kill 1
 
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[tag=id_share,team=red] stats_ger_kills 1
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[tag=id_share,team=blue] stats_ger_kills 1
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed] run scoreboard players add @a[tag=id_share,team=red] stats_ger_kills 1
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed] run scoreboard players add @a[tag=id_share,team=blue] stats_ger_kills 1
 
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run tag @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add exploded
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run tag @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add killed
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run tag @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add exploded
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run tag @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add killed
 
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run playsound minecraft:item.shield.block master @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] ~ ~ ~ 1 0
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:blindness 4 100 true
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:slowness 3 2 true
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:glowing 3 2 true
-execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run effect give @a[distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] minecraft:instant_damage 1 100 true
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run playsound minecraft:item.shield.block master @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] ~ ~ ~ 1 0
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run effect give @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:blindness 4 100 true
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run effect give @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:slowness 3 2 true
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run effect give @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] minecraft:glowing 3 2 true
+execute as @s[scores={timer=17..}] if entity @a[distance=..4.8] run effect give @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] minecraft:instant_damage 1 100 true
 
 execute as @s[scores={timer=17..}] run kill @e[distance=..4.8,type=minecraft:zombie_villager]
 
@@ -37,6 +37,8 @@ execute as @s[scores={timer=17..}] run kill @e[distance=..4.8,type=magma_cube]
 execute as @s[scores={timer=17..}] run kill @e[distance=..4.8,type=slime]
 execute as @s[scores={timer=17..}] run kill @e[distance=..4.8,type=creeper]
 execute as @s[scores={timer=17..}] run kill @e[distance=..3.0,type=minecraft:falling_block]
+
+execute as @s[scores={timer=17..}] as @e[distance=..4.8,tag=turret] run function game:ffa/turret/kill_self
 
 ### SOUNDS
 
@@ -65,5 +67,5 @@ execute as @s[scores={timer=-7..}] run tag @a[distance=..4.8,scores={respawn=..0
 ### TITLE TEXT
 
 execute as @s run title @a[distance=..4.8,scores={respawn=..0}] times 0 3 0
-execute as @s run title @a[distance=..4.8,scores={respawn=..0}] title {"text":"! ! !"}
-execute as @s run title @a[distance=..4.8,scores={respawn=..0}] subtitle {"text":"GRENADE"}
+execute as @s run title @a[distance=..4.8,scores={respawn=..0}] title {"text":"!!!","font":"fancy"}
+execute as @s run title @a[distance=..4.8,scores={respawn=..0}] subtitle {"text":"GRENADE","font":"fancy"}

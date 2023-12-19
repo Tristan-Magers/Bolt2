@@ -5,6 +5,9 @@ effect clear @s minecraft:poison
 tag @s remove exploded
 tag @s remove killed
 scoreboard players set @s KILL_ID -1
+#
+effect clear @s speed
+effect clear @s jump_boost
 
 #
 scoreboard players set @a item_acid 120
@@ -16,7 +19,7 @@ tag @s remove dark
 function game:game/infected/zombie_bonuses
 
 #execute if score .mode .data = .1 .num run clear @s[scores={kills=0,respawn=2}] written_book
-execute if score .mode .data = .1 .num run item replace entity @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] hotbar.7 with written_book{pages:['["",{"text":"Every _ Kills","bold":true},{"text":"\\nx4 = Grenade\\nx5 = Walls\\nx15 = Crossbow\\n\\n","color":"reset"},{"text":"Kill Streak","bold":true},{"text":"\\n2 = Spawnpoint\\n3 = Traps\\n5 = Reveal\\n7 = Traps\\n10 = Reveal\\n11+ = Touch Grass\\n\\n","color":"reset"},{"text":"Capture","bold":true},{"text":" = Shield","color":"reset"}]'],title:"Item Aquirement",author:"Space Bleps"}
+execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] hotbar.7 with written_book{pages:['["",{"text":"Every _ Kills","bold":true},{"text":"\\nx4 = Grenade\\nx5 = Walls\\nx15 = Crossbow\\n\\n","color":"reset"},{"text":"Kill Streak","bold":true},{"text":"\\n2 = Spawnpoint\\n3 = Traps\\n5 = Reveal\\n7 = Traps\\n10 = Reveal\\n11+ = Touch Grass\\n\\n","color":"reset"},{"text":"Capture","bold":true},{"text":" = Shield","color":"reset"}]'],title:"Item Aquirement",author:"Space Bleps"}
 
 execute if score .mode .data = .6 .num run tag @s[tag=!dark_immune] add dark
 
@@ -29,9 +32,10 @@ execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red]
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] iron_ingot
 #execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
 #execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red,tag=more_armor] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
-execute if score .mode .data = .6 .num if score .zombie_evolve_type_2 .data = .1 .num run give @s[scores={respawn=2},team=red] minecraft:netherite_sword{display:{Name:'{"text":"Claws"}'},Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:6,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1
+execute if score .mode .data = .6 .num if score .zombie_evolve_type_2 .data = .1 .num run give @s[scores={respawn=2},team=red] minecraft:netherite_sword{display:{Name:'{"text":"Claws","italic":false,"color":"gray"}'},Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:255,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1
 
 #
+#clear @s crossbow{Charged:1b}
 scoreboard players set @a[scores={crossbowTime=3..}] crossbowReload 2
 
 scoreboard players set @s killStreak 0
@@ -43,8 +47,8 @@ clear @s arrow
 execute if score .map .data = .1 .num run tp @s[team=blue] -83.5 -50.00 51.5 -135 0
 execute if score .map .data = .1 .num run tp @s[team=red] -83.5 -50.00 -8.5 -45 0
 
-execute if score .map .data = .2 .num run tp @s[team=red] -156.5 -54.00 51.5 -135 0
-execute if score .map .data = .2 .num run tp @s[team=blue] -156.5 -54.00 -8.5 -45 0
+execute if score .map .data = .2 .num run tp @s[team=red] -188.5 -54.00 -91.5 -135 0
+execute if score .map .data = .2 .num run tp @s[team=blue] -188.5 -54.00 -151.5 -45 0
 
 execute if score .map .data = .3 .num run tp @s[team=red] -211 -53.00 -12.5 0 0
 execute if score .map .data = .3 .num run tp @s[team=blue] -211 -53.00 39.5 180 0
@@ -87,48 +91,24 @@ execute if score .map .data = .15 .num run tp @s[team=blue] -483.5 -38.50 191.5 
 
 effect give @s[scores={respawn=45..}] blindness 2 1 true
 effect clear @s[scores={respawn=30}] blindness
-execute unless score .mode .data = .6 .num unless entity @s[tag=dark_immune] run effect give @s[scores={respawn=45..}] darkness 5 1 true
+execute unless score .mode .data = .6 .num unless entity @s[tag=dark_immune] run effect give @s[scores={respawn=25..}] darkness 4 1 true
 
 scoreboard players set @s[scores={respawn=10..}] invul 60
 
 effect give @s[scores={respawn=2..}] minecraft:invisibility 1 50 true
 effect clear @s[scores={respawn=1}] minecraft:invisibility
 
-title @s[scores={respawn=110},tag=!hasspawn] times 5 10 5
-title @s[scores={respawn=110},tag=hasspawn] times 10 20 10
-title @s[scores={respawn=90},tag=!hasspawn] times 5 10 5
-title @s[scores={respawn=90},tag=hasspawn] times 10 20 10
-title @s[scores={respawn=70},tag=!hasspawn] times 5 10 5
-title @s[scores={respawn=70},tag=hasspawn] times 10 20 10
-title @s[scores={respawn=150},tag=hasspawn] title {"text":"SPAWN POINT"}
-title @s[scores={respawn=130},tag=hasspawn] title {"text":"SPAWN POINT"}
-title @s[scores={respawn=110},tag=hasspawn] title {"text":"SPAWN POINT"}
-title @s[scores={respawn=90},tag=hasspawn] title {"text":"SPAWN POINT"}
-title @s[scores={respawn=70},tag=hasspawn] title {"text":"SPAWN POINT"}
-title @s[scores={respawn=230},tag=!hasspawn] title {"text":"- 11 -"}
-title @s[scores={respawn=210},tag=!hasspawn] title {"text":"- 10 -"}
-title @s[scores={respawn=190},tag=!hasspawn] title {"text":"- 9 -"}
-title @s[scores={respawn=170},tag=!hasspawn] title {"text":"- 8 -"}
-title @s[scores={respawn=150},tag=!hasspawn] title {"text":"- 7 -"}
-title @s[scores={respawn=130},tag=!hasspawn] title {"text":"- 6 -"}
-title @s[scores={respawn=110},tag=!hasspawn] title {"text":"- 5 -"}
-title @s[scores={respawn=90},tag=!hasspawn] title {"text":"- 4 -"}
-title @s[scores={respawn=70},tag=!hasspawn] title {"text":"- 3 -"}
-title @s[scores={respawn=50},tag=!hasspawn] title {"text":"- 2 -"}
-title @s[scores={respawn=30},tag=!hasspawn] title {"text":"- 1 -"}
-title @s[scores={respawn=10}] title {"text":"- GO! -"}
+execute if score .end_countdown .data matches ..1 run function game:player/dead_subtitle
 
-title @s[scores={respawn=230}] subtitle {"text":"RESPAWNING","color":"gold"}
-title @s[scores={respawn=210}] subtitle {"text":"RESPAWNING","color":"gold"}
-title @s[scores={respawn=190}] subtitle {"text":"RESPAWNING","color":"gold"}
-title @s[scores={respawn=170}] subtitle {"text":"RESPAWNING","color":"gold"}
-title @s[scores={respawn=150}] subtitle {"text":"RESPAWNING","color":"gold"}
-title @s[scores={respawn=130}] subtitle {"text":"RESPAWNING","color":"gold"}
-title @s[scores={respawn=110}] subtitle {"text":"RESPAWNING","color":"gold"}
-title @s[scores={respawn=90}] subtitle {"text":"RESPAWNING","color":"gold"}
-title @s[scores={respawn=70}] subtitle {"text":"RESPAWNING","color":"gold"}
-title @s[scores={respawn=50}] subtitle {"text":"RESPAWNING","color":"gold"}
-title @s[scores={respawn=30}] subtitle {"text":"RESPAWNING","color":"gold"}
+execute as @s[scores={respawn=170}] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 0
+execute as @s[scores={respawn=150}] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 0
+execute as @s[scores={respawn=130}] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 0
+execute as @s[scores={respawn=110}] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 0
+execute as @s[scores={respawn=90}] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 0
+execute as @s[scores={respawn=70}] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 0
+execute as @s[scores={respawn=50}] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 0
+execute as @s[scores={respawn=30}] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 0
+execute as @s[scores={respawn=10}] at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1.4
 
 scoreboard players set @s[scores={crossbowTime=3..}] crossbowTime 2
 

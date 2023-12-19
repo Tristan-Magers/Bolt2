@@ -20,3 +20,7 @@ setblock -243 -50 -426 minecraft:dead_bush
 setblock -228 -50 -427 minecraft:dead_bush
 setblock -226 -50 -424 minecraft:dead_bush
 setblock -232 -50 -421 minecraft:dead_bush
+
+#
+execute if score .mode .data = .6 .num run function game:map/corners2/crates
+execute if score .mode .data = .6 .num run execute positioned -241 -50 -416 run function game:game/infected/generator/spawn

@@ -1,9 +1,12 @@
 #
+function game:tmi/chest_items
+
+#
 execute as @a[scores={Leave=1..}] at @s if score @s game_id = .current_id .data if score .running .data = .1 .num run function game:player/relog_game
 execute as @a[scores={Leave=1..}] at @s run function game:player/leave_game
 
 #
-execute as @a[tag=loading] at @s run function game:player/leave_gamee
+execute as @a[tag=loading] at @s run function game:player/leave_game
 
 #ID
 execute if entity @a[scores={ID=..0}] run scoreboard players add .new ID 1
@@ -16,14 +19,22 @@ execute if entity @a[scores={ID=..0}] run scoreboard players operation @p[scores
 function game:player/item_count
 
 #
-execute as @e[type=minecraft:zombie_villager] run data merge entity @s {Team:"red",IsBaby:0b}
+execute as @e[type=minecraft:zombie_villager] run data merge entity @s {IsBaby:0b}
 
 #
 execute as @e[type=marker,tag=door] at @s run function game:doors/main
 
 #
-execute as @e[type=egg] at @s run execute as @p at @s run function game:test
+execute as @a[scores={boost_use=1..,delay_boost=..0}] at @s run function game:items/boost/trigger
+execute as @a[scores={boost_use=1..,delay_boost=1..}] at @s run scoreboard players set @s drop_egg 1
+scoreboard players remove @a[scores={delay_boost=0..}] delay_boost 1
+scoreboard players set @a[scores={delay_boost=0..}] boost_use 0
 kill @e[type=egg]
+
+#
+execute as @a[scores={zoomies=1..}] at @s run function game:items/speed/effect
+execute as @a[scores={speed_use=1..}] at @s run function game:items/speed/trigger
+kill @e[type=ender_pearl]
 
 #
 kill @e[tag=kill,tag=dead]
@@ -58,6 +69,7 @@ execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",t
 execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{CustomModelData:1}}}] at @s as @p[tag=wall_dif] run scoreboard players operation @s drop_silver = @s drop_egg_generic
 execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{CustomModelData:2}}}] at @s as @p[tag=magma_dif] run scoreboard players operation @s drop_magma = @s drop_egg_generic
 execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{CustomModelData:3}}}] at @s as @p[tag=slime_dif] run scoreboard players operation @s drop_slime = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{CustomModelData:4}}}] at @s as @p[tag=turret_dif] run scoreboard players operation @s drop_turret = @s drop_egg_generic
 scoreboard players set @a drop_egg_generic 0
 
 kill @e[type=item,tag=!no_kill]
@@ -73,48 +85,24 @@ execute if score .gametime .data >= .1 .num run scoreboard players add .gametime
 tag @a remove lobby
 tag @a[x=245,y=-50,z=-235,distance=..60] add lobby
 scoreboard players set @a[x=245,y=-50,z=-235,distance=..60] invul 40
-scoreboard players set @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrowReload 32
-clear @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrow
+#scoreboard players set @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrowReload 32
+#clear @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrow
 team join red @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=1}]
 team join blue @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=2}]
 team join Spectator @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=-1}]
 
 tp @a[x=249,y=-56,z=-250,dx=30,dy=3,dz=30,gamemode=adventure] 243.5 -44.00 -235.5 -90 13
 
-kill @e[type=arrow,x=245,y=-50,z=-235,distance=..60]
+tag @e[type=arrow,x=245,y=-50,z=-235,distance=..60] add kill
 
-execute as @a[x=243.5,y=-44,z=-235.5,distance=..2.9,scores={arrowReload=2..35}] as @s run scoreboard players set @s arrowReload 38
+execute as @a[x=243.5,y=-44,z=-235.5,distance=..50,scores={arrowReload=2..35}] as @s run scoreboard players set @s arrowReload 38
 execute as @a[x=243.5,y=-44,z=-235.5,distance=..2.9,scores={bowUse=1..}] as @s run function game:menu/hitscan_start
 
 scoreboard players set @a[scores={deaths=..0}] KILL_ID 0
 
-#
-scoreboard players add @e[type=arrow] ID 0
-execute as @a[scores={bowUse=1..},team=red] at @s run tag @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] add red
-execute as @a[scores={bowUse=1..},team=blue] at @s run tag @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] add blue
+execute if score .map_screen_time .data matches 0..5 run function game:menu/screen_transition
 
-execute as @a[scores={bowUse=1..}] at @s run scoreboard players operation @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] bow_texture = @s bow_texture
-execute as @a[scores={bowUse=1..}] at @s run scoreboard players operation @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] ID = @s ID
-execute as @a[scores={crossUse=1..}] at @s run scoreboard players operation @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] ID = @s ID
-
-execute as @e[type=arrow] at @s run function game:items/arrow/main
-
-#hurtime
-scoreboard players set @a hurt 0
-execute as @a run execute store result score @s hurt run data get entity @s HurtTime 1
-scoreboard players set @a[scores={hurt=9..,invul=..0,respawn=..0}] deaths 1
-scoreboard players set @a[scores={hurt=9..,invul=1..,respawn=..0,break_invul=1..,wall_invul=1..}] deaths 1
-scoreboard players set @a[scores={deaths=1..}] hurt 9
-scoreboard players set @a break_invul 0
-
-scoreboard players remove @a[scores={wall_invul=0..}] wall_invul 1
-
-#
-execute as @a[scores={crossUse=1..}] unless score .ffa .data matches 1 at @s run scoreboard players operation @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] ID = @s ID
-tag @e[type=arrow] add shot
-execute as @a at @s run function game:player/arrowcheck
-scoreboard players set @a bowUse 0
-execute unless score .ffa .data matches 1 run scoreboard players set @a crossUse 0
+execute as @e[type=giant,scores={dead_head=1..}] run function game:menu/p_display/dead_head_loop
 
 #team count
 function game:game/team_dif
@@ -134,10 +122,7 @@ execute if score .running .data = .1 .num as @e[type=marker,tag=gen] at @s run f
 execute as @e[type=marker,tag=temp_block] at @s run function game:items/temp_block/main
 
 #walls
-execute as @e[type=minecraft:falling_block] at @s run function game:items/lower
-execute as @e[type=minecraft:falling_block] at @s if block ~ ~ ~ #minecraft:slabs[type=bottom] if block ~ ~0.6 ~ air run tp @s ~ ~0.6 ~
-execute as @e[type=minecraft:falling_block] at @s run fill ~ ~ ~ ~ ~ ~ gravel replace air
-kill @e[type=minecraft:falling_block]
+execute as @e[type=minecraft:falling_block] at @s run function game:items/wall/block/main
 
 #spawn placing
 tag @e[type=minecraft:magma_cube] add spawn
@@ -159,6 +144,41 @@ execute as @e[type=snowball,tag=!dummy] at @s run function game:items/grenade/ma
 execute as @e[tag=grenadehit] at @s run function game:items/grenade/hitmark
 tag @a remove ger_sound
 
+#hurtime
+scoreboard players set @a hurt 0
+execute as @a run execute store result score @s hurt run data get entity @s HurtTime 1
+
+#scoreboard players set @a[tag=hurt_next] hurt 9
+#tag @a remove hurt_next
+#tag @a[scores={snowball=1..}] add hurt_next
+
+scoreboard players set @a[scores={hurt=9..,invul=..0,respawn=..0}] deaths 1
+scoreboard players set @a[scores={hurt=9..,invul=1..,respawn=..0,break_invul=1..,wall_invul=1..}] deaths 1
+execute if score .mode .data = .6 .num run tag @a[team=blue,scores={deaths=1..}] add blue_died
+tag @a[tag=totem] remove blue_died
+scoreboard players set @a[scores={deaths=1..}] hurt 9
+scoreboard players set @a break_invul 0
+execute as @a[scores={deaths=1..}] run function game:player/death_id
+
+scoreboard players remove @a[scores={wall_invul=0..}] wall_invul 1
+
+#
+scoreboard players add @e[type=arrow] ID 0
+execute as @a[scores={bowUse=1..},team=red] at @s run tag @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] add red
+execute as @a[scores={bowUse=1..},team=blue] at @s run tag @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] add blue
+
+execute as @e[type=arrow,tag=!shot] at @s run function game:items/arrow/shot_scores
+
+execute as @e[type=arrow] at @s run function game:items/arrow/main
+
+#
+execute as @a[scores={crossUse=1..}] at @s run scoreboard players operation @e[type=arrow,tag=!shot,limit=1,sort=nearest,scores={ID=0}] ID = @s ID
+tag @e[type=arrow] add shot
+execute as @a at @s run function game:player/arrowcheck
+scoreboard players set @a bowUse 0
+scoreboard players set @a crossUse 0
+
+# infected
 execute as @e[tag=crate] at @s run function game:game/infected/crates/loop
 execute as @e[tag=survivor_generator] at @s run function game:game/infected/generator/loop
 
@@ -172,10 +192,24 @@ execute as @e[tag=blueflag,tag=drop] at @s run function game:flags/dropped
 execute as @e[tag=redflag,tag=!drop] at @s run function game:flags/main
 execute as @e[tag=blueflag,tag=!drop] at @s run function game:flags/main
 
-#spawn_zombie_villager
-execute as @e[type=zombie_villager,tag=!old] at @s run scoreboard players operation @s ID = @p[scores={spawn_zombie_villager=1..}] ID
-scoreboard players set @a spawn_zombie_villager 0
-tag @e[type=zombie_villager,tag=!old] add old
+#spawn zombie villager
+execute as @a store result score @s zombie_egg_count run clear @s zombie_villager_spawn_egg 0
+
+execute as @a run scoreboard players operation @s zombie_egg_count_t -= @s zombie_egg_count
+execute as @a[scores={zombie_egg_count_t=1..}] run scoreboard players operation @s spawn_zombie_villager += @s zombie_egg_count_t
+
+execute as @a run scoreboard players operation @s zombie_egg_count_t = @s zombie_egg_count
+
+execute as @a[scores={spawn_zombie_villager=1..},team=blue] at @s run scoreboard players operation @e[type=zombie_villager,tag=!old,limit=1,sort=nearest,team=,distance=..10] ID = @s ID
+execute as @a[scores={spawn_zombie_villager=1..},team=blue] at @s as @e[type=zombie_villager,tag=!old,limit=1,sort=nearest,team=,distance=..10] run team join blue @s
+execute as @a[scores={spawn_zombie_villager=1..},team=red] at @s run scoreboard players operation @e[type=zombie_villager,tag=!old,limit=1,sort=nearest,team=,distance=..10] ID = @s ID
+execute as @a[scores={spawn_zombie_villager=1..},team=red] at @s as @e[type=zombie_villager,tag=!old,limit=1,sort=nearest,team=,distance=..10] run team join red @s
+execute as @e[type=zombie_villager,tag=!old,team=] at @s if entity @p[scores={spawn_zombie_villager=1..},team=red,distance=..9] run team join red @s
+execute as @e[type=zombie_villager,tag=!old,team=] at @s if entity @p[scores={spawn_zombie_villager=1..},team=blue,distance=..9] run team join blue @s
+execute as @e[type=zombie_villager,tag=!old,team=] at @s run team join blue @s
+scoreboard players set @a[scores={spawn_zombie_villager=1..}] spawn_zombie_villager 0
+tag @e[type=zombie_villager,tag=!old,team=red] add old
+tag @e[type=zombie_villager,tag=!old,team=blue] add old
 
 #
 tag @a remove poison_range
@@ -195,6 +229,7 @@ tag @e[type=magma_cube] add old
 tag @e[type=creeper] add old
 
 # Timer
+execute if score .TIME .data matches 241.. run scoreboard players set .TIME .data 240
 execute unless score .end_countdown .data > .0 .num unless score .cutscene_running .data = .1 .num if score .running .data = .1 .num if score .TIME .data > .0 .num run scoreboard players add .time_tick .data 1
 execute if entity @a[tag=hasflag] if score .time_tick .data < .21 .num run scoreboard players set .time_tick .data 21
 execute if score .end_countdown .data > .0 .num run scoreboard players set .time_tick .data 0
@@ -204,21 +239,31 @@ execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if sco
 execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num run scoreboard players operation .TIME_min .data = .TIME .data
 execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num run scoreboard players operation .TIME_min .data /= .60 .num
 execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num run scoreboard players operation .TIME_sec .data %= .60 .num
-execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data >= .10 .num run bossbar set minecraft:time name [{"text":""},{"score":{"name":".TIME_min","objective":".data"}},{"text":":"},{"score":{"name":".TIME_sec","objective":".data"}}]
-execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data < .10 .num run bossbar set minecraft:time name [{"text":""},{"score":{"name":".TIME_min","objective":".data"}},{"text":":0"},{"score":{"name":".TIME_sec","objective":".data"}}]
+execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data >= .10 .num run bossbar set minecraft:time name [{"text":""},{"font":"fancy","score":{"name":".TIME_min","objective":".data"}},{"font":"fancy","text":":"},{"font":"fancy","score":{"name":".TIME_sec","objective":".data"}}]
+execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data < .10 .num run bossbar set minecraft:time name [{"text":""},{"font":"fancy","score":{"name":".TIME_min","objective":".data"}},{"font":"fancy","text":":0"},{"font":"fancy","score":{"name":".TIME_sec","objective":".data"}}]
+execute if score .mode .data = .1 .num if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data >= .10 .num run bossbar set minecraft:time name [{"text":"҂"},{"translate":"space.-128","font":"space"},{"font":"fancy_score","color":"red","score":{"name":"Red","objective":"Scores"}},{"text":"          ","color":"white"},{"font":"fancy_low","color":"white","score":{"name":".TIME_min","objective":".data"}},{"font":"fancy_low","color":"white","text":":"},{"font":"fancy_low","color":"white","score":{"name":".TIME_sec","objective":".data"}},{"text":"          "},{"font":"fancy_score","color":"aqua","score":{"name":"Blue","objective":"Scores"}},{"translate":"space.4","font":"space"}]
+execute if score .mode .data = .1 .num if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data < .10 .num run bossbar set minecraft:time name [{"text":"҂"},{"translate":"space.-128","font":"space"},{"font":"fancy_score","color":"red","score":{"name":"Red","objective":"Scores"}},{"text":"          ","color":"white"},{"font":"fancy_low","color":"white","score":{"name":".TIME_min","objective":".data"}},{"font":"fancy_low","color":"white","text":":0"},{"font":"fancy_low","color":"white","score":{"name":".TIME_sec","objective":".data"}},{"text":"          "},{"font":"fancy_score","color":"aqua","score":{"name":"Blue","objective":"Scores"}},{"translate":"space.4","font":"space"}]
 execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data >= .21 .num unless entity @a[tag=hasflag] run scoreboard players set .time_tick .data 0
 execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a times 6 20 6
-execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a subtitle {"text":"60 REMAINING"}
+execute unless score .mode .data matches 7 if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a subtitle {"text":"60 REMAINING","font":"fancy"}
 execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a title {"text":""}
 execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run scoreboard players set .announce_60s .data 1
 execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a times 6 20 6
-execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a subtitle {"text":"30 REMAINING"}
+execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a subtitle {"text":"30 REMAINING","font":"fancy"}
 execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a title {"text":""}
 execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run scoreboard players set .announce_30s .data 1
 execute if score .TIME .data = .0 .num unless score .mode .data matches 1 run function game:end
 execute if score .TIME .data = .0 .num if score .mode .data matches 1 run function game:game/end_ctf
 execute if score .TIME .data = .0 .num unless score .mode .data matches 1 run function game:end
 execute if score .TIME .data = .0 .num run scoreboard players reset .TIME .data
+
+tag @a remove has_ui
+tag @a[tag=playing] add has_ui
+tag @a[gamemode=spectator] add has_ui
+
+bossbar set minecraft:time players @a[tag=has_ui]
+bossbar set minecraft:scrap players @a[tag=has_ui]
+bossbar set minecraft:status players @a[tag=has_ui]
 
 #
 execute if score .running .data = .1 .num if score .end_countdown .data > .0 .num run function game:game/end_countdown
@@ -237,13 +282,16 @@ kill @e[tag=trap,scores={hurt=2..}]
 
 #crossbow test
 scoreboard players add @a crossbowTime 0
-execute unless score .ffa .data matches 1 run scoreboard players add @a[scores={crossbowTime=0},nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Charged:1b}}}] crossbowTime 240
+clear @a[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{display:{Name:'{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}'},Charged:1b}}}] crossbow{display:{Name:'{"text":"Crossbow [Active]","italic":false,"color":"gray"}'}}
+clear @a[scores={crossbowTime=..0}] crossbow{display:{Name:'{"text":"Crossbow [Active]","italic":false,"color":"gray"}'}}
+scoreboard players add @a[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{display:{Name:'{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}'},Charged:1b}}}] crossbowTime 220
+item replace entity @a[nbt={SelectedItem:{id:"minecraft:crossbow",tag:{display:{Name:'{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}'},Charged:1b}}}] weapon.mainhand with crossbow{display:{Name:'{"text":"Crossbow [Active]","italic":false,"color":"gray"}'},Unbreakable:1b,ChargedProjectiles:[{id:"minecraft:arrow",Count:1b},{},{}],Charged:1b} 1
 
 scoreboard players add @a[scores={crossbowReload=1..}] crossbowReload 1
 scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1
 tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Charged:0b}}}] add reloadCross
-#clear @a[tag=reloadCross] crossbow
-execute unless score .ffa .data matches 1 run item replace entity @a[tag=reloadCross] weapon.mainhand with crossbow{Unbreakable:1b,ChargedProjectiles:[{id:"minecraft:arrow",Count:1b},{},{}],Charged:1b} 1
+##clear @a[tag=reloadCross] crossbow
+item replace entity @a[tag=reloadCross] weapon.mainhand with crossbow{display:{Name:'{"text":"Crossbow [Active]","italic":false,"color":"gray"}'},Unbreakable:1b,ChargedProjectiles:[{id:"minecraft:arrow",Count:1b},{},{}],Charged:1b} 1
 scoreboard players set @a[tag=reloadCross] crossbowReload 0
 
 tag @a remove reloadCross
@@ -251,21 +299,18 @@ scoreboard players set @a crossbowUse 0
 
 execute as @a[scores={crossbowTime=1..}] at @s run function game:items/crossbow/active
 
-#danger area
-scoreboard players set @a[tag=!danger] danger 0
-scoreboard players add @a[tag=danger] danger 1
-execute as @a[scores={danger=1}] at @s run title @s times 2 10 10
-execute as @a[scores={danger=1}] at @s run title @s title {"text":"! DANGER AREA !"}
-execute as @a[scores={danger=1}] at @s run playsound minecraft:entity.blaze.hurt master @s ~ ~ ~ 1 1
-execute as @a[scores={danger=1}] at @s run playsound minecraft:entity.blaze.death master @s ~ ~ ~ 1 2
-effect give @a[scores={danger=18..}] minecraft:instant_damage 1 100 true
-tag @a remove danger
-
-#test
-#scoreboard players add @a[tag=!hasflag] speedrun 1
+#danger area UNUSED (PREVIOUSLY FOR COVES SPAWN)
+#scoreboard players set @a[tag=!danger] danger 0
+#scoreboard players add @a[tag=danger] danger 1
+#execute as @a[scores={danger=1}] at @s run title @s times 2 10 10
+#execute as @a[scores={danger=1}] at @s run title @s title {"text":"! DANGER AREA !"}
+#execute as @a[scores={danger=1}] at @s run playsound minecraft:entity.blaze.hurt master @s ~ ~ ~ 1 1
+#execute as @a[scores={danger=1}] at @s run playsound minecraft:entity.blaze.death master @s ~ ~ ~ 1 2
+#effect give @a[scores={danger=18..}] minecraft:instant_damage 1 100 true
+#tag @a remove danger
 
 #
-execute if score .running .data = .1 .num run scoreboard players add .Time .metric 1
+execute if score .running .data = .1 .num run function game:game/time_up
 
 execute if score .running .data = .1 .num run scoreboard players add .no_players .timer 1
 execute if score .running .data = .1 .num if entity @a[team=red,tag=playing] if entity @a[team=blue,tag=playing] run scoreboard players set .no_players .timer 0
@@ -293,19 +338,40 @@ execute if score .start_cd .data = .n5 .num run scoreboard players set .start_cd
 execute if score .ffa .data matches 1 run function game:ffa/main
 scoreboard players set @a click 0
 
-#
-execute as @e[tag=scrap,type=item] at @s positioned ~ ~-1 ~ run give @p[team=blue,gamemode=adventure,distance=..1.2] minecraft:netherite_scrap{display:{Name:'{"text":"Scrap (Return to Generator)","italic":false}'}} 1
-execute as @e[tag=scrap,type=item] at @s positioned ~ ~-1 ~ if entity @a[team=blue,gamemode=adventure,distance=..1.2] run kill @s
-execute as @e[tag=scrap,type=item] at @s run give @p[team=blue,gamemode=adventure,distance=..1.2] minecraft:netherite_scrap{display:{Name:'{"text":"Scrap (Return to Generator)","italic":false}'}} 1
-execute as @e[tag=scrap,type=item] at @s if entity @a[team=blue,gamemode=adventure,distance=..1.2] run kill @s
-effect give @e[tag=scrap,type=item] minecraft:glowing infinite 10 true
+# Scrap item
+execute as @e[tag=scrap,type=item] at @s run function game:game/infected/scrap_item
 
 #
 execute as @e[type=minecraft:snowball] run data merge entity @s {Item:{id:"minecraft:kelp",Count:1b}}
 
 #
+scoreboard players set @a place_slime_temp 0
+scoreboard players set @a place_magmac_temp 0
+
+# VFX
+execute as @e[tag=shimmer,type=marker] at @s run function game:vfx/shimmer/main
+
+
+#
 tag @a remove blue_died
+
+# Correct lobby visual
+function game:menu/p_display/check_visuals
 
 #
 tp @e[tag=kill] ~ ~-10000 ~
 tag @e[tag=kill] add dead
+
+#
+item replace entity @e[type=minecraft:zombie_villager,team=red] armor.head with minecraft:red_stained_glass
+item replace entity @e[type=minecraft:zombie_villager,team=blue] armor.head with minecraft:cyan_stained_glass
+
+execute as @e[type=zombie_villager,team=red] run data merge entity @s {VillagerData:{type:"minecraft:desert"}}
+execute as @e[type=zombie_villager,team=blue] run data merge entity @s {VillagerData:{type:"minecraft:snow"}}
+
+#
+execute as @a store result score @s claw_count run clear @s netherite_sword 0
+clear @a[scores={claw_count=2..}] netherite_sword 1
+
+execute as @a store result score @s acid_count run clear @s lingering_potion 0
+clear @a[scores={acid_count=5..}] lingering_potion 1

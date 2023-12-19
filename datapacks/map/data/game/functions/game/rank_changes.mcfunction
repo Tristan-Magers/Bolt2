@@ -169,8 +169,12 @@ scoreboard players set .blue_attempts .metric 0
 execute as @a[team=red,tag=playing] run scoreboard players operation .red_attempts .metric += @s stats_attempts
 execute as @a[team=blue,tag=playing] run scoreboard players operation .blue_attempts .metric += @s stats_attempts
 
-scoreboard players set .red_attempts_val .calc 15
-scoreboard players set .blue_attempts_val .calc 15
+scoreboard players set .red_attempts_val .calc 1
+scoreboard players set .blue_attempts_val .calc 1
+scoreboard players operation .red_attempts_val .calc += .red_attempts .metric
+scoreboard players operation .blue_attempts_val .calc += .blue_attempts .metric
+execute if score .red_attempts_val .calc matches 15.. run scoreboard players set .red_attempts_val .calc 15
+execute if score .blue_attempts_val .calc matches 15.. run scoreboard players set .blue_attempts_val .calc 15
 scoreboard players operation .red_attempts_val .calc /= .red_attempts .metric
 scoreboard players operation .blue_attempts_val .calc /= .blue_attempts .metric
 scoreboard players add .red_attempts_val .calc 1
@@ -204,7 +208,6 @@ execute if score .point_blue .metric = .3 .num as @a[team=red] run scoreboard pl
 
 execute if score .point_red .metric = .3 .num as @a[team=red] run scoreboard players operation @s score_ranked *= .10 .num
 execute if score .point_blue .metric = .3 .num as @a[team=blue] run scoreboard players operation @s score_ranked *= .10 .num
-
 
 # add up scores (currently out of 120) [then convert to percentage (0-100)]
 execute as @a run scoreboard players operation @s rank_delta += @s kills_ranked

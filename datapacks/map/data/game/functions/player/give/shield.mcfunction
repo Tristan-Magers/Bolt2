@@ -1,4 +1,4 @@
-give @s iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
+give @s iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false,"color":"gray"}'}} 1
 
 scoreboard players remove @s drop_iron 1
 

@@ -1,5 +1,5 @@
-scoreboard players set @s removeBlind 7
-effect give @s minecraft:blindness 2 1 true
+scoreboard players set @s removeBlind 6
+effect give @s minecraft:blindness 1 100 true
 effect give @s minecraft:slowness 1 1 true
 
 playsound minecraft:item.totem.use master @a ~ ~ ~ 0.6 1

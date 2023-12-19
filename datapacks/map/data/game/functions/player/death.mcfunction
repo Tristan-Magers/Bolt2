@@ -23,19 +23,25 @@ tag @s remove killed_by_zombie
 execute on attacker as @s[type=zombie_villager] run scoreboard players operation @p[tag=no_killer,tag=me] KILL_ID = @s ID
 execute on attacker as @s[type=zombie_villager] run tag @p[tag=no_killer,tag=me] add killed_by_zombie
 
-tag @s remove killed_by_claw
-execute as @a[tag=!me,scores={sword_break=1..}] at @s run tag @p[tag=no_killer,tag=me,distance=..8] add killed_by_claw
-execute as @a[tag=!me,scores={sword_break=1..}] if entity @p[tag=no_killer,tag=me,distance=..8] run scoreboard players operation @p[tag=no_killer,tag=me,distance=..8] KILL_ID = @s ID
+#tag @s remove killed_by_claw
+#execute on attacker as @s[scores={sword_break=1..}] at @s run tag @p[tag=no_killer,tag=me,distance=..8] add killed_by_claw
+#execute on attacker as @s[scores={sword_break=1..}] if entity @p[tag=no_killer,tag=me,distance=..8] run scoreboard players operation @p[tag=no_killer,tag=me,distance=..8] KILL_ID = @s ID
 
-function game:id/player
+scoreboard players operation @a ID -= @s KILL_ID
 
-execute as @s[tag=killed_by_poison] run tellraw @a [{"text":"☣ ","color":"dark_green"},{"selector":"@p[tag=id_share]"},{"text":"'s Acid disolved ","color":"white"},{"selector":"@s"}]
-execute as @s[tag=killed_by_zombie] run tellraw @a [{"text":"☻ ","color":"dark_green"},{"selector":"@p[tag=id_share]"},{"text":"'s Minion bit ","color":"white"},{"selector":"@s"}]
-execute as @s[tag=killed_by_claw] run tellraw @a [{"text":"⚚ ","color":"gray"},{"selector":"@p[tag=id_share]"},{"text":" Clawed ","color":"white"},{"selector":"@s"}]
+execute if score .tmi .data = .0 .num as @s[tag=killed_by_poison] run tellraw @a [{"text":"☣ ","color":"dark_green"},{"selector":"@p[scores={ID=0}]"},{"text":"'s Acid disolved ","color":"white"},{"selector":"@s","color":"dark_aqua"}]
+execute if score .tmi .data = .0 .num as @s[tag=killed_by_zombie] run tellraw @a [{"text":"☻ ","color":"dark_green"},{"selector":"@p[scores={ID=0}]"},{"text":"'s Minion bit ","color":"white"},{"selector":"@s","color":"dark_aqua"}]
+execute if score .tmi .data = .0 .num as @s[tag=killed_by_claw] run tellraw @a [{"text":"🗡 ","color":"gray"},{"selector":"@p[scores={ID=0}]"},{"text":" Clawed ","color":"white"},{"selector":"@s","color":"dark_aqua"}]
 
-execute as @s[tag=killed_by_poison,team=blue] run scoreboard players add @p[tag=id_share] kills 1
-execute as @s[tag=killed_by_zombie,team=blue] run scoreboard players add @p[tag=id_share] kills 1
-execute as @s[tag=killed_by_claw,team=blue] run scoreboard players add @p[tag=id_share] kills 1
+execute if score .tmi .data = .1 .num as @s[tag=killed_by_poison] run tellraw @a [{"text":"☣ ","color":"dark_green"},{"selector":"@p[scores={ID=0}]"},{"text":"'s Acid disolved ","color":"white"},{"selector":"@s"}]
+execute if score .tmi .data = .1 .num as @s[tag=killed_by_zombie] run tellraw @a [{"text":"☻ ","color":"dark_green"},{"selector":"@p[scores={ID=0}]"},{"text":"'s Minion bit ","color":"white"},{"selector":"@s"}]
+execute if score .tmi .data = .1 .num as @s[tag=killed_by_claw] run tellraw @a [{"text":"🗡 ","color":"gray"},{"selector":"@p[scores={ID=0}]"},{"text":" Clawed ","color":"white"},{"selector":"@s"}]
+
+execute as @s[tag=killed_by_poison] run scoreboard players add @p[scores={ID=0}] kill 1
+execute as @s[tag=killed_by_zombie] run scoreboard players add @p[scores={ID=0}] kill 1
+execute as @s[tag=killed_by_claw] run scoreboard players add @p[scores={ID=0}] kill 1
+
+scoreboard players operation @a ID += @s KILL_ID
 
 #
 gamemode spectator @s
@@ -102,11 +108,10 @@ scoreboard players set @s[scores={deaths=1..,respawn=..31}] respawn 31
 
 execute if score .mode .data = .6 .num as @s[team=blue] run title @a times 5 20 10
 execute if score .mode .data = .6 .num as @s[team=blue] run title @a title {"text":" "}
-execute if score .mode .data = .6 .num as @s[team=blue] run title @a subtitle {"text":"☠ Survivor Died ☠"}
+execute if score .mode .data = .6 .num as @s[team=blue] run title @a subtitle {"text":"💀 Survivor Died 💀","font":"fancy"}
 execute if score .mode .data = .6 .num as @s[team=blue] as @a at @s run playsound minecraft:entity.ender_dragon.growl master @s ~ ~ ~ 1 2
 
 execute if score .mode .data = .6 .num run clear @s[team=blue]
-execute if score .mode .data = .6 .num run tag @s[team=blue] add blue_
 execute if score .mode .data = .6 .num run team join red @s[team=blue]
 execute if score .mode .data = .6 .num run scoreboard players set @s respawn 20
 execute if score .mode .data = .6 .num if score .zombie_evolve_level .data = .1 .num run scoreboard players add @s respawn 15

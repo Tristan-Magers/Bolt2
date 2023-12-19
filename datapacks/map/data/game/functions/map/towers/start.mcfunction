@@ -16,8 +16,8 @@ execute if score .mode .data = .1 .num run fill -57 -58 7 -61 -54 7 gravel
 execute if score .mode .data = .1 .num run summon armor_stand -64 -58 49 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",Count:1b}],Tags:["blueflag","flag"]}
 execute if score .mode .data = .1 .num run summon armor_stand -64 -58 -7 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:red_banner",Count:1b}],Tags:["redflag","flag"]}
 
-execute if score .mode .data = .1 .num run summon marker -79 -50 46 {Tags:["gen"]}
-execute if score .mode .data = .1 .num run summon marker -79 -50 -4 {Rotation:[180F,0F],Tags:["gen"]}
+execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -79 -50 46 {Tags:["gen"]}
+execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -79 -50 -4 {Rotation:[180F,0F],Tags:["gen"]}
 
 #execute if score .mode .data = .7 .num if score .TIME .data < .123 .num run function game:game/spawn_targets
 execute if score .mode .data = .6 .num run function game:game/infected/crates/setup_markers
@@ -29,3 +29,6 @@ setblock -84 -55 31 minecraft:hanging_roots
 setblock -76 -55 33 minecraft:hanging_roots
 setblock -64 -55 35 minecraft:hanging_roots
 setblock -69 -55 32 minecraft:hanging_roots
+
+#
+execute if score .mode .data = .7 .num run function game:map/towers/target

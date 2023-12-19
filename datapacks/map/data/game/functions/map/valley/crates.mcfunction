@@ -12,9 +12,9 @@ summon marker -403 -57 17 {Tags:["crate_marker","1"]}
 summon marker -409 -54 4 {Tags:["crate_marker","2"]}
 summon marker -408 -55 -5 {Tags:["crate_marker","2"]}
 summon marker -432 -49 -7 {Tags:["crate_marker","2"]}
-summon marker -431 -51 1 {Tags:["crate_marker","2"]}
+summon marker -431 -52 1 {Tags:["crate_marker","2"]}
 summon marker -391 -54 -8 {Tags:["crate_marker","2"]}
-summon marker -422 -51 1 {Tags:["crate_marker","2"]}
+summon marker -422 -50 1 {Tags:["crate_marker","2"]}
 summon marker -404 -55 -1 {Tags:["crate_marker","2"]}
 summon marker -417 -49 12 {Tags:["crate_marker","2"]}
 
@@ -51,7 +51,7 @@ summon marker -429 -45 24 {Tags:["crate_marker","2"]}
 # red side easy
 summon marker -400 -55 25 {Tags:["crate_marker","1"]}
 summon marker -401 -48 14 {Tags:["crate_marker","1"]}
-summon marker -411 -55 35 {Tags:["crate_marker","1"]}
+summon marker -411 -54 35 {Tags:["crate_marker","1"]}
 summon marker -397 -49 17 {Tags:["crate_marker","1"]}
 summon marker -402 -55 34 {Tags:["crate_marker","1"]}
 summon marker -419 -54 37 {Tags:["crate_marker","1"]}
@@ -65,7 +65,7 @@ summon marker -428 -49 56 {Tags:["crate_marker","2"]}
 summon marker -408 -55 37 {Tags:["crate_marker","2"]}
 summon marker -428 -54 43 {Tags:["crate_marker","2"]}
 summon marker -398 -54 40 {Tags:["crate_marker","2"]}
-summon marker -425 -49 49 {Tags:["crate_marker","2"]}
+summon marker -425 -51 48 {Tags:["crate_marker","2"]}
 summon marker -432 -54 37 {Tags:["crate_marker","2"]}
 
 # hard red side hard
@@ -74,6 +74,6 @@ summon marker -387 -49 31 {Tags:["crate_marker","1"]}
 summon marker -398 -45 37 {Tags:["crate_marker","1"]}
 summon marker -406 -54 43 {Tags:["crate_marker","1"]}
 summon marker -413 -54 41 {Tags:["crate_marker","1"]}
-summon marker -425 -49 38 {Tags:["crate_marker","1"]}
+summon marker -425 -50 38 {Tags:["crate_marker","1"]}
 summon marker -393 -54 38 {Tags:["crate_marker","1"]}
-summon marker -419 -49 46 {Tags:["crate_marker","1"]}
+summon marker -419 -51 46 {Tags:["crate_marker","1"]}

@@ -1,8 +1,21 @@
 #
+scoreboard players set @s[tag=!inspawn] inspawn 0
+scoreboard players add @s[tag=inspawn] inspawn 1
+execute if score .mode .data = .6 .num run title @s[scores={inspawn=90},team=blue,tag=playing,gamemode=adventure] times 10 40 10
+execute if score .mode .data = .6 .num run title @s[scores={inspawn=90},team=blue,tag=playing,gamemode=adventure] title {"text":"Leave Spawn","font":"fancy"}
+execute if score .mode .data = .6 .num run title @s[scores={inspawn=90},team=blue,tag=playing,gamemode=adventure] subtitle {"text":"(or else)","font":"fancy","color":"gray"}
+execute if score .mode .data = .6 .num run scoreboard players set @s[scores={inspawn=180},team=blue,tag=playing,gamemode=adventure] deaths 1
+execute if score .mode .data = .6 .num run scoreboard players set @s[scores={inspawn=280},team=blue,tag=playing,gamemode=adventure] deaths 1
+
+#
+scoreboard players remove @s[scores={spawn_message_delay=0..}] spawn_message_delay 1
+
+#
 scoreboard players set .success .calc 0
 execute store success score .success .calc run effect clear @s minecraft:water_breathing
 
 execute if score .success .calc = .1 .num run effect give @s[team=blue] minecraft:poison 3 3 true
+execute if score .success .calc = .1 .num if score .tmi .data = .1 .num run effect give @s[team=red] minecraft:poison 3 3 true
 
 #
 clear @s[nbt={Inventory:[{id:"minecraft:bow",Slot:-106b}]}] bow
@@ -11,35 +24,17 @@ tag @s remove off_correct
 tag @s[nbt={Inventory:[{Slot:-106b}]}] add off_correct
 tag @s[nbt={Inventory:[{id:"minecraft:blue_dye",Slot:-106b}]}] remove off_correct
 tag @s[nbt={Inventory:[{id:"minecraft:red_dye",Slot:-106b}]}] remove off_correct
+tag @s[nbt={Inventory:[{id:"minecraft:netherite_scrap",Slot:-106b}]}] remove off_correct
 tag @s[nbt={Inventory:[{id:"minecraft:carrot_on_a_stick",Slot:-106b}]}] remove off_correct
 tag @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] add off_correct
 
-item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] weapon.offhand from entity @s hotbar.0
+tag @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] add off_correct
 
-clear @s[tag=off_correct] minecraft:bow
-clear @s[tag=off_correct] minecraft:blue_dye
-clear @s[tag=off_correct] minecraft:red_dye
-clear @s[tag=off_correct] minecraft:carrot_on_a_stick
+execute as @s[tag=off_correct] run function game:player/offhand_correct
 
-scoreboard players set @s[nbt=!{Inventory:[{Slot:7b}]},tag=off_correct] t1 7
-scoreboard players set @s[nbt=!{Inventory:[{Slot:6b}]},tag=off_correct] t1 6
-scoreboard players set @s[nbt=!{Inventory:[{Slot:5b}]},tag=off_correct] t1 5
-scoreboard players set @s[nbt=!{Inventory:[{Slot:4b}]},tag=off_correct] t1 4
-scoreboard players set @s[nbt=!{Inventory:[{Slot:3b}]},tag=off_correct] t1 3
-scoreboard players set @s[nbt=!{Inventory:[{Slot:2b}]},tag=off_correct] t1 2
-scoreboard players set @s[nbt=!{Inventory:[{Slot:1b}]},tag=off_correct] t1 1
-scoreboard players set @s[nbt={Inventory:[{id:"minecraft:arrow",Slot:-106b}]},tag=off_correct] t1 8
-
-item replace entity @s[nbt=!{Inventory:[{Slot:1b}]},tag=off_correct,scores={t1=1}] hotbar.1 from entity @s weapon.offhand
-item replace entity @s[nbt=!{Inventory:[{Slot:2b}]},tag=off_correct,scores={t1=2}] hotbar.2 from entity @s weapon.offhand
-item replace entity @s[nbt=!{Inventory:[{Slot:3b}]},tag=off_correct,scores={t1=3}] hotbar.3 from entity @s weapon.offhand
-item replace entity @s[nbt=!{Inventory:[{Slot:4b}]},tag=off_correct,scores={t1=4}] hotbar.4 from entity @s weapon.offhand
-item replace entity @s[nbt=!{Inventory:[{Slot:5b}]},tag=off_correct,scores={t1=5}] hotbar.5 from entity @s weapon.offhand
-item replace entity @s[nbt=!{Inventory:[{Slot:6b}]},tag=off_correct,scores={t1=6}] hotbar.6 from entity @s weapon.offhand
-item replace entity @s[nbt=!{Inventory:[{Slot:7b}]},tag=off_correct,scores={t1=7}] hotbar.7 from entity @s weapon.offhand
-item replace entity @s[nbt={Inventory:[{id:"minecraft:arrow",Slot:-106b}]},tag=off_correct,scores={t1=8}] hotbar.8 from entity @s weapon.offhand
-
-item replace entity @s[tag=off_correct] weapon.offhand with air
+#
+execute store result score @s scrap run clear @s minecraft:netherite_scrap 0
+execute as @s[scores={scrap=1..}] as @s[nbt=!{Inventory:[{id:"minecraft:netherite_scrap",Slot:-106b}]}] run function game:player/scrap_correct
 
 #
 execute if score .mode .data = .7 .num run scoreboard players set @s invul 100
@@ -63,16 +58,30 @@ scoreboard players add @s[gamemode=spectator,scores={time_dead=2}] stats_deaths 
 #cutscene
 gamemode spectator @s[scores={cutscene_time=1..}]
 gamemode adventure @s[scores={cutscene_time=0,team_pref=0..}]
-execute as @s[gamemode=spectator,scores={cutscene_time=1..}] run spectate @e[tag=cutscene,type=armor_stand,limit=1]
+execute as @s[scores={cutscene_time=76}] run gamemode adventure
+execute as @s[scores={cutscene_time=76}] run gamemode spectator
+execute as @s[gamemode=spectator,scores={cutscene_time=2..78}] run spectate @e[tag=cutscene,type=armor_stand,limit=1]
 scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..}] respawn 70
 execute if score .mode .data = .6 .num run scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..},team=red] respawn 120
 execute if score .mode .data = .6 .num run scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..},team=blue] respawn 10
 execute if score .mode .data = .7 .num run scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..}] respawn 20
 
-execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] panda_spawn_egg{CustomModelData:1,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1},HideFlags:48} 10
+execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] panda_spawn_egg{CustomModelData:1,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1},HideFlags:48} 8
 execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] snowball{display:{Name:'{"text":"Grenade","italic":false,"color":"gray"}'}} 1
 execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] panda_spawn_egg{CustomModelData:0,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Trap","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b},HideFlags:48} 2
+execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] panda_spawn_egg{CustomModelData:4,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Turret","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:pig",PersistenceRequired:0b,Silent:1b,NoAI:1,IsBaby:0b,Health:10f},HideFlags:48} 1
 execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
+
+execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.1 from block 244 -50 -254 container.1
+execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.2 from block 244 -50 -254 container.2
+execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.3 from block 244 -50 -254 container.3
+execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.4 from block 244 -50 -254 container.4
+execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.5 from block 244 -50 -254 container.5
+execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.6 from block 244 -50 -254 container.6
+execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.7 from block 244 -50 -254 container.7
+
+execute if entity @s[scores={cutscene_time=0,cutscene=1},team=red] run execute store result score @s drop_magma run clear @s panda_spawn_egg{CustomModelData:3}
+execute if entity @s[scores={cutscene_time=0,cutscene=1,drop_magma=1..},team=red] run function game:player/give/red_spawn
 
 scoreboard players remove @s[scores={cutscene_time=0..}] cutscene_time 1
 
@@ -82,17 +91,17 @@ scoreboard players remove @s[scores={cutscene_time=0..}] cutscene_time 1
 #title @a actionbar {"text":"\uE026","color":"light_blue"}
 
 #effects
-xp add @a -100 levels
+xp add @a[tag=lobby] -100 levels
 
 bossbar set minecraft:dark players
 bossbar set minecraft:dark players @a[tag=dark]
 
 effect clear @s[tag=dark] minecraft:night_vision
-effect give @s[tag=!dark] minecraft:night_vision 999999 10 true
+effect give @s[tag=!dark,tag=!no_vis] minecraft:night_vision 999999 10 true
 effect give @s minecraft:weakness 999999 10 true
 effect give @s minecraft:saturation 999999 10 true
 
-effect give @a minecraft:night_vision 999999 10 true
+effect give @a[tag=!no_vis] minecraft:night_vision 999999 10 true
 
 effect clear @s[tag=clear_invis] invisibility
 tag @s remove clear_invis
@@ -104,16 +113,29 @@ clear @s[nbt=!{Inventory:[{id:"minecraft:leather_chestplate",Slot:102b}]}] leath
 item replace entity @s[team=red,nbt=!{Inventory:[{id:"minecraft:leather_chestplate",Slot:102b}]}] armor.chest with leather_chestplate{display:{color:16711680},Unbreakable:1b,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUID:[I;1524521295,-489798199,-1818645928,-1857490419]}]}
 item replace entity @s[team=blue,nbt=!{Inventory:[{id:"minecraft:leather_chestplate",Slot:102b}]}] armor.chest with leather_chestplate{display:{color:22015},Unbreakable:1b,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUID:[I;-1261957983,1980582918,-2036986291,-2007908802]}]}
 
+item replace entity @s[team=red,nbt=!{Inventory:[{id:"minecraft:leather_leggings",Slot:101b}]}] armor.legs with leather_leggings{display:{color:16711680},Unbreakable:1b,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUID:[I;1524521295,-489798199,-1818645928,-1857490419]}]}
+item replace entity @s[team=blue,nbt=!{Inventory:[{id:"minecraft:leather_leggings",Slot:101b}]}] armor.legs with leather_leggings{display:{color:22015},Unbreakable:1b,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUID:[I;-1261957983,1980582918,-2036986291,-2007908802]}]}
+
+item replace entity @s[team=red,nbt=!{Inventory:[{id:"minecraft:leather_boots",Slot:100b}]}] armor.feet with leather_boots{display:{color:16711680},Unbreakable:1b,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUID:[I;1524521295,-489798199,-1818645928,-1857490419]}]}
+item replace entity @s[team=blue,nbt=!{Inventory:[{id:"minecraft:leather_boots",Slot:100b}]}] armor.feet with leather_boots{display:{color:22015},Unbreakable:1b,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUID:[I;-1261957983,1980582918,-2036986291,-2007908802]}]}
+
 #reload
 execute as @s store result score @s arrowCount run clear @s arrow 0
 scoreboard players add @s[scores={arrowCount=..2}] arrowReload 1
 scoreboard players set @s[scores={arrowCount=3..}] arrowReload 0
 #execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowCount=2..},team=red] arrowReload 0
 
+item replace entity @s[scores={arrowReload=..39,arrowCount=0}] hotbar.8 with gray_dye{display:{Name:'{"text":"Reloading","italic":false}'},HideFlags:32} 1
+
 clear @s[scores={arrowReload=40..}] arrow
 item replace entity @s[scores={arrowReload=40..,arrowCount=0}] hotbar.8 with minecraft:arrow
 item replace entity @s[scores={arrowReload=40..,arrowCount=1}] hotbar.8 with minecraft:arrow 2
 item replace entity @s[scores={arrowReload=40..,arrowCount=2}] hotbar.8 with minecraft:arrow 3
+
+item modify entity @s[scores={arrowCount=1..},team=] hotbar.8 game:model_0
+item modify entity @s[scores={arrowCount=1..},team=red] hotbar.8 game:model_1
+item modify entity @s[scores={arrowCount=1..},team=blue] hotbar.8 game:model_2
+
 scoreboard players remove @s[scores={arrowReload=40..}] arrowReload 40
 
 #execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowReload=..10},team=red] arrowReload 10
@@ -124,9 +146,10 @@ effect give @s[scores={health=1..19}] minecraft:instant_health 1 10 true
 
 scoreboard players remove @s[scores={invul=1..}] invul 1
 
+clear @s[tag=lobby] chainmail_helmet
 clear @s[scores={invul=2..},nbt=!{Inventory:[{id:"minecraft:chainmail_helmet",Slot:103b}]}] chainmail_helmet
-item replace entity @s[scores={invul=2..},nbt=!{Inventory:[{id:"minecraft:chainmail_helmet",Slot:103b}]},tag=!hasflag] armor.head with minecraft:chainmail_helmet{Damage:150,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:30,Operation:0,UUID:[I;-1372090343,-270579763,-1607716031,1256953017]}]}
-item replace entity @s[scores={invul=1},tag=!hasflag] armor.head with minecraft:air
+item replace entity @s[tag=!lobby,scores={invul=2..,glowing=..0},nbt=!{Inventory:[{id:"minecraft:chainmail_helmet",Slot:103b}]},tag=!hasflag] armor.head with minecraft:chainmail_helmet{Damage:150,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:30,Operation:0,UUID:[I;-1372090343,-270579763,-1607716031,1256953017]}]}
+item replace entity @s[scores={invul=1,glowing=..0},tag=!hasflag] armor.head with minecraft:air
 
 # Place Block
 execute as @s[scores={place_block=1..}] at @s run function game:detection/block_scan/trigger
@@ -142,9 +165,9 @@ scoreboard players add @s[tag=item_acid] item_acid 1
 
 scoreboard players set @s[tag=item_acid,nbt={Inventory:[{id:"minecraft:lingering_potion"}]},scores={item_acid=100..}] item_acid 140
 
-give @s[scores={item_boost=220..}] egg{display:{Name:'{"text":"Boost"}'},HideFlags:32} 1
-give @s[scores={item_acid=220..}] lingering_potion{display:{Name:'{"text":"Acid"}'},HideFlags:32,Potion:"minecraft:water_breathing",CustomPotionColor:65314} 1
-give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Minion"}'},HideFlags:6,EntityTag:{Team:"red",PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:5f,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",Count:1b}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.36}]}} 1
+give @s[scores={item_boost=220..}] egg{display:{Name:'{"text":"Boost","italic":false}'},HideFlags:32} 1
+give @s[scores={item_acid=220..,acid_count=..2}] lingering_potion{display:{Name:'{"text":"Acid","italic":false}'},HideFlags:32,Potion:"minecraft:water_breathing",CustomPotionColor:65314} 1
+give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Minion","italic":false}'},HideFlags:255,EntityTag:{PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",Count:1b}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}} 2
 
 scoreboard players set @s[scores={item_boost=220..}] item_boost 0
 scoreboard players set @s[scores={item_minion=220..}] item_minion 0
@@ -213,7 +236,7 @@ effect clear @s[x=-224,y=-47,z=-14,dx=50,dy=40,dz=80] levitation
 
 #remove blind (note: only used for totem, so it also custom removes slow)
 scoreboard players remove @s[scores={removeBlind=-1..}] removeBlind 1
-effect give @s[scores={removeBlind=0}] minecraft:blindness 1 100 true
+#effect give @s[scores={removeBlind=0}] minecraft:blindness 1 100 true
 effect clear @s[scores={removeBlind=-1}] minecraft:slowness
 
 #remove slowness
@@ -243,21 +266,26 @@ scoreboard players add @s[scores={respawn=1..}] respawning_time 1
 clear @s[tag=!hasflag] red_banner
 clear @s[tag=!hasflag] blue_banner
 
-item replace entity @s[tag=!hasflag,scores={invul=..0}] armor.head with minecraft:air
+item replace entity @s[tag=!hasflag,scores={invul=..0,glowing=..0}] armor.head with minecraft:air
 
 clear @s[tag=!hasflag,team=blue] red_banner
 clear @s[tag=!hasflag,team=blue] red_dye
-item replace entity @s[tag=!hasflag,team=blue,scores={invul=..0}] armor.head with minecraft:air
-item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_banner",Slot:103b}]},team=blue] armor.head with minecraft:red_banner
+item replace entity @s[tag=!hasflag,team=blue,scores={invul=..0,glowing=..0}] armor.head with minecraft:air
+item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_banner",Slot:103b}]},team=blue,scores={glowing=..0}] armor.head with minecraft:red_banner
 clear @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_dye",Slot:-106b}]},team=blue] minecraft:red_dye
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_dye",Slot:-106b}]},team=blue] weapon.offhand with minecraft:red_dye{display:{Name:'{"text":"Red Flag"}'}}
 
 clear @s[tag=!hasflag,team=red] blue_banner
 clear @s[tag=!hasflag,team=red] blue_dye
-item replace entity @s[tag=!hasflag,team=red,scores={invul=..0}] armor.head with minecraft:air
-item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_banner",Slot:103b}]},team=red] armor.head with minecraft:blue_banner
+item replace entity @s[tag=!hasflag,team=red,scores={invul=..0,glowing=..0}] armor.head with minecraft:air
+item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_banner",Slot:103b}]},team=red,scores={glowing=..0}] armor.head with minecraft:blue_banner
 clear @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_dye",Slot:-106b}]},team=red] minecraft:blue_dye
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_dye",Slot:-106b}]},team=red] weapon.offhand with minecraft:blue_dye{display:{Name:'{"text":"Blue Flag"}'}}
+
+clear @s[scores={glowing=..0}] minecraft:carved_pumpkin
+item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},team=red,scores={glowing=1..}] armor.head with minecraft:carved_pumpkin{CustomModelData:1}
+item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},team=blue,scores={glowing=1..}] armor.head with minecraft:carved_pumpkin{CustomModelData:2}
+item replace entity @s[nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},scores={glowing=1..}] armor.head with minecraft:carved_pumpkin{CustomModelData:0}
 
 #bow correct
 clear @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] bow
@@ -269,11 +297,26 @@ item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creativ
 function game:bow/dynamic_bow_data
 
 #reveal
-execute as @s[scores={useMap=1..,respawn=..0}] run function game:items/reveal/use
-execute as @s[scores={useMap=1..,respawn=1..}] run function game:items/reveal/fail
+execute as @s[scores={useMap=1..,respawn=..0,delay_reveal=..0}] run function game:items/reveal/use
+execute as @s[scores={useMap=1..}] unless entity @s[scores={respawn=..0,delay_reveal=..0}] run function game:items/reveal/fail
+
+scoreboard players remove @s[scores={delay_reveal=0..}] delay_reveal 1
 
 #claws
-give @s[scores={sword_break=1..}] minecraft:netherite_sword{display:{Name:'{"text":"Claws"}'},Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:6,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1
+give @s[scores={sword_break=1..}] minecraft:netherite_sword{display:{Name:'{"text":"Claws","italic":false,"color":"gray"}'},Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:255,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1
+
+#
+scoreboard players set @a[tag=lobby] drop_egg_generic 0
+scoreboard players set @a[tag=lobby] drop_creeper 0
+scoreboard players set @a[tag=lobby] drop_snowball 0
+scoreboard players set @a[tag=lobby] drop_silver 0
+scoreboard players set @a[tag=lobby] drop_slime 0
+scoreboard players set @a[tag=lobby] drop_magma 0
+scoreboard players set @a[tag=lobby] drop_map 0
+scoreboard players set @a[tag=lobby] drop_scrap 0
+scoreboard players set @a[tag=lobby] drop_egg 0
+scoreboard players set @a[tag=lobby] drop_turret 0
+scoreboard players set @a[tag=lobby] drop_zoom 0
 
 #
 execute as @s[scores={drop_snowball=1..}] run function game:player/give/grenade
@@ -289,6 +332,54 @@ execute as @s[scores={drop_crossbow=1..}] run function game:player/give/crossbow
 execute as @s[scores={drop_lingering=1..}] run function game:player/give/acid
 execute as @s[scores={drop_zombie=1..}] run function game:player/give/zombie
 execute as @s[scores={drop_scrap=1..}] run function game:player/give/scrap
+execute as @s[scores={drop_turret=1..}] run function game:player/give/turret
+execute as @s[scores={drop_zoom=1..}] run function game:player/give/zoom
+
+#
+scoreboard players remove @s glowing 1
 
 #
 scoreboard players set @s shift 0
+
+#
+scoreboard players set @s snowball 0
+
+#
+function game:bow_ui/main
+
+#
+execute store result score @s[team=red,tag=playing] drop_magma run clear @s panda_spawn_egg{CustomModelData:3}
+execute as @s[team=red,tag=playing,scores={drop_magma=1..}] run function game:player/give/red_spawn
+
+#
+tag @e[tag=me] remove me
+tag @s add me
+
+scoreboard players set @s turrets_active 0
+execute as @e[tag=turret] if score @s ID = @e[tag=me,limit=1] ID run scoreboard players add @e[tag=me] turrets_active 1
+
+scoreboard players set @s traps_active 0
+execute as @e[type=creeper] if score @s ID = @e[tag=me,limit=1] ID run scoreboard players add @e[tag=me] traps_active 1
+
+scoreboard players set @s minions_active 0
+execute as @e[type=zombie_villager] if score @s ID = @e[tag=me,limit=1] ID run scoreboard players add @e[tag=me] minions_active 1
+
+execute as @s[scores={turrets_active=5..}] as @e[tag=turret] run tag @s remove my_turret
+execute as @s[scores={turrets_active=5..}] as @e[tag=turret] if score @s ID = @e[tag=me,limit=1] ID run tag @s add my_turret
+#execute as @s[scores={turrets_active=6..}] run tellraw @s {"text":"Too many turrets","color":"dark_gray"}
+execute as @s[scores={turrets_active=5..}] as @e[tag=turret,tag=my_turret,limit=1] at @s run function game:ffa/turret/kill_self
+execute as @s[scores={turrets_active=6..}] as @e[tag=turret,tag=my_turret,limit=1] at @s run function game:ffa/turret/kill_self
+
+execute as @s[scores={traps_active=13..}] as @e[type=creeper] run tag @s remove my_trap
+execute as @s[scores={traps_active=13..}] as @e[type=creeper] if score @s ID = @e[tag=me,limit=1] ID run tag @s add my_trap
+#execute as @s[scores={traps_active=13..}] run tellraw @s {"text":"Too many traps","color":"dark_gray"}
+execute as @s[scores={traps_active=13..}] as @e[type=creeper,tag=my_trap,limit=1] at @s run kill @s
+execute as @s[scores={traps_active=14..}] as @e[type=creeper,tag=my_trap,limit=1] at @s run kill @s
+
+execute as @s[scores={minions_active=17..}] as @e[type=zombie_villager] run tag @s remove my_minion
+execute as @s[scores={minions_active=17..}] as @e[type=zombie_villager] if score @s ID = @e[tag=me,limit=1] ID run tag @s add my_minion
+#execute as @s[scores={traps_active=13..}] run tellraw @s {"text":"Too many traps","color":"dark_gray"}
+execute as @s[scores={minions_active=17..}] as @e[type=zombie_villager,tag=my_minion,limit=1] at @s run kill @s
+execute as @s[scores={minions_active=18..}] as @e[type=zombie_villager,tag=my_minion,limit=1] at @s run kill @s
+
+tag @s remove me

@@ -1,4 +1,11 @@
-{
-	"function" : "minecraft:set_name",
-	"name" : [{"text":"Graphic Design Bow","italic":false,"color":"white"}]
-}
+[
+	{
+		"function" : "minecraft:set_name",
+		"name" : [{"text":"Graphic Design Bow","italic":false,"color":"white"}]
+	},
+	{
+		"function" : "minecraft:set_lore",
+		"lore" : [{"text":"ȹ","italic":false,"color":"white"}],
+		"replace" : true
+	}
+]

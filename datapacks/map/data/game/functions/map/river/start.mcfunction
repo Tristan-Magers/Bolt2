@@ -7,5 +7,5 @@ execute if score .mode .data = .1 .num run summon armor_stand -486 -18 -271 {NoG
 data merge block -521 -19 -267 {front_text:{messages:['{"text":" ","color":"black"}','{"text":""}','{"text":""}','{"text":""}']}}
 data merge block -495 -19 -339 {front_text:{messages:['{"text":" ","color":"black"}','{"text":""}','{"text":""}','{"text":""}']}}
 
-execute if score .mode .data = .1 .num run summon marker -521 -19 -268 {Tags:["gen"]}
-execute if score .mode .data = .1 .num run summon marker -495 -19 -338 {Rotation:[180F,0F],Tags:["gen"]}
+execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -521 -19 -268 {Tags:["gen"]}
+execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -495 -19 -338 {Rotation:[180F,0F],Tags:["gen"]}

@@ -62,6 +62,27 @@
             "ascent": 11,
             "height": 16,
             "chars": ["ϼ"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/score_back_ctf.png",
+            "height": 16,
+            "ascent": 10,
+            "chars": ["҂"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/score_back_ctf.png",
+            "height": 16,
+            "ascent": 10,
+            "chars": ["҂"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/mspaint_name.png",
+            "height": 16,
+            "ascent": 12,
+            "chars": ["ȹ"]
         }
     ]
 }

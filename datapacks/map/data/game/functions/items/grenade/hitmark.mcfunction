@@ -9,6 +9,8 @@
 scoreboard players add @s timer 1
 scoreboard players add @s t2 1
 
+execute as @s[scores={t2=1}] at @s run function game:items/grenade/adjust
+
 execute as @s[scores={t2=3}] at @s run playsound minecraft:block.note_block.snare master @a ~ ~ ~ 1 0.8
 execute as @s[scores={t2=4}] at @s run playsound minecraft:block.note_block.bit master @a ~ ~ ~ 0.6 0.8
 
@@ -61,10 +63,6 @@ execute as @s[scores={timer=17..}] at @s positioned ~ ~0.6 ~ if score .mode .dat
 execute as @s at @s positioned ~ ~0.75 ~ run function game:items/grenade/exploding
 execute as @s at @s positioned ~ ~1.25 ~ run function game:items/grenade/exploding
 #execute as @s at @s positioned ~ ~1.6 ~ run function game:items/grenade/exploding
-
-### HIT TRAGET
-
-execute as @s[scores={timer=17..}] at @s positioned ~ ~1.1 ~ if score .mode .data = .7 .num run function game:items/grenade/target
 
 ####
 

@@ -13,7 +13,8 @@
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:plains": "2022-09-17 03:13:16 +0000"
+      "minecraft:plains": "2022-09-17 03:13:16 +0000",
+      "minecraft:warm_ocean": "2023-12-02 03:39:07 +0000"
     },
     "done": false
   },
@@ -57,6 +58,7 @@
     "criteria": {
       "minecraft:magma_cube": "2022-09-17 03:27:02 +0000",
       "minecraft:creeper": "2022-09-17 03:22:45 +0000",
+      "minecraft:zombie_villager": "2023-12-10 03:41:36 +0000",
       "minecraft:slime": "2023-10-07 20:44:35 +0000"
     },
     "done": false
@@ -331,5 +333,65 @@
     },
     "done": true
   },
-  "DataVersion": 3578
+  "minecraft:recipes/building_blocks/jack_o_lantern": {
+    "criteria": {
+      "has_carved_pumpkin": "2023-12-02 03:09:17 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/pumpkin_pie": {
+    "criteria": {
+      "has_carved_pumpkin": "2023-12-02 03:09:17 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cake": {
+    "criteria": {
+      "has_egg": "2023-12-02 05:37:03 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/netherite_ingot": {
+    "criteria": {
+      "has_netherite_scrap": "2023-12-02 05:44:06 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_gray_carpet": {
+    "criteria": {
+      "has_needed_dye": "2023-12-10 03:25:24 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/light_gray_dye_from_gray_white_dye": {
+    "criteria": {
+      "has_gray_dye": "2023-12-10 03:25:24 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_gray_wool": {
+    "criteria": {
+      "has_needed_dye": "2023-12-10 03:25:24 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/dye_gray_bed": {
+    "criteria": {
+      "has_needed_dye": "2023-12-10 03:25:24 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/gray_candle": {
+    "criteria": {
+      "has_gray_dye": "2023-12-10 03:25:24 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/gray_stained_glass_pane_from_glass_pane": {
+    "criteria": {
+      "has_gray_dye": "2023-12-10 03:25:24 +0000"
+    },
+    "done": true
+  },
+  "DataVersion": 3700
 }
