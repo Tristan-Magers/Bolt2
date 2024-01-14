@@ -1,6 +1,12 @@
 team add blue
 team add red
 
+team add red_lobby {"text":"Red Lobby"}
+team add blue_lobby {"text":"Blue Lobby"}
+
+team modify red_lobby suffix [{"text":"["},{"text":"Red","color":"red"},{"text":"]"}]
+team modify blue_lobby suffix [{"text":"["},{"text":"Blue","color":"dark_aqua"},{"text":"]"}]
+
 team add Spectator
 
 team modify blue color dark_aqua
@@ -288,6 +294,8 @@ scoreboard objectives add claw_count dummy
 scoreboard objectives add acid_count dummy
 
 scoreboard objectives add scrap dummy
+
+scoreboard objectives add title_pause dummy
 
 scoreboard objectives add dead_head dummy
 

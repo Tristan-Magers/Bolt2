@@ -19,7 +19,7 @@ tag @s remove dark
 function game:game/infected/zombie_bonuses
 
 #execute if score .mode .data = .1 .num run clear @s[scores={kills=0,respawn=2}] written_book
-execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] hotbar.7 with written_book{pages:['["",{"text":"Every _ Kills","bold":true},{"text":"\\nx4 = Grenade\\nx5 = Walls\\nx15 = Crossbow\\n\\n","color":"reset"},{"text":"Kill Streak","bold":true},{"text":"\\n2 = Spawnpoint\\n3 = Traps\\n5 = Reveal\\n7 = Traps\\n10 = Reveal\\n11+ = Touch Grass\\n\\n","color":"reset"},{"text":"Capture","bold":true},{"text":" = Shield","color":"reset"}]'],title:"Item Aquirement",author:"Space Bleps"}
+execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] hotbar.7 with written_book{display:{Lore:['{"text":"How to get items "}']},title:"Item Acquirement",author:"Bleps",pages:['[{"text":"Item Conditions","bold":true,"underlined":true},{"text":"\\n\\n"},{"text":"Every _ Kills","bold":true},{"text":"\\n"},{"text":"4 =","bold":true},{"text":" G | "},{"text":"5 =","bold":true},{"text":" W | "},{"text":"15 =","bold":true},{"text":" C \\n\\n"},{"text":"Kills Streak","bold":true},{"text":"\\n"},{"text":"2 =","bold":true},{"text":" S | "},{"text":"3/7 =","bold":true},{"text":" T | "},{"text":"5/10 =","bold":true},{"text":" R\\n\\n"},{"text":"Capture","bold":true},{"text":" = ","bold":true},{"text":"I"}]']}
 
 execute if score .mode .data = .6 .num run tag @s[tag=!dark_immune] add dark
 

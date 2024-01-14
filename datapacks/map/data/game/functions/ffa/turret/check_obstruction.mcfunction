@@ -8,4 +8,4 @@ execute as @s[tag=!in] run scoreboard players set #obstruction .data 1
 # execute if score #obstruction .data matches 1 run say obstructed
 execute positioned ~-0.005 ~-0.005 ~-0.005 as @s[dx=0] positioned ~-0.99 ~-0.99 ~-0.99 if entity @s[dx=0] run scoreboard players set #turretHitbox .data 1
 # execute if score #turretHitbox .data matches 1 run say at turret
-execute unless score #turretHitbox .data matches 1 positioned ^ ^ ^0.15 run function game:ffa/turret/check_obstruction
+execute unless score #turretHitbox .data matches 1 positioned ^ ^ ^0.22 run function game:ffa/turret/check_obstruction

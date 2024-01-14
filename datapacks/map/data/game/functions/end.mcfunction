@@ -56,7 +56,7 @@ scoreboard players set .no_players .timer -60
 scoreboard players set .running .data 0
 
 function game:game/next_id
-execute as @a run function game:player/leave_game
+execute as @a[tag=!lobby] run function game:player/leave_game
 
 #
 scoreboard objectives setdisplay list rank
@@ -93,3 +93,5 @@ tag @a remove turretDead
 tag @a remove executioner
 
 tag @a remove targeted
+
+tag @a remove is_spectating

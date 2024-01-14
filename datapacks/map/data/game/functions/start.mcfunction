@@ -33,8 +33,8 @@ execute if score .players_in .data = .11 .num run scoreboard players set .even_p
 
 team leave @a
 
-team join red @a[team=,scores={team_pref=1},gamemode=adventure]
-team join blue @a[team=,scores={team_pref=2},gamemode=adventure]
+execute if score .mode .data = .1 .num run team join red @a[team=,scores={team_pref=1},gamemode=adventure]
+execute if score .mode .data = .1 .num run team join blue @a[team=,scores={team_pref=2},gamemode=adventure]
 
 function game:game/team_dif
 #execute if score .even_players .data = .1 .num if score .ranked_random .data = .0 .num if score .team_dif .data >= .0 .num if score .ran_team .random = .1 .num run team join blue @a[limit=1,sort=random,team=,scores={team_pref=0},gamemode=adventure]
@@ -68,13 +68,16 @@ execute if score .mode .data = .6 .num run tag @a[team=blue,tag=playing] add sur
 
 execute if score .mode .data = .7 .num run team join blue @a[scores={team_pref=0..}]
 
+scoreboard players set @a title_pause 0
+
 scoreboard players set @a kill 0
 
 scoreboard objectives remove Scores
 scoreboard objectives add Scores dummy
 
 scoreboard objectives remove evolutions
-scoreboard objectives add evolutions dummy {"text":"Evolutions:"}
+scoreboard objectives add evolutions dummy {"text":"Evolutions","font":"fancy"}
+scoreboard objectives modify evolutions numberformat blank
 
 tag @a remove hasspawn
 tag @a remove used_spawn
@@ -237,7 +240,7 @@ scoreboard players set .no_players .timer -60
 #
 scoreboard players set .zombie_crates .data 0
 
-scoreboard players set .zombie_evolve_timer .timer 320 
+scoreboard players set .zombie_evolve_timer .timer 340 
 scoreboard players set .zombie_evolve_level .data 0
 scoreboard players set .zombie_evolve_type_0 .data 0
 scoreboard players set .zombie_evolve_type_1 .data 0
@@ -247,6 +250,7 @@ scoreboard players set .zombie_evolve_type_4 .data 0
 scoreboard players set .zombie_evolve_type_5 .data 0
 scoreboard players set .zombie_evolve_type_6 .data 0
 scoreboard players set .zombie_evolve_type_7 .data 0
+scoreboard players set .zombie_evolve_type_8 .data 0
 
 #
 tag @a remove item_minion
@@ -263,11 +267,14 @@ scoreboard players remove @a spawn_message_delay 20
 scoreboard players set @a crossbowTime 1
 
 #
-item replace block 221 -50 -240 container.0 from block 244 -50 -254 container.24
-item replace block 221 -50 -242 container.0 from block 244 -50 -254 container.25
-item replace block 221 -50 -244 container.0 from block 244 -50 -254 container.26
+item replace block 222 -60 -240 container.0 from block 235 -50 -224 container.24
+item replace block 222 -60 -242 container.0 from block 235 -50 -224 container.25
+item replace block 222 -60 -244 container.0 from block 235 -50 -224 container.26
 
-item replace block 219 -50 -238 container.0 from block 244 -50 -254 container.19
-item replace block 219 -50 -240 container.0 from block 244 -50 -254 container.20
-item replace block 219 -50 -242 container.0 from block 244 -50 -254 container.21
-item replace block 219 -50 -244 container.0 from block 244 -50 -254 container.22
+item replace block 224 -60 -240 container.0 from block 235 -50 -224 container.19
+item replace block 224 -60 -242 container.0 from block 235 -50 -224 container.20
+item replace block 224 -60 -244 container.0 from block 235 -50 -224 container.21
+item replace block 224 -60 -246 container.0 from block 235 -50 -224 container.22
+
+#
+tag @a[scores={team_pref=-1}] add is_spectating

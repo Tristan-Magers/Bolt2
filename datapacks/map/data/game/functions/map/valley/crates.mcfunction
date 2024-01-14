@@ -59,7 +59,7 @@ summon marker -392 -53 27 {Tags:["crate_marker","1"]}
 summon marker -398 -53 21 {Tags:["crate_marker","1"]}
 
 # middle red tricky
-summon marker -422 -51 31 {Tags:["crate_marker","2"]}
+summon marker -422 -50 31 {Tags:["crate_marker","2"]}
 summon marker -403 -48 36 {Tags:["crate_marker","2"]}
 summon marker -428 -49 56 {Tags:["crate_marker","2"]}
 summon marker -408 -55 37 {Tags:["crate_marker","2"]}

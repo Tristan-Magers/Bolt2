@@ -50,6 +50,8 @@ tag @s remove item_acid
 
 tag @s remove dark
 
+tag @s remove is_spectating
+
 scoreboard players add @s bow_texture 0
 
 scoreboard players set @s crossbowTime 1

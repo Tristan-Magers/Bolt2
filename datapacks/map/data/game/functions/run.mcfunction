@@ -2,7 +2,8 @@
 function game:tmi/chest_items
 
 #
-execute as @a[scores={Leave=1..}] at @s if score @s game_id = .current_id .data if score .running .data = .1 .num run function game:player/relog_game
+scoreboard players set @a[tag=!lobby,tag=!playing,team=!Spectator,gamemode=adventure] Leave 1
+execute as @a[scores={Leave=1..},tag=!is_spectating,tag=playing] at @s if score @s game_id = .current_id .data if score .running .data = .1 .num run function game:player/relog_game
 execute as @a[scores={Leave=1..}] at @s run function game:player/leave_game
 
 #
@@ -87,11 +88,11 @@ tag @a[x=245,y=-50,z=-235,distance=..60] add lobby
 scoreboard players set @a[x=245,y=-50,z=-235,distance=..60] invul 40
 #scoreboard players set @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrowReload 32
 #clear @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrow
-team join red @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=1}]
-team join blue @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=2}]
+team join red_lobby @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=1}]
+team join blue_lobby @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=2}]
 team join Spectator @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=-1}]
 
-tp @a[x=249,y=-56,z=-250,dx=30,dy=3,dz=30,gamemode=adventure] 243.5 -44.00 -235.5 -90 13
+tp @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] 243.5 -44.00 -235.5 -90 13
 
 tag @e[type=arrow,x=245,y=-50,z=-235,distance=..60] add kill
 
@@ -317,14 +318,14 @@ execute if score .running .data = .1 .num if entity @a[team=red,tag=playing] if 
 execute if score .running .data = .1 .num if score .mode .data = .6 .num if entity @a[team=red,tag=playing] run scoreboard players set .no_players .timer 0
 execute if score .running .data = .1 .num if score .mode .data = .7 .num if entity @a[team=blue,tag=playing] run scoreboard players set .no_players .timer 0
 
-#execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .10 .num run say NO PLAYERS ON A TEAM. RESTARTING IN 10 SECONDS
-#execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .200 .num run function game:end
+execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .10 .num run tellraw @a {"text":"NO PLAYERS ON A TEAM. RESTARTING IN 10 SECONDS"}
+execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .200 .num run function game:end
 
-#execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .10 .num run say NO PLAYERS INFECTED. RESTARTING IN 10 SECONDS
-#execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .200 .num run function game:end
+execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .10 .num run tellraw @a {"text":"NO PLAYERS INFECTED. RESTARTING IN 10 SECONDS"}
+execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .200 .num run function game:end
 
-#execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .10 .num run say NO PLAYERS. RESTARTING IN 10 SECONDS
-#execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .200 .num run function game:end
+execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .10 .num run tellraw @a {"text":"NO PLAYERS. RESTARTING IN 10 SECONDS"}
+execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .200 .num run function game:end
 
 execute if score .running .data = .0 .num run scoreboard players set .no_players .timer -60
 execute if score .no_players .timer > .200 .num run scoreboard players set .no_players .timer -60

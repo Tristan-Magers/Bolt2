@@ -24,16 +24,17 @@ execute if data entity @s interaction on target if entity @s[team=red] as @e[tag
 execute if data entity @s interaction run scoreboard players add @s t 1
 execute if data entity @s interaction run playsound minecraft:block.chest.locked master @a[team=!red] ~ ~ ~ 1 2
 
-execute if data entity @s[scores={t=1}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □□□□□□□□□■"}]
-execute if data entity @s[scores={t=2}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □□□□□□□□■■"}]
-execute if data entity @s[scores={t=3}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □□□□□□□■■■"}]
-execute if data entity @s[scores={t=4}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □□□□□□■■■■"}]
-execute if data entity @s[scores={t=5}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □□□□□■■■■■"}]
-execute if data entity @s[scores={t=6}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □□□□■■■■■■"}]
-execute if data entity @s[scores={t=7}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □□□■■■■■■■"}]
-execute if data entity @s[scores={t=8}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □□■■■■■■■■"}]
-execute if data entity @s[scores={t=9}] interaction run title @a[distance=..8] actionbar [{"text":"Open progress: □■■■■■■■■■"}]
-execute if data entity @s[scores={t=10}] interaction run title @a[distance=..8] actionbar [{"text":"OPENED!"}]
+scoreboard players set @a[distance=..8,team=blue] title_pause 10
+execute if data entity @s[scores={t=1}] interaction run title @a[distance=..8,team=blue] actionbar [{"text":"Open progress: □□□□□□□□□■"}]
+execute if data entity @s[scores={t=2}] interaction run title @a[distance=..8,team=blue] actionbar [{"text":"Open progress: □□□□□□□□■■"}]
+execute if data entity @s[scores={t=3}] interaction run title @a[distance=..8,team=blue] actionbar [{"text":"Open progress: □□□□□□□■■■"}]
+execute if data entity @s[scores={t=4}] interaction run title @a[distance=..8,team=blue] actionbar [{"text":"Open progress: □□□□□□■■■■"}]
+execute if data entity @s[scores={t=5}] interaction run title @a[distance=..8,team=blue] actionbar [{"text":"Open progress: □□□□□■■■■■"}]
+execute if data entity @s[scores={t=6}] interaction run title @a[distance=..8,team=blue] actionbar [{"text":"Open progress: □□□□■■■■■■"}]
+execute if data entity @s[scores={t=7}] interaction run title @a[distance=..8,team=blue] actionbar [{"text":"Open progress: □□□■■■■■■■"}]
+execute if data entity @s[scores={t=8}] interaction run title @a[distance=..8,team=blue] actionbar [{"text":"Open progress: □□■■■■■■■■"}]
+execute if data entity @s[scores={t=9}] interaction run title @a[distance=..8,team=blue] actionbar [{"text":"Open progress: □■■■■■■■■■"}]
+execute if data entity @s[scores={t=10}] interaction run title @a[distance=..8,team=blue] actionbar [{"text":"OPENED!"}]
 execute if data entity @s[scores={t=10}] interaction run scoreboard players add .zombie_crates .data 1
 execute if data entity @s[scores={t=10}] interaction run tellraw @a[team=blue,tag=playing] [{"text":"CRATE OPENED! "},{"text":"Return scrap to generator","color":"gray"}]
 execute if data entity @s[scores={t=10}] interaction run tellraw @a[team=red,tag=playing] [{"text":"CRATE OPENED!"}]

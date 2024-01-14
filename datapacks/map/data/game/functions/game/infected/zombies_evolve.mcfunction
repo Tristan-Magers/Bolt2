@@ -24,6 +24,7 @@ execute if score @p[tag=processor] random = .4 .num run scoreboard players set .
 execute if score @p[tag=processor] random = .5 .num run scoreboard players set .zombie_evolve_type_5 .data 1
 execute if score @p[tag=processor] random = .6 .num run scoreboard players set .zombie_evolve_type_6 .data 1
 execute if score @p[tag=processor] random = .7 .num run scoreboard players set .zombie_evolve_type_7 .data 1
+execute if score @p[tag=processor] random = .8 .num run scoreboard players set .zombie_evolve_type_8 .data 1
 
 execute if score @p[tag=processor] random = .0 .num run tellraw @a [{"text":"Zombies Evolved!","bold":0,"color":"#71A873"},{"text":" [","bold":0,"color":"white"},{"text":"Speed","bold":0,"color":"white"},{"text":"]","bold":0,"color":"white"},{"text":"ބބϰ","bold":0,"color":"gray"}]
 execute if score @p[tag=processor] random = .1 .num run tellraw @a [{"text":"Zombies Evolved!","bold":0,"color":"#71A873"},{"text":" [","bold":0,"color":"white"},{"text":"Jump","bold":0,"color":"white"},{"text":"]","bold":0,"color":"white"},{"text":"ބބϠ","bold":0,"color":"gray"}]
@@ -33,6 +34,7 @@ execute if score @p[tag=processor] random = .4 .num run tellraw @a [{"text":"Zom
 execute if score @p[tag=processor] random = .5 .num run tellraw @a [{"text":"Zombies Evolved!","bold":0,"color":"#71A873"},{"text":" [","bold":0,"color":"white"},{"text":"Vision","bold":0,"color":"white"},{"text":"]","bold":0,"color":"white"},{"text":"ބބδ","bold":0,"color":"gray"}]
 execute if score @p[tag=processor] random = .6 .num run tellraw @a [{"text":"Zombies Evolved!","bold":0,"color":"#71A873"},{"text":" [","bold":0,"color":"white"},{"text":"Blast Res.","bold":0,"color":"white"},{"text":"]","bold":0,"color":"white"},{"text":"ބބϮ","bold":0,"color":"gray"}]
 execute if score @p[tag=processor] random = .7 .num run tellraw @a [{"text":"Zombies Evolved!","bold":0,"color":"#71A873"},{"text":" [","bold":0,"color":"white"},{"text":"Acid","bold":0,"color":"white"},{"text":"]","bold":0,"color":"white"},{"text":"ބބϼ","bold":0,"color":"gray"}]
+execute if score @p[tag=processor] random = .8 .num run tellraw @a [{"text":"Zombies Evolved!","bold":0,"color":"#71A873"},{"text":" [","bold":0,"color":"white"},{"text":"Spawns","bold":0,"color":"white"},{"text":"]","bold":0,"color":"white"},{"text":"ބބϼ","bold":0,"color":"gray"}]
 
 execute as @a at @s run playsound minecraft:entity.ender_dragon.growl master @s ~ ~ ~ 0.3 0.8
 
@@ -47,6 +49,7 @@ execute if score @p[tag=processor] random = .4 .num run scoreboard players opera
 execute if score @p[tag=processor] random = .5 .num run scoreboard players operation δބބބVision evolutions = .zombie_evolve_level .data
 execute if score @p[tag=processor] random = .6 .num run scoreboard players operation ϮބބބBlastބބRes. evolutions = .zombie_evolve_level .data
 execute if score @p[tag=processor] random = .7 .num run scoreboard players operation ϼބބބAcid evolutions = .zombie_evolve_level .data
+execute if score @p[tag=processor] random = .8 .num run scoreboard players operation ϼބބބSpawns evolutions = .zombie_evolve_level .data
 
 team join gray ބބބEVOLUTIONS:ބބބ
 team join gray ϮބބބBlastބބRes.
@@ -57,6 +60,7 @@ team join gray ϯބބބClaws
 team join gray ϪބބބMinions
 team join gray δބބބVision
 team join gray ϼބބބAcid
+team join gray ϼބބބSpawns
 
 execute as @a[team=red,tag=playing] at @s run function game:game/infected/zombie_bonuses
 

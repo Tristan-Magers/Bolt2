@@ -29,5 +29,8 @@ execute if score .mode .data = .6 .num run function game:map/valley/crates
 
 execute if score .mode .data = .6 .num run execute positioned -419 -51 -14 run function game:game/infected/generator/spawn
 
+fill -432 -49 -21 -430 -49 -21 minecraft:oak_trapdoor[open=true,facing=south]
+fill -432 -49 53 -430 -49 53 minecraft:oak_trapdoor[open=true,facing=north]
+
 #
 execute if score .mode .data = .7 .num run function game:map/valley/target

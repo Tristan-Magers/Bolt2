@@ -1,4 +1,4 @@
-scoreboard players set @s removeBlind 6
+scoreboard players set @s removeBlind 7
 effect give @s minecraft:blindness 1 100 true
 effect give @s minecraft:slowness 1 1 true
 
@@ -7,7 +7,7 @@ particle minecraft:totem_of_undying ~ ~1 ~ 0.3 0.3 0.3 0.6 100 force
 
 clear @s iron_ingot 1
 scoreboard players set @s deaths 0
-scoreboard players set @s invul 17
+scoreboard players set @s invul 16
 scoreboard players set @s no_cap 26
 
 execute at @s[tag=hasflag] run title @s times 4 10 4

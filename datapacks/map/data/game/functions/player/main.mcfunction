@@ -1,11 +1,16 @@
 #
+execute as @s[tag=is_spectating,gamemode=spectator] run function game:player/spectator/check
+
+#
 scoreboard players set @s[tag=!inspawn] inspawn 0
 scoreboard players add @s[tag=inspawn] inspawn 1
-execute if score .mode .data = .6 .num run title @s[scores={inspawn=90},team=blue,tag=playing,gamemode=adventure] times 10 40 10
-execute if score .mode .data = .6 .num run title @s[scores={inspawn=90},team=blue,tag=playing,gamemode=adventure] title {"text":"Leave Spawn","font":"fancy"}
-execute if score .mode .data = .6 .num run title @s[scores={inspawn=90},team=blue,tag=playing,gamemode=adventure] subtitle {"text":"(or else)","font":"fancy","color":"gray"}
-execute if score .mode .data = .6 .num run scoreboard players set @s[scores={inspawn=180},team=blue,tag=playing,gamemode=adventure] deaths 1
-execute if score .mode .data = .6 .num run scoreboard players set @s[scores={inspawn=280},team=blue,tag=playing,gamemode=adventure] deaths 1
+execute if score .mode .data = .6 .num run title @s[scores={inspawn=100},team=blue,tag=playing,gamemode=adventure] times 10 40 10
+execute if score .mode .data = .6 .num run title @s[scores={inspawn=100},team=blue,tag=playing,gamemode=adventure] title {"text":"Leave Spawn","font":"fancy"}
+execute if score .mode .data = .6 .num run title @s[scores={inspawn=100},team=blue,tag=playing,gamemode=adventure] subtitle {"text":"(or else)","font":"fancy","color":"gray"}
+execute if score .mode .data = .6 .num run scoreboard players set @s[scores={inspawn=210},team=blue,tag=playing,gamemode=adventure] deaths 1
+execute if score .mode .data = .6 .num as @s[scores={inspawn=310},team=blue,tag=playing,gamemode=adventure] run tellraw @a[team=red] [{"text":"❌ ","color":"white"},{"selector":"@s"},{"text":" died a couch potato","color":"white"}]
+execute if score .mode .data = .6 .num as @s[scores={inspawn=310},team=blue,tag=playing,gamemode=adventure] run tellraw @a[team=blue] [{"text":"❌ ","color":"gray"},{"selector":"@s"},{"text":" died a couch potato","color":"white"}]
+execute if score .mode .data = .6 .num run scoreboard players set @s[scores={inspawn=310},team=blue,tag=playing,gamemode=adventure] deaths 1
 
 #
 scoreboard players remove @s[scores={spawn_message_delay=0..}] spawn_message_delay 1
@@ -61,27 +66,9 @@ gamemode adventure @s[scores={cutscene_time=0,team_pref=0..}]
 execute as @s[scores={cutscene_time=76}] run gamemode adventure
 execute as @s[scores={cutscene_time=76}] run gamemode spectator
 execute as @s[gamemode=spectator,scores={cutscene_time=2..78}] run spectate @e[tag=cutscene,type=armor_stand,limit=1]
-scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..}] respawn 70
-execute if score .mode .data = .6 .num run scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..},team=red] respawn 120
-execute if score .mode .data = .6 .num run scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..},team=blue] respawn 10
-execute if score .mode .data = .7 .num run scoreboard players set @s[scores={cutscene_time=0,cutscene=1,team_pref=0..}] respawn 20
 
-execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] panda_spawn_egg{CustomModelData:1,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1},HideFlags:48} 8
-execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] snowball{display:{Name:'{"text":"Grenade","italic":false,"color":"gray"}'}} 1
-execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] panda_spawn_egg{CustomModelData:0,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Trap","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b},HideFlags:48} 2
-execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] panda_spawn_egg{CustomModelData:4,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Turret","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:pig",PersistenceRequired:0b,Silent:1b,NoAI:1,IsBaby:0b,Health:10f},HideFlags:48} 1
-execute if score .mode .data = .6 .num run give @s[scores={cutscene_time=0,cutscene=1},team=blue] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
-
-execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.1 from block 244 -50 -254 container.1
-execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.2 from block 244 -50 -254 container.2
-execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.3 from block 244 -50 -254 container.3
-execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.4 from block 244 -50 -254 container.4
-execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.5 from block 244 -50 -254 container.5
-execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.6 from block 244 -50 -254 container.6
-execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.7 from block 244 -50 -254 container.7
-
-execute if entity @s[scores={cutscene_time=0,cutscene=1},team=red] run execute store result score @s drop_magma run clear @s panda_spawn_egg{CustomModelData:3}
-execute if entity @s[scores={cutscene_time=0,cutscene=1,drop_magma=1..},team=red] run function game:player/give/red_spawn
+#  Give start items at beginning of round
+execute as @s[scores={cutscene_time=0,cutscene=1},tag=playing] run function game:player/inventory/give_start_items
 
 scoreboard players remove @s[scores={cutscene_time=0..}] cutscene_time 1
 
@@ -138,7 +125,7 @@ item modify entity @s[scores={arrowCount=1..},team=blue] hotbar.8 game:model_2
 
 scoreboard players remove @s[scores={arrowReload=40..}] arrowReload 40
 
-#execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowReload=..10},team=red] arrowReload 10
+execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowReload=..10},team=red] arrowReload 10
 
 effect clear @s[scores={invul=1..}] poison
 
@@ -167,10 +154,10 @@ scoreboard players set @s[tag=item_acid,nbt={Inventory:[{id:"minecraft:lingering
 
 give @s[scores={item_boost=220..}] egg{display:{Name:'{"text":"Boost","italic":false}'},HideFlags:32} 1
 give @s[scores={item_acid=220..,acid_count=..2}] lingering_potion{display:{Name:'{"text":"Acid","italic":false}'},HideFlags:32,Potion:"minecraft:water_breathing",CustomPotionColor:65314} 1
-give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Minion","italic":false}'},HideFlags:255,EntityTag:{PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",Count:1b}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}} 2
+give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg{CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Minion","italic":false}'},HideFlags:255,EntityTag:{PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",Count:1b}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}} 1
 
 scoreboard players set @s[scores={item_boost=220..}] item_boost 0
-scoreboard players set @s[scores={item_minion=220..}] item_minion 0
+scoreboard players set @s[scores={item_minion=220..}] item_minion 40
 scoreboard players set @s[scores={item_acid=220..}] item_acid 0
 
 # Totem
@@ -305,53 +292,17 @@ scoreboard players remove @s[scores={delay_reveal=0..}] delay_reveal 1
 #claws
 give @s[scores={sword_break=1..}] minecraft:netherite_sword{display:{Name:'{"text":"Claws","italic":false,"color":"gray"}'},Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:255,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1
 
-#
-scoreboard players set @a[tag=lobby] drop_egg_generic 0
-scoreboard players set @a[tag=lobby] drop_creeper 0
-scoreboard players set @a[tag=lobby] drop_snowball 0
-scoreboard players set @a[tag=lobby] drop_silver 0
-scoreboard players set @a[tag=lobby] drop_slime 0
-scoreboard players set @a[tag=lobby] drop_magma 0
-scoreboard players set @a[tag=lobby] drop_map 0
-scoreboard players set @a[tag=lobby] drop_scrap 0
-scoreboard players set @a[tag=lobby] drop_egg 0
-scoreboard players set @a[tag=lobby] drop_turret 0
-scoreboard players set @a[tag=lobby] drop_zoom 0
+# CORRECT DROPPED ITEMS (INCLUDED FOR CORRECTIONS)
+function game:player/inventory/drop
 
-#
-execute as @s[scores={drop_snowball=1..}] run function game:player/give/grenade
-execute as @s[scores={drop_creeper=1..}] run function game:player/give/trap
-execute as @s[scores={drop_silver=1..}] run function game:player/give/wall
-execute as @s[scores={drop_slime=1..}] run function game:player/give/blue_spawn
-execute as @s[scores={drop_magma=1..}] run function game:player/give/red_spawn
-execute as @s[scores={drop_map=1..}] run function game:player/give/reveal
-execute as @s[scores={drop_iron=1..}] run function game:player/give/shield
-execute as @s[scores={drop_sword=1..}] run function game:player/give/claws
-execute as @s[scores={drop_egg=1..}] run function game:player/give/boost
-execute as @s[scores={drop_crossbow=1..}] run function game:player/give/crossbow
-execute as @s[scores={drop_lingering=1..}] run function game:player/give/acid
-execute as @s[scores={drop_zombie=1..}] run function game:player/give/zombie
-execute as @s[scores={drop_scrap=1..}] run function game:player/give/scrap
-execute as @s[scores={drop_turret=1..}] run function game:player/give/turret
-execute as @s[scores={drop_zoom=1..}] run function game:player/give/zoom
-
-#
-scoreboard players remove @s glowing 1
-
-#
-scoreboard players set @s shift 0
-
-#
-scoreboard players set @s snowball 0
-
-#
+# UI FOR BOW SELECTION
 function game:bow_ui/main
 
-#
+# CORRECT HAVING WRONG SPAWN POINT IN INVENTORY (for TMI mode)
 execute store result score @s[team=red,tag=playing] drop_magma run clear @s panda_spawn_egg{CustomModelData:3}
 execute as @s[team=red,tag=playing,scores={drop_magma=1..}] run function game:player/give/red_spawn
 
-#
+# CORRECT FOR HAVING TOO MANY PLACEABLES OUT (for balance and lag reasons)
 tag @e[tag=me] remove me
 tag @s add me
 
@@ -383,3 +334,17 @@ execute as @s[scores={minions_active=17..}] as @e[type=zombie_villager,tag=my_mi
 execute as @s[scores={minions_active=18..}] as @e[type=zombie_villager,tag=my_minion,limit=1] at @s run kill @s
 
 tag @s remove me
+
+# Score changes at end
+scoreboard players remove @s glowing 1
+scoreboard players set @s shift 0
+scoreboard players set @s snowball 0
+
+# Coves FX
+execute as @s[x=-154,y=-62,z=-86,dx=-42,dy=20,dz=-72] at @s run particle minecraft:underwater ^ ^1.6 ^8 3.5 3.5 3.5 10 2 force @s
+
+# Infection actionbar
+execute as @s[tag=playing,team=blue,scores={scrap=..0,stats_scrap=..0,title_pause=..0},gamemode=adventure] if score .mode .data = .6 .num run title @s actionbar {"text":"Collect scrap from crates and infected","color":"gold"}
+execute as @s[tag=playing,team=blue,scores={scrap=1..,stats_scrap=..0,title_pause=..0},gamemode=adventure] if score .mode .data = .6 .num run title @s actionbar {"text":"Return scrap to generator for more items","color":"gray"}
+
+scoreboard players remove @s[scores={title_pause=0..}] title_pause 1

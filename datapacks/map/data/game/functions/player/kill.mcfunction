@@ -13,9 +13,9 @@ execute if score .mode .data = .6 .num as @s[team=blue] run scoreboard players a
 execute if score .mode .data = .6 .num as @s[team=red] run scoreboard players add @s stats_sur_kill 1
 
 #
-#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=2}] mine 219 -50 -238 air{drop_contents:1b}
-#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=3}] mine 219 -50 -240 air{drop_contents:1b}
-#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=5}] mine 219 -50 -242 air{drop_contents:1b}
+#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=2}] mine 224 -60 -240 air{drop_contents:1b}
+#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=3}] mine 224 -60 -242 air{drop_contents:1b}
+#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=5}] mine 224 -60 -244 air{drop_contents:1b}
 
 # set to zero on modes with no killstreak
 execute if score .mode .data = .6 .num run scoreboard players set @s killStreak 0
@@ -24,7 +24,7 @@ execute if score .mode .data = .7 .num run scoreboard players set @s killStreak 
 #
 execute if score .mode .data = .1 .num run clear @s[scores={kills=1}] written_book
 execute if score .mode .data = .1 .num run clear @s[scores={kills=15}] written_book
-execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=1}] hotbar.7 with written_book{pages:['["",{"text":"Every _ Kills","bold":true},{"text":"\\nx4 = Grenade\\nx5 = Walls\\nx15 = Crossbow\\n\\n","color":"reset"},{"text":"Kill Streak","bold":true},{"text":"\\n2 = Spawnpoint\\n3 = Traps\\n5 = Reveal\\n7 = Traps\\n10 = Reveal\\n11+ = Touch Grass\\n\\n","color":"reset"},{"text":"Capture","bold":true},{"text":" = Shield","color":"reset"}]'],title:"Item Aquirement",author:"Space Bleps"}
+execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=1}] hotbar.7 with written_book{display:{Lore:['{"text":"How to get items "}']},title:"Item Acquirement",author:"Bleps",pages:['[{"text":"Item Conditions","bold":true,"underlined":true},{"text":"\\n\\n"},{"text":"Every _ Kills","bold":true},{"text":"\\n"},{"text":"4 =","bold":true},{"text":" G | "},{"text":"5 =","bold":true},{"text":" W | "},{"text":"15 =","bold":true},{"text":" C \\n\\n"},{"text":"Kills Streak","bold":true},{"text":"\\n"},{"text":"2 =","bold":true},{"text":" S | "},{"text":"3/7 =","bold":true},{"text":" T | "},{"text":"5/10 =","bold":true},{"text":" R\\n\\n"},{"text":"Capture","bold":true},{"text":" = ","bold":true},{"text":"I"}]']}
 
 # kill items
 execute if score .tmi .data matches 0 run give @s[scores={killStreak=2},team=blue] panda_spawn_egg{CustomModelData:3,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Spawn Point","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0},HideFlags:48} 1
@@ -38,8 +38,8 @@ execute if score .tmi .data matches 0 run give @s[scores={killStreak=10}] map{di
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .CrossKills .stats
 
-execute if score .mode .data = .1 .num run give @s[scores={t=0}] crossbow{display:{Name:'{"text":"Rapid Crossbow (11 seconds)","italic":false,"color":"gray"}'},Enchantments:[{id:"minecraft:quick_charge",lvl:1s}]} 1
-execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] crossbow{display:{Name:'{"text":"Rapid Crossbow (11 seconds)","italic":false,"color":"gray"}'},Enchantments:[{id:"minecraft:quick_charge",lvl:4s}]} 1
+execute if score .mode .data = .1 .num run give @s[scores={t=0}] crossbow{display:{Name:'{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}'},Enchantments:[{id:"minecraft:quick_charge",lvl:1s}]} 1
+execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] crossbow{display:{Name:'{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}'},Enchantments:[{id:"minecraft:quick_charge",lvl:4s}]} 1
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .GrenadeKills .stats
@@ -61,22 +61,22 @@ execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] egg{
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .1Kills .stats
 
-execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 219 -50 -238 air{drop_contents:1b}
+execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -240 air{drop_contents:1b}
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .2Kills .stats
 
-execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 219 -50 -240 air{drop_contents:1b}
+execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -242 air{drop_contents:1b}
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .3Kills .stats
 
-execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 219 -50 -242 air{drop_contents:1b}
+execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -244 air{drop_contents:1b}
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .4Kills .stats
 
-execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 219 -50 -244 air{drop_contents:1b}
+execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -246 air{drop_contents:1b}
 
 #
 execute if score .mode .data = .7 .num run tellraw @s[scores={kills=30}] [{"text":"30 KILLS!!","color":"yellow"},{"text":" (No more items)","color":"gray"}]

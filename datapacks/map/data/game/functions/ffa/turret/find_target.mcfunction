@@ -11,8 +11,10 @@ tag @e remove dont_target
 execute as @s[team=red] run tag @e[team=red] add dont_target
 execute as @s[team=blue] run tag @e[team=blue] add dont_target
 
-tag @a[gamemode=!spectator,distance=..20,tag=!dont_target,scores={invul=..0}] add can_target
-tag @e[type=minecraft:zombie_villager,distance=..20,tag=!dont_target,limit=3,sort=nearest] add can_target
+tag @a[gamemode=!spectator,distance=..19.5,tag=!dont_target,scores={invul=..0},limit=1,sort=nearest] add can_target
+tag @a[gamemode=!spectator,distance=..19.5,tag=!dont_target,scores={invul=..0},limit=1,sort=random,tag=!can_target] add can_target
+tag @e[type=minecraft:zombie_villager,distance=..19.5,tag=!dont_target,limit=1,sort=nearest] add can_target
+tag @e[type=minecraft:zombie_villager,distance=..19.5,tag=!dont_target,limit=1,sort=random,tag=!can_target] add can_target
 
 #tag @e[tag=targeted] remove can_target
 

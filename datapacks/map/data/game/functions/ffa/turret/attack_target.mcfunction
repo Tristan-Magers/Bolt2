@@ -30,11 +30,11 @@ execute as @s[scores={turretTimer=1}] run playsound minecraft:entity.elder_guard
 #execute as @s[scores={turretTimer=12}] run playsound minecraft:block.note_block.bell master @a[distance=..24] ~ ~1 ~ 0.2 1.7 0.075
 #execute as @s[scores={turretTimer=16}] run playsound minecraft:block.note_block.bell master @a[distance=..24] ~ ~1 ~ 0.2 1.7 0.075
 #execute as @s[scores={turretTimer=20}] run playsound minecraft:block.note_block.bell master @a[distance=..24] ~ ~1 ~ 0.2 1.7 0.075
-execute as @s[scores={turretTimer=22}] at @s run playsound minecraft:entity.elder_guardian.curse master @a[distance=..24] ~ ~1 ~ 0.3 1.75 0.15
+execute as @s[scores={turretTimer=25}] at @s run playsound minecraft:entity.elder_guardian.curse master @a[distance=..24] ~ ~1 ~ 0.3 1.75 0.15
 
 #> Attack
 execute if entity @e[tag=currentTarget,type=minecraft:zombie_villager] as @s[scores={turretTimer=20..}] at @s run function game:ffa/turret/kill_target
-execute as @s[scores={turretTimer=32..}] at @s run function game:ffa/turret/kill_target
+execute as @s[scores={turretTimer=35..}] at @s run function game:ffa/turret/kill_target
 
 #> Cleanup + increment
 scoreboard players add @s turretTimer 1
