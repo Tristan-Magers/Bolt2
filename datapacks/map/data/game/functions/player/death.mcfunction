@@ -101,9 +101,10 @@ execute if score .red_players .data matches 4 if score .team_dif .data <= .n1 .n
 execute if score .red_players .data matches 4 if score .team_dif .data <= .n2 .num run scoreboard players set @s[team=blue] respawn 90
 execute if score .red_players .data matches 4 if score .team_dif .data <= .n3 .num run scoreboard players set @s[team=blue] respawn 100
 
-execute as @s run scoreboard players remove @s respawn_assist 180
+execute as @s run scoreboard players remove @s respawn_assist 120
 execute as @s run scoreboard players operation @s respawn_assist /= .6 .num
 execute as @s run scoreboard players operation @s respawn += @s respawn_assist
+execute as @s run scoreboard players operation @s respawn_assist *= .n6 .num
 scoreboard players set @s[scores={deaths=1..,respawn=..31}] respawn 31
 
 execute if score .mode .data = .6 .num as @s[team=blue] run title @a times 5 20 10

@@ -4,6 +4,7 @@ execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run effect give
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run scoreboard players set @s invul 19
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run scoreboard players set @s removeBlind 3
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run scoreboard players set @s arrowReload 33
+execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run scoreboard players set @s fog_remove 4
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run effect give @s blindness 1 20 true
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run effect clear @s darkness
 #execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run item replace entity @s armor.chest with air

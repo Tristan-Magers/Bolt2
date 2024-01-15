@@ -1,4 +1,5 @@
 scoreboard players set @s removeBlind 7
+scoreboard players set @s fog_remove 4
 effect give @s minecraft:blindness 1 100 true
 effect give @s minecraft:slowness 1 1 true
 

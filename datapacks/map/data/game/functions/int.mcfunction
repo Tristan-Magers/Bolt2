@@ -84,6 +84,8 @@ scoreboard objectives add arrowReload dummy
 
 scoreboard objectives add glow_count dummy
 
+scoreboard objectives add fog_remove dummy
+
 scoreboard objectives add wallCount dummy
 scoreboard objectives add wallCountT dummy
 scoreboard objectives add trapCount dummy

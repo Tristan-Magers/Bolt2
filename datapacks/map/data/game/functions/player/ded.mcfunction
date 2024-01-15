@@ -90,8 +90,9 @@ execute if score .map .data = .15 .num run tp @s[team=red] -407.5 -38.50 203.5 9
 execute if score .map .data = .15 .num run tp @s[team=blue] -483.5 -38.50 191.5 -90 8.3
 
 effect give @s[scores={respawn=45..}] blindness 2 1 true
-effect clear @s[scores={respawn=30}] blindness
+effect clear @s[scores={respawn=31}] blindness
 execute unless score .mode .data = .6 .num unless entity @s[tag=dark_immune] run effect give @s[scores={respawn=25..}] darkness 4 1 true
+execute unless score .mode .data = .6 .num unless entity @s[tag=dark_immune] run scoreboard players set @s[scores={respawn=25..}] fog_remove 64
 
 scoreboard players set @s[scores={respawn=10..}] invul 60
 

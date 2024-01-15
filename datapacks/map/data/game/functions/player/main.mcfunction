@@ -236,8 +236,8 @@ effect give @s[tag=!inspawn,tag=inspawn2] speed 1 0 true
 tag @s[tag=!inspawn] remove inspawn2
 tag @s[tag=inspawn] add inspawn2
 
-scoreboard players set @s[tag=inspawn] respawn_assist 0
-scoreboard players add @s[tag=!inspawn,scores={respawn_assist=..179,invul=..0}] respawn_assist 1
+#scoreboard players set @s[tag=inspawn] respawn_assist 0
+scoreboard players add @s[tag=!inspawn,scores={respawn_assist=..119,invul=..0}] respawn_assist 1
 
 #
 scoreboard players add @s game_id 0
@@ -348,3 +348,8 @@ execute as @s[tag=playing,team=blue,scores={scrap=..0,stats_scrap=..0,title_paus
 execute as @s[tag=playing,team=blue,scores={scrap=1..,stats_scrap=..0,title_pause=..0},gamemode=adventure] if score .mode .data = .6 .num run title @s actionbar {"text":"Return scrap to generator for more items","color":"gray"}
 
 scoreboard players remove @s[scores={title_pause=0..}] title_pause 1
+
+# Dark/Blind remove
+scoreboard players remove @s[scores={fog_remove=0..}] fog_remove 1
+execute if score .map .data matches 2 run effect clear @s[scores={fog_remove=0}] blindness
+execute if score .map .data matches 2 run effect clear @s[scores={fog_remove=0}] darkness

@@ -91,7 +91,7 @@ scoreboard objectives setdisplay list kills
 scoreboard objectives setdisplay sidebar
 execute if score .mode .data = .6 .num run scoreboard objectives setdisplay sidebar evolutions
 
-scoreboard players set @a respawn_assist 0
+scoreboard players set @a respawn_assist 8
 
 execute if score .mode .data = .1 .num run scoreboard players set Red Scores 0
 execute if score .mode .data = .1 .num run scoreboard players set Blue Scores 0
