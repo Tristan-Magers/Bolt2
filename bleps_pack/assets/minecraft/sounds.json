@@ -1286,5 +1286,32 @@
       "random/bow"
     ],
     "replace": "true"
+  },
+  "ambient.warped_forest.loop": {
+    "replace": true,
+    "sounds": [
+        {
+            "name":"underwater_ambience",
+            "stream":true
+        }
+    ]
+  },
+  "ambient.warped_forest.additions": {
+    "replace": true,
+    "sounds": [
+        "ambient/underwater/additions/bubbles1",
+        "ambient/underwater/additions/bubbles2",
+        "ambient/underwater/additions/bubbles3",
+        "ambient/underwater/additions/bubbles4",
+        "ambient/underwater/additions/bubbles5",
+        "ambient/underwater/additions/bubbles6",
+        "ambient/underwater/additions/water1",
+        "ambient/underwater/additions/water2",
+        "ambient/underwater/additions/bass_whale1",
+        "ambient/underwater/additions/bass_whale2",
+        "ambient/underwater/additions/earth_crack",
+        "ambient/underwater/additions/driplets1",
+        "ambient/underwater/additions/driplets2"
+    ]
   }
 }

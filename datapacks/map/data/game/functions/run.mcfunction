@@ -378,4 +378,4 @@ execute as @a store result score @s acid_count run clear @s lingering_potion 0
 clear @a[scores={acid_count=5..}] lingering_potion 1
 
 # Coves VFX
-execute as @e[x=-154,y=-62,z=-86,dx=-42,dy=20,dz=-72,type=arrow] at @s run particle minecraft:splash ^ ^ ^ 0.1 0.1 0.1 0 1 force @a
+#execute as @e[x=-154,y=-62,z=-86,dx=-42,dy=20,dz=-72,type=arrow] at @s run particle minecraft:splash ^ ^ ^ 0.1 0.1 0.1 0 1 force @a
