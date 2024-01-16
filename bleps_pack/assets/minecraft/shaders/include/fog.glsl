@@ -1,7 +1,7 @@
 #version 150
 
 vec4 linear_fog(vec4 inColor, float vertexDistance, float fogStart, float fogEnd, vec4 fogColor) {
-	if((fogColor.r + 0.02 < fogColor.g && fogColor.r + fogColor.g > 1.45) || fogStart >= fogEnd || fogStart <= 1 || fogEnd <= 10 || (fogColor.r + fogColor.b + fogColor.g < 1.0) || (fogEnd <= 10 && (fogColor.r < 0.99 && fogColor.b < 0.99) && (fogColor.r + fogColor.b + fogColor.g > 1.0))) {
+	if((fogColor.r + 0.02 < fogColor.g && fogColor.r + fogColor.g > 1.45) || fogStart >= fogEnd || fogStart <= 1 || fogEnd <= 10 || (fogColor.r + fogColor.b + fogColor.g < 1.0) || (fogColor.b > fogColor.g && fogColor.b > fogColor.r && fogColor.b - fogColor.g < 0.19 && fogColor.g - fogColor.r < 0.16 && fogColor.g - fogColor.r > 0.0 && fogColor.b - fogColor.g > 0.0)) {
 		if (vertexDistance <= fogStart) {
 			return inColor;
 		}

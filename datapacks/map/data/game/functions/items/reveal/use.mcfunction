@@ -33,4 +33,4 @@ tellraw @a [{"selector":"@s"},{"text":" used","color":"white"},{"text":" REVEAL"
 clear @s minecraft:filled_map
 
 #
-scoreboard players set @s delay_reveal 80
+scoreboard players set @s delay_reveal 90

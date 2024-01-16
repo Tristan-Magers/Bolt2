@@ -26,15 +26,15 @@ execute as @e[type=minecraft:zombie_villager] run data merge entity @s {IsBaby:0
 execute as @e[type=marker,tag=door] at @s run function game:doors/main
 
 #
-execute as @a[scores={boost_use=1..,delay_boost=..0}] at @s run function game:items/boost/trigger
-execute as @a[scores={boost_use=1..,delay_boost=1..}] at @s run scoreboard players set @s drop_egg 1
+execute as @a[scores={boost_use=1..,delay_boost=..0,respawn=..0}] at @s run function game:items/boost/trigger
+execute as @a[scores={boost_use=1..}] at @s run function game:items/boost/fail
 scoreboard players remove @a[scores={delay_boost=0..}] delay_boost 1
-scoreboard players set @a[scores={delay_boost=0..}] boost_use 0
 kill @e[type=egg]
 
 #
 execute as @a[scores={zoomies=1..}] at @s run function game:items/speed/effect
-execute as @a[scores={speed_use=1..}] at @s run function game:items/speed/trigger
+execute as @a[scores={speed_use=1..,respawn=..0}] at @s run function game:items/speed/trigger
+execute as @a[scores={speed_use=1..}] at @s run function game:items/speed/fail
 kill @e[type=ender_pearl]
 
 #

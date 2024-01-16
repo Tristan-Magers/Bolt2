@@ -1307,11 +1307,14 @@
         "ambient/underwater/additions/bubbles6",
         "ambient/underwater/additions/water1",
         "ambient/underwater/additions/water2",
+        "ambient/underwater/additions/water1",
+        "ambient/underwater/additions/water2",
         "ambient/underwater/additions/bass_whale1",
         "ambient/underwater/additions/bass_whale2",
         "ambient/underwater/additions/earth_crack",
         "ambient/underwater/additions/driplets1",
-        "ambient/underwater/additions/driplets2"
+        "ambient/underwater/additions/driplets2",
+        "ambient/underwater/additions/animal1"
     ]
   }
 }

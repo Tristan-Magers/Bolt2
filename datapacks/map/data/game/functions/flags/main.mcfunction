@@ -72,6 +72,7 @@ execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adve
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run title @a times 5 15 10
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run title @a subtitle {"text":"+15 Seconds","color":"white","font":"fancy"}
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run title @a title {"text":"RED SCORES!","color":"red","font":"fancy"}
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run clear @a[team=red] blue_banner
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run tag @a[team=red] remove hasflag
 
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run scoreboard players add .TIME .data 16
@@ -90,6 +91,7 @@ execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[gamemode=adv
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run title @a times 5 15 10
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run title @a subtitle {"text":"+15 Seconds","color":"white","font":"fancy"}
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run title @a title {"text":"BLUE SCORES!","color":"aqua","font":"fancy"}
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run clear @a[team=blue] red_banner
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] run tag @a[team=blue] remove hasflag
 
 execute if score Blue Scores >= .endscore .stats run scoreboard players set .stats_end .data 1
