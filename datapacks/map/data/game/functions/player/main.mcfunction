@@ -341,7 +341,10 @@ scoreboard players set @s shift 0
 scoreboard players set @s snowball 0
 
 # Coves FX
-execute as @s[x=-154,y=-62,z=-86,dx=-42,dy=20,dz=-72] at @s run particle minecraft:underwater ^ ^1.6 ^8 3.5 3.5 3.5 10 2 force @s
+execute as @s[x=-154,y=-62,z=-86,dx=-42,dy=20,dz=-72] store result score @s random run random value 0..20
+execute as @s[x=-154,y=-62,z=-86,dx=-42,dy=20,dz=-72,scores={random=0}] at @s run particle minecraft:bubble_pop ^ ^1.6 ^8 3.5 3.5 3.5 0 4 force @s
+execute as @s[x=-154,y=-62,z=-86,dx=-42,dy=20,dz=-72,scores={random=1}] at @s run particle minecraft:underwater ^ ^1.6 ^6 2.5 2.5 2.5 10 10 force @s
+execute as @s[x=-154,y=-62,z=-86,dx=-42,dy=20,dz=-72,scores={random=2}] at @s run particle minecraft:dolphin ^ ^1.6 ^6 2.5 2.5 2.5 10 10 force @s
 
 # Infection actionbar
 execute as @s[tag=playing,team=blue,scores={scrap=..0,stats_scrap=..0,title_pause=..0},gamemode=adventure] if score .mode .data = .6 .num run title @s actionbar {"text":"Collect scrap from crates and infected","color":"gold"}
@@ -350,6 +353,7 @@ execute as @s[tag=playing,team=blue,scores={scrap=1..,stats_scrap=..0,title_paus
 scoreboard players remove @s[scores={title_pause=0..}] title_pause 1
 
 # Dark/Blind remove
-scoreboard players remove @s[scores={fog_remove=0..}] fog_remove 1
+scoreboard players remove @s[scores={fog_remove=-5..}] fog_remove 1
 execute if score .map .data matches 2 run effect clear @s[scores={fog_remove=0}] blindness
 execute if score .map .data matches 2 run effect clear @s[scores={fog_remove=0}] darkness
+effect clear @s[scores={fog_remove=-1}] darkness

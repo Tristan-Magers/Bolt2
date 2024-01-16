@@ -83,6 +83,10 @@ scoreboard players set @a bow_throw 0
 
 scoreboard players set @a crossbowTime 1
 
+#
+effect clear @a blindness
+effect clear @a darkness
+
 # THE viral
 scoreboard players reset @a boltDelay
 scoreboard players set @a[scores={deflectTimer=2..}] deflectTimer 1
