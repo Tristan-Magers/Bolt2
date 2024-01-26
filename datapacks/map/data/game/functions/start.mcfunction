@@ -267,6 +267,10 @@ scoreboard players remove @a spawn_message_delay 20
 scoreboard players set @a crossbowTime 1
 
 #
+item replace block 226 -60 -240 container.0 from block 235 -50 -224 container.15
+item replace block 226 -60 -242 container.0 from block 235 -50 -224 container.16
+item replace block 226 -60 -244 container.0 from block 235 -50 -224 container.17
+
 item replace block 222 -60 -240 container.0 from block 235 -50 -224 container.24
 item replace block 222 -60 -242 container.0 from block 235 -50 -224 container.25
 item replace block 222 -60 -244 container.0 from block 235 -50 -224 container.26

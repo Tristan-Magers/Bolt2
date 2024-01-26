@@ -19,7 +19,14 @@ tag @s remove dark
 function game:game/infected/zombie_bonuses
 
 #execute if score .mode .data = .1 .num run clear @s[scores={kills=0,respawn=2}] written_book
-execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] hotbar.7 with written_book{display:{Lore:['{"text":"How to get items "}']},title:"Item Acquirement",author:"Bleps",pages:['[{"text":"Item Conditions","bold":true,"underlined":true},{"text":"\\n\\n"},{"text":"Every _ Kills","bold":true},{"text":"\\n"},{"text":"4 =","bold":true},{"text":" G | "},{"text":"5 =","bold":true},{"text":" W | "},{"text":"15 =","bold":true},{"text":" C \\n\\n"},{"text":"Kills Streak","bold":true},{"text":"\\n"},{"text":"2 =","bold":true},{"text":" S | "},{"text":"3/7 =","bold":true},{"text":" T | "},{"text":"5/10 =","bold":true},{"text":" R\\n\\n"},{"text":"Capture","bold":true},{"text":" = ","bold":true},{"text":"I"}]']}
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -240 air{drop_contents:1b}
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -242 air{drop_contents:1b}
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -244 air{drop_contents:1b}
+
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg{CustomModelData:3}
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute as @s[team=red,scores={drop_magma=1..}] run function game:player/give/red_spawn
+
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] hotbar.7 with written_book{display:{Lore:['{"text":"How to get items "}']},title:"Item Acquirement",author:"Bleps",pages:['[{"text":"Item Conditions","bold":true,"underlined":true},{"text":"\\n\\n"},{"text":"Every _ Kills","bold":true},{"text":"\\n"},{"text":"4 =","bold":true},{"text":" G | "},{"text":"5 =","bold":true},{"text":" W | "},{"text":"15 =","bold":true},{"text":" C \\n\\n"},{"text":"Kills Streak","bold":true},{"text":"\\n"},{"text":"2 =","bold":true},{"text":" S | "},{"text":"3/7 =","bold":true},{"text":" T | "},{"text":"5/10 =","bold":true},{"text":" R\\n\\n"},{"text":"Capture","bold":true},{"text":" = ","bold":true},{"text":"I"}]']}
 
 execute if score .mode .data = .6 .num run tag @s[tag=!dark_immune] add dark
 

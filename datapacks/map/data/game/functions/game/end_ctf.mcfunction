@@ -23,15 +23,14 @@ tag @a remove change_rank
 tag @a[team=red] add change_rank
 tag @a[team=blue] add change_rank
 tag @a[tag=lobby] remove change_rank
-execute if score Blue Scores >= .endscore .stats if score .mode .data = .1 .num run scoreboard players set @a[team=red,tag=change_rank,scores={win_streak=0..}] win_streak 0
-execute if score Red Scores >= .endscore .stats if score .mode .data = .1 .num run scoreboard players set @a[team=blue,tag=change_rank,scores={win_streak=0..}] win_streak 0
-execute if score Blue Scores >= .endscore .stats if score .mode .data = .1 .num run scoreboard players set @a[team=blue,tag=change_rank,scores={win_streak=..0}] win_streak 0
-execute if score Red Scores >= .endscore .stats if score .mode .data = .1 .num run scoreboard players set @a[team=red,tag=change_rank,scores={win_streak=..0}] win_streak 0
+execute if score Blue Scores >= Red Scores if score .mode .data = .1 .num run scoreboard players set @a[team=red,tag=change_rank,scores={win_streak=0..}] win_streak 0
+execute if score Red Scores >= Blue Scores if score .mode .data = .1 .num run scoreboard players set @a[team=blue,tag=change_rank,scores={win_streak=0..}] win_streak 0
+execute if score Blue Scores >= Red Scores if score .mode .data = .1 .num run scoreboard players set @a[team=blue,tag=change_rank,scores={win_streak=..0}] win_streak 0
+execute if score Red Scores >= Blue Scores if score .mode .data = .1 .num run scoreboard players set @a[team=red,tag=change_rank,scores={win_streak=..0}] win_streak 0
 
-execute if score Blue Scores >= .endscore .stats if score .mode .data = .1 .num run scoreboard players remove @a[team=red,tag=change_rank] win_streak 1
-execute if score Red Scores >= .endscore .stats if score .mode .data = .1 .num run scoreboard players remove @a[team=blue,tag=change_rank] win_streak 1
-execute if score Blue Scores >= .endscore .stats if score .mode .data = .1 .num run scoreboard players add @a[team=blue,tag=change_rank] win_streak 1
-execute if score Red Scores >= .endscore .stats if score .mode .data = .1 .num run scoreboard players add @a[team=red,tag=change_rank] win_streak 1
+execute if score Blue Scores >= Red Scores if score .mode .data = .1 .num run scoreboard players remove @a[team=red,tag=change_rank] win_streak 1
+execute if score Red Scores >= Blue Scores if score .mode .data = .1 .num run scoreboard players remove @a[team=blue,tag=change_rank] win_streak 1
+execute if score Blue Scores >= Red Scores if score .mode .data = .1 .num run scoreboard players add @a[team=blue,tag=change_rank] win_streak 1
+execute if score Red Scores >= Blue Scores if score .mode .data = .1 .num run scoreboard players add @a[team=red,tag=change_rank] win_streak 1
 
-execute if score Blue Scores >= .endscore .stats if score .mode .data = .1 .num if score .tmi .data = .0 .num run function game:game/rank_changes
-execute if score Red Scores >= .endscore .stats if score .mode .data = .1 .num if score .tmi .data = .0 .num run function game:game/rank_changes
+execute unless score Red Scores = Blue Scores if score .mode .data = .1 .num if score .tmi .data = .0 .num run function game:game/rank_changes
