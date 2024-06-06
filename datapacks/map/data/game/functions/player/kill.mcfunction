@@ -100,5 +100,5 @@ execute if score .tmi .data matches 0 if score .mode .data = .1 .num run execute
 
 execute as @a[scores={kill=1..}] at @s run function game:player/kill
 
-execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg{custom_model_data=3}
+execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg[custom_model_data=3]
 execute as @s[team=red,scores={drop_magma=1..}] run function game:player/give/red_spawn

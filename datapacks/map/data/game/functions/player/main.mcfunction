@@ -135,7 +135,7 @@ scoreboard players remove @s[scores={invul=1..}] invul 1
 
 clear @s[tag=lobby] chainmail_helmet
 clear @s[scores={invul=2..},nbt=!{Inventory:[{id:"minecraft:chainmail_helmet",Slot:103b}]}] chainmail_helmet
-item replace entity @s[tag=!lobby,scores={invul=2..,glowing=..0},nbt=!{Inventory:[{id:"minecraft:chainmail_helmet",Slot:103b}]},tag=!hasflag] armor.head with minecraft:chainmail_helmet{Damage:150,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:30,Operation:0,UUID:[I;-1372090343,-270579763,-1607716031,1256953017]}]}
+item replace entity @s[tag=!lobby,scores={invul=2..,glowing=..0},nbt=!{Inventory:[{id:"minecraft:chainmail_helmet",Slot:103b}]},tag=!hasflag] armor.head with minecraft:chainmail_helmet{damage=150,AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:30,Operation:0,UUID:[I;-1372090343,-270579763,-1607716031,1256953017]}]}
 item replace entity @s[scores={invul=1,glowing=..0},tag=!hasflag] armor.head with minecraft:air
 
 # Place Block
@@ -290,7 +290,7 @@ execute as @s[scores={useMap=1..}] unless entity @s[scores={respawn=..0,delay_re
 scoreboard players remove @s[scores={delay_reveal=0..}] delay_reveal 1
 
 #claws
-give @s[scores={sword_break=1..}] minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, items, and walls","color":"white","italic":false}'],Damage:2031,CanDestroy:["minecraft:gravel"],enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]] 1
+give @s[scores={sword_break=1..}] minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, items, and walls","color":"white","italic":false}'],damage=2031,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{type:"generic.attack_damage",name:"generic.attack_damage",amount:100,operation:"add_value",uuid:[I;1031651592,-833205117,-1281963134,-1227999336]}],show_in_tooltip:false}] 1
 
 # CORRECT DROPPED ITEMS (INCLUDED FOR CORRECTIONS)
 function game:player/inventory/drop
