@@ -38,7 +38,7 @@ execute if score .tmi .data matches 0 run give @s[scores={killStreak=10}] map[cu
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .CrossKills .stats
 
-execute if score .mode .data = .1 .num run give @s[scores={t=0}] crossbow[custom_name='{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',Enchantments:[{id:"minecraft:quick_charge",lvl:1s}]] 1
+execute if score .mode .data = .1 .num run give @s[scores={t=0}] crossbow[custom_name='{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',enchantments={levels:{"minecraft:quick_charge":1},show_in_tooltip:false}] 1
 execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] crossbow[custom_name='{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',Enchantments:[{id:"minecraft:quick_charge",lvl:4s}]] 1
 
 scoreboard players operation @s t = @s kills

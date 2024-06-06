@@ -3,7 +3,7 @@ item replace block 235 -50 -223 container.11 with panda_spawn_egg[custom_model_d
 item replace block 235 -50 -223 container.12 with snowball[custom_name='{"text":"Grenade","italic":false,"color":"gray"}'] 4
 item replace block 235 -50 -223 container.13 with panda_spawn_egg[custom_model_data=3,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',EntityTag:{id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0}] 2
 item replace block 235 -50 -223 container.14 with map[custom_name='{"text":"Reveal","italic":false,"color":"gray"}'] 1
-item replace block 235 -50 -223 container.15 with crossbow[custom_name='{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',Enchantments:[{id:"minecraft:quick_charge",lvl:1s}]] 1
+item replace block 235 -50 -223 container.15 with crossbow[custom_name='{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',enchantments={levels:{"minecraft:quick_charge":1},show_in_tooltip:false}] 1
 item replace block 235 -50 -223 container.16 with iron_ingot[custom_name='{"text":"Armor","color":"gray","italic":false}',lore=['{"text":"Survive one arrow hit","color":"white","italic":false}','{"text":"Doesn\'t block explosions","color":"white","italic":false}','{"text":"Drops the flag","color":"white","italic":false}']] 1
 item replace block 235 -50 -223 container.20 with egg[custom_name='{"text":"Boost","italic":false,"color":"gray"}'] 2
 item replace block 235 -50 -223 container.21 with ender_pearl[custom_name='{"text":"Zoomies (8 Seconds)","italic":false,"color":"gray"}'] 2
@@ -36,8 +36,8 @@ item replace block 235 -50 -223 container.19 with black_stained_glass_pane[custo
 item replace block 235 -50 -223 container.25 with black_stained_glass_pane[custom_name='{"text":""}']
 item replace block 235 -50 -223 container.26 with black_stained_glass_pane[custom_name='{"text":""}']
 
-#item replace block 235 -50 -224 container.0 with gray_stained_glass_pane{custom_name='{"text":"Bow Slot","italic":false}'},HideFlags:32}
-#item replace block 235 -50 -224 container.17 with gray_stained_glass_pane{custom_name='{"text":"Arrow Slot","italic":false}',lore=['{"text":"Unable to be changed","italic":false,"color":"gray"}']},HideFlags:32}
+#item replace block 235 -50 -224 container.0 with gray_stained_glass_pane{custom_name='{"text":"Bow Slot","italic":false}'}}
+#item replace block 235 -50 -224 container.17 with gray_stained_glass_pane{custom_name='{"text":"Arrow Slot","italic":false}',lore=['{"text":"Unable to be changed","italic":false,"color":"gray"}']}}
 
 item replace block 235 -50 -224 container.0 with black_stained_glass_pane[custom_name='{"text":""}']
 item replace block 235 -50 -224 container.1 with black_stained_glass_pane[custom_name='{"text":""}']

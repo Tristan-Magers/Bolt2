@@ -112,7 +112,7 @@ scoreboard players add @s[scores={arrowCount=..2}] arrowReload 1
 scoreboard players set @s[scores={arrowCount=3..}] arrowReload 0
 #execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowCount=2..},team=red] arrowReload 0
 
-item replace entity @s[scores={arrowReload=..39,arrowCount=0}] hotbar.8 with gray_dye[custom_name='{"text":"Reloading","italic":false}',HideFlags:32] 1
+item replace entity @s[scores={arrowReload=..39,arrowCount=0}] hotbar.8 with gray_dye[custom_name='{"text":"Reloading","italic":false}'] 1
 
 clear @s[scores={arrowReload=40..}] arrow
 item replace entity @s[scores={arrowReload=40..,arrowCount=0}] hotbar.8 with minecraft:arrow
@@ -152,7 +152,7 @@ scoreboard players add @s[tag=item_acid] item_acid 1
 
 scoreboard players set @s[tag=item_acid,nbt={Inventory:[{id:"minecraft:lingering_potion"}]},scores={item_acid=100..}] item_acid 140
 
-give @s[scores={item_boost=220..}] egg[custom_name='{"text":"Boost","italic":false}',HideFlags:32] 1
+give @s[scores={item_boost=220..}] egg[custom_name='{"text":"Boost","italic":false}'] 1
 give @s[scores={item_acid=220..,acid_count=..2}] lingering_potion[custom_name='{"text":"Acid","italic":false}',hide_additional_tooltip={},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913}] 1
 give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Minion","italic":false}',HideFlags:255,EntityTag:{PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",Count:1b}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 1
 
@@ -276,9 +276,9 @@ item replace entity @s[nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b
 
 #bow correct
 clear @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] bow
-execute if score .mode .data = .6 .num run item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative,tag=playing] hotbar.0 with bow{unbreakable={show_in_tooltip:false},Enchantments:[{id:"minecraft:power",lvl:999s}],HideFlags:1} 1
-item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative,scores={bow_texture=78}] hotbar.0 with bow{unbreakable={show_in_tooltip:false},HideFlags:1} 1
-item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative] hotbar.0 with bow{unbreakable={show_in_tooltip:false},Enchantments:[{id:"minecraft:power",lvl:999s}],HideFlags:1} 1
+execute if score .mode .data = .6 .num run item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative,tag=playing] hotbar.0 with bow{unbreakable={show_in_tooltip:false},enchantments={levels:{"minecraft:power":255},show_in_tooltip:false}} 1
+item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative,scores={bow_texture=78}] hotbar.0 with bow{unbreakable={show_in_tooltip:false}} 1
+item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative] hotbar.0 with bow{unbreakable={show_in_tooltip:false},enchantments={levels:{"minecraft:power":255},show_in_tooltip:false}} 1
 
 # OPTIMIZATION NEEDED : run only when give a new bow
 function game:bow/dynamic_bow_data
