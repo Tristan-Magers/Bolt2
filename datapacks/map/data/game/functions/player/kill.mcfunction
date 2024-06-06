@@ -13,9 +13,9 @@ execute if score .mode .data = .6 .num as @s[team=blue] run scoreboard players a
 execute if score .mode .data = .6 .num as @s[team=red] run scoreboard players add @s stats_sur_kill 1
 
 #
-#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=2}] mine 224 -60 -240 air{drop_contents:1b}
-#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=3}] mine 224 -60 -242 air{drop_contents:1b}
-#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=5}] mine 224 -60 -244 air{drop_contents:1b}
+#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=2}] mine 224 -60 -240 air
+#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=3}] mine 224 -60 -242 air
+#execute if score .tmi .data matches 1 run loot give @s[scores={killStreak=5}] mine 224 -60 -244 air
 
 # set to zero on modes with no killstreak
 execute if score .mode .data = .6 .num run scoreboard players set @s killStreak 0
@@ -63,22 +63,22 @@ execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] egg[
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .1Kills .stats
 
-execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -240 air{drop_contents:1b}
+execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -240
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .2Kills .stats
 
-execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -242 air{drop_contents:1b}
+execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -24
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .3Kills .stats
 
-execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -244 air{drop_contents:1b}
+execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -244 air
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .4Kills .stats
 
-execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -246 air{drop_contents:1b}
+execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -246 air
 
 #
 execute if score .mode .data = .7 .num run tellraw @s[scores={kills=30}] [{"text":"30 KILLS!!","color":"yellow"},{"text":" (No more items)","color":"gray"}]

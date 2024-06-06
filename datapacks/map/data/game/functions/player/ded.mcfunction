@@ -19,9 +19,9 @@ tag @s remove dark
 function game:game/infected/zombie_bonuses
 
 #execute if score .mode .data = .1 .num run clear @s[scores={kills=0,respawn=2}] written_book
-execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -240 air{drop_contents:1b}
-execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -242 air{drop_contents:1b}
-execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -244 air{drop_contents:1b}
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -240 air
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -242 air
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -244 air
 
 execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg{custom_model_data=3}
 execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute as @s[team=red,scores={drop_magma=1..}] run function game:player/give/red_spawn
