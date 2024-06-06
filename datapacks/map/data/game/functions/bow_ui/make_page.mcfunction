@@ -27,8 +27,8 @@ item replace entity @s inventory.21 with air
 item replace entity @s inventory.22 with air
 item replace entity @s inventory.23 with air
 item replace entity @s inventory.24 with air
-item replace entity @s inventory.25 with minecraft:magenta_glazed_terracotta[custom_name='{"text":"Previous Page","italic":false}',HideFlags:255]
-item replace entity @s inventory.26 with minecraft:magenta_glazed_terracotta[custom_name='{"text":"Next Page","italic":false}',HideFlags:255]
+item replace entity @s inventory.25 with minecraft:magenta_glazed_terracotta[custom_name='{"text":"Previous Page","italic":false}']
+item replace entity @s inventory.26 with minecraft:magenta_glazed_terracotta[custom_name='{"text":"Next Page","italic":false}']
 
 #
 scoreboard players add @s bow_ui_page 0

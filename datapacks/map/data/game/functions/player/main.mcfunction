@@ -154,7 +154,7 @@ scoreboard players set @s[tag=item_acid,nbt={Inventory:[{id:"minecraft:lingering
 
 give @s[scores={item_boost=220..}] egg[custom_name='{"text":"Boost","italic":false}'] 1
 give @s[scores={item_acid=220..,acid_count=..2}] lingering_potion[custom_name='{"text":"Acid","italic":false}',hide_additional_tooltip={},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913}] 1
-give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Minion","italic":false}',HideFlags:255,entity_data={PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",Count:1b}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 1
+give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Minion","italic":false}',entity_data={PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",Count:1b}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 1
 
 scoreboard players set @s[scores={item_boost=220..}] item_boost 0
 scoreboard players set @s[scores={item_minion=220..}] item_minion 40
@@ -290,7 +290,7 @@ execute as @s[scores={useMap=1..}] unless entity @s[scores={respawn=..0,delay_re
 scoreboard players remove @s[scores={delay_reveal=0..}] delay_reveal 1
 
 #claws
-give @s[scores={sword_break=1..}] minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, items, and walls","color":"white","italic":false}'],Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:255,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]] 1
+give @s[scores={sword_break=1..}] minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, items, and walls","color":"white","italic":false}'],Damage:2031,CanDestroy:["minecraft:gravel"],enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]] 1
 
 # CORRECT DROPPED ITEMS (INCLUDED FOR CORRECTIONS)
 function game:player/inventory/drop
