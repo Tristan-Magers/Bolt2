@@ -23,10 +23,10 @@ execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .
 execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -242 air{drop_contents:1b}
 execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -244 air{drop_contents:1b}
 
-execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg{CustomModelData:3}
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg{custom_model_data=3}
 execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute as @s[team=red,scores={drop_magma=1..}] run function game:player/give/red_spawn
 
-execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] hotbar.7 with written_book{display:{Lore:['{"text":"How to get items "}']},title:"Item Acquirement",author:"Bleps",pages:['[{"text":"Item Conditions","bold":true,"underlined":true},{"text":"\\n\\n"},{"text":"Every _ Kills","bold":true},{"text":"\\n"},{"text":"4 =","bold":true},{"text":" G | "},{"text":"5 =","bold":true},{"text":" W | "},{"text":"15 =","bold":true},{"text":" C \\n\\n"},{"text":"Kills Streak","bold":true},{"text":"\\n"},{"text":"2 =","bold":true},{"text":" S | "},{"text":"3/7 =","bold":true},{"text":" T | "},{"text":"5/10 =","bold":true},{"text":" R\\n\\n"},{"text":"Capture","bold":true},{"text":" = ","bold":true},{"text":"I"}]']}
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] hotbar.7 with written_book{title:"Item Book",author:"Bleps",generation:0,resolved:1b,pages:['[{"text":"_ How To Get Items _"},{"text":"\\n\\nKill Streak"},{"text":"\\n2 - Spawn point"},{"text":"\\n3 - Traps"},{"text":"\\n5 - Reveal"},{"text":"\\n\\nKills"},{"text":"\\n4 - Grenade"},{"text":"\\n5 - Walls"},{"text":"\\n15 - Crossbow"},{"text":"\\n\\nFlag Capture"},{"text":"\\nArmor"}]']} 1
 
 execute if score .mode .data = .6 .num run tag @s[tag=!dark_immune] add dark
 
@@ -37,9 +37,9 @@ execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red]
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] netherite_sword
 
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] iron_ingot
-#execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
-#execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red,tag=more_armor] iron_ingot{display:{Name:'{"text":"Survive one arrow hit","italic":false}'}} 1
-execute if score .mode .data = .6 .num if score .zombie_evolve_type_2 .data = .1 .num run give @s[scores={respawn=2},team=red] minecraft:netherite_sword{display:{Name:'{"text":"Claws","italic":false,"color":"gray"}'},Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:255,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1
+#execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red] iron_ingot{custom_name='{"text":"Armor","color":"gray","italic":false}',lore=['{"text":"Survive one arrow hit","color":"white","italic":false}','{"text":"Doesn\'t block explosions","color":"white","italic":false}','{"text":"Drops the flag","color":"white","italic":false}']}} 1
+#execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red,tag=more_armor] iron_ingot{custom_name='{"text":"Armor","color":"gray","italic":false}',lore=['{"text":"Survive one arrow hit","color":"white","italic":false}','{"text":"Doesn\'t block explosions","color":"white","italic":false}','{"text":"Drops the flag","color":"white","italic":false}']}} 1
+execute if score .mode .data = .6 .num if score .zombie_evolve_type_2 .data = .1 .num run give @s[scores={respawn=2},team=red] minecraft:netherite_sword{custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, items, and walls","color":"white","italic":false}']},Damage:2031,CanDestroy:["minecraft:gravel"],Enchantments:[{id:"minecraft:knockback",lvl:3s}],HideFlags:255,AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:100,Operation:0,UUID:[I;-1269594486,-1448851549,-1210703323,1523703223]}]} 1
 
 #
 #clear @s crossbow{Charged:1b}

@@ -1,4 +1,4 @@
-give @s map{display:{Name:'{"text":"Reveal","italic":false,"color":"gray"}'}} 1
+give @s map[custom_name='{"text":"Reveal","italic":false,"color":"gray"}'] 1
 
 scoreboard players remove @s drop_map 1
 

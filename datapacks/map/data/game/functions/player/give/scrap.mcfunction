@@ -1,4 +1,4 @@
-give @s minecraft:netherite_scrap{display:{Name:'{"text":"Scrap (Return to Generator)","italic":false}'}} 1
+give @s minecraft:netherite_scrap[custom_name='{"text":"Scrap (Return to Generator)","italic":false}'] 1
 
 scoreboard players remove @s drop_scrap 1
 

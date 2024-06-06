@@ -1,4 +1,4 @@
-give @s ender_pearl{display:{Name:'{"text":"Zoomies (8 Seconds)","italic":false,"color":"gray"}'}} 1
+give @s ender_pearl[custom_name='{"text":"Zoomies (8 Seconds)","italic":false,"color":"gray"}'] 1
 
 scoreboard players remove @s drop_zoom 1
 

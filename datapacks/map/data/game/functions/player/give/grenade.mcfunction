@@ -1,4 +1,4 @@
-give @s snowball{display:{Name:'{"text":"Grenade","italic":false,"color":"gray"}'}} 1
+give @s snowball[custom_name='{"text":"Grenade","italic":false,"color":"gray"}'] 1
 
 scoreboard players remove @s drop_snowball 1
 

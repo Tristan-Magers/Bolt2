@@ -52,3 +52,5 @@ scoreboard players operation @s v_3 += @s v_2
 execute if score @s v_1 matches 0.. if score @s v_3 matches ..77 run function game:bow_ui/select_bow
 execute if score @s v_1 matches 0.. if score @s v_3 matches 78.. run function game:bow_ui/make_page
 execute if score @s v_1 matches -99 run function game:bow_ui/make_page
+
+tag @s remove new_team

@@ -22,4 +22,7 @@ execute if score .team_dif .data = .0 .num if score .rank_dif .data matches ..-1
 #execute if score .team_dif .data = .0 .num if score .ran_team .random = .0 .num run say add blue ran
 #execute if score .team_dif .data = .0 .num if score .ran_team .random = .1 .num run say add red ran
 
+#execute if score .team_dif .data = .0 .num if score .rank_dif .data matches 1.. run say add blue rank
+#execute if score .team_dif .data = .0 .num if score .rank_dif .data matches ..-1 run say add red rank
+
 execute if entity @e[tag=rank_dummy,team=] run function game:game/rank_sort/random_teams

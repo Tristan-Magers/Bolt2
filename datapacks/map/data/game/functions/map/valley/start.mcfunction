@@ -34,3 +34,6 @@ fill -432 -49 53 -430 -49 53 minecraft:oak_trapdoor[open=true,facing=north]
 
 #
 execute if score .mode .data = .7 .num run function game:map/valley/target
+
+scoreboard players set .valley_door_blue .timer 0
+scoreboard players set .valley_door_red .timer 0

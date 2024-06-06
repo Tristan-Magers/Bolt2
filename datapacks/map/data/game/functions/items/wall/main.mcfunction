@@ -2,11 +2,11 @@ scoreboard players add @s timer 1
 
 execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ redstone_block run tag @s add kill
 execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ redstone_block run tellraw @p[scores={place_bat_temp=1..}] {"text":"Can't place there!","color":"dark_gray"}
-execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ redstone_block run give @p[scores={place_bat_temp=1..}] panda_spawn_egg{CustomModelData:1,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1},HideFlags:48} 1
+execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ redstone_block run give @p[scores={place_bat_temp=1..}] panda_spawn_egg[custom_model_data=1,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Walls","color":"gray","italic":false}',lore=['{"text":"Four blocks of breakable gravel","color":"white","italic":false}'],EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1}] 1
 
 execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ diamond_block run tag @s add kill
 execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ diamond_block run tellraw @p[scores={place_bat_temp=1..}] {"text":"Can't place there!","color":"dark_gray"}
-execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ diamond_block run give @p[scores={place_bat_temp=1..}] panda_spawn_egg{CustomModelData:1,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1},HideFlags:48} 1
+execute if entity @s[scores={timer=1}] at @s if block ~ -64 ~ diamond_block run give @p[scores={place_bat_temp=1..}] panda_spawn_egg[custom_model_data=1,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Walls","color":"gray","italic":false}',lore=['{"text":"Four blocks of breakable gravel","color":"white","italic":false}'],EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1}] 1
 
 execute as @s at @s run data merge entity @s {Size:0,Silent:1,NoAI:1,Health:1}
 effect give @s minecraft:resistance 100 10 true
@@ -28,7 +28,7 @@ execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..30] if score .map .
 execute as @s at @s if block ~ ~ ~ #minecraft:banners run scoreboard players set @s timer 30
 
 execute if entity @s[scores={timer=30},tag=!height_tested,tag=!kill] at @s run tellraw @p[scores={place_bat_temp=1..}] {"text":"Too high!","color":"dark_gray"}
-execute if entity @s[scores={timer=30},tag=!height_tested,tag=!kill] at @s run give @p[scores={place_bat_temp=1..}] panda_spawn_egg{CustomModelData:1,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1},HideFlags:48} 1
+execute if entity @s[scores={timer=30},tag=!height_tested,tag=!kill] at @s run give @p[scores={place_bat_temp=1..}] panda_spawn_egg[custom_model_data=1,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Walls","color":"gray","italic":false}',lore=['{"text":"Four blocks of breakable gravel","color":"white","italic":false}'],EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1}] 1
 
 tag @s add height_tested
 

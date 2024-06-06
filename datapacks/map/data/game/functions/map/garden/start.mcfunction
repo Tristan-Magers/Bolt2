@@ -13,11 +13,11 @@ execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon 
 execute if score .mode .data = .6 .num run execute positioned -7 -56 -334 run function game:game/infected/generator/spawn
 execute if score .mode .data = .6 .num run function game:map/garden/crates
 
-setblock -11 -56 -333 minecraft:short_grass
+setblock -11 -56 -336 minecraft:short_grass
 setblock -8 -56 -330 minecraft:short_grass
 setblock 17 -52 -315 minecraft:short_grass
 setblock 6 -56 -270 minecraft:short_grass
-setblock 9 -56 -265 minecraft:short_grass
+setblock 9 -56 -263 minecraft:short_grass
 setblock -2 -56 -319 minecraft:blue_orchid
 setblock -2 -56 -321 minecraft:blue_orchid
 setblock -1 -56 -320 minecraft:cornflower

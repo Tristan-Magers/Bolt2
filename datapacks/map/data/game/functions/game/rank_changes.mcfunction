@@ -230,7 +230,7 @@ execute as @a run scoreboard players operation @s rank_delta = @s t1
 execute as @a run scoreboard players operation @s rank_delta -= @s rank_delta_down
 
 # half win reduction
-execute unless score Red Scores = Blue Scores as @a run scoreboard players operation @s rank_delta /= .2 .num
+execute if score Red Scores = Blue Scores as @a run scoreboard players operation @s rank_delta /= .2 .num
 
 # change players rank
 scoreboard players set @a[tag=!change_rank] rank_delta 0

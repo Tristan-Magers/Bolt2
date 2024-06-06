@@ -24,38 +24,38 @@ execute if score .mode .data = .7 .num run scoreboard players set @s killStreak 
 #
 execute if score .mode .data = .1 .num run clear @s[scores={kills=1}] written_book
 execute if score .mode .data = .1 .num run clear @s[scores={kills=15}] written_book
-execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=1}] hotbar.7 with written_book{display:{Lore:['{"text":"How to get items "}']},title:"Item Acquirement",author:"Bleps",pages:['[{"text":"Item Conditions","bold":true,"underlined":true},{"text":"\\n\\n"},{"text":"Every _ Kills","bold":true},{"text":"\\n"},{"text":"4 =","bold":true},{"text":" G | "},{"text":"5 =","bold":true},{"text":" W | "},{"text":"15 =","bold":true},{"text":" C \\n\\n"},{"text":"Kills Streak","bold":true},{"text":"\\n"},{"text":"2 =","bold":true},{"text":" S | "},{"text":"3/7 =","bold":true},{"text":" T | "},{"text":"5/10 =","bold":true},{"text":" R\\n\\n"},{"text":"Capture","bold":true},{"text":" = ","bold":true},{"text":"I"}]']}
+execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=1}] hotbar.7 with written_book{title:"Item Book",author:"Bleps",generation:0,resolved:1b,pages:['[{"text":"_ How To Get Items _"},{"text":"\\n\\nKill Streak"},{"text":"\\n2 - Spawn point"},{"text":"\\n3 - Traps"},{"text":"\\n5 - Reveal"},{"text":"\\n\\nKills"},{"text":"\\n4 - Grenade"},{"text":"\\n5 - Walls"},{"text":"\\n15 - Crossbow"},{"text":"\\n\\nFlag Capture"},{"text":"\\nArmor"}]']} 1
 
 # kill items
-execute if score .tmi .data matches 0 run give @s[scores={killStreak=2},team=blue] panda_spawn_egg{CustomModelData:3,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Spawn Point","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0},HideFlags:48} 1
-execute if score .tmi .data matches 0 run give @s[scores={killStreak=2},team=red] panda_spawn_egg{CustomModelData:2,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Spawn Point","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:magma_cube",PersistenceRequired:1b,Silent:1b,Size:0},HideFlags:48} 1
+execute if score .tmi .data matches 0 run give @s[scores={killStreak=2},team=blue] panda_spawn_egg[custom_model_data=3,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',EntityTag:{id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0}] 1
+execute if score .tmi .data matches 0 run give @s[scores={killStreak=2},team=red] panda_spawn_egg[custom_model_data=2,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',EntityTag:{id:"minecraft:magma_cube",PersistenceRequired:1b,Silent:1b,Size:0}] 1
 
-execute if score .tmi .data matches 0 run give @s[scores={killStreak=3}] panda_spawn_egg{CustomModelData:0,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Trap","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b},HideFlags:48} 2
-execute if score .tmi .data matches 0 run give @s[scores={killStreak=5}] map{display:{Name:'{"text":"Reveal","italic":false,"color":"gray"}'}} 1
-execute if score .tmi .data matches 0 run give @s[scores={killStreak=7}] panda_spawn_egg{CustomModelData:0,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Trap","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b},HideFlags:48} 2
-execute if score .tmi .data matches 0 run give @s[scores={killStreak=10}] map{display:{Name:'{"text":"Reveal","italic":false,"color":"gray"}'}} 1
+execute if score .tmi .data matches 0 run give @s[scores={killStreak=3}] panda_spawn_egg[custom_model_data=0,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Trap","italic":false,"color":"gray"}',EntityTag:{id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b}] 2
+execute if score .tmi .data matches 0 run give @s[scores={killStreak=5}] map[custom_name='{"text":"Reveal","italic":false,"color":"gray"}'] 1
+execute if score .tmi .data matches 0 run give @s[scores={killStreak=7}] panda_spawn_egg[custom_model_data=0,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Trap","italic":false,"color":"gray"}',EntityTag:{id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b}] 2
+execute if score .tmi .data matches 0 run give @s[scores={killStreak=10}] map[custom_name='{"text":"Reveal","italic":false,"color":"gray"}'] 1
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .CrossKills .stats
 
-execute if score .mode .data = .1 .num run give @s[scores={t=0}] crossbow{display:{Name:'{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}'},Enchantments:[{id:"minecraft:quick_charge",lvl:1s}]} 1
-execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] crossbow{display:{Name:'{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}'},Enchantments:[{id:"minecraft:quick_charge",lvl:4s}]} 1
+execute if score .mode .data = .1 .num run give @s[scores={t=0}] crossbow[custom_name='{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',Enchantments:[{id:"minecraft:quick_charge",lvl:1s}]] 1
+execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] crossbow[custom_name='{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',Enchantments:[{id:"minecraft:quick_charge",lvl:4s}]] 1
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .GrenadeKills .stats
 
-execute if score .mode .data = .1 .num run give @s[scores={t=0}] snowball{display:{Name:'{"text":"Grenade","italic":false,"color":"gray"}'}} 1
-execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] snowball{display:{Name:'{"text":"Grenade (can\'t break emerald)","italic":false,"color":"gray"}'}} 1
+execute if score .mode .data = .1 .num run give @s[scores={t=0}] snowball[custom_name='{"text":"Grenade","italic":false,"color":"gray"}'] 1
+execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] snowball[custom_name='{"text":"Grenade (can\'t break emerald)","italic":false,"color":"gray"}'] 1
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .WallKills .stats
 
-give @s[scores={t=0}] panda_spawn_egg{CustomModelData:1,CanPlaceOn:["#game:bolt_place"],display:{Name:'{"text":"Wall","italic":false,"color":"gray"}'},EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1},HideFlags:48} 4
+give @s[scores={t=0}] panda_spawn_egg[custom_model_data=1,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Walls","color":"gray","italic":false}',lore=['{"text":"Four blocks of breakable gravel","color":"white","italic":false}'],EntityTag:{id:"minecraft:silverfish",Silent:1b,NoAI:1}] 4
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .BoostKills .stats
 
-execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] egg{display:{Name:'{"text":"Boost","italic":false,"color":"gray"}'}} 1
+execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] egg[custom_name='{"text":"Boost","italic":false,"color":"gray"}'] 1
 
 #
 scoreboard players operation @s t = @s kills
@@ -98,5 +98,5 @@ execute if score .tmi .data matches 0 if score .mode .data = .1 .num run execute
 
 execute as @a[scores={kill=1..}] at @s run function game:player/kill
 
-execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg{CustomModelData:3}
+execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg{custom_model_data=3}
 execute as @s[team=red,scores={drop_magma=1..}] run function game:player/give/red_spawn

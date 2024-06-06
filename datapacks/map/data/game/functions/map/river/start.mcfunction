@@ -9,3 +9,6 @@ data merge block -495 -19 -339 {front_text:{messages:['{"text":" ","color":"blac
 
 execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -521 -19 -268 {Tags:["gen"]}
 execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -495 -19 -338 {Rotation:[180F,0F],Tags:["gen"]}
+
+execute if score .mode .data = .6 .num run execute positioned -530 -17 -335 run function game:game/infected/generator/spawn
+execute if score .mode .data = .6 .num run function game:map/river/crates
