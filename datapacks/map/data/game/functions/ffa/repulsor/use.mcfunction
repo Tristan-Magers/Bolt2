@@ -15,4 +15,7 @@ playsound minecraft:block.beacon.power_select master @a ~ ~ ~ 1 1.5
 particle minecraft:end_rod ~ ~1 ~ 0.2 0.4 0.2 0.2 5 normal @a
 
 #> Remove item
-item modify entity @s weapon.mainhand game:ffa/reducestack
+
+# FIX 1.20.6 break
+
+#item modify entity @s weapon.mainhand game:ffa/reducestack
