@@ -20,7 +20,7 @@ execute if score .tmi .data matches 1 if score .time_mod .calc matches 0 run loo
 
 #execute if score .tmi .data matches 1 if score .time_mod .calc matches 0 run loot give @a[tag=playing] mine 221 -50 -238 air
 
-execute as @a store result score @s[team=red] drop_magma run clear @s panda_spawn_egg{custom_model_data=3}
+execute as @a store result score @s[team=red] drop_magma run clear @s panda_spawn_egg[custom_model_data=3]
 execute as @s as @s[team=red,scores={drop_magma=1..}] run function game:player/give/red_spawn
 
 

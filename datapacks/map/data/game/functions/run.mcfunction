@@ -66,11 +66,11 @@ execute as @a[tag=playing] run scoreboard players add .players_playing .data 1
 gamemode adventure @a[gamemode=survival]
 effect give @a minecraft:resistance 999 255 true
 
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{custom_model_data=0}}}] at @s as @p[tag=trap_dif] run scoreboard players operation @s drop_creeper = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{custom_model_data=1}}}] at @s as @p[tag=wall_dif] run scoreboard players operation @s drop_silver = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{custom_model_data=2}}}] at @s as @p[tag=magma_dif] run scoreboard players operation @s drop_magma = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{custom_model_data=3}}}] at @s as @p[tag=slime_dif] run scoreboard players operation @s drop_slime = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",tag:{custom_model_data=4}}}] at @s as @p[tag=turret_dif] run scoreboard players operation @s drop_turret = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":0}}}] at @s as @p[tag=trap_dif] run scoreboard players operation @s drop_creeper = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":1}}}] at @s as @p[tag=wall_dif] run scoreboard players operation @s drop_silver = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":2}}}] at @s as @p[tag=magma_dif] run scoreboard players operation @s drop_magma = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":3}}}] at @s as @p[tag=slime_dif] run scoreboard players operation @s drop_slime = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":4}}}] at @s as @p[tag=turret_dif] run scoreboard players operation @s drop_turret = @s drop_egg_generic
 scoreboard players set @a drop_egg_generic 0
 
 kill @e[type=item,tag=!no_kill]
@@ -292,7 +292,7 @@ scoreboard players add @a[scores={crossbowReload=1..}] crossbowReload 1
 scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1
 tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Charged:0b}}}] add reloadCross
 ##clear @a[tag=reloadCross] crossbow
-item replace entity @a[tag=reloadCross] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},ChargedProjectiles:[{id:"minecraft:arrow",Count:1b},{},{}],Charged:1b] 1
+item replace entity @a[tag=reloadCross] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}]] 1
 scoreboard players set @a[tag=reloadCross] crossbowReload 0
 
 tag @a remove reloadCross

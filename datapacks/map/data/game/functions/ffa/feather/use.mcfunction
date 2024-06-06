@@ -14,4 +14,7 @@ playsound minecraft:item.armor.equip_leather master @a ~ ~ ~ 1 0.7
 playsound minecraft:item.trident.throw master @a ~ ~ ~ 0.8 0.8
 
 #> Remove item
-item modify entity @s weapon.mainhand game:ffa/reducestack
+
+# FIX 1.20.6 break
+
+#item modify entity @s weapon.mainhand game:ffa/reducestack
