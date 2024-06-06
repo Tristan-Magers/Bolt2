@@ -154,7 +154,7 @@ scoreboard players set @s[tag=item_acid,nbt={Inventory:[{id:"minecraft:lingering
 
 give @s[scores={item_boost=220..}] egg[custom_name='{"text":"Boost","italic":false}'] 1
 give @s[scores={item_acid=220..,acid_count=..2}] lingering_potion[custom_name='{"text":"Acid","italic":false}',hide_additional_tooltip={},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913}] 1
-give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Minion","italic":false}',HideFlags:255,EntityTag:{PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",Count:1b}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 1
+give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Minion","italic":false}',HideFlags:255,entity_data={PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",Count:1b}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 1
 
 scoreboard players set @s[scores={item_boost=220..}] item_boost 0
 scoreboard players set @s[scores={item_minion=220..}] item_minion 40
