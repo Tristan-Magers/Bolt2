@@ -6,6 +6,6 @@
 	{
 		"function" : "minecraft:set_lore",
 		"lore" : [{"text":"ȹ","italic":false,"color":"white"}],
-		"replace" : true
+		"mode" : "replace_all"
 	}
 ]

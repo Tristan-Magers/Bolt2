@@ -28,10 +28,7 @@ title @s[scores={crossbowTime=1}] actionbar [{"text":"","color":"gray"},{"text":
 
 execute as @s[scores={crossbowTime=220}] at @s run tellraw @a [{"selector":"@s"},{"text":" activated","color":"white"},{"text":" CROSSBOW","color":"green"}]
 
-execute as @s[scores={crossbowTime=1}] run scoreboard players set .success .calc 0
-execute as @s[scores={crossbowTime=1}] store success score .success .calc run clear @s crossbow{Charged:1b}
-
-execute as @s[scores={crossbowTime=1}] if score .success .calc = .0 .num run clear @s crossbow 1
+execute as @s[scores={crossbowTime=1}] unless items entity @s container.* crossbow[minecraft:charged_projectiles=[{id:"minecraft:arrow",count:1}]] run clear @s crossbow 1
 
 scoreboard players set @s[scores={crossbowTime=1}] crossbowReload 0
 scoreboard players remove @s[scores={crossbowTime=1..}] crossbowTime 1

@@ -7,8 +7,8 @@ execute as @s[team=blue] run effect give @e[type=magma_cube] minecraft:glowing 6
 
 execute as @s[team=red] run title @a[team=blue] times 6 20 14
 execute as @s[team=blue] run title @a[team=red] times 6 20 14
-execute as @s[team=red] run title @a[team=blue] title {"text":"!! REVEALED !!","bold":1}
-execute as @s[team=blue] run title @a[team=red] title {"text":"!! REVEALED !!","bold":1}
+execute as @s[team=red] run title @a[team=blue] title {"text":"!! REVEALED !!","bold":true}
+execute as @s[team=blue] run title @a[team=red] title {"text":"!! REVEALED !!","bold":true}
 
 execute as @s[team=red] as @a[team=blue,tag=playing] at @s run playsound minecraft:entity.elder_guardian.death master @s ~ ~ ~ 1 1
 execute as @s[team=blue] as @a[team=red,tag=playing] at @s run playsound minecraft:entity.elder_guardian.death master @s ~ ~ ~ 1 1

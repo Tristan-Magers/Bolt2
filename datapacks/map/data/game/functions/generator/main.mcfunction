@@ -13,8 +13,8 @@ tag @s remove next
 tag @s[scores={t2=..0}] add next
 
 execute as @s[tag=next,scores={t=1}] at @s run summon item ~ ~1 ~ {Item:{id:"minecraft:snowball",count:1,components:{"minecraft:custom_name":'{"color":"gray","italic":false,"text":"Grenade"}'}},NoGravity:1b,Tags:["no_kill"]}
-execute as @s[tag=next,scores={t=2}] at @s run summon item ~ ~1 ~ {Item:{id:"minecraft:panda_spawn_egg",Count:3b,tag:{custom_model_data=1,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Walls","color":"gray","italic":false}',lore=['{"text":"Four blocks of breakable gravel","color":"white","italic":false}']},entity_data={id:"minecraft:silverfish",Silent:1b,NoAI:1}}},NoGravity:1,Tags:["no_kill"]}
-execute as @s[tag=next,scores={t=3}] at @s run summon item ~ ~1 ~ {Item:{id:"minecraft:panda_spawn_egg",Count:2b,tag:{custom_model_data=0,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Trap","italic":false,"color":"gray"}'},entity_data={id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b}}},NoGravity:1,Tags:["no_kill"]}
+execute as @s[tag=next,scores={t=2}] at @s run summon item ~ ~1 ~ {Item:{id:"minecraft:panda_spawn_egg",Count:3b,components:{"minecraft:custom_model_data":1,"minecraft:can_place_on":{predicates:[{blocks:"#game:bolt_place"}]},"minecraft:custom_name":'{"text":"Walls","color":"gray","italic":false}',"minecraft:lore":['{"text":"Four blocks of breakable gravel","color":"white","italic":false}']},"minecraft:entity_data":{id:"minecraft:silverfish",Silent:1b,NoAI:1}},NoGravity:1,Tags:["no_kill"]}
+execute as @s[tag=next,scores={t=3}] at @s run summon item ~ ~1 ~ {Item:{id:"minecraft:panda_spawn_egg",Count:2b,components:{"minecraft:custom_model_data":0,"minecraft:can_place_on":{predicates:[{blocks:"#game:bolt_place"}]},"minecraft:custom_name":'{"text":"Trap","italic":false,"color":"gray"}'},"minecraft:entity_data":{id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b}},NoGravity:1,Tags:["no_kill"]}
 
 scoreboard players add @s[tag=next] t 1
 execute if score .map .data matches 3 as @s[tag=next,scores={t=2}] at @s run scoreboard players add @s[tag=next] t 1
