@@ -13,8 +13,8 @@ fill -89 -62 -14 -55 -51 57 air replace minecraft:emerald_block
 execute if score .mode .data = .1 .num run fill -57 -58 35 -61 -54 35 gravel
 execute if score .mode .data = .1 .num run fill -57 -58 7 -61 -54 7 gravel
 
-execute if score .mode .data = .1 .num run summon armor_stand -64 -58 49 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",Count:1b}],Tags:["blueflag","flag"]}
-execute if score .mode .data = .1 .num run summon armor_stand -64 -58 -7 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:red_banner",Count:1b}],Tags:["redflag","flag"]}
+execute if score .mode .data = .1 .num run summon armor_stand -64 -58 49 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",count:1}],Tags:["blueflag","flag"]}
+execute if score .mode .data = .1 .num run summon armor_stand -64 -58 -7 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:red_banner",count:1}],Tags:["redflag","flag"]}
 
 execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -79 -50 46 {Tags:["gen"]}
 execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -79 -50 -4 {Rotation:[180F,0F],Tags:["gen"]}

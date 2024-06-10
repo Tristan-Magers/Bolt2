@@ -21,7 +21,7 @@ execute as @s[scores={ID=1..},tag=!decoy] at @s run particle minecraft:ash ~ ~ ~
 execute as @s[scores={ID=1..,t3=..4},tag=!decoy] at @s run particle minecraft:white_ash ~ ~ ~ 0 0 0 0.1 1 force
 execute as @s[scores={ID=1..,t3=5..},tag=!decoy] at @s run particle minecraft:cloud ~ ~ ~ 0 0 0 0.1 1 force
 
-execute as @s[scores={ID=1..,t3=..20},tag=!decoy] at @s run summon snowball ~ ~ ~ {Item:{id:"minecraft:kelp",Count:1b},Tags:["dummy"]}
+execute as @s[scores={ID=1..,t3=..20},tag=!decoy] at @s run summon snowball ~ ~ ~ {Item:{id:"minecraft:kelp",count:1},Tags:["dummy"]}
 
 tag @s remove new_nade
 execute as @s[scores={t3=0..},tag=decoy] at @s run kill @s

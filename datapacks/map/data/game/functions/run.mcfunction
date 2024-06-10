@@ -283,16 +283,17 @@ kill @e[tag=trap,scores={hurt=2..}]
 
 #crossbow test
 scoreboard players add @a crossbowTime 0
-clear @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_name":'{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}']
-clear @a[scores={crossbowTime=..0}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}']
-scoreboard players add @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_name":'{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbowTime 220
-item replace entity @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_name":'{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}]] 1
+clear @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}']
+clear @a[scores={crossbowTime=..0}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',custom_data={trigger:0b}]
+scoreboard players add @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbowTime 220
+item replace entity @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}]] 1
 
 scoreboard players add @a[scores={crossbowReload=1..}] crossbowReload 1
 scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1
-tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow",tag:{Charged:0b}}}] add reloadCross
+tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow"}}] add reloadCross
+tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] remove reloadCross
 ##clear @a[tag=reloadCross] crossbow
-item replace entity @a[tag=reloadCross] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}]] 1
+item replace entity @a[tag=reloadCross] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}],custom_data={trigger:0b}] 1
 scoreboard players set @a[tag=reloadCross] crossbowReload 0
 
 tag @a remove reloadCross
@@ -343,7 +344,7 @@ scoreboard players set @a click 0
 execute as @e[tag=scrap,type=item] at @s run function game:game/infected/scrap_item
 
 #
-execute as @e[type=minecraft:snowball] run data merge entity @s {Item:{id:"minecraft:kelp",Count:1b}}
+execute as @e[type=minecraft:snowball] run data merge entity @s {Item:{id:"minecraft:kelp",count:1}}
 
 #
 scoreboard players set @a place_slime_temp 0

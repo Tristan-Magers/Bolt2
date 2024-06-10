@@ -1,5 +1,5 @@
-execute if score .mode .data = .1 .num run summon armor_stand -468 -41 211 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",Count:1b}],Tags:["blueflag","flag"]}
-execute if score .mode .data = .1 .num run summon armor_stand -424 -41 183 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:red_banner",Count:1b}],Tags:["redflag","flag"]}
+execute if score .mode .data = .1 .num run summon armor_stand -468 -41 211 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",count:1}],Tags:["blueflag","flag"]}
+execute if score .mode .data = .1 .num run summon armor_stand -424 -41 183 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:red_banner",count:1}],Tags:["redflag","flag"]}
 
 fill -412 -40 174 -480 -36 220 air replace minecraft:gravel
 fill -412 -35 174 -480 -29 220 air replace minecraft:gravel

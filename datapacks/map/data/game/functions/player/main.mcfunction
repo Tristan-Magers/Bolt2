@@ -154,7 +154,7 @@ scoreboard players set @s[tag=item_acid,nbt={Inventory:[{id:"minecraft:lingering
 
 give @s[scores={item_boost=220..}] egg[custom_name='{"text":"Boost","italic":false}'] 1
 give @s[scores={item_acid=220..,acid_count=..2}] lingering_potion[custom_name='{"text":"Acid","italic":false}',hide_additional_tooltip={},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913}] 1
-give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Minion","italic":false}',entity_data={PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 1
+give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Minion","italic":false,"color":"gray"}',entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 1
 
 scoreboard players set @s[scores={item_boost=220..}] item_boost 0
 scoreboard players set @s[scores={item_minion=220..}] item_minion 40
@@ -163,7 +163,7 @@ scoreboard players set @s[scores={item_acid=220..}] item_acid 0
 # Totem
 tag @s remove totem
 tag @s[nbt={Inventory:[{id:"minecraft:iron_ingot"}]}] add totem
-execute as @s[tag=totem] at @s run particle minecraft:item emerald ~ ~0.35 ~ 0.2 0.18 0.2 0 2 force
+execute as @s[tag=totem] at @s run particle minecraft:item{item:"minecraft:emerald"} ~ ~0.35 ~ 0.2 0.18 0.2 0 2 force
 
 execute as @s[tag=totem,scores={deaths=1..},tag=!exploded] at @s run function game:player/totem
 
@@ -270,15 +270,15 @@ clear @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_dye",Slot:-106b}]},tea
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_dye",Slot:-106b}]},team=red] weapon.offhand with minecraft:blue_dye[custom_name='{"text":"Blue Flag"}']
 
 clear @s[scores={glowing=..0}] minecraft:carved_pumpkin
-item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},team=red,scores={glowing=1..}] armor.head with minecraft:carved_pumpkin{custom_model_data=1}
-item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},team=blue,scores={glowing=1..}] armor.head with minecraft:carved_pumpkin{custom_model_data=2}
-item replace entity @s[nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},scores={glowing=1..}] armor.head with minecraft:carved_pumpkin{custom_model_data=0}
+item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},team=red,scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data=1]
+item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},team=blue,scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data=2]
+item replace entity @s[nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data=0]
 
 #bow correct
 clear @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] bow
-execute if score .mode .data = .6 .num run item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative,tag=playing] hotbar.0 with bow{unbreakable={show_in_tooltip:false},enchantments={levels:{"minecraft:power":255},show_in_tooltip:false}} 1
-item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative,scores={bow_texture=78}] hotbar.0 with bow{unbreakable={show_in_tooltip:false}} 1
-item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative] hotbar.0 with bow{unbreakable={show_in_tooltip:false},enchantments={levels:{"minecraft:power":255},show_in_tooltip:false}} 1
+execute if score .mode .data = .6 .num run item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative,tag=playing] hotbar.0 with bow[unbreakable={show_in_tooltip:false},enchantments={levels:{"minecraft:power":255},show_in_tooltip:false}] 1
+item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative,scores={bow_texture=78}] hotbar.0 with bow[unbreakable={show_in_tooltip:false}] 1
+item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative] hotbar.0 with bow[unbreakable={show_in_tooltip:false},enchantments={levels:{"minecraft:power":255},show_in_tooltip:false}] 1
 
 # OPTIMIZATION NEEDED : run only when give a new bow
 function game:bow/dynamic_bow_data
@@ -299,7 +299,7 @@ function game:player/inventory/drop
 function game:bow_ui/main
 
 # CORRECT HAVING WRONG SPAWN POINT IN INVENTORY (for TMI mode)
-execute store result score @s[team=red,tag=playing] drop_magma run clear @s panda_spawn_egg{custom_model_data=3}
+execute store result score @s[team=red,tag=playing] drop_magma run clear @s panda_spawn_egg[custom_model_data=3]
 execute as @s[team=red,tag=playing,scores={drop_magma=1..}] run function game:player/give/red_spawn
 
 # CORRECT FOR HAVING TOO MANY PLACEABLES OUT (for balance and lag reasons)

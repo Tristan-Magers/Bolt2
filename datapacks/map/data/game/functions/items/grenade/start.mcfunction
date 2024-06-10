@@ -33,7 +33,7 @@ scoreboard players operation @s z = @e[limit=1,tag=getdir,tag=!old] DirZ
 
 #scoreboard players add @s y 6
 
-summon snowball ~ ~0.15 ~ {Item:{id:"minecraft:kelp",Count:1b},Tags:["new_nade"],Motion:[0.0,-10.0,0.0]}
+summon snowball ~ ~0.15 ~ {Item:{id:"minecraft:kelp",count:1},Tags:["new_nade"],Motion:[0.0,-10.0,0.0]}
 #tag @s add new_nade
 
 #

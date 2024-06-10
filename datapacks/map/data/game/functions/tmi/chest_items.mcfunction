@@ -3,7 +3,7 @@ item replace block 235 -50 -223 container.11 with panda_spawn_egg[custom_model_d
 item replace block 235 -50 -223 container.12 with snowball[custom_name='{"text":"Grenade","italic":false,"color":"gray"}'] 4
 item replace block 235 -50 -223 container.13 with panda_spawn_egg[custom_model_data=3,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',entity_data={id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0}] 2
 item replace block 235 -50 -223 container.14 with map[custom_name='{"text":"Reveal","italic":false,"color":"gray"}'] 1
-item replace block 235 -50 -223 container.15 with crossbow[custom_name='{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',enchantments={levels:{"minecraft:quick_charge":1},show_in_tooltip:false}] 1
+item replace block 235 -50 -223 container.15 with crossbow[custom_name='{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',enchantments={levels:{"minecraft:quick_charge":1},show_in_tooltip:false},custom_data={trigger:1b}] 1
 item replace block 235 -50 -223 container.16 with iron_ingot[custom_name='{"text":"Armor","color":"gray","italic":false}',lore=['{"text":"Survive one arrow hit","color":"white","italic":false}','{"text":"Doesn\'t block explosions","color":"white","italic":false}','{"text":"Drops the flag","color":"white","italic":false}']] 1
 item replace block 235 -50 -223 container.20 with egg[custom_name='{"text":"Boost","italic":false,"color":"gray"}'] 2
 item replace block 235 -50 -223 container.21 with ender_pearl[custom_name='{"text":"Zoomies (8 Seconds)","italic":false,"color":"gray"}'] 2
