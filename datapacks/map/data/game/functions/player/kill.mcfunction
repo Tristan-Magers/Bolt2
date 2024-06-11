@@ -24,9 +24,7 @@ execute if score .mode .data = .7 .num run scoreboard players set @s killStreak 
 #
 execute if score .mode .data = .1 .num run clear @s[scores={kills=1}] written_book
 execute if score .mode .data = .1 .num run clear @s[scores={kills=15}] written_book
-#execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=1}] hotbar.7 with written_book[title:"Item Book",author:"Bleps",generation:0,resolved:1b,pages:['[{"text":"_ How To Get Items _"},{"text":"\\n\\nKill Streak"},{"text":"\\n2 - Spawn point"},{"text":"\\n3 - Traps"},{"text":"\\n5 - Reveal"},{"text":"\\n\\nKills"},{"text":"\\n4 - Grenade"},{"text":"\\n5 - Walls"},{"text":"\\n15 - Crossbow"},{"text":"\\n\\nFlag Capture"},{"text":"\\nArmor"}]']] 1
-
-# FIX : BOOK FOR 1.20.6
+execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=1}] hotbar.7 with written_book[written_book_content={title:"Items",author:"Bleps",pages:['[{"text":"How to Get Items","underlined":true},{"text":"\\n\\nKills\\nx4 - Grenade\\nx5 - Walls x4\\nx15 - Crossbow\\n","underlined":false},{"text":"\\nKill Streak\\n2 - Spawn Point\\n3 - Traps x2\\n5 - Reveal\\n7 - Traps x3","underlined":false},{"text":"\\n\\nFlag Cap - Armor","underlined":false}]']}] 1
 
 # kill items
 execute if score .tmi .data matches 0 run give @s[scores={killStreak=2},team=blue] panda_spawn_egg[custom_model_data=3,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',entity_data={id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0}] 1

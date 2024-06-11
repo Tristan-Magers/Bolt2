@@ -51,6 +51,8 @@ scoreboard objectives remove ID
 scoreboard objectives remove ID.item
 
 # objectives add
+scoreboard objectives add leave_potion minecraft.used:minecraft.potion
+
 scoreboard objectives add click minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add useMap minecraft.used:minecraft.map
 scoreboard objectives add placeTurret minecraft.used:minecraft.panda_spawn_egg

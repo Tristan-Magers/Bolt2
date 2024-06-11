@@ -4,6 +4,10 @@ scoreboard players add @s ID 0
 execute if entity @s[scores={ID=..0}] run scoreboard players add .new ID 1
 execute if entity @s[scores={ID=..0}] run scoreboard players operation @p[scores={ID=..0}] ID = .new ID
 
+# Leave potion reset
+clear @s minecraft:glass_bottle
+scoreboard players set @s leave_potion 0
+
 #
 scoreboard players add @s team_pref 0
 
@@ -66,3 +70,6 @@ scoreboard players set @s drop_map 0
 scoreboard players set @s drop_scrap 0
 scoreboard players set @s drop_egg 0
 scoreboard players set @s drop_turret 0
+
+#
+stopsound @s
