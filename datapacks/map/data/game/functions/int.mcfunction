@@ -310,6 +310,20 @@ scoreboard players set .GrenadeKills .stats 4
 scoreboard players set .WallKills .stats 5
 scoreboard players set .endscore .stats 3
 
+#
+scoreboard objectives add .custom_random dummy
+
+scoreboard players set .map1 .custom_random 1
+scoreboard players set .map2 .custom_random 1
+scoreboard players set .map3 .custom_random 1
+scoreboard players set .map4 .custom_random 1
+scoreboard players set .map5 .custom_random 1
+scoreboard players set .map6 .custom_random 1
+scoreboard players set .map7 .custom_random 1
+scoreboard players set .map8 .custom_random 1
+scoreboard players set .map9 .custom_random 1
+
+#
 scoreboard objectives add .num dummy
 scoreboard players set .0 .num 0
 scoreboard players set .1 .num 1

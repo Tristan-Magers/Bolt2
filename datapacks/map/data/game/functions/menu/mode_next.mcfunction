@@ -1,4 +1,9 @@
 #
+execute as @a[tag=me_player] at @s run playsound minecraft:ui.button.click master @s ~ ~ ~ 0.8 1.2
+execute as @a[tag=me_player] at @s run playsound minecraft:ui.toast.in master @s ~ ~ ~ 0.5 2
+execute as @a[tag=me_player] at @s run playsound minecraft:item.book.put master @s ~ ~ ~ 1 1.2
+
+#
 scoreboard players add .mode_display .data 1
 execute if score .mode_display .data >= .5 .num run scoreboard players set .mode_display .data 1
 

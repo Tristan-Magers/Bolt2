@@ -29,12 +29,12 @@ execute if score .mode .data = .1 .num run clear @s[scores={kills=15}] written_b
 # FIX : BOOK FOR 1.20.6
 
 # kill items
-execute if score .tmi .data matches 0 run give @s[scores={killStreak=2},team=blue] panda_spawn_egg[custom_model_data=3,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',entity_data={id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0}] 1
-execute if score .tmi .data matches 0 run give @s[scores={killStreak=2},team=red] panda_spawn_egg[custom_model_data=2,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',entity_data={id:"minecraft:magma_cube",PersistenceRequired:1b,Silent:1b,Size:0}] 1
+execute if score .tmi .data matches 0 run give @s[scores={killStreak=2},team=blue] panda_spawn_egg[custom_model_data=3,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',entity_data={id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0}] 1
+execute if score .tmi .data matches 0 run give @s[scores={killStreak=2},team=red] panda_spawn_egg[custom_model_data=2,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',entity_data={id:"minecraft:magma_cube",PersistenceRequired:1b,Silent:1b,Size:0}] 1
 
-execute if score .tmi .data matches 0 run give @s[scores={killStreak=3}] panda_spawn_egg[custom_model_data=0,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Trap","italic":false,"color":"gray"}',entity_data={id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b}] 2
+execute if score .tmi .data matches 0 run give @s[scores={killStreak=3}] panda_spawn_egg[custom_model_data=0,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Trap","italic":false,"color":"gray"}',entity_data={id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b}] 2
 execute if score .tmi .data matches 0 run give @s[scores={killStreak=5}] map[custom_name='{"text":"Reveal","italic":false,"color":"gray"}'] 1
-execute if score .tmi .data matches 0 run give @s[scores={killStreak=7}] panda_spawn_egg[custom_model_data=0,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Trap","italic":false,"color":"gray"}',entity_data={id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b}] 2
+execute if score .tmi .data matches 0 run give @s[scores={killStreak=7}] panda_spawn_egg[custom_model_data=0,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Trap","italic":false,"color":"gray"}',entity_data={id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b}] 2
 execute if score .tmi .data matches 0 run give @s[scores={killStreak=10}] map[custom_name='{"text":"Reveal","italic":false,"color":"gray"}'] 1
 
 scoreboard players operation @s t = @s kills
@@ -52,7 +52,7 @@ execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] snow
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .WallKills .stats
 
-give @s[scores={t=0}] panda_spawn_egg[custom_model_data=1,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Walls","color":"gray","italic":false}',lore=['{"text":"Four blocks of breakable gravel","color":"white","italic":false}'],entity_data={id:"minecraft:silverfish",Silent:1b,NoAI:1}] 4
+give @s[scores={t=0}] panda_spawn_egg[custom_model_data=1,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Walls","color":"gray","italic":false}',lore=['{"text":"Four blocks of breakable gravel","color":"white","italic":false}'],entity_data={id:"minecraft:silverfish",Silent:1b,NoAI:1}] 4
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .BoostKills .stats

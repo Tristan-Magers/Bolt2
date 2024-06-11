@@ -10,6 +10,7 @@ execute if score .map_screen .data = .12 .num run clone 334 -54 -249 333 -35 -22
 execute if score .map_screen .data = .10 .num run clone 339 -54 -249 338 -35 -223 270 -54 -249 masked force
 execute if score .map_screen .data = .14 .num run clone 343 -54 -249 344 -35 -223 270 -54 -249 masked force
 execute if score .map_screen .data = .15 .num run clone 347 -54 -249 348 -35 -223 270 -54 -249 masked force
+execute if score .map_screen .data = .0 .num run clone 351 -54 -249 352 -35 -223 270 -54 -249 masked force
 
 scoreboard players set .map_screen_time .data 0
 execute store result score .map_screen_time_type .data run random value 0..7

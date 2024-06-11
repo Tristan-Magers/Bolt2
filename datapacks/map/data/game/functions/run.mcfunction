@@ -1,5 +1,6 @@
 #
 function game:tmi/chest_items
+function game:menu/custom_random/container
 
 #
 scoreboard players set @a[tag=!lobby,tag=!playing,team=!Spectator,gamemode=adventure] Leave 1

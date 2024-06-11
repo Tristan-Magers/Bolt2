@@ -43,11 +43,11 @@ tag @s[tag=!in] add stuck
 execute as @s[type=slime,tag=!stuck] at @s run tag @p[scores={place_slime_temp=1..}] remove used_spawn
 execute as @s[type=slime,tag=stuck] at @s run tag @p[scores={place_slime_temp=1..}] add used_spawn
 execute as @s[type=slime,tag=stuck] at @s run tellraw @p[scores={place_slime_temp=1..}] {"text":"Can't place there!","color":"dark_gray"}
-execute as @s[type=slime,tag=stuck] at @s run give @p[scores={place_slime_temp=1..}] panda_spawn_egg[custom_model_data=3,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',entity_data={id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0}] 1
+execute as @s[type=slime,tag=stuck] at @s run give @p[scores={place_slime_temp=1..}] panda_spawn_egg[custom_model_data=3,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',entity_data={id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0}] 1
 execute as @s[type=magma_cube,tag=!stuck] at @s run tag @p[scores={place_magmac_temp=1..}] remove used_spawn 
 execute as @s[type=magma_cube,tag=stuck] at @s run tag @p[scores={place_magmac_temp=1..}] add used_spawn 
 execute as @s[type=magma_cube,tag=stuck] at @s run tellraw @p[scores={place_magmac_temp=1..}] {"text":"Can't place there!","color":"dark_gray"}
-execute as @s[type=magma_cube,tag=stuck] at @s run give @p[scores={place_magmac_temp=1..}] panda_spawn_egg[custom_model_data=2,can_place_on={predicates:[{blocks:"#game:bolt_place"}]},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',entity_data={id:"minecraft:magma_cube",PersistenceRequired:1b,Silent:1b,Size:0}] 1
+execute as @s[type=magma_cube,tag=stuck] at @s run give @p[scores={place_magmac_temp=1..}] panda_spawn_egg[custom_model_data=2,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',entity_data={id:"minecraft:magma_cube",PersistenceRequired:1b,Silent:1b,Size:0}] 1
 
 tag @s[tag=stuck] add kill
 
