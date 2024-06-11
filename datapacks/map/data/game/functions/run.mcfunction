@@ -194,6 +194,9 @@ execute as @e[tag=survivor_generator] at @s run function game:game/infected/gene
 #arrow
 execute as @e[type=arrow,nbt={inGround:1b}] at @s run function game:arrow/land
 
+#lobby range
+function game:lobby\range\loop
+
 # flags
 execute as @e[tag=redflag,tag=drop] at @s run function game:flags/dropped
 execute as @e[tag=blueflag,tag=drop] at @s run function game:flags/dropped
@@ -327,17 +330,17 @@ execute if score .running .data = .1 .num if entity @a[team=red,tag=playing] if 
 execute if score .running .data = .1 .num if score .mode .data = .6 .num if entity @a[team=red,tag=playing] run scoreboard players set .no_players .timer 0
 execute if score .running .data = .1 .num if score .mode .data = .7 .num if entity @a[team=blue,tag=playing] run scoreboard players set .no_players .timer 0
 
-#execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .10 .num run tellraw @a {"text":"NO PLAYERS ON A TEAM. RESTARTING IN 10 SECONDS"}
-#execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .200 .num run tellraw @a {"text":"NO PLAYERS. GAME ENDING"}
-#execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .200 .num run function game:end
+execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .10 .num run tellraw @a {"text":"NO PLAYERS ON A TEAM. RESTARTING IN 10 SECONDS"}
+execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .200 .num run tellraw @a {"text":"NO PLAYERS. GAME ENDING"}
+execute if score .running .data = .1 .num if score .mode .data = .1 .num if score .no_players .timer = .200 .num run function game:end
 
-#execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .10 .num run tellraw @a {"text":"NO PLAYERS INFECTED. RESTARTING IN 10 SECONDS"}
-#execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .200 .num run tellraw @a {"text":"NO PLAYERS. GAME ENDING"}
-#execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .200 .num run function game:end
+execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .10 .num run tellraw @a {"text":"NO PLAYERS INFECTED. RESTARTING IN 10 SECONDS"}
+execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .200 .num run tellraw @a {"text":"NO PLAYERS. GAME ENDING"}
+execute if score .running .data = .1 .num if score .mode .data = .6 .num if score .no_players .timer = .200 .num run function game:end
 
-#execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .10 .num run tellraw @a {"text":"NO PLAYERS. RESTARTING IN 10 SECONDS"}
-#execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .200 .num run tellraw @a {"text":"NO PLAYERS. GAME ENDING"}
-#execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .200 .num run function game:end
+execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .10 .num run tellraw @a {"text":"NO PLAYERS. RESTARTING IN 10 SECONDS"}
+execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .200 .num run tellraw @a {"text":"NO PLAYERS. GAME ENDING"}
+execute if score .running .data = .1 .num if score .mode .data = .7 .num if score .no_players .timer = .200 .num run function game:end
 
 execute if score .running .data = .0 .num run scoreboard players set .no_players .timer -60
 execute if score .no_players .timer > .200 .num run scoreboard players set .no_players .timer -60

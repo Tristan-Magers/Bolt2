@@ -326,6 +326,12 @@ scoreboard players set .map8 .custom_random 1
 scoreboard players set .map9 .custom_random 1
 
 #
+scoreboard players set .range1 .data 0
+scoreboard players set .range2 .data 0
+scoreboard players set .range3 .data 0
+scoreboard players set .range4 .data 0
+
+#
 scoreboard objectives add .num dummy
 scoreboard players set .0 .num 0
 scoreboard players set .1 .num 1
