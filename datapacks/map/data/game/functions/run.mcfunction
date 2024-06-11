@@ -100,6 +100,7 @@ team join Spectator @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=-1}]
 tp @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] 243.5 -44.00 -235.5 -90 13
 
 tag @e[type=arrow,x=245,y=-50,z=-235,distance=..60] add kill
+tag @e[type=arrow,x=233.0,y=-80,z=-266.9,dx=30,dy=60,dz=-25] remove kill
 
 execute as @a[x=243.5,y=-44,z=-235.5,distance=..50,scores={arrowReload=2..35}] as @s run scoreboard players set @s arrowReload 38
 execute as @a[x=243.5,y=-44,z=-235.5,distance=..4,scores={team_pref=-1}] run clear @s arrow
@@ -195,7 +196,7 @@ execute as @e[tag=survivor_generator] at @s run function game:game/infected/gene
 execute as @e[type=arrow,nbt={inGround:1b}] at @s run function game:arrow/land
 
 #lobby range
-function game:lobby\range\loop
+function game:lobby/range/loop
 
 # flags
 execute as @e[tag=redflag,tag=drop] at @s run function game:flags/dropped

@@ -1,5 +1,5 @@
 #
-execute as @s[scores={leave_potion=1..}] at @s run tellraw @a [{"selector":"@s"},{"text":" left the arena","color":white}]
+execute as @s[scores={leave_potion=1..}] at @s run tellraw @a [{"selector":"@s"},{"text":" left the arena","color":"white"}]
 
 #ID
 scoreboard players add @s ID 0
