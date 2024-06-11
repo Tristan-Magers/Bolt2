@@ -267,18 +267,18 @@ scoreboard players remove @a spawn_message_delay 20
 scoreboard players set @a crossbowTime 1
 
 #
-item replace block 226 -60 -240 container.0 from block 235 -50 -224 container.15
-item replace block 226 -60 -242 container.0 from block 235 -50 -224 container.16
-item replace block 226 -60 -244 container.0 from block 235 -50 -224 container.17
+item replace block 226 -60 -240 container.0 from block 235 -49 -224 container.15
+item replace block 226 -60 -242 container.0 from block 235 -49 -224 container.16
+item replace block 226 -60 -244 container.0 from block 235 -49 -224 container.17
 
-item replace block 222 -60 -240 container.0 from block 235 -50 -224 container.24
-item replace block 222 -60 -242 container.0 from block 235 -50 -224 container.25
-item replace block 222 -60 -244 container.0 from block 235 -50 -224 container.26
+item replace block 222 -60 -240 container.0 from block 235 -49 -224 container.24
+item replace block 222 -60 -242 container.0 from block 235 -49 -224 container.25
+item replace block 222 -60 -244 container.0 from block 235 -49 -224 container.26
 
-item replace block 224 -60 -240 container.0 from block 235 -50 -224 container.19
-item replace block 224 -60 -242 container.0 from block 235 -50 -224 container.20
-item replace block 224 -60 -244 container.0 from block 235 -50 -224 container.21
-item replace block 224 -60 -246 container.0 from block 235 -50 -224 container.22
+item replace block 224 -60 -240 container.0 from block 235 -49 -224 container.19
+item replace block 224 -60 -242 container.0 from block 235 -49 -224 container.20
+item replace block 224 -60 -244 container.0 from block 235 -49 -224 container.21
+item replace block 224 -60 -246 container.0 from block 235 -49 -224 container.22
 
 #
 tag @a[scores={team_pref=-1}] add is_spectating

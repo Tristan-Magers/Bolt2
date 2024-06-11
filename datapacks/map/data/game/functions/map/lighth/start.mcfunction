@@ -13,3 +13,6 @@ execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon 
 data merge block -475 -40 194 {front_text:{messages:['{"text":" ","color":"black"}','{"text":""}','{"text":""}','{"text":""}']}}
 data merge block -417 -40 200 {front_text:{messages:['{"text":" ","color":"black"}','{"text":""}','{"text":""}','{"text":""}']}}
 
+#
+execute if score .mode .data = .6 .num run function game:map/lighth/crates
+execute if score .mode .data = .6 .num run execute positioned -468 -40 211 run function game:game/infected/generator/spawn

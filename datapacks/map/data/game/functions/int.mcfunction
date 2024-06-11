@@ -102,6 +102,10 @@ scoreboard objectives add turrets_active dummy
 scoreboard objectives add traps_active dummy
 scoreboard objectives add minions_active dummy
 
+#
+scoreboard objectives add lobby_text_time dummy
+scoreboard objectives add leave_timer dummy
+
 #> Viral zone
 scoreboard objectives add speedTimer dummy
 scoreboard objectives add deflectTimer dummy

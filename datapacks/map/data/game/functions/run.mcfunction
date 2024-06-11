@@ -85,6 +85,7 @@ execute if score .gametime .data >= .1 .num run scoreboard players add .gametime
 #lobby
 tag @a remove lobby
 tag @a[x=245,y=-50,z=-235,distance=..60] add lobby
+execute as @a[tag=lobby] at @s run function game:player/lobby
 scoreboard players set @a[x=245,y=-50,z=-235,distance=..60] invul 40
 #scoreboard players set @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrowReload 32
 #clear @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrow
