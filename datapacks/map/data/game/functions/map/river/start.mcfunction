@@ -1,6 +1,11 @@
 fill -540 -22 -349 -475 -13 -301 air replace gravel
 fill -540 -22 -300 -475 -13 -252 air replace gravel
 
+fill -540 -22 -349 -475 -13 -301 air replace target
+fill -540 -22 -300 -475 -13 -252 air replace target
+fill -540 -22 -349 -475 -13 -301 air replace emerald_block
+fill -540 -22 -300 -475 -13 -252 air replace emerald_block
+
 execute if score .mode .data = .1 .num run summon armor_stand -530 -18 -335 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",count:1}],Tags:["blueflag","flag"]}
 execute if score .mode .data = .1 .num run summon armor_stand -486 -18 -271 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:red_banner",count:1}],Tags:["redflag","flag"]}
 
