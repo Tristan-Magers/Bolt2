@@ -1,4 +1,6 @@
 fill -250 -41 -409 -222 -55 -455 air replace minecraft:gravel
+fill -250 -41 -409 -222 -55 -455 air replace minecraft:target
+fill -250 -41 -409 -222 -55 -455 air replace minecraft:emerald_block
 
 fill -241 -48 -431 -244 -50 -433 minecraft:gravel
 fill -231 -50 -433 -235 -48 -431 gravel
@@ -20,6 +22,26 @@ setblock -243 -50 -426 minecraft:dead_bush
 setblock -228 -50 -427 minecraft:dead_bush
 setblock -226 -50 -424 minecraft:dead_bush
 setblock -232 -50 -421 minecraft:dead_bush
+
+#
+setblock -244 -48 -416 minecraft:target
+execute if score .mode .data = .7 .num run setblock -244 -48 -416 minecraft:air
+
+setblock -244 -48 -448 minecraft:target
+execute if score .mode .data = .7 .num run setblock -244 -48 -448 minecraft:air
+
+#
+setblock -244 -50 -448 minecraft:iron_door[hinge=left,half=lower,facing=east]
+setblock -244 -49 -448 minecraft:iron_door[hinge=left,half=upper,facing=east]
+
+setblock -244 -50 -416 minecraft:iron_door[hinge=right,half=lower,facing=east]
+setblock -244 -49 -416 minecraft:iron_door[hinge=right,half=upper,facing=east]
+
+execute if score .mode .data = .7 .num run setblock -244 -50 -448 minecraft:air
+execute if score .mode .data = .7 .num run setblock -244 -49 -448 minecraft:air
+
+execute if score .mode .data = .7 .num run setblock -244 -50 -416 minecraft:air
+execute if score .mode .data = .7 .num run setblock -244 -49 -416 minecraft:air
 
 #
 execute if score .mode .data = .6 .num run function game:map/corners2/crates
