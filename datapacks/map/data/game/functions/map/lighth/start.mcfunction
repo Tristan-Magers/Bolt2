@@ -4,6 +4,12 @@ execute if score .mode .data = .1 .num run summon armor_stand -424 -41 183 {NoGr
 fill -412 -40 174 -480 -36 220 air replace minecraft:gravel
 fill -412 -35 174 -480 -29 220 air replace minecraft:gravel
 
+fill -412 -40 174 -480 -36 220 air replace minecraft:target
+fill -412 -35 174 -480 -29 220 air replace minecraft:target
+
+fill -412 -40 174 -480 -36 220 air replace minecraft:emerald_block
+fill -412 -35 174 -480 -29 220 air replace minecraft:emerald_block
+
 #scoreboard players set .hexdoor1 .timer 1
 #scoreboard players set .hexdoor2 .timer 1
 
@@ -16,3 +22,6 @@ data merge block -417 -40 200 {front_text:{messages:['{"text":" ","color":"black
 #
 execute if score .mode .data = .6 .num run function game:map/lighth/crates
 execute if score .mode .data = .6 .num run execute positioned -468 -40 211 run function game:game/infected/generator/spawn
+
+#
+execute if score .mode .data = .7 .num run function game:map/lighth/target
