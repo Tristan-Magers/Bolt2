@@ -46,3 +46,5 @@ execute if score .mode .data = .7 .num run setblock -244 -49 -416 minecraft:air
 #
 execute if score .mode .data = .6 .num run function game:map/corners2/crates
 execute if score .mode .data = .6 .num run execute positioned -241 -50 -416 run function game:game/infected/generator/spawn
+
+execute if score .mode .data = .7 .num run function game:map/corners2/target
