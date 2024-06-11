@@ -12,3 +12,5 @@ execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon 
 
 execute if score .mode .data = .6 .num run execute positioned -530 -17 -335 run function game:game/infected/generator/spawn
 execute if score .mode .data = .6 .num run function game:map/river/crates
+
+execute if score .mode .data = .7 .num run function game:map/river/target
