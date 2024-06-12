@@ -1,6 +1,6 @@
 tag @a remove starting_range
 tag @r[x=248.5,y=-50,z=-266.5,distance=..1.8] add starting_range
-tp @p[tag=starting_range] 248.5 -50 -267.0 180 0
+tp @p[tag=starting_range] 248.5 -50 -267.1 180 0
 tp @a[tag=!starting_range,x=248.5,y=-50,z=-266.5,distance=..1.8] 248.5 -50.00 -263.5
 
 setblock 248 -50 -266 minecraft:iron_door[facing=north,half=lower,hinge=left] destroy
