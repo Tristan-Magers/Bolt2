@@ -14,10 +14,10 @@ scoreboard players set @s leave_potion 0
 #
 scoreboard players add @s team_pref 0
 
-scoreboard players set @s[tag=!has_rank_v23] rank 500
-scoreboard players set @s[tag=!has_rank_v23] win_streak -2
-scoreboard players set @s[tag=!has_rank_v23] team_pref 0
-tag @s add has_rank_v23
+scoreboard players set @s[tag=!has_rank_v24] rank 500
+scoreboard players set @s[tag=!has_rank_v24] win_streak -2
+scoreboard players set @s[tag=!has_rank_v24] team_pref 0
+tag @s add has_rank_v24
 
 tp @s 243.50 -50.00 -226.99 -110 0
 
