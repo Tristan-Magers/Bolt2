@@ -29,12 +29,12 @@ execute as @s[scores={bow_texture=5..7}] run playsound custom:shoot_arrow master
 # Auric
 execute as @s[scores={bow_texture=8}] store result score @s random run random value 0..3
 execute as @s[scores={bow_texture=8}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.3 1.3
-execute as @s[scores={bow_texture=8}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.8 0.9
-execute as @s[scores={bow_texture=8}] run playsound minecraft:block.copper.step master @s ^ ^ ^ 0.5 1.4
-execute as @s[scores={bow_texture=8,random=0}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.18 1.2
-execute as @s[scores={bow_texture=8,random=1}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.18 1.15
-execute as @s[scores={bow_texture=8,random=2}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.18 1.25
-execute as @s[scores={bow_texture=8,random=3}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.18 1.28
+execute as @s[scores={bow_texture=8}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.7 0.9
+execute as @s[scores={bow_texture=8}] run playsound minecraft:block.copper.step master @s ^ ^ ^ 0.4 1.4
+execute as @s[scores={bow_texture=8,random=0}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.1 1.2
+execute as @s[scores={bow_texture=8,random=1}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.1 1.15
+execute as @s[scores={bow_texture=8,random=2}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.1 1.25
+execute as @s[scores={bow_texture=8,random=3}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.1 1.28
 
 #
 execute as @s[scores={bow_texture=9}] run playsound custom:shoot_arrow master @s ^ ^ ^

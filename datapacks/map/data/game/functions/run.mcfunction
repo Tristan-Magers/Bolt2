@@ -326,7 +326,7 @@ execute as @a[scores={crossbowTime=1..}] at @s run function game:items/crossbow/
 #
 execute if score .running .data = .1 .num run function game:game/time_up
 
-execute if score .running .data = .1 .num run scoreboard players add .no_players .timer 1
+#execute if score .running .data = .1 .num run scoreboard players add .no_players .timer 1
 execute if score .running .data = .1 .num if entity @a[team=red,tag=playing] if entity @a[team=blue,tag=playing] run scoreboard players set .no_players .timer 0
 execute if score .running .data = .1 .num if score .mode .data = .6 .num if entity @a[team=red,tag=playing] run scoreboard players set .no_players .timer 0
 execute if score .running .data = .1 .num if score .mode .data = .7 .num if entity @a[team=blue,tag=playing] run scoreboard players set .no_players .timer 0

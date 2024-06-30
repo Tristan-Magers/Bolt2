@@ -44,6 +44,8 @@ execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red]
 #execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red,tag=more_armor] iron_ingot{custom_name='{"text":"Armor","color":"gray","italic":false}',lore=['{"text":"Survive one arrow hit","color":"white","italic":false}','{"text":"Doesn\'t block explosions","color":"white","italic":false}','{"text":"Drops the flag","color":"white","italic":false}']}} 1
 execute if score .mode .data = .6 .num if score .zombie_evolve_type_2 .data = .1 .num run give @s[scores={respawn=2},team=red] minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, items, and walls","color":"white","italic":false}'],damage=2031,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{type:"generic.attack_damage",name:"generic.attack_damage",amount:100,operation:"add_value",uuid:[I;1031651592,-833205117,-1281963134,-1227999336]}],show_in_tooltip:false}] 1
 
+execute if score .tmi .data matches 1 if score .tmi_fog .data matches 1 run tag @s add dark
+
 #
 #clear @s crossbow{"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}
 scoreboard players set @a[scores={crossbowTime=3..}] crossbowReload 2

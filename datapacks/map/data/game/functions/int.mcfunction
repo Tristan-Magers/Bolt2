@@ -312,6 +312,10 @@ scoreboard players set .GrenadeKills .stats 4
 scoreboard players set .WallKills .stats 5
 scoreboard players set .endscore .stats 3
 
+scoreboard players set .tmi_fog .data 0
+scoreboard players set .tmi_objective .data 0
+scoreboard players set .tmi_arrow .data 0
+
 #
 scoreboard objectives add .custom_random dummy
 

@@ -93,6 +93,11 @@ effect give @a[tag=!no_vis] minecraft:night_vision 999999 10 true
 effect clear @s[tag=clear_invis] invisibility
 tag @s remove clear_invis
 
+attribute @s minecraft:generic.movement_speed base set 0.1
+
+execute if score .tmi .data matches 1 if score .tmi_fog .data matches 2 run effect give @s[tag=!lobby,gamemode=adventure] blindness 2 0 true
+execute if score .tmi .data matches 1 if score .tmi_fog .data matches 2 run attribute @s[tag=!lobby,gamemode=adventure] minecraft:generic.movement_speed base set 0.14
+
 #items
 execute unless score @s team_pref_temp = @s team_pref run function game:player/switch_team_pref
 
