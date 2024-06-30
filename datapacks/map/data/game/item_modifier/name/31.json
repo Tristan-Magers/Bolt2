@@ -1,0 +1,4 @@
+{
+	"function" : "minecraft:set_name",
+	"name" : [{"text":"Arch Bow","italic":false,"color":"white"}]
+}

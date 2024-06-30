@@ -1,0 +1,1 @@
+execute on passengers run function animated_java:shutter/zzzzzzzz/animations/open_curled/tree/leaf_9_as_bone

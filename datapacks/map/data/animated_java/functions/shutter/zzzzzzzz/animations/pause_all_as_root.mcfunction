@@ -1,6 +1,0 @@
-function animated_java:shutter/zzzzzzzz/animations/open_flat/pause_as_root
-function animated_java:shutter/zzzzzzzz/animations/close_flat/pause_as_root
-function animated_java:shutter/zzzzzzzz/animations/open_curled/pause_as_root
-function animated_java:shutter/zzzzzzzz/animations/close_curled/pause_as_root
-function animated_java:shutter/zzzzzzzz/animations/open_up/pause_as_root
-function animated_java:shutter/zzzzzzzz/animations/close_up/pause_as_root

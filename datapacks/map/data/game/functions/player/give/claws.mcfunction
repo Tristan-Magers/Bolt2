@@ -1,3 +1,0 @@
-give @s minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, items, and walls","color":"white","italic":false}'],damage=2031,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{type:"generic.attack_damage",name:"generic.attack_damage",amount:100,operation:"add_value",uuid:[I;1031651592,-833205117,-1281963134,-1227999336]}],show_in_tooltip:false}] 1
-
-scoreboard players remove @s drop_sword 1

@@ -1,0 +1,1 @@
+execute if entity @s[tag=aj.shutter.root] run function animated_java:shutter/zzzzzzzz/tick_as_root

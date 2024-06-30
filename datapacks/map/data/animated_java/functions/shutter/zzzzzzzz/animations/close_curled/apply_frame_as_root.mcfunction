@@ -1,1 +1,0 @@
-execute if score @s aj.anim_time matches 0..10 run function animated_java:shutter/zzzzzzzz/animations/close_curled/tree/branch_0_10

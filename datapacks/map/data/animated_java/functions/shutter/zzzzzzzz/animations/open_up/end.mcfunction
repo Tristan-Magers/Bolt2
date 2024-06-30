@@ -1,3 +1,0 @@
-execute if score @s aj.shutter.animation.open_up.loop_mode = $aj.loop_mode.loop aj.i run function animated_java:shutter/zzzzzzzz/animations/open_up/end_loop
-execute if score @s aj.shutter.animation.open_up.loop_mode = $aj.loop_mode.once aj.i run function animated_java:shutter/animations/open_up/stop
-execute if score @s aj.shutter.animation.open_up.loop_mode = $aj.loop_mode.hold aj.i run function animated_java:shutter/animations/open_up/pause

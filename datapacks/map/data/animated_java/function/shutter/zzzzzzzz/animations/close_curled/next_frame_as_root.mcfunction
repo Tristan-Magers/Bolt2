@@ -1,0 +1,1 @@
+function animated_java:shutter/zzzzzzzz/animations/close_curled/tick_animation

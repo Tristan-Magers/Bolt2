@@ -1,0 +1,1 @@
+particle minecraft:explosion_emitter ~ ~5 ~ 1 0 1 0 1 force

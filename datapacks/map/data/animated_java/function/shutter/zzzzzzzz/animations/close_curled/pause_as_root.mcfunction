@@ -1,0 +1,1 @@
+tag @s remove aj.shutter.animation.close_curled

@@ -1,1 +1,0 @@
-execute on passengers run function animated_java:shutter/zzzzzzzz/animations/open_up/tree/leaf_14_as_bone

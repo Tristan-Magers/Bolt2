@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:air",
+    "minecraft:short_grass",
+    "#minecraft:saplings",
+    "#minecraft:flowers",
+    "brown_mushroom",
+    "dead_bush",
+    "hanging_roots",
+    "#minecraft:pressure_plates"
+  ]
+}

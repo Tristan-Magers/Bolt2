@@ -1,1 +1,0 @@
-function animated_java:shutter/zzzzzzzz/animations/close_flat/tick_animation
