@@ -129,6 +129,26 @@ execute as @e[tag=head] if entity @s[nbt=!{ArmorItems:[{},{},{},{id:"minecraft:p
 execute as @s[scores={t=64}] run title @a times 16 30 20
 execute as @s[scores={t=64}] run title @a title {"translate":"\u0001","font":"title"}
 
+# Mode text
+execute as @s[scores={t=64}] if score .mode .data = .1 .num if score .tmi .data = .0 .num run tellraw @a [{"text":"Now playing..."},{"text":"CAPTURE THE FLAG","color":"gold"}]
+execute as @s[scores={t=64}] if score .mode .data = .1 .num if score .tmi .data = .0 .num run tellraw @a [{"text":"Return their flag to your flag spot. (first to 3)"}]
+
+execute as @s[scores={t=64}] if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_objective .data = .0 .num run tellraw @a [{"text":"Now playing..."},{"text":"CAPTURE THE FLAG","color":"gold"}]
+execute as @s[scores={t=64}] if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_objective .data = .0 .num run tellraw @a [{"text":"Return their flag to your flag spot. (first to 3)"}]
+
+execute as @s[scores={t=64}] if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_objective .data = .1 .num run tellraw @a [{"text":"Now playing..."},{"text":"CAPTURE THE POINT","color":"yellow"}]
+execute as @s[scores={t=64}] if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_objective .data = .1 .num run tellraw @a [{"text":"Stand on their flag for one second. (first to 5)"}]
+
+execute as @s[scores={t=64}] if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_objective .data = .2 .num run tellraw @a [{"text":"Now playing..."},{"text":"TEAM DEATHMATCH","color":"aqua"}]
+execute as @s[scores={t=64}] if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_objective .data = .2 .num run tellraw @a [{"text":"Get more kills than the opposing team. (first to 9)"}]
+
+execute as @s[scores={t=64}] if score .mode .data = .6 .num run tellraw @a [{"text":"Now playing..."},{"text":"INFECTION","color":"green"}]
+execute as @s[scores={t=64}] if score .mode .data = .6 .num run tellraw @a [{"text":"Survivors (blue) return 12 scrap to their generator (from kills and crates)"}]
+execute as @s[scores={t=64}] if score .mode .data = .6 .num run tellraw @a [{"text":"Infected (red) kill survivors >:)"}]
+
+execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"text":"Now playing..."},{"text":"TARGET PRACTICE","color":"red"}]
+execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"text":"Break as many targets as you can!"}]
+
 #
 execute as @s[scores={t=99}] run scoreboard players set .cutscene_running .data 0
 execute as @s[scores={t=99}] run function game:game/mapstart

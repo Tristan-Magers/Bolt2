@@ -83,6 +83,13 @@
             "height": 16,
             "ascent": 12,
             "chars": ["ȹ"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:font/score_back_capture.png",
+            "height": 16,
+            "ascent": 10,
+            "chars": ["Ɉ"]
         }
     ]
 }

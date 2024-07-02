@@ -2,16 +2,16 @@ item replace block 235 -49 -223 container.10 with panda_spawn_egg[custom_model_d
 item replace block 235 -49 -223 container.11 with panda_spawn_egg[custom_model_data=0,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Trap","italic":false,"color":"gray"}',lore=['{"text":"Explodes when enemies get near","color":"white","italic":false}','{"text":"Outer ring - explosion radius","color":"white","italic":false}','{"text":"Inner ring - trigger radius","color":"white","italic":false}','{"text":"Can be shot","color":"white","italic":false}','{"text":"Max active: 12","color":"white","italic":false}'],entity_data={id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b}] 4
 item replace block 235 -49 -223 container.12 with snowball[custom_name='{"text":"Grenade","italic":false,"color":"gray"}',lore=['{"text":"Explodes, killing players","color":"white","italic":false}','{"text":"Kills traps and respawns","color":"white","italic":false}','{"text":"Explodes slower if thrown close","color":"white","italic":false}']] 4
 item replace block 235 -49 -223 container.13 with panda_spawn_egg[custom_model_data=3,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',lore=['{"text":"Place a location to respawn at","color":"white","italic":false}','{"text":"Respawn 1.5 seconds faster","color":"white","italic":false}','{"text":"Can be shot","color":"white","italic":false}','{"text":"Max active: 1","color":"white","italic":false}','{"text":"Returned on flag capture","color":"white","italic":false}'],entity_data={id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0}] 2
-item replace block 235 -49 -223 container.14 with map[custom_name='{"text":"Reveal","italic":false,"color":"gray"}'] 1
+item replace block 235 -49 -223 container.14 with map[custom_name='{"text":"Reveal","italic":false,"color":"gray"}',lore=['{"text":"See enemy players and placables through walls for 5 seconds","color":"white","italic":false}']] 1
 item replace block 235 -49 -223 container.15 with crossbow[custom_name='{"text":"Crossbow (11 seconds)","italic":false,"color":"gray"}',enchantments={levels:{"minecraft:quick_charge":1},show_in_tooltip:false},custom_data={trigger:1b}] 1
 item replace block 235 -49 -223 container.19 with iron_ingot[custom_name='{"text":"Armor","color":"gray","italic":false}',lore=['{"text":"Survive one arrow hit","color":"white","italic":false}','{"text":"Doesn\'t block explosions","color":"white","italic":false}','{"text":"Drops the flag","color":"white","italic":false}']] 1
-item replace block 235 -49 -223 container.20 with egg[custom_name='{"text":"Boost","italic":false,"color":"gray"}'] 2
-item replace block 235 -49 -223 container.21 with ender_pearl[custom_name='{"text":"Zoomies (8 Seconds)","italic":false,"color":"gray"}'] 2
-item replace block 235 -49 -223 container.22 with minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, items, and walls","color":"white","italic":false}'],damage=2031,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"attack_damage",type:"generic.attack_damage",amount:100,operation:"add_value",slot:"any"}],show_in_tooltip:false}] 1
+item replace block 235 -49 -223 container.20 with egg[custom_name='{"text":"Boost","italic":false,"color":"gray"}',lore=['{"text":"Explode forward","color":"white","italic":false}']] 2
+item replace block 235 -49 -223 container.21 with ender_pearl[custom_name='{"text":"Zoomies (8 Seconds)","italic":false,"color":"gray"}',lore=['{"text":"Speed and jump boost for 8 seconds","color":"white","italic":false}']] 2
+item replace block 235 -49 -223 container.22 with minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, placables, and walls","color":"white","italic":false}'],damage=2031,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"attack_damage",type:"generic.attack_damage",amount:100,operation:"add_value",slot:"any"}],show_in_tooltip:false}] 1
 #item replace block 235 -49 -223 container.10 with lingering_potion{custom_name='{"text":"Acid","italic":false}'},hide_additional_tooltip={},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913}} 1
 #item replace block 235 -49 -223 container.10 with minecraft:pig_spawn_egg{can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Turret","italic":false}'},entity_data={PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f}} 8
-item replace block 235 -49 -223 container.23 with panda_spawn_egg[custom_model_data=4,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Turret","italic":false,"color":"gray"}',entity_data={id:"minecraft:pig",PersistenceRequired:0b,Silent:1b,NoAI:1,IsBaby:0b,Health:10f}] 2
-item replace block 235 -49 -223 container.24 with minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Minion","italic":false,"color":"gray"}',entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 4
+item replace block 235 -49 -223 container.23 with panda_spawn_egg[custom_model_data=4,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Turret","italic":false,"color":"gray"}',lore=['{"text":"Turret that shoots players and minions","color":"white","italic":false}','{"text":"Range: 20 blocks","color":"white","italic":false}','{"text":"Charge time: 1s","color":"white","italic":false}','{"text":"Max active: 5","color":"white","italic":false}'],entity_data={id:"minecraft:pig",PersistenceRequired:0b,Silent:1b,NoAI:1,IsBaby:0b,Health:10f}] 2
+item replace block 235 -49 -223 container.24 with minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Minion","italic":false,"color":"gray"}',lore=['{"text":"Summon zombie that attacks enemies","color":"white","italic":false}'],entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 4
 
 #item replace block 235 -49 -223 container.8 with black_stained_glass_pane[custom_name='{"text":""}']
 #item replace block 235 -49 -223 container.10 with black_stained_glass_pane[custom_name='{"text":""}']
@@ -27,13 +27,33 @@ item replace block 235 -49 -223 container.5 with black_stained_glass_pane[custom
 item replace block 235 -49 -223 container.6 with black_stained_glass_pane[custom_name='{"text":""}']
 item replace block 235 -49 -223 container.7 with black_stained_glass_pane[custom_name='{"text":""}']
 
-item replace block 235 -49 -223 container.8 with red_dye[custom_name='{"text":"Capture the Flag","italic":false}']
+execute if score .tmi_objective .data matches 0 unless data block 235 -49 -223 {Items:[{Slot:8b,id:"minecraft:red_dye"}]} run scoreboard players set .tmi_objective .data 11
+execute if score .tmi_objective .data matches 1 unless data block 235 -49 -223 {Items:[{Slot:8b,id:"minecraft:beacon"}]} run scoreboard players set .tmi_objective .data 12
+execute if score .tmi_objective .data matches 2 unless data block 235 -49 -223 {Items:[{Slot:8b,id:"minecraft:skeleton_skull"}]} run scoreboard players set .tmi_objective .data 10
+
+execute if score .tmi_objective .data matches 10 run scoreboard players set .tmi_objective .data 0
+execute if score .tmi_objective .data matches 11 run scoreboard players set .tmi_objective .data 1
+execute if score .tmi_objective .data matches 12 run scoreboard players set .tmi_objective .data 2
+
+execute if score .tmi_objective .data matches 0 run item replace block 235 -49 -223 container.8 with red_dye[custom_name='{"text":"Capture the Flag","italic":false}',lore=['{"text":"Normal capture the flag.","color":"white","italic":false}','{"text":"First to three.","color":"white","italic":false}']]
+execute if score .tmi_objective .data matches 1 run item replace block 235 -49 -223 container.8 with beacon[custom_name='{"text":"Capture the Point","italic":false}',lore=['{"text":"Stand on flag one second to capture.","color":"white","italic":false}','{"text":"First to five.","color":"white","italic":false}']]
+execute if score .tmi_objective .data matches 2 run item replace block 235 -49 -223 container.8 with minecraft:skeleton_skull[custom_name='{"text":"Team Deathmatch","italic":false}',lore=['{"text":"Kills give points.","color":"white","italic":false}','{"text":"First to nine.","color":"white","italic":false}']]
 
 item replace block 235 -49 -223 container.9 with black_stained_glass_pane[custom_name='{"text":""}']
 
 item replace block 235 -49 -223 container.16 with black_stained_glass_pane[custom_name='{"text":""}']
 
-item replace block 235 -49 -223 container.17 with gray_dye[custom_name='{"text":"Normal Arrow","italic":false}',custom_data={chest:1}]
+execute if score .tmi_arrow .data matches 0 unless data block 235 -49 -223 {Items:[{Slot:17b,id:"minecraft:arrow"}]} run scoreboard players set .tmi_arrow .data 11
+execute if score .tmi_arrow .data matches 1 unless data block 235 -49 -223 {Items:[{Slot:17b,id:"minecraft:wind_charge"}]} run scoreboard players set .tmi_arrow .data 12
+execute if score .tmi_arrow .data matches 2 unless data block 235 -49 -223 {Items:[{Slot:17b,id:"minecraft:arrow"}]} run scoreboard players set .tmi_arrow .data 10
+
+execute if score .tmi_arrow .data matches 10 run scoreboard players set .tmi_arrow .data 0
+execute if score .tmi_arrow .data matches 11 run scoreboard players set .tmi_arrow .data 1
+execute if score .tmi_arrow .data matches 12 run scoreboard players set .tmi_arrow .data 2
+
+execute if score .tmi_arrow .data matches 0 run item replace block 235 -49 -223 container.17 with arrow[custom_name='{"text":"Normal Arrow","italic":false}',custom_data={chest:1},lore=['{"text":"Normal reloading arrows","color":"white","italic":false}']]
+execute if score .tmi_arrow .data matches 1 run item replace block 235 -49 -223 container.17 with wind_charge[custom_name='{"text":"Wind Arrow","italic":false}',custom_data={chest:1},lore=['{"text":"Arrows explode if they hit a wall","color":"white","italic":false}']]
+execute if score .tmi_arrow .data matches 2 run item replace block 235 -49 -223 container.17 with arrow[custom_model_data=3,custom_name='{"text":"Three in the quiver","italic":false,"color":white}',custom_data={chest:1},lore=['{"text":"Start with three arrows. A kill reloads one arrow.","color":"white","italic":false}']]
 
 item replace block 235 -49 -223 container.18 with black_stained_glass_pane[custom_name='{"text":""}']
 
@@ -85,11 +105,16 @@ clear @a[tag=lobby,nbt={Inventory:[{id:"minecraft:netherite_sword"}]}] netherite
 clear @a[tag=lobby,nbt={Inventory:[{id:"minecraft:panda_spawn_egg"}]}] panda_spawn_egg
 clear @a[tag=lobby,nbt={Inventory:[{id:"minecraft:zombie_villager_spawn_egg"}]}] zombie_villager_spawn_egg
 
+clear @a[tag=lobby] white_dye
+clear @a[tag=lobby] light_gray_dye
 clear @a[tag=lobby] red_dye
 clear @a[tag=lobby] pink_dye
 clear @a[tag=lobby] purple_dye
 clear @a[tag=lobby] black_dye
 clear @a[tag=lobby] gray_dye[custom_data={chest:1}]
+clear @a[tag=lobby] wind_charge
+clear @a[tag=lobby] skeleton_skull
+clear @a[tag=lobby] beacon
 
 #
 execute if data block 235 -49 -224 {Items:[{Slot:10b,id:"minecraft:bow"}]} run item replace block 235 -49 -224 container.10 with air

@@ -2,35 +2,5 @@
     "parent": "item/handheld_rod",
     "textures": {
         "layer0": "item/carrot_on_a_stick"
-    },
-	"overrides": [
-        { "predicate": {"custom_model_data": 1}, "model": "custom/invisible"},
-        { "predicate": {"custom_model_data": 2}, "model": "custom/boat"},
-        { "predicate": {"custom_model_data": 3}, "model": "custom/piston_chunk"},
-        { "predicate": {"custom_model_data": 4}, "model": "custom/redstone_block"},
-        { "predicate": {"custom_model_data": 5}, "model": "custom/chain"},
-        { "predicate": {"custom_model_data": 6}, "model": "custom/cobbled_deepslate"},
-        { "predicate": {"custom_model_data": 7}, "model": "custom/red_wall_mid"},
-        { "predicate": {"custom_model_data": 8}, "model": "custom/menu_mod/menu_lush_cave"},
-        { "predicate": {"custom_model_data": 9}, "model": "custom/menu_mod/menu_ice_cave"},
-        { "predicate": {"custom_model_data": 10}, "model": "custom/menu_mod/menu_biome_line"},
-        { "predicate": {"custom_model_data": 11}, "model": "custom/menu_mod/menu_snow_land"},
-        { "predicate": {"custom_model_data": 12}, "model": "custom/menu_mod/menu_swamp"},
-        { "predicate": {"custom_model_data": 13}, "model": "custom/menu_mod/menu_jungle"},
-        { "predicate": {"custom_model_data": 14}, "model": "custom/menu_mod/menu_coral"},
-        { "predicate": {"custom_model_data": 15}, "model": "custom/menu_mod/menu_desert"},
-        { "predicate": {"custom_model_data": 16}, "model": "custom/menu_mod/menu_fortress"},
-        { "predicate": {"custom_model_data": 17}, "model": "custom/menu_mod/menu_village"},
-        { "predicate": {"custom_model_data": 18}, "model": "custom/menu_mod/menu_city"},
-        { "predicate": {"custom_model_data": 19}, "model": "custom/menu_mod/menu_factory"},
-        { "predicate": {"custom_model_data": 20}, "model": "custom/menu_mod/menu_red_nether"},
-        { "predicate": {"custom_model_data": 21}, "model": "custom/menu_mod/menu_blue_nether"},
-        { "predicate": {"custom_model_data": 22}, "model": "custom/menu_mod/menu_end_islands"},
-        { "predicate": {"custom_model_data": 23}, "model": "custom/menu_mod/mode_speedrun"},
-        { "predicate": {"custom_model_data": 24}, "model": "custom/menu_mod/mode_normal"},
-        { "predicate": {"custom_model_data": 25}, "model": "custom/menu_mod/mode_race"},
-        { "predicate": {"custom_model_data": 30}, "model": "custom/menu_mod/mode_return"},
-        { "predicate": {"custom_model_data": 31}, "model": "custom/player_hand"},
-        { "predicate": {"custom_model_data": 32}, "model": "custom/player_hand2"}
-	]
+    }
 }

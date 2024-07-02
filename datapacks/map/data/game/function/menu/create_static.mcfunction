@@ -1,5 +1,5 @@
 kill @e[type=minecraft:text_display,tag=lobby_menu_static]
-summon minecraft:text_display 259.65 -55.3 -235.75 {Tags:["lobby_menu_static","start_b"],billboard:"fixed",Rotation:[-90F,0F],transformation:{left_rotation:[0f,1f,1f,0f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[10.5f,7.8f,10f]},text:'{"text":" START ","font":"fancy","color":"#1DBF9F"}'}
+summon minecraft:text_display 259.65 -55.3 -235.75 {Tags:["lobby_menu_static","start_b"],billboard:"fixed",Rotation:[-90F,0F],transformation:{left_rotation:[0f,1f,1f,0f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[16.5f,15.5f,15.5f]},text:'{"text":"  START  ","font":"fancy","color":"#1DBF9F"}'}
 
 summon text_display 265.25 -53.15 -224.0 {Tags:["lobby_menu_static","mode_b"],billboard:"fixed",Rotation:[90F,0F],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[8f,8f,12f]},text:'{"text":" ⟳ ","font":"fancy","bold":false,"color":"#B0B0B0","bold":false}'}
 

@@ -112,6 +112,8 @@ item replace entity @s[team=red,nbt=!{Inventory:[{id:"minecraft:leather_boots",S
 item replace entity @s[team=blue,nbt=!{Inventory:[{id:"minecraft:leather_boots",Slot:100b}]}] armor.feet with leather_boots[dyed_color={rgb:22015,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"generic.armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
 
 #reload
+execute if score .tmi .data = .1 .num if score .tmi_arrow .data = .2 .num run scoreboard players set @s[tag=!lobby] arrowReload 10
+
 execute as @s store result score @s arrowCount run clear @s arrow 0
 scoreboard players add @s[scores={arrowCount=..2}] arrowReload 1
 scoreboard players set @s[scores={arrowCount=3..}] arrowReload 0
@@ -159,11 +161,15 @@ scoreboard players set @s[tag=item_acid,nbt={Inventory:[{id:"minecraft:lingering
 
 give @s[scores={item_boost=220..}] egg[custom_name='{"text":"Boost","italic":false}'] 1
 give @s[scores={item_acid=220..,acid_count=..2}] lingering_potion[custom_name='{"text":"Acid","italic":false}',hide_additional_tooltip={},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913}] 1
-give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Minion","italic":false,"color":"gray"}',entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 1
+give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Minion","italic":false,"color":"gray"}',lore=['{"text":"Summon zombie that attacks enemies","color":"white","italic":false}'],entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 1
 
 scoreboard players set @s[scores={item_boost=220..}] item_boost 0
 scoreboard players set @s[scores={item_minion=220..}] item_minion 40
 scoreboard players set @s[scores={item_acid=220..}] item_acid 0
+
+# Capture point
+
+execute as @s[tag=capture_point,scores={deaths=1..}] at @s run function game:player/death_capture
 
 # Totem
 tag @s remove totem
@@ -295,7 +301,7 @@ execute as @s[scores={useMap=1..}] unless entity @s[scores={respawn=..0,delay_re
 scoreboard players remove @s[scores={delay_reveal=0..}] delay_reveal 1
 
 #claws
-give @s[scores={sword_break=1..}] minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, items, and walls","color":"white","italic":false}'],damage=2031,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"attack_damage",type:"generic.attack_damage",amount:100,operation:"add_value",slot:"any"}],show_in_tooltip:false}] 1
+give @s[scores={sword_break=1..}] minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, placables, and walls","color":"white","italic":false}'],damage=2031,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"attack_damage",type:"generic.attack_damage",amount:100,operation:"add_value",slot:"any"}],show_in_tooltip:false}] 1
 
 # CORRECT DROPPED ITEMS (INCLUDED FOR CORRECTIONS)
 function game:player/inventory/drop

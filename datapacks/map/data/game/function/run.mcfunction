@@ -97,6 +97,7 @@ team join red_lobby @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=1}]
 team join blue_lobby @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=2}]
 team join Spectator @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=-1}]
 
+title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] actionbar {"text":"SHOOT MENU BUTTONS","bold":true,"color":"gray"}
 tp @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] 243.5 -44.00 -235.5 -90 13
 
 tag @e[type=arrow,x=245,y=-50,z=-235,distance=..60] add kill
@@ -198,12 +199,18 @@ execute as @e[type=arrow,nbt={inGround:1b}] at @s run function game:arrow/land
 #lobby range
 function game:lobby/range/loop
 
+#
+tag @a remove capturing_point
+
 # flags
 execute as @e[tag=redflag,tag=drop] at @s run function game:flags/dropped
 execute as @e[tag=blueflag,tag=drop] at @s run function game:flags/dropped
 
 execute as @e[tag=redflag,tag=!drop] at @s run function game:flags/main
 execute as @e[tag=blueflag,tag=!drop] at @s run function game:flags/main
+
+#
+scoreboard players set @a[tag=!capturing_point] capture_time 0
 
 #spawn zombie villager
 execute as @a store result score @s zombie_egg_count run clear @s zombie_villager_spawn_egg 0
@@ -298,7 +305,7 @@ scoreboard players add @a crossbowTime 0
 clear @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}']
 clear @a[scores={crossbowTime=..0}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',custom_data={trigger:0b}]
 scoreboard players add @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbowTime 220
-item replace entity @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}]] 1
+item replace entity @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},custom_data={trigger:0b},charged_projectiles=[{id:"minecraft:arrow",count:1}]] 1
 
 scoreboard players add @a[scores={crossbowReload=1..}] crossbowReload 1
 scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1
@@ -378,6 +385,7 @@ function game:menu/p_display/check_visuals
 #
 tp @e[tag=kill] ~ ~-10000 ~
 tag @e[tag=kill] add dead
+tag @e[tag=kill_next] add kill
 
 #
 item replace entity @e[type=minecraft:zombie_villager,team=red] armor.head with minecraft:red_stained_glass

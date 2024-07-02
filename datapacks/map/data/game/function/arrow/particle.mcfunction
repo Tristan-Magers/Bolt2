@@ -6,6 +6,9 @@ execute at @s run particle minecraft:spit ~ ~ ~ 0.2 0.1 0.2 0.06 5 force @a[tag=
 execute at @s at @s run tp @s ~ ~ ~ facing entity @p[tag=id_share]
 execute at @s at @s run tp @s ^ ^ ^0.2 facing entity @p[tag=id_share]
 
+# putting this here because im a bad person
+execute as @s[tag=!range_arrow] at @s if score .tmi .data matches 1 if score .tmi_arrow .data matches 1 run function game:test4
+
 execute as @s[scores={bow_texture=0}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 4 force @a[tag=id_share]
 
 execute as @s[scores={bow_texture=1}] at @s run particle minecraft:witch ~ ~ ~ 0.3 0.3 0.3 0.15 6 force @a[tag=id_share]

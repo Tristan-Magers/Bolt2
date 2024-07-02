@@ -1,5 +1,5 @@
 #
-execute if score .mode .data = .1 .num if score .map .data = .3 .num run tellraw @a [{"text":"NOTICE!","color":"#8F2929","bold":true},{"text":" Walls Item disabled on map.","bold":false}]
+execute if score .mode .data = .1 .num if score .map .data = .3 .num if score .tmi .data matches 0 run tellraw @a [{"text":"NOTICE!","color":"#8F2929","bold":true},{"text":" Walls item disabled on map.","bold":false}]
 
 #
 tag @a remove sur_start
@@ -215,7 +215,11 @@ execute if score .tmi .data matches 1 run scoreboard players set .CrossKills .st
 execute if score .tmi .data matches 1 run scoreboard players set .GrenadeKills .stats 1000
 execute if score .tmi .data matches 1 run scoreboard players set .BoostKills .stats 1000
 execute if score .tmi .data matches 1 run scoreboard players set .WallKills .stats 1000
- 
+
+scoreboard players set .endscore .stats 3
+execute if score .tmi .data matches 1 if score .tmi_objective .data matches 1 run scoreboard players set .endscore .stats 5
+execute if score .tmi .data matches 1 if score .tmi_objective .data matches 2 run scoreboard players set .endscore .stats 9
+
 #
 scoreboard players set @a has_lev 0
 

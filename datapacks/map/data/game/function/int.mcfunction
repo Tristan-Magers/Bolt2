@@ -1,3 +1,7 @@
+#
+forceload add 268 -262 231 -294
+
+#
 team add blue
 team add red
 
@@ -98,6 +102,8 @@ scoreboard objectives add slimeCount dummy
 scoreboard objectives add slimeCountT dummy
 scoreboard objectives add turretCount dummy
 scoreboard objectives add turretCountT dummy
+
+scoreboard objectives add capture_time dummy
 
 #
 scoreboard objectives add turrets_active dummy
