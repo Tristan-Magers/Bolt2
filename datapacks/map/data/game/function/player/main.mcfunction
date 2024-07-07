@@ -112,9 +112,24 @@ item replace entity @s[team=red,nbt=!{Inventory:[{id:"minecraft:leather_boots",S
 item replace entity @s[team=blue,nbt=!{Inventory:[{id:"minecraft:leather_boots",Slot:100b}]}] armor.feet with leather_boots[dyed_color={rgb:22015,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"generic.armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
 
 #reload
-execute if score .tmi .data = .1 .num if score .tmi_arrow .data = .2 .num run scoreboard players set @s[tag=!lobby] arrowReload 10
+tag @s[scores={no_quiver_arrow=160..}] add arrow_hit
+scoreboard players set @s[scores={no_quiver_arrow=160..}] no_quiver_arrow 0
+
+tag @s[scores={slime_kill=1..}] add arrow_hit
+tag @s[scores={magma_kill=1..}] add arrow_hit
+tag @s[scores={zombie_kill=1..}] add arrow_hit
+
+execute if score .tmi .data = .1 .num if score .tmi_arrow .data = .2 .num run scoreboard players set @s[tag=!lobby,tag=arrow_hit] arrowReload 40
+execute if score .tmi .data = .1 .num if score .tmi_arrow .data = .2 .num run scoreboard players set @s[tag=!lobby,scores={arrowReload=..30}] arrowReload 1
+
+scoreboard players set @s magma_kill 0
+scoreboard players set @s slime_kill 0
+scoreboard players set @s zombie_kill 0
+
+tag @s remove arrow_hit
 
 execute as @s store result score @s arrowCount run clear @s arrow 0
+execute if score .tmi .data = .1 .num if score .tmi_arrow .data = .2 .num run scoreboard players add @s[scores={arrowCount=0}] no_quiver_arrow 1
 scoreboard players add @s[scores={arrowCount=..2}] arrowReload 1
 scoreboard players set @s[scores={arrowCount=3..}] arrowReload 0
 #execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowCount=2..},team=red] arrowReload 0

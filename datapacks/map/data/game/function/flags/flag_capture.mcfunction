@@ -5,9 +5,11 @@ execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] run tag @a[gamemode=advent
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] run tag @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1] add capturing_point
 
 #
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,scores={capture_time=1}] run scoreboard players add @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,limit=1,scores={capture_time=1}] stats_attempts 1
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,scores={capture_time=1}] run title @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,limit=1,scores={capture_time=1}] times 10 5 5
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=redflag] if entity @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,scores={capture_time=1}] run title @a[gamemode=adventure,team=blue,distance=..10,dx=1,dy=1.5,dz=1,limit=1,scores={capture_time=1}] title {"text":"Capturing!","color":"gray","font":"fancy"}
 
+execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,scores={capture_time=1}] run scoreboard players add @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,limit=1,scores={capture_time=1}] stats_attempts 1
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,scores={capture_time=1}] run title @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,limit=1,scores={capture_time=1}] times 10 5 5
 execute at @s positioned ~-1 ~ ~-1 as @s[tag=blueflag] if entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,scores={capture_time=1}] run title @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,limit=1,scores={capture_time=1}] title {"text":"Capturing!","color":"gray","font":"fancy"}
 

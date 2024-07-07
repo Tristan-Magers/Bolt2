@@ -1,6 +1,7 @@
 #
 function game:tmi/chest_items
 function game:menu/custom_random/container
+function game:menu/settings/container
 
 #
 execute as @a[scores={leave_potion=1..}] at @s run function game:player/leave_game
@@ -297,6 +298,7 @@ execute unless score .cutscene_running .data = .1 .num if score .running .data =
 effect give @e[tag=trap] resistance 999 10 true
 execute as @e[tag=trap] run execute store result score @s hurt run data get entity @s HurtTime 1
 execute as @e[tag=trap,scores={hurt=..1}] at @s positioned ~ ~0.6 ~ run function game:items/trap/main
+execute as @e[tag=trap,scores={hurt=2..}] on attacker if score .tmi .data matches 1 if score .tmi_arrow .data matches 2 run tag @s add arrow_hit
 effect give @e[tag=trap,scores={hurt=2..}] glowing 10 10 true
 kill @e[tag=trap,scores={hurt=2..}]
 

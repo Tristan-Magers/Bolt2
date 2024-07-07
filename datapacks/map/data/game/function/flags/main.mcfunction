@@ -39,6 +39,7 @@ execute if score Blue Scores >= .endscore .stats run scoreboard players set .sta
 execute if score Red Scores >= .endscore .stats run scoreboard players set .stats_end .data 1
 
 execute if score .tmi .data = .1 .num run scoreboard players set .stats_end .data 0
+execute if score .ranked .data = .0 .num run scoreboard players set .stats_end .data 0
 
 execute if score Blue Scores >= .endscore .stats run function game:game/end_ctf
 execute if score Red Scores >= .endscore .stats run function game:game/end_ctf

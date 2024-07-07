@@ -33,4 +33,4 @@ execute if score Red Scores >= Blue Scores if score .mode .data = .1 .num run sc
 execute if score Blue Scores >= Red Scores if score .mode .data = .1 .num run scoreboard players add @a[team=blue,tag=change_rank] win_streak 1
 execute if score Red Scores >= Blue Scores if score .mode .data = .1 .num run scoreboard players add @a[team=red,tag=change_rank] win_streak 1
 
-execute unless score Red Scores = Blue Scores if score .mode .data = .1 .num if score .tmi .data = .0 .num run function game:game/rank_changes
+execute unless score Red Scores = Blue Scores if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .1 .num run function game:game/rank_changes

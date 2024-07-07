@@ -22,6 +22,10 @@ execute if score .mode .data = .6 .num run function game:map/garden/crates
 #
 execute if score .mode .data = .7 .num run function game:map/garden/target
 
+#
+execute if score .tmi .data = .1 .num if score .tmi_objective .data = .2 .num run tag @e[tag=flag] add kill
+
+#
 setblock -11 -56 -336 minecraft:short_grass
 setblock -8 -56 -330 minecraft:short_grass
 setblock 17 -52 -315 minecraft:short_grass

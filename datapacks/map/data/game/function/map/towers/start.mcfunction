@@ -32,3 +32,6 @@ setblock -69 -55 32 minecraft:hanging_roots
 
 #
 execute if score .mode .data = .7 .num run function game:map/towers/target
+
+#
+execute if score .tmi .data = .1 .num if score .tmi_objective .data = .2 .num run tag @e[tag=flag] add kill

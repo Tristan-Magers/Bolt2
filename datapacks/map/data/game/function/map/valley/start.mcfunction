@@ -37,3 +37,6 @@ execute if score .mode .data = .7 .num run function game:map/valley/target
 
 scoreboard players set .valley_door_blue .timer 0
 scoreboard players set .valley_door_red .timer 0
+
+#
+execute if score .tmi .data = .1 .num if score .tmi_objective .data = .2 .num run tag @e[tag=flag] add kill

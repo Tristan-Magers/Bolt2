@@ -16,3 +16,6 @@ execute if score .mode .data = .6 .num run function game:map/divide/crates
 
 #
 execute if score .mode .data = .7 .num run function game:map/divide/target
+
+#
+execute if score .tmi .data = .1 .num if score .tmi_objective .data = .2 .num run tag @e[tag=flag] add kill

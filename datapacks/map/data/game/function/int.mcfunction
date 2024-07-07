@@ -55,6 +55,10 @@ scoreboard objectives remove ID
 scoreboard objectives remove ID.item
 
 # objectives add
+scoreboard objectives add slime_kill minecraft.killed:minecraft.slime
+scoreboard objectives add magma_kill minecraft.killed:minecraft.magma_cube
+scoreboard objectives add zombie_kill minecraft.killed:minecraft.zombie_villager
+
 scoreboard objectives add leave_potion minecraft.used:minecraft.potion
 
 scoreboard objectives add click minecraft.used:minecraft.carrot_on_a_stick
@@ -104,6 +108,8 @@ scoreboard objectives add turretCount dummy
 scoreboard objectives add turretCountT dummy
 
 scoreboard objectives add capture_time dummy
+
+scoreboard objectives add no_quiver_arrow dummy
 
 #
 scoreboard objectives add turrets_active dummy
@@ -321,6 +327,7 @@ scoreboard players set .endscore .stats 3
 scoreboard players set .tmi_fog .data 0
 scoreboard players set .tmi_objective .data 0
 scoreboard players set .tmi_arrow .data 0
+scoreboard players set .tmi_preset .data 1
 
 #
 scoreboard objectives add .custom_random dummy
@@ -334,6 +341,9 @@ scoreboard players set .map6 .custom_random 1
 scoreboard players set .map7 .custom_random 1
 scoreboard players set .map8 .custom_random 1
 scoreboard players set .map9 .custom_random 1
+
+#
+scoreboard players set .ranked .data 1
 
 #
 scoreboard players set .range1 .data 0

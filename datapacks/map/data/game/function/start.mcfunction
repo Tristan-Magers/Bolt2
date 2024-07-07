@@ -47,7 +47,8 @@ execute as @a run scoreboard players operation @s win_streak *= .10 .num
 execute as @a run scoreboard players operation @s rank += @s win_streak
 
 #
-execute if score .mode .data = .1 .num if score .tmi .data = .0 .num run function game:game/rank_sort/start
+execute if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .1 .num run function game:game/rank_sort/start
+execute if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .0 .num as @a[team=] run function game:game/fill_player_random
 
 # undo win streak change
 execute as @a run scoreboard players operation @s rank -= @s win_streak
@@ -207,8 +208,8 @@ execute if score .mode .data = .6 .num run scoreboard players set .GrenadeKills 
 execute if score .mode .data = .6 .num run scoreboard players set .WallKills .stats 1000
 
 execute if score .mode .data = .7 .num run scoreboard players set .CrossKills .stats 30
-execute if score .mode .data = .7 .num run scoreboard players set .GrenadeKills .stats 4
-execute if score .mode .data = .7 .num run scoreboard players set .BoostKills .stats 6
+execute if score .mode .data = .7 .num run scoreboard players set .GrenadeKills .stats 7
+execute if score .mode .data = .7 .num run scoreboard players set .BoostKills .stats 12
 execute if score .mode .data = .7 .num run scoreboard players set .WallKills .stats 1000
 
 execute if score .tmi .data matches 1 run scoreboard players set .CrossKills .stats 1000

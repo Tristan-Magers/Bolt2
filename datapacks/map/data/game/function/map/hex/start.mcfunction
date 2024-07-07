@@ -21,3 +21,6 @@ execute if score .mode .data = .7 .num run function game:map/hex/target
 #
 execute if score .mode .data = .6 .num run function game:map/hex/crates
 execute if score .mode .data = .6 .num run execute positioned -351 -54 -91 run function game:game/infected/generator/spawn
+
+#
+execute if score .tmi .data = .1 .num if score .tmi_objective .data = .2 .num run tag @e[tag=flag] add kill
