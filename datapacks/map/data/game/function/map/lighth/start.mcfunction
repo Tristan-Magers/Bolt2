@@ -28,3 +28,28 @@ execute if score .mode .data = .7 .num run function game:map/lighth/target
 
 #
 execute if score .tmi .data = .1 .num if score .tmi_objective .data = .2 .num run tag @e[tag=flag] add kill
+
+#
+setblock -445 -35 215 minecraft:fern
+setblock -447 -35 179 minecraft:short_grass
+setblock -440 -36 176 minecraft:fern
+setblock -433 -37 174 minecraft:small_dripleaf
+setblock -427 -38 174 minecraft:short_grass
+setblock -431 -40 178 minecraft:short_grass
+setblock -430 -40 179 minecraft:fern
+setblock -452 -36 218 minecraft:short_grass
+setblock -459 -37 220 minecraft:small_dripleaf
+setblock -470 -38 219 minecraft:fern
+setblock -469 -38 220 minecraft:short_grass
+setblock -462 -40 216 minecraft:short_grass
+
+setblock -420 -31 203 minecraft:waxed_copper_trapdoor[half=top,open=true,facing=west]
+
+setblock -409 -33 200 minecraft:dark_oak_fence_gate[open=true]
+setblock -412 -33 200 minecraft:dark_oak_fence_gate[open=true]
+setblock -415 -33 200 minecraft:dark_oak_fence_gate[open=true]
+setblock -418 -33 200 minecraft:dark_oak_fence_gate[open=true]
+
+setblock -410 -33 206 minecraft:dark_oak_fence_gate[open=true,facing=south]
+setblock -413 -33 206 minecraft:dark_oak_fence_gate[open=true,facing=south]
+setblock -416 -33 206 minecraft:dark_oak_fence_gate[open=true,facing=south]

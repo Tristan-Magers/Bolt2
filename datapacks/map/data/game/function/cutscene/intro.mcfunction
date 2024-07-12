@@ -130,6 +130,9 @@ execute as @s[scores={t=64}] run title @a times 16 30 20
 execute as @s[scores={t=64}] run title @a title {"translate":"\u0001","font":"title"}
 
 # Mode text
+
+execute as @s[scores={t=64}] run tellraw @a [{"text":"\n"}]
+
 execute as @s[scores={t=64}] if score .mode .data = .1 .num if score .tmi .data = .0 .num run tellraw @a [{"text":"Now playing..."},{"text":"CAPTURE THE FLAG","color":"gold"}]
 execute as @s[scores={t=64}] if score .mode .data = .1 .num if score .tmi .data = .0 .num run tellraw @a [{"text":"---------------------------------","color":"dark_gray","bold":true}]
 execute as @s[scores={t=64}] if score .mode .data = .1 .num if score .tmi .data = .0 .num run tellraw @a [{"text":"Return their flag to your flag spot. (first to 3)"}]
@@ -156,6 +159,8 @@ execute as @s[scores={t=64}] if score .mode .data = .6 .num run tellraw @a [{"te
 execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"text":"Now playing..."},{"text":"TARGET PRACTICE","color":"red"}]
 execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"text":"---------------------------------","color":"dark_gray","bold":true}]
 execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"text":"Break as many targets as you can!"}]
+
+execute as @s[scores={t=64}] run tellraw @a [{"text":"\n"}]
 
 #
 execute as @s[scores={t=99}] run scoreboard players set .cutscene_running .data 0

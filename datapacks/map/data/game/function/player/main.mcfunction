@@ -35,6 +35,8 @@ tag @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] add off_correct
 
 tag @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] add off_correct
 
+tag @s[gamemode=creative] remove off_correct
+
 execute as @s[tag=off_correct] run function game:player/offhand_correct
 
 #
@@ -129,6 +131,7 @@ scoreboard players set @s zombie_kill 0
 tag @s remove arrow_hit
 
 execute as @s store result score @s arrowCount run clear @s arrow 0
+scoreboard players set @s[gamemode=creative] arrowCount 3
 execute if score .tmi .data = .1 .num if score .tmi_arrow .data = .2 .num run scoreboard players add @s[scores={arrowCount=0}] no_quiver_arrow 1
 scoreboard players add @s[scores={arrowCount=..2}] arrowReload 1
 scoreboard players set @s[scores={arrowCount=3..}] arrowReload 0
