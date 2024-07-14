@@ -19,7 +19,7 @@ scoreboard players set @s[tag=!has_rank_v24] win_streak -2
 scoreboard players set @s[tag=!has_rank_v24] team_pref 0
 tag @s add has_rank_v24
 
-tp @s 243.50 -50.00 -245.5 110 0
+tp @s 243.50 -50.00 -245.5 -64.8 -5.5
 
 clear @s
 
