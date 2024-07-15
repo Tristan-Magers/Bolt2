@@ -87,6 +87,9 @@ execute as @e[type=arrow] run data merge entity @s {damage:1000.0}
 #gametime
 execute if score .gametime .data >= .1 .num run scoreboard players add .gametime .data 1
 
+#lobby animate
+function game:menu/animate_static
+
 #lobby
 tag @a remove lobby
 tag @a[x=245,y=-50,z=-235,distance=..60] add lobby

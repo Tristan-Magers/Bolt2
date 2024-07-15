@@ -7,3 +7,5 @@ summon text_display 265.25 -53.15 -224.0 {Tags:["lobby_menu_static","mode_b"],bi
 
 summon text_display 265.25 -53.15 -244.1 {Tags:["lobby_menu_static","map_b"],billboard:"fixed",Rotation:[90F,0F],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[8f,8f,12f]},text:'{"text":" ⫸ ","font":"fancy","bold":false,"color":"#E048D6","bold":false}'}
 summon text_display 265.25 -53.15 -247.1 {Tags:["lobby_menu_static","map_b"],billboard:"fixed",Rotation:[90F,0F],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[8f,8f,12f]},text:'{"text":" ⫷ ","font":"fancy","bold":false,"color":"#E048D6","bold":false}'}
+
+summon minecraft:text_display 237.0 -44.9375 -247.9375 {Tags:["lobby_menu_static","now_showing"],alignment:"center",background:0,default_background:0b,line_width:200,see_through:0b,shadow:1b,text:'{"text":"NOW SHOWING","font":"minecraft:fancy","color":"dark_gray"}',text_opacity:-1b,transformation:{left_rotation:[0.0f,0.70710677f,0.0f,0.70710677f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[3.0625007f,5.1249995f,0.9456516f],translation:[0.0f,0.0f,0.0f]}}
