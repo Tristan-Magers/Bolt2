@@ -43,6 +43,7 @@ setblock -470 -38 219 minecraft:fern
 setblock -469 -38 220 minecraft:short_grass
 setblock -462 -40 216 minecraft:short_grass
 
+# red base
 setblock -420 -31 203 minecraft:waxed_copper_trapdoor[half=top,open=true,facing=west]
 
 setblock -409 -33 200 minecraft:dark_oak_fence_gate[open=true]
@@ -53,3 +54,11 @@ setblock -418 -33 200 minecraft:dark_oak_fence_gate[open=true]
 setblock -410 -33 206 minecraft:dark_oak_fence_gate[open=true,facing=south]
 setblock -413 -33 206 minecraft:dark_oak_fence_gate[open=true,facing=south]
 setblock -416 -33 206 minecraft:dark_oak_fence_gate[open=true,facing=south]
+
+# mid
+fill -449 -26 190 -449 -27 194 minecraft:oak_trapdoor[half=top,facing=west]
+fill -443 -26 194 -443 -27 190 minecraft:oak_trapdoor[half=top,facing=east]
+
+# blue base
+fill -478 -36 189 -478 -36 194 minecraft:spruce_trapdoor[half=top,open=true,facing=west]
+fill -479 -37 188 -475 -37 188 minecraft:spruce_trapdoor[facing=south,half=top]

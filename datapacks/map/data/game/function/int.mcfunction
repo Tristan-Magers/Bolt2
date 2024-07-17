@@ -151,6 +151,7 @@ scoreboard objectives add .random dummy
 scoreboard objectives add .rank dummy
 scoreboard objectives add .stats dummy
 scoreboard objectives add .timer dummy
+scoreboard objectives add .elevator dummy
 
 scoreboard objectives add .stats dummy
 scoreboard players set .10000 .stats 10000
