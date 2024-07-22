@@ -2,6 +2,6 @@
 	"parent": "block/block",
 	"textures": {
 		"0": "block/air",
-		"particle": "blank"
+		"particle": "block/tinted_glass"
 	}
 }
