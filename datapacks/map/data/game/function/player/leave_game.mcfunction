@@ -1,11 +1,24 @@
 #
-execute as @s[scores={leave_potion=1..}] at @s run tellraw @a [{"selector":"@s"},{"text":" left the arena","color":"white"}]
+scoreboard players set @s[scores={leave_potion=1..}] team_pref -1
+execute as @s[scores={leave_potion=1..},tag=kicked] at @s run tellraw @a [{"selector":"@s"},{"text":" left due to being afk","color":"white"}]
+execute as @s[scores={leave_potion=1..},tag=!kicked] at @s run tellraw @a [{"selector":"@s"},{"text":" left the arena","color":"white"}]
+tag @s remove kicked
 
 #ID
 scoreboard players add @s ID 0
 
 execute if entity @s[scores={ID=..0}] run scoreboard players add .new ID 1
 execute if entity @s[scores={ID=..0}] run scoreboard players operation @p[scores={ID=..0}] ID = .new ID
+
+#
+#execute as @s[tag=!new_player] run summon block_display 244 -35 -225 {teleport_duration:60,Rotation:[-115F,25F],Tags:["intro","new"]}
+#execute as @s[tag=!new_player] run scoreboard players operation @e[tag=intro,tag=new,limit=1] ID = @s ID
+execute as @s[tag=!new_player] run gamemode spectator
+execute as @s[tag=!new_player] run tag @s add intro_cutscene
+scoreboard players set @s[tag=!new_player] team_pref -1
+#execute as @s[tag=!new_player] run spectate @e[tag=intro,tag=new,limit=1]
+tag @e[tag=intro] remove new
+tag @s add new_player
 
 # Leave potion reset
 clear @s minecraft:glass_bottle
@@ -14,12 +27,12 @@ scoreboard players set @s leave_potion 0
 #
 scoreboard players add @s team_pref 0
 
-scoreboard players set @s[tag=!has_rank_v24] rank 500
-scoreboard players set @s[tag=!has_rank_v24] win_streak -2
-scoreboard players set @s[tag=!has_rank_v24] team_pref 0
-tag @s add has_rank_v24
+scoreboard players set @s[tag=!has_rank_v25] rank 500
+scoreboard players set @s[tag=!has_rank_v25] win_streak -2
+scoreboard players set @s[tag=!has_rank_v25] team_pref 0
+tag @s add has_rank_v25
 
-tp @s 243.50 -50.00 -245.5 -64.8 -5.5
+tp @s[tag=!intro_cutscene] 243.50 -50.00 -245.5 -64.8 -5.5
 
 clear @s
 
@@ -31,16 +44,14 @@ tag @s remove hasspawn
 scoreboard players set @s ded -1
 scoreboard players set @s respawn -1
 
-scoreboard players add @s team_pref 0
-
 scoreboard players add @s invul 0
 scoreboard players add @s wall_invul 0
 
 team leave @s
 
-gamemode adventure @s
+gamemode adventure @s[tag=!intro_cutscene]
 
-function game:menu/p_display/reset_player
+execute as @s[tag=!intro_cutscene] run function game:menu/p_display/reset_player
 
 scoreboard players set @s Leave 0
 

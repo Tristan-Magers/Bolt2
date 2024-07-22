@@ -74,12 +74,12 @@ execute if score .menu_now_showing .timer matches 120.. run scoreboard players s
 #bleps
 scoreboard players add .menu_bleps_title .timer 1
 
-execute if score .menu_bleps_title .timer matches 4 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {transformation:{translation:[0.0f,0.0f,0.0f]},text:'[{"text":"B","font":"minecraft:fancy","color":"gray"},{"text":"LEPS","font":"minecraft:fancy","color":"dark_gray"}]'}
-execute if score .menu_bleps_title .timer matches 8 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {transformation:{translation:[0.0f,0.0f,0.0f]},text:'[{"text":"B","font":"minecraft:fancy","color":"dark_gray"},{"text":"L","font":"minecraft:fancy","color":"gray"},{"text":"EPS","font":"minecraft:fancy","color":"dark_gray"}]'}
-execute if score .menu_bleps_title .timer matches 12 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {transformation:{translation:[0.0f,0.0f,0.0f]},text:'[{"text":"BL","font":"minecraft:fancy","color":"dark_gray"},{"text":"E","font":"minecraft:fancy","color":"gray"},{"text":"PS","font":"minecraft:fancy","color":"dark_gray"}]'}
-execute if score .menu_bleps_title .timer matches 16 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {transformation:{translation:[0.0f,0.0f,0.0f]},text:'[{"text":"BLE","font":"minecraft:fancy","color":"dark_gray"},{"text":"P","font":"minecraft:fancy","color":"gray"},{"text":"S","font":"minecraft:fancy","color":"dark_gray"}]'}
-execute if score .menu_bleps_title .timer matches 20 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {transformation:{translation:[0.0f,0.0f,0.0f]},text:'[{"text":"BLEP","font":"minecraft:fancy","color":"dark_gray"},{"text":"S","font":"minecraft:fancy","color":"gray"},{"text":"","font":"minecraft:fancy","color":"dark_gray"}]'}
-execute if score .menu_bleps_title .timer matches 24 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {transformation:{translation:[0.0f,0.0f,0.0f]},text:'[{"text":"","font":"minecraft:fancy","color":"gray"},{"text":"BLEPS","font":"minecraft:fancy","color":"dark_gray"}]'}
+execute if score .menu_bleps_title .timer matches 4 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {alignment:"center",text_opacity:-1b,transformation:{left_rotation:[0.0f,-0.7071068f,0.0f,0.7071068f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[10.249993f,10.249999f,10.249992f],translation:[0.0f,0.0f,0.0f]},text:'[{"text":"B","font":"minecraft:fancy","color":"gray"},{"text":"LEPS","font":"minecraft:fancy","color":"dark_gray"}]'}
+execute if score .menu_bleps_title .timer matches 8 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {alignment:"center",text_opacity:-1b,transformation:{left_rotation:[0.0f,-0.7071068f,0.0f,0.7071068f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[10.249993f,10.249999f,10.249992f],translation:[0.0f,0.0f,0.0f]},text:'[{"text":"B","font":"minecraft:fancy","color":"dark_gray"},{"text":"L","font":"minecraft:fancy","color":"gray"},{"text":"EPS","font":"minecraft:fancy","color":"dark_gray"}]'}
+execute if score .menu_bleps_title .timer matches 12 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {alignment:"center",text_opacity:-1b,transformation:{left_rotation:[0.0f,-0.7071068f,0.0f,0.7071068f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[10.249993f,10.249999f,10.249992f],translation:[0.0f,0.0f,0.0f]},text:'[{"text":"BL","font":"minecraft:fancy","color":"dark_gray"},{"text":"E","font":"minecraft:fancy","color":"gray"},{"text":"PS","font":"minecraft:fancy","color":"dark_gray"}]'}
+execute if score .menu_bleps_title .timer matches 16 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {alignment:"center",text_opacity:-1b,transformation:{left_rotation:[0.0f,-0.7071068f,0.0f,0.7071068f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[10.249993f,10.249999f,10.249992f],translation:[0.0f,0.0f,0.0f]},text:'[{"text":"BLE","font":"minecraft:fancy","color":"dark_gray"},{"text":"P","font":"minecraft:fancy","color":"gray"},{"text":"S","font":"minecraft:fancy","color":"dark_gray"}]'}
+execute if score .menu_bleps_title .timer matches 20 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {alignment:"center",text_opacity:-1b,transformation:{left_rotation:[0.0f,-0.7071068f,0.0f,0.7071068f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[10.249993f,10.249999f,10.249992f],translation:[0.0f,0.0f,0.0f]},text:'[{"text":"BLEP","font":"minecraft:fancy","color":"dark_gray"},{"text":"S","font":"minecraft:fancy","color":"gray"},{"text":"","font":"minecraft:fancy","color":"dark_gray"}]'}
+execute if score .menu_bleps_title .timer matches 24 run data merge entity @e[type=minecraft:text_display,x=265,y=-29,z=-237,distance=..3,limit=1] {alignment:"center",text_opacity:-1b,transformation:{left_rotation:[0.0f,-0.7071068f,0.0f,0.7071068f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[10.249993f,10.249999f,10.249992f],translation:[0.0f,0.0f,0.0f]},text:'[{"text":"","font":"minecraft:fancy","color":"gray"},{"text":"BLEPS","font":"minecraft:fancy","color":"dark_gray"}]'}
 
 execute if score .menu_bleps_title .timer matches 120.. run scoreboard players set .menu_bleps_title .timer 0
 
@@ -329,10 +329,10 @@ execute if score .menu_glass .timer matches 30 run fill 241 -44 -258 242 -44 -26
 execute if score .menu_glass .timer matches 30 run fill 241 -43 -258 242 -43 -260 minecraft:light_blue_stained_glass replace minecraft:cyan_stained_glass
 execute if score .menu_glass .timer matches 35 run fill 241 -43 -258 242 -43 -260 minecraft:cyan_stained_glass replace minecraft:light_blue_stained_glass
 
-execute if score .menu_glass .timer matches 60 run fill 238 -44 -216 242 -44 -216 minecraft:green_stained_glass
-execute if score .menu_glass .timer matches 65 run fill 238 -44 -216 242 -44 -216 minecraft:lime_stained_glass
-execute if score .menu_glass .timer matches 65 run fill 238 -43 -216 242 -43 -216 minecraft:green_stained_glass
-execute if score .menu_glass .timer matches 70 run fill 238 -43 -216 242 -43 -216 minecraft:lime_stained_glass
+execute if score .menu_glass .timer matches 60 run fill 237 -44 -216 242 -44 -216 minecraft:green_stained_glass
+execute if score .menu_glass .timer matches 65 run fill 237 -44 -216 242 -44 -216 minecraft:lime_stained_glass
+execute if score .menu_glass .timer matches 65 run fill 237 -43 -216 242 -43 -216 minecraft:green_stained_glass
+execute if score .menu_glass .timer matches 70 run fill 237 -43 -216 242 -43 -216 minecraft:lime_stained_glass
 
 execute if score .menu_glass .timer matches 60 run setblock 243 -44 -215 minecraft:lime_stained_glass
 execute if score .menu_glass .timer matches 65 run setblock 243 -44 -215 minecraft:green_stained_glass
@@ -340,3 +340,28 @@ execute if score .menu_glass .timer matches 65 run setblock 243 -43 -215 minecra
 execute if score .menu_glass .timer matches 70 run setblock 243 -43 -215 minecraft:green_stained_glass
 
 execute if score .menu_glass .timer matches 95.. run scoreboard players set .menu_glass .timer 0
+
+#jumping players
+scoreboard players add .menu_dance .timer 1
+
+execute if score .menu_dance .timer matches 2 run tag @e[tag=skin] remove dance
+execute if score .menu_dance .timer matches 2 run tag @e[tag=skin] remove dance2
+execute if score .menu_dance .timer matches 2 run tag @e[tag=skin] remove dance3
+
+execute if score .menu_dance .timer matches 2 as @e[tag=skin,type=armor_stand,limit=1,sort=random] run tag @s add dance
+execute if score .menu_dance .timer matches 2 as @e[tag=skin,tag=dance] run data merge entity @s {Motion:[0.0,0.6,0.0]}
+
+execute if score .menu_dance .timer matches 8 as @e[tag=skin,type=armor_stand,limit=1,sort=random,tag=!dance] run tag @s add dance2
+execute if score .menu_dance .timer matches 8 as @e[tag=skin,tag=dance2] run data merge entity @s {Motion:[0.0,0.6,0.0]}
+
+execute if score .menu_dance .timer matches 16 as @e[tag=skin,type=armor_stand,limit=1,sort=random,tag=!dance,tag=!dance2] run tag @s add dance3
+execute if score .menu_dance .timer matches 16 as @e[tag=skin,tag=dance3] run data merge entity @s {Motion:[0.0,0.6,0.0]}
+
+execute if entity @a[tag=lobby] if score .menu_dance .timer matches 20.. store result score .menu_dance .timer run random value -12..-2
+
+# reset
+scoreboard players add .menu_reset .timer 1
+
+execute if score .menu_reset .timer matches 70 run function game:menu/create_static
+
+execute if entity @a[tag=lobby] if score .menu_reset .timer matches 2400.. store result score .menu_reset .timer run random value 0

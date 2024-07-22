@@ -69,6 +69,13 @@ execute if score .mode .data = .6 .num run tag @a[team=blue,tag=playing] add sur
 
 execute if score .mode .data = .7 .num run team join blue @a[scores={team_pref=0..}]
 
+#
+scoreboard players set .testing_mode .data 0
+execute if entity @a[team=red] unless entity @a[team=blue] run scoreboard players set .testing_mode .data 1
+execute if entity @a[team=blue] unless entity @a[team=red] run scoreboard players set .testing_mode .data 1
+execute if score .mode .data = .7 .num run scoreboard players set .testing_mode .data 0
+
+#
 scoreboard players set @a title_pause 0
 
 scoreboard players set @a kill 0
@@ -193,7 +200,7 @@ scoreboard players set @a cutscene_time 80
 scoreboard players set .1Kills .stats 1
 scoreboard players set .2Kills .stats 3
 scoreboard players set .3Kills .stats 5
-scoreboard players set .4Kills .stats 10
+scoreboard players set .4Kills .stats 7
 
 #
 scoreboard players set .BoostKills .stats 9999
@@ -220,6 +227,9 @@ execute if score .tmi .data matches 1 run scoreboard players set .WallKills .sta
 scoreboard players set .endscore .stats 3
 execute if score .tmi .data matches 1 if score .tmi_objective .data matches 1 run scoreboard players set .endscore .stats 5
 execute if score .tmi .data matches 1 if score .tmi_objective .data matches 2 run scoreboard players set .endscore .stats 9
+
+#
+scoreboard players set @a glowing -1
 
 #
 scoreboard players set @a has_lev 0

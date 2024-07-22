@@ -91,7 +91,7 @@ execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -6
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .2Kills .stats
 
-execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -24 air[custom_data={drop_contents:1b}]
+execute if score .tmi .data matches 1 run loot give @s[scores={t=0}] mine 224 -60 -242 air[custom_data={drop_contents:1b}]
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .3Kills .stats

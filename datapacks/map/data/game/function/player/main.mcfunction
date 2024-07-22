@@ -1,4 +1,30 @@
 #
+tp @e[tag=intro,tag=!teleported] 243.50 -48 -245.5 -64.8 -5.5
+tag @e[tag=into] add teleported
+
+#
+scoreboard players add @s[tag=intro_cutscene] intro_cutscene_time 1
+
+execute as @s[scores={intro_cutscene_time=1}] run title @s times 0 10 10
+execute as @s[scores={intro_cutscene_time=1}] run title @s title {"translate":"\u0001","font":"title"}
+execute as @s[scores={intro_cutscene_time=1..9}] run tp @s 244 -36 -225 -115 25
+
+execute as @s[scores={intro_cutscene_time=10}] run summon block_display 244 -35 -225 {teleport_duration:60,Rotation:[-115F,25F],Tags:["intro","new"]}
+execute as @s[scores={intro_cutscene_time=10}] run scoreboard players operation @e[tag=intro,tag=new,limit=1] ID = @s ID
+execute as @s[scores={intro_cutscene_time=10}] run spectate @e[tag=intro,tag=new,limit=1]
+execute as @s[scores={intro_cutscene_time=10}] run tag @e[tag=intro] remove new
+
+execute as @s[scores={intro_cutscene_time=70}] run tellraw @a[tag=!playing] [{"text":"Welcome "},{"selector":"@s","color":"gold"},{"text":" to Bleps!"}]
+execute as @s[scores={intro_cutscene_time=70}] run tellraw @a[tag=!playing] [{"text":"Created by ChainsawNinja and Co.","color":"gray"}]
+execute as @s[scores={intro_cutscene_time=70}] run tellraw @a[tag=!playing] [{"text":"Don't use extra camera angles with f5 while playing (please 💗)","color":"dark_gray"}]
+
+tag @s[scores={intro_cutscene_time=70..}] remove intro_cutscene
+execute as @s[scores={intro_cutscene_time=1..69}] run spectate @e[tag=intro,limit=1]
+execute as @s[scores={intro_cutscene_time=70..}] run function game:player/leave_game
+execute as @s[scores={intro_cutscene_time=70..}] run kill @e[tag=intro,type=block_display]
+scoreboard players reset @s[scores={intro_cutscene_time=70..}] intro_cutscene_time
+
+#
 execute as @s[tag=is_spectating,gamemode=spectator] run function game:player/spectator/check
 
 #
@@ -11,6 +37,13 @@ execute if score .mode .data = .6 .num run scoreboard players set @s[scores={ins
 execute if score .mode .data = .6 .num as @s[scores={inspawn=310},team=blue,tag=playing,gamemode=adventure] run tellraw @a[team=red] [{"text":"❌ ","color":"white"},{"selector":"@s"},{"text":" died a couch potato","color":"white"}]
 execute if score .mode .data = .6 .num as @s[scores={inspawn=310},team=blue,tag=playing,gamemode=adventure] run tellraw @a[team=blue] [{"text":"❌ ","color":"gray"},{"selector":"@s"},{"text":" died a couch potato","color":"white"}]
 execute if score .mode .data = .6 .num run scoreboard players set @s[scores={inspawn=310},team=blue,tag=playing,gamemode=adventure] deaths 1
+
+title @s[scores={inspawn=340},tag=playing,gamemode=adventure] times 10 40 10
+title @s[scores={inspawn=340},tag=playing,gamemode=adventure] title {"text":"Leave Spawn","font":"fancy"}
+title @s[scores={inspawn=340},tag=playing,gamemode=adventure] subtitle {"text":"(or get kicked)","font":"fancy","color":"gray"}
+scoreboard players set @s[scores={inspawn=500},tag=playing,gamemode=adventure] leave_potion 1
+tag @s[scores={inspawn=500},tag=playing,gamemode=adventure] add kicked
+scoreboard players add @s[scores={inspawn=500},tag=playing,gamemode=adventure] inspawn 1
 
 #
 scoreboard players remove @s[scores={spawn_message_delay=0..}] spawn_message_delay 1
@@ -236,16 +269,18 @@ scoreboard players set @s[tag=!hasflag] glow_count 0
 #ladders
 scoreboard players remove @s[scores={has_lev=0..}] has_lev 1
 
-execute as @s at @s if block ~ ~0.24 ~ minecraft:ladder run effect give @s minecraft:levitation 1 8 true
+execute as @s[scores={climb=1..}] at @s if block ~ ~0.24 ~ minecraft:ladder run effect give @s minecraft:levitation 1 8 true
 execute as @s[scores={has_lev=..0}] at @s if block ~ ~0.24 ~ minecraft:ladder if block ~ ~0.7 ~ minecraft:air run effect clear @s minecraft:levitation
-execute as @s at @s if block ~ ~0.24 ~ minecraft:ladder if block ~ ~0.7 ~ minecraft:air run effect give @s minecraft:levitation 1 1 true
+execute as @s[scores={climb=1..}] at @s if block ~ ~0.24 ~ minecraft:ladder if block ~ ~0.7 ~ minecraft:air run effect give @s minecraft:levitation 1 1 true
 
-execute as @s at @s if block ~ ~-0.2 ~ minecraft:vine run effect give @s minecraft:levitation 1 3 true
+execute as @s[nbt={OnGround:0b}] at @s if block ~ ~-0.2 ~ minecraft:vine run effect give @s minecraft:levitation 1 3 true
 execute as @s[scores={has_lev=..0}] at @s if block ~ ~-0.2 ~ minecraft:vine if block ~ ~0.7 ~ minecraft:air run effect clear @s minecraft:levitation
-execute as @s at @s if block ~ ~-0.2 ~ minecraft:vine if block ~ ~0.7 ~ minecraft:air run effect give @s minecraft:levitation 1 1 true
+execute as @s[nbt={OnGround:0b}] at @s if block ~ ~-0.2 ~ minecraft:vine if block ~ ~0.7 ~ minecraft:air run effect give @s minecraft:levitation 1 1 true
 
 execute as @s[scores={has_lev=..0}] at @s unless block ~ ~0.24 ~ minecraft:ladder unless block ~ ~-0.2 ~ minecraft:vine run effect clear @s minecraft:levitation
-execute as @s at @s if block ~ ~-0.4 ~ minecraft:vine run effect give @s minecraft:levitation 1 1 true
+execute as @s[nbt={OnGround:0b}] at @s if block ~ ~-0.4 ~ minecraft:vine run effect give @s minecraft:levitation 1 1 true
+
+scoreboard players set @s climb 0
 
 effect clear @s[x=-224,y=-47,z=-14,dx=50,dy=40,dz=80] levitation
 #effect clear @s[scores={shift=1..}] levitation
@@ -319,7 +354,7 @@ execute as @s[scores={useMap=1..}] unless entity @s[scores={respawn=..0,delay_re
 scoreboard players remove @s[scores={delay_reveal=0..}] delay_reveal 1
 
 #claws
-give @s[scores={sword_break=1..}] minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, placables, and walls","color":"white","italic":false}'],damage=2031,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"attack_damage",type:"generic.attack_damage",amount:100,operation:"add_value",slot:"any"}],show_in_tooltip:false}] 1
+give @s[scores={sword_break=1..}] minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',minecraft:max_damage=1,lore=['{"text":"Claw players, placables, and walls","color":"white","italic":false}'],damage=0,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"attack_damage",type:"generic.attack_damage",amount:100,operation:"add_value",slot:"any"}],show_in_tooltip:false}] 1
 
 # CORRECT DROPPED ITEMS (INCLUDED FOR CORRECTIONS)
 function game:player/inventory/drop

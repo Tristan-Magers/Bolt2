@@ -101,7 +101,8 @@ team join red_lobby @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=1}]
 team join blue_lobby @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=2}]
 team join Spectator @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=-1}]
 
-title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] actionbar {"text":"SHOOT MENU BUTTONS","bold":true,"color":"gray"}
+title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=0..}] actionbar {"text":"SHOOT MENU BUTTONS","bold":true,"color":"gray"}
+title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=-1}] actionbar {"text":"READY UP TO USE MENU","bold":true,"color":"gray"}
 tp @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] 243.5 -44.00 -235.5 -90 13
 
 tag @e[type=arrow,x=245,y=-50,z=-235,distance=..60] add kill
@@ -336,10 +337,15 @@ execute as @a[scores={crossbowTime=1..}] at @s run function game:items/crossbow/
 #tag @a remove danger
 
 #
+execute unless score .cutscene_running .data matches 1 if score .testing_mode .data = .1 .num if entity @a[tag=lobby,gamemode=adventure,scores={team_pref=0..}] if score .end_countdown .data < .0 .num run function game:game/end_ctf
+
+#
 execute if score .running .data = .1 .num run function game:game/time_up
 
-#execute if score .running .data = .1 .num run scoreboard players add .no_players .timer 1
+execute if score .running .data = .1 .num run scoreboard players add .no_players .timer 1
 execute if score .running .data = .1 .num if entity @a[team=red,tag=playing] if entity @a[team=blue,tag=playing] run scoreboard players set .no_players .timer 0
+execute if score .running .data = .1 .num if score .testing_mode .data = .1 .num if entity @a[team=red,tag=playing] run scoreboard players set .no_players .timer 0
+execute if score .running .data = .1 .num if score .testing_mode .data = .1 .num if entity @a[team=blue,tag=playing] run scoreboard players set .no_players .timer 0
 execute if score .running .data = .1 .num if score .mode .data = .6 .num if entity @a[team=red,tag=playing] run scoreboard players set .no_players .timer 0
 execute if score .running .data = .1 .num if score .mode .data = .7 .num if entity @a[team=blue,tag=playing] run scoreboard players set .no_players .timer 0
 
@@ -411,3 +417,7 @@ execute if score .map .data = .6 .num run function game:map/valley/run
 
 # Coves VFX
 #execute as @e[x=-154,y=-62,z=-86,dx=-42,dy=20,dz=-72,type=arrow] at @s run particle minecraft:splash ^ ^ ^ 0.1 0.1 0.1 0 1 force @a
+
+#
+execute as @e[tag=stage_light,tag=low] at @s run tp @s ~ -32.1 ~
+execute as @e[tag=stage_light,tag=high] at @s run tp @s ~ -31.1 ~

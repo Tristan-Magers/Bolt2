@@ -75,5 +75,7 @@ execute as @s[scores={p_display_num=10}] unless entity @e[type=minecraft:giant,t
 execute as @s[scores={p_display_num=11}] unless entity @e[type=minecraft:giant,tag=11] run summon giant 259.929 -55.05 -221.5 {Tags:["new","11","off"],NoGravity:1b,Silent:1b,Invulnerable:1b,Team:"noCol",PersistenceRequired:1b,NoAI:1b,CanPickUpLoot:0b,Rotation:[-45F,0F],HandItems:[{},{id:"minecraft:player_head",count:1}],active_effects:[{id:"minecraft:invisibility",amplifier:2b,duration:999999,ShowParticles:0b}]}
 execute as @s[scores={p_display_num=12}] unless entity @e[type=minecraft:giant,tag=12] run summon giant 256.929 -55.05 -218.5 {Tags:["new","12","off"],NoGravity:1b,Silent:1b,Invulnerable:1b,Team:"noCol",PersistenceRequired:1b,NoAI:1b,CanPickUpLoot:0b,Rotation:[-45F,0F],HandItems:[{},{id:"minecraft:player_head",count:1}],active_effects:[{id:"minecraft:invisibility",amplifier:2b,duration:999999,ShowParticles:0b}]}
 
+effect give @e[type=minecraft:giant] minecraft:invisibility infinite 1 true
+
 #
 execute if entity @e[type=giant,tag=new] run function game:menu/p_display/setup_giants

@@ -254,6 +254,8 @@ scoreboard objectives add bow_ui_page dummy
 scoreboard objectives add temp_bow_id dummy
 scoreboard objectives add temp_bow_value dummy
 
+scoreboard objectives add ran_bow_icon_timer dummy
+
 scoreboard objectives add v_1 dummy
 scoreboard objectives add v_2 dummy
 scoreboard objectives add v_3 dummy
@@ -263,6 +265,8 @@ scoreboard objectives add v_5 dummy
 scoreboard objectives add icon_x dummy
 scoreboard objectives add icon_y dummy
 scoreboard objectives add icon_t dummy
+
+scoreboard objectives add climb minecraft.custom:minecraft.climb_one_cm
 
 scoreboard objectives add drop_egg_generic minecraft.dropped:minecraft.panda_spawn_egg
 scoreboard objectives add drop_snowball minecraft.dropped:minecraft.snowball
@@ -305,6 +309,8 @@ scoreboard objectives add item_acid dummy
 scoreboard objectives add bow_texture dummy
 scoreboard objectives add bow_texture_place dummy
 scoreboard objectives add bow_throw minecraft.dropped:minecraft.bow
+
+scoreboard objectives add intro_cutscene_time dummy
 
 scoreboard objectives add scrap_count dummy
 

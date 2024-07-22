@@ -7,7 +7,7 @@ item replace block 235 -49 -223 container.23 with crossbow[custom_name='{"text":
 item replace block 235 -49 -223 container.15 with iron_ingot[custom_name='{"text":"Armor","color":"gray","italic":false}',lore=['{"text":"Survive one arrow hit","color":"white","italic":false}','{"text":"Doesn\'t block explosions","color":"white","italic":false}','{"text":"Drops the flag","color":"white","italic":false}']] 2
 item replace block 235 -49 -223 container.21 with egg[custom_name='{"text":"Boost","italic":false,"color":"gray"}',lore=['{"text":"Explode forward","color":"white","italic":false}']] 1
 item replace block 235 -49 -223 container.22 with ender_pearl[custom_name='{"text":"Zoomies (8 Seconds)","italic":false,"color":"gray"}',lore=['{"text":"Speed and jump boost for 8 seconds","color":"white","italic":false}']] 1
-item replace block 235 -49 -223 container.24 with minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',lore=['{"text":"Claw players, placables, and walls","color":"white","italic":false}'],damage=2031,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"attack_damage",type:"generic.attack_damage",amount:100,operation:"add_value",slot:"any"}],show_in_tooltip:false}] 1
+item replace block 235 -49 -223 container.24 with minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',minecraft:max_damage=1,lore=['{"text":"Claw players, placables, and walls","color":"white","italic":false}'],damage=0,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"attack_damage",type:"generic.attack_damage",amount:100,operation:"add_value",slot:"any"}],show_in_tooltip:false}] 1
 #item replace block 235 -49 -223 container.10 with lingering_potion{custom_name='{"text":"Acid","italic":false}'},hide_additional_tooltip={},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913}} 1
 #item replace block 235 -49 -223 container.10 with minecraft:pig_spawn_egg{can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Turret","italic":false}'},entity_data={PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f}} 8
 item replace block 235 -49 -223 container.19 with panda_spawn_egg[custom_model_data=4,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Turret","italic":false,"color":"gray"}',lore=['{"text":"Turret that shoots players and minions","color":"white","italic":false}','{"text":"Range: 20 blocks","color":"white","italic":false}','{"text":"Charge time: 1s","color":"white","italic":false}','{"text":"Max active: 5","color":"white","italic":false}'],entity_data={id:"minecraft:pig",PersistenceRequired:0b,Silent:1b,NoAI:1,IsBaby:0b,Health:10f}] 1
@@ -20,10 +20,10 @@ item replace block 235 -49 -223 container.14 with minecraft:zombie_villager_spaw
 
 execute if score .tmi_preset .data matches 0 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 101
 execute if score .tmi_preset .data matches 1 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 102
-execute if score .tmi_preset .data matches 2 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 100
+execute if score .tmi_preset .data matches 2 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 103
 execute if score .tmi_preset .data matches 3 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 104
 execute if score .tmi_preset .data matches 4 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 105
-execute if score .tmi_preset .data matches 5 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 106
+execute if score .tmi_preset .data matches 5 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 100
 execute if score .tmi_preset .data matches 6 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 107
 execute if score .tmi_preset .data matches 7 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 108
 execute if score .tmi_preset .data matches 8 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 109
@@ -35,6 +35,9 @@ execute if score .tmi_preset .data matches 12 unless data block 235 -49 -223 {It
 execute if score .tmi_preset .data matches 100.. run function game:tmi/preset/0
 execute if score .tmi_preset .data matches 101 run function game:tmi/preset/1
 execute if score .tmi_preset .data matches 102 run function game:tmi/preset/2
+execute if score .tmi_preset .data matches 103 run function game:tmi/preset/3
+execute if score .tmi_preset .data matches 104 run function game:tmi/preset/4
+execute if score .tmi_preset .data matches 105 run function game:tmi/preset/5
 
 execute if score .tmi_preset .data matches 100 run scoreboard players set .tmi_preset .data 0
 execute if score .tmi_preset .data matches 101 run scoreboard players set .tmi_preset .data 1
@@ -54,8 +57,9 @@ execute if score .tmi_preset .data matches 0 run item replace block 235 -49 -223
 execute if score .tmi_preset .data matches 1 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 1: Too Many Items","italic":false}']
 execute if score .tmi_preset .data matches 2 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 2: Too Many Items 2","italic":false}']
 execute if score .tmi_preset .data matches 3 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 3: Too Too Many Items","italic":false}']
-execute if score .tmi_preset .data matches 4 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 4: Fortress Frenzy","italic":false}']
-execute if score .tmi_preset .data matches 5 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 5: Wind Rivals","italic":false}']
+execute if score .tmi_preset .data matches 4 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 4: Point Rush","italic":false}']
+execute if score .tmi_preset .data matches 5 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 5: Nightmare","italic":false}']
+
 execute if score .tmi_preset .data matches 6 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 6: Juggernaut","italic":false}']
 execute if score .tmi_preset .data matches 7 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 7: Point Rush","italic":false}']
 execute if score .tmi_preset .data matches 8 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 8: Nightmare","italic":false}']
@@ -133,7 +137,7 @@ item replace block 235 -49 -224 container.8 with black_stained_glass_pane[custom
 item replace block 235 -49 -224 container.9 with purple_stained_glass_pane[custom_model_data=1,custom_name='{"text":"Start Items","italic":false}',lore=['{"text":"These slots control items you have","italic":false}','{"text":"given at start of game.","italic":false}']]
 item replace block 235 -49 -224 container.14 with purple_stained_glass_pane[custom_model_data=2,custom_name='{"text":"Life Items","italic":false}',lore=['{"text":"These slots control items you have","italic":false}','{"text":"given at start of a life.","italic":false}']]
 
-item replace block 235 -49 -224 container.18 with purple_stained_glass_pane[custom_model_data=3,custom_name='{"text":"Every _ Kills [1/3/5/10]","italic":false}',lore=['{"text":"These slots control items you are","italic":false}','{"text":"given after an amount of kills.","italic":false}']]
+item replace block 235 -49 -224 container.18 with purple_stained_glass_pane[custom_model_data=3,custom_name='{"text":"Every _ Kills [1/3/5/7]","italic":false}',lore=['{"text":"These slots control items you are","italic":false}','{"text":"given after an amount of kills.","italic":false}']]
 item replace block 235 -49 -224 container.23 with purple_stained_glass_pane[custom_model_data=4,custom_name='{"text":"Every _ Seconds [12/20/30]","italic":false}',lore=['{"text":"These slots control items you are","italic":false}','{"text":"given after a set amount of time.","italic":false}']]
 
 clear @a black_stained_glass_pane[custom_name='{"text":""}']

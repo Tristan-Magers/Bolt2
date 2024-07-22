@@ -348,7 +348,7 @@ execute as @s[scores={bow_texture=70}] run playsound custom:shoot_arrow master @
 # Mech
 execute as @s[scores={bow_texture=71}] run playsound minecraft:block.piston.extend master @s ~ ~ ~ 0.15 2
 execute as @s[scores={bow_texture=71}] run playsound minecraft:block.respawn_anchor.deplete master @s ~ ~ ~ 0.1 1.2
-execute as @s[scores={bow_texture=71}] run playsound minecraft:entity.iron_golem.repair master @a ~ ~ ~ 0.1 1
+execute as @s[scores={bow_texture=71}] run playsound minecraft:entity.iron_golem.repair master @s ~ ~ ~ 0.1 1
 execute as @s[scores={bow_texture=71}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.8 0.6
 
 # Mini Bow
@@ -374,11 +374,11 @@ execute as @s[scores={bow_texture=74}] run playsound minecraft:entity.firework_r
 execute as @s[scores={bow_texture=75}] store result score @s random run random value 0..3
 execute as @s[scores={bow_texture=75}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.3 1.3
 execute as @s[scores={bow_texture=75}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.8 0.9
-execute as @s[scores={bow_texture=75}] run playsound minecraft:block.copper.place master @s ^ ^ ^ 0.5 1.1
-execute as @s[scores={bow_texture=75,random=0}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.14 0.7
-execute as @s[scores={bow_texture=75,random=1}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.14 0.65
-execute as @s[scores={bow_texture=75,random=2}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.14 0.7
-execute as @s[scores={bow_texture=75,random=3}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.14 0.65
+execute as @s[scores={bow_texture=75}] run playsound minecraft:block.copper.place master @s ^ ^ ^ 0.45 1.1
+execute as @s[scores={bow_texture=75,random=0}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.13 0.7
+execute as @s[scores={bow_texture=75,random=1}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.13 0.65
+execute as @s[scores={bow_texture=75,random=2}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.13 0.7
+execute as @s[scores={bow_texture=75,random=3}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.13 0.65
 
 # Unstable
 execute as @s[scores={bow_texture=76}] run playsound minecraft:item.shovel.flatten master @s ~ ~ ~ 0.4 0.5

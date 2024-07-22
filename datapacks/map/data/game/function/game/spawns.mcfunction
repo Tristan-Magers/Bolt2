@@ -50,6 +50,8 @@ scoreboard players set @a[x=-226,y=-40,z=-456,dx=-5,dy=-10,dz=4.5,team=red] invu
 scoreboard players set @a[x=-226,y=-40,z=-456,dx=-5,dy=-5,dz=4.5,team=red] no_slow 10
 effect give @a[x=-226,y=-40,z=-456,dx=-5,dy=-5,dz=4.5,team=red] minecraft:slowness 1 0 true
 
+tag @a[x=-226,y=-40,z=-456,dx=-5,dy=-10,dz=4.5,team=red] add inspawn
+
 #valley
 scoreboard players set @a[x=-401,y=-49,z=57,dx=15,dy=10,dz=10,team=red] invul 40
 
@@ -119,6 +121,8 @@ tag @a[x=-325,y=-55,z=-94,dx=-11,dy=10,dz=9,team=blue] add inspawn
 scoreboard players set @a[x=-226,y=-40,z=-408,dx=-5,dy=-10,dz=-4.5,team=blue] invul 45
 scoreboard players set @a[x=-226,y=-40,z=-408,dx=-5,dy=-5,dz=-4.5,team=blue] no_slow 10
 effect give @a[x=-226,y=-40,z=-408,dx=-5,dy=-5,dz=-4.5,team=blue] minecraft:slowness 1 0 true
+
+tag @a[x=-226,y=-40,z=-408,dx=-5,dy=-10,dz=-4.5,team=blue] add inspawn
 
 #valley
 scoreboard players set @a[x=-401,y=-49,z=-23,dx=15,dy=10,dz=-10,team=blue] invul 40

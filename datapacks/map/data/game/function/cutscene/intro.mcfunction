@@ -160,6 +160,8 @@ execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"te
 execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"text":"---------------------------------","color":"dark_gray","bold":true}]
 execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"text":"Break as many targets as you can!"}]
 
+execute as @s[scores={t=114}] if score .testing_mode .data = .1 .num run tellraw @a [{"text":"Practice mode: Only one team active. Game ends if anyone selects team in lobby."}]
+
 execute as @s[scores={t=64}] run tellraw @a [{"text":"\n"}]
 
 #
@@ -180,6 +182,7 @@ execute as @s[scores={t=119..}] run kill @s
 
 #
 execute as @s[scores={t=100..160}] run gamemode spectator @a[scores={team_pref=-1}]
+execute as @s[scores={t=110}] run tag @a[scores={team_pref=-1}] add is_spectating
 
 #
 execute if score .mode .data = .7 .num run tag @e[tag=head,tag=red] add posed
