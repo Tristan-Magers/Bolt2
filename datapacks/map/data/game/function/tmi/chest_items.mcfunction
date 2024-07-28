@@ -11,7 +11,7 @@ item replace block 235 -49 -223 container.24 with minecraft:netherite_sword[cust
 #item replace block 235 -49 -223 container.10 with lingering_potion{custom_name='{"text":"Acid","italic":false}'},hide_additional_tooltip={},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913}} 1
 #item replace block 235 -49 -223 container.10 with minecraft:pig_spawn_egg{can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Turret","italic":false}'},entity_data={PersistenceRequired:0b,CanPickUpLoot:0b,IsBaby:0b,Health:10f}} 8
 item replace block 235 -49 -223 container.19 with panda_spawn_egg[custom_model_data=4,can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Turret","italic":false,"color":"gray"}',lore=['{"text":"Turret that shoots players and minions","color":"white","italic":false}','{"text":"Range: 20 blocks","color":"white","italic":false}','{"text":"Charge time: 1s","color":"white","italic":false}','{"text":"Max active: 5","color":"white","italic":false}'],entity_data={id:"minecraft:pig",PersistenceRequired:0b,Silent:1b,NoAI:1,IsBaby:0b,Health:10f}] 1
-item replace block 235 -49 -223 container.14 with minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Minion","italic":false,"color":"gray"}',lore=['{"text":"Summon zombie that attacks enemies","color":"white","italic":false}'],entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 2
+item replace block 235 -49 -223 container.14 with minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Minion","italic":false,"color":"gray"}',lore=['{"text":"Summon zombie that attacks enemies","color":"white","italic":false}','{"text":"Max active: 17","color":"white","italic":false}'],entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 2
 
 #item replace block 235 -49 -223 container.8 with black_stained_glass_pane[custom_name='{"text":""}']
 #item replace block 235 -49 -223 container.10 with black_stained_glass_pane[custom_name='{"text":""}']
@@ -23,9 +23,9 @@ execute if score .tmi_preset .data matches 1 unless data block 235 -49 -223 {Ite
 execute if score .tmi_preset .data matches 2 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 103
 execute if score .tmi_preset .data matches 3 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 104
 execute if score .tmi_preset .data matches 4 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 105
-execute if score .tmi_preset .data matches 5 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 100
+execute if score .tmi_preset .data matches 5 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 106
 execute if score .tmi_preset .data matches 6 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 107
-execute if score .tmi_preset .data matches 7 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 108
+execute if score .tmi_preset .data matches 7 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 100
 execute if score .tmi_preset .data matches 8 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 109
 execute if score .tmi_preset .data matches 9 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 110
 execute if score .tmi_preset .data matches 10 unless data block 235 -49 -223 {Items:[{Slot:0b,id:"minecraft:paper"}]} run scoreboard players set .tmi_preset .data 111
@@ -38,6 +38,8 @@ execute if score .tmi_preset .data matches 102 run function game:tmi/preset/2
 execute if score .tmi_preset .data matches 103 run function game:tmi/preset/3
 execute if score .tmi_preset .data matches 104 run function game:tmi/preset/4
 execute if score .tmi_preset .data matches 105 run function game:tmi/preset/5
+execute if score .tmi_preset .data matches 106 run function game:tmi/preset/6
+execute if score .tmi_preset .data matches 107 run function game:tmi/preset/7
 
 execute if score .tmi_preset .data matches 100 run scoreboard players set .tmi_preset .data 0
 execute if score .tmi_preset .data matches 101 run scoreboard players set .tmi_preset .data 1
@@ -53,15 +55,15 @@ execute if score .tmi_preset .data matches 110 run scoreboard players set .tmi_p
 execute if score .tmi_preset .data matches 111 run scoreboard players set .tmi_preset .data 11
 execute if score .tmi_preset .data matches 112 run scoreboard players set .tmi_preset .data 12
 
-execute if score .tmi_preset .data matches 0 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 0: Custom","italic":false}']
+execute if score .tmi_preset .data matches 0 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 0: Blank","italic":false}']
 execute if score .tmi_preset .data matches 1 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 1: Too Many Items","italic":false}']
 execute if score .tmi_preset .data matches 2 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 2: Too Many Items 2","italic":false}']
 execute if score .tmi_preset .data matches 3 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 3: Too Too Many Items","italic":false}']
 execute if score .tmi_preset .data matches 4 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 4: Point Rush","italic":false}']
 execute if score .tmi_preset .data matches 5 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 5: Nightmare","italic":false}']
+execute if score .tmi_preset .data matches 6 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 6: Wind Rivals","italic":false}']
+execute if score .tmi_preset .data matches 7 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 7: Deathmatch","italic":false}']
 
-execute if score .tmi_preset .data matches 6 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 6: Juggernaut","italic":false}']
-execute if score .tmi_preset .data matches 7 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 7: Point Rush","italic":false}']
 execute if score .tmi_preset .data matches 8 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 8: Nightmare","italic":false}']
 execute if score .tmi_preset .data matches 9 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 9: One In The Quiver (give or take)","italic":false}']
 execute if score .tmi_preset .data matches 10 run item replace block 235 -49 -223 container.0 with paper[custom_name='{"text":"Preset 10: Three Crossbows (in the quiver)","italic":false}']
@@ -258,7 +260,25 @@ execute if data block 235 -49 -224 {Items:[{Slot:20b,id:"minecraft:black_stained
 execute if data block 235 -49 -224 {Items:[{Slot:21b,id:"minecraft:black_stained_glass_pane"}]} run item replace block 235 -49 -224 container.21 with air
 execute if data block 235 -49 -224 {Items:[{Slot:22b,id:"minecraft:black_stained_glass_pane"}]} run item replace block 235 -49 -224 container.22 with air
 
-execute if data block 235 -49 -224 {Items:[{Slot:23b,id:"minecraft:black_stained_glass_pane"}]} run item replace block 235 -49 -224 container.23 with air
-execute if data block 235 -49 -224 {Items:[{Slot:24b,id:"minecraft:black_stained_glass_pane"}]} run item replace block 235 -49 -224 container.24 with air
-execute if data block 235 -49 -224 {Items:[{Slot:25b,id:"minecraft:black_stained_glass_pane"}]} run item replace block 235 -49 -224 container.25 with air
+#
+#execute if data block 235 -49 -224 {Items:[{Slot:23b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.23 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:24b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.24 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:25b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.25 with air
 
+#execute if data block 235 -49 -224 {Items:[{Slot:10b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.10 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:11b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.11 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:12b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.12 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:13b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.13 with air
+
+#execute if data block 235 -49 -224 {Items:[{Slot:15b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.15 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:16b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.16 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:17b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.17 with air
+
+#execute if data block 235 -49 -224 {Items:[{Slot:19b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.19 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:20b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.20 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:21b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.21 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:22b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.22 with air
+
+#execute if data block 235 -49 -224 {Items:[{Slot:23b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.23 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:24b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.24 with air
+#execute if data block 235 -49 -224 {Items:[{Slot:25b,id:"minecraft:golden_apple"}]} run item replace block 235 -49 -224 container.25 with air

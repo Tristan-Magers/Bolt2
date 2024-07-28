@@ -29,8 +29,12 @@ execute if score .mode .data = .6 .num run function game:map/valley/crates
 
 execute if score .mode .data = .6 .num run execute positioned -419 -51 -14 run function game:game/infected/generator/spawn
 
-fill -432 -49 -21 -430 -49 -21 minecraft:oak_trapdoor[open=true,facing=south]
-fill -432 -49 53 -430 -49 53 minecraft:oak_trapdoor[open=true,facing=north]
+fill -432 -49 -21 -430 -49 -21 minecraft:waxed_weathered_copper_trapdoor[open=true,facing=south]
+fill -432 -49 53 -430 -49 53 minecraft:waxed_exposed_copper_trapdoor[open=true,facing=north]
+
+#
+fill -414 -49 54 -414 -47 52 minecraft:spruce_fence
+fill -414 -49 -20 -414 -47 -22 minecraft:spruce_fence
 
 #
 execute if score .mode .data = .7 .num run function game:map/valley/target

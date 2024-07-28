@@ -30,11 +30,11 @@ execute as @s[scores={bow_texture=5..7}] run playsound custom:shoot_arrow master
 execute as @s[scores={bow_texture=8}] store result score @s random run random value 0..3
 execute as @s[scores={bow_texture=8}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.3 1.3
 execute as @s[scores={bow_texture=8}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.7 0.9
-execute as @s[scores={bow_texture=8}] run playsound minecraft:block.copper.step master @s ^ ^ ^ 0.4 1.4
-execute as @s[scores={bow_texture=8,random=0}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.1 1.2
-execute as @s[scores={bow_texture=8,random=1}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.1 1.15
-execute as @s[scores={bow_texture=8,random=2}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.1 1.25
-execute as @s[scores={bow_texture=8,random=3}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.1 1.28
+execute as @s[scores={bow_texture=8}] run playsound minecraft:block.copper.step master @s ^ ^ ^ 0.35 1.4
+execute as @s[scores={bow_texture=8,random=0}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.09 1.1
+execute as @s[scores={bow_texture=8,random=1}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.09 1.05
+execute as @s[scores={bow_texture=8,random=2}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.09 1.15
+execute as @s[scores={bow_texture=8,random=3}] run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.09 1.18
 
 #
 execute as @s[scores={bow_texture=9}] run playsound custom:shoot_arrow master @s ^ ^ ^
@@ -46,8 +46,8 @@ execute as @s[scores={bow_texture=10}] run playsound minecraft:block.azalea_leav
 
 # Rust
 execute as @s[scores={bow_texture=11}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.8 1.1
-execute as @s[scores={bow_texture=11}] run playsound minecraft:item.armor.equip_netherite master @s ~ ~ ~ 0.5 1.8
-execute as @s[scores={bow_texture=11}] run playsound minecraft:block.chain.break master @s ^ ^ ^ 0.25 1.1
+execute as @s[scores={bow_texture=11}] run playsound minecraft:item.armor.equip_netherite master @s ~ ~ ~ 0.45 1.8
+execute as @s[scores={bow_texture=11}] run playsound minecraft:block.chain.break master @s ^ ^ ^ 0.23 1.1
 
 #
 execute as @s[scores={bow_texture=12..13}] run playsound custom:shoot_arrow master @s ^ ^ ^
@@ -297,8 +297,8 @@ execute as @s[scores={bow_texture=60}] run playsound minecraft:entity.villager.w
 
 # Storm
 execute as @s[scores={bow_texture=61}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.9 1
-execute as @s[scores={bow_texture=61}] run playsound minecraft:block.metal.step master @s ~ ~ ~ 0.9 1.2
-execute as @s[scores={bow_texture=61}] run playsound minecraft:entity.phantom.flap master @s ~ ~ ~ 0.9 2
+execute as @s[scores={bow_texture=61}] run playsound minecraft:block.metal.step master @s ~ ~ ~ 0.8 1.2
+execute as @s[scores={bow_texture=61}] run playsound minecraft:entity.phantom.flap master @s ~ ~ ~ 0.65 2
 
 # White Jade
 execute as @s[scores={bow_texture=62}] run playsound custom:shoot_arrow master @s ^ ^ ^
@@ -384,7 +384,7 @@ execute as @s[scores={bow_texture=75,random=3}] run playsound minecraft:block.no
 execute as @s[scores={bow_texture=76}] run playsound minecraft:item.shovel.flatten master @s ~ ~ ~ 0.4 0.5
 execute as @s[scores={bow_texture=76}] run playsound minecraft:item.spyglass.use master @s ~ ~ ~ 0.35 0.7
 execute as @s[scores={bow_texture=76}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.8 0.8
-execute as @s[scores={bow_texture=76}] run playsound minecraft:item.trident.riptide_1 master @s ~ ~ ~ 0.12 0.8
+execute as @s[scores={bow_texture=76}] run playsound minecraft:item.trident.riptide_1 master @s ~ ~ ~ 0.1 0.7
 
 # Chain
 execute as @s[scores={bow_texture=77}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.5 0.9

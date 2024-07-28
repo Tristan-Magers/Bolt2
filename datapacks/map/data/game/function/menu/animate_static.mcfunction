@@ -4,10 +4,14 @@
 # Transition elevators
 tag @a remove in_elv
 tag @a[x=231,y=-43,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure] add in_elv
+tag @a[x=231,y=-39,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure] add in_elv
 scoreboard players reset @a[tag=!in_elv] .elevator
 scoreboard players add @a[tag=in_elv] .elevator 1
-execute as @a[x=231,y=-43,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run fill 229 -35 -235 230 -38 -237 minecraft:air
-execute as @a[x=231,y=-43,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run tp @s ~-2 ~5 ~-23
+execute as @a[x=231,y=-43,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run fill 231 -35 -202 232 -38 -200 air
+execute as @a[x=231,y=-43,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run tp @s ~ ~5 ~12
+
+execute as @a[x=231,y=-39,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run fill 229 -35 -235 230 -38 -237 air
+execute as @a[x=231,y=-39,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run tp @s ~-2 ~ ~-23
 
 # Bottom elevator
 execute if score .elv_1_state .elevator matches 0 run scoreboard players set .elv_1_timer .elevator 0
@@ -18,13 +22,28 @@ execute if score .elv_1_state .elevator matches 1 if entity @a[x=231,y=-50,z=-21
 execute if score .elv_1_state .elevator matches 1 if score .elv_1_timer .elevator matches 10.. run scoreboard players set .elv_1_state .elevator 2
 execute if score .elv_1_state .elevator matches 2 run scoreboard players add .elv_1_timer .elevator 1
 execute if score .elv_1_state .elevator matches 2 if score .elv_1_timer .elevator matches 20.. as @a[x=231,y=-50,z=-211,dy=2,dx=0.39,dz=-3,gamemode=adventure] at @s run tp @s ~ ~7 ~
-#execute if score .elv_1_state .elevator matches 2 if score .elv_1_timer .elevator matches 20.. as @a[x=231,y=-50,z=-211,dy=2,dx=0.39,dz=-3,gamemode=adventure] at @s run tp @s ~-2 ~12 ~-23
 execute if score .elv_1_state .elevator matches 2 if score .elv_1_timer .elevator matches 20.. run scoreboard players set .elv_1_state .elevator 0
+
+# Mid enter elevator
+execute if score .elv_4_state .elevator matches 0 run scoreboard players set .elv_4_timer .elevator 0
+execute if score .elv_4_state .elevator matches 0 if entity @a[x=231,y=-39,z=-195,distance=..5,gamemode=adventure] run scoreboard players set .elv_4_state .elevator 1
+execute if score .elv_4_state .elevator matches 1 unless entity @a[x=231,y=-39,z=-195,distance=..5,gamemode=adventure] run scoreboard players set .elv_4_state .elevator 0
+execute if score .elv_4_state .elevator matches 1 unless entity @a[x=231,y=-39,z=-194,dy=2,dx=0.39,dz=-3,gamemode=adventure] run scoreboard players set .elv_4_timer .elevator 0
+execute if score .elv_4_state .elevator matches 1 if entity @a[x=231,y=-39,z=-194,dy=2,dx=0.39,dz=-3,gamemode=adventure] run scoreboard players add .elv_4_timer .elevator 1
+execute if score .elv_4_state .elevator matches 1 if score .elv_4_timer .elevator matches 10.. run scoreboard players set .elv_4_state .elevator 2
+execute if score .elv_4_state .elevator matches 2 run scoreboard players add .elv_4_timer .elevator 1
+execute if score .elv_4_state .elevator matches 2 if score .elv_4_timer .elevator matches 20.. as @a[x=231,y=-39,z=-194,dy=2,dx=0.39,dz=-3,gamemode=adventure] at @s run tp @s ~ ~ ~-18
+execute if score .elv_4_state .elevator matches 2 if score .elv_4_timer .elevator matches 20.. run scoreboard players set .elv_4_state .elevator 0
 
 # Top elevator
 execute if score .elv_2_state .elevator matches 0 if entity @a[x=229,y=-39,z=-235,dy=2,dx=1.00,dz=-3] run scoreboard players set .elv_2_state .elevator 1
 execute if score .elv_2_state .elevator matches 1 unless entity @a[x=229,y=-39,z=-235,dy=2,dx=1.00,dz=-3] run fill 229 -35 -235 230 -38 -237 minecraft:barrier
 execute if score .elv_2_state .elevator matches 1 unless entity @a[x=229,y=-39,z=-235,dy=2,dx=1.00,dz=-3] run scoreboard players set .elv_2_state .elevator 0
+
+# Exit Mid elevator
+execute if score .elv_3_state .elevator matches 0 if entity @a[x=231,y=-39,z=-200,dy=2,dx=1.00,dz=-3] run scoreboard players set .elv_3_state .elevator 1
+execute if score .elv_3_state .elevator matches 1 unless entity @a[x=231,y=-39,z=-200,dy=2,dx=1.00,dz=-3] run fill 231 -35 -202 232 -38 -200 minecraft:barrier
+execute if score .elv_3_state .elevator matches 1 unless entity @a[x=231,y=-39,z=-200,dy=2,dx=1.00,dz=-3] run scoreboard players set .elv_3_state .elevator 0
 
 # Elv Doors
 execute unless score .elv_1_state .elevator matches 1 run tag @e[tag=lobby_door_bottom] remove open
@@ -32,6 +51,12 @@ execute if score .elv_1_state .elevator matches 1 run tag @e[tag=lobby_door_bott
 
 execute unless score .elv_2_state .elevator matches 1 run tag @e[tag=lobby_door_top] remove open
 execute if score .elv_2_state .elevator matches 1 run tag @e[tag=lobby_door_top] add open
+
+execute unless score .elv_3_state .elevator matches 1 run tag @e[tag=lobby_door_mid_exit] remove open
+execute if score .elv_3_state .elevator matches 1 run tag @e[tag=lobby_door_mid_exit] add open
+
+execute unless score .elv_4_state .elevator matches 1 run tag @e[tag=lobby_door_mid_enter] remove open
+execute if score .elv_4_state .elevator matches 1 run tag @e[tag=lobby_door_mid_enter] add open
 
 execute as @e[tag=lobby_door,tag=open,tag=!open2,tag=right] at @s run tp @s ~ ~ ~-1.1
 execute as @e[tag=lobby_door,tag=!open,tag=open2,tag=right] at @s run tp @s ~ ~ ~1.1
@@ -365,3 +390,17 @@ scoreboard players add .menu_reset .timer 1
 execute if score .menu_reset .timer matches 70 run function game:menu/create_static
 
 execute if entity @a[tag=lobby] if score .menu_reset .timer matches 2400.. store result score .menu_reset .timer run random value 0
+
+#
+execute as @e[tag=soda,type=item] at @s if block ~ ~0.5 ~ glass run tp @s 245 ~-0.04 -214
+
+execute as @e[tag=vending,type=interaction] on target unless entity @e[type=item,tag=soda] run playsound minecraft:ui.loom.select_pattern master @s 246.5 -48.25 -214.0 1 0
+execute as @e[tag=vending,type=interaction] on target unless entity @e[type=item,tag=soda] run playsound minecraft:ui.loom.select_pattern master @s 246.5 -48.25 -214.0 1 1
+execute as @e[tag=vending,type=interaction] on target unless entity @e[type=item,tag=soda] run playsound minecraft:ui.stonecutter.take_result master @s 246.5 -48.25 -214.0 1 0
+execute as @e[tag=vending,type=interaction] on target unless entity @e[type=item,tag=soda] run particle poof 246.5 -48.25 -214.0 0.1 0.5 0.5 0 6 force
+execute as @e[tag=vending,type=interaction] on target unless entity @e[type=item,tag=soda] run summon item 245 -47.9 -214 {Age:5970,PickupDelay:15,Tags:["no_kill","soda"],Item:{id:"minecraft:golden_apple",count:1,components:{"minecraft:custom_name":'{"italic":false,"text":"Can of Air"}'}}}
+execute as @e[tag=vending,type=interaction] on target run summon interaction 245.0 -50.0 -214.0 {width:2.5f,height:3.5f,Tags:["vending","new"]}
+execute as @e[tag=vending,type=interaction] on target run kill @e[tag=vending,type=interaction,tag=!new]
+tag @e[tag=vending,type=interaction] remove new
+
+execute as @e[tag=soda,type=item] at @s run data merge entity @s {Motion:[0.0,0.0,0.0]}

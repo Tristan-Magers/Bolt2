@@ -8,13 +8,19 @@ scoreboard players operation @e[tag=targeted] ID.turret -= @s ID.target
 tag @e[scores={ID.turret=0},tag=targeted] add currentTarget
 execute facing entity @e[tag=currentTarget,limit=1] eyes run tp @s ~ ~ ~ ~ ~
 # say @e[tag=currentTarget]
+
 scoreboard players operation @e[tag=targeted] ID.turret += @s ID.target
 execute if entity @s[nbt={HurtTime:9s}] run damage @s 1 arrow
 execute if entity @s[nbt={HurtTime:9s}] run function game:ffa/turret/remove_target
 execute if entity @a[tag=currentTarget,gamemode=spectator] run function game:ffa/turret/remove_target
 execute unless entity @e[tag=currentTarget,distance=..20] run function game:ffa/turret/remove_target
 scoreboard players set #obstruction .data 0
-execute at @e[tag=currentTarget] positioned ~ ~1.4 ~ facing entity @s eyes run function game:ffa/turret/check_obstruction
+
+tag @a[tag=currentTarget] remove crouching
+tag @a[tag=currentTarget,scores={crouch=1..}] add crouching
+
+execute at @e[tag=currentTarget,tag=crouching] positioned ~ ~1.35 ~ facing entity @s eyes run function game:ffa/turret/check_obstruction
+execute at @e[tag=currentTarget,tag=!crouching] positioned ~ ~1.65 ~ facing entity @s eyes run function game:ffa/turret/check_obstruction
 execute if score #obstruction .data matches 1 run function game:ffa/turret/remove_target
 scoreboard players set #obstruction .data 0
 

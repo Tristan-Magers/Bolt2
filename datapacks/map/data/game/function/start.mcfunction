@@ -46,8 +46,17 @@ function game:game/team_dif
 execute as @a run scoreboard players operation @s win_streak *= .10 .num
 execute as @a run scoreboard players operation @s rank += @s win_streak
 
+# Rank sort if all random selected
+scoreboard players set .sort_test_team .data 0
+execute unless entity @a[scores={team_pref=1..}] if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .1 .num run function game:game/rank_sort/start
+
+# Rank sort if someone not random selected
+execute if entity @a[scores={team_pref=1..}] if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .1 .num run scoreboard players set .sort_test_team .data 1
+execute if entity @a[scores={team_pref=1..}] if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .1 .num run function game:game/rank_sort/start
+execute if entity @a[scores={team_pref=1..}] if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .1 .num run scoreboard players set .sort_test_team .data 2
+execute if entity @a[scores={team_pref=1..}] if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .1 .num run function game:game/rank_sort/start
+
 #
-execute if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .1 .num run function game:game/rank_sort/start
 execute if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .0 .num as @a[team=] run function game:game/fill_player_random
 
 # undo win streak change

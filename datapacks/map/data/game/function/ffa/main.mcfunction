@@ -47,6 +47,7 @@ execute as @e[tag=turret,nbt={HurtTime:9s}] run scoreboard players remove @s .nu
 execute as @e[tag=turret,nbt={HurtTime:9s}] at @s on attacker if score .tmi .data matches 1 if score .tmi_arrow .data matches 2 run tag @s add arrow_hit
 execute as @e[tag=turret,nbt={HurtTime:9s}] at @s run particle minecraft:large_smoke ~ ~0.7 ~ 0.2 0.2 0.2 0.2 10 force
 execute as @e[tag=turret,scores={.num=..0}] at @s run function game:ffa/turret/kill_self
+execute as @e[tag=turret] at @s if block ~ ~-1 ~ air run function game:ffa/turret/kill_self
 tag @e remove turret_display
 execute as @e[type=pig,tag=turret] at @s run function game:ffa/turret/display
 tag @a remove turretSpawn

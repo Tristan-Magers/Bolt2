@@ -160,6 +160,9 @@ execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"te
 execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"text":"---------------------------------","color":"dark_gray","bold":true}]
 execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"text":"Break as many targets as you can!"}]
 
+execute as @s[scores={t=94}] if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_arrow .data = .1 .num run tellraw @a [{"text":"Wind Arrows","color":"dark_aqua"},{"text":": Arrows explode if they hit the ground\n","color":"white"}]
+execute as @s[scores={t=94}] if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_arrow .data = .2 .num run tellraw @a [{"text":"Three in the Quiver","color":"gold"},{"text":": Arrows only reload on hit\n","color":"white"}]
+
 execute as @s[scores={t=114}] if score .testing_mode .data = .1 .num run tellraw @a [{"text":"Practice mode: Only one team active. Game ends if anyone selects team in lobby."}]
 
 execute as @s[scores={t=64}] run tellraw @a [{"text":"\n"}]

@@ -1,11 +1,11 @@
-fill -26 -58 -347 22 -53 -253 air replace gravel
-fill -26 -52 -347 22 -47 -253 air replace gravel
+fill -26 -58 -347 25 -53 -253 air replace gravel
+fill -26 -52 -347 25 -47 -253 air replace gravel
 
-fill -26 -58 -347 22 -53 -253 air replace target
-fill -26 -52 -347 22 -47 -253 air replace target
+fill -26 -58 -347 25 -53 -253 air replace target
+fill -26 -52 -347 25 -47 -253 air replace target
 
-fill -26 -58 -347 22 -53 -253 air replace minecraft:emerald_block
-fill -26 -52 -347 22 -47 -253 air replace minecraft:emerald_block
+fill -26 -58 -347 25 -53 -253 air replace minecraft:emerald_block
+fill -26 -52 -347 25 -47 -253 air replace minecraft:emerald_block
 
 execute if score .mode .data = .1 .num run summon armor_stand -7 -57 -334 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",count:1}],Tags:["blueflag","flag"]}
 execute if score .mode .data = .1 .num run summon armor_stand 5 -57 -266 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:red_banner",count:1}],Tags:["redflag","flag"]}

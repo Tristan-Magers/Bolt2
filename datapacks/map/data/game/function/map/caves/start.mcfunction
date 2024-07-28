@@ -1,7 +1,11 @@
-fill -157 -61 -155 -195 -50 -89 air replace target
-fill -157 -61 -155 -195 -50 -89 air replace emerald_block
+fill -157 -55 -158 -195 -50 -86 air replace target
+fill -157 -55 -158 -195 -50 -86 air replace emerald_block
 
-fill -157 -61 -155 -195 -50 -89 air replace gravel
+fill -157 -61 -158 -195 -56 -86 air replace target
+fill -157 -61 -158 -195 -56 -86 air replace emerald_block
+
+fill -157 -55 -158 -195 -50 -86 air replace gravel
+fill -157 -61 -158 -195 -56 -86 air replace gravel
 
 setblock -192 -55 -134 minecraft:warped_trapdoor[open=true,facing=south]
 setblock -192 -55 -136 minecraft:warped_trapdoor[open=true,facing=north]

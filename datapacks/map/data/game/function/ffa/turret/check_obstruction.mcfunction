@@ -1,6 +1,9 @@
 # say running check_obstruction.mcfunction ...
 # particle minecraft:dragon_breath ~ ~ ~ 0 0 0 0 1 force @a
 
+#execute if score #debugPart .data matches 0 run particle minecraft:dripping_lava ~ ~ ~ 0 0 0 0 1 force
+#execute if score #debugPart .data matches 1 run particle minecraft:dripping_obsidian_tear ~ ~ ~ 0 0 0 0 1 force
+
 scoreboard players set #turretHitbox .data 0
 tag @s remove in
 function game:physics/inblock

@@ -62,3 +62,8 @@ fill -443 -26 194 -443 -27 190 minecraft:oak_trapdoor[half=top,facing=east]
 # blue base
 fill -478 -36 189 -478 -36 194 minecraft:spruce_trapdoor[half=top,open=true,facing=west]
 fill -479 -37 188 -475 -37 188 minecraft:spruce_trapdoor[facing=south,half=top]
+
+#
+setblock -477 -33 206 minecraft:dark_oak_trapdoor[half=top,facing=east,open=true]
+setblock -477 -33 209 minecraft:dark_oak_trapdoor[half=top,facing=east,open=true]
+setblock -477 -33 212 minecraft:dark_oak_trapdoor[half=top,facing=east,open=true]

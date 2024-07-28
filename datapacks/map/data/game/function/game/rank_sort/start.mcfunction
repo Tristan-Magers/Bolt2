@@ -34,7 +34,9 @@ scoreboard players set .rep .calc 0
 function game:game/rank_sort/matchmake
 
 #
-execute as @e[tag=rank_dummy] run function game:game/rank_sort/assign_teams
+execute unless score .sort_test_team .data matches 2 as @e[tag=rank_dummy] run function game:game/rank_sort/assign_teams
+
+execute if score .sort_test_team .data matches 2 if score .dif_test_2 .data < .dif_test_1 .data as @e[tag=rank_dummy] run function game:game/rank_sort/assign_teams
 
 #say RED @a[team=red]
 #say BLUE @a[team=blue]

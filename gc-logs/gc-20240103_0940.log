@@ -34,7 +34,7 @@
 [1.772s][debug][gc,phases   ] GC(0)     Dead                           Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
 [1.772s][debug][gc,phases   ] GC(0)     Total                          Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
 [1.772s][debug][gc,phases   ] GC(0)   StringTable Weak               Min:  0.0, Avg:  0.1, Max:  0.1, Diff:  0.1, Sum:  0.2, Workers: 4
-[1.772s][debug][gc,phases   ] GC(0)     Dead                           Min: 0, Avg:  6.8, Max: 20, Diff: 20, Sum: 27, Workers: 4
+[1.772s][debug][gc,phases   ] GC(0)     Dead                           Min: 0, Avg:  6.8, Max active: 17, Diff: 20, Sum: 27, Workers: 4
 [1.772s][debug][gc,phases   ] GC(0)     Total                          Min: 0, Avg: 3314.8, Max: 5707, Diff: 5707, Sum: 13259, Workers: 4
 [1.772s][debug][gc,phases   ] GC(0)   ResolvedMethodTable Weak       Min:  0.0, Avg:  0.0, Max:  0.0, Diff:  0.0, Sum:  0.0, Workers: 4
 [1.772s][debug][gc,phases   ] GC(0)     Dead                           Min: 0, Avg: 18.5, Max: 32, Diff: 32, Sum: 74, Workers: 4
@@ -817,7 +817,7 @@
 [53.514s][debug][gc,phases      ] GC(14)     Total                          Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
 [53.514s][debug][gc,phases      ] GC(14)   StringTable Weak               Min:  0.0, Avg:  0.1, Max:  0.1, Diff:  0.1, Sum:  0.4, Workers: 4
 [53.514s][debug][gc,phases      ] GC(14)     Dead                           Min: 0, Avg:  0.8, Max: 2, Diff: 2, Sum: 3, Workers: 4
-[53.514s][debug][gc,phases      ] GC(14)     Total                          Min: 0, Avg: 10820.0, Max: 17600, Diff: 17600, Sum: 43280, Workers: 4
+[53.514s][debug][gc,phases      ] GC(14)     Total                          Min: 0, Avg: 10820.0, Max active: 17600, Diff: 17600, Sum: 43280, Workers: 4
 [53.514s][debug][gc,phases      ] GC(14)   ResolvedMethodTable Weak       Min:  0.0, Avg:  0.0, Max:  0.0, Diff:  0.0, Sum:  0.1, Workers: 4
 [53.514s][debug][gc,phases      ] GC(14)     Dead                           Min: 0, Avg: 12.2, Max: 28, Diff: 28, Sum: 49, Workers: 4
 [53.514s][debug][gc,phases      ] GC(14)     Total                          Min: 0, Avg: 2560.0, Max: 4160, Diff: 4160, Sum: 10240, Workers: 4
@@ -1470,7 +1470,7 @@
 [320.694s][debug][gc,phases      ] GC(26)     Total                          Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
 [320.694s][debug][gc,phases      ] GC(26)   StringTable Weak               Min:  0.0, Avg:  0.1, Max:  0.1, Diff:  0.1, Sum:  0.4, Workers: 4
 [320.694s][debug][gc,phases      ] GC(26)     Dead                           Min: 0, Avg:  0.5, Max: 2, Diff: 2, Sum: 2, Workers: 4
-[320.694s][debug][gc,phases      ] GC(26)     Total                          Min: 0, Avg: 10948.5, Max: 17984, Diff: 17984, Sum: 43794, Workers: 4
+[320.694s][debug][gc,phases      ] GC(26)     Total                          Min: 0, Avg: 10948.5, Max active: 17984, Diff: 17984, Sum: 43794, Workers: 4
 [320.694s][debug][gc,phases      ] GC(26)   ResolvedMethodTable Weak       Min:  0.0, Avg:  0.0, Max:  0.0, Diff:  0.0, Sum:  0.1, Workers: 4
 [320.694s][debug][gc,phases      ] GC(26)     Dead                           Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
 [320.694s][debug][gc,phases      ] GC(26)     Total                          Min: 0, Avg: 2603.8, Max: 3712, Diff: 3712, Sum: 10415, Workers: 4
@@ -2219,7 +2219,7 @@
 [711.903s][debug][gc,phases      ] GC(42)     Total                          Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
 [711.903s][debug][gc,phases      ] GC(42)   StringTable Weak               Min:  0.0, Avg:  0.1, Max:  0.1, Diff:  0.1, Sum:  0.3, Workers: 4
 [711.903s][debug][gc,phases      ] GC(42)     Dead                           Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
-[711.903s][debug][gc,phases      ] GC(42)     Total                          Min: 0, Avg: 10951.2, Max: 17117, Diff: 17117, Sum: 43805, Workers: 4
+[711.903s][debug][gc,phases      ] GC(42)     Total                          Min: 0, Avg: 10951.2, Max active: 17117, Diff: 17117, Sum: 43805, Workers: 4
 [711.903s][debug][gc,phases      ] GC(42)   ResolvedMethodTable Weak       Min:  0.0, Avg:  0.0, Max:  0.0, Diff:  0.0, Sum:  0.1, Workers: 4
 [711.903s][debug][gc,phases      ] GC(42)     Dead                           Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
 [711.903s][debug][gc,phases      ] GC(42)     Total                          Min: 0, Avg: 2603.8, Max: 4207, Diff: 4207, Sum: 10415, Workers: 4
@@ -3627,7 +3627,7 @@
 [1681.553s][debug][gc,phases      ] GC(73)     Total                          Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
 [1681.553s][debug][gc,phases      ] GC(73)   StringTable Weak               Min:  0.0, Avg:  0.1, Max:  0.1, Diff:  0.1, Sum:  0.4, Workers: 4
 [1681.553s][debug][gc,phases      ] GC(73)     Dead                           Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
-[1681.553s][debug][gc,phases      ] GC(73)     Total                          Min: 0, Avg: 10956.0, Max: 20608, Diff: 20608, Sum: 43824, Workers: 4
+[1681.553s][debug][gc,phases      ] GC(73)     Total                          Min: 0, Avg: 10956.0, Max active: 17608, Diff: 20608, Sum: 43824, Workers: 4
 [1681.553s][debug][gc,phases      ] GC(73)   ResolvedMethodTable Weak       Min:  0.0, Avg:  0.0, Max:  0.0, Diff:  0.0, Sum:  0.1, Workers: 4
 [1681.553s][debug][gc,phases      ] GC(73)     Dead                           Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
 [1681.553s][debug][gc,phases      ] GC(73)     Total                          Min: 0, Avg: 2603.8, Max: 4271, Diff: 4271, Sum: 10415, Workers: 4
@@ -4042,7 +4042,7 @@
 [1982.154s][debug][gc,phases      ] GC(82)     Total                          Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
 [1982.154s][debug][gc,phases      ] GC(82)   StringTable Weak               Min:  0.0, Avg:  0.1, Max:  0.1, Diff:  0.1, Sum:  0.4, Workers: 4
 [1982.154s][debug][gc,phases      ] GC(82)     Dead                           Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
-[1982.155s][debug][gc,phases      ] GC(82)     Total                          Min: 0, Avg: 10970.2, Max: 20095, Diff: 20095, Sum: 43881, Workers: 4
+[1982.155s][debug][gc,phases      ] GC(82)     Total                          Min: 0, Avg: 10970.2, Max active: 17095, Diff: 20095, Sum: 43881, Workers: 4
 [1982.155s][debug][gc,phases      ] GC(82)   ResolvedMethodTable Weak       Min:  0.0, Avg:  0.0, Max:  0.0, Diff:  0.0, Sum:  0.1, Workers: 4
 [1982.155s][debug][gc,phases      ] GC(82)     Dead                           Min: 0, Avg:  0.0, Max: 0, Diff: 0, Sum: 0, Workers: 4
 [1982.155s][debug][gc,phases      ] GC(82)     Total                          Min: 0, Avg: 2610.5, Max: 4541, Diff: 4541, Sum: 10442, Workers: 4

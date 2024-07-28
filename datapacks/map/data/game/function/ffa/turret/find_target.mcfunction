@@ -19,7 +19,7 @@ tag @e[type=minecraft:zombie_villager,distance=..19.5,tag=!dont_target,limit=1,s
 #tag @e[tag=targeted] remove can_target
 
 tag @s add targeting
-execute at @e[tag=can_target,limit=5,sort=nearest] unless score @s deflectTimer matches 1.. unless score @s invul matches 1.. run execute as @s run function game:ffa/turret/sort_targets
+execute as @e[tag=can_target,limit=5,sort=nearest] at @s unless score @s invul matches 1.. run function game:ffa/turret/sort_targets
 tag @s remove targeting
 
 #> Target setup

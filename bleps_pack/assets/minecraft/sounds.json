@@ -660,6 +660,50 @@
         "step/stone6"
       ]
   },
+  "block.tuff_bricks.step": {
+      "replace": "true",
+      "sounds": [
+        "step/stone1",
+        "step/stone2",
+        "step/stone3",
+        "step/stone4",
+        "step/stone5",
+        "step/stone6"
+      ]
+  },
+  "block.chiseled_tuff.step": {
+      "replace": "true",
+      "sounds": [
+        "step/stone1",
+        "step/stone2",
+        "step/stone3",
+        "step/stone4",
+        "step/stone5",
+        "step/stone6"
+      ]
+  },
+  "block.chiseled_tuff_bricks.step": {
+      "replace": "true",
+      "sounds": [
+        "step/stone1",
+        "step/stone2",
+        "step/stone3",
+        "step/stone4",
+        "step/stone5",
+        "step/stone6"
+      ]
+  },
+  "block.polished_tuff.step": {
+      "replace": "true",
+      "sounds": [
+        "step/stone1",
+        "step/stone2",
+        "step/stone3",
+        "step/stone4",
+        "step/stone5",
+        "step/stone6"
+      ]
+  },
   "block.mud_bricks.step": {
       "replace": "true",
       "sounds": [
@@ -1217,10 +1261,19 @@
           "step/cloth4"
       ]
   },
-
   "entity.creeper.primed": {
     "sounds": [
       "random/fuse"
+    ],
+    "replace": "true"
+  },
+  "entity.generic.eat": {
+    "sounds": [
+        {
+            "name": "random/drink",
+            "attenuation_distance": 7,
+            "volume": 0.5
+        }
     ],
     "replace": "true"
   },

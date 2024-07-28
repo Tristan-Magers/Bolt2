@@ -98,6 +98,18 @@
           "custom_model_data": 1009
         },
         "model": "item/skin/pheonix"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1010
+        },
+        "model": "item/skin/shuba"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1011
+        },
+        "model": "item/skin/phoe"
       }
     ]
   }

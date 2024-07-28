@@ -80,3 +80,4 @@ scoreboard players set @s[scores={temp_bow_value=74}] temp_bow_id 12
 scoreboard players set @s[scores={temp_bow_value=75}] temp_bow_id 13
 scoreboard players set @s[scores={temp_bow_value=76}] temp_bow_id 9
 scoreboard players set @s[scores={temp_bow_value=77}] temp_bow_id 45
+scoreboard players set @s[scores={temp_bow_value=78}] temp_bow_id 80

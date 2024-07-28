@@ -17,10 +17,10 @@ tag @e[tag=skin] add kill
 summon armor_stand 254.99 -55.00 -252.57 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-45F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1000}}]}
 summon armor_stand 253.97 -55.00 -221.78 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-118F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1001}}]}
 
-summon armor_stand 253.43 -55.00 -226.99 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-101F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1003}}]}
+summon armor_stand 253.23 -55.00 -226.19 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-101F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1003}}]}
 
-summon armor_stand 253.87 -55.00 -241.50 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-65F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1002}}]}
-summon armor_stand 253.42 -55.00 -238.31 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-101F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1005}}]}
+summon armor_stand 253.87 -55.00 -240.50 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-65F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1002}}]}
+summon armor_stand 253.42 -55.00 -237.31 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-101F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1005}}]}
 
 summon armor_stand 253.89 -55.00 -248.42 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-54F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1004}}]}
 
@@ -32,5 +32,13 @@ summon armor_stand 254.88 -55.00 -232.63 {Silent:1b,Invulnerable:1b,Invisible:1b
 
 summon armor_stand 254.80 -55.00 -216.79 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-141F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1009}}]}
 
+summon armor_stand 253.34 -55.00 -244.91 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-75F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1010}}]}
+
+summon armor_stand 254.50 -55.00 -229.79 {Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["skin"],DisabledSlots:4144959,Rotation:[-101F,0F],ArmorItems:[{},{},{},{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":1011}}]}
+
 #
 effect give @e[type=minecraft:zombie] minecraft:invisibility infinite 1 true
+
+#
+kill @e[tag=vending,type=interaction]
+summon interaction 245.0 -50.0 -214.0 {width:2.5f,height:3.5f,Tags:["vending"]}

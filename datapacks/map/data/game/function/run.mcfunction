@@ -1,4 +1,8 @@
 #
+tag @a[scores={leave_game=1..}] remove new_p_text
+scoreboard players set @a leave_game 0
+
+#
 function game:tmi/chest_items
 function game:menu/custom_random/container
 function game:menu/settings/container
@@ -9,6 +13,7 @@ execute as @a[scores={leave_potion=1..}] at @s run function game:player/leave_ga
 #
 scoreboard players set @a[tag=!lobby,tag=!playing,team=!Spectator,gamemode=adventure] Leave 1
 execute as @a[scores={Leave=1..},tag=!is_spectating,tag=playing] at @s if score @s game_id = .current_id .data if score .running .data = .1 .num run function game:player/relog_game
+execute as @a[scores={Leave=1..}] at @s run tag @s remove new_player
 execute as @a[scores={Leave=1..}] at @s run function game:player/leave_game
 
 #
@@ -103,6 +108,7 @@ team join Spectator @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=-1}]
 
 title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=0..}] actionbar {"text":"SHOOT MENU BUTTONS","bold":true,"color":"gray"}
 title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=-1}] actionbar {"text":"READY UP TO USE MENU","bold":true,"color":"gray"}
+#clear @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] golden_apple
 tp @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] 243.5 -44.00 -235.5 -90 13
 
 tag @e[type=arrow,x=245,y=-50,z=-235,distance=..60] add kill
@@ -415,9 +421,16 @@ clear @a[scores={acid_count=5..}] lingering_potion 1
 # maps
 execute if score .map .data = .6 .num run function game:map/valley/run
 
+# Discord tellraw
+tellraw @a[tag=discord_text] {"bold":true,"clickEvent":{"action":"open_url","value":"https://discord.gg/6xatFYH"},"color":"gray","hoverEvent":{"action":"show_text","value":[{"text":"Free cookie"}]},"text":"Click this for our discord!"}
+tag @a[tag=discord_text] remove discord_text
+
 # Coves VFX
 #execute as @e[x=-154,y=-62,z=-86,dx=-42,dy=20,dz=-72,type=arrow] at @s run particle minecraft:splash ^ ^ ^ 0.1 0.1 0.1 0 1 force @a
 
 #
-execute as @e[tag=stage_light,tag=low] at @s run tp @s ~ -32.1 ~
-execute as @e[tag=stage_light,tag=high] at @s run tp @s ~ -31.1 ~
+execute as @e[tag=stage_light,tag=low] at @s run tp @s ~ -33.1 ~
+execute as @e[tag=stage_light,tag=high] at @s run tp @s ~ -32.1 ~
+
+#
+scoreboard players set @a crouch 0

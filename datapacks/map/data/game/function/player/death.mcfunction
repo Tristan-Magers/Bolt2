@@ -178,4 +178,7 @@ execute as @s[scores={death_ani=3},team=blue] at @s positioned ~ ~1 ~ run summon
 execute as @s[scores={death_ani=3},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^-0.1 ^0.0 {Motion:[0.12,0.2,-0.13],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":{rgb:22015,show_in_tooltip:false}}}}
 
 #
+scoreboard players add @s stats_deaths 1
+
+#
 tag @s remove me

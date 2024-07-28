@@ -55,6 +55,8 @@ scoreboard objectives remove ID
 scoreboard objectives remove ID.item
 
 # objectives add
+scoreboard objectives add leave_game minecraft.custom:minecraft.leave_game
+
 scoreboard objectives add slime_kill minecraft.killed:minecraft.slime
 scoreboard objectives add magma_kill minecraft.killed:minecraft.magma_cube
 scoreboard objectives add zombie_kill minecraft.killed:minecraft.zombie_villager
@@ -309,6 +311,10 @@ scoreboard objectives add item_acid dummy
 scoreboard objectives add bow_texture dummy
 scoreboard objectives add bow_texture_place dummy
 scoreboard objectives add bow_throw minecraft.dropped:minecraft.bow
+
+scoreboard objectives add golden_apple minecraft.used:minecraft.golden_apple
+
+scoreboard objectives add crouch minecraft.custom:minecraft.sneak_time
 
 scoreboard objectives add intro_cutscene_time dummy
 

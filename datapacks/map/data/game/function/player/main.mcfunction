@@ -1,6 +1,15 @@
+# Check if bow_ui interacted with slot 0
+execute if items entity @s[tag=lobby,gamemode=adventure] hotbar.0 bow[custom_data={shop:1}] run item replace entity @s hotbar.0 with air
+
 #
-tp @e[tag=intro,tag=!teleported] 243.50 -48 -245.5 -64.8 -5.5
-tag @e[tag=into] add teleported
+tp @e[tag=intro_start,tag=!teleported] 243.50 -48 -245.5 -64.8 -5.5
+tag @e[tag=into_start] add teleported
+
+#
+execute as @s[scores={golden_apple=1..}] at @s run function game:test4
+effect clear @s[scores={golden_apple=1..}] minecraft:absorption
+effect clear @s[scores={golden_apple=1..}] minecraft:regeneration
+scoreboard players set @s golden_apple 0
 
 #
 scoreboard players add @s[tag=intro_cutscene] intro_cutscene_time 1
@@ -9,19 +18,25 @@ execute as @s[scores={intro_cutscene_time=1}] run title @s times 0 10 10
 execute as @s[scores={intro_cutscene_time=1}] run title @s title {"translate":"\u0001","font":"title"}
 execute as @s[scores={intro_cutscene_time=1..9}] run tp @s 244 -36 -225 -115 25
 
-execute as @s[scores={intro_cutscene_time=10}] run summon block_display 244 -35 -225 {teleport_duration:60,Rotation:[-115F,25F],Tags:["intro","new"]}
+execute as @s[scores={intro_cutscene_time=10}] run summon block_display 244 -35 -225 {teleport_duration:60,Rotation:[-115F,25F],Tags:["intro_start","new"]}
 execute as @s[scores={intro_cutscene_time=10}] run scoreboard players operation @e[tag=intro,tag=new,limit=1] ID = @s ID
-execute as @s[scores={intro_cutscene_time=10}] run spectate @e[tag=intro,tag=new,limit=1]
-execute as @s[scores={intro_cutscene_time=10}] run tag @e[tag=intro] remove new
+#execute as @s[scores={intro_cutscene_time=10}] run tag @e[tag=intro_start] remove my_intro
+#execute as @s[scores={intro_cutscene_time=10}] run tag @e remove me
+#execute as @s[scores={intro_cutscene_time=10}] run tag @s add me
+#execute as @s[scores={intro_cutscene_time=10}] as @e[tag=intro_start] if score ID @s = ID @e[tag=me,limit=1] run tag @s add my_intro
+execute as @s[scores={intro_cutscene_time=10}] run spectate @e[tag=intro_start,tag=new,limit=1]
+execute as @s[scores={intro_cutscene_time=10}] run tag @e[tag=intro_start] remove new
 
-execute as @s[scores={intro_cutscene_time=70}] run tellraw @a[tag=!playing] [{"text":"Welcome "},{"selector":"@s","color":"gold"},{"text":" to Bleps!"}]
-execute as @s[scores={intro_cutscene_time=70}] run tellraw @a[tag=!playing] [{"text":"Created by ChainsawNinja and Co.","color":"gray"}]
-execute as @s[scores={intro_cutscene_time=70}] run tellraw @a[tag=!playing] [{"text":"Don't use extra camera angles with f5 while playing (please 💗)","color":"dark_gray"}]
+execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @a[tag=!playing] [{"text":"Welcome "},{"selector":"@s","color":"gold"},{"text":" to Bleps!"}]
+execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @a[tag=!playing] [{"text":"Enjoy our instant kill bow game. ☺"}]
+execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @a[tag=!playing] [{"text":"Created by ChainsawNinja and Co.","color":"gray"}]
+execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @a[tag=!playing] [{"text":"Don't use extra camera angles with f5 while playing.","color":"dark_gray"}]
+execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tag @s add new_p_text
 
 tag @s[scores={intro_cutscene_time=70..}] remove intro_cutscene
-execute as @s[scores={intro_cutscene_time=1..69}] run spectate @e[tag=intro,limit=1]
+execute as @s[scores={intro_cutscene_time=1..69}] run spectate @e[tag=intro_start,limit=1,sort=nearest]
 execute as @s[scores={intro_cutscene_time=70..}] run function game:player/leave_game
-execute as @s[scores={intro_cutscene_time=70..}] run kill @e[tag=intro,type=block_display]
+execute as @s[scores={intro_cutscene_time=70..}] run kill @e[tag=intro_start,type=block_display]
 scoreboard players reset @s[scores={intro_cutscene_time=70..}] intro_cutscene_time
 
 #
@@ -38,12 +53,12 @@ execute if score .mode .data = .6 .num as @s[scores={inspawn=310},team=blue,tag=
 execute if score .mode .data = .6 .num as @s[scores={inspawn=310},team=blue,tag=playing,gamemode=adventure] run tellraw @a[team=blue] [{"text":"❌ ","color":"gray"},{"selector":"@s"},{"text":" died a couch potato","color":"white"}]
 execute if score .mode .data = .6 .num run scoreboard players set @s[scores={inspawn=310},team=blue,tag=playing,gamemode=adventure] deaths 1
 
-title @s[scores={inspawn=340},tag=playing,gamemode=adventure] times 10 40 10
-title @s[scores={inspawn=340},tag=playing,gamemode=adventure] title {"text":"Leave Spawn","font":"fancy"}
-title @s[scores={inspawn=340},tag=playing,gamemode=adventure] subtitle {"text":"(or get kicked)","font":"fancy","color":"gray"}
-scoreboard players set @s[scores={inspawn=500},tag=playing,gamemode=adventure] leave_potion 1
-tag @s[scores={inspawn=500},tag=playing,gamemode=adventure] add kicked
-scoreboard players add @s[scores={inspawn=500},tag=playing,gamemode=adventure] inspawn 1
+title @s[scores={inspawn=320},tag=playing,gamemode=adventure] times 10 40 10
+title @s[scores={inspawn=320},tag=playing,gamemode=adventure] title {"text":"Leave Spawn","font":"fancy"}
+title @s[scores={inspawn=320},tag=playing,gamemode=adventure] subtitle {"text":"(or get kicked)","font":"fancy","color":"gray"}
+scoreboard players set @s[scores={inspawn=600},tag=playing,gamemode=adventure] leave_potion 1
+tag @s[scores={inspawn=600},tag=playing,gamemode=adventure] add kicked
+scoreboard players add @s[scores={inspawn=600},tag=playing,gamemode=adventure] inspawn 1
 
 #
 scoreboard players remove @s[scores={spawn_message_delay=0..}] spawn_message_delay 1
@@ -68,7 +83,10 @@ tag @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] add off_correct
 
 tag @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] add off_correct
 
+tag @s[tag=lobby,tag=off_correct] remove lobby_inv_correct
+
 tag @s[gamemode=creative] remove off_correct
+tag @s[tag=lobby] remove off_correct
 
 execute as @s[tag=off_correct] run function game:player/offhand_correct
 
@@ -83,17 +101,7 @@ execute if score .mode .data = .7 .num run scoreboard players set @s invul 100
 execute as @s[scores={bow_throw=1..},tag=!playing] run function game:player/bow/throw
 
 #dead
-execute as @s[gamemode=spectator,scores={respawn=1..}] at @s run clear @s arrow
-execute as @s[gamemode=spectator,scores={respawn=1..}] at @s run tp @s @s
-execute as @s[gamemode=spectator,scores={respawn=1..}] at @s run tp @s ^ ^-0.1 ^-0.09 ~ ~3.5
-execute as @s[gamemode=spectator,scores={respawn=1..}] at @s run tp @s ~ ~0.3 ~
-scoreboard players set @s[gamemode=spectator,scores={respawn=1..}] killStreak 0
-execute as @s[gamemode=spectator,scores={respawn=1..,time_dead=8..}] at @s run tp @s ^ ^ ^-0.05
-scoreboard players add @s[gamemode=spectator,scores={respawn=1..}] time_dead 1
-#scoreboard players remove @s[gamemode=spectator,scores={respawn=2..}] respawn 1
-gamemode adventure @s[gamemode=spectator,scores={respawn=1..,time_dead=16..}]
-
-scoreboard players add @s[gamemode=spectator,scores={time_dead=2}] stats_deaths 1
+execute as @s[gamemode=spectator,scores={respawn=1..}] at @s run function game:player/dead_animation
 
 #cutscene
 gamemode spectator @s[scores={cutscene_time=1..}]
@@ -212,7 +220,7 @@ scoreboard players set @s[tag=item_acid,nbt={Inventory:[{id:"minecraft:lingering
 
 give @s[scores={item_boost=220..}] egg[custom_name='{"text":"Boost","italic":false}'] 1
 give @s[scores={item_acid=220..,acid_count=..2}] lingering_potion[custom_name='{"text":"Acid","italic":false}',hide_additional_tooltip={},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913}] 1
-give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Minion","italic":false,"color":"gray"}',lore=['{"text":"Summon zombie that attacks enemies","color":"white","italic":false}'],entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 1
+give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Minion","italic":false,"color":"gray"}',lore=['{"text":"Summon zombie that attacks enemies","color":"white","italic":false}','{"text":"Max active: 17","color":"white","italic":false}'],entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:generic.max_health,Base:1},{Name:generic.movement_speed,Base:0.33}]}] 1
 
 scoreboard players set @s[scores={item_boost=220..}] item_boost 0
 scoreboard players set @s[scores={item_minion=220..}] item_minion 40
@@ -339,10 +347,7 @@ item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpki
 item replace entity @s[nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data=0]
 
 #bow correct
-clear @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] bow
-execute if score .mode .data = .6 .num run item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative,tag=playing] hotbar.0 with bow[unbreakable={show_in_tooltip:false},enchantments={levels:{"minecraft:power":255},show_in_tooltip:false}] 1
-item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative,scores={bow_texture=78}] hotbar.0 with bow[unbreakable={show_in_tooltip:false}] 1
-item replace entity @s[nbt=!{Inventory:[{id:"minecraft:bow"}]},gamemode=!creative] hotbar.0 with bow[unbreakable={show_in_tooltip:false},enchantments={levels:{"minecraft:power":255},show_in_tooltip:false}] 1
+execute if entity @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]},gamemode=!creative] run function game:player/inv_checks/no_bow
 
 # OPTIMIZATION NEEDED : run only when give a new bow
 function game:bow/dynamic_bow_data
@@ -360,7 +365,22 @@ give @s[scores={sword_break=1..}] minecraft:netherite_sword[custom_name='{"text"
 function game:player/inventory/drop
 
 # UI FOR BOW SELECTION
-function game:bow_ui/main
+tag @s remove check_bow_ui
+tag @s[tag=lobby_inv_correct] add check_bow_ui
+tag @s remove lobby_inv_correct
+execute if items entity @s[tag=!check_bow_ui] player.cursor minecraft:bow run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.2 minecraft:bow run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.3 minecraft:bow run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.4 minecraft:bow run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.5 minecraft:bow run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.8 minecraft:bow run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] player.cursor minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.2 minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.3 minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.4 minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.5 minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.8 minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
+execute as @s[tag=lobby,tag=check_bow_ui] run function game:bow_ui/main
 
 # CORRECT HAVING WRONG SPAWN POINT IN INVENTORY (for TMI mode)
 execute store result score @s[team=red,tag=playing] drop_magma run clear @s panda_spawn_egg[custom_model_data=3]

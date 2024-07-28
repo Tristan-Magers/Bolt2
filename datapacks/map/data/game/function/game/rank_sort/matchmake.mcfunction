@@ -14,6 +14,9 @@ scoreboard players operation .dif .calc -= .red_rank .calc
 execute if score .dif .calc < .0 .num run scoreboard players set .neg .calc 1
 execute if score .dif .calc < .0 .num run scoreboard players operation .dif .calc *= .n1 .num
 
+execute if score .sort_test_team .data matches 1 run scoreboard players operation .dif_test_1 .data = .dif .calc
+execute if score .sort_test_team .data matches 2 run scoreboard players operation .dif_test_2 .data = .dif .calc
+
 #
 tag @e[tag=rank_dummy] remove can_move_up
 tag @e[tag=rank_dummy] remove can_move_down

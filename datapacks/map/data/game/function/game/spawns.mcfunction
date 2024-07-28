@@ -35,6 +35,8 @@ scoreboard players set @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=red,tag=not_le
 
 tag @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=red,tag=not_left] add inspawn
 
+execute if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_objective .data = .2 .num run tag @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=red] add inspawn
+
 #divide
 scoreboard players set @a[x=-219,y=-54,z=-8,distance=..100,dx=20,dy=10,dz=-10] invul 40
 
@@ -106,6 +108,8 @@ execute as @a[team=blue] unless entity @s[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6] ru
 scoreboard players set @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=blue,tag=not_left] invul 48
 
 tag @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=blue,tag=not_left] add inspawn
+
+execute if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_objective .data = .2 .num run tag @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=blue] add inspawn
 
 #divide
 scoreboard players set @a[x=-219,y=-54,z=35,distance=..100,dx=20,dy=10,dz=10] invul 40
