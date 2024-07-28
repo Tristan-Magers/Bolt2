@@ -15,7 +15,7 @@ execute if entity @s[scores={ID=..0}] run scoreboard players operation @p[scores
 #execute as @s[tag=!new_player] run scoreboard players operation @e[tag=intro,tag=new,limit=1] ID = @s ID
 execute as @s[tag=!new_player] run gamemode spectator
 execute as @s[tag=!new_player] run tag @s add intro_cutscene
-scoreboard players set @s[tag=!new_player] team_pref -1
+scoreboard players set @s[tag=!new_player,tag=!new_p_text] team_pref -1
 #execute as @s[tag=!new_player] run spectate @e[tag=intro,tag=new,limit=1]
 tag @e[tag=intro] remove new
 tag @s add new_player

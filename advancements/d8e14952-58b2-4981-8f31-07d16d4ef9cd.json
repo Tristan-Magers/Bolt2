@@ -1,21 +1,3 @@
 {
-  "minecraft:recipes/misc/iron_nugget_from_blasting": {
-    "criteria": {
-      "has_chainmail_helmet": "2022-07-07 04:16:03 +0000"
-    },
-    "done": true
-  },
-  "minecraft:recipes/misc/iron_nugget_from_smelting": {
-    "criteria": {
-      "has_chainmail_helmet": "2022-07-07 04:16:03 +0000"
-    },
-    "done": true
-  },
-  "minecraft:adventure/adventuring_time": {
-    "criteria": {
-      "minecraft:plains": "2022-07-07 04:16:03 +0000"
-    },
-    "done": false
-  },
-  "DataVersion": 3105
+  "DataVersion": 3953
 }
