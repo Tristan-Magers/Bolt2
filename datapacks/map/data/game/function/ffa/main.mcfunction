@@ -37,7 +37,7 @@
 tag @a remove executioner
 tag @a remove turretDead
 tag @a[scores={placeTurret=1..},tag=turret_dif] add turretSpawn
-execute as @e[type=pig,tag=!turret] at @s run function game:ffa/turret/spawn
+execute as @e[type=pig,tag=!turret,tag=!chair] at @s run function game:ffa/turret/spawn
 execute as @e[tag=turret,scores={turretCooldown=1}] at @s run data remove entity @e[type=interaction,tag=turretPunch,sort=nearest,limit=1] attack 
 scoreboard players remove @e[tag=turret,scores={turretCooldown=1..}] turretCooldown 1
 execute as @e[tag=turret,tag=!hasTarget,scores={turretCooldown=0}] at @s run function game:ffa/turret/find_target
@@ -49,7 +49,7 @@ execute as @e[tag=turret,nbt={HurtTime:9s}] at @s run particle minecraft:large_s
 execute as @e[tag=turret,scores={.num=..0}] at @s run function game:ffa/turret/kill_self
 execute as @e[tag=turret] at @s if block ~ ~-1 ~ air run function game:ffa/turret/kill_self
 tag @e remove turret_display
-execute as @e[type=pig,tag=turret] at @s run function game:ffa/turret/display
+execute as @e[type=pig,tag=turret,tag=!chair] at @s run function game:ffa/turret/display
 tag @a remove turretSpawn
 tag @a remove hasTurret2
 

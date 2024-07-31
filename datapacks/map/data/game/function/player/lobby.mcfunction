@@ -32,3 +32,13 @@ clear @s[scores={click=1..}] carrot_on_a_stick
 execute if entity @s[nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick",Slot:1b}]},gamemode=adventure] run function game:player/inv_checks/no_carrot_on_a_stick
 
 scoreboard players set @s click 0
+
+# Chair text
+tag @s remove near_chair
+execute at @s if entity @e[type=pig,tag=chair,distance=..2] run tag @s add near_chair
+
+title @s[tag=near_chair,tag=!nc2] actionbar {"text":"Click chairs to sit","color":"gold"}
+scoreboard players set @s[tag=near_chair,tag=!nc2] lobby_text_time 20
+
+tag @s[tag=near_chair] add nc2
+tag @s[tag=!near_chair] remove nc2

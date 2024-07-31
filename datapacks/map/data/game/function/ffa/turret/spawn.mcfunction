@@ -29,7 +29,7 @@ scoreboard players set @s .num 1
 function game:items/lower
 execute at @s run tp @s ~ ~0.3 ~
 
-execute at @s if entity @e[type=pig,distance=..0.4,tag=old2] run tag @s add cant_place
+execute at @s if entity @e[type=pig,distance=..0.4,tag=old2,tag=!chair] run tag @s add cant_place
 execute at @s if block ~ -64 ~ redstone_block run tag @s add cant_place
 execute at @s if block ~ -64 ~ diamond_block run tag @s add cant_place
 

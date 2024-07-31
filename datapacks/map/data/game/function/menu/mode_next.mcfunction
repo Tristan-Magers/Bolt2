@@ -37,7 +37,7 @@ execute if score .mode_screen .data = .1 .num run title @a[tag=me_player] action
 execute if score .mode_screen .data = .2 .num run title @a[tag=me_player] actionbar [{"text":""},{"text":"Team Control Points","color":"#43B5AD","bold":true},{"text":" | "},{"text":"Control as many points as possible","color":"#889C86","bold":true}]
 execute if score .mode_screen .data = .3 .num run title @a[tag=me_player] actionbar [{"text":""},{"text":"Free For All","color":"#63B560","bold":true},{"text":" | "},{"text":"FFA Death match","color":"#889C86","bold":true}]
 execute if score .mode_screen .data = .4 .num run title @a[tag=me_player] actionbar [{"text":""},{"text":"Tag","color":"#63B560","bold":true},{"text":" | "},{"text":"One player is it, hunt them down","color":"#889C86","bold":true}]
-execute if score .mode_screen .data = .5 .num run title @a[tag=me_player] actionbar [{"text":""},{"text":"Too Many Items","color":"#8AA1B5","bold":true},{"text":" | "},{"text":"Capture the Flag with custom items","color":"#889C86","bold":true}]
+execute if score .mode_screen .data = .5 .num run title @a[tag=me_player] actionbar [{"text":""},{"text":"Too Many Items","color":"#8AA1B5","bold":true},{"text":" | "},{"text":"Custom items (use chest)","color":"#889C86","bold":true}]
 execute if score .mode_screen .data = .6 .num run title @a[tag=me_player] actionbar [{"text":""},{"text":"Infection","color":"#CFAE91","bold":true},{"text":" | "},{"text":"One player must infect an entire team","color":"#889C86","bold":true}]
 execute if score .mode_screen .data = .7 .num run title @a[tag=me_player] actionbar [{"text":""},{"text":"Target","color":"#CFAE91","bold":true},{"text":" | "},{"text":"Shoot as many targets as possible","color":"#889C86","bold":true}]
 

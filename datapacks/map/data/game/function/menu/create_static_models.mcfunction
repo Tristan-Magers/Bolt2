@@ -42,3 +42,13 @@ effect give @e[type=minecraft:zombie] minecraft:invisibility infinite 1 true
 #
 kill @e[tag=vending,type=interaction]
 summon interaction 245.0 -50.0 -214.0 {width:2.5f,height:3.5f,Tags:["vending"]}
+
+#
+tag @e[type=pig] add kill
+summon minecraft:pig 240.5 -50.10 -253.3 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,Saddle:1b,Tags:["chair"],attributes:[{id:"minecraft:generic.follow_range",base:0},{id:"minecraft:generic.movement_speed",base:0}]}
+summon minecraft:pig 239.5 -50.10 -253.3 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,Saddle:1b,Tags:["chair"],attributes:[{id:"minecraft:generic.follow_range",base:0},{id:"minecraft:generic.movement_speed",base:0}]}
+
+summon minecraft:pig 249.5 -50.10 -212.7 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,Saddle:1b,Tags:["chair"],Rotation:[180F,0F],attributes:[{id:"minecraft:generic.follow_range",base:0},{id:"minecraft:generic.movement_speed",base:0}]}
+summon minecraft:pig 250.5 -50.10 -212.7 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,Saddle:1b,Tags:["chair"],Rotation:[180F,0F],attributes:[{id:"minecraft:generic.follow_range",base:0},{id:"minecraft:generic.movement_speed",base:0}]}
+
+team join noCol @e[type=pig,tag=chair]
