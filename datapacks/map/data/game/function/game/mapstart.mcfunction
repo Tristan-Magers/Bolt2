@@ -2,7 +2,7 @@ kill @e[tag=gen]
 kill @e[type=item]
 kill @e[type=minecraft:zombie_villager]
 
-kill @e[type=,tag=!chair]
+kill @e[type=pig,tag=!chair]
 kill @e[tag=turret_head]
 kill @e[tag=turret_stand]
 kill @e[tag=turretPunch]

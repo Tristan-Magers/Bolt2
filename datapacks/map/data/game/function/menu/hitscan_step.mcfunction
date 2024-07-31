@@ -56,6 +56,12 @@ execute if entity @s[x=264.9,y=-53,z=-245.0,dx=2,dy=2,dz=2] run scoreboard playe
 execute if entity @s[x=264.9,y=-53,z=-225.0,dx=2,dy=2,dz=2,scores={timer=..160}] run function game:menu/mode_next
 execute if entity @s[x=264.9,y=-53,z=-225.0,dx=2,dy=2,dz=2] run scoreboard players set @s timer 1000
 
+execute if entity @s[x=250.0,y=-41,z=-261.0,distance=..5,scores={timer=..160}] run execute as @a[tag=me_player] at @s run playsound minecraft:entity.arrow.hit_player master @s ~ ~ ~ 0.5 0.8
+execute if entity @s[x=250.0,y=-41,z=-261.0,distance=..5,scores={timer=..160}] run execute as @a[tag=me_player] at @s run playsound minecraft:block.grass.break master @s ~ ~ ~ 0.7 0.5
+execute if entity @s[x=250.0,y=-41,z=-261.0,distance=..5,scores={timer=..160}] run execute as @a[tag=me_player] at @s run playsound minecraft:block.grass.break master @s ~ ~ ~ 0.7 1.2
+execute if entity @s[x=250.0,y=-41,z=-261.0,distance=..5,scores={timer=..160}] run execute as @a[tag=me_player] at @s run particle minecraft:end_rod 249.98 -41.05 -260.00 0 0 0 0.7 7 force
+execute if entity @s[x=250.0,y=-41,z=-261.0,distance=..5] run scoreboard players set @s timer 1000
+
 execute if entity @s[x=259.5,y=-55,z=-245.5,dx=5,dy=-1,dz=20,scores={timer=..160}] if score .running .data = .1 .num run title @a[tag=lobby] title {"text":"Game in progress","color":"gray","font":"fancy"}
 
 execute if entity @s[x=259.5,y=-55,z=-245.5,dx=5,dy=-1,dz=20,scores={timer=..160}] if score .running .data = .0 .num if score .start_cd .data >= .11 .num run title @a title {"text":"Start Canceled","color":"gray","font":"fancy"}

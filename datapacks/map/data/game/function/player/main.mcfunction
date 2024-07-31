@@ -34,10 +34,13 @@ execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @a[ta
 execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tag @s add new_p_text
 
 tag @s[scores={intro_cutscene_time=70..}] remove intro_cutscene
-execute as @s[scores={intro_cutscene_time=1..69}] run spectate @e[tag=intro_start,limit=1,sort=nearest]
+execute as @s[scores={intro_cutscene_time=1..69}] at @s run spectate @e[tag=intro_start,limit=1,sort=nearest]
 execute as @s[scores={intro_cutscene_time=70..}] run function game:player/leave_game
-execute as @s[scores={intro_cutscene_time=70..}] run kill @e[tag=intro_start,type=block_display]
+#execute as @s[scores={intro_cutscene_time=70..}] run kill @e[tag=intro_start,type=block_display]
 scoreboard players reset @s[scores={intro_cutscene_time=70..}] intro_cutscene_time
+
+scoreboard players add @e[tag=intro_start] t1 1
+kill @e[tag=intro_start,scores={t1=70..}]
 
 #
 execute as @s[tag=is_spectating,gamemode=spectator] run function game:player/spectator/check
