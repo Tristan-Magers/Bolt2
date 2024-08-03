@@ -113,11 +113,11 @@ execute as @s[scores={bow_texture=23}] run playsound minecraft:entity.wither.hur
 execute as @s[scores={bow_texture=23}] run playsound minecraft:entity.wither.shoot master @s ^ ^ ^ 0.02 .6
 execute as @s[scores={bow_texture=23}] run playsound minecraft:block.bone_block.fall master @s ^ ^ ^ 0.5 .4
 
-#
+# Lock
 execute as @s[scores={bow_texture=24}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.8 1
-execute as @s[scores={bow_texture=24}] run playsound minecraft:entity.ender_eye.death master @s ^ ^ ^ .2 .2
-execute as @s[scores={bow_texture=24}] run playsound minecraft:block.tripwire.click_on master @s ^ ^ ^ .4 1.3
-execute as @s[scores={bow_texture=24}] run playsound minecraft:block.ender_chest.open master @s ^ ^ ^ 0.2 1.18
+execute as @s[scores={bow_texture=24}] run playsound minecraft:entity.ender_eye.death master @s ^ ^ ^ .18 .2
+execute as @s[scores={bow_texture=24}] run playsound minecraft:block.tripwire.click_on master @s ^ ^ ^ .36 1.3
+execute as @s[scores={bow_texture=24}] run playsound minecraft:block.ender_chest.open master @s ^ ^ ^ 0.18 1.18
 
 # Nature Magic
 execute as @s[scores={bow_texture=25}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.7 1.2
@@ -263,9 +263,9 @@ execute as @s[scores={bow_texture=53}] run playsound minecraft:entity.glow_squid
 execute as @s[scores={bow_texture=54}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.75 1
 execute as @s[scores={bow_texture=54}] run playsound minecraft:item.crossbow.shoot master @s ~ ~ ~ 0.25 1.05
 
-# Crossbow Bow
+# graphic design
 execute as @s[scores={bow_texture=55}] run playsound custom:shoot_arrow master @s ^ ^ ^ 1 1
-execute as @s[scores={bow_texture=55}] run playsound custom:gd_shoot master @s ^ ^ ^ 0.9 1
+execute as @s[scores={bow_texture=55}] run playsound custom:gd_shoot master @s ^ ^ ^ 0.8 1
 
 # Stick Bow
 execute as @s[scores={bow_texture=56}] run playsound custom:shoot_arrow master @s ^ ^ ^ 1 1

@@ -70,6 +70,8 @@ tag @s remove dark
 
 tag @s remove is_spectating
 
+tag @s remove has_bow_ui
+
 scoreboard players add @s bow_texture 0
 
 scoreboard players set @s crossbowTime 1

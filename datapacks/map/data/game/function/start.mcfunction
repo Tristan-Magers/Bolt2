@@ -305,4 +305,4 @@ item replace block 224 -60 -244 container.0 from block 235 -49 -224 container.21
 item replace block 224 -60 -246 container.0 from block 235 -49 -224 container.22
 
 #
-tag @a[scores={team_pref=-1}] add is_spectating
+#tag @a[scores={team_pref=-1}] add is_spectating

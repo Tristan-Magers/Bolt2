@@ -16,7 +16,7 @@ execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run scoreboard 
 
 execute as @s at @s run tp @e[tag=spawn,tag=id_share,limit=1]
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run gamemode spectator
-execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run tp @s ~ ~50 ~
+execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run tp @s ~ ~-60 ~
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run tag @s add teleport_down
 
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -240 air[custom_data={drop_contents:1b}]

@@ -1,5 +1,5 @@
 #
-execute as @s[tag=lobby,tag=has_bow_ui] run function game:bow_ui/detect
+execute as @s[tag=lobby,tag=has_bow_ui,gamemode=adventure] run function game:bow_ui/detect
 
 #
 execute as @s[tag=!lobby,tag=has_bow_ui] run function game:bow_ui/clear_inv

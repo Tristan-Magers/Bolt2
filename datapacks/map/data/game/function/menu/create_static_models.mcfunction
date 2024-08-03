@@ -59,3 +59,7 @@ kill @e[tag=cards]
 
 summon item_display 261.45 -39.00 -209.46 {Tags:["cards"],Silent:1b,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[1f,0f,0f,1f],translation:[0f,0f,0f],scale:[1f,1f,1f]},item:{id:"minecraft:slime_ball",count:1}}
 summon sheep 260.35 -39.00 -206.44 {NoAI:1,Silent:1b,Invulnerable:1b,Color:10b,Rotation:[180F,0F],Tags:["ted"],CustomName:'"Ted"',attributes:[{id:"minecraft:generic.jump_strength",base:0},{id:"minecraft:generic.step_height",base:0}]}
+
+#
+kill @e[tag=logo_dis]
+summon item_display 235.05 -48.0 -244.0 {Rotation:[-90F,0F],Tags:["logo_dis"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.5f,1.5f,1.5f]},item:{id:"minecraft:redstone",count:1}}

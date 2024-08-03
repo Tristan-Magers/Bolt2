@@ -1,5 +1,5 @@
 #
-playsound minecraft:ui.stonecutter.select_recipe master @a ~ ~ ~ 0.5 1.1
+playsound minecraft:ui.stonecutter.select_recipe master @s ~ ~ ~ 0.5 1.1
 
 #
 scoreboard players add @s[tag=!playing] bow_texture_place 1

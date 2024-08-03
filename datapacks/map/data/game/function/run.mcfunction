@@ -52,7 +52,7 @@ kill @e[tag=kill,tag=dead]
 
 #
 execute as @e[tag=teleport_down_3] at @s run gamemode adventure
-execute as @e[tag=teleport_down_3] at @s run tp @s ~ ~-50 ~
+execute as @e[tag=teleport_down_3] at @s run tp @s ~ ~60 ~
 tag @e remove teleport_down_3
 
 tag @e[tag=teleport_down_2] add teleport_down_3
@@ -111,7 +111,7 @@ title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pre
 #clear @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] golden_apple
 tp @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] 243.5 -44.00 -235.5 -90 13
 
-tag @e[type=arrow,x=245,y=-50,z=-235,distance=..60] add kill
+tag @e[type=arrow,x=245,y=-50,z=-235,distance=..80] add kill
 tag @e[type=arrow,x=233.0,y=-80,z=-266.9,dx=30,dy=60,dz=-25] remove kill
 
 execute as @a[x=243.5,y=-44,z=-235.5,distance=..50,scores={arrowReload=2..35}] as @s run scoreboard players set @s arrowReload 38
@@ -427,6 +427,10 @@ tag @a[tag=discord_text] remove discord_text
 
 # Coves VFX
 #execute as @e[x=-154,y=-62,z=-86,dx=-42,dy=20,dz=-72,type=arrow] at @s run particle minecraft:splash ^ ^ ^ 0.1 0.1 0.1 0 1 force @a
+
+#
+scoreboard players add @e[tag=intro_start] t1 1
+kill @e[tag=intro_start,scores={t1=100..}]
 
 #
 execute as @e[tag=stage_light,tag=low] at @s run tp @s ~ -33.1 ~

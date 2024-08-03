@@ -24,23 +24,25 @@ execute as @s[scores={intro_cutscene_time=10}] run scoreboard players operation 
 #execute as @s[scores={intro_cutscene_time=10}] run tag @e remove me
 #execute as @s[scores={intro_cutscene_time=10}] run tag @s add me
 #execute as @s[scores={intro_cutscene_time=10}] as @e[tag=intro_start] if score ID @s = ID @e[tag=me,limit=1] run tag @s add my_intro
-execute as @s[scores={intro_cutscene_time=10}] run spectate @e[tag=intro_start,tag=new,limit=1]
+execute as @s[scores={intro_cutscene_time=10}] run spectate @e[tag=intro_start,tag=new,limit=1,tag=!in_use]
+execute as @s[scores={intro_cutscene_time=10}] run tag @e[tag=intro_start,tag=new,limit=1] add in_use
 execute as @s[scores={intro_cutscene_time=10}] run tag @e[tag=intro_start] remove new
 
 execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @a[tag=!playing] [{"text":"Welcome "},{"selector":"@s","color":"gold"},{"text":" to Bleps!"}]
-execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @a[tag=!playing] [{"text":"Enjoy our instant kill bow game. ☺"}]
-execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @a[tag=!playing] [{"text":"Created by ChainsawNinja and Co.","color":"gray"}]
-execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @a[tag=!playing] [{"text":"Don't use extra camera angles with f5 while playing.","color":"dark_gray"}]
+execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @s[tag=!playing] [{"text":"Enjoy our instant kill bow game. ☺"}]
+execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @s[tag=!playing] [{"text":"Created by ChainsawNinja and Co.","color":"gray"}]
+execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tellraw @s[tag=!playing] [{"text":"Don't use extra camera angles with f5 while playing.","color":"dark_gray"}]
 execute as @s[scores={intro_cutscene_time=70},tag=!new_p_text] run tag @s add new_p_text
 
 tag @s[scores={intro_cutscene_time=70..}] remove intro_cutscene
-execute as @s[scores={intro_cutscene_time=1..69}] at @s run spectate @e[tag=intro_start,limit=1,sort=nearest]
+execute as @s[scores={intro_cutscene_time=11..69}] run tag @e[tag=intro_start] remove my_intro
+execute as @s[scores={intro_cutscene_time=11..69}] run tag @e remove me
+execute as @s[scores={intro_cutscene_time=11..69}] run tag @s add me
+execute as @s[scores={intro_cutscene_time=11..69}] as @e[tag=intro_start] if score @s ID = @e[tag=me,limit=1] ID run tag @s add my_intro
+execute as @s[scores={intro_cutscene_time=11..69}] at @s run spectate @e[tag=intro_start,limit=1,sort=nearest,tag=my_intro]
 execute as @s[scores={intro_cutscene_time=70..}] run function game:player/leave_game
 #execute as @s[scores={intro_cutscene_time=70..}] run kill @e[tag=intro_start,type=block_display]
 scoreboard players reset @s[scores={intro_cutscene_time=70..}] intro_cutscene_time
-
-scoreboard players add @e[tag=intro_start] t1 1
-kill @e[tag=intro_start,scores={t1=70..}]
 
 #
 execute as @s[tag=is_spectating,gamemode=spectator] run function game:player/spectator/check

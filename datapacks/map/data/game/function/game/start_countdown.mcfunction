@@ -7,7 +7,7 @@ execute if score .start_cd .data = .50 .num run title @a title {"text":"Starting
 execute if score .start_cd .data = .30 .num run title @a title {"text":"Starting in 1","font":"fancy"}
 execute if score .start_cd .data = .10 .num if entity @a[scores={team_pref=0..}] run title @a times 10 40 0
 execute if score .start_cd .data = .10 .num if entity @a[scores={team_pref=0..}] run title @a title {"translate":"\u0001","font":"title"}
-execute if score .start_cd .data = .0 .num run function game:start2
+execute if score .start_cd .data = .0 .num if entity @a[scores={team_pref=0..}] run function game:start2
 execute if score .start_cd .data = .0 .num unless entity @a[scores={team_pref=0..}] run title @a title {"text":"No Players","font":"fancy"}
 
 execute if score .start_cd .data = .70 .num as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 0
