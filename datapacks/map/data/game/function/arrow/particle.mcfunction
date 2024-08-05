@@ -47,7 +47,7 @@ execute as @s[scores={bow_texture=20..21}] at @s run particle minecraft:spit ~ ~
 execute as @s[scores={bow_texture=22}] at @s run particle minecraft:item{item:"minecraft:copper_ingot"} ~ ~ ~ 0.2 0.2 0.2 0.15 6 force @a[tag=id_share]
 
 # Servant
-execute as @s[scores={bow_texture=23}] at @s run particle entity_effect{color:[1f,1f,1f,1f]} ~ ~ ~ 0 0 0 0.2 15 force @a[tag=id_share]
+execute as @s[scores={bow_texture=23}] at @s run particle entity_effect{color:[0.663,0.714,0.729,1.00]} ~ ~ ~ 0 0 0 0.2 6 force @a[tag=id_share]
 
 # Lock
 execute as @s[scores={bow_texture=24}] at @s run particle minecraft:item{item:"minecraft:blue_terracotta"} ~ ~ ~ 0.2 0.2 0.2 0.1 15 force @a[tag=id_share]
@@ -202,7 +202,7 @@ execute as @s[scores={bow_texture=75}] at @s run particle minecraft:item{item:"m
 execute as @s[scores={bow_texture=75}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 4 force @a[tag=id_share]
 
 # Unstable
-execute as @s[scores={bow_texture=76}] at @s run particle entity_effect{color:[1f,0.463f,0.329f,1.000f]} ~ ~ ~ 0 0 0 0.15 5 force @a[tag=id_share]
+execute as @s[scores={bow_texture=76}] at @s run particle entity_effect{color:[0.490,0.529,0.729,1.00]} ~ ~ ~ 0 0 0 0.15 5 force @a[tag=id_share]
 execute as @s[scores={bow_texture=76}] at @s run particle minecraft:spit ~ ~ ~ 0.1 0.1 0.1 0.06 3 force @a[tag=id_share]
 
 # Chain

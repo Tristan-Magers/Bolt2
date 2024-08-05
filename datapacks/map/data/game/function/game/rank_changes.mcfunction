@@ -85,6 +85,10 @@ execute as @a[tag=scew_up] run scoreboard players operation @s rank_delta_up /= 
 execute as @a[tag=scew_down] run scoreboard players operation @s rank_delta_down *= @s rank_scew
 execute as @a[tag=scew_down] run scoreboard players operation @s rank_delta_down /= .100 .num
 
+# adjument to prevent elo inflation
+scoreboard players remove @a[scores={rank_delta_up=..10}] rank_delta_up 5
+scoreboard players add @a[scores={rank_delta_down=..10}] rank_delta_down 5
+
 # security that values are within expected ranges [keeps it under the actual min max of 0-100]
 scoreboard players set @a[scores={rank_delta_up=..10}] rank_delta_up 10
 scoreboard players set @a[scores={rank_delta_down=..10}] rank_delta_down 10

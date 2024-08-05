@@ -324,7 +324,7 @@ scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1
 tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow"}}] add reloadCross
 tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] remove reloadCross
 ##clear @a[tag=reloadCross] crossbow
-item replace entity @a[tag=reloadCross] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}],custom_data={trigger:0b}] 1
+item replace entity @a[tag=reloadCross,nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:0b}}}}] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}],custom_data={trigger:0b}] 1
 scoreboard players set @a[tag=reloadCross] crossbowReload 0
 
 tag @a remove reloadCross

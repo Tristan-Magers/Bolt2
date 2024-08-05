@@ -45,7 +45,7 @@ tag @s[tag=!near_chair] remove nc2
 
 # Ted text
 tag @s remove near_ted
-execute at @s if entity @e[type=sheep,tag=ted,distance=..1.9] run tag @s add near_ted
+execute at @s if entity @e[type=sheep,tag=ted,distance=..1.7] run tag @s add near_ted
 execute at @s if entity @e[type=sheep,tag=ted,distance=..3.5] as @e[type=sheep,tag=ted,distance=..2.2] at @s run tp @s ~ ~ ~ facing entity @p 
 
 title @s[tag=near_ted,tag=!nt2] actionbar {"text":"Hey kid, want to play some poker?","color":"dark_purple"}
@@ -56,7 +56,7 @@ tag @s[tag=!near_ted] remove nt2
 
 # Ted text
 tag @s remove near_cards
-execute at @s if entity @e[type=item_display,tag=cards,distance=..1.5] run tag @s add near_cards
+execute at @s if entity @e[type=item_display,tag=cards,distance=..1.4] run tag @s add near_cards
 scoreboard players set @s[tag=near_cards,tag=!near_cards2] lobby_text_time 20
 title @s[tag=near_cards,tag=!near_cards2] actionbar {"text":"The deck has three cards."}
 
