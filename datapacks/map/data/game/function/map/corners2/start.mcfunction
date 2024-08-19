@@ -1,6 +1,6 @@
-fill -251 -41 -409 -222 -55 -455 air replace minecraft:gravel
-fill -251 -41 -409 -222 -55 -455 air replace minecraft:target
-fill -251 -41 -409 -222 -55 -455 air replace minecraft:emerald_block
+fill -251 -39 -409 -222 -55 -455 air replace minecraft:gravel
+fill -251 -39 -409 -222 -55 -455 air replace minecraft:target
+fill -251 -39 -409 -222 -55 -455 air replace minecraft:emerald_block
 
 fill -241 -48 -431 -244 -50 -433 minecraft:gravel
 fill -231 -50 -433 -235 -48 -431 gravel

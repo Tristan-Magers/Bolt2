@@ -1,20 +1,20 @@
-fill -436 -60 -30 -384 -55 67 air replace gravel
-fill -436 -54 -30 -384 -49 67 air replace gravel
-fill -436 -48 -30 -384 -43 67 air replace gravel
-fill -436 -42 -30 -384 -37 67 air replace gravel
-fill -436 -36 -30 -384 -31 67 air replace gravel
+fill -436 -60 -32 -384 -55 64 air replace gravel
+fill -436 -54 -32 -384 -49 64 air replace gravel
+fill -436 -48 -32 -384 -43 64 air replace gravel
+fill -436 -42 -32 -384 -37 64 air replace gravel
+fill -436 -36 -32 -384 -31 64 air replace gravel
 
-fill -436 -60 -30 -384 -55 67 air replace target
-fill -436 -54 -30 -384 -49 67 air replace target
-fill -436 -48 -30 -384 -43 67 air replace target
-fill -436 -42 -30 -384 -37 67 air replace target
-fill -436 -36 -30 -384 -31 67 air replace target
+fill -436 -60 -32 -384 -55 64 air replace target
+fill -436 -54 -32 -384 -49 64 air replace target
+fill -436 -48 -32 -384 -43 64 air replace target
+fill -436 -42 -32 -384 -37 64 air replace target
+fill -436 -36 -32 -384 -31 64 air replace target
 
-fill -436 -60 -30 -384 -55 67 air replace emerald_block
-fill -436 -54 -30 -384 -49 67 air replace emerald_block
-fill -436 -48 -30 -384 -43 67 air replace emerald_block
-fill -436 -42 -30 -384 -37 67 air replace emerald_block
-fill -436 -36 -30 -384 -31 67 air replace emerald_block
+fill -436 -60 -32 -384 -55 64 air replace emerald_block
+fill -436 -54 -32 -384 -49 64 air replace emerald_block
+fill -436 -48 -32 -384 -43 64 air replace emerald_block
+fill -436 -42 -32 -384 -37 64 air replace emerald_block
+fill -436 -36 -32 -384 -31 64 air replace emerald_block
 
 execute if score .mode .data = .1 .num run summon armor_stand -419 -52 -14 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",count:1}],Tags:["blueflag","flag"]}
 execute if score .mode .data = .1 .num run summon armor_stand -419 -52 46 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:red_banner",count:1}],Tags:["redflag","flag"]}

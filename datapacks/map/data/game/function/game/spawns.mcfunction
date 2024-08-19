@@ -60,9 +60,9 @@ scoreboard players set @a[x=-401,y=-49,z=57,dx=15,dy=10,dz=10,team=red] invul 40
 tag @a[x=-401,y=-49,z=57,dx=15,dy=10,dz=10,team=red] add inspawn
 
 #garden
-scoreboard players set @a[x=-19,y=-54,z=-254,dx=7,dy=7,dz=-7,team=red] invul 35
+scoreboard players set @a[x=-19,y=-54,z=-249,dx=7,dy=7,dz=-12,team=red] invul 35
 
-tag @a[x=-19,y=-54,z=-254,dx=7,dy=7,dz=-7,team=red] add inspawn
+tag @a[x=-19,y=-54,z=-249,dx=7,dy=7,dz=-12,team=red] add inspawn
 
 #lookout
 scoreboard players set @a[x=3,y=-35,z=250,dx=-8,dy=7,dz=-18,team=red] invul 40
@@ -134,9 +134,9 @@ scoreboard players set @a[x=-401,y=-49,z=-23,dx=15,dy=10,dz=-10,team=blue] invul
 tag @a[x=-401,y=-49,z=-23,dx=15,dy=10,dz=-10,team=blue] add inspawn
 
 #garden
-scoreboard players set @a[x=17,y=-54,z=-346,dx=-7,dy=7,dz=7,team=blue] invul 35
+scoreboard players set @a[x=17,y=-54,z=-351,dx=-7,dy=7,dz=12,team=blue] invul 35
 
-tag @a[x=17,y=-54,z=-346,dx=-7,dy=7,dz=7,team=blue] add inspawn
+tag @a[x=17,y=-54,z=-351,dx=-7,dy=7,dz=12,team=blue] add inspawn
 
 #lookout
 scoreboard players set @a[x=-83,y=-35,z=250,dx=8,dy=7,dz=-18,team=blue] invul 40

@@ -90,8 +90,8 @@ execute if score .map .data = .10 .num run tp @s[team=blue] -228.5 -45.00 -408.5
 execute if score .map .data = .11 .num run tp @s[team=red] 93.5 -55.00 -44.5 -90 0
 execute if score .map .data = .11 .num run tp @s[team=blue] 165.5 -55.00 -44.5 90 0
 
-execute if score .map .data = .12 .num run tp @s[team=red] -16.5 -53.00 -255.5 -135 0
-execute if score .map .data = .12 .num run tp @s[team=blue] 15.5 -53.00 -343.5 45 0
+execute if score .map .data = .12 .num run tp @s[team=red] -14.5 -53.00 -250.00 180 0
+execute if score .map .data = .12 .num run tp @s[team=blue] 13.50 -53.00 -349.00 0 0
 
 execute if score .map .data = .13 .num run tp @s[team=red] 1.5 -34.00 241.5 90 0
 execute if score .map .data = .13 .num run tp @s[team=blue] -80.5 -34.00 241.5 -90 0
