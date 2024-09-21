@@ -22,12 +22,12 @@ execute unless score .mode .data = .6 .num run tag @a[x=-188,y=-54,z=-103,distan
 execute unless score .mode .data = .6 .num run tag @a[x=-178,y=-55,z=-92,distance=..7] add area2
 execute unless score .mode .data = .6 .num run tag @a[x=-178,y=-55,z=-92,distance=..7] remove area1
 
-execute unless score .mode .data = .6 .num run title @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue] title {"text":"Enemy Spawn"}
+#execute unless score .mode .data = .6 .num run title @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue] title {"text":"Enemy Spawn"}
 
-execute unless score .mode .data = .6 .num run tp @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue,tag=area1] -189 -54.0 -98
-execute unless score .mode .data = .6 .num run tp @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue,tag=area2] -181.5 -54.50 -91.5
+#execute unless score .mode .data = .6 .num run tp @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue,tag=area1] -189 -54.0 -98
+#execute unless score .mode .data = .6 .num run tp @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue,tag=area2] -181.5 -54.50 -91.5
 
-execute unless score .mode .data = .6 .num run tag @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue] add danger
+#execute unless score .mode .data = .6 .num run tag @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue] add danger
 
 tag @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=red,scores={respawn=1..}] add not_left
 execute as @a[team=red] unless entity @s[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6] run tag @s remove not_left
@@ -96,12 +96,12 @@ execute unless score .mode .data = .6 .num run tag @a[x=-188,y=-54,z=-140,distan
 execute unless score .mode .data = .6 .num run tag @a[x=-178,y=-55,z=-151,distance=..7] add area2
 execute unless score .mode .data = .6 .num run tag @a[x=-178,y=-55,z=-151,distance=..7] remove area1
 
-execute unless score .mode .data = .6 .num run title @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red] title {"text":"Enemy Spawn"}
+#execute unless score .mode .data = .6 .num run title @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red] title {"text":"Enemy Spawn"}
 
-execute unless score .mode .data = .6 .num run tp @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red,tag=area1] -189 -54.0 -146
-execute unless score .mode .data = .6 .num run tp @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red,tag=area2] -181.5 -54.50 -151.5
+#execute unless score .mode .data = .6 .num run tp @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red,tag=area1] -189 -54.0 -146
+#execute unless score .mode .data = .6 .num run tp @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red,tag=area2] -181.5 -54.50 -151.5
 
-execute unless score .mode .data = .6 .num run tag @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red] add danger
+#execute unless score .mode .data = .6 .num run tag @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red] add danger
 
 tag @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=blue,scores={respawn=1..}] add not_left
 execute as @a[team=blue] unless entity @s[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6] run tag @s remove not_left

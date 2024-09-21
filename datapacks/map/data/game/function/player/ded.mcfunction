@@ -51,7 +51,7 @@ execute if score .tmi .data matches 1 if score .tmi_fog .data matches 1 run tag 
 scoreboard players set @a[scores={crossbowTime=3..}] crossbowReload 2
 
 scoreboard players set @s killStreak 0
-scoreboard players set @s arrowReload 20
+scoreboard players set @s arrowReload 25
 #set 1 seconds before reload
 clear @s arrow
 execute if score .tmi .data = .1 .num if score .tmi_arrow .data = .2 .num run item replace entity @s[scores={respawn=1}] hotbar.8 with minecraft:arrow 3
@@ -90,8 +90,8 @@ execute if score .map .data = .10 .num run tp @s[team=blue] -228.5 -45.00 -408.5
 execute if score .map .data = .11 .num run tp @s[team=red] 93.5 -55.00 -44.5 -90 0
 execute if score .map .data = .11 .num run tp @s[team=blue] 165.5 -55.00 -44.5 90 0
 
-execute if score .map .data = .12 .num run tp @s[team=red] -14.5 -53.00 -250.00 180 0
-execute if score .map .data = .12 .num run tp @s[team=blue] 13.50 -53.00 -349.00 0 0
+execute if score .map .data = .12 .num run tp @s[team=red] -14.5 -53.00 -252.0 180 0
+execute if score .map .data = .12 .num run tp @s[team=blue] 13.50 -53.00 -347.00 0 0
 
 execute if score .map .data = .13 .num run tp @s[team=red] 1.5 -34.00 241.5 90 0
 execute if score .map .data = .13 .num run tp @s[team=blue] -80.5 -34.00 241.5 -90 0
