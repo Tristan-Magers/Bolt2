@@ -16,16 +16,22 @@ execute if score .mode .data = .6 .num run scoreboard players set @a[x=-84,z=-3,
 execute if score .mode .data = .6 .num run scoreboard players set @a[x=-78,z=-10,y=-50.5,dx=2.5,dy=4,dz=6] invul 70
 
 #caves
-execute unless score .mode .data = .6 .num run tag @a[x=-188,y=-54,z=-103,distance=..7] add area1
+tag @a remove in_red_spawn
+tag @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6] add in_red_spawn
+
+execute unless score .mode .data = .6 .num run tag @a[x=-188,y=-54,z=-103,distance=..7,tag=!in_red_spawn] add area1
 execute unless score .mode .data = .6 .num run tag @a[x=-188,y=-54,z=-103,distance=..7] remove area2
 
-execute unless score .mode .data = .6 .num run tag @a[x=-178,y=-55,z=-92,distance=..7] add area2
+#execute unless score .mode .data = .6 .num run tag @a[x=-178,y=-55,z=-92,distance=..7] add area2
 execute unless score .mode .data = .6 .num run tag @a[x=-178,y=-55,z=-92,distance=..7] remove area1
 
 #execute unless score .mode .data = .6 .num run title @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue] title {"text":"Enemy Spawn"}
 
-#execute unless score .mode .data = .6 .num run tp @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue,tag=area1] -189 -54.0 -98
-#execute unless score .mode .data = .6 .num run tp @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue,tag=area2] -181.5 -54.50 -91.5
+execute unless score .mode .data = .6 .num run title @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue,tag=area1] times 2 20 2
+execute unless score .mode .data = .6 .num run title @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue,tag=area1] title {"text":"Enemy Spawn"}
+execute unless score .mode .data = .6 .num run title @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue,tag=area1] subtitle {"text":"Can't enter from here"}
+execute unless score .mode .data = .6 .num run tp @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue,tag=area1] -189 -54.0 -98
+execute unless score .mode .data = .6 .num run tp @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue,tag=area2] -181.5 -54.50 -91.5
 
 #execute unless score .mode .data = .6 .num run tag @a[z=-90,y=-54,x=-190,dz=-6,dy=5,dx=6,team=blue] add danger
 
@@ -90,16 +96,22 @@ tag @a[x=-78,z=53,y=-50.5,dx=2.5,dy=4,dz=-7] add inspawn
 tag @a[x=-84,z=46,y=-50.5,dx=4,dy=4,dz=-3] add inspawn
 
 #caves
-execute unless score .mode .data = .6 .num run tag @a[x=-188,y=-54,z=-140,distance=..7] add area1
+tag @a remove in_blue_spawn
+tag @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6] add in_blue_spawn
+
+execute unless score .mode .data = .6 .num run tag @a[x=-188,y=-54,z=-140,distance=..7,tag=!in_blue_spawn] add area1
 execute unless score .mode .data = .6 .num run tag @a[x=-188,y=-54,z=-140,distance=..7] remove area2
 
-execute unless score .mode .data = .6 .num run tag @a[x=-178,y=-55,z=-151,distance=..7] add area2
+#execute unless score .mode .data = .6 .num run tag @a[x=-178,y=-55,z=-151,distance=..7] add area2
 execute unless score .mode .data = .6 .num run tag @a[x=-178,y=-55,z=-151,distance=..7] remove area1
 
 #execute unless score .mode .data = .6 .num run title @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red] title {"text":"Enemy Spawn"}
 
-#execute unless score .mode .data = .6 .num run tp @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red,tag=area1] -189 -54.0 -146
-#execute unless score .mode .data = .6 .num run tp @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red,tag=area2] -181.5 -54.50 -151.5
+execute unless score .mode .data = .6 .num run title @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red,tag=area1] times 2 20 2
+execute unless score .mode .data = .6 .num run title @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red,tag=area1] title {"text":"Enemy Spawn"}
+execute unless score .mode .data = .6 .num run title @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red,tag=area1] subtitle {"text":"Can't enter from here"}
+execute unless score .mode .data = .6 .num run tp @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red,tag=area1] -189 -54.0 -146
+execute unless score .mode .data = .6 .num run tp @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red,tag=area2] -181.5 -54.50 -151.5
 
 #execute unless score .mode .data = .6 .num run tag @a[z=-154,y=-54,x=-190,dz=6,dy=5,dx=6,team=red] add danger
 

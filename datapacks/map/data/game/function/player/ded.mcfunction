@@ -23,7 +23,7 @@ execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .
 execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -242 air[custom_data={drop_contents:1b}]
 execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -244 air[custom_data={drop_contents:1b}]
 
-execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg[custom_model_data=3]
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg[custom_model_data={strings:["3"]}]
 execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute as @s[team=red,scores={drop_magma=1..}] run function game:player/give/red_spawn
 
 execute as @s[scores={respawn=2}] run clear @s potion
@@ -42,7 +42,7 @@ execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red]
 execute if score .mode .data = .6 .num run clear @s[scores={respawn=2},team=red] iron_ingot
 #execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red] iron_ingot{custom_name='{"text":"Armor","color":"gray","italic":false}',lore=['{"text":"Survive one arrow hit","color":"white","italic":false}','{"text":"Doesn\'t block explosions","color":"white","italic":false}','{"text":"Drops the flag","color":"white","italic":false}']}} 1
 #execute if score .mode .data = .6 .num run give @s[scores={respawn=2},team=red,tag=more_armor] iron_ingot{custom_name='{"text":"Armor","color":"gray","italic":false}',lore=['{"text":"Survive one arrow hit","color":"white","italic":false}','{"text":"Doesn\'t block explosions","color":"white","italic":false}','{"text":"Drops the flag","color":"white","italic":false}']}} 1
-execute if score .mode .data = .6 .num if score .zombie_evolve_type_2 .data = .1 .num run give @s[scores={respawn=2},team=red] minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',minecraft:max_damage=1,lore=['{"text":"Claw players, placables, and walls","color":"white","italic":false}'],damage=0,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"attack_damage",type:"generic.attack_damage",amount:100,operation:"add_value",slot:"any"}],show_in_tooltip:false}] 1
+execute if score .mode .data = .6 .num if score .zombie_evolve_type_2 .data = .1 .num run give @s[scores={respawn=2},team=red] minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',minecraft:max_damage=1,lore=['{"text":"Claw players, placables, and walls","color":"white","italic":false}'],damage=0,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"attack_damage",type:"attack_damage",amount:100,operation:"add_value",slot:"any"}],show_in_tooltip:false}] 1
 
 execute if score .tmi .data matches 1 if score .tmi_fog .data matches 1 run tag @s add dark
 

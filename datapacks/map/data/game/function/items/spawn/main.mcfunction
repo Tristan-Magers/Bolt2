@@ -7,5 +7,5 @@ tag @s add new
 team join noColBlue @s[type=slime]
 team join noColRed @s[type=magma_cube]
 
-attribute @s minecraft:generic.armor base set 0
+attribute @s minecraft:armor base set 0
 

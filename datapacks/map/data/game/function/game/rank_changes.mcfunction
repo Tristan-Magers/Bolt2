@@ -1,8 +1,8 @@
 scoreboard players operation .point_blue .metric = Blue Scores
 scoreboard players operation .point_red .metric = Red Scores
 
-execute if score .point_blue .metric = .3 .num run scoreboard players set .team_win .metric 2
-execute if score .point_red .metric = .3 .num run scoreboard players set .team_win .metric 1
+execute if score .point_blue .metric > .point_red .metric run scoreboard players set .team_win .metric 2
+execute if score .point_red .metric > .point_blue .metric run scoreboard players set .team_win .metric 1
 
 #
 scoreboard players set @a rank_scew 500
@@ -234,7 +234,7 @@ execute as @a run scoreboard players operation @s rank_delta = @s t1
 execute as @a run scoreboard players operation @s rank_delta -= @s rank_delta_down
 
 # half win reduction
-execute if score Red Scores = Blue Scores as @a run scoreboard players operation @s rank_delta /= .2 .num
+execute unless score .point_red .metric = .point_blue .metric if score .point_red .metric < .3 .num if score .point_blue .metric < .3 .num run scoreboard players operation @s rank_delta /= .2 .num
 
 # change players rank
 scoreboard players set @a[tag=!change_rank] rank_delta 0

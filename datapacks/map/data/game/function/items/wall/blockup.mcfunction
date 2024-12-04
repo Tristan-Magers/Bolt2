@@ -21,7 +21,7 @@ execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace minecraft:small_d
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace minecraft:short_grass
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace minecraft:fern
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace light
-execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace #minecraft:saplings
+execute as @s at @s unless block ~ ~ ~ minecraft:azalea run fill ~ ~ ~ ~ ~ ~ minecraft:air replace #minecraft:saplings
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace #minecraft:flowers
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace brown_mushroom
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace dead_bush

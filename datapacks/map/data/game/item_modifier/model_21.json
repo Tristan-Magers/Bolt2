@@ -1,8 +1,8 @@
-[
-  {
-    "function": "minecraft:set_components",
-    "components": {
-      "minecraft:custom_model_data": 21
+{
+	"function": "minecraft:set_components",
+	"components": {
+	  "minecraft:custom_model_data": {
+		"strings":[" 21"]
 	  }
 	}
-]
+}

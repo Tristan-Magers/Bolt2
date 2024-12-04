@@ -12,7 +12,7 @@ scoreboard players set @s[scores={temp_bow_value=10}] temp_bow_id 52
 scoreboard players set @s[scores={temp_bow_value=11}] temp_bow_id 63
 scoreboard players set @s[scores={temp_bow_value=12}] temp_bow_id 29
 scoreboard players set @s[scores={temp_bow_value=13}] temp_bow_id 38
-scoreboard players set @s[scores={temp_bow_value=14}] temp_bow_id 21
+scoreboard players set @s[scores={temp_bow_value=14}] temp_bow_id 82
 scoreboard players set @s[scores={temp_bow_value=15}] temp_bow_id 49
 scoreboard players set @s[scores={temp_bow_value=16}] temp_bow_id 16
 scoreboard players set @s[scores={temp_bow_value=17}] temp_bow_id 28
@@ -57,7 +57,7 @@ scoreboard players set @s[scores={temp_bow_value=52}] temp_bow_id 53
 scoreboard players set @s[scores={temp_bow_value=53}] temp_bow_id 14
 
 scoreboard players set @s[scores={temp_bow_value=54}] temp_bow_id 15
-scoreboard players set @s[scores={temp_bow_value=55}] temp_bow_id 19
+scoreboard players set @s[scores={temp_bow_value=55}] temp_bow_id 81
 scoreboard players set @s[scores={temp_bow_value=56}] temp_bow_id 73
 scoreboard players set @s[scores={temp_bow_value=57}] temp_bow_id 31
 scoreboard players set @s[scores={temp_bow_value=58}] temp_bow_id 32

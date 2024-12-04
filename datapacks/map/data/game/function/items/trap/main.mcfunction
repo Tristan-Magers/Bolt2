@@ -6,6 +6,7 @@ execute if entity @s[scores={t4=4}] at @s run tp @s ~ ~-0.9 ~
 ##### CONTROL AND PLANT PARTICLES
 
 scoreboard players add @s t4 1
+scoreboard players add @s timer 0
 
 execute as @s[scores={t4=2}] at @s if block ~ -64 ~ redstone_block run tag @s add cant_place
 #execute as @s[scores={t4=2}] at @s if block ~ -64 ~ diamond_block run tag @s add cant_place
@@ -46,10 +47,10 @@ execute if entity @s[scores={timer=0},team=blue] at @s positioned ~ ~0.4 ~ if en
 scoreboard players add @s timer 0
 scoreboard players add @s[scores={timer=1..}] timer 1
 
-execute if entity @s[scores={timer=0},team=red] at @s positioned ~ ~0.4 ~ if entity @a[team=blue,gamemode=adventure,distance=..3.65] run scoreboard players set @s timer 1
-execute if entity @s[scores={timer=0},team=blue] at @s positioned ~ ~0.4 ~ if entity @a[team=red,gamemode=adventure,distance=..3.65] run scoreboard players set @s timer 1
-execute if entity @s[scores={timer=0},team=red] at @s positioned ~ ~0.4 ~ if entity @e[type=zombie_villager,distance=..3.65,team=blue] run scoreboard players set @s timer 1
-execute if entity @s[scores={timer=0},team=blue] at @s positioned ~ ~0.4 ~ if entity @e[type=zombie_villager,distance=..3.65,team=red] run scoreboard players set @s timer 1
+execute if entity @s[scores={timer=0,t4=4..},team=red] at @s positioned ~ ~0.4 ~ if entity @a[team=blue,gamemode=adventure,distance=..3.65] run scoreboard players set @s timer 1
+execute if entity @s[scores={timer=0,t4=4..},team=blue] at @s positioned ~ ~0.4 ~ if entity @a[team=red,gamemode=adventure,distance=..3.65] run scoreboard players set @s timer 1
+execute if entity @s[scores={timer=0,t4=4..},team=red] at @s positioned ~ ~0.4 ~ if entity @e[type=zombie_villager,distance=..3.65,team=blue] run scoreboard players set @s timer 1
+execute if entity @s[scores={timer=0,t4=4..},team=blue] at @s positioned ~ ~0.4 ~ if entity @e[type=zombie_villager,distance=..3.65,team=red] run scoreboard players set @s timer 1
 
 ##### WHAT HAPPENS WHEN TRIGGERED
 
@@ -115,9 +116,9 @@ tag @a remove gre_immune
 
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run effect give @e[distance=..4.8,type=magma_cube] glowing 10 10 true
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run effect give @e[distance=..4.8,type=slime] glowing 10 10 true
-execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run effect give @e[distance=..4.8,type=creeper] glowing 10 10 true
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run effect give @e[distance=..4.8,type=creeper,scores={timer=..0}] glowing 10 10 true
 
-execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run tag @e[distance=..4.8,type=creeper] add kill
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run tag @e[distance=..4.8,type=creeper,scores={timer=..0}] add kill
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run tag @e[distance=..4.8,type=magma_cube] add kill
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run tag @e[distance=..4.8,type=slime] add kill
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ run kill @e[distance=..3.0,type=minecraft:falling_block]

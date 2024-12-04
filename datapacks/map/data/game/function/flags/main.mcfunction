@@ -35,8 +35,8 @@ execute as @s at @s if score .tmi .data matches 1 if score .tmi_objective .data 
 execute as @s at @s if score .tmi .data matches 1 if score .tmi_objective .data matches 1 run function game:flags/flag_capture
 
 #
-execute if score Blue Scores >= .endscore .stats run scoreboard players set .stats_end .data 1
-execute if score Red Scores >= .endscore .stats run scoreboard players set .stats_end .data 1
+execute if score Blue Scores > Red Scores run scoreboard players set .stats_end .data 1
+execute if score Red Scores > Blue Scores run scoreboard players set .stats_end .data 1
 
 execute if score .tmi .data = .1 .num run scoreboard players set .stats_end .data 0
 execute if score .ranked .data = .0 .num run scoreboard players set .stats_end .data 0

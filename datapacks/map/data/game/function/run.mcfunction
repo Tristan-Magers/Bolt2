@@ -85,7 +85,7 @@ scoreboard players set @a drop_egg_generic 0
 
 kill @e[type=item,tag=!no_kill]
 
-execute as @a run attribute @s minecraft:generic.max_health base set 2
+execute as @a run attribute @s minecraft:max_health base set 2
 
 execute as @e[type=arrow] run data merge entity @s {damage:1000.0}
 

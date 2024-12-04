@@ -57,7 +57,7 @@ scoreboard players set @a placeTurret 0
 tag @a remove shot_by_turret
 
 #> Delta
-#! Currently commented out because delta api isn't added right now, will finish once it is (or you can do it yourself); ideally should launch players like 3 blocks away 
+# Currently commented out because delta api isn't added right now, will finish once it is (or you can do it yourself); ideally should launch players like 3 blocks away 
 # scoreboard players set $strength delta.api.launch 1000
 # execute as @a[tag=shieldDelta] at @s facing entity @a[tag=shieldDeflector,limit=1] feet run execute rotated ~-180 ~ run function delta:api/launch_looking 
 # tag @a remove shieldDeflector

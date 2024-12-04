@@ -47,4 +47,4 @@ execute if score .tmi .data = .1 .num if score .tmi_objective .data = .2 .num ru
 
 #
 kill @e[type=minecart]
-summon minecraft:minecart -380.55 -28.00 2.51
+summon minecraft:minecart -401.69 -34.50 54.32
