@@ -70,6 +70,7 @@ scoreboard objectives add placeCreeper minecraft.used:minecraft.panda_spawn_egg
 scoreboard objectives add placeSlime minecraft.used:minecraft.panda_spawn_egg
 scoreboard objectives add placeMagma minecraft.used:minecraft.panda_spawn_egg
 scoreboard objectives add snowball minecraft.used:minecraft.snowball
+scoreboard objectives add snowball2 minecraft.used:minecraft.snowball
 
 scoreboard objectives add place_creeper_temp minecraft.used:minecraft.panda_spawn_egg
 scoreboard objectives add place_bat_temp minecraft.used:minecraft.panda_spawn_egg
@@ -214,6 +215,8 @@ scoreboard objectives add invul dummy
 scoreboard objectives add wall_invul dummy
 scoreboard objectives add danger dummy
 
+scoreboard objectives add wall_hit_count dummy
+
 scoreboard objectives add glowing dummy
 
 scoreboard objectives add no_slow dummy
@@ -221,6 +224,9 @@ scoreboard objectives add no_slow dummy
 scoreboard objectives add distance dummy
 
 scoreboard objectives add removeBlind dummy
+
+scoreboard objectives add blind dummy
+scoreboard objectives add blind_new dummy
 
 scoreboard objectives add spawn_message_delay dummy
 
@@ -534,6 +540,10 @@ scoreboard players set .400 .num 400
 scoreboard players set .500 .num 500
 
 scoreboard players set .600 .num 600
+
+scoreboard players set .620 .num 620
+
+scoreboard players set .640 .num 640
 
 scoreboard players set .800 .num 800
 scoreboard players set .900 .num 900

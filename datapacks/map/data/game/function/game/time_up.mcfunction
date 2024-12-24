@@ -1,7 +1,7 @@
 scoreboard players add .Time .metric 1
 
 scoreboard players operation .time_mod .calc = .Time .metric
-scoreboard players operation .time_mod .calc %= .600 .num
+scoreboard players operation .time_mod .calc %= .620 .num
 
 execute if score .tmi .data matches 1 if score .time_mod .calc matches 0 run loot give @a[tag=playing] mine 222 -60 -244 air[custom_data={drop_contents:1b}]
 

@@ -2,12 +2,5 @@
     "parent": "item/bow",
     "textures": {
         "layer0": "item/bow/jader_bow"
-    },
-    "display": {
-      "thirdperson_righthand": {
-        "rotation": [ -80, 260, -40 ],
-        "translation": [ -1, -2, 2.0 ],
-        "scale": [ 0.9, 0.9, 0.9 ]
-      }
     }
 }

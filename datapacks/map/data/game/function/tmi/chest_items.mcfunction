@@ -140,7 +140,7 @@ item replace block 235 -49 -224 container.9 with purple_stained_glass_pane[custo
 item replace block 235 -49 -224 container.14 with purple_stained_glass_pane[custom_model_data={strings:["2"]},custom_name='{"text":"Life Items","italic":false}',lore=['{"text":"These slots control items you have","italic":false}','{"text":"given at start of a life.","italic":false}']]
 
 item replace block 235 -49 -224 container.18 with purple_stained_glass_pane[custom_model_data={strings:["3"]},custom_name='{"text":"Every _ Kills [1/3/5/7]","italic":false}',lore=['{"text":"These slots control items you are","italic":false}','{"text":"given after an amount of kills.","italic":false}']]
-item replace block 235 -49 -224 container.23 with purple_stained_glass_pane[custom_model_data={strings:["4"]},custom_name='{"text":"Every _ Seconds [12/20/30]","italic":false}',lore=['{"text":"These slots control items you are","italic":false}','{"text":"given after a set amount of time.","italic":false}']]
+item replace block 235 -49 -224 container.23 with purple_stained_glass_pane[custom_model_data={strings:["4"]},custom_name='{"text":"Every _ Seconds [12/20/31]","italic":false}',lore=['{"text":"These slots control items you are","italic":false}','{"text":"given after a set amount of time.","italic":false}']]
 
 clear @a black_stained_glass_pane[custom_name='{"text":""}']
 clear @a gray_stained_glass_pane

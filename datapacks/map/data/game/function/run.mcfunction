@@ -76,11 +76,11 @@ execute as @a[tag=playing] run scoreboard players add .players_playing .data 1
 gamemode adventure @a[gamemode=survival]
 effect give @a minecraft:resistance 999 255 true
 
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":0}}}] at @s as @p[tag=trap_dif] run scoreboard players operation @s drop_creeper = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":1}}}] at @s as @p[tag=wall_dif] run scoreboard players operation @s drop_silver = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":2}}}] at @s as @p[tag=magma_dif] run scoreboard players operation @s drop_magma = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":3}}}] at @s as @p[tag=slime_dif] run scoreboard players operation @s drop_slime = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":4}}}] at @s as @p[tag=turret_dif] run scoreboard players operation @s drop_turret = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["0"]}}}}] at @s as @p[tag=trap_dif] run scoreboard players operation @s drop_creeper = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["1"]}}}}] at @s as @p[tag=wall_dif] run scoreboard players operation @s drop_silver = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["2"]}}}}] at @s as @p[tag=magma_dif] run scoreboard players operation @s drop_magma = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["3"]}}}}] at @s as @p[tag=slime_dif] run scoreboard players operation @s drop_slime = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["4"]}}}}] at @s as @p[tag=turret_dif] run scoreboard players operation @s drop_turret = @s drop_egg_generic
 scoreboard players set @a drop_egg_generic 0
 
 kill @e[type=item,tag=!no_kill]
@@ -161,9 +161,10 @@ execute as @e[tag=wall] at @s run function game:items/wall/main
 #grenade
 kill @e[type=snowball,tag=dummy]
 execute as @e[tag=grenademark] at @s run function game:items/grenade/check
-execute as @e[type=snowball,tag=!dummy,tag=!started] at @s run function game:items/grenade/check_throw_valid
-execute as @e[type=snowball,tag=!dummy] at @s run function game:items/grenade/main
-execute as @e[tag=grenadehit] at @s run function game:items/grenade/hitmark
+execute as @e[type=snowball,tag=!dummy,tag=!started,tag=!test] at @s run function game:items/grenade/check_throw_valid
+execute as @e[type=snowball,tag=!dummy,tag=!test] at @s run function game:items/grenade/main
+execute as @e[tag=grenadehit,tag=!glitter] at @s run function game:items/grenade/hitmark
+execute as @e[tag=grenadehit,tag=glitter] at @s run function game:items/grenade/hitmark_glitter
 tag @a remove ger_sound
 
 #hurtime
@@ -246,6 +247,21 @@ tag @e[type=zombie_villager,tag=!old,team=blue] add old
 tag @a remove poison_range
 
 execute as @e[type=minecraft:area_effect_cloud] at @s run function game:items/acid/main
+
+#
+execute as @a[scores={snowball2=1..},tag=glitter_hold] at @s run tag @e[type=snowball,limit=1,sort=nearest,tag=!old_g] add glitter
+execute as @a[scores={snowball2=1..},tag=glitter_hold] at @s run tag @e[type=snowball,limit=1,sort=nearest,tag=!old_g] add old_g
+scoreboard players remove @a[scores={snowball2=1..},tag=glitter_hold] snowball2 1
+
+execute as @a[scores={snowball2=1..},tag=glitter_hold] at @s run tag @e[type=snowball,limit=1,sort=nearest,tag=!old_g] add glitter
+execute as @a[scores={snowball2=1..},tag=glitter_hold] at @s run tag @e[type=snowball,limit=1,sort=nearest,tag=!old_g] add old_g
+scoreboard players remove @a[scores={snowball2=1..},tag=glitter_hold] snowball2 1
+
+scoreboard players set @a snowball2 0
+
+tag @a remove glitter_hold
+tag @a[nbt={SelectedItem:{id:"minecraft:snowball",components:{"minecraft:custom_model_data":{strings:["1"]}}}}] add glitter_hold
+tag @e[type=snowball] add old_g
 
 #### PLAYERS ###
 execute as @a at @s run function game:player/main
@@ -383,7 +399,8 @@ scoreboard players set @a click 0
 execute as @e[tag=scrap,type=item] at @s run function game:game/infected/scrap_item
 
 #
-execute as @e[type=minecraft:snowball] run data merge entity @s {Item:{id:"minecraft:kelp",count:1}}
+execute as @e[type=minecraft:snowball,tag=!glitter] run data merge entity @s {Item:{id:"minecraft:kelp",count:1}}
+execute as @e[type=minecraft:snowball,tag=glitter] run data merge entity @s {Item:{id:"minecraft:diamond",count:1}}
 
 #
 scoreboard players set @a place_slime_temp 0

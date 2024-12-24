@@ -22,7 +22,7 @@
 #
 scoreboard players set .tmi_objective .data 11
 scoreboard players set .tmi_arrow .data 10
-scoreboard players set .tmi_fog .data 11
+scoreboard players set .tmi_fog .data 12
 
 #
 item replace block 235 -49 -224 container.10 with minecraft:netherite_sword[custom_name='{"text":"Claws","italic":false,"color":"gray"}',minecraft:max_damage=1,lore=['{"text":"Claw players, placables, and walls","color":"white","italic":false}'],damage=0,can_break={predicates:[{blocks:"gravel"}]},enchantments={levels:{"minecraft:knockback":3},show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"attack_damage",type:"attack_damage",amount:100,operation:"add_value",slot:"any"}],show_in_tooltip:false}] 1

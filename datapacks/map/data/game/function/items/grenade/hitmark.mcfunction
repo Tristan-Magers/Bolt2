@@ -9,7 +9,47 @@
 scoreboard players add @s timer 1
 scoreboard players add @s t2 1
 
+#particle minecraft:dripping_obsidian_tear ~ ~ ~
+
+tag @s[scores={mot_y=0..}] add going_up
+tag @s[tag=!going_up] add going_down
+
+scoreboard players operation .mod .calc = @s mot_x
+scoreboard players operation .mod .calc = .50 .num
+execute if score .mod .calc matches 1 run scoreboard players add @s mot_x 1
+
+scoreboard players operation .mod .calc = @s mot_y
+scoreboard players operation .mod .calc = .50 .num
+execute if score .mod .calc matches 1 run scoreboard players add @s mot_y 1
+
+scoreboard players operation .mod .calc = @s mot_z
+scoreboard players operation .mod .calc = .50 .num
+execute if score .mod .calc matches 1 run scoreboard players add @s mot_z 1
+
+execute as @s[scores={t2=1}] store result storage minecraft:macro input.mot_x float 0.01999 run scoreboard players get @s mot_x
+execute as @s[scores={t2=1}] store result storage minecraft:macro input.mot_y float 0.01999 run scoreboard players get @s mot_y
+execute as @s[scores={t2=1}] store result storage minecraft:macro input.mot_z float 0.01999 run scoreboard players get @s mot_z
+
 execute as @s[scores={t2=1}] at @s run function game:items/grenade/adjust
+
+#execute as @s[scores={t2=1},tag=!wall_pass,tag=going_up] at @s if block ~ ~2 ~ barrier if block ~ ~3 ~ air positioned ~ ~4 ~ run function game:items/grenade/macro_new_gernade with storage minecraft:macro input
+#execute as @s[scores={t2=1},tag=!wall_pass,tag=going_up] at @s if block ~ ~2 ~ barrier if block ~ ~3 ~ air run tag @s add wall_pass
+#execute as @s[scores={t2=1},tag=!wall_pass,tag=going_down] at @s if block ~ ~1 ~ barrier if block ~ ~-0.5 ~ air positioned ~ ~-1 ~ run function game:items/grenade/macro_new_gernade with storage minecraft:macro input
+#execute as @s[scores={t2=1},tag=!wall_pass,tag=going_down] at @s if block ~ ~1 ~ barrier if block ~ ~-0.5 ~ air run tag @s add wall_pass
+execute as @s[scores={t2=1},tag=wall_pass] at @s run kill @s
+execute as @s[scores={t2=1},tag=wall_pass] at @s run tag @s add dead
+
+execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:ui.stonecutter.take_result master @a ~ ~ ~ 0.5 1.5
+execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:ui.stonecutter.take_result master @a ~ ~ ~ 0.7 2
+execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:entity.blaze.shoot master @a ~ ~ ~ 0.9 2
+execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:entity.creeper.primed master @a ~ ~ ~ 1 2
+execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:ui.loom.take_result master @a ~ ~ ~ 0.6 2
+
+execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:item.flintandsteel.use master @a ~ ~ ~ 1 0
+execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:item.flintandsteel.use master @a ~ ~ ~ 1 1.5
+
+execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run particle minecraft:lava ~ ~0.2 ~ 0.1 0.1 0.1 0.1 3
+execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run particle minecraft:flash ~ ~0.6 ~ 0 0 0 0 1 force
 
 execute as @s[scores={t2=3}] at @s run playsound minecraft:block.note_block.snare master @a ~ ~ ~ 1 0.8
 execute as @s[scores={t2=4}] at @s run playsound minecraft:block.note_block.bit master @a ~ ~ ~ 0.6 0.8
@@ -60,8 +100,8 @@ execute as @s[scores={timer=17..}] at @s positioned ~ ~0.6 ~ if score .mode .dat
 
 ### EXPLODING
 
-execute as @s at @s positioned ~ ~0.75 ~ run function game:items/grenade/exploding
-execute as @s at @s positioned ~ ~1.25 ~ run function game:items/grenade/exploding
+execute as @s[tag=!dead] at @s positioned ~ ~0.75 ~ run function game:items/grenade/exploding
+execute as @s[tag=!dead] at @s positioned ~ ~1.25 ~ run function game:items/grenade/exploding
 #execute as @s at @s positioned ~ ~1.6 ~ run function game:items/grenade/exploding
 
 ####
