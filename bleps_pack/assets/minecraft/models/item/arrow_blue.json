@@ -1,6 +1,12 @@
 {
-    "parent": "item/bow",
-    "textures": {
-        "layer0": "item/arrow_blue"
-    }
+	"credit": "Made with Blockbench",
+	"parent": "item/bow",
+	"textures": {
+		"layer0": "item/arrow_blue"
+	},
+	"display": {
+		"head": {
+			"translation": [1.5, 0, 0]
+		}
+	}
 }

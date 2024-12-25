@@ -351,9 +351,6 @@ item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpki
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},team=blue,scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["2"]}]
 item replace entity @s[nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["0"]}]
 
-scoreboard players set @s[scores={respawn=1..}] blind -1
-scoreboard players set @s[scores={invul=1..}] blind -1
-scoreboard players add @s[scores={blind=1..}] blind_new 1
 scoreboard players set @s[scores={blind=..0}] blind_new 0
 execute as @s[scores={blind=1..}] run function game:player/blind
 

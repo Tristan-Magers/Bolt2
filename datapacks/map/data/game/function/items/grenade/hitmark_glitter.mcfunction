@@ -42,12 +42,17 @@ execute as @s[scores={t2=1}] at @s run function game:items/grenade/adjust
 execute as @s[scores={t2=1},tag=wall_pass] at @s run kill @s
 execute as @s[scores={t2=1},tag=wall_pass] at @s run tag @s add dead
 
-execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:ui.loom.take_result master @a ~ ~ ~ 0.6 2
-execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:item.flintandsteel.use master @a ~ ~ ~ 1 0
+execute as @s[scores={timer=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:entity.breeze.land master @s ~ ~ ~ 1 1.5
+execute as @s[scores={timer=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.bamboo_wood.break master @a ~ ~ ~ 0.5 0
+execute as @s[scores={timer=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.wool.break master @a ~ ~ ~ 0.3 2
+execute as @s[scores={timer=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run playsound minecraft:block.sand.step master @a ~ ~ ~ 0.2 0
 
-execute as @s[scores={t2=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run particle minecraft:flash ~ ~0.6 ~ 0 0 0 0 1 force
+execute as @s[scores={timer=1},tag=!wall_pass] at @s positioned ~ ~1.6 ~ run particle minecraft:flash ~ ~0.6 ~ 0 0 0 0 1 force
 
-effect give @s[scores={timer=1}] minecraft:glowing 30 30 true
+execute as @s[scores={timer=1},tag=!wall_pass] at @s run tp @s ~ ~ ~ facing entity @p[gamemode=adventure]
+#execute as @s[scores={timer=1},tag=!wall_pass] at @s run tp @s ~ ~ ~ ~180 0
+
+#effect give @s[scores={timer=1}] minecraft:glowing 30 30 true
 
 ###
 #execute as @s[scores={timer=0}] at @s run playsound minecraft:ui.loom.select_pattern master @a ~ ~ ~ 0.1 1
@@ -64,24 +69,30 @@ effect give @s[scores={timer=1}] minecraft:glowing 30 30 true
 
 ### EXPLODE EFFECTS
 
-execute as @s[scores={timer=3}] at @s run particle poof ~ ~1.4 ~ 2.2 2.2 2.2 0 20 force
-execute as @s[scores={timer=5..}] at @s run particle item{item:"feather"} ~ ~1.4 ~ .2 .2 .2 0.5 20 force
-execute as @s[scores={timer=5..}] at @s run particle item{item:"feather"} ~ ~1.4 ~ 2.2 2.2 2.2 0 20 force
-execute as @s[scores={timer=5..}] at @s run particle minecraft:firework ~ ~1.4 ~ .2 .2 .2 0.25 15 force
+
+execute as @s[scores={timer=2}] at @s run particle minecraft:firework ~ ~1.4 ~ .2 .2 .2 0.2 10 force
+execute as @s[scores={timer=2}] at @s run particle item{item:"feather"} ~ ~1.4 ~ .2 .2 .2 0.45 20 force
+execute as @s[scores={timer=5}] at @s run particle item{item:"feather"} ~ ~2.4 ~ 2.2 1.0 2.2 0 15 force
+execute as @s[scores={timer=5}] at @s run particle dust{color:[0.761,0.871,1.000],scale:3} ~ ~1.4 ~ 2 2 2 0 15 normal
 
 #execute as @s[scores={timer=2..}] at @s run particle minecraft:explosion_emitter ~ ~0.6 ~ 0.5 0.5 0.5 0 6 force
-execute as @s[scores={timer=5..}] at @s run playsound minecraft:block.bubble_column.bubble_pop master @a ~ ~ ~ 1 0
-execute as @s[scores={timer=5..}] at @s run playsound minecraft:block.bubble_column.bubble_pop master @a ~ ~ ~ 1 0
-execute as @s[scores={timer=5..}] at @s run playsound minecraft:block.bubble_column.bubble_pop master @a ~ ~ ~ 1 0
+execute as @s[scores={timer=3}] at @s run playsound minecraft:block.bubble_column.bubble_pop master @a ~ ~ ~ 1 0
+execute as @s[scores={timer=3}] at @s run playsound minecraft:block.bubble_column.bubble_pop master @a ~ ~ ~ 1 0
 execute as @s[scores={timer=5..}] at @s run playsound minecraft:entity.creaking.step master @s ~ ~ ~ 1 2
 execute as @s[scores={timer=5..}] at @s run playsound minecraft:entity.creaking.attack master @s ~ ~ ~ 0.4 2
-execute as @s[scores={timer=5..}] at @s run playsound minecraft:entity.breeze.land master @s ~ ~ ~ 1 1.5
+execute as @s[scores={timer=3}] at @s run playsound minecraft:block.lava.pop master @a ~ ~ ~ 1 1.5
+execute as @s[scores={timer=4}] at @s run playsound minecraft:entity.breeze.shoot master @a ~ ~ ~ 0.1 2
 #execute as @s[scores={timer=2..}] at @s positioned ~ ~1.4 ~ run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
 
 execute as @s[scores={timer=5..}] at @s positioned ~ ~0.75 ~ run scoreboard players set @a[distance=..4.8,gamemode=adventure] blind 47
 execute as @s[scores={timer=5..}] at @s positioned ~ ~1.25 ~ run scoreboard players set @a[distance=..4.8,gamemode=adventure] blind 47
 
-execute as @a[scores={blind=47}] at @s run playsound minecraft:entity.villager.hurt master @s ~ ~ ~ 0.2 0.4
-execute as @a[scores={blind=47}] at @s run playsound minecraft:entity.breeze.hurt master @s ~ ~ ~ 0.9 2
+execute as @a[scores={blind=47,invul=..0}] at @s run playsound minecraft:entity.breeze.jump master @a ~ ~ ~ 0.3 1.4
+execute as @a[scores={blind=47,invul=..0}] at @s run playsound minecraft:block.sand.break master @a ~ ~ ~ 1 0
+execute as @a[scores={blind=47,invul=..0}] at @s run playsound minecraft:entity.breeze.hurt master @s ~ ~ ~ 0.05 1.8
+
+execute as @a[scores={blind=47},tag=lobby] at @s run playsound minecraft:entity.breeze.jump master @a ~ ~ ~ 0.3 1.4
+execute as @a[scores={blind=47},tag=lobby] at @s run playsound minecraft:block.sand.break master @a ~ ~ ~ 1 0
+execute as @a[scores={blind=47},tag=lobby] at @s run playsound minecraft:entity.breeze.hurt master @s ~ ~ ~ 0.05 1.8
 
 kill @s[scores={timer=5..}]

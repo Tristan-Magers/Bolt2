@@ -1,0 +1,11 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "item/diamond"
+    },
+	"display": {
+		"head": {
+			"translation": [4.5, 0, 0]
+		}
+	}
+}

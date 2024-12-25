@@ -248,21 +248,6 @@ tag @a remove poison_range
 
 execute as @e[type=minecraft:area_effect_cloud] at @s run function game:items/acid/main
 
-#
-execute as @a[scores={snowball2=1..},tag=glitter_hold] at @s run tag @e[type=snowball,limit=1,sort=nearest,tag=!old_g] add glitter
-execute as @a[scores={snowball2=1..},tag=glitter_hold] at @s run tag @e[type=snowball,limit=1,sort=nearest,tag=!old_g] add old_g
-scoreboard players remove @a[scores={snowball2=1..},tag=glitter_hold] snowball2 1
-
-execute as @a[scores={snowball2=1..},tag=glitter_hold] at @s run tag @e[type=snowball,limit=1,sort=nearest,tag=!old_g] add glitter
-execute as @a[scores={snowball2=1..},tag=glitter_hold] at @s run tag @e[type=snowball,limit=1,sort=nearest,tag=!old_g] add old_g
-scoreboard players remove @a[scores={snowball2=1..},tag=glitter_hold] snowball2 1
-
-scoreboard players set @a snowball2 0
-
-tag @a remove glitter_hold
-tag @a[nbt={SelectedItem:{id:"minecraft:snowball",components:{"minecraft:custom_model_data":{strings:["1"]}}}}] add glitter_hold
-tag @e[type=snowball] add old_g
-
 #### PLAYERS ###
 execute as @a at @s run function game:player/main
 
@@ -455,3 +440,7 @@ execute as @e[tag=stage_light,tag=high] at @s run tp @s ~ -32.1 ~
 
 #
 scoreboard players set @a crouch 0
+
+#
+tag @a remove glitter_hold
+tag @a[nbt={SelectedItem:{id:"minecraft:snowball",components:{"minecraft:custom_model_data":{strings:["1"]}}}}] add glitter_hold

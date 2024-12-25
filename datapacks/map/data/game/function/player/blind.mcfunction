@@ -1,5 +1,9 @@
-
 scoreboard players remove @s blind 1
+
+scoreboard players set @s[scores={respawn=1..}] blind -1
+scoreboard players set @s[scores={invul=1..},tag=!lobby] blind -1
+scoreboard players set @s[scores={blind=28..},tag=lobby] blind 28
+scoreboard players add @s blind_new 1
 
 item replace entity @s[scores={blind=20..}] armor.head with minecraft:yellow_stained_glass_pane[equippable={slot:"head",camera_overlay:"block/full_blind"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
 item replace entity @s[scores={blind=19}] armor.head with minecraft:yellow_stained_glass_pane[equippable={slot:"head",camera_overlay:"block/blind_95"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
@@ -67,6 +71,14 @@ item replace entity @s[scores={blind=2},tag=hasflag,team=blue] armor.head with m
 item replace entity @s[scores={blind=1},tag=hasflag,team=blue] armor.head with minecraft:red_banner[equippable={slot:"head",camera_overlay:"block/blind_5"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
 item replace entity @s[scores={blind=..0},tag=hasflag,team=blue] armor.head with minecraft:red_banner
 
-item replace entity @s[scores={blind_new=1}] armor.head with minecraft:yellow_stained_glass_pane[equippable={slot:"head",camera_overlay:"block/blind_25"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
-item replace entity @s[scores={blind_new=2}] armor.head with minecraft:yellow_stained_glass_pane[equippable={slot:"head",camera_overlay:"block/blind_50"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
-item replace entity @s[scores={blind_new=3}] armor.head with minecraft:yellow_stained_glass_pane[equippable={slot:"head",camera_overlay:"block/blind_75"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
+item replace entity @s[scores={blind_new=1,blind=20..}] armor.head with minecraft:yellow_stained_glass_pane[equippable={slot:"head",camera_overlay:"block/blind_25"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
+item replace entity @s[scores={blind_new=2,blind=20..}] armor.head with minecraft:yellow_stained_glass_pane[equippable={slot:"head",camera_overlay:"block/blind_50"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
+item replace entity @s[scores={blind_new=3,blind=20..}] armor.head with minecraft:yellow_stained_glass_pane[equippable={slot:"head",camera_overlay:"block/blind_75"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
+
+item replace entity @s[scores={blind_new=1,blind=20..},tag=hasflag,team=red] armor.head with minecraft:blue_banner[equippable={slot:"head",camera_overlay:"block/blind_25"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
+item replace entity @s[scores={blind_new=2,blind=20..},tag=hasflag,team=red] armor.head with minecraft:blue_banner[equippable={slot:"head",camera_overlay:"block/blind_50"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
+item replace entity @s[scores={blind_new=3,blind=20..},tag=hasflag,team=red] armor.head with minecraft:blue_banner[equippable={slot:"head",camera_overlay:"block/blind_75"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
+
+item replace entity @s[scores={blind_new=1,blind=20..},tag=hasflag,team=blue] armor.head with minecraft:red_banner[equippable={slot:"head",camera_overlay:"block/blind_25"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
+item replace entity @s[scores={blind_new=2,blind=20..},tag=hasflag,team=blue] armor.head with minecraft:red_banner[equippable={slot:"head",camera_overlay:"block/blind_50"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
+item replace entity @s[scores={blind_new=3,blind=20..},tag=hasflag,team=blue] armor.head with minecraft:red_banner[equippable={slot:"head",camera_overlay:"block/blind_75"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
