@@ -7,6 +7,7 @@ tag @a remove sur_start
 #
 scoreboard players set @a delay_boost 0
 scoreboard players set @a delay_reveal 0
+scoreboard players set @a blind -1
 
 #
 scoreboard players add @a team_pref 0
@@ -42,9 +43,16 @@ function game:game/team_dif
 #execute if score .even_players .data = .0 .num run function game:game/fill_player_max
 #execute if score .even_players .data = .0 .num run function game:game/fill_player_max
 
+# store rank so it can be changed
+execute as @a run scoreboard players operation @s rank_store = @s rank
+
 # win streak change
 execute as @a run scoreboard players operation @s win_streak *= .10 .num
 execute as @a run scoreboard players operation @s rank += @s win_streak
+execute as @a[scores={win_streak=..-1}] run scoreboard players operation @s rank += @s win_streak
+
+scoreboard players set @a[scores={rank=..0}] rank 1
+scoreboard players set @a[scores={rank=1000..}] rank 999
 
 # Rank sort if all random selected
 scoreboard players set .sort_test_team .data 0
@@ -59,10 +67,8 @@ execute if entity @a[scores={team_pref=1..}] if score .mode .data = .1 .num if s
 #
 execute if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .0 .num as @a[team=] run function game:game/fill_player_random
 
-# undo win streak change
-execute as @a run scoreboard players operation @s rank -= @s win_streak
-execute as @a run scoreboard players operation @s win_streak /= .10 .num
-
+# return rank to store
+execute as @a run scoreboard players operation @s rank = @s rank_store
 
 execute if score .tmi .data = .1 .num as @a[team=] run function game:game/fill_player_random
 

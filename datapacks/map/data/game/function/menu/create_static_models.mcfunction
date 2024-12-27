@@ -41,7 +41,8 @@ effect give @e[type=minecraft:zombie] minecraft:invisibility infinite 1 true
 
 #
 kill @e[tag=vending,type=interaction]
-summon interaction 245.0 -50.0 -214.0 {width:2.5f,height:3.5f,Tags:["vending"]}
+summon interaction 245.0 -50.0 -214.0 {width:2.5f,height:3.5f,Tags:["vending","can"]}
+summon interaction 229.0 -38.0 -241.0 {width:2.5f,height:3.5f,Tags:["vending","glitterb"]}
 
 #
 tag @e[type=pig] add kill

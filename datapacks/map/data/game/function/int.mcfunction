@@ -172,8 +172,6 @@ scoreboard objectives add stats_scrap dummy
 scoreboard objectives add stats_inf_kill dummy
 scoreboard objectives add stats_sur_kill dummy
 
-scoreboard objectives add win_streak dummy
-
 scoreboard objectives add rank_scew dummy
 scoreboard objectives add rank dummy
 scoreboard objectives add rank_delta_order dummy
@@ -185,6 +183,8 @@ scoreboard objectives add rank_strength dummy
 
 scoreboard objectives add rank_real dummy
 scoreboard objectives add rank_order dummy
+
+scoreboard objectives add rank_store dummy
 
 scoreboard objectives add win_streak dummy
 

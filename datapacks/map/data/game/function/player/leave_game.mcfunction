@@ -50,6 +50,9 @@ scoreboard players set @s respawn -1
 scoreboard players add @s invul 0
 scoreboard players add @s wall_invul 0
 
+scoreboard players set @s blind -1
+scoreboard players set @s blind_new -1
+
 team leave @s
 
 gamemode adventure @s[tag=!intro_cutscene]

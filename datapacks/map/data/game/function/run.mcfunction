@@ -385,7 +385,7 @@ execute as @e[tag=scrap,type=item] at @s run function game:game/infected/scrap_i
 
 #
 execute as @e[type=minecraft:snowball,tag=!glitter] run data merge entity @s {Item:{id:"minecraft:kelp",count:1}}
-execute as @e[type=minecraft:snowball,tag=glitter] run data merge entity @s {Item:{id:"minecraft:diamond",count:1}}
+execute as @e[type=minecraft:snowball,tag=glitter] run data merge entity @s {Item:{id:"minecraft:emerald",count:1}}
 
 #
 scoreboard players set @a place_slime_temp 0

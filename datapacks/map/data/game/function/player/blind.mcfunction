@@ -2,7 +2,7 @@ scoreboard players remove @s blind 1
 
 scoreboard players set @s[scores={respawn=1..}] blind -1
 scoreboard players set @s[scores={invul=1..},tag=!lobby] blind -1
-scoreboard players set @s[scores={blind=28..},tag=lobby] blind 28
+scoreboard players set @s[scores={blind=30..},tag=lobby] blind 29
 scoreboard players add @s blind_new 1
 
 item replace entity @s[scores={blind=20..}] armor.head with minecraft:yellow_stained_glass_pane[equippable={slot:"head",camera_overlay:"block/full_blind"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
@@ -82,3 +82,9 @@ item replace entity @s[scores={blind_new=3,blind=20..},tag=hasflag,team=red] arm
 item replace entity @s[scores={blind_new=1,blind=20..},tag=hasflag,team=blue] armor.head with minecraft:red_banner[equippable={slot:"head",camera_overlay:"block/blind_25"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
 item replace entity @s[scores={blind_new=2,blind=20..},tag=hasflag,team=blue] armor.head with minecraft:red_banner[equippable={slot:"head",camera_overlay:"block/blind_50"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
 item replace entity @s[scores={blind_new=3,blind=20..},tag=hasflag,team=blue] armor.head with minecraft:red_banner[equippable={slot:"head",camera_overlay:"block/blind_75"},enchantments={levels:{"minecraft:binding_curse":1}}] 1
+
+scoreboard players set @s[scores={blind=0..4}] blind_new 0
+scoreboard players set @s[scores={blind=5..9}] blind_new 1
+scoreboard players set @s[scores={blind=10..14}] blind_new 2
+
+execute as @s[scores={blind=18..,blind_new=3..}] run particle dust_plume ~ ~1.8 ~ 0.25 0 0.25 0.05 2 force

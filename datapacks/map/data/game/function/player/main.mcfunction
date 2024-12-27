@@ -65,6 +65,10 @@ scoreboard players set @s[scores={inspawn=600},tag=playing,gamemode=adventure] l
 tag @s[scores={inspawn=600},tag=playing,gamemode=adventure] add kicked
 scoreboard players add @s[scores={inspawn=600},tag=playing,gamemode=adventure] inspawn 1
 
+# tag to be infected
+tag @s remove is_infected
+execute if score .mode .data = .6 .num run tag @s[tag=playing,team=red] add is_infected
+
 #
 scoreboard players remove @s[scores={spawn_message_delay=0..}] spawn_message_delay 1
 
@@ -202,12 +206,20 @@ effect clear @s[scores={invul=1..}] poison
 
 effect give @s[scores={health=1..19}] minecraft:instant_health 1 10 true
 
+# invul timer and vis including infection vis
 scoreboard players remove @s[scores={invul=1..}] invul 1
 
 clear @s[tag=lobby] chainmail_helmet
 clear @s[scores={invul=2..},nbt=!{Inventory:[{id:"minecraft:chainmail_helmet",Slot:103b}]}] chainmail_helmet
-item replace entity @s[tag=!lobby,scores={invul=2..,glowing=..0},nbt=!{Inventory:[{id:"minecraft:chainmail_helmet",Slot:103b}]},tag=!hasflag] armor.head with minecraft:chainmail_helmet[damage=150,attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:30,operation:"add_value",slot:"any"}],show_in_tooltip:false}]
-item replace entity @s[scores={invul=1,glowing=..0},tag=!hasflag] armor.head with minecraft:air
+item replace entity @s[tag=!is_infected,tag=!lobby,scores={invul=2..,glowing=..0},nbt=!{Inventory:[{id:"minecraft:chainmail_helmet",Slot:103b}]},tag=!hasflag] armor.head with minecraft:chainmail_helmet[damage=150,attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:30,operation:"add_value",slot:"any"}],show_in_tooltip:false}]
+
+clear @s[tag=is_infected,scores={invul=2..},nbt=!{Inventory:[{id:"minecraft:skeleton_skull",Slot:103b}]}] minecraft:skeleton_skull
+item replace entity @s[tag=is_infected,tag=!lobby,scores={invul=2..,glowing=..0},nbt=!{Inventory:[{id:"minecraft:skeleton_skull",Slot:103b}]},tag=!hasflag] armor.head with minecraft:skeleton_skull[damage=150,attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:30,operation:"add_value",slot:"any"}],show_in_tooltip:false}]
+
+item replace entity @s[scores={invul=1,glowing=..0},tag=!hasflag,tag=!is_infected] armor.head with minecraft:air
+
+clear @s[scores={invul=..1,glowing=..0},tag=!hasflag,tag=is_infected,nbt=!{Inventory:[{id:"minecraft:wither_skeleton_skull",Slot:103b}]}] minecraft:wither_skeleton_skull
+item replace entity @s[scores={invul=..1,glowing=..0},tag=!hasflag,tag=is_infected,nbt=!{Inventory:[{id:"minecraft:wither_skeleton_skull",Slot:103b}]}] armor.head with minecraft:wither_skeleton_skull
 
 # Place Block
 execute as @s[scores={place_block=1..}] at @s run function game:detection/block_scan/trigger
@@ -330,18 +342,18 @@ scoreboard players add @s[scores={respawn=1..}] respawning_time 1
 clear @s[tag=!hasflag] red_banner
 clear @s[tag=!hasflag] blue_banner
 
-item replace entity @s[tag=!hasflag,scores={invul=..0,glowing=..0}] armor.head with minecraft:air
+item replace entity @s[tag=!hasflag,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected] armor.head with minecraft:air
 
 clear @s[tag=!hasflag,team=blue] red_banner
 clear @s[tag=!hasflag,team=blue] red_dye
-item replace entity @s[tag=!hasflag,team=blue,scores={invul=..0,glowing=..0}] armor.head with minecraft:air
+item replace entity @s[tag=!hasflag,team=blue,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected] armor.head with minecraft:air
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_banner",Slot:103b}]},team=blue,scores={glowing=..0}] armor.head with minecraft:red_banner
 clear @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_dye",Slot:-106b}]},team=blue] minecraft:red_dye
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_dye",Slot:-106b}]},team=blue] weapon.offhand with minecraft:red_dye[custom_name='{"text":"Red Flag"}']
 
 clear @s[tag=!hasflag,team=red] blue_banner
 clear @s[tag=!hasflag,team=red] blue_dye
-item replace entity @s[tag=!hasflag,team=red,scores={invul=..0,glowing=..0}] armor.head with minecraft:air
+item replace entity @s[tag=!hasflag,team=red,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected] armor.head with minecraft:air
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_banner",Slot:103b}]},team=red,scores={glowing=..0}] armor.head with minecraft:blue_banner
 clear @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_dye",Slot:-106b}]},team=red] minecraft:blue_dye
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_dye",Slot:-106b}]},team=red] weapon.offhand with minecraft:blue_dye[custom_name='{"text":"Blue Flag"}']

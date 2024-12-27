@@ -40,8 +40,8 @@ tag @a[scores={placeTurret=1..},tag=turret_dif] add turretSpawn
 execute as @e[type=pig,tag=!turret,tag=!chair] at @s run function game:ffa/turret/spawn
 execute as @e[tag=turret,scores={turretCooldown=1}] at @s run data remove entity @e[type=interaction,tag=turretPunch,sort=nearest,limit=1] attack 
 scoreboard players remove @e[tag=turret,scores={turretCooldown=1..}] turretCooldown 1
-execute as @e[tag=turret,tag=!hasTarget,scores={turretCooldown=0}] at @s run function game:ffa/turret/find_target
-execute as @e[tag=turret,tag=hasTarget,scores={turretCooldown=0}] at @s run function game:ffa/turret/attack_target
+execute as @e[tag=turret,tag=!hasTarget,scores={turretCooldown=0,blind=..0}] at @s run function game:ffa/turret/find_target
+execute as @e[tag=turret,tag=hasTarget,scores={turretCooldown=0,blind=..0}] at @s run function game:ffa/turret/attack_target
 execute as @e[tag=turret,nbt={HurtTime:9s}] at @s run playsound minecraft:entity.blaze.hurt master @a ~ ~ ~ 1 1
 execute as @e[tag=turret,nbt={HurtTime:9s}] run scoreboard players remove @s .num 1
 execute as @e[tag=turret,nbt={HurtTime:9s}] at @s on attacker if score .tmi .data matches 1 if score .tmi_arrow .data matches 2 run tag @s add arrow_hit
@@ -55,6 +55,9 @@ tag @a remove hasTurret2
 
 scoreboard players set @a placeTurret 0
 tag @a remove shot_by_turret
+
+execute as @e[tag=turret,scores={blind=0..}] at @s run particle dust_plume ~ ~1.1 ~ 0.25 0 0.25 0.05 2 force
+scoreboard players remove @e[tag=turret,scores={blind=0..}] blind 1
 
 #> Delta
 # Currently commented out because delta api isn't added right now, will finish once it is (or you can do it yourself); ideally should launch players like 3 blocks away 

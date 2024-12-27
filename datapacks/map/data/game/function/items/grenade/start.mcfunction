@@ -37,7 +37,7 @@ scoreboard players operation @s z = @e[limit=1,tag=getdir,tag=!old] DirZ
 #scoreboard players add @s y 6
 
 execute as @s[tag=!glitter] run summon snowball ~ ~0.15 ~ {Item:{id:"minecraft:kelp",count:1},Tags:["new_nade"],Motion:[0.0,-10.0,0.0]}
-execute as @s[tag=glitter] run summon snowball ~ ~0.15 ~ {Item:{id:"minecraft:diamond",count:1},Tags:["new_nade","glitter"],Motion:[0.0,-10.0,0.0]}
+execute as @s[tag=glitter] run summon snowball ~ ~0.15 ~ {Item:{id:"minecraft:emerald",count:1},Tags:["new_nade","glitter"],Motion:[0.0,-10.0,0.0]}
 #tag @s add new_nade
 
 #

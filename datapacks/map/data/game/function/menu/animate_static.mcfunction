@@ -400,14 +400,28 @@ execute if entity @a[tag=lobby] if score .menu_reset .timer matches 2400.. store
 
 #
 execute as @e[tag=soda,type=item] at @s if block ~ ~0.5 ~ glass run tp @s 245 ~-0.04 -214
+execute as @e[tag=glitterb,type=item] at @s if block ~ ~0.5 ~ glass run tp @s 229 ~-0.04 -241
 
-execute as @e[tag=vending,type=interaction] on target unless entity @e[type=item,tag=soda] run playsound minecraft:ui.loom.select_pattern master @s 246.5 -48.25 -214.0 1 0
-execute as @e[tag=vending,type=interaction] on target unless entity @e[type=item,tag=soda] run playsound minecraft:ui.loom.select_pattern master @s 246.5 -48.25 -214.0 1 1
-execute as @e[tag=vending,type=interaction] on target unless entity @e[type=item,tag=soda] run playsound minecraft:ui.stonecutter.take_result master @s 246.5 -48.25 -214.0 1 0
-execute as @e[tag=vending,type=interaction] on target unless entity @e[type=item,tag=soda] run particle poof 246.5 -48.25 -214.0 0.1 0.5 0.5 0 6 force
-execute as @e[tag=vending,type=interaction] on target unless entity @e[type=item,tag=soda] run summon item 245 -47.9 -214 {Age:5970,PickupDelay:15,Tags:["no_kill","soda"],Item:{id:"minecraft:golden_apple",count:1,components:{"minecraft:consumable":{consume_seconds:1.2},"minecraft:custom_name":'{"italic":false,"text":"Can of Air"}'}}}
-execute as @e[tag=vending,type=interaction] on target run summon interaction 245.0 -50.0 -214.0 {width:2.5f,height:3.5f,Tags:["vending","new"]}
-execute as @e[tag=vending,type=interaction] on target run kill @e[tag=vending,type=interaction,tag=!new]
-tag @e[tag=vending,type=interaction] remove new
+execute as @e[tag=vending,type=interaction,tag=glitterb] on target unless entity @e[type=item,tag=glitterb] run playsound minecraft:ui.loom.select_pattern master @s 230.5 -36.25 -241.0 1 0
+execute as @e[tag=vending,type=interaction,tag=glitterb] on target unless entity @e[type=item,tag=glitterb] run playsound minecraft:ui.loom.select_pattern master @s 230.5 -36.25 -241.0 1 1
+execute as @e[tag=vending,type=interaction,tag=glitterb] on target unless entity @e[type=item,tag=glitterb] run playsound minecraft:ui.stonecutter.take_result master @s 230.5 -36.25 -241.0 1 0
+execute as @e[tag=vending,type=interaction,tag=glitterb] on target unless entity @e[type=item,tag=glitterb] run particle poof 230.5 -36.25 -241.0 0.1 0.5 0.5 0 6 force
+execute as @e[tag=vending,type=interaction,tag=glitterb] on target unless entity @e[type=item,tag=glitterb] run summon item 229 -35.9 -241 {Age:5970,PickupDelay:15,Tags:["no_kill","glitterb"],Item:{id:"minecraft:snowball",count:1,components:{"minecraft:custom_model_data":{strings:["1"]},"minecraft:custom_name":'{"italic":false,"text":"Glitter Bomb"}'}}}
+execute as @e[tag=vending,type=interaction,tag=glitterb] on target run summon interaction 229.0 -38.0 -241.0 {width:2.5f,height:3.5f,Tags:["vending","new","glitterb"]}
+execute as @e[tag=vending,type=interaction,tag=glitterb] on target run kill @e[tag=vending,type=interaction,tag=!new,tag=glitterb]
+tag @e[tag=vending,type=interaction,tag=glitterb] remove new
+
+execute as @e[tag=vending,type=interaction,tag=can] on target unless entity @e[type=item,tag=soda] run playsound minecraft:ui.loom.select_pattern master @s 246.5 -48.25 -214.0 1 0
+execute as @e[tag=vending,type=interaction,tag=can] on target unless entity @e[type=item,tag=soda] run playsound minecraft:ui.loom.select_pattern master @s 246.5 -48.25 -214.0 1 1
+execute as @e[tag=vending,type=interaction,tag=can] on target unless entity @e[type=item,tag=soda] run playsound minecraft:ui.stonecutter.take_result master @s 246.5 -48.25 -214.0 1 0
+execute as @e[tag=vending,type=interaction,tag=can] on target unless entity @e[type=item,tag=soda] run particle poof 246.5 -48.25 -214.0 0.1 0.5 0.5 0 6 force
+execute as @e[tag=vending,type=interaction,tag=can] on target unless entity @e[type=item,tag=soda] run summon item 245 -47.9 -214 {Age:5970,PickupDelay:15,Tags:["no_kill","soda"],Item:{id:"minecraft:golden_apple",count:1,components:{"minecraft:consumable":{consume_seconds:1.2},"minecraft:custom_name":'{"italic":false,"text":"Can of Air"}'}}}
+execute as @e[tag=vending,type=interaction,tag=can] on target run summon interaction 245.0 -50.0 -214.0 {width:2.5f,height:3.5f,Tags:["vending","new","can"]}
+execute as @e[tag=vending,type=interaction,tag=can] on target run kill @e[tag=vending,type=interaction,tag=!new,tag=can]
+tag @e[tag=vending,type=interaction,tag=can] remove new
 
 execute as @e[tag=soda,type=item] at @s run data merge entity @s {Motion:[0.0,0.0,0.0]}
+execute as @e[tag=glitterb,type=item] at @s run data merge entity @s {Motion:[0.0,0.0,0.0]}
+
+execute as @e[tag=soda,type=item] at @s run attribute @s minecraft:gravity base set 0
+execute as @e[tag=glitterb,type=item] at @s run attribute @s minecraft:gravity base set 0

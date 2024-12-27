@@ -84,15 +84,21 @@ execute as @s[scores={timer=3}] at @s run playsound minecraft:block.lava.pop mas
 execute as @s[scores={timer=4}] at @s run playsound minecraft:entity.breeze.shoot master @a ~ ~ ~ 0.1 2
 #execute as @s[scores={timer=2..}] at @s positioned ~ ~1.4 ~ run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
 
-execute as @s[scores={timer=5..}] at @s positioned ~ ~0.75 ~ run scoreboard players set @a[distance=..4.8,gamemode=adventure] blind 47
-execute as @s[scores={timer=5..}] at @s positioned ~ ~1.25 ~ run scoreboard players set @a[distance=..4.8,gamemode=adventure] blind 47
+execute as @s[scores={timer=5..}] at @s positioned ~ ~0.75 ~ run scoreboard players set @a[distance=..4.8,gamemode=adventure] blind 46
+execute as @s[scores={timer=5..}] at @s positioned ~ ~1.25 ~ run scoreboard players set @a[distance=..4.8,gamemode=adventure] blind 46
 
-execute as @a[scores={blind=47,invul=..0}] at @s run playsound minecraft:entity.breeze.jump master @a ~ ~ ~ 0.3 1.4
-execute as @a[scores={blind=47,invul=..0}] at @s run playsound minecraft:block.sand.break master @a ~ ~ ~ 1 0
-execute as @a[scores={blind=47,invul=..0}] at @s run playsound minecraft:entity.breeze.hurt master @s ~ ~ ~ 0.05 1.8
+execute as @s[scores={timer=5..}] at @s positioned ~ ~0.75 ~ run scoreboard players set @e[distance=..4.8,tag=turret] blind 46
+execute as @s[scores={timer=5..}] at @s positioned ~ ~1.25 ~ run scoreboard players set @e[distance=..4.8,tag=turret] blind 46
 
-execute as @a[scores={blind=47},tag=lobby] at @s run playsound minecraft:entity.breeze.jump master @a ~ ~ ~ 0.3 1.4
-execute as @a[scores={blind=47},tag=lobby] at @s run playsound minecraft:block.sand.break master @a ~ ~ ~ 1 0
-execute as @a[scores={blind=47},tag=lobby] at @s run playsound minecraft:entity.breeze.hurt master @s ~ ~ ~ 0.05 1.8
+execute as @s[scores={timer=5..}] at @s positioned ~ ~0.75 ~ run effect give @e[type=minecraft:zombie_villager,distance=..4.8] minecraft:slowness 2 10 true
+execute as @s[scores={timer=5..}] at @s positioned ~ ~1.25 ~ run effect give @e[type=minecraft:zombie_villager,distance=..4.8] minecraft:slowness 2 10 true
+
+execute as @a[scores={blind=46,invul=..0}] at @s run playsound minecraft:entity.breeze.jump master @a ~ ~ ~ 0.3 1.4
+execute as @a[scores={blind=46,invul=..0}] at @s run playsound minecraft:block.sand.break master @a ~ ~ ~ 1 0
+execute as @a[scores={blind=46,invul=..0}] at @s run playsound minecraft:entity.breeze.hurt master @s ~ ~ ~ 0.05 1.8
+
+execute as @a[scores={blind=46},tag=lobby] at @s run playsound minecraft:entity.breeze.jump master @a ~ ~ ~ 0.3 1.4
+execute as @a[scores={blind=46},tag=lobby] at @s run playsound minecraft:block.sand.break master @a ~ ~ ~ 1 0
+execute as @a[scores={blind=46},tag=lobby] at @s run playsound minecraft:entity.breeze.hurt master @s ~ ~ ~ 0.05 1.8
 
 kill @s[scores={timer=5..}]
