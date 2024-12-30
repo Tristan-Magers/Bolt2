@@ -425,6 +425,7 @@ execute as @e[type=creeper] if score @s ID = @e[tag=me,limit=1] ID run scoreboar
 
 scoreboard players set @s minions_active 0
 execute as @e[type=zombie_villager] if score @s ID = @e[tag=me,limit=1] ID run scoreboard players add @e[tag=me] minions_active 1
+execute if score .mode .data matches 6 as @e[tag=me,tag=locked_9,scores={minions_active=5..}] run function game:player/unlock/9
 
 execute as @s[scores={turrets_active=5..}] as @e[tag=turret] run tag @s remove my_turret
 execute as @s[scores={turrets_active=5..}] as @e[tag=turret] if score @s ID = @e[tag=me,limit=1] ID run tag @s add my_turret

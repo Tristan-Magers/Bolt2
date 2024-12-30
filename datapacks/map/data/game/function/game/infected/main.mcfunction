@@ -2,6 +2,7 @@
 scoreboard players add .zombie_evolve_timer .timer 1
 
 execute if score .zombie_evolve_timer .timer >= .800 .num run scoreboard players add .zombie_evolve_level .data 1
+execute if score .zombie_evolve_level .data matches 4.. as @a[team=red,tag=playing,tag=locked_13] run function game:player/unlock/13
 execute if score .zombie_evolve_timer .timer >= .800 .num run function game:game/infected/zombies_evolve
 execute if score .zombie_evolve_timer .timer >= .800 .num run scoreboard players set .zombie_evolve_timer .timer 100
 

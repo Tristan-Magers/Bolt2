@@ -179,6 +179,8 @@ execute as @s[scores={death_ani=3},team=blue] at @s positioned ~ ~1 ~ run summon
 
 #
 scoreboard players add @s stats_deaths 1
+scoreboard players add @s track_total_deaths 1
+execute as @s[tag=locked_36,scores={track_total_deaths=10..}] run function game:player/unlock/36
 
 #
 tag @s remove me

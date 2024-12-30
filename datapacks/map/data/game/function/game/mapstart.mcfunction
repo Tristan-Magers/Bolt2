@@ -42,6 +42,18 @@ execute if score .map .data = .13 .num run function game:map/lookout/start
 execute if score .map .data = .14 .num run function game:map/river/start
 execute if score .map .data = .15 .num run function game:map/lighth/start
 
+execute if score .map .data = .10 .num run tag @a[tag=playing] add play_map_tinyt
+execute if score .map .data = .3 .num run tag @a[tag=playing] add play_map_divide
+execute if score .map .data = .5 .num run tag @a[tag=playing] add play_map_hex
+execute if score .map .data = .2 .num run tag @a[tag=playing] add play_map_coves
+execute if score .map .data = .1 .num run tag @a[tag=playing] add play_map_towers
+execute if score .map .data = .15 .num run tag @a[tag=playing] add play_map_lighth
+execute if score .map .data = .12 .num run tag @a[tag=playing] add play_map_garden
+execute if score .map .data = .6 .num run tag @a[tag=playing] add play_map_valley
+execute if score .map .data = .14 .num run tag @a[tag=playing] add play_map_river
+
+execute as @a[tag=locked_73,tag=play_map_tinyt,tag=play_map_divide,tag=play_map_hex,tag=play_map_coves,tag=play_map_towers,tag=play_map_lighth,tag=play_map_garden,tag=play_map_valley,tag=play_map_river] run function game:player/unlock/73
+
 tag @a remove hasflag
 tag @a remove hasspawn
 

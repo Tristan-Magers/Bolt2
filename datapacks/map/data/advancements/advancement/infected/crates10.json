@@ -25,5 +25,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "advancements:root_6"
+  "parent": "advancements:infected/win_sur"
 }

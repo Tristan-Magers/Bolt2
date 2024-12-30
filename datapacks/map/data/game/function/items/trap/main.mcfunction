@@ -91,11 +91,19 @@ execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed,tag=!gre_immune] run scoreboard players add @a[tag=id_share,team=red] kill 1
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed,tag=!gre_immune] run scoreboard players add @a[tag=id_share,team=blue] kill 1
 
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed,tag=!gre_immune] if score .mode .data matches 1 if score .tmi .data matches 0 as @a[tag=id_share,team=red,tag=locked_41] run function game:player/unlock/41
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed,tag=!gre_immune] if score .mode .data matches 1 if score .tmi .data matches 0 as @a[tag=id_share,team=blue,tag=locked_41] run function game:player/unlock/41
+
+execute if entity @s[scores={timer=20..,t4=900..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed,tag=!gre_immune] if score .mode .data matches 1 if score .tmi .data matches 0 as @a[tag=id_share,team=red,tag=locked_7] run function game:player/unlock/7
+execute if entity @s[scores={timer=20..,t4=900..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed,tag=!gre_immune] if score .mode .data matches 1 if score .tmi .data matches 0 as @a[tag=id_share,team=blue,tag=locked_7] run function game:player/unlock/7
+
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=blue,tag=!killed,tag=!gre_immune] run scoreboard players add @a[tag=id_share,team=red] stats_trap_kills 1
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run execute as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},team=red,tag=!killed,tag=!gre_immune] run scoreboard players add @a[tag=id_share,team=blue] stats_trap_kills 1
 
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run tag @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add exploded
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run tag @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add killed
+
+execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune,team=red,tag=locked_39] run function game:player/unlock/39
 
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run playsound minecraft:item.shield.block master @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] ~ ~ ~ 1 0
 execute if entity @s[scores={timer=20..}] at @s positioned ~ ~0.4 ~ if entity @a[distance=..4.8] run effect give @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune,team=blue] minecraft:blindness 4 100 true

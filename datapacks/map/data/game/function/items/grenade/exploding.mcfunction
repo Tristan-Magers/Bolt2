@@ -22,6 +22,8 @@ execute as @s[scores={timer=17}] if entity @a[distance=..4.8] run execute as @a[
 execute as @s[scores={timer=17}] if entity @a[distance=..4.8] run tag @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add exploded
 execute as @s[scores={timer=17}] if entity @a[distance=..4.8] run tag @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=!gre_immune] add killed
 
+execute as @s[scores={timer=17}] if entity @a[distance=..4.8] as @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune,team=red,tag=locked_39] run function game:player/unlock/39
+
 execute as @s[scores={timer=17}] if entity @a[distance=..4.8] run playsound minecraft:item.shield.block master @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune] ~ ~ ~ 1 0
 execute as @s[scores={timer=17}] if entity @a[distance=..4.8] run effect give @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune,team=blue] minecraft:blindness 4 100 true
 execute as @s[scores={timer=17}] if entity @a[distance=..4.8] run scoreboard players set @a[gamemode=adventure,distance=..4.8,scores={respawn=..0,invul=..0},tag=gre_immune,team=blue] fog_remove 64

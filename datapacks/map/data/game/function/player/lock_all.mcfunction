@@ -2,9 +2,12 @@ advancement revoke @s everything
 
 tag @s add locked_1
 tag @s add locked_6
+tag @s add locked_7
 tag @s add locked_8
+tag @s add locked_9
 tag @s add locked_11
 tag @s add locked_12
+tag @s add locked_13
 tag @s add locked_14
 tag @s add locked_16
 tag @s add locked_18
@@ -19,6 +22,8 @@ tag @s add locked_32
 tag @s add locked_33
 tag @s add locked_34
 tag @s add locked_38
+tag @s add locked_39
+tag @s add locked_41
 tag @s add locked_46
 tag @s add locked_48
 tag @s add locked_49
@@ -31,7 +36,9 @@ tag @s add locked_62
 tag @s add locked_65
 tag @s add locked_71
 tag @s add locked_72
+tag @s add locked_73
 tag @s add locked_75
+tag @s add locked_76
 tag @s add locked_79
 
 scoreboard players set @s track_lobby_targets 0

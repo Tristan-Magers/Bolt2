@@ -210,6 +210,7 @@ execute as @e[type=arrow,nbt={inGround:1b}] at @s run function game:arrow/land
 
 #lobby range
 function game:lobby/range/loop
+function game:lobby/top_range_loop
 
 #
 tag @a remove capturing_point
