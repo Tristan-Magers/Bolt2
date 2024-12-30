@@ -123,6 +123,12 @@ scoreboard objectives add minions_active dummy
 scoreboard objectives add lobby_text_time dummy
 scoreboard objectives add leave_timer dummy
 
+# advancements
+scoreboard objectives add track_lobby_targets dummy
+scoreboard objectives add track_total_deaths dummy
+scoreboard objectives add track_total_kills dummy
+scoreboard objectives add track_total_crates dummy
+
 #> Viral zone
 scoreboard objectives add speedTimer dummy
 scoreboard objectives add deflectTimer dummy

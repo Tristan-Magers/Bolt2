@@ -31,6 +31,11 @@ scoreboard players remove @s[scores={kill=1..}] kill 1
 
 scoreboard players add .Kills .metric 1
 
+execute unless score .mode .data = .7 .num run scoreboard players add @s track_total_kills 1
+execute as @s[scores={track_total_kills=25..},tag=locked_16] run function game:player/unlock/16
+execute as @s[scores={track_total_kills=50..},tag=locked_28] run function game:player/unlock/28
+execute as @s[scores={track_total_kills=75..},tag=locked_62] run function game:player/unlock/62
+
 scoreboard players add @s kills 1
 scoreboard players add @s killStreak 1
 
@@ -59,6 +64,10 @@ execute if score .tmi .data matches 0 run give @s[scores={killStreak=3}] panda_s
 execute if score .tmi .data matches 0 run give @s[scores={killStreak=5}] map[custom_name='{"text":"Reveal","italic":false,"color":"gray"}',lore=['{"text":"See enemy players and placables","color":"white","italic":false}','{"text":"through walls for 6 seconds","color":"white","italic":false}']] 1
 execute if score .tmi .data matches 0 run give @s[scores={killStreak=7}] panda_spawn_egg[custom_model_data={strings:["0"]},can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Trap","italic":false,"color":"gray"}',lore=['{"text":"Explodes when enemies get near","color":"white","italic":false}','{"text":"Outer ring - explosion radius","color":"white","italic":false}','{"text":"Inner ring - trigger radius","color":"white","italic":false}','{"text":"Can be shot","color":"white","italic":false}','{"text":"Max active: 12","color":"white","italic":false}'],entity_data={id:"minecraft:creeper",PersistenceRequired:1b,Silent:1b}] 2
 execute if score .tmi .data matches 0 run give @s[scores={killStreak=10}] map[custom_name='{"text":"Reveal","italic":false,"color":"gray"}',lore=['{"text":"See enemy players and placables","color":"white","italic":false}','{"text":"through walls for 6 seconds","color":"white","italic":false}']] 1
+
+execute if score .tmi .data matches 0 unless score .testing_mode .data = .1 .num as @s[scores={killStreak=3},tag=locked_18] run function game:player/unlock/18
+execute if score .tmi .data matches 0 unless score .testing_mode .data = .1 .num as @s[scores={killStreak=5},tag=locked_65] run function game:player/unlock/65
+execute if score .tmi .data matches 0 unless score .testing_mode .data = .1 .num as @s[scores={killStreak=7},tag=locked_52] run function game:player/unlock/52
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .CrossKills .stats

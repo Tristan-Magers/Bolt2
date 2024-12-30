@@ -1,5 +1,6 @@
 clear @s minecraft:magenta_glazed_terracotta
 clear @s black_stained_glass_pane
+clear @s bone
 
 #
 item replace entity @s inventory.0 with black_stained_glass_pane[custom_name='{"text":" "}']

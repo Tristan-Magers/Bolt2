@@ -317,6 +317,8 @@ kill @e[tag=trap,scores={hurt=2..}]
 scoreboard players add @a crossbowTime 0
 clear @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}']
 clear @a[scores={crossbowTime=..0}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',custom_data={trigger:0b}]
+execute if score .tmi .data = .0 .num if score .mode .data = .1 .num as @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}},tag=locked_54] run function game:player/unlock/54
+execute if score .mode .data = .7 .num as @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}},tag=locked_32] run function game:player/unlock/32
 scoreboard players add @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbowTime 240
 item replace entity @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},custom_data={trigger:0b},charged_projectiles=[{id:"minecraft:arrow",count:1}]] 1
 
@@ -385,7 +387,7 @@ execute as @e[tag=scrap,type=item] at @s run function game:game/infected/scrap_i
 
 #
 execute as @e[type=minecraft:snowball,tag=!glitter] run data merge entity @s {Item:{id:"minecraft:kelp",count:1}}
-execute as @e[type=minecraft:snowball,tag=glitter] run data merge entity @s {Item:{id:"minecraft:emerald",count:1}}
+execute as @e[type=minecraft:snowball,tag=glitter] run data merge entity @s {Item:{id:"minecraft:clay_ball",count:1}}
 
 #
 scoreboard players set @a place_slime_temp 0
@@ -444,3 +446,4 @@ scoreboard players set @a crouch 0
 #
 tag @a remove glitter_hold
 tag @a[nbt={SelectedItem:{id:"minecraft:snowball",components:{"minecraft:custom_model_data":{strings:["1"]}}}}] add glitter_hold
+tag @a[nbt={Inventory:[{id:"minecraft:snowball",Slot:-106b}]}] add glitter_hold

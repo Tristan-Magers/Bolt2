@@ -6,6 +6,7 @@ tp @e[tag=intro_start,tag=!teleported] 243.50 -48 -245.5 -64.8 -5.5
 tag @e[tag=into_start] add teleported
 
 #
+execute as @s[scores={golden_apple=1..},tag=locked_14] at @s run function game:player/unlock/14
 execute as @s[scores={golden_apple=1..}] at @s run function game:test4
 effect clear @s[scores={golden_apple=1..}] minecraft:absorption
 effect clear @s[scores={golden_apple=1..}] minecraft:regeneration
@@ -388,6 +389,12 @@ function game:player/inventory/drop
 tag @s remove check_bow_ui
 tag @s[tag=lobby_inv_correct] add check_bow_ui
 tag @s remove lobby_inv_correct
+execute if items entity @s[tag=!check_bow_ui] player.cursor minecraft:bone run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.2 minecraft:bone run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.3 minecraft:bone run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.4 minecraft:bone run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.5 minecraft:bone run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] hotbar.8 minecraft:bone run tag @s add check_bow_ui
 execute if items entity @s[tag=!check_bow_ui] player.cursor minecraft:bow run tag @s add check_bow_ui
 execute if items entity @s[tag=!check_bow_ui] hotbar.2 minecraft:bow run tag @s add check_bow_ui
 execute if items entity @s[tag=!check_bow_ui] hotbar.3 minecraft:bow run tag @s add check_bow_ui
@@ -461,3 +468,10 @@ scoreboard players remove @s[scores={fog_remove=-5..}] fog_remove 1
 execute if score .map .data matches 2 run effect clear @s[scores={fog_remove=0}] blindness
 execute if score .map .data matches 2 run effect clear @s[scores={fog_remove=0}] darkness
 effect clear @s[scores={fog_remove=-1}] darkness
+
+# Advancements
+execute as @s[tag=locked_8,scores={rank=650..}] run function game:player/unlock/8
+execute as @s[tag=locked_75,scores={rank=600..}] run function game:player/unlock/75
+execute as @s[tag=locked_22,scores={rank=550..}] run function game:player/unlock/22
+
+execute as @s[tag=locked_46,scores={blind=1..}] run function game:player/unlock/46

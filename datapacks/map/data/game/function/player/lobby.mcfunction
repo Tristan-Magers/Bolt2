@@ -58,6 +58,7 @@ tag @s[tag=!near_ted] remove nt2
 tag @s remove near_cards
 execute at @s if entity @e[type=item_display,tag=cards,distance=..1.4] run tag @s add near_cards
 scoreboard players set @s[tag=near_cards,tag=!near_cards2] lobby_text_time 20
+execute as @s[tag=near_cards,tag=!near_cards2,tag=locked_38] run function game:player/unlock/38
 title @s[tag=near_cards,tag=!near_cards2] actionbar {"text":"The deck has three cards."}
 
 tag @s[tag=near_cards] add near_cards2

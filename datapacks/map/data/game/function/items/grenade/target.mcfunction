@@ -13,6 +13,9 @@ execute as @s at @s positioned ~ ~0.6 ~ run scoreboard players operation @a[tag=
 execute as @s at @s positioned ~ ~0.6 ~ run execute as @s[scores={t5=1..}] run function game:items/target/spawn
 execute as @s at @s positioned ~ ~0.6 ~ run execute as @s[scores={t5=2..}] run function game:items/target/spawn
 execute as @s at @s positioned ~ ~0.6 ~ run execute as @s[scores={t5=3..}] run function game:items/target/spawn
+
+execute as @s at @s positioned ~ ~0.6 ~ run execute as @s[scores={t5=3..}] as @a[tag=id_share,tag=locked_33] run function game:player/unlock/33
+
 execute as @s at @s positioned ~ ~0.6 ~ run execute as @s[scores={t5=4..}] run function game:items/target/spawn
 execute as @s at @s positioned ~ ~0.6 ~ run execute as @s[scores={t5=5..}] run function game:items/target/spawn
 execute as @s at @s positioned ~ ~0.6 ~ run execute as @s[scores={t5=6..}] run function game:items/target/spawn

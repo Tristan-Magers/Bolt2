@@ -33,6 +33,7 @@ execute as @a[tag=id_share] at @s run playsound minecraft:block.small_amethyst_b
 execute if score @s distance matches 324..900 as @a[tag=id_share] at @s run title @s actionbar {"text":"SNIPER SHOT [+4]","color":"green"}
 execute if score @s distance matches 324..900 as @a[tag=id_share] at @s run scoreboard players add @s Scores 2
 execute if score @s distance matches 324..900 as @a[tag=id_share] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 2
+execute if score @s distance matches 900.. as @a[tag=id_share,tag=locked_50] at @s run function game:player/unlock/50
 execute if score @s distance matches 900.. as @a[tag=id_share] at @s run title @s actionbar {"text":"SUPER SNIPER SHOT [+8]","color":"green"}
 execute if score @s distance matches 900.. as @a[tag=id_share] at @s run scoreboard players add @s Scores 6
 execute if score @s distance matches 900.. as @a[tag=id_share] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.2

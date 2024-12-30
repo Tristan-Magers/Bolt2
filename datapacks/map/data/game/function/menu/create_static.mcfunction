@@ -21,3 +21,7 @@ summon minecraft:text_display 235.0 -47.6 -223.0 {Rotation:[180F,0F],Tags:["lobb
 
 summon minecraft:text_display 233.15 -48.05 -248.0 {Tags:["lobby_menu_static"],alignment:"center",background:0,default_background:0b,line_width:200,see_through:0b,text:'{"text":"Join","color":"dark_gray","bold":true}',text_opacity:-1b,transformation:{left_rotation:[0.0f,0.70710677f,0.0f,0.70710677f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[1.5249995f,1.5249995f,0.9456516f],translation:[0.0f,0.0f,0.0f]}}
 summon minecraft:text_display 233.15 -48.4 -248.0 {Tags:["lobby_menu_static"],alignment:"center",background:0,default_background:0b,line_width:200,see_through:0b,text:'{"text":"Spectator","color":"dark_gray","bold":true}',text_opacity:-1b,transformation:{left_rotation:[0.0f,0.70710677f,0.0f,0.70710677f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[1.5249995f,1.5249995f,0.9456516f],translation:[0.0f,0.0f,0.0f]}}
+
+#
+kill @e[tag=chain_dis]
+summon block_display 241.0 -46 -211.0 {block_state:{Name:"minecraft:chain"},Tags:["chain_dis"]}

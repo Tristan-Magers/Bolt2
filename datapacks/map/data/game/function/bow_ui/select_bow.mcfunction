@@ -1,14 +1,27 @@
 #
-execute at @s run playsound minecraft:ui.button.click master @s ~ ~ ~ 0.6 0.95
-execute at @s run playsound minecraft:entity.sheep.shear master @s ~ ~ ~ 0.4 1.15
-
-#
+scoreboard players operation .store_bow_pace .calc = @s bow_texture_place
 scoreboard players operation @s bow_texture_place = @s v_3
 
 #
 scoreboard players operation @s temp_bow_value = @s bow_texture_place
 function game:bow_ui/get_bow_id
+scoreboard players operation .store_bow_id .calc = @s bow_texture
 scoreboard players operation @s bow_texture = @s temp_bow_id
+
+#
+tag @s remove bow_locked
+execute store result storage minecraft:macro input.texture int 1 run scoreboard players get @s bow_texture
+function game:bow_ui/macro_check_lock with storage minecraft:macro input
+
+execute as @s[tag=bow_locked] run scoreboard players operation @s bow_texture = .store_bow_id .calc
+execute as @s[tag=bow_locked] run scoreboard players operation @s bow_texture_place = .store_bow_pace .calc
+
+#
+execute at @s[tag=!bow_locked] run playsound minecraft:ui.button.click master @s ~ ~ ~ 0.6 0.95
+execute at @s[tag=!bow_locked] run playsound minecraft:entity.sheep.shear master @s ~ ~ ~ 0.4 1.15
+
+execute at @s[tag=bow_locked] run playsound minecraft:ui.button.click master @s ~ ~ ~ 0.4 0.5
+execute at @s[tag=bow_locked] run playsound minecraft:entity.sheep.shear master @s ~ ~ ~ 0.3 0.6
 
 #bow correct
 clear @s bow

@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Lock In",
+      "color": "#975151"
+    },
+    "description": {
+        "text": "Play Target",
+        "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["24"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "tinyt": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:general/play_inf"
+}

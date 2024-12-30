@@ -227,6 +227,25 @@ execute if data block 235 -49 -224 {Items:[{Slot:24b,id:"minecraft:gray_dye"}]} 
 execute if data block 235 -49 -224 {Items:[{Slot:25b,id:"minecraft:gray_dye"}]} run item replace block 235 -49 -224 container.25 with air
 
 #
+execute if data block 235 -49 -224 {Items:[{Slot:10b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.10 with air
+execute if data block 235 -49 -224 {Items:[{Slot:11b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.11 with air
+execute if data block 235 -49 -224 {Items:[{Slot:12b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.12 with air
+execute if data block 235 -49 -224 {Items:[{Slot:13b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.13 with air
+
+execute if data block 235 -49 -224 {Items:[{Slot:15b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.15 with air
+execute if data block 235 -49 -224 {Items:[{Slot:16b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.16 with air
+execute if data block 235 -49 -224 {Items:[{Slot:17b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.17 with air
+
+execute if data block 235 -49 -224 {Items:[{Slot:19b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.19 with air
+execute if data block 235 -49 -224 {Items:[{Slot:20b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.20 with air
+execute if data block 235 -49 -224 {Items:[{Slot:21b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.21 with air
+execute if data block 235 -49 -224 {Items:[{Slot:22b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.22 with air
+
+execute if data block 235 -49 -224 {Items:[{Slot:23b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.23 with air
+execute if data block 235 -49 -224 {Items:[{Slot:24b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.24 with air
+execute if data block 235 -49 -224 {Items:[{Slot:25b,id:"minecraft:bone"}]} run item replace block 235 -49 -224 container.25 with air
+
+#
 execute if data block 235 -49 -224 {Items:[{Slot:10b,id:"minecraft:magenta_glazed_terracotta"}]} run item replace block 235 -49 -224 container.10 with air
 execute if data block 235 -49 -224 {Items:[{Slot:11b,id:"minecraft:magenta_glazed_terracotta"}]} run item replace block 235 -49 -224 container.11 with air
 execute if data block 235 -49 -224 {Items:[{Slot:12b,id:"minecraft:magenta_glazed_terracotta"}]} run item replace block 235 -49 -224 container.12 with air

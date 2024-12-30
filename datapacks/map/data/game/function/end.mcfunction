@@ -7,6 +7,20 @@ gamerule reducedDebugInfo false
 #
 execute as @e[tag=crate] at @s run function game:game/infected/crates/despawn
 
+# achievement for playing infected and winning as infected
+execute if score .mode .data = .6 .num if score .players_playing .data matches 2.. as @a[tag=locked_11,tag=playing] run function game:player/unlock/11
+
+# achievement for playing target
+execute if score .mode .data = .7 .num as @a[tag=locked_24,tag=playing] run function game:player/unlock/24
+
+# achievement for playing tmi
+execute if score .tmi .data = .1 .num as @a[tag=locked_29,tag=playing] run function game:player/unlock/29
+
+# target score achievements
+execute if score .mode .data = .7 .num as @a[team=blue,tag=playing,scores={kills=50..},tag=locked_34] run function game:player/unlock/34
+execute if score .mode .data = .7 .num as @a[team=blue,tag=playing,scores={Scores=60..},tag=locked_30] run function game:player/unlock/30
+execute if score .mode .data = .7 .num as @a[team=blue,tag=playing,scores={Scores=75..},tag=locked_51] run function game:player/unlock/51
+
 # Infection
 execute if score .mode .data = .6 .num as @a[team=blue] run tellraw @a [{"selector":"@s","hoverEvent":{"action":"show_text","contents":[{"selector":"@s"}]}},{"text":"\n  "},{"score":{"name":"@s","objective":"stats_scrap"},"color":"#D9A836","hoverEvent":{"action":"show_text","contents":[{"text":"Scrap Returned"}]}},{"text":"/","color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"Scrap Returned"}]}},{"score":{"name":"@s","objective":"stats_inf_kill"},"color":"#3FB55B","hoverEvent":{"action":"show_text","contents":[{"text":"Infected Kills"}]}}]
 execute if score .mode .data = .6 .num as @a[team=red,tag=!sur_start] run tellraw @a [{"selector":"@s","hoverEvent":{"action":"show_text","contents":[{"selector":"@s"}]}},{"text":"\n  "},{"score":{"name":"@s","objective":"stats_sur_kill"},"color":"#3A67E0","hoverEvent":{"action":"show_text","contents":[{"text":"Survivor Kills"}]}},{"text":"/","color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"Survivor Kills"}]}},{"score":{"name":"@s","objective":"stats_deaths"},"color":"white","hoverEvent":{"action":"show_text","contents":[{"text":"Deaths"}]}}]

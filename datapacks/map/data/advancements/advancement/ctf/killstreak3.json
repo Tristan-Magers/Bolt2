@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Legendary Hunter",
+      "color": "#468c48"
+    },
+    "description": {
+      "text": "Get a 7 kill streak",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["52"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "elo1": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:ctf/killstreak2"
+}

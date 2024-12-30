@@ -13,3 +13,11 @@ execute if score .mode_screen .data matches 5 run scoreboard players set .tmi .d
 execute if score .mode_screen .data matches 5 run scoreboard players set .mode .data 1
 
 function game:game/next_id
+
+# unlock bow for starting game
+execute as @a[scores={team_pref=0..},tag=locked_48] run function game:player/unlock/48
+
+execute if score .mode_screen .data matches 1 run tag @s add play_ctf
+execute if score .mode_screen .data matches 5 run tag @s add play_tmi
+execute if score .mode_screen .data matches 6 run tag @s add play_inf
+execute if score .mode_screen .data matches 7 run tag @s add play_tar

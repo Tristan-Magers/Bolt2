@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Dedication",
+      "color": "#a13535"
+    },
+    "description": {
+      "text": "Shoot 50 lobby targets",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["49"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "elo1": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:lobby/target1"
+}

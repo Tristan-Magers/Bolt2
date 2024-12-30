@@ -1,3 +1,57 @@
 {
+  "advancements:root_5": {
+    "criteria": {
+      "warrior": "2024-12-29 18:03:28 -0700"
+    },
+    "done": true
+  },
+  "advancements:root_6": {
+    "criteria": {
+      "warrior": "2024-12-29 18:03:28 -0700"
+    },
+    "done": true
+  },
+  "advancements:root_4": {
+    "criteria": {
+      "warrior": "2024-12-29 18:03:28 -0700"
+    },
+    "done": true
+  },
+  "advancements:root_1": {
+    "criteria": {
+      "warrior": "2024-12-29 18:03:28 -0700"
+    },
+    "done": true
+  },
+  "advancements:root_3": {
+    "criteria": {
+      "warrior": "2024-12-29 18:03:28 -0700"
+    },
+    "done": true
+  },
+  "advancements:root_2": {
+    "criteria": {
+      "warrior": "2024-12-29 18:03:28 -0700"
+    },
+    "done": true
+  },
+  "advancements:root_9": {
+    "criteria": {
+      "warrior": "2024-12-29 18:03:28 -0700"
+    },
+    "done": true
+  },
+  "advancements:general/start": {
+    "criteria": {
+      "tinyt": "2024-12-29 18:03:33 -0700"
+    },
+    "done": true
+  },
+  "advancements:infected/crates10": {
+    "criteria": {
+      "ted": "2024-12-29 18:04:59 -0700"
+    },
+    "done": true
+  },
   "DataVersion": 4189
 }
