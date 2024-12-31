@@ -255,8 +255,14 @@ execute as @s[tag=totem] at @s run particle minecraft:item{item:"minecraft:emera
 
 execute as @s[tag=totem,scores={deaths=1..},tag=!exploded] at @s run function game:player/totem
 
+execute if score .testing_mode .data matches 0 if score .mode .data matches 1 if score .tmi .data matches 0 as @s[nbt={Inventory:[{id:"minecraft:iron_ingot",count:2}]},tag=locked_77,tag=playing] run function game:player/unlock/77
+
+scoreboard players set .count_item .calc 0
+execute store result score .count_item .calc run clear @s minecraft:iron_ingot 0
+execute if score .count_item .calc matches 10.. as @s[tag=locked_45,tag=playing] run function game:player/unlock/45
+
 # No Cap
-scoreboard players remove @s[scores={no_cap=1..}] no_cap 1  
+scoreboard players remove @s[scores={no_cap=1..}] no_cap 1
 
 #
 execute as @s[scores={deaths=1..}] at @s run function game:player/death

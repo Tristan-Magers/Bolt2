@@ -28,6 +28,7 @@ tag @s add locked_34
 tag @s add locked_38
 tag @s add locked_39
 tag @s add locked_41
+tag @s add locked_45
 tag @s add locked_46
 tag @s add locked_48
 tag @s add locked_49
@@ -43,6 +44,7 @@ tag @s add locked_72
 tag @s add locked_73
 tag @s add locked_75
 tag @s add locked_76
+tag @s add locked_77
 tag @s add locked_78
 tag @s add locked_79
 
