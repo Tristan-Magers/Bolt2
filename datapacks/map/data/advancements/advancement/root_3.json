@@ -15,7 +15,7 @@
         "minecraft:custom_model_data": {"strings":["4"]}
       }
     },
-    "frame": "task",
+    "frame": "goal",
     "show_toast": false,
     "announce_to_chat": false,
     "hidden": false,

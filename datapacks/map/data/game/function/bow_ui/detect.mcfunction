@@ -39,6 +39,7 @@ execute as @s[nbt={Inventory:[{Slot:25b,id:"minecraft:arrow"}]}] run scoreboard 
 execute as @s[nbt={Inventory:[{Slot:26b,id:"minecraft:arrow"}]}] run scoreboard players set @s v_1 17
 
 execute as @s[nbt=!{Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:26b}]}] run scoreboard players set @s v_1 -99
+
 scoreboard players set @s[nbt=!{Inventory:[{id:"minecraft:magenta_glazed_terracotta"}]}] v_1 -1
 
 #

@@ -12,7 +12,7 @@
     "icon": {
       "id": "minecraft:golden_apple"
     },
-    "frame": "task",
+    "frame": "goal",
     "show_toast": false,
     "announce_to_chat": false,
     "hidden": true,

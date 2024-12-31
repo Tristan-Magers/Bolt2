@@ -476,3 +476,6 @@ execute as @s[tag=locked_75,scores={rank=600..}] run function game:player/unlock
 execute as @s[tag=locked_22,scores={rank=550..}] run function game:player/unlock/22
 
 execute as @s[tag=locked_46,scores={blind=1..}] run function game:player/unlock/46
+
+execute as @s[tag=locked_31,tag=!locked_30,tag=!locked_32,tag=!locked_33,tag=!locked_34,tag=!locked_50,tag=!locked_51] run function game:player/unlock/31
+execute as @s[tag=locked_23,tag=!locked_39,tag=!locked_71,tag=!locked_13,tag=!locked_9,tag=!locked_1,tag=!locked_25] run function game:player/unlock/23

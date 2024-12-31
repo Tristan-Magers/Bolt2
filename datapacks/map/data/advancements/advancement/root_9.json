@@ -2,17 +2,17 @@
   "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
   "display": {
     "title": {
-      "text": "Collection",
+      "text": "Codes",
       "color": "dark_gray"
     },
     "description": {
-      "text": "Complete groups of achievements",
+      "text": "Complete groups of achievements to get unlock codes",
       "color": "white"
     },
     "icon": {
       "id": "minecraft:diamond"
     },
-    "frame": "task",
+    "frame": "goal",
     "show_toast": false,
     "announce_to_chat": false,
     "hidden": false,

@@ -1,5 +1,7 @@
 advancement revoke @s everything
 
+tag @s remove unlocked_all
+
 tag @s add locked_1
 tag @s add locked_6
 tag @s add locked_7
@@ -13,11 +15,13 @@ tag @s add locked_16
 tag @s add locked_18
 tag @s add locked_20
 tag @s add locked_22
+tag @s add locked_23
 tag @s add locked_24
 tag @s add locked_25
 tag @s add locked_28
 tag @s add locked_29
 tag @s add locked_30
+tag @s add locked_31
 tag @s add locked_32
 tag @s add locked_33
 tag @s add locked_34
@@ -39,6 +43,7 @@ tag @s add locked_72
 tag @s add locked_73
 tag @s add locked_75
 tag @s add locked_76
+tag @s add locked_78
 tag @s add locked_79
 
 scoreboard players set @s track_lobby_targets 0
@@ -46,6 +51,7 @@ scoreboard players set @s track_total_deaths 0
 scoreboard players set @s track_total_kills 0
 scoreboard players set @s track_total_crates 0
 scoreboard players set @s track_total_ctf_walls 0
+scoreboard players set @s track_total_games 0
 
 tag @s remove play_ctf
 tag @s remove play_inf

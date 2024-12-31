@@ -12,6 +12,7 @@ scoreboard players operation @s bow_texture = @s temp_bow_id
 tag @s remove bow_locked
 execute store result storage minecraft:macro input.texture int 1 run scoreboard players get @s bow_texture
 function game:bow_ui/macro_check_lock with storage minecraft:macro input
+tag @s[tag=unlocked_all] remove bow_locked
 
 execute as @s[tag=bow_locked] run scoreboard players operation @s bow_texture = .store_bow_id .calc
 execute as @s[tag=bow_locked] run scoreboard players operation @s bow_texture_place = .store_bow_pace .calc

@@ -1,0 +1,26 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Code",
+      "color": "#ffffff"
+    },
+    "description": {
+      "text": "1111",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:paper"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "can": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:collection/infection"
+}

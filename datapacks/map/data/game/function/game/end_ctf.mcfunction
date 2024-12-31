@@ -40,10 +40,3 @@ execute if score Blue Scores >= Red Scores if score .mode .data = .1 .num if sco
 execute if score Red Scores >= Blue Scores if score .mode .data = .1 .num if score .ranked .data = .1 .num run scoreboard players add @a[team=red,tag=change_rank] win_streak 1
 
 execute unless score Red Scores = Blue Scores if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .1 .num run function game:game/rank_changes
-
-#tiny town and win achievements
-execute if score Blue Scores > Red Scores if score .mode .data = .1 .num as @a[team=blue,tag=locked_72] run function game:player/unlock/72
-execute if score Red Scores > Blue Scores if score .mode .data = .1 .num as @a[team=red,tag=locked_72] run function game:player/unlock/72
-
-execute if score Blue Scores > Red Scores if score .mode .data = .1 .num if score .map .data = .10 .num as @a[team=blue,tag=locked_79] run function game:player/unlock/79
-execute if score Red Scores > Blue Scores if score .mode .data = .1 .num if score .map .data = .10 .num as @a[team=red,tag=locked_79] run function game:player/unlock/79

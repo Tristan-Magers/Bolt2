@@ -7,8 +7,17 @@ gamerule reducedDebugInfo false
 #
 execute as @e[tag=crate] at @s run function game:game/infected/crates/despawn
 
+#tiny town and win achievements
+execute if score Blue Scores > Red Scores if score .mode .data = .1 .num as @a[team=blue,tag=locked_72] run function game:player/unlock/72
+execute if score Red Scores > Blue Scores if score .mode .data = .1 .num as @a[team=red,tag=locked_72] run function game:player/unlock/72
+
+execute if score Blue Scores > Red Scores if score .mode .data = .1 .num if score .map .data = .10 .num as @a[team=blue,tag=locked_79] run function game:player/unlock/79
+execute if score Red Scores > Blue Scores if score .mode .data = .1 .num if score .map .data = .10 .num as @a[team=red,tag=locked_79] run function game:player/unlock/79
+
 # achievement for playing infected and winning as infected
 execute if score .mode .data = .6 .num if score .players_playing .data matches 2.. as @a[tag=locked_11,tag=playing] run function game:player/unlock/11
+execute if score .mode .data = .6 .num if score .players_playing .data matches 2.. as @a[tag=locked_72,tag=playing] run function game:player/unlock/72
+execute if score .mode .data = .6 .num if score .players_playing .data matches 2.. if score .map .data = .10 .num as @a[tag=locked_79,tag=playing] run function game:player/unlock/79
 
 # achievement for playing target
 execute if score .mode .data = .7 .num as @a[tag=locked_24,tag=playing] run function game:player/unlock/24
@@ -20,6 +29,10 @@ execute if score .tmi .data = .1 .num as @a[tag=locked_29,tag=playing] run funct
 execute if score .mode .data = .7 .num as @a[team=blue,tag=playing,scores={kills=50..},tag=locked_34] run function game:player/unlock/34
 execute if score .mode .data = .7 .num as @a[team=blue,tag=playing,scores={Scores=60..},tag=locked_30] run function game:player/unlock/30
 execute if score .mode .data = .7 .num as @a[team=blue,tag=playing,scores={Scores=75..},tag=locked_51] run function game:player/unlock/51
+
+# total game achievements
+scoreboard players add @a[tag=playing] track_total_games 1
+execute as @a[scores={track_total_games=10..},tag=locked_78,tag=playing] run function game:player/unlock/78
 
 # Infection
 execute if score .mode .data = .6 .num as @a[team=blue] run tellraw @a [{"selector":"@s","hoverEvent":{"action":"show_text","contents":[{"selector":"@s"}]}},{"text":"\n  "},{"score":{"name":"@s","objective":"stats_scrap"},"color":"#D9A836","hoverEvent":{"action":"show_text","contents":[{"text":"Scrap Returned"}]}},{"text":"/","color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"Scrap Returned"}]}},{"score":{"name":"@s","objective":"stats_inf_kill"},"color":"#3FB55B","hoverEvent":{"action":"show_text","contents":[{"text":"Infected Kills"}]}}]

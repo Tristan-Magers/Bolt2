@@ -128,6 +128,8 @@ scoreboard objectives add track_lobby_targets dummy
 scoreboard objectives add track_total_deaths dummy
 scoreboard objectives add track_total_kills dummy
 scoreboard objectives add track_total_crates dummy
+scoreboard objectives add track_total_ctf_walls dummy
+scoreboard objectives add track_total_games dummy
 
 #> Viral zone
 scoreboard objectives add speedTimer dummy

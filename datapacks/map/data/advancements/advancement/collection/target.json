@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Stationary Target Assassin",
+      "color": "#9f6d5a"
+    },
+    "description": {
+      "text": "Get all target mode advancements",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["31"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "can": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:root_9"
+}
