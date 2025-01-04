@@ -3,10 +3,10 @@
   "display": {
     "title": {
       "text": "Pretty Good",
-      "color": "#a17035"
+      "color": "#ab793c"
     },
     "description": {
-      "text": "Reach 550 elo",
+      "text": "Reach 550 rank\n(use tab in lobby to check rank)",
       "color": "white"
     },
     "icon": {

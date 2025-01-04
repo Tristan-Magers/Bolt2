@@ -12,7 +12,7 @@
     "icon": {
       "id": "minecraft:bow",
       "components": {
-        "minecraft:custom_model_data": {"strings":["45"]}
+        "minecraft:custom_model_data": {"strings":["44"]}
       }
     },
     "frame": "task",
@@ -25,5 +25,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "advancements:root_3"
+  "parent": "advancements:tmi/boost"
 }

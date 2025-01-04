@@ -2,7 +2,7 @@ scoreboard players remove @s blind 1
 
 scoreboard players set @s[scores={respawn=1..}] blind -1
 scoreboard players set @s[scores={invul=1..},tag=!lobby] blind -1
-scoreboard players set @s[scores={blind=30..},tag=lobby] blind 29
+scoreboard players set @s[scores={blind=30..},tag=lobby] blind 26
 scoreboard players add @s blind_new 1
 
 item replace entity @s[scores={blind=20..}] armor.head with minecraft:yellow_stained_glass_pane[equippable={slot:"head",camera_overlay:"block/full_blind"},enchantments={levels:{"minecraft:binding_curse":1}},item_name='{"bold":false,"text":" "}'] 1

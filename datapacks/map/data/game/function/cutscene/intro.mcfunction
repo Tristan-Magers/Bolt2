@@ -175,7 +175,7 @@ execute if score .mode .data = .7 .num as @s[scores={t=99}] run function game:ga
 #execute if score .mode .data = .7 .num if score .map .data = .1 .num as @s[scores={t=99}] run function game:game/spawn_targets
 #execute if score .mode .data = .7 .num if score .map .data = .6 .num as @s[scores={t=99}] run function game:game/spawn_targets
 
-execute if score .mode .data = .7 .num as @s[scores={t=6}] as @a at @s run playsound minecraft:music.dragon record @s ~ ~ ~ 0.8 1
+execute if score .mode .data = .7 .num as @s[scores={t=6}] as @a at @s run playsound minecraft:music.dragon master @s[tag=!no_music] ~ ~ ~ 0.8 1
 
 #
 execute as @s[scores={t=100..}] if score .mode .data = .6 .num run bossbar set minecraft:scrap visible true

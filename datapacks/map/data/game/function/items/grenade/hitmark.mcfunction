@@ -84,7 +84,7 @@ effect give @s[scores={timer=12}] minecraft:glowing 30 30 true
 
 execute as @s[scores={timer=17..}] at @s run particle minecraft:explosion_emitter ~ ~0.6 ~ 0.5 0.5 0.5 0 6 force
 execute as @s[scores={timer=17..}] at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 1 0.5
-execute as @s[scores={timer=17..}] at @s positioned ~ ~1.4 ~ run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
+execute as @s[scores={timer=17..}] at @s positioned ~ ~1.4 ~ store result score .result .calc run fill ~-2.0 ~-2.0 ~-2.0 ~2.0 ~2.0 ~2.0 air replace gravel
 
 ### KILL PLAYERS AND EXPLOSION (controls tellraw text as well)
 
@@ -93,6 +93,9 @@ execute if score .mode .data = .6 .num run tag @a[team=blue] add gre_immune
 execute if score .mode .data = .6 .num if score .zombie_evolve_type_6 .data = .1 .num run tag @a[team=red] add gre_immune
 
 function game:id/player
+
+execute as @s[scores={timer=17..}] at @s if score .mode .data matches 1 if score .tmi .data matches 0 run scoreboard players operation @p[tag=id_share] track_walls_broken += .result .calc
+execute as @s[scores={timer=17..}] as @p[tag=id_share,scores={track_walls_broken=20..},tag=locked_27] run function game:player/unlock/27
 
 ### HIT TRAGET
 

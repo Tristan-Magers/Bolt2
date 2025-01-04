@@ -1,0 +1,26 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Code: 137",
+      "color": "#ffffff"
+    },
+    "description": {
+      "text": "",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:paper"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "can": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:ctf/elo3"
+}

@@ -25,5 +25,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "advancements:root_2"
+  "parent": "advancements:general/play10"
 }

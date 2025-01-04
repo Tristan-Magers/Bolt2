@@ -23,6 +23,7 @@ execute at @s[tag=!bow_locked] run playsound minecraft:entity.sheep.shear master
 
 execute at @s[tag=bow_locked] run playsound minecraft:ui.button.click master @s ~ ~ ~ 0.4 0.5
 execute at @s[tag=bow_locked] run playsound minecraft:entity.sheep.shear master @s ~ ~ ~ 0.3 0.6
+execute at @s[tag=bow_locked] run playsound minecraft:block.chain.hit master @s ~ ~ ~ 0.4 0.5
 
 #bow correct
 clear @s bow

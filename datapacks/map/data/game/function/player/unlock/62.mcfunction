@@ -1,5 +1,5 @@
 # elo 800 achievement
-tag @s remove locked_65
+tag @s remove locked_62
 
 advancement grant @s only advancements:general/kills3
 

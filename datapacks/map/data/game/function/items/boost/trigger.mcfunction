@@ -33,3 +33,5 @@ scoreboard players set @s boost_use 0
 
 #
 scoreboard players set @s delay_boost 8
+
+scoreboard players set @s boost_time 65

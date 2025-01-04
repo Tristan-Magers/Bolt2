@@ -25,6 +25,10 @@ clear @s minecraft:glass_bottle
 scoreboard players set @s leave_potion 0
 
 #
+scoreboard players add @s music 0
+scoreboard players set @s[scores={music=9..}] music 0
+
+#
 scoreboard players add @s rank 0
 tag @s[scores={rank=..0}] remove has_rank_v28
 

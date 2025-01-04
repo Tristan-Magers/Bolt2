@@ -50,7 +50,7 @@ execute if data entity @s[scores={t=10}] interaction run tellraw @a[gamemode=spe
 #execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run give @s[team=blue] iron_ingot{custom_name='{"text":"Armor","color":"gray","italic":false}',lore=['{"text":"Survive one arrow hit","color":"white","italic":false}','{"text":"Doesn\'t block explosions","color":"white","italic":false}','{"text":"Drops the flag","color":"white","italic":false}']}} 1
 
 execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run scoreboard players add @s track_total_crates 1
-execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num as @s[scores={track_total_crates=10..},tag=locked_71] run function game:player/unlock/71
+execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num as @s[scores={track_total_crates=8..},tag=locked_71] run function game:player/unlock/71
 execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run give @s[team=blue] minecraft:netherite_scrap[custom_name='{"text":"Scrap (Return to Generator)","italic":false}'] 1
 execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num as @s[team=blue] run function game:player/scrap_correct
 

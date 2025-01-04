@@ -25,5 +25,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "advancements:root_4"
+  "parent": "advancements:ctf/flag_goalkeep"
 }

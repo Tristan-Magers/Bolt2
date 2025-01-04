@@ -201,6 +201,8 @@ execute if score .menu_red_sign .timer matches 10 run fill 231 -32 -247 231 -32 
 execute if score .menu_red_sign .timer matches 11 run fill 231 -31 -247 231 -31 -250 minecraft:verdant_froglight[axis=x]
 execute if score .menu_red_sign .timer matches 12 run fill 231 -30 -247 231 -30 -250 minecraft:verdant_froglight[axis=x]
 
+execute if score .menu_red_sign .timer matches 13.. store result score .menu_red_sign .timer run random value -50..-2
+
 # fireworks
 scoreboard players add .menu_firework .timer 1
 

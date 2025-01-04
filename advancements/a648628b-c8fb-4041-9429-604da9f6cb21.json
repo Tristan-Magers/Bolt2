@@ -1,43 +1,55 @@
 {
   "advancements:root_5": {
     "criteria": {
-      "warrior": "2024-12-31 13:30:07 -0700"
+      "warrior": "2025-01-04 05:28:47 -0700"
     },
     "done": true
   },
   "advancements:root_6": {
     "criteria": {
-      "warrior": "2024-12-31 13:30:07 -0700"
+      "warrior": "2025-01-04 05:28:47 -0700"
     },
     "done": true
   },
   "advancements:root_4": {
     "criteria": {
-      "warrior": "2024-12-31 13:30:07 -0700"
+      "warrior": "2025-01-04 05:28:47 -0700"
     },
     "done": true
   },
   "advancements:root_1": {
     "criteria": {
-      "warrior": "2024-12-31 13:30:07 -0700"
+      "warrior": "2025-01-04 05:28:47 -0700"
     },
     "done": true
   },
   "advancements:root_3": {
     "criteria": {
-      "warrior": "2024-12-31 13:30:07 -0700"
+      "warrior": "2025-01-04 05:28:47 -0700"
     },
     "done": true
   },
   "advancements:root_2": {
     "criteria": {
-      "warrior": "2024-12-31 13:30:07 -0700"
+      "warrior": "2025-01-04 05:28:47 -0700"
     },
     "done": true
   },
   "advancements:root_9": {
     "criteria": {
-      "warrior": "2024-12-31 13:30:07 -0700"
+      "warrior": "2025-01-04 05:28:47 -0700"
+    },
+    "done": true
+  },
+  "advancements:lobby/blind": {
+    "criteria": {
+      "ted": "2025-01-04 14:48:07 -0700"
+    },
+    "done": true
+  },
+  "advancements:general/start": {
+    "criteria": {
+      "tinyt": "2025-01-04 16:51:41 -0700"
     },
     "done": true
   },

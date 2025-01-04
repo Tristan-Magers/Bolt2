@@ -2,6 +2,8 @@
 execute as @a[tag=me_player] at @s run playsound minecraft:entity.skeleton.step master @s ~ ~ ~ 1 1.3
 execute as @a[tag=me_player] at @s run playsound minecraft:item.book.put master @s ~ ~ ~ 1 1.2
 
+execute as @a[tag=me_player,tag=locked_63] at @s run function game:player/unlock/63
+
 #
 scoreboard players set @s dead_head 6
 

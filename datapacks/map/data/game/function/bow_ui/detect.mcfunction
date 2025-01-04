@@ -40,6 +40,32 @@ execute as @s[nbt={Inventory:[{Slot:26b,id:"minecraft:arrow"}]}] run scoreboard 
 
 execute as @s[nbt=!{Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:26b}]}] run scoreboard players set @s v_1 -99
 
+# code enter
+execute as @s[nbt={Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:27b}]}] run scoreboard players set @s v_1 -999
+execute as @s[nbt={Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:28b}]}] run scoreboard players set @s v_1 -999
+execute as @s[nbt={Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:29b}]}] run scoreboard players set @s v_1 -999
+execute as @s[nbt={Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:30b}]}] run scoreboard players set @s v_1 -9999
+
+execute as @s[nbt={Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:27b}]}] run tag @s remove button_confirm
+execute as @s[nbt={Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:28b}]}] run tag @s remove button_confirm
+execute as @s[nbt={Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:29b}]}] run tag @s remove button_confirm
+
+execute as @s[nbt={Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:27b}]}] run scoreboard players add @s code_1 1
+execute as @s[nbt={Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:28b}]}] run scoreboard players add @s code_2 1
+execute as @s[nbt={Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:29b}]}] run scoreboard players add @s code_3 1
+
+execute as @s[nbt={Inventory:[{Slot:9b}]}] as @s[nbt=!{Inventory:[{Slot:30b}]}] run function game:player/code/try
+
+scoreboard players set @s[scores={code_1=10..}] code_1 0
+scoreboard players set @s[scores={code_2=10..}] code_2 0
+scoreboard players set @s[scores={code_3=10..}] code_3 0
+
+playsound minecraft:ui.button.click master @s[scores={v_1=-999}] ~ ~ ~ 0.5 1.9
+
+scoreboard players set @s[scores={v_1=-999}] v_1 -99
+scoreboard players set @s[scores={v_1=-9999}] v_1 -99
+
+#
 scoreboard players set @s[nbt=!{Inventory:[{id:"minecraft:magenta_glazed_terracotta"}]}] v_1 -1
 
 #

@@ -124,12 +124,24 @@ scoreboard objectives add lobby_text_time dummy
 scoreboard objectives add leave_timer dummy
 
 # advancements
+scoreboard objectives add out_of_spawn_time dummy
+scoreboard objectives add boost_time dummy
+
+scoreboard objectives add fish_fam minecraft.custom:minecraft.interact_with_lectern
+
+scoreboard objectives add track_walls_broken dummy
+scoreboard objectives add track_traps_killed dummy
 scoreboard objectives add track_lobby_targets dummy
 scoreboard objectives add track_total_deaths dummy
 scoreboard objectives add track_total_kills dummy
 scoreboard objectives add track_total_crates dummy
 scoreboard objectives add track_total_ctf_walls dummy
 scoreboard objectives add track_total_games dummy
+
+scoreboard objectives add code_1 dummy
+scoreboard objectives add code_2 dummy
+scoreboard objectives add code_3 dummy
+scoreboard objectives add code_4 dummy
 
 #> Viral zone
 scoreboard objectives add speedTimer dummy
@@ -224,6 +236,8 @@ scoreboard objectives add wall_invul dummy
 scoreboard objectives add danger dummy
 
 scoreboard objectives add wall_hit_count dummy
+
+scoreboard objectives add music dummy
 
 scoreboard objectives add glowing dummy
 
@@ -345,6 +359,8 @@ scoreboard objectives add scrap dummy
 scoreboard objectives add title_pause dummy
 
 scoreboard objectives add dead_head dummy
+
+scoreboard objectives add fallen dummy
 
 scoreboard players set .CrossKills .stats 15
 scoreboard players set .GrenadeKills .stats 4
