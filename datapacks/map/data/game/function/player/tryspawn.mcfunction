@@ -1,6 +1,7 @@
 function game:id/spawn
 
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run effect give @s resistance 1 200 true
+execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run scoreboard players set @s out_of_spawn_time 60
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run scoreboard players set @s invul 19
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run scoreboard players set @s removeBlind 3
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run scoreboard players set @s arrowReload 33

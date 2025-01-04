@@ -163,7 +163,7 @@ execute as @s[scores={t=64}] if score .mode .data = .7 .num run tellraw @a [{"te
 execute as @s[scores={t=94}] if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_arrow .data = .1 .num run tellraw @a [{"text":"Wind Arrows","color":"dark_aqua"},{"text":": Arrows explode if they hit the ground\n","color":"white"}]
 execute as @s[scores={t=94}] if score .mode .data = .1 .num if score .tmi .data = .1 .num if score .tmi_arrow .data = .2 .num run tellraw @a [{"text":"Three in the Quiver","color":"gold"},{"text":": Arrows only reload on hit\n","color":"white"}]
 
-execute as @s[scores={t=114}] if score .testing_mode .data = .1 .num run tellraw @a [{"text":"Practice mode: Only one team active. Game ends if anyone selects team in lobby."}]
+execute as @s[scores={t=114}] unless score .mode .data = .6 .num if score .testing_mode .data = .1 .num run tellraw @a [{"text":"Practice mode: Only one team active. Game ends if anyone selects team in lobby."}]
 
 execute as @s[scores={t=64}] run tellraw @a [{"text":"\n"}]
 
@@ -175,7 +175,7 @@ execute if score .mode .data = .7 .num as @s[scores={t=99}] run function game:ga
 #execute if score .mode .data = .7 .num if score .map .data = .1 .num as @s[scores={t=99}] run function game:game/spawn_targets
 #execute if score .mode .data = .7 .num if score .map .data = .6 .num as @s[scores={t=99}] run function game:game/spawn_targets
 
-execute if score .mode .data = .7 .num as @s[scores={t=6}] as @a at @s run playsound minecraft:music.dragon record @s ~ ~ ~ 0.8 1
+execute if score .mode .data = .7 .num as @s[scores={t=6}] as @a at @s run playsound minecraft:music.dragon master @s[tag=!no_music] ~ ~ ~ 0.8 1
 
 #
 execute as @s[scores={t=100..}] if score .mode .data = .6 .num run bossbar set minecraft:scrap visible true

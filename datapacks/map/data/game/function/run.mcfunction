@@ -26,6 +26,16 @@ execute if entity @a[scores={ID=..0}] run scoreboard players operation @p[scores
 execute if entity @a[scores={ID=..0}] run scoreboard players add .new ID 1
 execute if entity @a[scores={ID=..0}] run scoreboard players operation @p[scores={ID=..0}] ID = .new ID
 
+# chair achievement
+tag @a remove chair_sit
+execute as @e[type=pig] on passengers run tag @s add chair_sit
+execute as @a[tag=chair_sit,tag=locked_70] at @s if entity @a[distance=0.1..3,tag=chair_sit] run function game:player/unlock/70
+
+# kill in tournament hall because of vases
+execute positioned 239.69 -38.00 -196.58 as @e[type=snowball,distance=..18] at @s run tellraw @p[scores={snowball=1..},tag=glitter_hold,distance=..18] [{"text":"Can use that here"}]
+execute positioned 239.69 -38.00 -196.58 as @e[type=snowball,distance=..18] run scoreboard players set @a[scores={snowball=1..},distance=..18] snowball 0
+execute positioned 239.69 -38.00 -196.58 run kill @e[type=snowball,distance=..18]
+
 #
 function game:player/item_count
 
@@ -76,11 +86,11 @@ execute as @a[tag=playing] run scoreboard players add .players_playing .data 1
 gamemode adventure @a[gamemode=survival]
 effect give @a minecraft:resistance 999 255 true
 
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":0}}}] at @s as @p[tag=trap_dif] run scoreboard players operation @s drop_creeper = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":1}}}] at @s as @p[tag=wall_dif] run scoreboard players operation @s drop_silver = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":2}}}] at @s as @p[tag=magma_dif] run scoreboard players operation @s drop_magma = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":3}}}] at @s as @p[tag=slime_dif] run scoreboard players operation @s drop_slime = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":4}}}] at @s as @p[tag=turret_dif] run scoreboard players operation @s drop_turret = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["0"]}}}}] at @s as @p[tag=trap_dif] run scoreboard players operation @s drop_creeper = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["1"]}}}}] at @s as @p[tag=wall_dif] run scoreboard players operation @s drop_silver = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["2"]}}}}] at @s as @p[tag=magma_dif] run scoreboard players operation @s drop_magma = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["3"]}}}}] at @s as @p[tag=slime_dif] run scoreboard players operation @s drop_slime = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["4"]}}}}] at @s as @p[tag=turret_dif] run scoreboard players operation @s drop_turret = @s drop_egg_generic
 scoreboard players set @a drop_egg_generic 0
 
 kill @e[type=item,tag=!no_kill]
@@ -161,9 +171,10 @@ execute as @e[tag=wall] at @s run function game:items/wall/main
 #grenade
 kill @e[type=snowball,tag=dummy]
 execute as @e[tag=grenademark] at @s run function game:items/grenade/check
-execute as @e[type=snowball,tag=!dummy,tag=!started] at @s run function game:items/grenade/check_throw_valid
-execute as @e[type=snowball,tag=!dummy] at @s run function game:items/grenade/main
-execute as @e[tag=grenadehit] at @s run function game:items/grenade/hitmark
+execute as @e[type=snowball,tag=!dummy,tag=!started,tag=!test] at @s run function game:items/grenade/check_throw_valid
+execute as @e[type=snowball,tag=!dummy,tag=!test] at @s run function game:items/grenade/main
+execute as @e[tag=grenadehit,tag=!glitter] at @s run function game:items/grenade/hitmark
+execute as @e[tag=grenadehit,tag=glitter] at @s run function game:items/grenade/hitmark_glitter
 tag @a remove ger_sound
 
 #hurtime
@@ -209,6 +220,7 @@ execute as @e[type=arrow,nbt={inGround:1b}] at @s run function game:arrow/land
 
 #lobby range
 function game:lobby/range/loop
+function game:lobby/top_range_loop
 
 #
 tag @a remove capturing_point
@@ -308,14 +320,20 @@ execute unless score .cutscene_running .data = .1 .num if score .running .data =
 effect give @e[tag=trap] resistance 999 10 true
 execute as @e[tag=trap] run execute store result score @s hurt run data get entity @s HurtTime 1
 execute as @e[tag=trap,scores={hurt=..1}] at @s positioned ~ ~0.6 ~ run function game:items/trap/main
+execute as @e[tag=trap,scores={hurt=2..},team=red] on attacker as @s[team=blue] if score .mode .data = .1 .num if score .tmi .data = .0 .num run scoreboard players add @s track_traps_killed 1
+execute as @e[tag=trap,scores={hurt=2..},team=blue] on attacker as @s[team=red] if score .mode .data = .1 .num if score .tmi .data = .0 .num run scoreboard players add @s track_traps_killed 1
 execute as @e[tag=trap,scores={hurt=2..}] on attacker if score .tmi .data matches 1 if score .tmi_arrow .data matches 2 run tag @s add arrow_hit
 effect give @e[tag=trap,scores={hurt=2..}] glowing 10 10 true
 kill @e[tag=trap,scores={hurt=2..}]
+
+execute as @a[scores={track_traps_killed=5..},tag=locked_10] run function game:player/unlock/10
 
 #crossbow test
 scoreboard players add @a crossbowTime 0
 clear @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}']
 clear @a[scores={crossbowTime=..0}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',custom_data={trigger:0b}]
+execute if score .tmi .data = .0 .num if score .mode .data = .1 .num as @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}},tag=locked_54] run function game:player/unlock/54
+execute if score .mode .data = .7 .num as @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}},tag=locked_32] run function game:player/unlock/32
 scoreboard players add @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbowTime 240
 item replace entity @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},custom_data={trigger:0b},charged_projectiles=[{id:"minecraft:arrow",count:1}]] 1
 
@@ -383,7 +401,8 @@ scoreboard players set @a click 0
 execute as @e[tag=scrap,type=item] at @s run function game:game/infected/scrap_item
 
 #
-execute as @e[type=minecraft:snowball] run data merge entity @s {Item:{id:"minecraft:kelp",count:1}}
+execute as @e[type=minecraft:snowball,tag=!glitter] run data merge entity @s {Item:{id:"minecraft:kelp",count:1}}
+execute as @e[type=minecraft:snowball,tag=glitter] run data merge entity @s {Item:{id:"minecraft:clay_ball",count:1}}
 
 #
 scoreboard players set @a place_slime_temp 0
@@ -438,3 +457,25 @@ execute as @e[tag=stage_light,tag=high] at @s run tp @s ~ -32.1 ~
 
 #
 scoreboard players set @a crouch 0
+
+#
+scoreboard players set @a[tag=!lobby] music 6
+scoreboard players set @a[gamemode=spectator] music 6
+
+#
+tag @a remove glitter_hold
+tag @a[nbt={SelectedItem:{id:"minecraft:snowball",components:{"minecraft:custom_model_data":{strings:["1"]}}}}] add glitter_hold
+tag @a[nbt={Inventory:[{id:"minecraft:snowball",Slot:-106b}]}] add glitter_hold
+
+# achievement tags
+tag @a remove hasflag_temp
+tag @a[tag=hasflag] add hasflag_temp
+
+tag @a remove falling_temp
+tag @a[tag=falling] add falling_temp
+
+tag @a remove totem_temp
+tag @a[tag=totem] add totem_temp
+
+tag @a remove glow_temp
+tag @a[scores={glowing=1..}] add glow_temp

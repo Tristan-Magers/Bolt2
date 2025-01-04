@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "10%",
+      "color": "#d8e2db"
+    },
+    "description": {
+      "text": "Get an armor by returning scrap",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["59"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "ted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:infected/crates10"
+}

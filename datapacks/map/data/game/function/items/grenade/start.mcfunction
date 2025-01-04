@@ -6,11 +6,14 @@ tag @s add current_nade
 tag @s add started
 
 #
-playsound minecraft:item.firecharge.use master @a ~ ~-2 ~ 0.3 1.5
-playsound minecraft:item.shield.break master @a ~ ~-2 ~ 0.5 1.5
-playsound minecraft:entity.player.attack.knockback master @a ~ ~ ~ 0.4 1.4
-playsound minecraft:block.note_block.xylophone master @a ~ ~ ~ 0.35 0
-playsound minecraft:block.note_block.bass master @a ~ ~ ~ 0.2 0.5
+execute as @s[tag=!glitter] run playsound minecraft:item.firecharge.use master @a ~ ~-2 ~ 0.3 1.5
+execute as @s[tag=!glitter] run playsound minecraft:item.shield.break master @a ~ ~-2 ~ 0.5 1.5
+execute as @s[tag=!glitter] run playsound minecraft:entity.player.attack.knockback master @a ~ ~ ~ 0.4 1.4
+execute as @s[tag=!glitter] run playsound minecraft:block.note_block.xylophone master @a ~ ~ ~ 0.35 0
+execute as @s[tag=!glitter] run playsound minecraft:block.note_block.bass master @a ~ ~ ~ 0.2 0.5
+
+execute as @s[tag=glitter] run playsound minecraft:item.dye.use master @a ~ ~ ~ 0.8 0.9
+execute as @s[tag=glitter] run playsound minecraft:item.dye.use master @a ~ ~ ~ 0.5 2
 
 #IDs
 function game:items/newid
@@ -33,7 +36,8 @@ scoreboard players operation @s z = @e[limit=1,tag=getdir,tag=!old] DirZ
 
 #scoreboard players add @s y 6
 
-summon snowball ~ ~0.15 ~ {Item:{id:"minecraft:kelp",count:1},Tags:["new_nade"],Motion:[0.0,-10.0,0.0]}
+execute as @s[tag=!glitter] run summon snowball ~ ~0.15 ~ {Item:{id:"minecraft:kelp",count:1},Tags:["new_nade"],Motion:[0.0,-10.0,0.0]}
+execute as @s[tag=glitter] run summon snowball ~ ~0.15 ~ {Item:{id:"minecraft:clay_ball",count:1},Tags:["new_nade","glitter"],Motion:[0.0,-10.0,0.0]}
 #tag @s add new_nade
 
 #

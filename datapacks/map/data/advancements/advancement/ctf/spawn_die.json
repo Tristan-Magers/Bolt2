@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Miscalculation",
+      "color": "#dbacb5"
+    },
+    "description": {
+        "text": "Die within 3 seconds of respawning from a spawn point",
+        "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["26"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "tinyt": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:ctf/spawn_flag"
+}

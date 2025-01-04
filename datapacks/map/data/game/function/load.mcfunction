@@ -1,3 +1,5 @@
+stopsound @a
+
 execute if score .70 .num > .load .data if score .22 .num < .load .data as @a at @s if loaded ~ ~ ~ run scoreboard players set .load .data 22
 
 kill @e[tag=head]

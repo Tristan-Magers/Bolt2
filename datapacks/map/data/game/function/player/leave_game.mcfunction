@@ -25,15 +25,21 @@ clear @s minecraft:glass_bottle
 scoreboard players set @s leave_potion 0
 
 #
+scoreboard players add @s music 0
+scoreboard players set @s[scores={music=9..}] music 0
+
+#
 scoreboard players add @s rank 0
-tag @s[scores={rank=..0}] remove has_rank_v27
+tag @s[scores={rank=..0}] remove has_rank_v28
 
 scoreboard players add @s team_pref 0
 
-scoreboard players set @s[tag=!has_rank_v27] rank 500
-scoreboard players set @s[tag=!has_rank_v27] win_streak -2
-scoreboard players set @s[tag=!has_rank_v27] team_pref 0
-tag @s add has_rank_v27
+execute as @s[tag=!has_rank_v28] run function game:player/lock_all
+
+scoreboard players set @s[tag=!has_rank_v28] rank 500
+scoreboard players set @s[tag=!has_rank_v28] win_streak -2
+scoreboard players set @s[tag=!has_rank_v28] team_pref 0
+tag @s add has_rank_v28
 
 tp @s[tag=!intro_cutscene] 243.50 -50.00 -245.5 -64.8 -5.5
 
@@ -49,6 +55,9 @@ scoreboard players set @s respawn -1
 
 scoreboard players add @s invul 0
 scoreboard players add @s wall_invul 0
+
+scoreboard players set @s blind -1
+scoreboard players set @s blind_new -1
 
 team leave @s
 

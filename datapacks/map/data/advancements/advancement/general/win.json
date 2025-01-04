@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Champion",
+      "color": "#a0b38f"
+    },
+    "description": {
+        "text": "Win a game",
+        "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["72"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "win": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:root_2"
+}

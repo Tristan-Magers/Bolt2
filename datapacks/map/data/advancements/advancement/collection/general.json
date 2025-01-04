@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Master of All",
+      "color": "#e8d0a5"
+    },
+    "description": {
+      "text": "Get all general advancements",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["53"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "can": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:root_9"
+}

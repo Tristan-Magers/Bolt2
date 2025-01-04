@@ -65,6 +65,7 @@ execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] 
 execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~0.9 ~0.3 minecraft:gravel run tag @s add ingravel
 execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~0.9 ~-0.3 minecraft:gravel run tag @s add ingravel
 
+execute as @e[tag=ingravel,tag=!suff,tag=turret] at @s run function game:ffa/turret/lift
 execute as @e[tag=ingravel,tag=!suff] at @s run tp @s ~ ~1 ~
 
 tag @e[tag=up_stop,tag=!up_stop2,tag=!up_stop3] remove test_head_air
@@ -119,6 +120,7 @@ execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] 
 execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~0.9 ~0.3 minecraft:gravel run tag @s add ingravel
 execute as @s at @s run execute as @e[distance=..2.5,tag=!me,tag=!low_position] at @s if block ~-0.3 ~0.9 ~-0.3 minecraft:gravel run tag @s add ingravel
 
+execute as @e[tag=ingravel,tag=!suff,tag=turret] at @s run function game:ffa/turret/lift
 execute as @e[tag=ingravel] at @s run tp @s ~ ~1 ~
 
 tag @e[tag=up_stop,tag=!up_stop2,tag=!up_stop3] remove test_head_air

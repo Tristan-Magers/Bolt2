@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Wrecking Ball",
+      "color": "#adb8b2"
+    },
+    "description": {
+        "text": "Break 20 walls with gernades",
+        "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["27"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "tinyt": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:ctf/height"
+}

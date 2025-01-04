@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Legend",
+      "color": "#facd6c"
+    },
+    "description": {
+      "text": "Reach 650 rank\n(use tab in lobby to check rank)",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["8"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "elo3": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:ctf/elo2"
+}

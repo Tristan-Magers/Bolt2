@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Master Hunter",
+      "color": "#468c48"
+    },
+    "description": {
+      "text": "Get a 5 kill streak",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["65"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "elo1": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:ctf/killstreak1"
+}

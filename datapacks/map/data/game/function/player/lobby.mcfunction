@@ -23,13 +23,40 @@ execute unless score .mode_screen .data = .6 .num run title @s[scores={team_pref
 scoreboard players set @s[scores={lobby_text_time=100..}] lobby_text_time 0
 
 # Flag click
-tag @s[scores={click=1..}] add no_switch_text
-scoreboard players add @s[scores={click=1..}] team_pref 1
-scoreboard players set @s[scores={click=1..,team_pref=3..}] team_pref -1
-clear @s[scores={click=1..}] carrot_on_a_stick
+tag @s remove holding_flag
+tag @s remove holding_music
+tag @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",components:{"minecraft:custom_data":{flag:1b}}}}] add holding_flag
+tag @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",components:{"minecraft:custom_data":{music:1b}}}}] add holding_music
+
+tag @s[tag=holding_flag,scores={click=1..}] add no_switch_text
+scoreboard players add @s[tag=holding_flag,scores={click=1..}] team_pref 1
+scoreboard players set @s[tag=holding_flag,scores={click=1..,team_pref=3..}] team_pref -1
+tag @s[tag=holding_flag,scores={click=1..}] add click_select
+item replace entity @s[tag=holding_flag,scores={click=1..}] hotbar.1 with air
+
+playsound minecraft:block.azalea_leaves.hit master @s[tag=holding_music,scores={click=1..}] ~ ~ ~ 1 2
+tag @s[tag=no_music,tag=holding_music,scores={click=1..}] add hear_music
+stopsound @s[tag=!no_music,tag=holding_music,scores={click=1..}] * minecraft:music_disc.cat
+stopsound @s[tag=!no_music,tag=holding_music,scores={click=1..}] * minecraft:music_disc.stal
+tag @s[tag=!no_music,tag=holding_music,scores={click=1..}] add no_music
+tag @s[tag=holding_music,scores={click=1..}] add click_select
+item replace entity @s[tag=holding_music,scores={click=1..}] hotbar.2 with air
+
+tag @s[tag=hear_music] remove no_music
+tag @s remove hear_music
+
+# Music
+scoreboard players set @s[tag=no_music] music -1000
+scoreboard players set @s[tag=!no_music,scores={music=..-200}] music 0
+scoreboard players set @s[tag=!no_music,scores={music=1404..}] music 0
+scoreboard players add @s[tag=!no_music] music 1
+execute as @s[scores={music=..-1}] run stopsound @s * minecraft:music_disc.cat
+execute as @s[scores={music=10}] run stopsound @s * minecraft:music_disc.cat
+execute as @s[scores={music=10}] run playsound minecraft:music_disc.cat master @s ~ ~ ~ 1 1 0
 
 # Carrot on a stick correct (team select flag)
 execute if entity @s[nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick",Slot:1b}]},gamemode=adventure] run function game:player/inv_checks/no_carrot_on_a_stick
+execute if entity @s[nbt=!{Inventory:[{id:"minecraft:carrot_on_a_stick",Slot:2b}]},gamemode=adventure] run function game:player/inv_checks/no_carrot_on_a_stick
 
 scoreboard players set @s click 0
 
@@ -58,6 +85,7 @@ tag @s[tag=!near_ted] remove nt2
 tag @s remove near_cards
 execute at @s if entity @e[type=item_display,tag=cards,distance=..1.4] run tag @s add near_cards
 scoreboard players set @s[tag=near_cards,tag=!near_cards2] lobby_text_time 20
+execute as @s[tag=near_cards,tag=!near_cards2,tag=locked_38] run function game:player/unlock/38
 title @s[tag=near_cards,tag=!near_cards2] actionbar {"text":"The deck has three cards."}
 
 tag @s[tag=near_cards] add near_cards2

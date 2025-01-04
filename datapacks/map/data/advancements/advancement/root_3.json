@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Too Many Items",
+      "color": "dark_purple"
+    },
+    "description": {
+      "text": "Time to play my way",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:panda_spawn_egg",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["4"]}
+      }
+    },
+    "frame": "goal",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "warrior": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

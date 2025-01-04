@@ -5,8 +5,10 @@ execute if score .mode .data = .1 .num if score .map .data = .3 .num if score .t
 tag @a remove sur_start
 
 #
+scoreboard players set @a out_of_spawn_time 0
 scoreboard players set @a delay_boost 0
 scoreboard players set @a delay_reveal 0
+scoreboard players set @a blind -1
 
 #
 scoreboard players add @a team_pref 0
@@ -42,9 +44,16 @@ function game:game/team_dif
 #execute if score .even_players .data = .0 .num run function game:game/fill_player_max
 #execute if score .even_players .data = .0 .num run function game:game/fill_player_max
 
+# store rank so it can be changed
+execute as @a run scoreboard players operation @s rank_store = @s rank
+
 # win streak change
 execute as @a run scoreboard players operation @s win_streak *= .10 .num
 execute as @a run scoreboard players operation @s rank += @s win_streak
+execute as @a[scores={win_streak=..-1}] run scoreboard players operation @s rank += @s win_streak
+
+scoreboard players set @a[scores={rank=..0}] rank 1
+scoreboard players set @a[scores={rank=1000..}] rank 999
 
 # Rank sort if all random selected
 scoreboard players set .sort_test_team .data 0
@@ -59,10 +68,8 @@ execute if entity @a[scores={team_pref=1..}] if score .mode .data = .1 .num if s
 #
 execute if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .0 .num as @a[team=] run function game:game/fill_player_random
 
-# undo win streak change
-execute as @a run scoreboard players operation @s rank -= @s win_streak
-execute as @a run scoreboard players operation @s win_streak /= .10 .num
-
+# return rank to store
+execute as @a run scoreboard players operation @s rank = @s rank_store
 
 execute if score .tmi .data = .1 .num as @a[team=] run function game:game/fill_player_random
 
@@ -303,6 +310,43 @@ item replace block 224 -60 -240 container.0 from block 235 -49 -224 container.19
 item replace block 224 -60 -242 container.0 from block 235 -49 -224 container.20
 item replace block 224 -60 -244 container.0 from block 235 -49 -224 container.21
 item replace block 224 -60 -246 container.0 from block 235 -49 -224 container.22
+
+# vending achievement
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.10 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.11 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.12 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.13 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.15 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.16 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.17 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.24 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.25 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.26 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.19 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.20 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.21 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.22 golden_apple as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.10 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.11 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.12 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.13 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.15 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.16 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.17 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.24 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.25 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.26 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.19 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.20 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.21 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
+execute if score .tmi .data = .1 .num if items block 235 -49 -224 container.22 snowball[minecraft:custom_model_data={strings:["1"]}] as @a[tag=playing,tag=locked_37] run function game:player/unlock/37
 
 #
 #tag @a[scores={team_pref=-1}] add is_spectating

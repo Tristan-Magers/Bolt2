@@ -1,0 +1,40 @@
+{
+  "model": {
+  "type": "select",
+  "property": "custom_model_data",
+  "fallback": {
+    "type": "model",
+    "model": "block/yellow_stained_glass"
+  },
+  "cases": [
+    {
+      "when": "1",
+      "model": {
+        "type": "model",
+        "model": "item/blue_flag"
+      }
+    },
+    {
+      "when": "2",
+      "model": {
+        "type": "model",
+        "model": "item/red_flag"
+      }
+    },
+    {
+      "when": "3",
+      "model": {
+        "type": "model",
+        "model": "item/chainmail_helmet"
+      }
+    },
+    {
+      "when": "4",
+      "model": {
+        "type": "model",
+        "model": "item/banner_parent"
+      }
+    }
+  ]
+}
+}

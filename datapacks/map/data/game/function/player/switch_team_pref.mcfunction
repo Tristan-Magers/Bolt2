@@ -1,6 +1,7 @@
 team leave @s
 function game:menu/p_display/reset_player
-clear @s carrot_on_a_stick
+item replace entity @s hotbar.1 with air
+tag @s add click_select
 item replace entity @s hotbar.8 with minecraft:arrow 3
 scoreboard players operation @s team_pref_temp = @s team_pref
 tag @s add new_team

@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Alternative Methods",
+      "color": "#dea683"
+    },
+    "description": {
+        "text": "Get a kill with a gernade",
+        "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["6"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "tinyt": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:root_4"
+}

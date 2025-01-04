@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Preperation",
+      "color": "#8c5e5e"
+    },
+    "description": {
+      "text": "Shoot 10 lobby targets",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["20"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "elo1": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:root_5"
+}

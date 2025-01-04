@@ -1,16 +1,10 @@
 #
 playsound minecraft:ui.stonecutter.select_recipe master @s ~ ~ ~ 0.5 1.1
 
-#
-scoreboard players add @s[tag=!playing] bow_texture_place 1
-
-scoreboard players set @s[scores={bow_texture_place=78..}] bow_texture_place 0
-
-scoreboard players operation @s temp_bow_value = @s bow_texture_place
-function game:bow_ui/get_bow_id
-scoreboard players operation @s bow_texture = @s temp_bow_id
-
 scoreboard players set @s bow_throw 0
+
+#
+function game:player/bow/next_and_check
 
 #bow correct
 clear @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]}] bow

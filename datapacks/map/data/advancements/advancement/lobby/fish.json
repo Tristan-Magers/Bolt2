@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Meet the Family",
+      "color": "#d5d4f7"
+    },
+    "description": {
+      "text": "Learn the names at Iris's Aquarium",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["4"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "ted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:root_5"
+}

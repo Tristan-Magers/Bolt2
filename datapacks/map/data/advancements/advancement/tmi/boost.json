@@ -1,0 +1,29 @@
+{
+  "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+  "display": {
+    "title": {
+      "text": "Bird Hunting",
+      "color": "#c6bb92"
+    },
+    "description": {
+      "text": "Shoot a player within 3 seconds of them using a boost",
+      "color": "white"
+    },
+    "icon": {
+      "id": "minecraft:bow",
+      "components": {
+        "minecraft:custom_model_data": {"strings":["43"]}
+      }
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "can": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "advancements:tmi/wall_turret"
+}
