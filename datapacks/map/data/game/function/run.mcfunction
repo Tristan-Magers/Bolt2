@@ -287,13 +287,13 @@ execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if sco
 execute if score .mode .data = .1 .num if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data >= .10 .num run bossbar set minecraft:time name [{"text":"҂"},{"translate":"space.-128","font":"space"},{"font":"fancy_score","color":"red","score":{"name":"Red","objective":"Scores"}},{"text":"          ","color":"white"},{"font":"fancy_low","color":"white","score":{"name":".TIME_min","objective":".data"}},{"font":"fancy_low","color":"white","text":":"},{"font":"fancy_low","color":"white","score":{"name":".TIME_sec","objective":".data"}},{"text":"          "},{"font":"fancy_score","color":"aqua","score":{"name":"Blue","objective":"Scores"}},{"translate":"space.4","font":"space"}]
 execute if score .mode .data = .1 .num if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data = .21 .num if score .TIME_sec .data < .10 .num run bossbar set minecraft:time name [{"text":"҂"},{"translate":"space.-128","font":"space"},{"font":"fancy_score","color":"red","score":{"name":"Red","objective":"Scores"}},{"text":"          ","color":"white"},{"font":"fancy_low","color":"white","score":{"name":".TIME_min","objective":".data"}},{"font":"fancy_low","color":"white","text":":0"},{"font":"fancy_low","color":"white","score":{"name":".TIME_sec","objective":".data"}},{"text":"          "},{"font":"fancy_score","color":"aqua","score":{"name":"Blue","objective":"Scores"}},{"translate":"space.4","font":"space"}]
 execute if score .running .data = .1 .num if score .TIME .data >= .0 .num if score .time_tick .data >= .21 .num unless entity @a[tag=hasflag] run scoreboard players set .time_tick .data 0
-execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a times 6 20 6
-execute unless score .mode .data matches 7 if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a subtitle {"text":"60 REMAINING","font":"fancy"}
-execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a title {"text":""}
+execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a[tag=!lobby] times 6 20 6
+execute unless score .mode .data matches 7 if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a[tag=!lobby] subtitle {"text":"60 REMAINING","font":"fancy"}
+execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run title @a[tag=!lobby] title {"text":""}
 execute if score .TIME .data = .60 .num if score .announce_60s .data matches 0 run scoreboard players set .announce_60s .data 1
-execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a times 6 20 6
-execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a subtitle {"text":"30 REMAINING","font":"fancy"}
-execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a title {"text":""}
+execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a[tag=!lobby] times 6 20 6
+execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a[tag=!lobby] subtitle {"text":"30 REMAINING","font":"fancy"}
+execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run title @a[tag=!lobby] title {"text":""}
 execute if score .TIME .data = .30 .num if score .announce_30s .data matches 0 run scoreboard players set .announce_30s .data 1
 execute if score .TIME .data = .0 .num unless score .mode .data matches 1 run function game:end
 execute if score .TIME .data = .0 .num if score .mode .data matches 1 run function game:game/end_ctf

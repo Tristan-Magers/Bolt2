@@ -110,10 +110,10 @@ execute as @s run scoreboard players operation @s respawn += @s respawn_assist
 execute as @s run scoreboard players operation @s respawn_assist *= .n6 .num
 scoreboard players set @s[scores={deaths=1..,respawn=..31}] respawn 31
 
-execute if score .mode .data = .6 .num as @s[team=blue] run title @a times 5 20 10
-execute if score .mode .data = .6 .num as @s[team=blue] run title @a title {"text":" "}
-execute if score .mode .data = .6 .num as @s[team=blue] run title @a subtitle {"text":"💀 Survivor Died 💀","font":"fancy"}
-execute if score .mode .data = .6 .num as @s[team=blue] as @a at @s run playsound minecraft:entity.ender_dragon.growl master @s ~ ~ ~ 1 2
+execute if score .mode .data = .6 .num as @s[team=blue] run title @a[tag=!lobby] times 5 20 10
+execute if score .mode .data = .6 .num as @s[team=blue] run title @a[tag=!lobby] title {"text":" "}
+execute if score .mode .data = .6 .num as @s[team=blue] run title @a[tag=!lobby] subtitle {"text":"💀 Survivor Died 💀","font":"fancy"}
+execute if score .mode .data = .6 .num as @s[team=blue] as @a[tag=!lobby] at @s run playsound minecraft:entity.ender_dragon.growl master @s ~ ~ ~ 1 2
 
 execute if score .mode .data = .6 .num run clear @s[team=blue]
 execute if score .mode .data = .6 .num run team join red @s[team=blue]
