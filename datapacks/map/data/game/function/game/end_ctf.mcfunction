@@ -13,8 +13,8 @@ execute if score Blue Scores < .endscore .stats if score Red Scores < .endscore 
 execute if score Blue Scores < .endscore .stats if score Red Scores < .endscore .stats if score Blue Scores < Red Scores run title @a[tag=!lobby] title {"text":"HALF WIN!","color":"red","font":"fancy"}
 
 execute if entity @a[tag=lobby,gamemode=adventure,scores={team_pref=0..}] if score .testing_mode .data matches 1 run title @a[tag=playing] times 10 30 10
-execute if entity @a[tag=lobby,gamemode=adventure,scores={team_pref=0..}] if score .testing_mode .data matches 1 run title @a title {"text":"","color":"dark_gray","font":"fancy"}
-execute if entity @a[tag=lobby,gamemode=adventure,scores={team_pref=0..}] if score .testing_mode .data matches 1 run title @a subtitle {"text":"","color":"dark_gray","font":"fancy"}
+execute if entity @a[tag=lobby,gamemode=adventure,scores={team_pref=0..}] if score .testing_mode .data matches 1 run title @a[tag=!lobby] title {"text":"","color":"dark_gray","font":"fancy"}
+execute if entity @a[tag=lobby,gamemode=adventure,scores={team_pref=0..}] if score .testing_mode .data matches 1 run title @a[tag=!lobby] subtitle {"text":"","color":"dark_gray","font":"fancy"}
 execute if entity @a[tag=lobby,gamemode=adventure,scores={team_pref=0..}] if score .testing_mode .data matches 1 run title @a[tag=playing] title {"text":"PLAYER JOINED","color":"dark_gray","font":"fancy"}
 execute if entity @a[tag=lobby,gamemode=adventure,scores={team_pref=0..}] if score .testing_mode .data matches 1 run title @a[tag=playing] subtitle {"text":"Returning to lobby","color":"dark_gray","font":"fancy"}
 
