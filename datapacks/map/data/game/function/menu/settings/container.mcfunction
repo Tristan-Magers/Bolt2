@@ -1,11 +1,5 @@
-#
-item replace block 235 -49 -221 container.2 with air
-item replace block 235 -49 -221 container.3 with air
-item replace block 235 -49 -221 container.4 with air
-item replace block 235 -49 -221 container.5 with air
-item replace block 235 -49 -221 container.6 with air
-item replace block 235 -49 -221 container.7 with air
-item replace block 235 -49 -221 container.8 with air
+# clear periodically
+execute if score .delay_10 .timer matches 1 if items block 235 -49 -221 container.* #game:chest_no run function game:menu/settings/clear
 
 #
 scoreboard players set @a t1 0

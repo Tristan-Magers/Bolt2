@@ -1,11 +1,15 @@
+# delat timers for code that shouldn't run eery tick
+scoreboard players add .delay_10 .timer 1
+execute if score .delay_10 .timer matches 10.. run scoreboard players set .delay_10 .timer 0
+
 #
 tag @a[scores={leave_game=1..}] remove new_p_text
 scoreboard players set @a leave_game 0
 
 #
-function game:tmi/chest_items
-function game:menu/custom_random/container
-function game:menu/settings/container
+execute positioned 234.32 -49.00 -223.08 if entity @a[distance=..10] run function game:tmi/chest_items
+execute positioned 234.32 -49.00 -223.08 if entity @a[distance=..10] run function game:menu/custom_random/container
+execute positioned 234.32 -49.00 -223.08 if entity @a[distance=..10] run function game:menu/settings/container
 
 #
 execute as @a[scores={leave_potion=1..}] at @s run function game:player/leave_game
@@ -32,9 +36,9 @@ execute as @e[type=pig] on passengers run tag @s add chair_sit
 execute as @a[tag=chair_sit,tag=locked_70] at @s if entity @a[distance=0.1..3,tag=chair_sit] run function game:player/unlock/70
 
 # kill in tournament hall because of vases
-execute positioned 239.69 -38.00 -196.58 as @e[type=snowball,distance=..18] at @s run tellraw @p[scores={snowball=1..},tag=glitter_hold,distance=..18] [{"text":"Can use that here"}]
-execute positioned 239.69 -38.00 -196.58 as @e[type=snowball,distance=..18] run scoreboard players set @a[scores={snowball=1..},distance=..18] snowball 0
-execute positioned 239.69 -38.00 -196.58 run kill @e[type=snowball,distance=..18]
+execute positioned 239.69 -38.00 -196.58 as @e[type=snowball,distance=..16] at @s run tellraw @p[scores={snowball=1..},tag=glitter_hold,distance=..16] [{"text":"Can use that here"}]
+execute positioned 239.69 -38.00 -196.58 as @e[type=snowball,distance=..16] run scoreboard players set @a[scores={snowball=1..},distance=..16] snowball 0
+execute positioned 239.69 -38.00 -196.58 run kill @e[type=snowball,distance=..16]
 
 #
 function game:player/item_count
@@ -335,9 +339,9 @@ execute as @a[tag=playing] if items entity @s weapon.mainhand crossbow[charged_p
 
 scoreboard players add @a[scores={crossbowReload=1..}] crossbowReload 1
 scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1
-tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow"}}] add reloadCross
-tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] remove reloadCross
-item replace entity @a[tag=reloadCross,nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:0b}}}}] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}],custom_data={trigger:0b}] 1
+execute as @a[scores={crossbowReload=2..}] if items entity @s weapon.mainhand crossbow run tag @s add reloadCross
+execute as @a[scores={crossbowReload=2..}] if items entity @s weapon.mainhand crossbow[charged_projectiles=[{id:"minecraft:arrow",count:1}]] run tag @s remove reloadCross
+execute as @a[tag=reloadCross] if items entity @s weapon.mainhand crossbow[custom_data={trigger:0b}] run item replace entity @s weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}],custom_data={trigger:0b}] 1
 scoreboard players set @a[tag=reloadCross] crossbowReload 0
 
 tag @a remove reloadCross

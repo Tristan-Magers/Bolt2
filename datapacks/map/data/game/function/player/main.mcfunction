@@ -146,21 +146,30 @@ execute if score .tmi .data matches 1 if score .tmi_fog .data matches 2 run effe
 execute if score .tmi .data matches 1 if score .tmi_fog .data matches 2 run attribute @s[tag=!lobby,gamemode=adventure] minecraft:movement_speed base set 0.14
 
 #items
+tag @s remove item_head
+tag @s remove item_chest
+tag @s remove item_legs
+tag @s remove item_feet
+execute if items entity @s armor.head * run tag @s add item_head
+execute if items entity @s armor.chest * run tag @s add item_chest
+execute if items entity @s armor.legs * run tag @s add item_legs
+execute if items entity @s armor.feet * run tag @s add item_feet
+
 execute unless score @s team_pref_temp = @s team_pref run function game:player/switch_team_pref
 
-execute unless items entity @s armor.chest * run clear @s[tag=!lobby] leather_chestplate
-execute unless items entity @s armor.legs * run clear @s[tag=!lobby] leather_leggings
-execute unless items entity @s armor.feet * run clear @s[tag=!lobby] leather_boots
+clear @s[tag=!lobby,tag=!item_chest] leather_chestplate
+clear @s[tag=!lobby,tag=!item_legs] leather_leggings
+clear @s[tag=!lobby,tag=!item_feet] leather_boots
 
-execute unless items entity @s armor.chest * if score .mode .data = .6 .num run item replace entity @s[team=red] armor.chest with leather_chestplate[trim={material:"minecraft:netherite",pattern:"minecraft:silence",show_in_tooltip:false},dyed_color={rgb:16711680,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
-execute unless items entity @s armor.chest * unless score .mode .data = .6 .num run item replace entity @s[team=red] armor.chest with leather_chestplate[dyed_color={rgb:16711680,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
-execute unless items entity @s armor.chest * run item replace entity @s[team=blue] armor.chest with leather_chestplate[dyed_color={rgb:22015,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
+execute as @s[tag=!item_chest] if score .mode .data = .6 .num run item replace entity @s[team=red] armor.chest with leather_chestplate[trim={material:"minecraft:netherite",pattern:"minecraft:silence",show_in_tooltip:false},dyed_color={rgb:16711680,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
+execute as @s[tag=!item_chest] unless score .mode .data = .6 .num run item replace entity @s[team=red] armor.chest with leather_chestplate[dyed_color={rgb:16711680,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
+execute as @s[tag=!item_chest] run item replace entity @s[team=blue] armor.chest with leather_chestplate[dyed_color={rgb:22015,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
 
-execute unless items entity @s armor.legs * run item replace entity @s[team=red] armor.legs with leather_leggings[dyed_color={rgb:16711680,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
-execute unless items entity @s armor.legs * run item replace entity @s[team=blue] armor.legs with leather_leggings[dyed_color={rgb:22015,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
+execute as @s[tag=!item_legs] run item replace entity @s[team=red] armor.legs with leather_leggings[dyed_color={rgb:16711680,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
+execute as @s[tag=!item_legs] run item replace entity @s[team=blue] armor.legs with leather_leggings[dyed_color={rgb:22015,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
 
-execute unless items entity @s armor.feet * run item replace entity @s[team=red] armor.feet with leather_boots[dyed_color={rgb:16711680,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
-execute unless items entity @s armor.feet * run item replace entity @s[team=blue] armor.feet with leather_boots[dyed_color={rgb:22015,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
+execute as @s[tag=!item_feet] run item replace entity @s[team=red] armor.feet with leather_boots[dyed_color={rgb:16711680,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
+execute as @s[tag=!item_feet] run item replace entity @s[team=blue] armor.feet with leather_boots[dyed_color={rgb:22015,show_in_tooltip:false},unbreakable={show_in_tooltip:false},attribute_modifiers={modifiers:[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}],show_in_tooltip:false}]
 
 #reload
 tag @s[scores={no_quiver_arrow=160..}] add arrow_hit
@@ -252,8 +261,6 @@ tag @s[nbt={Inventory:[{id:"minecraft:iron_ingot"}]}] add totem
 execute as @s[tag=totem] at @s run particle minecraft:item{item:"minecraft:emerald"} ~ ~0.35 ~ 0.2 0.18 0.2 0 2 force
 
 execute as @s[tag=totem,scores={deaths=1..},tag=!exploded] at @s run function game:player/totem
-
-execute if score .testing_mode .data matches 0 if score .mode .data matches 1 if score .tmi .data matches 0 as @s[nbt={Inventory:[{id:"minecraft:iron_ingot",count:2}]},tag=locked_77,tag=playing] run function game:player/unlock/77
 
 scoreboard players set .count_item .calc 0
 execute store result score .count_item .calc run clear @s minecraft:iron_ingot 0
@@ -347,23 +354,23 @@ scoreboard players add @s[scores={respawn=1..}] respawning_time 1
 clear @s[tag=!hasflag] red_banner
 clear @s[tag=!hasflag] blue_banner
 
-item replace entity @s[tag=!hasflag,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected] armor.head with minecraft:air
+item replace entity @s[tag=!hasflag,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected,tag=item_head] armor.head with minecraft:air
 
-clear @s[tag=!hasflag,team=blue] red_banner
+clear @s[tag=!hasflag,team=blue,tag=item_head] red_banner
 clear @s[tag=!hasflag,team=blue] red_dye
-item replace entity @s[tag=!hasflag,team=blue,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected] armor.head with minecraft:air
+item replace entity @s[tag=!hasflag,team=blue,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected,tag=item_head] armor.head with minecraft:air
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_banner",Slot:103b}]},team=blue,scores={glowing=..0}] armor.head with minecraft:red_banner
 clear @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_dye",Slot:-106b}]},team=blue] minecraft:red_dye
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_dye",Slot:-106b}]},team=blue] weapon.offhand with minecraft:red_dye[custom_name='{"text":"Red Flag"}']
 
-clear @s[tag=!hasflag,team=red] blue_banner
+clear @s[tag=!hasflag,team=red,tag=item_head] blue_banner
 clear @s[tag=!hasflag,team=red] blue_dye
-item replace entity @s[tag=!hasflag,team=red,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected] armor.head with minecraft:air
+item replace entity @s[tag=!hasflag,team=red,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected,tag=item_head] armor.head with minecraft:air
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_banner",Slot:103b}]},team=red,scores={glowing=..0}] armor.head with minecraft:blue_banner
 clear @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_dye",Slot:-106b}]},team=red] minecraft:blue_dye
 item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_dye",Slot:-106b}]},team=red] weapon.offhand with minecraft:blue_dye[custom_name='{"text":"Blue Flag"}']
 
-clear @s[scores={glowing=..0}] minecraft:carved_pumpkin
+clear @s[scores={glowing=..0},tag=item_head] minecraft:carved_pumpkin
 item replace entity @s[tag=!is_infected,tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},team=red,scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["1"]}]
 item replace entity @s[tag=!is_infected,tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},team=blue,scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["2"]}]
 item replace entity @s[tag=!is_infected,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["0"]}]
