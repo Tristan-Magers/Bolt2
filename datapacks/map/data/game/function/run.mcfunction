@@ -86,11 +86,7 @@ execute as @a[tag=playing] run scoreboard players add .players_playing .data 1
 gamemode adventure @a[gamemode=survival]
 effect give @a minecraft:resistance 999 255 true
 
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["0"]}}}}] at @s as @p[tag=trap_dif] run scoreboard players operation @s drop_creeper = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["1"]}}}}] at @s as @p[tag=wall_dif] run scoreboard players operation @s drop_silver = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["2"]}}}}] at @s as @p[tag=magma_dif] run scoreboard players operation @s drop_magma = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["3"]}}}}] at @s as @p[tag=slime_dif] run scoreboard players operation @s drop_slime = @s drop_egg_generic
-execute as @e[type=item,tag=!no_kill,nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["4"]}}}}] at @s as @p[tag=turret_dif] run scoreboard players operation @s drop_turret = @s drop_egg_generic
+execute as @e[type=item,tag=!no_kill] at @s run function game:items/dropped_item
 scoreboard players set @a drop_egg_generic 0
 
 kill @e[type=item,tag=!no_kill]
@@ -329,19 +325,18 @@ kill @e[tag=trap,scores={hurt=2..}]
 execute as @a[scores={track_traps_killed=5..},tag=locked_10] run function game:player/unlock/10
 
 #crossbow test
+
+
 scoreboard players add @a crossbowTime 0
-clear @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}']
+
 clear @a[scores={crossbowTime=..0}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',custom_data={trigger:0b}]
-execute if score .tmi .data = .0 .num if score .mode .data = .1 .num as @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}},tag=locked_54] run function game:player/unlock/54
-execute if score .mode .data = .7 .num as @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}},tag=locked_32] run function game:player/unlock/32
-scoreboard players add @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] crossbowTime 240
-item replace entity @a[nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:1b},"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},custom_data={trigger:0b},charged_projectiles=[{id:"minecraft:arrow",count:1}]] 1
+
+execute as @a[tag=playing] if items entity @s weapon.mainhand crossbow[charged_projectiles=[{id:"minecraft:arrow",count:1}],custom_data={trigger:1b}] run function game:items/crossbow/activate
 
 scoreboard players add @a[scores={crossbowReload=1..}] crossbowReload 1
 scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1
 tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow"}}] add reloadCross
 tag @a[scores={crossbowReload=2..},nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:charged_projectiles":[{id:"minecraft:arrow",count:1}]}}}] remove reloadCross
-##clear @a[tag=reloadCross] crossbow
 item replace entity @a[tag=reloadCross,nbt={SelectedItem:{id:"minecraft:crossbow",components:{"minecraft:custom_data":{trigger:0b}}}}] weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}],custom_data={trigger:0b}] 1
 scoreboard players set @a[tag=reloadCross] crossbowReload 0
 
@@ -349,16 +344,6 @@ tag @a remove reloadCross
 scoreboard players set @a crossbowUse 0
 
 execute as @a[scores={crossbowTime=1..}] at @s run function game:items/crossbow/active
-
-#danger area UNUSED (PREVIOUSLY FOR COVES SPAWN)
-#scoreboard players set @a[tag=!danger] danger 0
-#scoreboard players add @a[tag=danger] danger 1
-#execute as @a[scores={danger=1}] at @s run title @s times 2 10 10
-#execute as @a[scores={danger=1}] at @s run title @s title {"text":"! DANGER AREA !"}
-#execute as @a[scores={danger=1}] at @s run playsound minecraft:entity.blaze.hurt master @s ~ ~ ~ 1 1
-#execute as @a[scores={danger=1}] at @s run playsound minecraft:entity.blaze.death master @s ~ ~ ~ 1 2
-#effect give @a[scores={danger=18..}] minecraft:instant_damage 1 100 true
-#tag @a remove danger
 
 #
 execute unless score .cutscene_running .data matches 1 if score .testing_mode .data = .1 .num if entity @a[tag=lobby,gamemode=adventure,scores={team_pref=0..}] if score .end_countdown .data < .0 .num run function game:game/end_ctf
@@ -462,10 +447,9 @@ scoreboard players set @a crouch 0
 scoreboard players set @a[tag=!lobby] music 6
 scoreboard players set @a[gamemode=spectator] music 6
 
-#
+# tag for goling glitter bomb
 tag @a remove glitter_hold
-tag @a[nbt={SelectedItem:{id:"minecraft:snowball",components:{"minecraft:custom_model_data":{strings:["1"]}}}}] add glitter_hold
-tag @a[nbt={Inventory:[{id:"minecraft:snowball",Slot:-106b}]}] add glitter_hold
+execute as @a if items entity @s weapon.* snowball[minecraft:custom_model_data={strings:["1"]}] run tag @s add glitter_hold
 
 # achievement tags
 tag @a remove hasflag_temp
