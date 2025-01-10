@@ -329,13 +329,12 @@ kill @e[tag=trap,scores={hurt=2..}]
 execute as @a[scores={track_traps_killed=5..},tag=locked_10] run function game:player/unlock/10
 
 #crossbow test
-
-
 scoreboard players add @a crossbowTime 0
 
 clear @a[scores={crossbowTime=..0}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',custom_data={trigger:0b}]
 
-execute as @a[tag=playing] if items entity @s weapon.mainhand crossbow[charged_projectiles=[{id:"minecraft:arrow",count:1}],custom_data={trigger:1b}] run function game:items/crossbow/activate
+execute as @a[tag=playing] if items entity @s weapon.mainhand crossbow[minecraft:charged_projectiles=[{id:"minecraft:arrow",count:1,components:{"minecraft:custom_model_data":{strings:["1"]}}}],custom_data={trigger:1b}] run function game:items/crossbow/activate
+execute as @a[tag=playing] if items entity @s weapon.mainhand crossbow[minecraft:charged_projectiles=[{id:"minecraft:arrow",count:1,components:{"minecraft:custom_model_data":{strings:["2"]}}}],custom_data={trigger:1b}] run function game:items/crossbow/activate
 
 scoreboard players add @a[scores={crossbowReload=1..}] crossbowReload 1
 scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1

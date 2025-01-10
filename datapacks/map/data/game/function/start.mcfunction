@@ -52,6 +52,8 @@ execute as @a run scoreboard players operation @s win_streak *= .10 .num
 execute as @a run scoreboard players operation @s rank += @s win_streak
 execute as @a[scores={win_streak=..-1}] run scoreboard players operation @s rank += @s win_streak
 
+execute as @a run scoreboard players operation @s win_streak /= .10 .num
+
 scoreboard players set @a[scores={rank=..0}] rank 1
 scoreboard players set @a[scores={rank=1000..}] rank 999
 

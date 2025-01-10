@@ -71,5 +71,23 @@
     },
     "done": true
   },
+  "advancements:general/kills2": {
+    "criteria": {
+      "kills2": "2025-01-09 17:53:41 -0700"
+    },
+    "done": true
+  },
+  "advancements:general/kills3": {
+    "criteria": {
+      "kills3": "2025-01-09 18:03:07 -0700"
+    },
+    "done": true
+  },
+  "advancements:ctf/cross": {
+    "criteria": {
+      "tinyt": "2025-01-09 18:09:15 -0700"
+    },
+    "done": true
+  },
   "DataVersion": 4189
 }
