@@ -22,7 +22,7 @@ execute if data entity @s interaction on target if entity @s[team=blue] run scor
 execute if data entity @s interaction on target if entity @s[team=blue,scores={scrap_count=1..}] run tag @e[tag=me] add scrap_added
 
 execute if data entity @s[tag=scrap_added] interaction on target run tag @a remove processor
-execute if data entity @s[tag=scrap_added] interaction on target run tag @p add processor
+execute if data entity @s[tag=scrap_added] interaction on target at @s run tag @p add processor
 
 execute if data entity @s[tag=scrap_added,scores={scrap_count=..12}] interaction on target run execute as @p[tag=processor] run scoreboard players add @s stats_scrap 1
 

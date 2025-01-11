@@ -88,14 +88,14 @@ execute as @a[tag=playing] run scoreboard players add .players_playing .data 1
 
 #
 gamemode adventure @a[gamemode=survival]
-effect give @a minecraft:resistance 999 255 true
+effect give @a[tag=!has_effects] minecraft:resistance infinite 255 true
 
 execute as @e[type=item,tag=!no_kill] at @s run function game:items/dropped_item
 scoreboard players set @a drop_egg_generic 0
 
 kill @e[type=item,tag=!no_kill]
 
-execute as @a run attribute @s minecraft:max_health base set 2
+execute as @a[tag=!has_effects] run attribute @s minecraft:max_health base set 2
 
 execute as @e[type=arrow] run data merge entity @s {damage:1000.0}
 
@@ -109,12 +109,12 @@ function game:menu/animate_static
 tag @a remove lobby
 tag @a[x=245,y=-50,z=-235,distance=..60] add lobby
 execute as @a[tag=lobby] at @s run function game:player/lobby
-scoreboard players set @a[x=245,y=-50,z=-235,distance=..60] invul 40
+scoreboard players set @a[tag=lobby] invul 40
 #scoreboard players set @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrowReload 32
 #clear @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrow
-team join red_lobby @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=1}]
-team join blue_lobby @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=2}]
-team join Spectator @a[x=245,y=-50,z=-235,distance=..60,scores={team_pref=-1}]
+team join red_lobby @a[team=!red_lobby,tag=lobby,scores={team_pref=1}]
+team join blue_lobby @a[team=!blue_lobby,tag=lobby,scores={team_pref=2}]
+team join Spectator @a[team=!Spectator,tag=lobby,scores={team_pref=-1}]
 
 title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=0..}] actionbar {"text":"SHOOT MENU BUTTONS","bold":true,"color":"gray"}
 title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=-1}] actionbar {"text":"READY UP TO USE MENU","bold":true,"color":"gray"}
@@ -449,6 +449,9 @@ scoreboard players set @a crouch 0
 #
 scoreboard players set @a[tag=!lobby] music 6
 scoreboard players set @a[gamemode=spectator] music 6
+
+# tag that player has been given effects (prevents us spam giving every tick)
+tag @s add has_effects
 
 # tag for goling glitter bomb
 tag @a remove glitter_hold

@@ -32,6 +32,9 @@ scoreboard players set @a[distance=..4,scores={invul=..2}] invul 2
 scoreboard players set @s boost_use 0
 
 #
+scoreboard players set @s[scores={blind=21..}] blind 21
+
+#
 scoreboard players set @s delay_boost 8
 
-scoreboard players set @s boost_time 65
+scoreboard players set @s boost_time 67

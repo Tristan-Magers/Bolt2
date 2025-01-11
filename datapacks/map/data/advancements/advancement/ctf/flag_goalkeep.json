@@ -6,7 +6,7 @@
       "color": "#8dc09d"
     },
     "description": {
-        "text": "Kill a flag carrier within 8 blocks of their flag",
+        "text": "Kill a flag carrier within 10 blocks of their flag",
         "color": "white"
     },
     "icon": {

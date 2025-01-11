@@ -1,7 +1,7 @@
 scoreboard players remove @s blind 1
 
 scoreboard players set @s[scores={respawn=1..}] blind -1
-scoreboard players set @s[scores={invul=1..},tag=!lobby] blind -1
+scoreboard players set @s[scores={invul=3..},tag=!lobby] blind -1
 scoreboard players set @s[scores={blind=30..},tag=lobby] blind 26
 scoreboard players add @s blind_new 1
 

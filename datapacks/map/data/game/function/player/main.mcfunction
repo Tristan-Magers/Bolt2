@@ -131,9 +131,9 @@ bossbar set minecraft:dark players
 bossbar set minecraft:dark players @a[tag=dark]
 
 effect clear @s[tag=dark] minecraft:night_vision
-effect give @s[tag=!dark,tag=!no_vis] minecraft:night_vision 999999 10 true
-effect give @s minecraft:weakness 999999 10 true
-effect give @s minecraft:saturation 999999 10 true
+effect give @s[tag=!dark,tag=!no_vis] minecraft:night_vision infinite 10 true
+effect give @s[tag=!has_effects] minecraft:weakness infinite 10 true
+effect give @s[tag=!has_effects] minecraft:saturation infinite 10 true
 
 effect give @a[tag=!no_vis] minecraft:night_vision 999999 10 true
 
@@ -298,7 +298,7 @@ scoreboard players operation @a[scores={death_ani=4..}] death_ani %= .4 .num
 scoreboard players set @s killP 0
 
 #holding flag
-execute as @s[tag=hasflag] at @s run function game:player/flag_glow 
+execute as @s[tag=hasflag] at @s run function game:player/flag_glow
 scoreboard players set @s[tag=!hasflag] flag_time 0
 scoreboard players set @s[tag=!hasflag] flagtime 0
 scoreboard players set @s[tag=!hasflag] glow_count 0
@@ -357,23 +357,23 @@ clear @s[tag=!hasflag] blue_banner
 item replace entity @s[tag=!hasflag,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected,tag=item_head] armor.head with minecraft:air
 
 clear @s[tag=!hasflag,team=blue,tag=item_head] red_banner
-clear @s[tag=!hasflag,team=blue] red_dye
+clear @s[tag=!hasflag,team=blue,tag=item_head] red_dye
 item replace entity @s[tag=!hasflag,team=blue,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected,tag=item_head] armor.head with minecraft:air
-item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_banner",Slot:103b}]},team=blue,scores={glowing=..0}] armor.head with minecraft:red_banner
-clear @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_dye",Slot:-106b}]},team=blue] minecraft:red_dye
-item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:red_dye",Slot:-106b}]},team=blue] weapon.offhand with minecraft:red_dye[custom_name='{"text":"Red Flag"}']
+execute as @s[tag=hasflag,team=blue,scores={glowing=..0}] unless items entity @s armor.head red_banner run item replace entity @s armor.head with minecraft:red_banner
+execute as @s[tag=hasflag,team=blue] unless items entity @s weapon.offhand red_dye run clear @s minecraft:red_dye
+execute as @s[tag=hasflag,team=blue] unless items entity @s weapon.offhand red_dye run item replace entity @s weapon.offhand with minecraft:red_dye[custom_name='{"text":"Red Flag"}']
 
 clear @s[tag=!hasflag,team=red,tag=item_head] blue_banner
-clear @s[tag=!hasflag,team=red] blue_dye
+clear @s[tag=!hasflag,team=red,tag=item_head] blue_dye
 item replace entity @s[tag=!hasflag,team=red,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected,tag=item_head] armor.head with minecraft:air
-item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_banner",Slot:103b}]},team=red,scores={glowing=..0}] armor.head with minecraft:blue_banner
-clear @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_dye",Slot:-106b}]},team=red] minecraft:blue_dye
-item replace entity @s[tag=hasflag,nbt=!{Inventory:[{id:"minecraft:blue_dye",Slot:-106b}]},team=red] weapon.offhand with minecraft:blue_dye[custom_name='{"text":"Blue Flag"}']
+execute as @s[tag=hasflag,team=red,scores={glowing=..0}] unless items entity @s armor.head blue_banner run item replace entity @s armor.head with minecraft:blue_banner
+execute as @s[tag=hasflag,team=red] unless items entity @s weapon.offhand blue_dye run clear @s minecraft:blue_dye
+execute as @s[tag=hasflag,team=red] unless items entity @s weapon.offhand blue_dye run item replace entity @s weapon.offhand with minecraft:blue_dye[custom_name='{"text":"Blue Flag"}']
 
 clear @s[scores={glowing=..0},tag=item_head] minecraft:carved_pumpkin
-item replace entity @s[tag=!is_infected,tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},team=red,scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["1"]}]
-item replace entity @s[tag=!is_infected,tag=hasflag,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},team=blue,scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["2"]}]
-item replace entity @s[tag=!is_infected,nbt=!{Inventory:[{id:"minecraft:carved_pumpkin",Slot:103b}]},scores={glowing=1..}] armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["0"]}]
+execute as @s[tag=!is_infected,tag=hasflag,team=red,scores={glowing=1..}] unless items entity @s armor.head carved_pumpkin run item replace entity @s armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["1"]}]
+execute as @s[tag=!is_infected,tag=hasflag,team=blue,scores={glowing=1..}] unless items entity @s armor.head carved_pumpkin run item replace entity @s armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["2"]}]
+execute as @s[tag=!is_infected,scores={glowing=1..}] unless items entity @s armor.head carved_pumpkin run item replace entity @s armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["0"]}]
 
 scoreboard players set @s[scores={blind=..0}] blind_new 0
 execute as @s[scores={blind=1..}] run function game:player/blind
@@ -400,24 +400,16 @@ function game:player/inventory/drop
 tag @s remove check_bow_ui
 tag @s[tag=lobby_inv_correct] add check_bow_ui
 tag @s remove lobby_inv_correct
-execute if items entity @s[tag=!check_bow_ui] player.cursor minecraft:bone run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] hotbar.2 minecraft:bone run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] hotbar.3 minecraft:bone run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] hotbar.4 minecraft:bone run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] hotbar.5 minecraft:bone run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] hotbar.8 minecraft:bone run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] player.cursor minecraft:bow run tag @s add check_bow_ui
+execute if items entity @s[tag=!check_bow_ui] player.cursor #game:check_inv_cursor run tag @s add check_bow_ui
+
+execute if items entity @s[tag=!check_bow_ui] hotbar.* #game:check_inv_hotbar run tag @s add check_bow_ui
+
 execute if items entity @s[tag=!check_bow_ui] hotbar.2 minecraft:bow run tag @s add check_bow_ui
 execute if items entity @s[tag=!check_bow_ui] hotbar.3 minecraft:bow run tag @s add check_bow_ui
 execute if items entity @s[tag=!check_bow_ui] hotbar.4 minecraft:bow run tag @s add check_bow_ui
 execute if items entity @s[tag=!check_bow_ui] hotbar.5 minecraft:bow run tag @s add check_bow_ui
 execute if items entity @s[tag=!check_bow_ui] hotbar.8 minecraft:bow run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] player.cursor minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] hotbar.2 minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] hotbar.3 minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] hotbar.4 minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] hotbar.5 minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
-execute if items entity @s[tag=!check_bow_ui] hotbar.8 minecraft:magenta_glazed_terracotta run tag @s add check_bow_ui
+
 execute as @s[tag=lobby,tag=check_bow_ui] run function game:bow_ui/main
 
 # CORRECT HAVING WRONG SPAWN POINT IN INVENTORY (for TMI mode)

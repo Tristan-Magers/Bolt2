@@ -23,8 +23,8 @@ execute as @s[team=blue,tag=locked_40] at @p[team=red,scores={hurt=9,KILL_ID=0},
 execute as @s[team=red,tag=locked_69,tag=hasflag_temp] at @p[team=blue,scores={hurt=9,KILL_ID=0},tag=hasflag_temp] if score .mode .data matches 1 if score .tmi .data matches 0 run function game:player/unlock/69
 execute as @s[team=blue,tag=locked_69,tag=hasflag_temp] at @p[team=red,scores={hurt=9,KILL_ID=0},tag=hasflag_temp] if score .mode .data matches 1 if score .tmi .data matches 0 run function game:player/unlock/69
 
-execute as @s[team=red,tag=locked_17] at @p[team=blue,scores={hurt=9,KILL_ID=0},tag=hasflag_temp] if entity @e[type=armor_stand,tag=flag,team=blue,distance=..9] run function game:player/unlock/17
-execute as @s[team=blue,tag=locked_17] at @p[team=red,scores={hurt=9,KILL_ID=0},tag=hasflag_temp] if entity @e[type=armor_stand,tag=flag,team=red,distance=..9] run function game:player/unlock/17
+execute as @s[team=red,tag=locked_17] at @p[team=blue,scores={hurt=9,KILL_ID=0},tag=hasflag_temp] if entity @e[type=armor_stand,tag=flag,team=blue,distance=..10] run function game:player/unlock/17
+execute as @s[team=blue,tag=locked_17] at @p[team=red,scores={hurt=9,KILL_ID=0},tag=hasflag_temp] if entity @e[type=armor_stand,tag=flag,team=red,distance=..10] run function game:player/unlock/17
 
 execute as @s[team=red,tag=locked_3] if entity @a[team=blue,scores={hurt=9,KILL_ID=0},tag=falling_temp] run function game:player/unlock/3
 execute as @s[team=blue,tag=locked_3] if entity @a[team=red,scores={hurt=9,KILL_ID=0},tag=falling_temp] run function game:player/unlock/3

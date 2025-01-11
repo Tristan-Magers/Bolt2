@@ -68,6 +68,7 @@ execute as @s[tag=!intro_cutscene] run function game:menu/p_display/reset_player
 scoreboard players set @s Leave 0
 
 effect clear @s
+tag @s remove has_effects
 
 tag @s remove loading
 tag @s remove playing

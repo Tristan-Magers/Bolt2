@@ -1,91 +1,43 @@
 {
   "advancements:root_5": {
     "criteria": {
-      "warrior": "2025-01-05 15:16:12 -0700"
+      "warrior": "2025-01-11 13:13:05 -0700"
     },
     "done": true
   },
   "advancements:root_6": {
     "criteria": {
-      "warrior": "2025-01-05 15:16:12 -0700"
+      "warrior": "2025-01-11 13:13:05 -0700"
     },
     "done": true
   },
   "advancements:root_4": {
     "criteria": {
-      "warrior": "2025-01-05 15:16:12 -0700"
+      "warrior": "2025-01-11 13:13:05 -0700"
     },
     "done": true
   },
   "advancements:root_1": {
     "criteria": {
-      "warrior": "2025-01-05 15:16:12 -0700"
+      "warrior": "2025-01-11 13:13:05 -0700"
     },
     "done": true
   },
   "advancements:root_3": {
     "criteria": {
-      "warrior": "2025-01-05 15:16:12 -0700"
+      "warrior": "2025-01-11 13:13:05 -0700"
     },
     "done": true
   },
   "advancements:root_2": {
     "criteria": {
-      "warrior": "2025-01-05 15:16:12 -0700"
+      "warrior": "2025-01-11 13:13:05 -0700"
     },
     "done": true
   },
   "advancements:root_9": {
     "criteria": {
-      "warrior": "2025-01-05 15:16:12 -0700"
-    },
-    "done": true
-  },
-  "advancements:general/start": {
-    "criteria": {
-      "tinyt": "2025-01-05 15:29:12 -0700"
-    },
-    "done": true
-  },
-  "advancements:ctf/killstreak1": {
-    "criteria": {
-      "elo1": "2025-01-05 15:29:35 -0700"
-    },
-    "done": true
-  },
-  "advancements:ctf/killstreak2": {
-    "criteria": {
-      "elo1": "2025-01-05 15:29:35 -0700"
-    },
-    "done": true
-  },
-  "advancements:ctf/killstreak3": {
-    "criteria": {
-      "elo1": "2025-01-05 15:29:35 -0700"
-    },
-    "done": true
-  },
-  "advancements:general/kills1": {
-    "criteria": {
-      "kills1": "2025-01-05 15:33:57 -0700"
-    },
-    "done": true
-  },
-  "advancements:general/kills2": {
-    "criteria": {
-      "kills2": "2025-01-09 17:53:41 -0700"
-    },
-    "done": true
-  },
-  "advancements:general/kills3": {
-    "criteria": {
-      "kills3": "2025-01-09 18:03:07 -0700"
-    },
-    "done": true
-  },
-  "advancements:ctf/cross": {
-    "criteria": {
-      "tinyt": "2025-01-09 18:09:15 -0700"
+      "warrior": "2025-01-11 13:13:05 -0700"
     },
     "done": true
   },

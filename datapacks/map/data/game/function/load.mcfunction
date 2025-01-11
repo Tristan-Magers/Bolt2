@@ -20,6 +20,12 @@ execute if score .map .data = .13 .num run tp @a[tag=!loading] -39.5 -37.00 210.
 execute if score .map .data = .14 .num run tp @a[tag=!loading] -551.5 -20.00 -291.5 0 0
 execute if score .map .data = .15 .num run tp @a[tag=!loading] -453.5 -39.00 174.5 0 0
 
+effect give @a[tag=!loading] minecraft:invisibility 4 10 true
+effect give @a[tag=!loading] minecraft:weakness 4 10 true
+effect give @a[tag=!loading] minecraft:slowness 4 10 true
+
+clear @a[tag=!loading]
+
 execute as @a[tag=loading] at @s run tp @s @s
 
 scoreboard players remove .load .data 1
@@ -29,13 +35,7 @@ execute if score .0 .num < .load .data run tag @a add loading
 execute if score .0 .num = .load .data run function game:start
 execute if score .0 .num = .load .data run tag @a remove loading
 
-effect give @a minecraft:invisibility 2 10 true
-effect give @a minecraft:weakness 2 10 true
-effect give @a minecraft:slowness 2 10 true
-
 scoreboard players add .load_time .data 1
 
 execute if score .load_time .data matches 20.. run title @a times 0 20 10
 execute if score .load_time .data matches 20.. run title @a title {"translate":"\u0001","font":"title"}
-
-clear @a
