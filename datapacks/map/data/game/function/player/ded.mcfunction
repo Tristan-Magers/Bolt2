@@ -10,9 +10,9 @@ effect clear @s speed
 effect clear @s jump_boost
 
 #
-scoreboard players set @a item_acid 120
-scoreboard players set @a item_minion 120
-scoreboard players set @a item_boost 120
+scoreboard players set @s item_acid 130
+scoreboard players set @s item_minion 130
+scoreboard players set @s item_boost 130
 
 tag @s remove dark
 

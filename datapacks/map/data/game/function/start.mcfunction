@@ -79,7 +79,7 @@ execute if score .mode .data = .6 .num run team join blue @a[scores={team_pref=0
 
 execute if score .mode .data = .6 .num run function game:game/fill_player_infected
 execute if score .mode .data = .6 .num if score .players_in .data >= .4 .num run function game:game/fill_player_infected
-execute if score .mode .data = .6 .num if score .players_in .data >= .6 .num run function game:game/fill_player_infected
+execute if score .mode .data = .6 .num if score .players_in .data >= .7 .num run function game:game/fill_player_infected
 execute if score .mode .data = .6 .num if score .players_in .data >= .9 .num run function game:game/fill_player_infected
 execute if score .mode .data = .6 .num if score .players_in .data >= .12 .num run function game:game/fill_player_infected
 

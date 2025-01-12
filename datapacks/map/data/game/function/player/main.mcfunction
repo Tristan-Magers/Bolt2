@@ -209,6 +209,7 @@ item modify entity @s[scores={arrowCount=1..},team=blue] hotbar.8 game:model_2
 scoreboard players remove @s[scores={arrowReload=40..}] arrowReload 40
 
 execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowReload=..10},team=red] arrowReload 10
+execute if score .mode .data = .6 .num run scoreboard players set @s[scores={arrowReload=..5},team=blue] arrowReload 5
 
 effect clear @s[scores={invul=1..}] poison
 
@@ -248,8 +249,8 @@ give @s[scores={item_acid=220..,acid_count=..2}] lingering_potion[custom_name='{
 give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Minion","italic":false,"color":"gray"}',lore=['{"text":"Summon zombie that attacks enemies","color":"white","italic":false}','{"text":"Max active: 17","color":"white","italic":false}'],entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:max_health,Base:1},{Name:movement_speed,Base:0.33}]}] 1
 
 scoreboard players set @s[scores={item_boost=220..}] item_boost 0
-scoreboard players set @s[scores={item_minion=220..}] item_minion 50
-scoreboard players set @s[scores={item_acid=220..}] item_acid 20
+scoreboard players set @s[scores={item_minion=220..}] item_minion 55
+scoreboard players set @s[scores={item_acid=220..}] item_acid 25
 
 # Capture point
 
