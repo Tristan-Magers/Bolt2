@@ -246,10 +246,10 @@ scoreboard players set @s[tag=item_acid,nbt={Inventory:[{id:"minecraft:lingering
 
 give @s[scores={item_boost=220..}] egg[custom_name='{"text":"Boost","italic":false}'] 1
 give @s[scores={item_acid=220..,acid_count=..2}] lingering_potion[custom_name='{"text":"Acid","italic":false}',hide_additional_tooltip={},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913}] 1
-give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Minion","italic":false,"color":"gray"}',lore=['{"text":"Summon zombie that attacks enemies","color":"white","italic":false}','{"text":"Max active: 12","color":"white","italic":false}'],entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:max_health,Base:1},{Name:movement_speed,Base:0.33}]}] 1
+give @s[scores={item_minion=220..}] minecraft:zombie_villager_spawn_egg[can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Minion","italic":false,"color":"gray"}',lore=['{"text":"Summon zombie that attacks enemies","color":"white","italic":false}','{"text":"Max active: 17","color":"white","italic":false}'],entity_data={id:"minecraft:zombie_villager",PersistenceRequired:1b,CanPickUpLoot:0b,Health:10f,IsBaby:0b,ArmorItems:[{},{},{},{id:"minecraft:zombie_head",count:1}],Attributes:[{Name:max_health,Base:1},{Name:movement_speed,Base:0.33}]}] 1
 
 scoreboard players set @s[scores={item_boost=220..}] item_boost 0
-scoreboard players set @s[scores={item_minion=220..}] item_minion 30
+scoreboard players set @s[scores={item_minion=220..}] item_minion 35
 scoreboard players set @s[scores={item_acid=220..}] item_acid 25
 
 # Capture point
@@ -443,11 +443,11 @@ execute as @s[scores={traps_active=13..}] as @e[type=creeper] if score @s ID = @
 execute as @s[scores={traps_active=13..}] as @e[type=creeper,tag=my_trap,limit=1] at @s run kill @s
 execute as @s[scores={traps_active=14..}] as @e[type=creeper,tag=my_trap,limit=1] at @s run kill @s
 
-execute as @s[scores={minions_active=13..}] as @e[type=zombie_villager] run tag @s remove my_minion
-execute as @s[scores={minions_active=13..}] as @e[type=zombie_villager] if score @s ID = @e[tag=me,limit=1] ID run tag @s add my_minion
+execute as @s[scores={minions_active=17..}] as @e[type=zombie_villager] run tag @s remove my_minion
+execute as @s[scores={minions_active=17..}] as @e[type=zombie_villager] if score @s ID = @e[tag=me,limit=1] ID run tag @s add my_minion
 #execute as @s[scores={traps_active=13..}] run tellraw @s {"text":"Too many traps","color":"dark_gray"}
-execute as @s[scores={minions_active=13..}] as @e[type=zombie_villager,tag=my_minion,limit=1] at @s run kill @s
-execute as @s[scores={minions_active=14..}] as @e[type=zombie_villager,tag=my_minion,limit=1] at @s run kill @s
+execute as @s[scores={minions_active=17..}] as @e[type=zombie_villager,tag=my_minion,limit=1] at @s run kill @s
+execute as @s[scores={minions_active=18..}] as @e[type=zombie_villager,tag=my_minion,limit=1] at @s run kill @s
 
 tag @s remove me
 

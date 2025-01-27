@@ -137,6 +137,7 @@ scoreboard objectives add track_total_kills dummy
 scoreboard objectives add track_total_crates dummy
 scoreboard objectives add track_total_ctf_walls dummy
 scoreboard objectives add track_total_games dummy
+scoreboard objectives add track_shot_head dummy
 
 scoreboard objectives add code_1 dummy
 scoreboard objectives add code_2 dummy

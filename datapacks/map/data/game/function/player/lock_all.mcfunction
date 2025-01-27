@@ -86,6 +86,7 @@ scoreboard players set @s track_total_crates 0
 scoreboard players set @s track_total_ctf_walls 0
 scoreboard players set @s track_total_games 0
 scoreboard players set @s track_walls_broken 0
+scoreboard players set @s track_shot_head 0
 
 scoreboard players set @s code_1 0
 scoreboard players set @s code_2 0
