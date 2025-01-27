@@ -130,11 +130,12 @@ execute if score .mode .data = .6 .num if score .team_dif .data >= .1 .num run s
 execute if score .mode .data = .6 .num if score .team_dif .data >= .2 .num run scoreboard players add @s respawn 10
 execute if score .mode .data = .6 .num if score .team_dif .data >= .3 .num run scoreboard players add @s respawn 10
 execute if score .mode .data = .6 .num if score .team_dif .data >= .4 .num run scoreboard players add @s respawn 10
-execute if score .mode .data = .6 .num if score .players_in .data = .2 .num run scoreboard players add @s respawn 30
+execute if score .mode .data = .6 .num if score .players_in .data = .2 .num run scoreboard players add @s respawn 35
 execute if score .mode .data = .6 .num if score .players_in .data = .3 .num run scoreboard players add @s respawn 10
+execute if score .mode .data = .6 .num if score .players_in .data = .4 .num run scoreboard players add @s respawn 45
 execute if score .mode .data = .6 .num if score .players_in .data = .5 .num run scoreboard players add @s respawn 40
 execute if score .mode .data = .6 .num if score .players_in .data = .6 .num run scoreboard players add @s respawn 50
-execute if score .mode .data = .6 .num if score .players_in .data >= .7 .num run scoreboard players add @s respawn 30
+execute if score .mode .data = .6 .num if score .players_in .data >= .7 .num run scoreboard players add @s respawn 50
 
 scoreboard players set @s deaths 0
 
