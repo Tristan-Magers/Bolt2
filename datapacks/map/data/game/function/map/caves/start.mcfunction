@@ -48,6 +48,10 @@ execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon 
 execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -186 -54 -149 {Rotation:[180F,0F],Tags:["gen"]}
 execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -187 -59 -122 {Rotation:[90F,0F],Tags:["gen","long"]}
 
+data merge block -188 -59 -122 {front_text:{messages:['{"text":" ","color":"black"}','{"text":""}','{"text":""}','{"text":""}']}}
+data merge block -186 -54 -150 {front_text:{messages:['{"text":" ","color":"black"}','{"text":""}','{"text":""}','{"text":""}']}}
+data merge block -186 -54 -94 {front_text:{messages:['{"text":" ","color":"black"}','{"text":""}','{"text":""}','{"text":""}']}}
+
 #
 execute if score .mode .data = .6 .num run function game:map/caves/crates
 execute if score .mode .data = .6 .num run execute positioned -169 -59 -150 run function game:game/infected/generator/spawn

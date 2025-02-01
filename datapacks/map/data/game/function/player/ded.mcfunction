@@ -29,7 +29,7 @@ execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .
 execute as @s[scores={respawn=2}] run clear @s potion
 execute as @s[scores={respawn=2}] run item replace entity @s inventory.8 with potion[custom_name='{"text":"Leave Game","italic":false}',potion_contents={custom_color:11731199}] 1
 
-execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] hotbar.7 with written_book[written_book_content={title:"Items",author:"Bleps",pages:['[{"text":"How to Get Items","underlined":true},{"text":"\\n\\nKills\\nx4 - Grenade\\nx5 - Walls x4\\nx15 - Crossbow\\n","underlined":false},{"text":"\\nKill Streak\\n2 - Spawn Point\\n3 - Traps x2\\n5 - Reveal\\n7 - Traps x3","underlined":false},{"text":"\\n\\nFlag Cap - Armor","underlined":false}]']}] 1
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=0},nbt=!{Inventory:[{id:"minecraft:written_book"}]}] hotbar.7 with written_book[written_book_content={title:"Items",author:"Bleps",pages:['[{"text":"How to Get Items","underlined":true},{"text":"\\n\\nKills\\nx4 - Mini TNT\\nx5 - Walls x4\\nx15 - Crossbow\\n","underlined":false},{"text":"\\nKill Streak\\n2 - Spawn Point\\n3 - Traps x2\\n5 - Reveal\\n7 - Traps x2","underlined":false},{"text":"\\n\\nFlag Cap - Armor","underlined":false}]']}] 1
 
 execute if score .mode .data = .6 .num run tag @s[tag=!dark_immune] add dark
 

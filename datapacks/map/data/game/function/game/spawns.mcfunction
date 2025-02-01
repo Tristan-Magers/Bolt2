@@ -54,7 +54,7 @@ scoreboard players set @a[x=-354,y=-55,z=-48,dx=9,dy=10,dz=-11,team=red] invul 4
 tag @a[x=-354,y=-55,z=-48,dx=9,dy=10,dz=-11,team=red] add inspawn
 
 #tiny town
-scoreboard players set @a[x=-226,y=-40,z=-456,dx=-5,dy=-10,dz=4.5,team=red] invul 45
+scoreboard players set @a[x=-226,y=-40,z=-456,dx=-5,dy=-10,dz=4.5,team=red] invul 41
 scoreboard players set @a[x=-226,y=-40,z=-456,dx=-5,dy=-5,dz=4.5,team=red] no_slow 10
 effect give @a[x=-226,y=-40,z=-456,dx=-5,dy=-5,dz=4.5,team=red] minecraft:slowness 1 0 true
 
@@ -134,7 +134,7 @@ scoreboard players set @a[x=-325,y=-55,z=-94,dx=-11,dy=10,dz=9,team=blue] invul 
 tag @a[x=-325,y=-55,z=-94,dx=-11,dy=10,dz=9,team=blue] add inspawn
 
 #tiny town
-scoreboard players set @a[x=-226,y=-40,z=-408,dx=-5,dy=-10,dz=-4.5,team=blue] invul 45
+scoreboard players set @a[x=-226,y=-40,z=-408,dx=-5,dy=-10,dz=-4.5,team=blue] invul 41
 scoreboard players set @a[x=-226,y=-40,z=-408,dx=-5,dy=-5,dz=-4.5,team=blue] no_slow 10
 effect give @a[x=-226,y=-40,z=-408,dx=-5,dy=-5,dz=-4.5,team=blue] minecraft:slowness 1 0 true
 

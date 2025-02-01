@@ -1,5 +1,12 @@
 execute at @s if block ~ -64 ~ redstone_block run tag @s add stuck
 
+execute as @s[type=slime,tag=!old] at @s run tag @s add new2
+execute as @s[type=magma_cube,tag=!old] at @s run tag @s add new2
+
+#protection against a spawnpoint having no owner. ownership is ussually given at a later point
+execute as @s[type=slime,tag=!old] at @s run scoreboard players operation @s ID = @p[team=blue,scores={place_slime_temp=1..}] ID
+execute as @s[type=magma_cube,tag=!old] at @s run scoreboard players operation @s ID = @p[team=red,scores={place_magmac_temp=1..}] ID
+
 execute as @s[type=slime,tag=!kill] at @s run playsound minecraft:entity.magma_cube.squish master @a[team=blue] ~ ~ ~ 0.7 1.2
 execute as @s[type=magma_cube,tag=!kill] at @s run playsound minecraft:entity.magma_cube.squish master @a[team=red] ~ ~ ~ 0.7 1.2
 

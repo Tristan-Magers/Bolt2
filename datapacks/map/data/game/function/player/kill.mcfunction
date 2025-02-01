@@ -56,7 +56,7 @@ execute if score .mode .data = .7 .num run scoreboard players set @s killStreak 
 #
 execute if score .mode .data = .1 .num run clear @s[scores={kills=1}] written_book
 execute if score .mode .data = .1 .num run clear @s[scores={kills=15}] written_book
-execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=1}] hotbar.7 with written_book[written_book_content={title:"Items",author:"Bleps",pages:['[{"text":"How to Get Items","underlined":true},{"text":"\\n\\nKills\\nx4 - Grenade\\nx5 - Walls x4\\nx15 - Crossbow\\n","underlined":false},{"text":"\\nKill Streak\\n2 - Spawn Point\\n3 - Traps x2\\n5 - Reveal\\n7 - Traps x3","underlined":false},{"text":"\\n\\nFlag Cap - Armor","underlined":false}]']}] 1
+execute if score .mode .data = .1 .num if score .tmi .data matches 0 run item replace entity @s[scores={kills=1}] hotbar.7 with written_book[written_book_content={title:"Items",author:"Bleps",pages:['[{"text":"How to Get Items","underlined":true},{"text":"\\n\\nKills\\nx4 - Mini TNT\\nx5 - Walls x4\\nx15 - Crossbow\\n","underlined":false},{"text":"\\nKill Streak\\n2 - Spawn Point\\n3 - Traps x2\\n5 - Reveal\\n7 - Traps x2","underlined":false},{"text":"\\n\\nFlag Cap - Armor","underlined":false}]']}] 1
 
 # kill items
 execute if score .tmi .data matches 0 run give @s[scores={killStreak=2},team=blue] panda_spawn_egg[custom_model_data={strings:["3"]},can_place_on={predicates:[{blocks:"#game:bolt_place"}],show_in_tooltip:false},custom_name='{"text":"Spawn Point","italic":false,"color":"gray"}',lore=['{"text":"Place a location to respawn at","color":"white","italic":false}','{"text":"Respawn 1.5 seconds faster","color":"white","italic":false}','{"text":"Can be shot","color":"white","italic":false}','{"text":"Max active: 1","color":"white","italic":false}','{"text":"Returned on flag capture","color":"white","italic":false}'],entity_data={id:"minecraft:slime",PersistenceRequired:1b,Silent:1b,Size:0}] 1
@@ -80,8 +80,8 @@ execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] cros
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .GrenadeKills .stats
 
-execute if score .mode .data = .1 .num run give @s[scores={t=0}] snowball[custom_name='{"text":"Grenade","italic":false,"color":"gray"}',lore=['{"text":"Explodes, killing players","color":"white","italic":false}','{"text":"Kills traps and respawns","color":"white","italic":false}','{"text":"Explodes slower if thrown close","color":"white","italic":false}']] 1
-execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] snowball[custom_name='{"text":"Grenade (can\'t break emerald)","italic":false,"color":"gray"}'] 1
+execute if score .mode .data = .1 .num run give @s[scores={t=0}] snowball[custom_name='{"text":"Mini TNT","italic":false,"color":"gray"}',lore=['{"text":"Explodes, killing players","color":"white","italic":false}','{"text":"Kills traps and respawns","color":"white","italic":false}','{"text":"Explodes slower if thrown close","color":"white","italic":false}']] 1
+execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] snowball[custom_name='{"text":"Mini TNT (can\'t break emerald)","italic":false,"color":"gray"}'] 1
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .WallKills .stats

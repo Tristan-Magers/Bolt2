@@ -25,10 +25,10 @@ execute at @s at @s positioned ~ ~1.8 ~ as @s[tag=blueflag] if entity @a[gamemod
 
 scoreboard players add @s t 1
 
-execute as @s[scores={t=2}] at @s run playsound minecraft:entity.item.pickup master @a ~ ~ ~ 1 0 1
-execute as @s[scores={t=2}] at @s run playsound minecraft:entity.creaking.step master @a ~ ~ ~ 1 0 1
-execute as @s[scores={t=2}] at @s run playsound minecraft:entity.zombie.destroy_egg master @a ~ ~ ~ 1 0 1
-execute as @s[scores={t=3}] at @s run playsound minecraft:item.wolf_armor.damage master @a ~ ~ ~ 1 0 1
+execute as @s[scores={t=2}] at @s run playsound minecraft:entity.item.pickup master @a[distance=..16] ~ ~ ~ 1 0 1
+execute as @s[scores={t=2}] at @s run playsound minecraft:entity.creaking.step master @a[distance=..16] ~ ~ ~ 0.6 0 0.6
+execute as @s[scores={t=2}] at @s run playsound minecraft:entity.zombie.destroy_egg master @a[distance=..16] ~ ~ ~ 0.6 0 0.6
+execute as @s[scores={t=2}] at @s run playsound minecraft:item.wolf_armor.damage master @a[distance=..16] ~ ~ ~ 1 0 1
 
 execute as @s[scores={t=50..65}] at @s run particle minecraft:smoke ~ ~2 ~ 0.3 0.8 0.3 0 10 force
 execute as @s[scores={t=66..}] at @s run particle minecraft:large_smoke ~ ~2 ~ 0.3 0.8 0.3 0 10 force

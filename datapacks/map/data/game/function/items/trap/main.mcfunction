@@ -29,8 +29,16 @@ execute as @s[team=blue,scores={t4=2},tag=!cant_place] at @s run playsound minec
 
 ##### VISIBILITY AND TRIGGER CHECK
 
-execute if entity @s[scores={timer=0},team=red,tag=hidden] at @s positioned ~ ~0.4 ~ if entity @a[team=blue,gamemode=adventure,distance=..4.9] run playsound minecraft:entity.creeper.primed master @a ~ ~ ~
-execute if entity @s[scores={timer=0},team=blue,tag=hidden] at @s positioned ~ ~0.4 ~ if entity @a[team=red,gamemode=adventure,distance=..4.9] run playsound minecraft:entity.creeper.primed master @a ~ ~ ~
+execute if entity @s[tag=play_primed,tag=!play_primed2] at @s positioned ~ ~0.4 ~ run playsound minecraft:entity.creeper.primed master @a ~ ~ ~
+
+tag @s[tag=play_primed] add play_primed2
+tag @s[tag=!play_primed] remove play_primed2
+
+execute if entity @s[scores={timer=0},team=red,tag=hidden] at @s positioned ~ ~0.4 ~ unless entity @a[team=blue,gamemode=adventure,distance=..4.9] run tag @s remove play_primed
+execute if entity @s[scores={timer=0},team=blue,tag=hidden] at @s positioned ~ ~0.4 ~ unless entity @a[team=red,gamemode=adventure,distance=..4.9] run tag @s remove play_primed
+
+execute if entity @s[scores={timer=0},team=red,tag=hidden] at @s positioned ~ ~0.4 ~ if entity @a[team=blue,gamemode=adventure,distance=..4.9] run tag @s add play_primed
+execute if entity @s[scores={timer=0},team=blue,tag=hidden] at @s positioned ~ ~0.4 ~ if entity @a[team=red,gamemode=adventure,distance=..4.9] run tag @s add play_primed
 
 execute if entity @s[scores={timer=0,t4=6..},team=red] at @s positioned ~ ~0.4 ~ unless entity @a[team=blue,gamemode=adventure,distance=..4.9] run effect give @s minecraft:invisibility 999 10 true
 execute if entity @s[scores={timer=0,t4=6..},team=blue] at @s positioned ~ ~0.4 ~ unless entity @a[team=red,gamemode=adventure,distance=..4.9] run effect give @s minecraft:invisibility 999 10 true

@@ -1,0 +1,21 @@
+1.0.9
+
+General
+- Negative winstreaks deduct less rank (20 -> 15 each)
+- System to limit rank inflation is relaxed more to allow higher rank growth (only 1-3 more or less a game)
+- Ranked ties scramble winstreaks to allow different teams next round
+- Note: working on balancing between rank creating balanced teams and diverse teams while being a "feel-good" experience
+
+Items
+- Armor resets flag capture timer to 0.5s when hit on point capture mode (if over 0.5s captured)
+- Traps has 1 tick delay before making hiss sound when in range
+
+Bug Fixes
+- Improved spawn point owner detection
+- Generator text displayed on coves during non CtF
+- Flag drop sound wound be delayed
+
+Known issues
+- Placeables can give wrong owner in rare cases. Working on a perfect solution
+- Walls can lift objects on nearby walls is weird cases
+- Pushing players in lobby is a issue in high player count lobbies. Considering removing player push entirely in lobby.

@@ -1,5 +1,6 @@
 data merge entity @s {Size:0,Silent:1,NoAI:1,Health:1}
 
+tag @s remove new2
 execute as @s[tag=!new] at @s run function game:items/spawn/new
 
 tag @s add new

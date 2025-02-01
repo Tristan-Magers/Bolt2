@@ -47,5 +47,29 @@
     },
     "done": true
   },
+  "advancements:general/start": {
+    "criteria": {
+      "tinyt": "2025-02-01 10:35:03 -0700"
+    },
+    "done": true
+  },
+  "advancements:general/play_tmi": {
+    "criteria": {
+      "tinyt": "2025-02-01 10:39:26 -0700"
+    },
+    "done": true
+  },
+  "advancements:tmi/jug": {
+    "criteria": {
+      "can": "2025-02-01 11:00:16 -0700"
+    },
+    "done": true
+  },
+  "advancements:ctf/height": {
+    "criteria": {
+      "tinyt": "2025-02-01 11:47:29 -0700"
+    },
+    "done": true
+  },
   "DataVersion": 4189
 }

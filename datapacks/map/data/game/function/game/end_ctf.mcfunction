@@ -39,4 +39,11 @@ execute if score Red Scores >= Blue Scores if score .mode .data = .1 .num if sco
 execute if score Blue Scores >= Red Scores if score .mode .data = .1 .num if score .ranked .data = .1 .num run scoreboard players add @a[team=blue,tag=change_rank] win_streak 1
 execute if score Red Scores >= Blue Scores if score .mode .data = .1 .num if score .ranked .data = .1 .num run scoreboard players add @a[team=red,tag=change_rank] win_streak 1
 
+# tries to mix up teams if tie with winstreak
+execute if score Red Scores = Blue Scores if score .mode .data = .1 .num if score .ranked .data = .1 .num run scoreboard players add @r[tag=change_rank,scores={win_streak=..5}] win_streak 1
+execute if score Red Scores = Blue Scores if score .mode .data = .1 .num if score .ranked .data = .1 .num run scoreboard players add @r[tag=change_rank,scores={win_streak=..5}] win_streak 1
+execute if score Red Scores = Blue Scores if score .mode .data = .1 .num if score .ranked .data = .1 .num run scoreboard players add @r[tag=change_rank,scores={win_streak=..5}] win_streak 1
+execute if score Red Scores = Blue Scores if score .mode .data = .1 .num if score .ranked .data = .1 .num run scoreboard players remove @r[tag=change_rank,scores={win_streak=-5..}] win_streak 1
+execute if score Red Scores = Blue Scores if score .mode .data = .1 .num if score .ranked .data = .1 .num run scoreboard players remove @r[tag=change_rank,scores={win_streak=-5..}] win_streak 1
+
 execute unless score Red Scores = Blue Scores if score .mode .data = .1 .num if score .tmi .data = .0 .num if score .ranked .data = .1 .num run function game:game/rank_changes
