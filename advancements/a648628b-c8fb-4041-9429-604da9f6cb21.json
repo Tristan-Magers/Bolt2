@@ -77,5 +77,11 @@
     },
     "done": true
   },
+  "advancements:general/tinyt": {
+    "criteria": {
+      "tinyt": "2025-04-13 02:05:43 -0600"
+    },
+    "done": true
+  },
   "DataVersion": 4325
 }

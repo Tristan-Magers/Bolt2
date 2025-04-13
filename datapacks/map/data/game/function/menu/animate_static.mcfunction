@@ -26,8 +26,8 @@ execute if score .elv_1_state .elevator matches 2 if score .elv_1_timer .elevato
 
 # Mid enter elevator
 execute if score .elv_4_state .elevator matches 0 run scoreboard players set .elv_4_timer .elevator 0
-execute if score .elv_4_state .elevator matches 0 if entity @a[x=231,y=-47,z=-167,distance=..5,gamemode=adventure] run scoreboard players set .elv_4_state .elevator 1
-execute if score .elv_4_state .elevator matches 1 unless entity @a[x=231,y=-47,z=-167,distance=..5,gamemode=adventure] run scoreboard players set .elv_4_state .elevator 0
+execute if score .elv_4_state .elevator matches 0 if entity @a[x=231,y=-47,z=-166,distance=..5,gamemode=adventure] run scoreboard players set .elv_4_state .elevator 1
+execute if score .elv_4_state .elevator matches 1 unless entity @a[x=231,y=-47,z=-166,distance=..5,gamemode=adventure] run scoreboard players set .elv_4_state .elevator 0
 execute if score .elv_4_state .elevator matches 1 unless entity @a[x=231,y=-47,z=-166,dy=2,dx=0.39,dz=-3,gamemode=adventure] run scoreboard players set .elv_4_timer .elevator 0
 execute if score .elv_4_state .elevator matches 1 if entity @a[x=231,y=-47,z=-166,dy=2,dx=0.39,dz=-3,gamemode=adventure] run scoreboard players add .elv_4_timer .elevator 1
 execute if score .elv_4_state .elevator matches 1 if score .elv_4_timer .elevator matches 10.. run scoreboard players set .elv_4_state .elevator 2

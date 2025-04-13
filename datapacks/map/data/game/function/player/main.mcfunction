@@ -218,6 +218,9 @@ effect give @s[scores={health=1..19}] minecraft:instant_health 1 10 true
 # invul timer and vis including infection vis
 scoreboard players remove @s[scores={invul=1..}] invul 1
 
+#remove invul from those with flag
+scoreboard players set @s[scores={invul=1..},tag=hasflag] invul 1
+
 #clear @s[tag=lobby] chainmail_helmet
 execute as @s[scores={invul=2..}] unless items entity @s armor.head chainmail_helmet run clear @s chainmail_helmet
 execute as @s[tag=!is_infected,tag=!lobby,scores={invul=2..,glowing=..0},tag=!hasflag] unless items entity @s armor.head chainmail_helmet run item replace entity @s armor.head with minecraft:chainmail_helmet[damage=150,attribute_modifiers=[{id:"armor",type:"armor",amount:30,operation:"add_value",slot:"any"}]]
