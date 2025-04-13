@@ -1,4 +1,4 @@
-clear @s black_stained_glass_pane[custom_name='{"text":""}']
+clear @s black_stained_glass_pane[custom_name={"text":""},tooltip_display={hide_tooltip:true}]
 clear @s gray_stained_glass_pane
 clear @s purple_stained_glass_pane
 

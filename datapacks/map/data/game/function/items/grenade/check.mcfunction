@@ -1,7 +1,7 @@
 function game:id/snowball
 execute as @s[scores={ID.item=1..}] run scoreboard players operation @e[type=snowball] ID.item -= @s ID.item
-execute as @s[scores={ID=1..},tag=!glitter] unless entity @e[type=snowball,tag=id_share,scores={ID.item=0}] run summon armor_stand ~ ~-1.6 ~ {Tags:["grenadehit","new_ger_hit"],Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:tnt",count:1}]}
-execute as @s[scores={ID=1..},tag=glitter] unless entity @e[type=snowball,tag=id_share,scores={ID.item=0}] run summon armor_stand ~ ~-1.6 ~ {Tags:["grenadehit","new_ger_hit","glitter"],Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:coal",count:1}]}
+execute as @s[scores={ID=1..},tag=!glitter] unless entity @e[type=snowball,tag=id_share,scores={ID.item=0}] run summon armor_stand ~ ~-1.6 ~ {Tags:["grenadehit","new_ger_hit"],Invulnerable:1b,Marker:1b,Invisible:1b,equipment:{head:{id:"minecraft:tnt",count:1}}}
+execute as @s[scores={ID=1..},tag=glitter] unless entity @e[type=snowball,tag=id_share,scores={ID.item=0}] run summon armor_stand ~ ~-1.6 ~ {Tags:["grenadehit","new_ger_hit","glitter"],Invulnerable:1b,Marker:1b,Invisible:1b,equipment:{head:{id:"minecraft:coal",count:1}}}
 execute as @s[scores={ID=1..}] unless entity @e[type=snowball,tag=id_share,scores={ID.item=0}] run scoreboard players set @e[tag=grenadehit,limit=1,sort=nearest,tag=new_ger_hit] timer -10
 execute as @s[scores={ID=1..}] unless entity @e[type=snowball,tag=id_share,scores={ID.item=0}] run scoreboard players operation @e[tag=grenadehit,limit=1,sort=nearest,tag=new_ger_hit] timer += @s t3
 execute as @s[scores={ID=1..}] unless entity @e[type=snowball,tag=id_share,scores={ID.item=0}] run scoreboard players set @e[tag=grenadehit,limit=1,sort=nearest,scores={timer=1..},tag=new_ger_hit] timer 0

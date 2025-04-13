@@ -19,3 +19,9 @@ Known issues
 - Placeables can give wrong owner in rare cases. Working on a perfect solution
 - Walls can lift objects on nearby walls is weird cases
 - Pushing players in lobby is a issue in high player count lobbies. Considering removing player push entirely in lobby.
+
+1.10.0
+
+General
+- Flags despawn 0.25s faster (4s -> 3.75)
+- Everytime a flag is dropped the time to despawn is 0.5s faster down to (1.25s)

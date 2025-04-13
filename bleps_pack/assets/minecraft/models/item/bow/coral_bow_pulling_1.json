@@ -1,6 +1,0 @@
-{
-  "parent": "item/bow",
-  "textures": {
-    "layer0": "item/bow/coral_bow_pulling_1"
-  }
-}

@@ -5,8 +5,8 @@ execute as @s[tag=locked_26,scores={out_of_spawn_time=1..},tag=playing] if score
 scoreboard players set @s invul 20
 
 #
-execute as @s[team=blue,nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] if score .mode .data = .6 .num at @s positioned ~ ~1 ~ run summon item ~ ~ ~ {Team:"purple",Glowing:1b,Motion:[0.0,0.3,0.00],Age:5600,PickupDelay:32767,Tags:["no_kill","death_obj","scrap"],Item:{id:"minecraft:netherite_scrap",count:1,components:{"minecraft:custom_name":'{"text":"Scrap (Return to Generator)","italic":false}'}}}
-execute as @s[team=red] if score .mode .data = .6 .num at @s positioned ~ ~1 ~ run summon item ~ ~ ~ {Team:"purple",Glowing:1b,Motion:[0.0,0.3,0.00],Age:5600,PickupDelay:32767,Tags:["no_kill","death_obj","scrap"],Item:{id:"minecraft:netherite_scrap",count:1,components:{"minecraft:custom_name":'{"text":"Scrap (Return to Generator)","italic":false}'}}}
+execute as @s[team=blue,nbt={Inventory:[{id:"minecraft:netherite_scrap"}]}] if score .mode .data = .6 .num at @s positioned ~ ~1 ~ run summon item ~ ~ ~ {Team:"purple",Glowing:1b,Motion:[0.0,0.3,0.00],Age:5600,PickupDelay:32767,Tags:["no_kill","death_obj","scrap"],Item:{id:"minecraft:netherite_scrap",count:1,components:{"minecraft:custom_name":{"text":"Scrap (Return to Generator)","italic":false}}}}
+execute as @s[team=red] if score .mode .data = .6 .num at @s positioned ~ ~1 ~ run summon item ~ ~ ~ {Team:"purple",Glowing:1b,Motion:[0.0,0.3,0.00],Age:5600,PickupDelay:32767,Tags:["no_kill","death_obj","scrap"],Item:{id:"minecraft:netherite_scrap",count:1,components:{"minecraft:custom_name":{"text":"Scrap (Return to Generator)","italic":false}}}}
 team join gold @e[type=minecraft:item,tag=scrap]
 
 #
@@ -54,9 +54,9 @@ clear @s iron_ingot
 clear @s bow
 
 # give bow and check if it should have enchanting
-execute if score .mode .data = .6 .num unless items entity @s contents bow run item replace entity @s[gamemode=!creative,tag=playing] hotbar.0 with bow[unbreakable={show_in_tooltip:false},enchantments={levels:{"minecraft:power":255},show_in_tooltip:false}] 1
-execute unless items entity @s contents bow run item replace entity @s[gamemode=!creative,scores={bow_texture=78}] hotbar.0 with bow[unbreakable={show_in_tooltip:false}] 1
-execute unless items entity @s contents bow run item replace entity @s[gamemode=!creative] hotbar.0 with bow[unbreakable={show_in_tooltip:false},enchantments={levels:{"minecraft:power":255},show_in_tooltip:false}] 1
+execute if score .mode .data = .6 .num unless items entity @s contents bow run item replace entity @s[gamemode=!creative,tag=playing] hotbar.0 with bow[unbreakable={show_in_tooltip:false},enchantments={"minecraft:power":255},tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model"]}] 1
+execute unless items entity @s contents bow run item replace entity @s[gamemode=!creative,scores={bow_texture=78}] hotbar.0 with bow[unbreakable={show_in_tooltip:false},tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model"]}] 1
+execute unless items entity @s contents bow run item replace entity @s[gamemode=!creative] hotbar.0 with bow[unbreakable={show_in_tooltip:false},enchantments={"minecraft:power":255},tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model"]}] 1
 
 effect give @s minecraft:wither 1 1
 scoreboard players set @s time_dead 0
@@ -141,8 +141,8 @@ scoreboard players set @s deaths 0
 #
 clear @s arrow
 
-execute at @s[tag=hasflag,team=red] run summon armor_stand ~ ~-1 ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",count:1}],Tags:["blueflag","flag","drop"]}
-execute at @s[tag=hasflag,team=blue] run summon armor_stand ~ ~-1 ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:red_banner",count:1}],Tags:["redflag","flag","drop"]}
+execute at @s[tag=hasflag,team=red] run summon armor_stand ~ ~-1 ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,equipment:{head:{id:"minecraft:blue_banner",count:1}},Tags:["blueflag","flag","drop"]}
+execute at @s[tag=hasflag,team=blue] run summon armor_stand ~ ~-1 ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,equipment:{head:{id:"minecraft:red_banner",count:1}},Tags:["redflag","flag","drop"]}
 
 tag @s remove hasflag
 
@@ -158,28 +158,28 @@ playsound minecraft:entity.evoker.death master @a ~ ~ ~ 0.4 1.7
 playsound minecraft:entity.dragon_fireball.explode master @a ~ ~ ~ 0.15 2
 
 execute as @s[scores={death_ani=0}] at @s positioned ~ ~1 ~ run summon item ^0.1 ^-0.1 ^0.1 {Motion:[-0.16,0.3,0.06],Age:5800,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:bow",count:1}}
-execute as @s[scores={death_ani=0},team=red] at @s positioned ~ ~1 ~ run summon item ^0.2 ^0.1 ^-0.2 {Motion:[0.14,0.25,-0.07],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":{rgb:16711680,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=0},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.2 {Motion:[0.09,0.2,0.15],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":{rgb:16711680,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=0},team=blue] at @s positioned ~ ~1 ~ run summon item ^0.2 ^0.1 ^-0.2 {Motion:[0.14,0.25,-0.07],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":{rgb:22015,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=0},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.2 {Motion:[0.09,0.2,0.15],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":{rgb:22015,show_in_tooltip:false}}}}
+execute as @s[scores={death_ani=0},team=red] at @s positioned ~ ~1 ~ run summon item ^0.2 ^0.1 ^-0.2 {Motion:[0.14,0.25,-0.07],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":16711680}}}
+execute as @s[scores={death_ani=0},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.2 {Motion:[0.09,0.2,0.15],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":16711680}}}
+execute as @s[scores={death_ani=0},team=blue] at @s positioned ~ ~1 ~ run summon item ^0.2 ^0.1 ^-0.2 {Motion:[0.14,0.25,-0.07],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":22015}}}
+execute as @s[scores={death_ani=0},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.2 {Motion:[0.09,0.2,0.15],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":22015}}}
 
 execute as @s[scores={death_ani=1}] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^-0.1 ^0.1 {Motion:[-0.14,0.3,-0.06],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:bow",count:1}}
-execute as @s[scores={death_ani=1},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.2 ^0.1 ^0.2 {Motion:[0.12,0.25,0.09],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":{rgb:16711680,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=1},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.1 {Motion:[0.04,0.2,-0.13],Age:5800,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":{rgb:16711680,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=1},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.2 ^0.1 ^0.2 {Motion:[0.12,0.25,0.09],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":{rgb:22015,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=1},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.1 {Motion:[0.04,0.2,-0.13],Age:5800,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":{rgb:22015,show_in_tooltip:false}}}}
+execute as @s[scores={death_ani=1},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.2 ^0.1 ^0.2 {Motion:[0.12,0.25,0.09],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":16711680}}}
+execute as @s[scores={death_ani=1},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.1 {Motion:[0.04,0.2,-0.13],Age:5800,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":16711680}}}
+execute as @s[scores={death_ani=1},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.2 ^0.1 ^0.2 {Motion:[0.12,0.25,0.09],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":22015}}}
+execute as @s[scores={death_ani=1},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.1 {Motion:[0.04,0.2,-0.13],Age:5800,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":22015}}}
 
 execute as @s[scores={death_ani=2}] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^-0.1 ^-0.1 {Motion:[0.14,0.3,-0.06],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:bow",count:1}}
-execute as @s[scores={death_ani=2},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.2 ^0.1 ^0.2 {Motion:[0.12,0.25,0.09],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":{rgb:16711680,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=2},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.1 {Motion:[-0.09,0.2,-0.13],Age:5800,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":{rgb:16711680,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=2},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.2 ^0.1 ^0.2 {Motion:[0.12,0.25,0.09],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":{rgb:22015,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=2},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.1 {Motion:[-0.09,0.2,-0.13],Age:5800,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":{rgb:22015,show_in_tooltip:false}}}}
+execute as @s[scores={death_ani=2},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.2 ^0.1 ^0.2 {Motion:[0.12,0.25,0.09],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":16711680}}}
+execute as @s[scores={death_ani=2},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.1 {Motion:[-0.09,0.2,-0.13],Age:5800,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":16711680}}}
+execute as @s[scores={death_ani=2},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.2 ^0.1 ^0.2 {Motion:[0.12,0.25,0.09],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":22015}}}
+execute as @s[scores={death_ani=2},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^ ^0.1 {Motion:[-0.09,0.2,-0.13],Age:5800,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":22015}}}
 
 execute as @s[scores={death_ani=3}] at @s positioned ~ ~1 ~ run summon item ^0.1 ^-0.1 ^-0.1 {Motion:[0.14,0.3,0.08],Age:5800,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:bow",count:1}}
-execute as @s[scores={death_ani=3},team=red] at @s positioned ~ ~1 ~ run summon item ^0.2 ^0.2 ^-0.2 {Motion:[-0.12,0.25,0.1],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":{rgb:16711680,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=3},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^-0.1 ^0.0 {Motion:[0.12,0.2,-0.13],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":{rgb:16711680,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=3},team=blue] at @s positioned ~ ~1 ~ run summon item ^0.2 ^0.2 ^-0.2 {Motion:[-0.12,0.25,0.1],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":{rgb:22015,show_in_tooltip:false}}}}
-execute as @s[scores={death_ani=3},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^-0.1 ^0.0 {Motion:[0.12,0.2,-0.13],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":{rgb:22015,show_in_tooltip:false}}}}
+execute as @s[scores={death_ani=3},team=red] at @s positioned ~ ~1 ~ run summon item ^0.2 ^0.2 ^-0.2 {Motion:[-0.12,0.25,0.1],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":16711680}}}
+execute as @s[scores={death_ani=3},team=red] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^-0.1 ^0.0 {Motion:[0.12,0.2,-0.13],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":16711680}}}
+execute as @s[scores={death_ani=3},team=blue] at @s positioned ~ ~1 ~ run summon item ^0.2 ^0.2 ^-0.2 {Motion:[-0.12,0.25,0.1],Age:5820,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":22015}}}
+execute as @s[scores={death_ani=3},team=blue] at @s positioned ~ ~1 ~ run summon item ^-0.1 ^-0.1 ^0.0 {Motion:[0.12,0.2,-0.13],Age:5810,PickupDelay:32767,Tags:["no_kill","death_obj"],Item:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":22015}}}
 
 #
 scoreboard players add @s stats_deaths 1

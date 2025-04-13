@@ -1,7 +1,0 @@
-{
-	"parent": "block/block",
-	"textures": {
-		"0": "block/air",
-		"particle": "block/tinted_glass"
-	}
-}

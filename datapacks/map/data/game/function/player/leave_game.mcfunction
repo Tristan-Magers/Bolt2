@@ -30,16 +30,16 @@ scoreboard players set @s[scores={music=9..}] music 0
 
 #
 scoreboard players add @s rank 0
-tag @s[scores={rank=..0}] remove has_rank_v29
+tag @s[scores={rank=..0}] remove has_rank_v30
 
 scoreboard players add @s team_pref 0
 
-execute as @s[tag=!has_rank_v29] run function game:player/lock_all
+execute as @s[tag=!has_rank_v30] run function game:player/lock_all
 
-scoreboard players set @s[tag=!has_rank_v29] rank 500
-scoreboard players set @s[tag=!has_rank_v29] win_streak -2
-scoreboard players set @s[tag=!has_rank_v29] team_pref 0
-tag @s add has_rank_v29
+scoreboard players set @s[tag=!has_rank_v30] rank 500
+scoreboard players set @s[tag=!has_rank_v30] win_streak -2
+scoreboard players set @s[tag=!has_rank_v30] team_pref 0
+tag @s add has_rank_v30
 
 tp @s[tag=!intro_cutscene] 243.50 -50.00 -245.5 -64.8 -5.5
 

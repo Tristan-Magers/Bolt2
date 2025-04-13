@@ -1,3 +1,3 @@
-give @s[scores={acid_count=..2}] lingering_potion[custom_name='{"text":"Acid","italic":false,"color":"gray"}',hide_additional_tooltip={},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913}] 1
+give @s[scores={acid_count=..2}] lingering_potion[custom_name={"text":"Acid","italic":false,"color":"gray"},potion_contents={potion:"minecraft:water_breathing",custom_color:6618913},tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model","item_name"]}] 1
 
 scoreboard players remove @s drop_lingering 1

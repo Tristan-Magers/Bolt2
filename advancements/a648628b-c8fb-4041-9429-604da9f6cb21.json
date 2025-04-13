@@ -1,75 +1,45 @@
 {
-  "advancements:root_5": {
-    "criteria": {
-      "warrior": "2025-01-25 12:10:10 -0700"
-    },
-    "done": true
-  },
-  "advancements:root_6": {
-    "criteria": {
-      "warrior": "2025-01-25 12:10:10 -0700"
-    },
-    "done": true
-  },
-  "advancements:root_4": {
-    "criteria": {
-      "warrior": "2025-01-25 12:10:10 -0700"
-    },
-    "done": true
-  },
-  "advancements:root_1": {
-    "criteria": {
-      "warrior": "2025-01-25 12:10:10 -0700"
-    },
-    "done": true
-  },
   "advancements:root_3": {
     "criteria": {
-      "warrior": "2025-01-25 12:10:10 -0700"
+      "warrior": "2025-04-12 22:25:56 -0600"
     },
     "done": true
   },
   "advancements:root_2": {
     "criteria": {
-      "warrior": "2025-01-25 12:10:10 -0700"
+      "warrior": "2025-04-12 22:25:56 -0600"
+    },
+    "done": true
+  },
+  "advancements:root_1": {
+    "criteria": {
+      "warrior": "2025-04-12 22:25:56 -0600"
     },
     "done": true
   },
   "advancements:root_9": {
     "criteria": {
-      "warrior": "2025-01-25 12:10:10 -0700"
+      "warrior": "2025-04-12 22:25:56 -0600"
     },
     "done": true
   },
-  "advancements:lobby/can": {
+  "advancements:root_6": {
     "criteria": {
-      "can": "2025-01-25 12:11:48 -0700"
+      "warrior": "2025-04-12 22:25:56 -0600"
     },
     "done": true
   },
-  "advancements:general/start": {
+  "advancements:root_5": {
     "criteria": {
-      "tinyt": "2025-02-01 10:35:03 -0700"
+      "warrior": "2025-04-12 22:25:56 -0600"
     },
     "done": true
   },
-  "advancements:general/play_tmi": {
+  "advancements:root_4": {
     "criteria": {
-      "tinyt": "2025-02-01 10:39:26 -0700"
+      "warrior": "2025-04-12 22:25:56 -0600"
     },
     "done": true
   },
-  "advancements:tmi/jug": {
-    "criteria": {
-      "can": "2025-02-01 11:00:16 -0700"
-    },
-    "done": true
-  },
-  "advancements:ctf/height": {
-    "criteria": {
-      "tinyt": "2025-02-01 11:47:29 -0700"
-    },
-    "done": true
-  },
-  "DataVersion": 4189
+  "DataVersion": 4325
 }

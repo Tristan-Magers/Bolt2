@@ -30,10 +30,10 @@ execute as @s[scores={t=2}] at @s run playsound minecraft:entity.creaking.step m
 execute as @s[scores={t=2}] at @s run playsound minecraft:entity.zombie.destroy_egg master @a[distance=..16] ~ ~ ~ 0.6 0 0.6
 execute as @s[scores={t=2}] at @s run playsound minecraft:item.wolf_armor.damage master @a[distance=..16] ~ ~ ~ 1 0 1
 
-execute as @s[scores={t=50..65}] at @s run particle minecraft:smoke ~ ~2 ~ 0.3 0.8 0.3 0 10 force
-execute as @s[scores={t=66..}] at @s run particle minecraft:large_smoke ~ ~2 ~ 0.3 0.8 0.3 0 10 force
+execute as @s[scores={t=45..60}] at @s run particle minecraft:smoke ~ ~2 ~ 0.3 0.8 0.3 0 10 force
+execute as @s[scores={t=61..}] at @s run particle minecraft:large_smoke ~ ~2 ~ 0.3 0.8 0.3 0 10 force
 
-kill @s[scores={t=80..}]
+kill @s[scores={t=75..}]
 
 #
 execute at @s positioned ~ ~1.5 ~ if block ~-0.3 ~-0.2 ~-0.3 air if block ~0.3 ~-0.2 ~-0.3 air if block ~-0.3 ~-0.2 ~0.3 air if block ~0.3 ~-0.2 ~0.3 air run tp @s ~ ~-1.55 ~

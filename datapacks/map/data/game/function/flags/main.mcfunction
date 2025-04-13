@@ -14,9 +14,9 @@ execute if entity @a[gamemode=adventure,team=red,tag=hasflag] run tag @s[tag=blu
 execute if entity @e[team=red,tag=flag,tag=drop] run tag @s[tag=redflag] remove flag
 execute if entity @a[team=blue,tag=hasflag] run tag @s[tag=redflag] remove flag
 
-execute if entity @s[tag=!flag] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:air",count:1}]}
-execute if entity @s[tag=flag] run data merge entity @s[tag=blueflag] {ArmorItems:[{},{},{},{id:"minecraft:blue_banner",count:1}]}
-execute if entity @s[tag=flag] run data merge entity @s[tag=redflag] {ArmorItems:[{},{},{},{id:"minecraft:red_banner",count:1}]}
+execute if entity @s[tag=!flag] run data merge entity @s {equipment:{head:{id:"minecraft:air",count:1}}}
+execute if entity @s[tag=flag] run data merge entity @s[tag=blueflag] {equipment:{head:{id:"minecraft:blue_banner",count:1}}}
+execute if entity @s[tag=flag] run data merge entity @s[tag=redflag] {equipment:{head:{id:"minecraft:red_banner",count:1}}}
 
 execute unless score .cutscene_running .data matches 1 as @s[tag=flag,tag=!flag2,tag=redflag,tag=!scored,scores={respawn=1..}] run title @a[tag=!lobby] times 2 16 2
 execute unless score .cutscene_running .data matches 1 as @s[tag=flag,tag=!flag2,tag=redflag,tag=!scored,scores={respawn=1..}] run title @a[tag=!lobby] title {"text":"Red Flag Returned","color":"gray","font":"fancy"}
