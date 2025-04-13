@@ -107,7 +107,7 @@ function game:menu/animate_static
 
 #lobby
 tag @a remove lobby
-tag @a[x=245,y=-50,z=-235,distance=..60] add lobby
+tag @a[x=245,y=-50,z=-235,distance=..90] add lobby
 execute as @a[tag=lobby] at @s run function game:player/lobby
 scoreboard players set @a[tag=lobby] invul 40
 #scoreboard players set @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrowReload 32
