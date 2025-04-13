@@ -6,7 +6,7 @@ function game:items/newid
 #> ID + tags
 tag @a remove new_t_owner
 execute at @s run tag @p[tag=turretSpawn,tag=!hasTurret2] add new_t_owner
-execute at @s unless entity @a[tag=new_t_owner] run tag @p[scores={placeTurret=1..},tag=turret_dif,distance=..8] add new_t_owner
+execute at @s unless entity @a[tag=new_t_owner] run tag @p[scores={placeTurret=1..},distance=..8] add new_t_owner
 execute at @s run scoreboard players operation @s ID = @p[tag=new_t_owner] ID
 execute at @s if entity @p[tag=new_t_owner,team=red] run team join red
 execute at @s if entity @p[tag=new_t_owner,team=blue] run team join blue
@@ -37,8 +37,8 @@ execute at @s if block ~ -64 ~ diamond_block run tag @s add cant_place
 
 execute as @s[tag=cant_place] run tag @s add kill
 
-execute as @s[tag=cant_place] run tellraw @p[scores={placeTurret=1..},tag=turret_dif] {"text":"Can't place there!","color":"dark_gray"}
-execute as @s[tag=cant_place] run scoreboard players add @p[scores={placeTurret=1..},tag=turret_dif] drop_turret 1
+execute as @s[tag=cant_place] run tellraw @p[scores={placeTurret=1..}] {"text":"Can't place there!","color":"dark_gray"}
+execute as @s[tag=cant_place] run scoreboard players add @p[scores={placeTurret=1..}] drop_turret 1
 
 tag @s add old2
 

@@ -1,3 +1,5 @@
+# CURRENTLY DISABLED
+
 tag @a remove trap_dif
 tag @a remove wall_dif
 tag @a remove magma_dif

@@ -41,5 +41,41 @@
     },
     "done": true
   },
+  "advancements:general/start": {
+    "criteria": {
+      "tinyt": "2025-04-13 00:00:14 -0600"
+    },
+    "done": true
+  },
+  "advancements:tmi/jug": {
+    "criteria": {
+      "can": "2025-04-13 00:01:01 -0600"
+    },
+    "done": true
+  },
+  "advancements:tmi/blank": {
+    "criteria": {
+      "can": "2025-04-13 00:06:28 -0600"
+    },
+    "done": true
+  },
+  "advancements:general/play_tmi": {
+    "criteria": {
+      "tinyt": "2025-04-13 00:06:28 -0600"
+    },
+    "done": true
+  },
+  "advancements:general/win": {
+    "criteria": {
+      "win": "2025-04-13 00:22:31 -0600"
+    },
+    "done": true
+  },
+  "advancements:general/die10": {
+    "criteria": {
+      "die10": "2025-04-13 00:41:00 -0600"
+    },
+    "done": true
+  },
   "DataVersion": 4325
 }

@@ -284,9 +284,9 @@ execute as @s[scores={killP=1..}] run function game:player/kill_message
 
 execute as @s at @s run function game:player/spawncheck
 
-execute as @s[scores={placeSlime=1..},tag=slime_dif] at @s positioned ^ ^ ^1.6 positioned ~ ~1.6 ~ run function game:player/slime
-execute as @s[scores={placeMagma=1..},tag=magma_dif] at @s positioned ^ ^ ^1.6 positioned ~ ~1.6 ~ run function game:player/magma
-execute as @s[scores={placeCreeper=1..},tag=trap_dif] at @s positioned ^ ^ ^1.6 positioned ~ ~1.6 ~ run function game:player/creeper
+execute as @s[scores={placeSlime=1..}] at @s positioned ^ ^ ^1.6 positioned ~ ~1.6 ~ run function game:player/slime
+execute as @s[scores={placeMagma=1..}] at @s positioned ^ ^ ^1.6 positioned ~ ~1.6 ~ run function game:player/magma
+execute as @s[scores={placeCreeper=1..}] at @s positioned ^ ^ ^1.6 positioned ~ ~1.6 ~ run function game:player/creeper
 
 scoreboard players set @s placeSlime 0
 scoreboard players set @s placeMagma 0

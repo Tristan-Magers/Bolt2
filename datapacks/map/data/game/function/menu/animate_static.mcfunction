@@ -7,8 +7,8 @@ tag @a[x=231,y=-43,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure] add in_elv
 tag @a[x=231,y=-39,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure] add in_elv
 scoreboard players reset @a[tag=!in_elv] .elevator
 scoreboard players add @a[tag=in_elv] .elevator 1
-execute as @a[x=231,y=-43,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run fill 231 -35 -202 232 -38 -200 air
-execute as @a[x=231,y=-43,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run tp @s ~ ~5 ~12
+execute as @a[x=231,y=-43,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run fill 231 -43 -174 232 -46 -172 air
+execute as @a[x=231,y=-43,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run tp @s ~ ~-3 ~40
 
 execute as @a[x=231,y=-39,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run fill 229 -35 -235 230 -38 -237 air
 execute as @a[x=231,y=-39,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure,scores={.elevator=10..}] at @s run tp @s ~-2 ~ ~-23
@@ -26,13 +26,13 @@ execute if score .elv_1_state .elevator matches 2 if score .elv_1_timer .elevato
 
 # Mid enter elevator
 execute if score .elv_4_state .elevator matches 0 run scoreboard players set .elv_4_timer .elevator 0
-execute if score .elv_4_state .elevator matches 0 if entity @a[x=231,y=-39,z=-195,distance=..5,gamemode=adventure] run scoreboard players set .elv_4_state .elevator 1
-execute if score .elv_4_state .elevator matches 1 unless entity @a[x=231,y=-39,z=-195,distance=..5,gamemode=adventure] run scoreboard players set .elv_4_state .elevator 0
-execute if score .elv_4_state .elevator matches 1 unless entity @a[x=231,y=-39,z=-194,dy=2,dx=0.39,dz=-3,gamemode=adventure] run scoreboard players set .elv_4_timer .elevator 0
-execute if score .elv_4_state .elevator matches 1 if entity @a[x=231,y=-39,z=-194,dy=2,dx=0.39,dz=-3,gamemode=adventure] run scoreboard players add .elv_4_timer .elevator 1
+execute if score .elv_4_state .elevator matches 0 if entity @a[x=231,y=-47,z=-167,distance=..5,gamemode=adventure] run scoreboard players set .elv_4_state .elevator 1
+execute if score .elv_4_state .elevator matches 1 unless entity @a[x=231,y=-47,z=-167,distance=..5,gamemode=adventure] run scoreboard players set .elv_4_state .elevator 0
+execute if score .elv_4_state .elevator matches 1 unless entity @a[x=231,y=-47,z=-166,dy=2,dx=0.39,dz=-3,gamemode=adventure] run scoreboard players set .elv_4_timer .elevator 0
+execute if score .elv_4_state .elevator matches 1 if entity @a[x=231,y=-47,z=-166,dy=2,dx=0.39,dz=-3,gamemode=adventure] run scoreboard players add .elv_4_timer .elevator 1
 execute if score .elv_4_state .elevator matches 1 if score .elv_4_timer .elevator matches 10.. run scoreboard players set .elv_4_state .elevator 2
 execute if score .elv_4_state .elevator matches 2 run scoreboard players add .elv_4_timer .elevator 1
-execute if score .elv_4_state .elevator matches 2 if score .elv_4_timer .elevator matches 20.. as @a[x=231,y=-39,z=-194,dy=2,dx=0.39,dz=-3,gamemode=adventure] at @s run tp @s ~ ~ ~-18
+execute if score .elv_4_state .elevator matches 2 if score .elv_4_timer .elevator matches 20.. as @a[x=231,y=-47,z=-166,dy=2,dx=0.39,dz=-3,gamemode=adventure] at @s run tp @s ~ ~8 ~-46
 execute if score .elv_4_state .elevator matches 2 if score .elv_4_timer .elevator matches 20.. run scoreboard players set .elv_4_state .elevator 0
 
 # Top elevator
@@ -44,10 +44,10 @@ execute if score .elv_2_state .elevator matches 1 if score .elv_2_timer .elevato
 
 # Exit Mid elevator
 execute if score .elv_3_state .elevator matches 0 run scoreboard players set .elv_3_timer .elevator 0
-execute if score .elv_3_state .elevator matches 0 if entity @a[x=231,y=-39,z=-200,dy=3,dx=1.00,dz=-3] run scoreboard players set .elv_3_state .elevator 1
+execute if score .elv_3_state .elevator matches 0 if entity @a[x=231,y=-47,z=-172,dy=3,dx=1.00,dz=-3] run scoreboard players set .elv_3_state .elevator 1
 execute if score .elv_3_state .elevator matches 1 run scoreboard players add .elv_3_timer .elevator 1
-execute if score .elv_3_state .elevator matches 1 if score .elv_3_timer .elevator matches 15.. unless entity @a[x=231,y=-39,z=-200,dy=3,dx=1.00,dz=-3] run fill 231 -35 -202 232 -38 -200 minecraft:barrier
-execute if score .elv_3_state .elevator matches 1 if score .elv_3_timer .elevator matches 15.. unless entity @a[x=231,y=-39,z=-200,dy=3,dx=1.00,dz=-3] run scoreboard players set .elv_3_state .elevator 0
+execute if score .elv_3_state .elevator matches 1 if score .elv_3_timer .elevator matches 15.. unless entity @a[x=231,y=-47,z=-172,dy=3,dx=1.00,dz=-3] run fill 231 -43 -174 232 -46 -172 minecraft:barrier
+execute if score .elv_3_state .elevator matches 1 if score .elv_3_timer .elevator matches 15.. unless entity @a[x=231,y=-47,z=-172,dy=3,dx=1.00,dz=-3] run scoreboard players set .elv_3_state .elevator 0
 
 # Elv Doors
 execute unless score .elv_1_state .elevator matches 1 run tag @e[tag=lobby_door_bottom] remove open

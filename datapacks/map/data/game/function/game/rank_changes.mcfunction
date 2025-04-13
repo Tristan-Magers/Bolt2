@@ -235,7 +235,8 @@ execute as @a run scoreboard players operation @s rank_delta = @s t1
 execute as @a run scoreboard players operation @s rank_delta -= @s rank_delta_down
 
 # half win reduction
-execute unless score .point_red .metric = .point_blue .metric if score .point_red .metric < .3 .num if score .point_blue .metric < .3 .num run scoreboard players operation @s rank_delta /= .2 .num
+execute as @a unless score .point_red .metric = .point_blue .metric if score .point_red .metric < .3 .num if score .point_blue .metric < .3 .num run scoreboard players operation @s rank_delta *= .7 .num
+execute as @a unless score .point_red .metric = .point_blue .metric if score .point_red .metric < .3 .num if score .point_blue .metric < .3 .num run scoreboard players operation @s rank_delta /= .10 .num
 
 # change players rank
 scoreboard players set @a[tag=!change_rank] rank_delta 0

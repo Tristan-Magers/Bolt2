@@ -36,12 +36,12 @@ execute as @e[type=pig] on passengers run tag @s add chair_sit
 execute as @a[tag=chair_sit,tag=locked_70] at @s if entity @a[distance=0.1..3,tag=chair_sit] run function game:player/unlock/70
 
 # kill in tournament hall because of vases
-execute positioned 239.69 -38.00 -196.58 as @e[type=snowball,distance=..16] at @s run tellraw @p[scores={snowball=1..},tag=glitter_hold,distance=..16] [{"text":"Can use that here"}]
-execute positioned 239.69 -38.00 -196.58 as @e[type=snowball,distance=..16] run scoreboard players set @a[scores={snowball=1..},distance=..16] snowball 0
-execute positioned 239.69 -38.00 -196.58 run kill @e[type=snowball,distance=..16]
+execute positioned 239.31 -46.00 -169.77 as @e[type=snowball,distance=..30] at @s run tellraw @p[scores={snowball=1..},tag=glitter_hold,distance=..16] [{"text":"Can't use that here"}]
+execute positioned 239.31 -46.00 -169.77 as @e[type=snowball,distance=..30] run scoreboard players set @a[scores={snowball=1..},distance=..16] snowball 0
+execute positioned 239.31 -46.00 -169.77 run kill @e[type=snowball,distance=..30]
 
-#
-function game:player/item_count
+# disabled from when all eggs were panda
+#function game:player/item_count
 
 #
 execute as @e[type=minecraft:zombie_villager] run data merge entity @s {IsBaby:0b}
