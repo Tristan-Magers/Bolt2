@@ -1,0 +1,47 @@
+{
+    "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/trap"
+    },
+    "cases": [
+      {
+        "when": "0",
+        "model": {
+          "type": "model",
+          "model": "item/trap"
+        }
+      },
+      {
+        "when": "1",
+        "model": {
+          "type": "model",
+          "model": "item/wall"
+        }
+      },
+      {
+        "when": "2",
+        "model": {
+          "type": "model",
+          "model": "item/red_spawn"
+        }
+      },
+      {
+        "when": "3",
+        "model": {
+          "type": "model",
+          "model": "item/blue_spawn"
+        }
+      },
+      {
+        "when": "4",
+        "model": {
+          "type": "model",
+          "model": "item/stick"
+        }
+      }
+    ]
+  }
+}

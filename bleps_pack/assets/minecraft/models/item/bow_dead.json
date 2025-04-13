@@ -1,0 +1,2362 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "item/bow"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ -80, 260, -40 ],
+      "translation": [ -1, -2, 2.5 ],
+      "scale": [ 0.9, 0.9, 0.9 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ -80, -280, 40 ],
+      "translation": [ -1, -2, 2.5 ],
+      "scale": [ 0.9, 0.9, 0.9 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, -90, 25 ],
+      "translation": [ 1.13, 3.2, 1.13],
+      "scale": [0.9,0.9,0.9]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 0, 90, -25 ],
+      "translation": [ 1.13, 3.2, 1.13],
+      "scale": [0.9,0.9,0.9]
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pulling": 1
+      },
+      "model": "item/bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65
+      },
+      "model": "item/bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9
+      },
+      "model": "item/bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "item/bow/magic_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 1
+      },
+      "model": "item/bow/magic_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 1
+      },
+      "model": "item/bow/magic_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 1
+      },
+      "model": "item/bow/magic_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2
+      },
+      "model": "item/bow/carrot_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 2
+      },
+      "model": "item/bow/carrot_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 2
+      },
+      "model": "item/bow/carrot_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 2
+      },
+      "model": "item/bow/carrot_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3
+      },
+      "model": "item/bow/pla_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 3
+      },
+      "model": "item/bow/pla_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 3
+      },
+      "model": "item/bow/pla_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 3
+      },
+      "model": "item/bow/pla_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4
+      },
+      "model": "item/bow/coral_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 4
+      },
+      "model": "item/bow/coral_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 4
+      },
+      "model": "item/bow/coral_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 4
+      },
+      "model": "item/bow/coral_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5
+      },
+      "model": "item/bow/rea_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 5
+      },
+      "model": "item/bow/rea_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 5
+      },
+      "model": "item/bow/rea_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 5
+      },
+      "model": "item/bow/rea_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 6
+      },
+      "model": "item/bow/sol_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 6
+      },
+      "model": "item/bow/sol_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 6
+      },
+      "model": "item/bow/sol_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 6
+      },
+      "model": "item/bow/sol_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7
+      },
+      "model": "item/bow/mad_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 7
+      },
+      "model": "item/bow/mad_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 7
+      },
+      "model": "item/bow/mad_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 7
+      },
+      "model": "item/bow/mad_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 8
+      },
+      "model": "item/bow/auric_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 8
+      },
+      "model": "item/bow/auric_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 8
+      },
+      "model": "item/bow/auric_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 8
+      },
+      "model": "item/bow/auric_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 9
+      },
+      "model": "item/bow/overlord_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 9
+      },
+      "model": "item/bow/overlord_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 9
+      },
+      "model": "item/bow/overlord_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 9
+      },
+      "model": "item/bow/overlord_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 10
+      },
+      "model": "item/bow/leaf_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 10
+      },
+      "model": "item/bow/leaf_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 10
+      },
+      "model": "item/bow/leaf_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 10
+      },
+      "model": "item/bow/leaf_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 11
+      },
+      "model": "item/bow/rust_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 11
+      },
+      "model": "item/bow/rust_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 11
+      },
+      "model": "item/bow/rust_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 11
+      },
+      "model": "item/bow/rust_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 12
+      },
+      "model": "item/bow/ech_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 12
+      },
+      "model": "item/bow/ech_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 12
+      },
+      "model": "item/bow/ech_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 12
+      },
+      "model": "item/bow/ech_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 13
+      },
+      "model": "item/bow/gar_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 13
+      },
+      "model": "item/bow/gar_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 13
+      },
+      "model": "item/bow/gar_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 13
+      },
+      "model": "item/bow/gar_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 14
+      },
+      "model": "item/bow/taco_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 14
+      },
+      "model": "item/bow/taco_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 14
+      },
+      "model": "item/bow/taco_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 14
+      },
+      "model": "item/bow/taco_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 15
+      },
+      "model": "item/bow/orb_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 15
+      },
+      "model": "item/bow/orb_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 15
+      },
+      "model": "item/bow/orb_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 15
+      },
+      "model": "item/bow/orb_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 16
+      },
+      "model": "item/bow/jade_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 16
+      },
+      "model": "item/bow/jade_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 16
+      },
+      "model": "item/bow/jade_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 16
+      },
+      "model": "item/bow/jade_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 17
+      },
+      "model": "item/bow/evl_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 17
+      },
+      "model": "item/bow/evl_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 17
+      },
+      "model": "item/bow/evl_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 17
+      },
+      "model": "item/bow/evl_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 18
+      },
+      "model": "item/bow/line_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 18
+      },
+      "model": "item/bow/line_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 18
+      },
+      "model": "item/bow/line_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 18
+      },
+      "model": "item/bow/line_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 19
+      },
+      "model": "item/bow/orbr_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 19
+      },
+      "model": "item/bow/orbr_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 19
+      },
+      "model": "item/bow/orbr_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 19
+      },
+      "model": "item/bow/orbr_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 20
+      },
+      "model": "item/bow/pnk_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 20
+      },
+      "model": "item/bow/pnk_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 20
+      },
+      "model": "item/bow/pnk_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 20
+      },
+      "model": "item/bow/pnk_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 21
+      },
+      "model": "item/bow/pnk_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 21
+      },
+      "model": "item/bow/pnk_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 21
+      },
+      "model": "item/bow/pnk_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 21
+      },
+      "model": "item/bow/pnk_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 22
+      },
+      "model": "item/bow/bronze_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 22
+      },
+      "model": "item/bow/bronze_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 22
+      },
+      "model": "item/bow/bronze_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 22
+      },
+      "model": "item/bow/bronze_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 23
+      },
+      "model": "item/bow/servant_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 23
+      },
+      "model": "item/bow/servant_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 23
+      },
+      "model": "item/bow/servant_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 23
+      },
+      "model": "item/bow/servant_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 24
+      },
+      "model": "item/bow/lock_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 24
+      },
+      "model": "item/bow/lock_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 24
+      },
+      "model": "item/bow/lock_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 24
+      },
+      "model": "item/bow/lock_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 25
+      },
+      "model": "item/bow/magic2_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 25
+      },
+      "model": "item/bow/magic2_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 25
+      },
+      "model": "item/bow/magic2_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 25
+      },
+      "model": "item/bow/magic2_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 26
+      },
+      "model": "item/bow/carrotr_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 26
+      },
+      "model": "item/bow/carrotr_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 26
+      },
+      "model": "item/bow/carrotr_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 26
+      },
+      "model": "item/bow/carrotr_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 27
+      },
+      "model": "item/bow/magnet_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 27
+      },
+      "model": "item/bow/magnet_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 27
+      },
+      "model": "item/bow/magnet_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 27
+      },
+      "model": "item/bow/magnet_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 28
+      },
+      "model": "item/bow/jader_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 28
+      },
+      "model": "item/bow/jader_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 28
+      },
+      "model": "item/bow/jader_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 28
+      },
+      "model": "item/bow/jader_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 29
+      },
+      "model": "item/bow/vio_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 29
+      },
+      "model": "item/bow/vio_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 29
+      },
+      "model": "item/bow/vio_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 29
+      },
+      "model": "item/bow/vio_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 30
+      },
+      "model": "item/bow/lunar_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 30
+      },
+      "model": "item/bow/lunar_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 30
+      },
+      "model": "item/bow/lunar_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 30
+      },
+      "model": "item/bow/lunar_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 31
+      },
+      "model": "item/bow/bow_idk"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 31
+      },
+      "model": "item/bow/bow_idk_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 31
+      },
+      "model": "item/bow/bow_idk_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 31
+      },
+      "model": "item/bow/bow_idk_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 32
+      },
+      "model": "item/bow/bow_nes_overworld"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 32
+      },
+      "model": "item/bow/bow_nes_overworld_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 32
+      },
+      "model": "item/bow/bow_nes_overworld_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 32
+      },
+      "model": "item/bow/bow_nes_overworld_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 33
+      },
+      "model": "item/bow/bow_nes_underground"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 33
+      },
+      "model": "item/bow/bow_nes_underground_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 33
+      },
+      "model": "item/bow/bow_nes_underground_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 33
+      },
+      "model": "item/bow/bow_nes_underground_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 34
+      },
+      "model": "item/bow/bow_pico"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 34
+      },
+      "model": "item/bow/bow_pico_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 34
+      },
+      "model": "item/bow/bow_pico_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 34
+      },
+      "model": "item/bow/bow_pico_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 35
+      },
+      "model": "item/bow/empress_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 35
+      },
+      "model": "item/bow/empress_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 35
+      },
+      "model": "item/bow/empress_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 35
+      },
+      "model": "item/bow/empress_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 36
+      },
+      "model": "item/bow/life_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 36
+      },
+      "model": "item/bow/life_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 36
+      },
+      "model": "item/bow/life_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 36
+      },
+      "model": "item/bow/life_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 37
+      },
+      "model": "item/bow/magnetr_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 37
+      },
+      "model": "item/bow/magnetr_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 37
+      },
+      "model": "item/bow/magnetr_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 37
+      },
+      "model": "item/bow/magnetr_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 38
+      },
+      "model": "item/bow/purp_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 38
+      },
+      "model": "item/bow/purp_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 38
+      },
+      "model": "item/bow/purp_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 38
+      },
+      "model": "item/bow/purp_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 39
+      },
+      "model": "item/bow/gho_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 39
+      },
+      "model": "item/bow/gho_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 39
+      },
+      "model": "item/bow/gho_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 39
+      },
+      "model": "item/bow/gho_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 40
+      },
+      "model": "item/bow/ass_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 40
+      },
+      "model": "item/bow/ass_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 40
+      },
+      "model": "item/bow/ass_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 40
+      },
+      "model": "item/bow/ass_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 41
+      },
+      "model": "item/bow/tra_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 41
+      },
+      "model": "item/bow/tra_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 41
+      },
+      "model": "item/bow/tra_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 41
+      },
+      "model": "item/bow/tra_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 42
+      },
+      "model": "item/bow/wizf_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 42
+      },
+      "model": "item/bow/wizf_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 42
+      },
+      "model": "item/bow/wizf_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 42
+      },
+      "model": "item/bow/wizf_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 43
+      },
+      "model": "item/bow/wizp_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 43
+      },
+      "model": "item/bow/wizp_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 43
+      },
+      "model": "item/bow/wizp_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 43
+      },
+      "model": "item/bow/wizp_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 44
+      },
+      "model": "item/bow/wizt_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 44
+      },
+      "model": "item/bow/wizt_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 44
+      },
+      "model": "item/bow/wizt_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 44
+      },
+      "model": "item/bow/wizt_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 45
+      },
+      "model": "item/bow/sha_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 45
+      },
+      "model": "item/bow/sha_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 45
+      },
+      "model": "item/bow/sha_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 45
+      },
+      "model": "item/bow/sha_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 46
+      },
+      "model": "item/bow/bow_error"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 46
+      },
+      "model": "item/bow/bow_error_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 46
+      },
+      "model": "item/bow/bow_error_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 46
+      },
+      "model": "item/bow/bow_error_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 47
+      },
+      "model": "item/bow/ggar_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 47
+      },
+      "model": "item/bow/ggar_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 47
+      },
+      "model": "item/bow/ggar_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 47
+      },
+      "model": "item/bow/ggar_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 48
+      },
+      "model": "item/bow/peno_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 48
+      },
+      "model": "item/bow/peno_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 48
+      },
+      "model": "item/bow/peno_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 48
+      },
+      "model": "item/bow/peno_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 49
+      },
+      "model": "item/bow/pnkr_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 49
+      },
+      "model": "item/bow/pnkr_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 49
+      },
+      "model": "item/bow/pnkr_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 49
+      },
+      "model": "item/bow/pnkr_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 50
+      },
+      "model": "item/bow/bow_nes_underwater"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 50
+      },
+      "model": "item/bow/bow_nes_underwater_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 50
+      },
+      "model": "item/bow/bow_nes_underwater_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 50
+      },
+      "model": "item/bow/bow_nes_underwater_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 51
+      },
+      "model": "item/bow/lunarr_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 51
+      },
+      "model": "item/bow/lunarr_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 51
+      },
+      "model": "item/bow/lunarr_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 51
+      },
+      "model": "item/bow/lunarr_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 52
+      },
+      "model": "item/bow/liner_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 52
+      },
+      "model": "item/bow/liner_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 52
+      },
+      "model": "item/bow/liner_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 52
+      },
+      "model": "item/bow/liner_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 53
+      },
+      "model": "item/bow/empressr_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 53
+      },
+      "model": "item/bow/empressr_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 53
+      },
+      "model": "item/bow/empressr_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 53
+      },
+      "model": "item/bow/empressr_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 54
+      },
+      "model": "item/bow/bow_crossbow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 54
+      },
+      "model": "item/bow/bow_crossbow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 54
+      },
+      "model": "item/bow/bow_crossbow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 54
+      },
+      "model": "item/bow/bow_crossbow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 55
+      },
+      "model": "item/bow/bow_mspaint"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 55
+      },
+      "model": "item/bow/bow_mspaint_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 55
+      },
+      "model": "item/bow/bow_mspaint_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 55
+      },
+      "model": "item/bow/bow_mspaint_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 56
+      },
+      "model": "item/bow/bow_stick"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 56
+      },
+      "model": "item/bow/bow_stick_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 56
+      },
+      "model": "item/bow/bow_stick_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 56
+      },
+      "model": "item/bow/bow_stick_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 57
+      },
+      "model": "item/bow/netherite_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 57
+      },
+      "model": "item/bow/netherite_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 57
+      },
+      "model": "item/bow/netherite_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 57
+      },
+      "model": "item/bow/netherite_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 58
+      },
+      "model": "item/bow/midas_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 58
+      },
+      "model": "item/bow/midas_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.2,
+        "custom_model_data": 58
+      },
+      "model": "item/bow/midas_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 58
+      },
+      "model": "item/bow/midas_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 58
+      },
+      "model": "item/bow/midas_bow_pulling_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 59
+      },
+      "model": "item/bow/bow_ice"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 59
+      },
+      "model": "item/bow/bow_ice_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 59
+      },
+      "model": "item/bow/bow_ice_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 59
+      },
+      "model": "item/bow/bow_ice_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 60
+      },
+      "model": "item/bow/mush_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 60
+      },
+      "model": "item/bow/mush_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 60
+      },
+      "model": "item/bow/mush_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 60
+      },
+      "model": "item/bow/mush_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 61
+      },
+      "model": "item/bow/cloud_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 61
+      },
+      "model": "item/bow/cloud_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 61
+      },
+      "model": "item/bow/cloud_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 61
+      },
+      "model": "item/bow/cloud_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 62
+      },
+      "model": "item/bow/jade1_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 62
+      },
+      "model": "item/bow/jade1_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 62
+      },
+      "model": "item/bow/jade1_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 62
+      },
+      "model": "item/bow/jade1_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 63
+      },
+      "model": "item/bow/rail_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 63
+      },
+      "model": "item/bow/rail_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 63
+      },
+      "model": "item/bow/rail_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 63
+      },
+      "model": "item/bow/rail_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 64
+      },
+      "model": "item/bow/lq_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 64
+      },
+      "model": "item/bow/lq_bow_pulling"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 65
+      },
+      "model": "item/bow/liner1_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 65
+      },
+      "model": "item/bow/liner1_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 65
+      },
+      "model": "item/bow/liner1_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 65
+      },
+      "model": "item/bow/liner1_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 66
+      },
+      "model": "item/bow/angler_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 66
+      },
+      "model": "item/bow/angler_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 66
+      },
+      "model": "item/bow/angler_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 66
+      },
+      "model": "item/bow/angler_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 67
+      },
+      "model": "item/bow/energy_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 67
+      },
+      "model": "item/bow/energy_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 67
+      },
+      "model": "item/bow/energy_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 67
+      },
+      "model": "item/bow/energy_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 68
+      },
+      "model": "item/bow/evlr_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 68
+      },
+      "model": "item/bow/evlr_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 68
+      },
+      "model": "item/bow/evlr_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 68
+      },
+      "model": "item/bow/evlr_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 69
+      },
+      "model": "item/bow/goo_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 69
+      },
+      "model": "item/bow/goo_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 69
+      },
+      "model": "item/bow/goo_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 69
+      },
+      "model": "item/bow/goo_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 70
+      },
+      "model": "item/bow/lifer_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 70
+      },
+      "model": "item/bow/lifer_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 70
+      },
+      "model": "item/bow/lifer_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 70
+      },
+      "model": "item/bow/lifer_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 71
+      },
+      "model": "item/bow/mech_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 71
+      },
+      "model": "item/bow/mech_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 71
+      },
+      "model": "item/bow/mech_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 71
+      },
+      "model": "item/bow/mech_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 72
+      },
+      "model": "item/bow/mini_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 72
+      },
+      "model": "item/bow/mini_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 72
+      },
+      "model": "item/bow/mini_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 72
+      },
+      "model": "item/bow/mini_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 73
+      },
+      "model": "item/bow/orbr1_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 73
+      },
+      "model": "item/bow/orbr1_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 73
+      },
+      "model": "item/bow/orbr1_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 73
+      },
+      "model": "item/bow/orbr1_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 74
+      },
+      "model": "item/bow/plar_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 74
+      },
+      "model": "item/bow/plar_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 74
+      },
+      "model": "item/bow/plar_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 74
+      },
+      "model": "item/bow/plar_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 75
+      },
+      "model": "item/bow/silver_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 75
+      },
+      "model": "item/bow/silver_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 75
+      },
+      "model": "item/bow/silver_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 75
+      },
+      "model": "item/bow/silver_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 76
+      },
+      "model": "item/bow/unstable_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 76
+      },
+      "model": "item/bow/unstable_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 76
+      },
+      "model": "item/bow/unstable_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 76
+      },
+      "model": "item/bow/unstable_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 77
+      },
+      "model": "item/bow/ironbar_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 77
+      },
+      "model": "item/bow/ironbar_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 77
+      },
+      "model": "item/bow/ironbar_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 77
+      },
+      "model": "item/bow/ironbar_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 78
+      },
+      "model": "item/bow/bow_3d_noarrow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 78
+      },
+      "model": "item/bow/bow_3d_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 78
+      },
+      "model": "item/bow/bow_3d_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 78
+      },
+      "model": "item/bow/bow_3d_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 79
+      },
+      "model": "item/bow/micro_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 79
+      },
+      "model": "item/bow/micro_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 79
+      },
+      "model": "item/bow/micro_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 79
+      },
+      "model": "item/bow/micro_bow_pulling_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 80
+      },
+      "model": "item/bow/firstfirst_bow"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "custom_model_data": 80
+      },
+      "model": "item/bow/firstfirst_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.65,
+        "custom_model_data": 80
+      },
+      "model": "item/bow/firstfirst_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "pulling": 1,
+        "pull": 0.9,
+        "custom_model_data": 80
+      },
+      "model": "item/bow/firstfirst_bow_pulling_2"
+    }
+  ]
+}

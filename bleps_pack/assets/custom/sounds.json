@@ -1,0 +1,10 @@
+{
+  "shoot_arrow": {
+    "sounds": [
+      "custom:shoot_arrow"]
+  },
+  "gd_shoot": {
+    "sounds": [
+      "custom:gd_shoot"]
+  }
+}

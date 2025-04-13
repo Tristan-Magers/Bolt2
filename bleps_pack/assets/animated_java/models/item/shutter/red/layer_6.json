@@ -1,0 +1,7 @@
+{
+	"parent": "animated_java:item/shutter/layer_6",
+	"textures": {
+		"0": "minecraft:block/red_stained_glass_3x3",
+		"1": "minecraft:block/red_stained_glass_pane_top_3x3"
+	}
+}

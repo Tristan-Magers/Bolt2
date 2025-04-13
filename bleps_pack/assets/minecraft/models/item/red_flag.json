@@ -1,0 +1,6 @@
+{
+	"parent": "item/banner_parent",
+	"textures": {
+		"colour": "item/red_banner"
+	}
+}

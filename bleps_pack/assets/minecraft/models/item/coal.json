@@ -1,0 +1,11 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "item/coal"
+    },
+	"display": {
+		"head": {
+			"translation": [4.5, 0, 0]
+		}
+	}
+}

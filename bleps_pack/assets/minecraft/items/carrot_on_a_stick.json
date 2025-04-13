@@ -1,0 +1,54 @@
+{
+    "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/carrot_on_a_stick"
+    },
+    "cases": [
+      {
+        "when": "1",
+        "model": {
+          "type": "model",
+          "model": "item/purple_flag"
+        }
+      },
+      {
+        "when": "2",
+        "model": {
+          "type": "model",
+          "model": "item/red_flag_lobby"
+        }
+      },
+      {
+        "when": "3",
+        "model": {
+          "type": "model",
+          "model": "item/blue_flag_lobby"
+        }
+      },
+      {
+        "when": "4",
+        "model": {
+          "type": "model",
+          "model": "item/grey_flag"
+        }
+      },
+      {
+        "when": "music_on",
+        "model": {
+          "type": "model",
+          "model": "item/music_on"
+        }
+      },
+      {
+        "when": "music_off",
+        "model": {
+          "type": "model",
+          "model": "item/music_off"
+        }
+      }
+    ]
+  }
+}

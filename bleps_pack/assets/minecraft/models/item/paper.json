@@ -1,0 +1,115 @@
+{
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "item/paper"
+    },
+    "overrides": [
+      {
+        "predicate": {
+          "custom_model_data": 200
+        },
+        "model": "item/turret_stand_red"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 201
+        },
+        "model": "item/turret_crossbow_red"
+      },      {
+        "predicate": {
+          "custom_model_data": 210
+        },
+        "model": "item/turret_stand_blue"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 211
+        },
+        "model": "item/turret_crossbow_blue"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 300
+        },
+        "model": "item/stage_light"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 301
+        },
+        "model": "item/light_beam"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1000
+        },
+        "model": "item/skin/chainsaw"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1001
+        },
+        "model": "item/skin/goomb"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1002
+        },
+        "model": "item/skin/slabfred"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1003
+        },
+        "model": "item/skin/miffenkop"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1004
+        },
+        "model": "item/skin/aiden"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1005
+        },
+        "model": "item/skin/derpine"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1006
+        },
+        "model": "item/skin/tanner"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1007
+        },
+        "model": "item/skin/mrmelon"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1008
+        },
+        "model": "item/skin/jc"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1009
+        },
+        "model": "item/skin/pheonix"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1010
+        },
+        "model": "item/skin/shuba"
+      },
+      {
+        "predicate": {
+          "custom_model_data": 1011
+        },
+        "model": "item/skin/phoe"
+      }
+    ]
+  }

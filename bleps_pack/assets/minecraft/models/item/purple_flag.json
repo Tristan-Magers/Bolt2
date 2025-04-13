@@ -1,0 +1,25 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "item/purple_flag"
+    },
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-173.66, 20.99, -139.99],
+			"translation": [-1, 5.25, 2],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [4.2, -16.23, -32.24],
+			"translation": [-2, 6, 1.75]
+		},
+		"firstperson_righthand": {
+			"rotation": [117, 83, -100],
+			"translation": [4.5, 2.5, -3.75]
+		},
+		"firstperson_lefthand": {
+			"rotation": [117, -83, 100],
+			"translation": [4.5, 2.5, -3.75]
+		}
+	}
+}
