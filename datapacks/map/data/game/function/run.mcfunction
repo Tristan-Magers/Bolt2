@@ -429,7 +429,7 @@ clear @a[scores={acid_count=5..}] lingering_potion 1
 execute if score .map .data = .6 .num run function game:map/valley/run
 
 # Discord tellraw
-tellraw @a[tag=discord_text] {"bold":true,"clickEvent":{"action":"open_url","value":"https://discord.gg/6xatFYH"},"color":"gray","hoverEvent":{"action":"show_text","value":[{"text":"Free cookie"}]},"text":"Click this for our discord!"}
+tellraw @a[tag=discord_text] {"bold":true,"click_event":{"action":"open_url","url":"https://discord.gg/6xatFYH"},"color":"gray","hover_event":{"action":"show_text","value":[{"text":"Free cookie"}]},"text":"Click this for our discord!"}
 tag @a[tag=discord_text] remove discord_text
 
 # Coves VFX

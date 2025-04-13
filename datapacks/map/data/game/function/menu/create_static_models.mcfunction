@@ -46,11 +46,11 @@ summon interaction 229.0 -38.0 -241.0 {width:2.5f,height:3.5f,Tags:["vending","g
 
 #
 tag @e[type=pig] add kill
-summon minecraft:pig 240.5 -50.10 -253.3 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,Saddle:1b,Tags:["chair"],attributes:[{id:"minecraft:follow_range",base:0},{id:"minecraft:movement_speed",base:0}]}
-summon minecraft:pig 239.5 -50.10 -253.3 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,Saddle:1b,Tags:["chair"],attributes:[{id:"minecraft:follow_range",base:0},{id:"minecraft:movement_speed",base:0}]}
+summon minecraft:pig 240.5 -50.10 -253.3 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,equipment:{saddle:{id:"minecraft:saddle",count:1}},Tags:["chair"],attributes:[{id:"minecraft:follow_range",base:0},{id:"minecraft:movement_speed",base:0}]}
+summon minecraft:pig 239.5 -50.10 -253.3 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,equipment:{saddle:{id:"minecraft:saddle",count:1}},Tags:["chair"],attributes:[{id:"minecraft:follow_range",base:0},{id:"minecraft:movement_speed",base:0}]}
 
-summon minecraft:pig 249.5 -50.10 -212.7 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,Saddle:1b,Tags:["chair"],Rotation:[180F,0F],attributes:[{id:"minecraft:follow_range",base:0},{id:"minecraft:movement_speed",base:0}]}
-summon minecraft:pig 248.5 -50.10 -212.7 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,Saddle:1b,Tags:["chair"],Rotation:[180F,0F],attributes:[{id:"minecraft:follow_range",base:0},{id:"minecraft:movement_speed",base:0}]}
+summon minecraft:pig 249.5 -50.10 -212.7 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,equipment:{saddle:{id:"minecraft:saddle",count:1}},Tags:["chair"],Rotation:[180F,0F],attributes:[{id:"minecraft:follow_range",base:0},{id:"minecraft:movement_speed",base:0}]}
+summon minecraft:pig 248.5 -50.10 -212.7 {NoGravity:1b,Silent:1b,Invulnerable:1b,NoAI:1b,equipment:{saddle:{id:"minecraft:saddle",count:1}},Tags:["chair"],Rotation:[180F,0F],attributes:[{id:"minecraft:follow_range",base:0},{id:"minecraft:movement_speed",base:0}]}
 
 team join noCol @e[type=pig,tag=chair]
 
