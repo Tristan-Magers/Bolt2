@@ -29,7 +29,7 @@ Lobby
 - Tournament hall grand opening
 
 Flag
-- Everytime a flag is dropped the time to despawn is 0.25s faster down to (2s) [Note: starts at 4s]
+- Every time a flag is dropped the time to despawn is 0.25s faster down to (2s) [Note: starts at 4s]
     - Resets when returned
 - Flag has 0.1 smaller grab radius (1.8 -> 1.7)
 - Grabbing the flag removes any invulnerability
@@ -39,8 +39,13 @@ Rank
 
 Maps
 - Tiny Town door opens 0.2s faster (1s -> 0.8s)
+- Raised Valley ceiling by 2 in the center and the build height by 1
+- Garden build height raised by 1
 
 Bug Fixes
-- Placables could sometimes be credited to wrong person
+- Shifting while respawning to spawnpoint on a slab could phase you through the slab
+- Placables could sometimes be credited to the wrong person
     - Still possible in rare cases but now vastly less common
     - Still working on that perfect solution
+- You can place items in the back of Garden spawn
+- Patched Garden location where you could place spawn points out of map

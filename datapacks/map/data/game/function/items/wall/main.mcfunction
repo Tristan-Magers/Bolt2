@@ -20,10 +20,10 @@ execute as @s[scores={timer=1}] at @s if block ~ ~ ~ #minecraft:slabs[type=botto
 #height cap
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..50] unless score .map .data = .12 .num unless score .map .data = .15 .num unless score .map .data = .14 .num unless score .map .data = .1 .num unless score .map .data = .13 .num unless score .map .data = .10 .num unless score .map .data = .9 .num unless score .map .data = .6 .num run scoreboard players set @s timer 999
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..48] if score .map .data = .1 .num run scoreboard players set @s timer 999
-execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..41] if score .map .data = .6 .num run scoreboard players set @s timer 999
+execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..40] if score .map .data = .6 .num run scoreboard players set @s timer 999
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..40] if score .map .data = .9 .num run scoreboard players set @s timer 999
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..43] if score .map .data = .10 .num run scoreboard players set @s timer 999
-execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..48] if score .map .data = .12 .num run scoreboard players set @s timer 999
+execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..47] if score .map .data = .12 .num run scoreboard players set @s timer 999
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..33] if score .map .data = .13 .num run scoreboard players set @s timer 999
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..13] if score .map .data = .14 .num run scoreboard players set @s timer 999
 execute as @s at @s positioned ~ 0 ~ if entity @s[distance=..30] if score .map .data = .15 .num run scoreboard players set @s timer 999

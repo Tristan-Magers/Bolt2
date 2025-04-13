@@ -83,5 +83,23 @@
     },
     "done": true
   },
+  "advancements:ctf/height": {
+    "criteria": {
+      "tinyt": "2025-04-13 02:57:27 -0600"
+    },
+    "done": true
+  },
+  "advancements:ctf/wall20": {
+    "criteria": {
+      "tinyt": "2025-04-13 02:57:38 -0600"
+    },
+    "done": true
+  },
+  "advancements:general/play10": {
+    "criteria": {
+      "tinyt": "2025-04-13 03:16:55 -0600"
+    },
+    "done": true
+  },
   "DataVersion": 4325
 }

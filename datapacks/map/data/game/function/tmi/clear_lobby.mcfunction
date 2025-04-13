@@ -11,6 +11,10 @@ clear @s iron_ingot
 clear @s lingering_potion
 clear @s netherite_sword
 clear @s panda_spawn_egg
+clear @s slime_spawn_egg
+clear @s pig_spawn_egg
+clear @s bat_spawn_egg
+clear @s creeper_spawn_egg
 clear @s zombie_villager_spawn_egg
 
 clear @s light_gray_dye
