@@ -1,103 +1,43 @@
 {
   "advancements:root_3": {
     "criteria": {
-      "warrior": "2025-04-12 22:25:56 -0600"
+      "warrior": "2025-04-13 19:06:14 -0600"
     },
     "done": true
   },
   "advancements:root_2": {
     "criteria": {
-      "warrior": "2025-04-12 22:25:56 -0600"
+      "warrior": "2025-04-13 19:06:14 -0600"
     },
     "done": true
   },
   "advancements:root_1": {
     "criteria": {
-      "warrior": "2025-04-12 22:25:56 -0600"
+      "warrior": "2025-04-13 19:06:14 -0600"
     },
     "done": true
   },
   "advancements:root_9": {
     "criteria": {
-      "warrior": "2025-04-12 22:25:56 -0600"
+      "warrior": "2025-04-13 19:06:14 -0600"
     },
     "done": true
   },
   "advancements:root_6": {
     "criteria": {
-      "warrior": "2025-04-12 22:25:56 -0600"
+      "warrior": "2025-04-13 19:06:14 -0600"
     },
     "done": true
   },
   "advancements:root_5": {
     "criteria": {
-      "warrior": "2025-04-12 22:25:56 -0600"
+      "warrior": "2025-04-13 19:06:14 -0600"
     },
     "done": true
   },
   "advancements:root_4": {
     "criteria": {
-      "warrior": "2025-04-12 22:25:56 -0600"
-    },
-    "done": true
-  },
-  "advancements:general/start": {
-    "criteria": {
-      "tinyt": "2025-04-13 00:00:14 -0600"
-    },
-    "done": true
-  },
-  "advancements:tmi/jug": {
-    "criteria": {
-      "can": "2025-04-13 00:01:01 -0600"
-    },
-    "done": true
-  },
-  "advancements:tmi/blank": {
-    "criteria": {
-      "can": "2025-04-13 00:06:28 -0600"
-    },
-    "done": true
-  },
-  "advancements:general/play_tmi": {
-    "criteria": {
-      "tinyt": "2025-04-13 00:06:28 -0600"
-    },
-    "done": true
-  },
-  "advancements:general/win": {
-    "criteria": {
-      "win": "2025-04-13 00:22:31 -0600"
-    },
-    "done": true
-  },
-  "advancements:general/die10": {
-    "criteria": {
-      "die10": "2025-04-13 00:41:00 -0600"
-    },
-    "done": true
-  },
-  "advancements:general/tinyt": {
-    "criteria": {
-      "tinyt": "2025-04-13 02:05:43 -0600"
-    },
-    "done": true
-  },
-  "advancements:ctf/height": {
-    "criteria": {
-      "tinyt": "2025-04-13 02:57:27 -0600"
-    },
-    "done": true
-  },
-  "advancements:ctf/wall20": {
-    "criteria": {
-      "tinyt": "2025-04-13 02:57:38 -0600"
-    },
-    "done": true
-  },
-  "advancements:general/play10": {
-    "criteria": {
-      "tinyt": "2025-04-13 03:16:55 -0600"
+      "warrior": "2025-04-13 19:06:14 -0600"
     },
     "done": true
   },
