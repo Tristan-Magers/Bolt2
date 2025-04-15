@@ -1,6 +1,18 @@
 #elevator
 # states 0 - waiting, 1-open ready to move, 2-waiting to close to move, 3-open waiting for players to leave
 
+# Tounrament Hall
+execute positioned 255 -46 -170 run tag @a[distance=30..] remove tournament_hall
+execute positioned 255 -46 -170 run tag @a[distance=..10.1] add tournament_hall
+
+execute as @a[tag=tournament_hall,tag=!tournament_hall2] run particle minecraft:end_rod 254.0 -44.00 -163.5 0.1 1 0.1 0 30 force @s
+execute as @a[tag=tournament_hall,tag=!tournament_hall2] run particle minecraft:end_rod 247.0 -44.00 -163.5 0.1 1 0.1 0 30 force @s
+execute as @a[tag=tournament_hall,tag=!tournament_hall2] run particle minecraft:totem_of_undying 250.5 -44.50 -163.5 0 0 0 0.9 100 force @s
+execute as @a[tag=tournament_hall,tag=!tournament_hall2] run playsound minecraft:item.goat_horn.sound.1 master @s ~ ~ ~ 1 1 1
+
+tag @a[tag=!tournament_hall] remove tournament_hall2
+tag @a[tag=tournament_hall] add tournament_hall2
+
 # Transition elevators
 tag @a remove in_elv
 tag @a[x=231,y=-43,z=-211,dy=2,dx=0.4,dz=-3,gamemode=adventure] add in_elv

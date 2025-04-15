@@ -488,6 +488,7 @@ scoreboard players remove @s[scores={boost_time=0..}] boost_time 1
 
 # Advancements
 execute as @s[tag=locked_4,scores={fish_fam=1..},x=241,y=-50,z=-211,distance=..12] run function game:player/unlock/4
+scoreboard players set @s fish_fam 0
 
 execute as @s[tag=locked_2,scores={out_of_spawn_time=1..},tag=hasflag,tag=playing] if score .tmi .data matches 0 run function game:player/unlock/2
 execute as @s[tag=locked_68,scores={stats_captures=1..},tag=playing] if score .mode .data matches 1 if score .tmi .data matches 0 if score .testing_mode .data matches 0 run function game:player/unlock/68
