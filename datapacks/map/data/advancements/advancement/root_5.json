@@ -16,7 +16,7 @@
     "show_toast": false,
     "announce_to_chat": false,
     "hidden": true,
-    "background": "minecraft:gui/advancements/backgrounds/adventure"
+    "background": "minecraft:gui/advancements/backgrounds/stone"
   },
   "criteria": {
     "warrior": {
