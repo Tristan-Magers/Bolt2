@@ -1,6 +1,6 @@
 1.0.9
 
-General
+Rank
 - Negative winstreaks deduct less rank (20 -> 15 each)
 - System to limit rank inflation is relaxed more to allow higher rank growth (only 1-3 more or less a game)
 - Ranked ties scramble winstreaks to allow different teams next round
@@ -20,8 +20,32 @@ Known issues
 - Walls can lift objects on nearby walls is weird cases
 - Pushing players in lobby is a issue in high player count lobbies. Considering removing player push entirely in lobby.
 
-1.10.0
+1.0.10
 
-General
-- Flags despawn 0.25s faster (4s -> 3.75)
-- Everytime a flag is dropped the time to despawn is 0.5s faster down to (1.25s)
+Version
+- Updated to Minecraft version 1.21.5
+
+Lobby
+- Tournament hall grand opening
+
+Flag
+- Every time a flag is dropped the time to despawn is 0.25s faster down to (2s) [Note: starts at 4s]
+    - Resets when returned
+- Flag has 0.1 smaller grab radius (1.8 -> 1.7)
+- Grabbing the flag removes any invulnerability
+
+Rank
+- Half loses/wins cause only 70% rank change
+
+Maps
+- Tiny Town door opens 0.2s faster (1s -> 0.8s)
+- Raised Valley ceiling by 2 in the center and the build height by 1
+- Garden build height raised by 1
+
+Bug Fixes
+- Shifting while respawning to spawnpoint on a slab could phase you through the slab
+- Placables could sometimes be credited to the wrong person
+    - Still possible in rare cases but now vastly less common
+    - Still working on that perfect solution
+- You can place items in the back of Garden spawn
+- Patched Garden location where you could place spawn points out of map
