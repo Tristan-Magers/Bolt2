@@ -36,12 +36,12 @@ execute as @e[type=pig] on passengers run tag @s add chair_sit
 execute as @a[tag=chair_sit,tag=locked_70] at @s if entity @a[distance=0.1..3,tag=chair_sit] run function game:player/unlock/70
 
 # kill in tournament hall because of vases
-execute positioned 239.69 -38.00 -196.58 as @e[type=snowball,distance=..16] at @s run tellraw @p[scores={snowball=1..},tag=glitter_hold,distance=..16] [{"text":"Can use that here"}]
-execute positioned 239.69 -38.00 -196.58 as @e[type=snowball,distance=..16] run scoreboard players set @a[scores={snowball=1..},distance=..16] snowball 0
-execute positioned 239.69 -38.00 -196.58 run kill @e[type=snowball,distance=..16]
+execute positioned 239.31 -46.00 -169.77 as @e[type=snowball,distance=..30] at @s run tellraw @p[scores={snowball=1..},tag=glitter_hold,distance=..16] [{"text":"Can't use that here"}]
+execute positioned 239.31 -46.00 -169.77 as @e[type=snowball,distance=..30] run scoreboard players set @a[scores={snowball=1..},distance=..16] snowball 0
+execute positioned 239.31 -46.00 -169.77 run kill @e[type=snowball,distance=..30]
 
-#
-function game:player/item_count
+# disabled from when all eggs were panda
+#function game:player/item_count
 
 #
 execute as @e[type=minecraft:zombie_villager] run data merge entity @s {IsBaby:0b}
@@ -107,7 +107,7 @@ function game:menu/animate_static
 
 #lobby
 tag @a remove lobby
-tag @a[x=245,y=-50,z=-235,distance=..60] add lobby
+tag @a[x=245,y=-50,z=-235,distance=..90] add lobby
 execute as @a[tag=lobby] at @s run function game:player/lobby
 scoreboard players set @a[tag=lobby] invul 40
 #scoreboard players set @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrowReload 32
@@ -331,7 +331,7 @@ execute as @a[scores={track_traps_killed=5..},tag=locked_10] run function game:p
 #crossbow test
 scoreboard players add @a crossbowTime 0
 
-clear @a[scores={crossbowTime=..0}] crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',custom_data={trigger:0b}]
+clear @a[scores={crossbowTime=..0}] crossbow[custom_name={"text":"Crossbow [Active]","italic":false,"color":"gray"},custom_data={trigger:0b}]
 
 execute as @a[tag=playing] if items entity @s weapon.mainhand crossbow[minecraft:charged_projectiles=[{id:"minecraft:arrow",count:1,components:{"minecraft:custom_model_data":{strings:["1"]}}}],custom_data={trigger:1b}] run function game:items/crossbow/activate
 execute as @a[tag=playing] if items entity @s weapon.mainhand crossbow[minecraft:charged_projectiles=[{id:"minecraft:arrow",count:1,components:{"minecraft:custom_model_data":{strings:["2"]}}}],custom_data={trigger:1b}] run function game:items/crossbow/activate
@@ -340,7 +340,7 @@ scoreboard players add @a[scores={crossbowReload=1..}] crossbowReload 1
 scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1
 execute as @a[scores={crossbowReload=2..}] if items entity @s weapon.mainhand crossbow run tag @s add reloadCross
 execute as @a[scores={crossbowReload=2..}] if items entity @s weapon.mainhand crossbow[charged_projectiles=[{id:"minecraft:arrow",count:1}]] run tag @s remove reloadCross
-execute as @a[tag=reloadCross] if items entity @s weapon.mainhand crossbow[custom_data={trigger:0b}] run item replace entity @s weapon.mainhand with crossbow[custom_name='{"text":"Crossbow [Active]","italic":false,"color":"gray"}',unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}],custom_data={trigger:0b}] 1
+execute as @a[tag=reloadCross] if items entity @s weapon.mainhand crossbow[custom_data={trigger:0b}] run item replace entity @s weapon.mainhand with crossbow[custom_name={"text":"Crossbow [Active]","italic":false,"color":"gray"},unbreakable={show_in_tooltip:false},charged_projectiles=[{id:"minecraft:arrow",count:1}],custom_data={trigger:0b}] 1
 scoreboard players set @a[tag=reloadCross] crossbowReload 0
 
 tag @a remove reloadCross
@@ -429,7 +429,7 @@ clear @a[scores={acid_count=5..}] lingering_potion 1
 execute if score .map .data = .6 .num run function game:map/valley/run
 
 # Discord tellraw
-tellraw @a[tag=discord_text] {"bold":true,"clickEvent":{"action":"open_url","value":"https://discord.gg/6xatFYH"},"color":"gray","hoverEvent":{"action":"show_text","value":[{"text":"Free cookie"}]},"text":"Click this for our discord!"}
+tellraw @a[tag=discord_text] {"bold":true,"click_event":{"action":"open_url","url":"https://discord.gg/6xatFYH"},"color":"gray","hover_event":{"action":"show_text","value":[{"text":"Free cookie"}]},"text":"Click this for our discord!"}
 tag @a[tag=discord_text] remove discord_text
 
 # Coves VFX

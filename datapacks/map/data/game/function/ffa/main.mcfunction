@@ -36,7 +36,7 @@
 
 tag @a remove executioner
 tag @a remove turretDead
-tag @a[scores={placeTurret=1..},tag=turret_dif] add turretSpawn
+tag @a[scores={placeTurret=1..}] add turretSpawn
 execute as @e[type=pig,tag=!turret,tag=!chair] at @s run function game:ffa/turret/spawn
 execute as @e[tag=turret,scores={turretCooldown=1}] at @s run data remove entity @e[type=interaction,tag=turretPunch,sort=nearest,limit=1] attack 
 scoreboard players remove @e[tag=turret,scores={turretCooldown=1..}] turretCooldown 1

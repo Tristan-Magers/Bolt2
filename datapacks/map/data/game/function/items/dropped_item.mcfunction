@@ -1,5 +1,5 @@
-execute as @s[nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["0"]}}}}] at @s as @p[tag=trap_dif] run scoreboard players operation @s drop_creeper = @s drop_egg_generic
-execute as @s[nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["1"]}}}}] at @s as @p[tag=wall_dif] run scoreboard players operation @s drop_silver = @s drop_egg_generic
-execute as @s[nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["2"]}}}}] at @s as @p[tag=magma_dif] run scoreboard players operation @s drop_magma = @s drop_egg_generic
-execute as @s[nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["3"]}}}}] at @s as @p[tag=slime_dif] run scoreboard players operation @s drop_slime = @s drop_egg_generic
-execute as @s[nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["4"]}}}}] at @s as @p[tag=turret_dif] run scoreboard players operation @s drop_turret = @s drop_egg_generic
+#execute as @s[nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["0"]}}}}] at @s as @p[tag=trap_dif] run scoreboard players operation @s drop_creeper = @s drop_egg_generic
+#execute as @s[nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["1"]}}}}] at @s as @p[tag=wall_dif] run scoreboard players operation @s drop_silver = @s drop_egg_generic
+#execute as @s[nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["2"]}}}}] at @s as @p[tag=magma_dif] run scoreboard players operation @s drop_magma = @s drop_egg_generic
+#execute as @s[nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["3"]}}}}] at @s as @p[tag=slime_dif] run scoreboard players operation @s drop_slime = @s drop_egg_generic
+#execute as @s[nbt={Item:{id:"minecraft:panda_spawn_egg",components:{"minecraft:custom_model_data":{strings:["4"]}}}}] at @s as @p[tag=turret_dif] run scoreboard players operation @s drop_turret = @s drop_egg_generic

@@ -1,4 +1,19 @@
 #
+scoreboard objectives remove click
+scoreboard objectives remove useMap
+scoreboard objectives remove placeTurret
+scoreboard objectives remove placeCreeper
+scoreboard objectives remove placeSlime
+scoreboard objectives remove placeMagma
+scoreboard objectives remove snowball
+scoreboard objectives remove snowball2
+
+scoreboard objectives remove place_creeper_temp
+scoreboard objectives remove place_bat_temp
+scoreboard objectives remove place_slime_temp
+scoreboard objectives remove place_magmac_temp
+
+#
 forceload add 268 -262 231 -294
 
 #
@@ -65,17 +80,17 @@ scoreboard objectives add leave_potion minecraft.used:minecraft.potion
 
 scoreboard objectives add click minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add useMap minecraft.used:minecraft.map
-scoreboard objectives add placeTurret minecraft.used:minecraft.panda_spawn_egg
-scoreboard objectives add placeCreeper minecraft.used:minecraft.panda_spawn_egg
-scoreboard objectives add placeSlime minecraft.used:minecraft.panda_spawn_egg
-scoreboard objectives add placeMagma minecraft.used:minecraft.panda_spawn_egg
+scoreboard objectives add placeTurret minecraft.used:minecraft.pig_spawn_egg
+scoreboard objectives add placeCreeper minecraft.used:minecraft.creeper_spawn_egg
+scoreboard objectives add placeSlime minecraft.used:minecraft.slime_spawn_egg
+scoreboard objectives add placeMagma minecraft.used:minecraft.magma_cube_spawn_egg
 scoreboard objectives add snowball minecraft.used:minecraft.snowball
 scoreboard objectives add snowball2 minecraft.used:minecraft.snowball
 
-scoreboard objectives add place_creeper_temp minecraft.used:minecraft.panda_spawn_egg
-scoreboard objectives add place_bat_temp minecraft.used:minecraft.panda_spawn_egg
-scoreboard objectives add place_slime_temp minecraft.used:minecraft.panda_spawn_egg
-scoreboard objectives add place_magmac_temp minecraft.used:minecraft.panda_spawn_egg
+scoreboard objectives add place_creeper_temp minecraft.used:minecraft.creeper_spawn_egg
+scoreboard objectives add place_bat_temp minecraft.used:minecraft.bat_spawn_egg
+scoreboard objectives add place_slime_temp minecraft.used:minecraft.slime_spawn_egg
+scoreboard objectives add place_magmac_temp minecraft.used:minecraft.magma_cube_spawn_egg
 
 scoreboard objectives add spawn_zombie_villager minecraft.used:minecraft.zombie_villager_spawn_egg
 

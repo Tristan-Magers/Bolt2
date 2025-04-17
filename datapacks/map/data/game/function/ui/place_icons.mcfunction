@@ -1,5 +1,5 @@
 #
-summon marker ~ ~ ~ {Tags:["ui_icon"],CustomName:'[{"translate":"\\u0001","font":"map"},{"translate":"space.0","font":"space"}]'}
+summon marker ~ ~ ~ {Tags:["ui_icon"],CustomName:[{"translate":"\\u0001","font":"map"},{"translate":"space.0","font":"space"}]}
 
 #
 execute store result score @s icon_y run data get entity @s Pos[0] 222.8

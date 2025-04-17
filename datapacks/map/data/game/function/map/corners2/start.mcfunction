@@ -5,11 +5,11 @@ fill -251 -39 -409 -222 -55 -455 air replace minecraft:emerald_block
 fill -241 -48 -431 -244 -50 -433 minecraft:gravel
 fill -231 -50 -433 -235 -48 -431 gravel
 
-execute if score .mode .data = .1 .num run summon armor_stand -241 -51 -416 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:blue_banner",count:1}],Tags:["blueflag","flag"]}
-execute if score .mode .data = .1 .num run summon armor_stand -241 -51 -448 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,ArmorItems:[{},{},{},{id:"minecraft:red_banner",count:1}],Tags:["redflag","flag"]}
+execute if score .mode .data = .1 .num run summon armor_stand -241 -51 -416 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,equipment:{head:{id:"minecraft:blue_banner",count:1}},Tags:["blueflag","flag"]}
+execute if score .mode .data = .1 .num run summon armor_stand -241 -51 -448 {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,equipment:{head:{id:"minecraft:red_banner",count:1}},Tags:["redflag","flag"]}
 
-data merge block -227 -45 -453 {front_text:{messages:['{"text":" ","color":"black"}','{"text":""}','{"text":""}','{"text":""}']}}
-data merge block -227 -45 -411 {front_text:{messages:['{"text":" ","color":"black"}','{"text":""}','{"text":""}','{"text":""}']}}
+data merge block -227 -45 -453 {front_text:{messages:[{"text":" ","color":"black"},{"text":""},{"text":""},{"text":""}]}}
+data merge block -227 -45 -411 {front_text:{messages:[{"text":" ","color":"black"},{"text":""},{"text":""},{"text":""}]}}
 
 execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -227 -45 -412 {Tags:["gen"]}
 execute if score .tmi .data matches 0 if score .mode .data = .1 .num run summon marker -227 -45 -452 {Rotation:[180F,0F],Tags:["gen"]}

@@ -10,3 +10,5 @@ title @a[tag=!lobby] title {"text":"Red Flag Taken!","color":"red","font":"fancy
 scoreboard players add @p[team=blue,distance=..10,dx=1,dy=1.5,dz=1] stats_attempts 1
 tag @p[team=blue,distance=..10,dx=1,dy=1.5,dz=1] add hasflag
 tag @s remove flag
+
+scoreboard players set .red_flag_drops .data 0

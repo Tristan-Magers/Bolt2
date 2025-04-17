@@ -1,3 +1,3 @@
-give @s egg[custom_name='{"text":"Boost","italic":false,"color":"gray"}',lore=['{"text":"Explode forward","color":"white","italic":false}']] 1
+give @s egg[custom_name={"text":"Boost","italic":false,"color":"gray"},lore=[{"text":"Explode forward","color":"white","italic":false}],tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model","item_name"]}] 1
 
 scoreboard players remove @s drop_egg 1
