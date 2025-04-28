@@ -17,5 +17,5 @@ execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscen
 #execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.6 from block 235 -49 -224 container.15
 #execute if score .tmi .data matches 1 run item replace entity @s[scores={cutscene_time=0,cutscene=1}] hotbar.7 from block 235 -49 -224 container.16
 
-execute if entity @s[scores={cutscene_time=0,cutscene=1},team=red] run execute store result score @s drop_magma run clear @s panda_spawn_egg[custom_model_data={strings:["3"]}]
+execute if entity @s[scores={cutscene_time=0,cutscene=1},team=red] run execute store result score @s drop_magma run clear @s slime_spawn_egg[custom_model_data={strings:["3"]}]
 execute if entity @s[scores={cutscene_time=0,cutscene=1,drop_magma=1..},team=red] run function game:player/give/red_spawn

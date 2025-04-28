@@ -23,7 +23,7 @@ execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .
 execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -242 air[custom_data={drop_contents:1b}]
 execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -244 air[custom_data={drop_contents:1b}]
 
-execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg[custom_model_data={strings:["3"]}]
+execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute store result score @s[team=red] drop_magma run clear @s slime_spawn_egg[custom_model_data={strings:["3"]}]
 execute as @s[scores={respawn=2}] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute as @s[team=red,scores={drop_magma=1..}] run function game:player/give/red_spawn
 
 execute as @s[scores={respawn=2}] run clear @s potion

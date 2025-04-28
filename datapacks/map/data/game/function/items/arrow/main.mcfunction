@@ -18,8 +18,8 @@ execute as @s[scores={t1=2..10}] at @s positioned ~-.75 ~-.5 ~-.75 run tag @p[dx
 execute as @s[scores={t1=2..10}] at @s positioned ~-.25 ~-.0 ~-.25 run tag @p[dx=0,dy=0,dz=0,tag=enemy_player] add in_hitbox_2
 execute as @s[scores={t1=2..10}] at @s positioned ~-.75 ~-.5 ~-.75 run tag @e[dx=0,dy=0,dz=0,type=zombie_villager] add in_hitbox
 execute as @s[scores={t1=2..10}] at @s positioned ~-.25 ~-.0 ~-.25 run tag @e[dx=0,dy=0,dz=0,type=zombie_villager] add in_hitbox_2
-execute as @s[scores={t1=2..10}] at @s positioned ~-.85 ~-.3 ~-.85 run tag @e[dx=0,dy=0,dz=0,type=creeper] add in_hitbox
-execute as @s[scores={t1=2..10}] at @s positioned ~-.15 ~-.0 ~-.15 run tag @e[dx=0,dy=0,dz=0,type=creeper] add in_hitbox_2
+#execute as @s[scores={t1=2..10}] at @s positioned ~-.85 ~-.3 ~-.85 run tag @e[dx=0,dy=0,dz=0,type=creeper] add in_hitbox
+#execute as @s[scores={t1=2..10}] at @s positioned ~-.15 ~-.0 ~-.15 run tag @e[dx=0,dy=0,dz=0,type=creeper] add in_hitbox_2
 tag @e[tag=!in_hitbox_2] remove in_hitbox
 
 function game:id/player

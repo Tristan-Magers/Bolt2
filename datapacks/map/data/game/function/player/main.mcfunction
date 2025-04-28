@@ -417,7 +417,7 @@ execute if items entity @s[tag=!check_bow_ui] hotbar.8 minecraft:bow run tag @s 
 execute as @s[tag=lobby,tag=check_bow_ui] run function game:bow_ui/main
 
 # CORRECT HAVING WRONG SPAWN POINT IN INVENTORY (for TMI mode)
-execute store result score @s[team=red,tag=playing] drop_magma run clear @s panda_spawn_egg[custom_model_data={strings:["3"]}]
+execute store result score @s[team=red,tag=playing] drop_magma run clear @s slime_spawn_egg[custom_model_data={strings:["3"]}]
 execute as @s[team=red,tag=playing,scores={drop_magma=1..}] run function game:player/give/red_spawn
 
 # CORRECT FOR HAVING TOO MANY PLACEABLES OUT (for balance and lag reasons)
