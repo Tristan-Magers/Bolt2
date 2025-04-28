@@ -24,7 +24,7 @@ execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] run tag @s add 
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -240 air[custom_data={drop_contents:1b}]
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -242 air[custom_data={drop_contents:1b}]
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] if score .mode .data = .1 .num if score .tmi .data matches 1 run loot give @s mine 226 -60 -244 air[custom_data={drop_contents:1b}]
-execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute store result score @s[team=red] drop_magma run clear @s panda_spawn_egg[custom_model_data={strings:["3"]}]
+execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute store result score @s[team=red] drop_magma run clear @s slime_spawn_egg[custom_model_data={strings:["3"]}]
 execute as @s at @s if entity @e[tag=spawn,tag=id_share,limit=1] if score .mode .data = .1 .num if score .tmi .data matches 1 run execute as @s[team=red,scores={drop_magma=1..}] run function game:player/give/red_spawn
 
 execute as @e[tag=spawn,tag=id_share] at @s run particle minecraft:ash ~ ~0.8 ~ 0.12 0.39 0.12 1.1 20 force
