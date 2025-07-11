@@ -49,3 +49,11 @@ Bug Fixes
     - Still working on that perfect solution
 - You can place items in the back of Garden spawn
 - Patched Garden location where you could place spawn points out of map
+
+1.0.11
+
+Version
+- Updated to Minecraft version 1.21.7
+
+Items
+- Reworked how crossbows are triggered after 1.21.3 changes prevented delaying activation

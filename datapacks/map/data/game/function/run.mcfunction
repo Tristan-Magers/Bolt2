@@ -333,8 +333,14 @@ scoreboard players add @a crossbowTime 0
 
 clear @a[scores={crossbowTime=..0}] crossbow[custom_name={"text":"Crossbow [Active]","italic":false,"color":"gray"},custom_data={trigger:0b}]
 
-execute as @a[tag=playing] if items entity @s weapon.mainhand crossbow[minecraft:charged_projectiles=[{id:"minecraft:arrow",count:1,components:{"minecraft:custom_model_data":{strings:["1"]}}}],custom_data={trigger:1b}] run function game:items/crossbow/activate
-execute as @a[tag=playing] if items entity @s weapon.mainhand crossbow[minecraft:charged_projectiles=[{id:"minecraft:arrow",count:1,components:{"minecraft:custom_model_data":{strings:["2"]}}}],custom_data={trigger:1b}] run function game:items/crossbow/activate
+execute as @a[tag=playing] if items entity @s weapon.mainhand crossbow[minecraft:charged_projectiles=[{id:"minecraft:arrow",count:1,components:{"minecraft:custom_model_data":{strings:["1"]}}}],custom_data={trigger:1b}] run function game:items/crossbow/load
+execute as @a[tag=playing] if items entity @s weapon.mainhand crossbow[minecraft:charged_projectiles=[{id:"minecraft:arrow",count:1,components:{"minecraft:custom_model_data":{strings:["2"]}}}],custom_data={trigger:1b}] run function game:items/crossbow/load
+
+execute as @a[tag=playing,tag=crossbow_waiting] unless items entity @s weapon.mainhand crossbow[custom_data={trigger:2b}] run function game:items/crossbow/unload
+execute as @a[tag=playing,tag=crossbow_waiting] unless items entity @s weapon.mainhand crossbow[custom_data={trigger:2b}] run function game:items/crossbow/unload
+
+execute as @a[tag=playing,tag=crossbow_waiting,scores={crossbowUse=1..}] if items entity @s weapon.mainhand crossbow[custom_data={trigger:2b}] run function game:items/crossbow/activate
+execute as @a[tag=playing,tag=crossbow_waiting,scores={crossbowUse=1..}] if items entity @s weapon.mainhand crossbow[custom_data={trigger:2b}] run function game:items/crossbow/activate
 
 scoreboard players add @a[scores={crossbowReload=1..}] crossbowReload 1
 scoreboard players set @a[scores={crossbowUse=1..}] crossbowReload 1

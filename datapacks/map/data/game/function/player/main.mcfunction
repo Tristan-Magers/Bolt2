@@ -145,6 +145,8 @@ attribute @s minecraft:movement_speed base set 0.1
 execute if score .tmi .data matches 1 if score .tmi_fog .data matches 2 run effect give @s[tag=!lobby,gamemode=adventure] blindness 2 0 true
 execute if score .tmi .data matches 1 if score .tmi_fog .data matches 2 run attribute @s[tag=!lobby,gamemode=adventure] minecraft:movement_speed base set 0.14
 
+attribute @s[tag=crossbow_waiting] minecraft:movement_speed base set 0.078
+
 #items
 tag @s remove item_head
 tag @s remove item_chest

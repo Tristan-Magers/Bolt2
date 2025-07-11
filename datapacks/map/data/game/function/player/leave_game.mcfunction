@@ -85,6 +85,8 @@ tag @s remove is_spectating
 
 tag @s remove has_bow_ui
 
+tag @s remove crossbow_waiting
+
 scoreboard players add @s bow_texture 0
 
 scoreboard players set @s crossbowTime 1

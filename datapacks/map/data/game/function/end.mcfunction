@@ -141,6 +141,8 @@ scoreboard players set @a bow_throw 0
 
 scoreboard players set @a crossbowTime 1
 
+tag @a remove crossbow_waiting
+
 #
 effect clear @a blindness
 effect clear @a darkness
