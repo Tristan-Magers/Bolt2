@@ -147,6 +147,9 @@ execute if score .tmi .data matches 1 if score .tmi_fog .data matches 2 run attr
 
 attribute @s[tag=crossbow_waiting] minecraft:movement_speed base set 0.078
 
+attribute @s minecraft:camera_distance base set 0
+attribute @s[tag=lobby] minecraft:camera_distance base set 4
+
 #items
 tag @s remove item_head
 tag @s remove item_chest
