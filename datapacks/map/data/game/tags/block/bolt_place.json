@@ -69,6 +69,7 @@
     "#minecraft:mineable/pickaxe",
     "#minecraft:mineable/shovel",
     "#minecraft:mineable/axe",
-    "#minecraft:mineable/hoe"
+    "#minecraft:mineable/hoe",
+    "minecraft:azalea"
   ]
 }

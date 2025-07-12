@@ -316,7 +316,7 @@ scoreboard objectives add climb minecraft.custom:minecraft.climb_one_cm
 
 scoreboard objectives add drop_egg_generic minecraft.dropped:minecraft.panda_spawn_egg
 scoreboard objectives add drop_snowball minecraft.dropped:minecraft.snowball
-scoreboard objectives add drop_silver minecraft.dropped:minecraft.silverfish_spawn_egg
+scoreboard objectives add drop_silver minecraft.dropped:minecraft.bat_spawn_egg
 scoreboard objectives add drop_slime minecraft.dropped:minecraft.slime_spawn_egg
 scoreboard objectives add drop_magma minecraft.dropped:minecraft.magma_cube_spawn_egg
 scoreboard objectives add drop_creeper minecraft.dropped:minecraft.creeper_spawn_egg

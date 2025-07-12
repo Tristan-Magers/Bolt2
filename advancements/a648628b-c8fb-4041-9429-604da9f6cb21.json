@@ -41,5 +41,35 @@
     },
     "done": true
   },
+  "advancements:general/start": {
+    "criteria": {
+      "tinyt": "2025-07-12 10:04:39 -0600"
+    },
+    "done": true
+  },
+  "advancements:tmi/blank": {
+    "criteria": {
+      "can": "2025-07-12 10:09:03 -0600"
+    },
+    "done": true
+  },
+  "advancements:general/play_tmi": {
+    "criteria": {
+      "tinyt": "2025-07-12 10:09:03 -0600"
+    },
+    "done": true
+  },
+  "advancements:ctf/height": {
+    "criteria": {
+      "tinyt": "2025-07-12 13:48:36 -0600"
+    },
+    "done": true
+  },
+  "advancements:ctf/wall20": {
+    "criteria": {
+      "tinyt": "2025-07-12 13:48:37 -0600"
+    },
+    "done": true
+  },
   "DataVersion": 4438
 }

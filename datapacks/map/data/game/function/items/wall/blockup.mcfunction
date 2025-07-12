@@ -26,6 +26,7 @@ execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace #minecraft:flower
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace brown_mushroom
 execute as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:air replace dead_bush
 execute as @s at @s run fill ~ ~ ~ ~ ~1 ~ minecraft:air replace hanging_roots
+execute as @s at @s run fill ~ ~ ~ ~ ~1 ~ minecraft:air replace nether_sprouts
 
 #
 tag @e remove suff

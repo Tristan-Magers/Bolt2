@@ -43,6 +43,9 @@ setblock -470 -38 219 minecraft:fern
 setblock -469 -38 220 minecraft:short_grass
 setblock -462 -40 216 minecraft:short_grass
 
+setblock -466 -40 206 minecraft:nether_sprouts
+setblock -464 -40 208 minecraft:nether_sprouts
+
 # red base
 setblock -420 -31 203 minecraft:waxed_copper_trapdoor[half=top,open=true,facing=west]
 
