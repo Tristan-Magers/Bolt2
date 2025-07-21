@@ -57,3 +57,24 @@ Version
 
 Items
 - Reworked how crossbows are triggered after 1.21.3 changes prevented delaying activation
+
+1.0.12
+
+General
+- Improved arrow hitboxes
+    - Arrows can no longer hit creepers through blocks they are standing on
+    - Arrows are more consistant at hitting creepers
+    - Arrows are more consistant at hitting minions
+    - Note: these changes mostly undo the changes Mineccraft made by making arrow hitboxes dynamic at the start of shot
+
+Settings
+- Removed "Infected Priority" Settings
+    - This setting was rarely used and was seen as extremely confusing and unnessisary
+    - May come back in a better form
+- Added "CtF One Player Flag Armor" setting
+    - Enables/disables if armor is given on flag return when facing only one player (including 1v1)
+    - Disabled by default
+    - Note: armor seems to be a frustrating mechanic in 1v1 and 1v2, and we want to make it an option to avoid
+
+Infection
+- "Jump" evolution now gives 10% speed buff (stacks with speed)

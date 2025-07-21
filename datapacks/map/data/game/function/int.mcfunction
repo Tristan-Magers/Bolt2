@@ -280,6 +280,10 @@ scoreboard objectives add mot_x dummy
 scoreboard objectives add mot_y dummy
 scoreboard objectives add mot_z dummy
 
+scoreboard objectives add x_pos dummy
+scoreboard objectives add y_pos dummy
+scoreboard objectives add z_pos dummy
+
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
 scoreboard objectives add z dummy

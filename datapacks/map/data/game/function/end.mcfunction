@@ -142,6 +142,7 @@ scoreboard players set @a bow_throw 0
 scoreboard players set @a crossbowTime 1
 
 tag @a remove crossbow_waiting
+tag @a remove zombie_jump
 
 #
 effect clear @a blindness

@@ -10,6 +10,9 @@ scoreboard players set @a delay_boost 0
 scoreboard players set @a delay_reveal 0
 scoreboard players set @a blind -1
 
+tag @a remove zombie_jump
+tag @a remove crossbow_waiting
+
 #
 scoreboard players add @a team_pref 0
 

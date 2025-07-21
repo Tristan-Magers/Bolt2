@@ -187,4 +187,7 @@ scoreboard players add @s track_total_deaths 1
 execute as @s[tag=locked_76,scores={track_total_deaths=10..}] run function game:player/unlock/76
 
 #
+function game:items/crossbow/unload
+
+#
 tag @s remove me

@@ -1,7 +1,7 @@
 #
 
 execute if score .zombie_evolve_type_1 .data = .1 .num run effect give @s jump_boost 120 2 true
-#execute if score .zombie_evolve_type_1 .data = .1 .num run effect give @s speed 120 0 true
+execute if score .zombie_evolve_type_1 .data = .1 .num run tag @s add zombie_jump
 
 execute if score .zombie_evolve_type_0 .data = .1 .num run effect give @s speed 120 1 true
 #execute if score .zombie_evolve_type_0 .data = .1 .num if score .zombie_evolve_type_1 .data = .1 .num run effect give @s speed 120 2 true

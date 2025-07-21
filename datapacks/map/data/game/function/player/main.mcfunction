@@ -146,6 +146,7 @@ execute if score .tmi .data matches 1 if score .tmi_fog .data matches 2 run effe
 execute if score .tmi .data matches 1 if score .tmi_fog .data matches 2 run attribute @s[tag=!lobby,gamemode=adventure] minecraft:movement_speed base set 0.14
 
 attribute @s[tag=crossbow_waiting] minecraft:movement_speed base set 0.078
+attribute @s[tag=zombie_jump,tag=playing] minecraft:movement_speed base set 0.11
 
 attribute @s minecraft:camera_distance base set 0
 attribute @s[tag=lobby] minecraft:camera_distance base set 4

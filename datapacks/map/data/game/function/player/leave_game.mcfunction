@@ -86,6 +86,7 @@ tag @s remove is_spectating
 tag @s remove has_bow_ui
 
 tag @s remove crossbow_waiting
+tag @s remove zombie_jump
 
 scoreboard players add @s bow_texture 0
 

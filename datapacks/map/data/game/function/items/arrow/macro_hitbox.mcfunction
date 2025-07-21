@@ -1,0 +1,1 @@
+$execute as @s positioned $(pos_x) $(pos_y) $(pos_z) run function game:items/arrow/hitbox
