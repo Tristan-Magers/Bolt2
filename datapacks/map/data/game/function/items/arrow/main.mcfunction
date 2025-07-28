@@ -97,6 +97,8 @@ execute if entity @s[scores={distance=12000..},tag=!kill] run function game:item
 #tellraw @p {"score":{"name":"@s","objective":"distance"}}
 
 # run arrow hitbox on self
+function game:id/player
+
 execute as @s[tag=!kill] at @s run function game:items/arrow/hitbox
 
 execute as @s[tag=!shot,tag=!kill] at @s run playsound custom:shoot_arrow master @a[tag=!id_share]
