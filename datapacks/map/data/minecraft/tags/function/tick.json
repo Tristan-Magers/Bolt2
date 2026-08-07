@@ -1,6 +1,7 @@
 {
 	"values": [
 		"game:main",
+		"bcm:tick",
 		"animated_java:tick"
 	]
 }

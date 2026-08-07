@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "block/chiseled_stone_bricks",
+		"1": "item/chiseled_stone_bricks",
 		"2": "item/crossbow_firework_blue",
 		"particle": "item/crossbow_firework_blue"
 	},

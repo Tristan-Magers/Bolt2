@@ -1,0 +1,8 @@
+{
+  "values":[
+    "#item_structures:nbt_always_trusted",
+    "minecraft:command_block",
+    "minecraft:chain_command_block",
+    "minecraft:repeating_command_block"
+  ]
+}

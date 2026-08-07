@@ -1,0 +1,1 @@
+$rotate @s $(yaw) $(pitch)

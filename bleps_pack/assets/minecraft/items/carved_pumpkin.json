@@ -4,7 +4,7 @@
   "property": "custom_model_data",
   "fallback": {
     "type": "model",
-    "model": "block/yellow_stained_glass"
+    "model": "item/coal"
   },
   "cases": [
     {
@@ -26,13 +26,6 @@
       "model": {
         "type": "model",
         "model": "item/chainmail_helmet"
-      }
-    },
-    {
-      "when": "4",
-      "model": {
-        "type": "model",
-        "model": "item/banner_parent"
       }
     }
   ]

@@ -1,0 +1,1 @@
+$execute if entity @s[dx=$(x),dy=-$(y),dz=$(z)] at @s run fill ~-1 -60 ~-1 ~1 -60 ~1 redstone_block strict

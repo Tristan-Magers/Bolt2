@@ -47,11 +47,14 @@ execute if entity @s[x=262.5,y=-41.5,z=-221.5,dx=2,dy=3,dz=2] run scoreboard pla
 execute if entity @s[x=259.5,y=-41.5,z=-218.5,dx=2,dy=3,dz=2,scores={timer=..160}] as @e[type=giant,tag=10] run function game:menu/p_display/dead_head_start
 execute if entity @s[x=259.5,y=-41.5,z=-218.5,dx=2,dy=3,dz=2] run scoreboard players set @s timer 1000
 
-execute if entity @s[x=264.9,y=-53,z=-248.0,dx=2,dy=2,dz=2,scores={timer=..160}] run function game:menu/map_prev
+execute if entity @s[x=264.9,y=-53,z=-248.0,dx=2,dy=2,dz=2,scores={timer=..160}] run function game:menu/map_prev_button
 execute if entity @s[x=264.9,y=-53,z=-248.0,dx=2,dy=2,dz=2] run scoreboard players set @s timer 1000
 
-execute if entity @s[x=264.9,y=-53,z=-245.0,dx=2,dy=2,dz=2,scores={timer=..160}] run function game:menu/map_next
+execute if entity @s[x=264.9,y=-53,z=-245.0,dx=2,dy=2,dz=2,scores={timer=..160}] run function game:menu/map_next_button
 execute if entity @s[x=264.9,y=-53,z=-245.0,dx=2,dy=2,dz=2] run scoreboard players set @s timer 1000
+
+execute if score .custom_maps_enabled .data matches 1 unless score .start_cd .data matches 0..10 unless score .edit_cd .data matches 0..10 if entity @s[x=264.9,y=-53,z=-242.0,dx=2,dy=2,dz=6,scores={timer=..160}] run function game:menu/edit_map_button
+execute if score .custom_maps_enabled .data matches 1 unless score .start_cd .data matches 0..10 unless score .edit_cd .data matches 0..10 if entity @s[x=264.9,y=-53,z=-242.0,dx=2,dy=2,dz=6] run scoreboard players set @s timer 1000
 
 execute if entity @s[x=264.9,y=-53,z=-225.0,dx=2,dy=2,dz=2,scores={timer=..160}] run function game:menu/mode_next
 execute if entity @s[x=264.9,y=-53,z=-225.0,dx=2,dy=2,dz=2] run scoreboard players set @s timer 1000
@@ -62,12 +65,8 @@ execute if entity @s[x=250.0,y=-41,z=-261.0,distance=..3.2,scores={timer=..160}]
 execute if entity @s[x=250.0,y=-41,z=-261.0,distance=..3.2,scores={timer=..160}] run execute as @a[tag=me_player] at @s run particle minecraft:end_rod 249.98 -41.05 -260.00 0 0 0 0.7 7 force
 execute if entity @s[x=250.0,y=-41,z=-261.0,distance=..3.2] run scoreboard players set @s timer 1000
 
-execute if entity @s[x=259.5,y=-55,z=-245.5,dx=5,dy=-1,dz=20,scores={timer=..160}] if score .running .data = .1 .num run title @a[tag=lobby] title {"text":"Game in progress","color":"gray","font":"fancy"}
-
-execute if entity @s[x=259.5,y=-55,z=-245.5,dx=5,dy=-1,dz=20,scores={timer=..160}] if score .running .data = .0 .num if score .start_cd .data >= .11 .num run title @a title {"text":"Start Canceled","color":"gray","font":"fancy"}
-execute if entity @s[x=259.5,y=-55,z=-245.5,dx=5,dy=-1,dz=20,scores={timer=..160}] if score .running .data = .0 .num if score .start_cd .data >= .11 .num run scoreboard players set .start_cd .data -5
-execute if entity @s[x=259.5,y=-55,z=-245.5,dx=5,dy=-1,dz=20,scores={timer=..160}] if score .running .data = .0 .num unless score .start_cd .data >= .0 .num unless score .start_cd .data = .n5 .num run scoreboard players set .start_cd .data 71
-execute if entity @s[x=259.5,y=-55,z=-245.5,dx=5,dy=-1,dz=20] run scoreboard players set @s timer 1000
+execute unless score .start_cd .data matches 0..10 unless score .edit_cd .data matches 0..10 if entity @s[x=259.5,y=-55,z=-245.5,dx=5,dy=-1,dz=20,scores={timer=..160}] run function game:menu/start_button
+execute unless score .start_cd .data matches 0..10 unless score .edit_cd .data matches 0..10 if entity @s[x=259.5,y=-55,z=-245.5,dx=5,dy=-1,dz=20] run scoreboard players set @s timer 1000
 
 execute as @s[scores={timer=..160}] at @s run function game:menu/hitscan_step
 

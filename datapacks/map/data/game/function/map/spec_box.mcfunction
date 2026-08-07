@@ -1,0 +1,1 @@
+$execute at fd8107bb-c1fa-4ddf-b8fe-d1087da4ff6f positioned $(origin) run tag @s[$(area)] add in_spec_area

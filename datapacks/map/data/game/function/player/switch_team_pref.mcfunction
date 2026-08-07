@@ -15,3 +15,5 @@ playsound minecraft:ui.loom.select_pattern master @s[scores={team_pref=0..}]
 playsound minecraft:item.armor.equip_netherite master @s[scores={team_pref=0..}]
 
 playsound minecraft:item.armor.equip_wolf master @s[scores={team_pref=..-1}]
+
+title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=0}] actionbar [{"obfuscated":true,"text":"te ","color":"gray"},{"obfuscated":false,"text":"SHOOT MENU BUTTONS","bold":true,"color":"white"},{"obfuscated":true,"text":" st","color":"gray"}]

@@ -46,3 +46,5 @@ execute if score .mode_screen .data = .1 .num run summon text_display 265.25 -53
 execute if score .mode_screen .data = .5 .num run summon text_display 265.25 -53.0 -230.1 {Tags:["mode_name"],billboard:"fixed",Rotation:[90F,0F],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[12f,7.8f,12f]},text:{"text":" TMI ","font":"fancy","bold":false,"color":"#EEEEEE"}}
 execute if score .mode_screen .data = .6 .num run summon text_display 265.25 -53.0 -230.1 {Tags:["mode_name"],billboard:"fixed",Rotation:[90F,0F],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[12f,7.8f,12f]},text:{"text":" INF ","font":"fancy","bold":false,"color":"#EEEEEE"}}
 execute if score .mode_screen .data = .7 .num run summon text_display 265.25 -53.0 -230.1 {Tags:["mode_name"],billboard:"fixed",Rotation:[90F,0F],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[12f,7.8f,12f]},text:{"text":" TAR ","font":"fancy","bold":false,"color":"#EEEEEE"}}
+
+# in this file, need to skip over or gray out modes that aren't avaliable for the map.

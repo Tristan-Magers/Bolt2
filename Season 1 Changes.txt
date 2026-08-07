@@ -1,4 +1,9 @@
-## 1.0.9
+2.0
+
+Items
+- Zoomies is 32% speed (previously +40%)
+
+1.0.9
 
 Rank
 - Negative winstreaks deduct less rank (20 -> 15 each)
@@ -20,7 +25,7 @@ Known issues
 - Walls can lift objects on nearby walls is weird cases
 - Pushing players in lobby is a issue in high player count lobbies. Considering removing player push entirely in lobby.
 
-## 1.0.10
+1.0.10
 
 Version
 - Updated to Minecraft version 1.21.5
@@ -49,37 +54,3 @@ Bug Fixes
     - Still working on that perfect solution
 - You can place items in the back of Garden spawn
 - Patched Garden location where you could place spawn points out of map
-
-## 1.0.11
-
-Version
-- Updated to Minecraft version 1.21.7
-
-Items
-- Reworked how crossbows are triggered after 1.21.3 changes prevented delaying activation
-
-## 1.0.12
-
-Version
-- Updated to Minecraft version 1.21.8
-
-General
-- Improved arrow hitboxes
-    - Reverted 1.21.7 change to make arrow hitboxes grow. They stay consistant size from the start like in previous verions of Minecraft
-    - Arrows are more consistant at hitting creepers
-    - Arrows are more consistant at hitting minions
-    - Note: these changes mostly undo the changes Mineccraft made by making arrow hitboxes dynamic at the start of shot
-- "f5" changing of camera angles no long works while outside lobby
-    - Note: always intended to add, but only now did it become possible in a reasonable way
-
-Settings
-- Removed "Infected Priority" Settings
-    - This setting was rarely used and was seen as extremely confusing and unnessisary
-    - May come back in a better form
-- Added "CtF One Player Flag Armor" setting
-    - Enables/disables if armor is given on flag return when facing only one player (including 1v1)
-    - Disabled by default
-    - Note: armor seems to be a frustrating mechanic in 1v1 and 1v2, and we want to make it an option to avoid
-
-Infection
-- "Jump" evolution now gives 10% speed buff (stacks with speed)

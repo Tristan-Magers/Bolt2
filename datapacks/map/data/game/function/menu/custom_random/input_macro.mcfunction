@@ -1,0 +1,2 @@
+$execute if score .new_state custom_random_dialog matches 1 run data modify storage maps:list maps[$(mapID)].enabled set value true
+$execute if score .new_state custom_random_dialog matches 2 run data modify storage maps:list maps[$(mapID)].enabled set value false

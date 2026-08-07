@@ -1,0 +1,1 @@
+$data modify $(out) set value "$(in1)$(in2)"

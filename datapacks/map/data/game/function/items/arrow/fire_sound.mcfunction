@@ -14,7 +14,7 @@ execute as @s[scores={bow_texture=2}] run playsound minecraft:entity.villager.wo
 # Plasma
 execute as @s[scores={bow_texture=3}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.3 1.1
 execute as @s[scores={bow_texture=3}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.5 0.7
-execute as @s[scores={bow_texture=3}] run playsound minecraft:entity.allay.item_taken master @s ^ ^ ^ 0.2 1.5 
+execute as @s[scores={bow_texture=3}] run playsound minecraft:entity.allay.item_taken master @s ^ ^ ^ 0.2 1.5
 execute as @s[scores={bow_texture=3}] run playsound minecraft:entity.allay.hurt master @s ^ ^ ^ .06 1.6
 execute as @s[scores={bow_texture=3}] run playsound minecraft:entity.firework_rocket.large_blast master @s ^ ^ ^ 0.3 2
 
@@ -366,7 +366,7 @@ execute as @s[scores={bow_texture=73}] run playsound minecraft:entity.experience
 # Plasma
 execute as @s[scores={bow_texture=74}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.3 1.1
 execute as @s[scores={bow_texture=74}] run playsound custom:shoot_arrow master @s ^ ^ ^ 0.5 0.7
-execute as @s[scores={bow_texture=74}] run playsound minecraft:entity.allay.item_taken master @s ^ ^ ^ 0.2 1.5 
+execute as @s[scores={bow_texture=74}] run playsound minecraft:entity.allay.item_taken master @s ^ ^ ^ 0.2 1.5
 execute as @s[scores={bow_texture=74}] run playsound minecraft:entity.allay.hurt master @s ^ ^ ^ .06 1.6
 execute as @s[scores={bow_texture=74}] run playsound minecraft:entity.firework_rocket.large_blast master @s ^ ^ ^ 0.3 2
 

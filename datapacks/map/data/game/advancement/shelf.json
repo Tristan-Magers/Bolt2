@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:reference",
+            "name": "game:used_shelf"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "game:player/shelf/start"
+  }
+}

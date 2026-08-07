@@ -1,0 +1,102 @@
+{
+    "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/string"
+    },
+    "cases": [
+      {
+        "when": "1",
+        "model": {
+          "type": "model",
+          "model": "item/balloon_red"
+        }
+      },
+      {
+        "when": "2",
+        "model": {
+          "type": "model",
+          "model": "item/balloon_blue"
+        }
+      },
+      {
+        "when": "3",
+        "model": {
+          "type": "model",
+          "model": "item/balloon_green"
+        }
+      },
+      {
+        "when": "4",
+        "model": {
+          "type": "model",
+          "model": "item/balloon_purple"
+        }
+      },{
+        "when": "5",
+        "model": {
+          "type": "model",
+          "model": "item/balloon_pink"
+        }
+      },
+      {
+        "when": "6",
+        "model": {
+          "type": "model",
+          "model": "item/balloon_yellow"
+        }
+      },
+      {
+        "when": "7",
+        "model": {
+          "type": "model",
+          "model": "item/balloon_creep"
+        }
+      },
+      {
+        "when": "8",
+        "model": {
+          "type": "model",
+          "model": "item/balloon_orange"
+        }
+      },
+      {
+        "when": "9",
+        "model": {
+          "type": "model",
+          "model": "item/rope"
+        }
+      },
+      {
+        "when": "10",
+        "model": {
+          "type": "model",
+          "model": "item/balloon_white"
+        }
+      },
+      {
+        "when": "11",
+        "model": {
+          "type": "model",
+          "model": "item/balloon_guy"
+        }
+      },
+      {
+        "when": "12",
+        "model": {
+          "type": "model",
+          "model": "item/wisdom_guy"
+        }
+      },
+      {
+        "when": "13",
+        "model": {
+          "type": "model",
+          "model": "item/helmet_kid"
+        }
+      }
+    ]
+  }
+  }

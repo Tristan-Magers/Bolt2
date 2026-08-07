@@ -6,14 +6,14 @@ effect give @p minecraft:levitation 2 25 true
 
 tp @s ~ ~0.05 ~
 
-execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1,Silent:1}
-execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1,Silent:1}
-execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1,Silent:1}
-execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1,Silent:1}
-execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1,Silent:1}
-execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1,Silent:1}
-execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1,Silent:1}
-execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1,Silent:1}
+execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1b,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1b,Silent:1b}
+execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1b,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1b,Silent:1b}
+execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1b,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1b,Silent:1b}
+execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1b,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1b,Silent:1b}
+execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1b,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1b,Silent:1b}
+execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1b,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1b,Silent:1b}
+execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1b,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1b,Silent:1b}
+execute at @s run summon minecraft:creeper ~ ~ ~ {ignited:1b,Fuse:0,Tags:["boost"],ExplosionRadius:1b,NoAI:1b,Silent:1b}
 execute at @s run tp @e[tag=boost,limit=10] @p
 execute as @e[tag=boost,limit=10] at @s run tp @s ~ ~ ~ ~ 0
 execute as @e[tag=boost,limit=10] at @s run tp @s ^ ^1.54 ^-0.24

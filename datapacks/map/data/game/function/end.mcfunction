@@ -2,22 +2,31 @@
 stopsound @a * minecraft:music.dragon
 
 #
-gamerule reducedDebugInfo false
+scoreboard players set .gamestate .data 0
+
+#
+gamerule reduced_debug_info false
+
+# bandaid fix
+data modify storage maps:active settings.tickingScript set value ""
 
 #
 execute as @e[tag=crate] at @s run function game:game/infected/crates/despawn
+
+time set 6000
 
 #tiny town and win achievements
 execute if score Blue Scores > Red Scores if score .mode .data = .1 .num as @a[team=blue,tag=locked_72] run function game:player/unlock/72
 execute if score Red Scores > Blue Scores if score .mode .data = .1 .num as @a[team=red,tag=locked_72] run function game:player/unlock/72
 
-execute if score Blue Scores > Red Scores if score .mode .data = .1 .num if score .map .data = .10 .num as @a[team=blue,tag=locked_79] run function game:player/unlock/79
-execute if score Red Scores > Blue Scores if score .mode .data = .1 .num if score .map .data = .10 .num as @a[team=red,tag=locked_79] run function game:player/unlock/79
+execute if score Blue Scores > Red Scores if score .mode .data = .1 .num if data storage maps:active {mapName:"Tiny Town"} as @a[team=blue,tag=locked_79] run function game:player/unlock/79
+execute if score Red Scores > Blue Scores if score .mode .data = .1 .num if data storage maps:active {mapName:"Tiny Town"} as @a[team=red,tag=locked_79] run function game:player/unlock/79
 
 # achievement for playing infected and winning as infected
 execute if score .mode .data = .6 .num if score .players_playing .data matches 2.. as @a[tag=locked_11,tag=playing] run function game:player/unlock/11
 execute if score .mode .data = .6 .num if score .players_playing .data matches 2.. as @a[tag=locked_72,tag=playing] run function game:player/unlock/72
-execute if score .mode .data = .6 .num if score .players_playing .data matches 2.. if score .map .data = .10 .num as @a[tag=locked_79,tag=playing] run function game:player/unlock/79
+
+execute if score .mode .data = .6 .num if score .players_playing .data matches 2.. if data storage maps:active {mapName:"Tiny Town"} as @a[tag=locked_79,tag=playing] run function game:player/unlock/79
 
 # achievement for playing target
 execute if score .mode .data = .7 .num as @a[tag=locked_24,tag=playing] run function game:player/unlock/24
@@ -89,7 +98,7 @@ kill @e[type=minecraft:creeper]
 kill @e[type=minecraft:slime]
 kill @e[type=minecraft:magma_cube]
 kill @e[tag=wall]
-kill @e[type=pig,tag=!chair]
+kill @e[type=pig,tag=!chair,tag=!balloon]
 kill @e[tag=turret_head]
 kill @e[tag=turret_stand]
 kill @e[tag=turretPunch]
@@ -98,6 +107,9 @@ kill @e[tag=crate_marker]
 execute as @e[tag=crate] at @s run function game:game/infected/crates/despawn
 kill @e[type=block_display,tag=survivor_generator_dis]
 execute as @e[tag=survivor_generator] at @s run function game:game/infected/generator/despawn
+
+execute as @e[type=marker,tag=!map_editor,tag=gate] at @s run function game:gate/stop
+kill @e[type=marker,tag=!map_editor,tag=gate]
 
 kill @e[tag=grenadehit]
 

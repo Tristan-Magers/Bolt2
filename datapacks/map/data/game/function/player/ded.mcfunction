@@ -57,50 +57,52 @@ clear @s arrow
 execute if score .tmi .data = .1 .num if score .tmi_arrow .data = .2 .num run item replace entity @s[scores={respawn=1}] hotbar.8 with minecraft:arrow 3
 #clear @s iron_ingot
 
-execute if score .map .data = .1 .num run tp @s[team=blue] -83.5 -50.00 51.5 -135 0
-execute if score .map .data = .1 .num run tp @s[team=red] -83.5 -50.00 -8.5 -45 0
+function game:map/spawn with storage maps:active spawn
 
-execute if score .map .data = .2 .num run tp @s[team=red] -188.5 -54.00 -91.5 -135 0
-execute if score .map .data = .2 .num run tp @s[team=blue] -188.5 -54.00 -151.5 -45 0
+#execute if score .map .data = .1 .num run tp @s[team=blue] -83.5 -50.00 51.5 -135 0
+#execute if score .map .data = .1 .num run tp @s[team=red] -83.5 -50.00 -8.5 -45 0
 
-execute if score .map .data = .3 .num run tp @s[team=red] -211 -53.00 -12.5 0 0
-execute if score .map .data = .3 .num run tp @s[team=blue] -211 -53.00 39.5 180 0
+#execute if score .map .data = .2 .num run tp @s[team=red] -188.5 -54.00 -91.5 -135 0
+#execute if score .map .data = .2 .num run tp @s[team=blue] -188.5 -54.00 -151.5 -45 0
 
-execute if score .map .data = .4 .num run tp @s[team=red] -306.5 -51.00 27.5 180 0
-execute if score .map .data = .4 .num run tp @s[team=blue] -306.5 -51.00 -3 0 0
+#execute if score .map .data = .3 .num run tp @s[team=red] -131 7.00 356.5 0 0
+#execute if score .map .data = .3 .num run tp @s[team=blue] -131 7.00 408.5 180 0
 
-execute if score .map .data = .5 .num run tp @s[team=red] -350.50 -55.00 -52.50 -135 0
-execute if score .map .data = .5 .num run tp @s[team=blue] -329.5 -55.00 -90.5 45 0
+#execute if score .map .data = .4 .num run tp @s[team=red] -306.5 -51.00 27.5 180 0
+#execute if score .map .data = .4 .num run tp @s[team=blue] -306.5 -51.00 -3 0 0
 
-execute if score .map .data = .6 .num run tp @s[team=red] -395.5 -49.00 62.5 160 0
-execute if score .map .data = .6 .num run tp @s[team=blue] -395.5 -49.00 -29.5 20 0
+#execute if score .map .data = .5 .num run tp @s[team=red] -350.50 -55.00 -52.50 -135 0
+#execute if score .map .data = .5 .num run tp @s[team=blue] -329.5 -55.00 -90.5 45 0
 
-execute if score .map .data = .7 .num run tp @s[team=red] -351 -54.00 -18.5 0 0
-execute if score .map .data = .7 .num run tp @s[team=blue] -351 -54.00 37.5 180 0
+#execute if score .map .data = .6 .num run tp @s[team=red] -395.5 -49.00 62.5 160 0
+#execute if score .map .data = .6 .num run tp @s[team=blue] -395.5 -49.00 -29.5 20 0
 
-execute if score .map .data = .8 .num run tp @s[team=red] -81.5 -55.00 112.5 -45 0
-execute if score .map .data = .8 .num run tp @s[team=blue] -27.5 -55.00 134.5 135 0
+#execute if score .map .data = .7 .num run tp @s[team=red] -351 -54.00 -18.5 0 0
+#execute if score .map .data = .7 .num run tp @s[team=blue] -351 -54.00 37.5 180 0
 
-execute if score .map .data = .9 .num run tp @s[team=red] -314.50 -48.00 105.5 0 0
-execute if score .map .data = .9 .num run tp @s[team=blue] -320.5 -48.00 161.5 180 0
+#execute if score .map .data = .8 .num run tp @s[team=red] -81.5 -55.00 112.5 -45 0
+#execute if score .map .data = .8 .num run tp @s[team=blue] -27.5 -55.00 134.5 135 0
 
-execute if score .map .data = .10 .num run tp @s[team=red] -228.5 -45.00 -454.5 0 0
-execute if score .map .data = .10 .num run tp @s[team=blue] -228.5 -45.00 -408.5 180 0
+#execute if score .map .data = .9 .num run tp @s[team=red] -314.50 -48.00 105.5 0 0
+#execute if score .map .data = .9 .num run tp @s[team=blue] -320.5 -48.00 161.5 180 0
 
-execute if score .map .data = .11 .num run tp @s[team=red] 93.5 -55.00 -44.5 -90 0
-execute if score .map .data = .11 .num run tp @s[team=blue] 165.5 -55.00 -44.5 90 0
+#xecute if score .map .data = .10 .num run tp @s[team=red] -228.5 -45.00 -454.5 0 0
+#execute if score .map .data = .10 .num run tp @s[team=blue] -228.5 -45.00 -408.5 180 0
 
-execute if score .map .data = .12 .num run tp @s[team=red] -14.5 -53.00 -252.0 180 0
-execute if score .map .data = .12 .num run tp @s[team=blue] 13.50 -53.00 -347.00 0 0
+#execute if score .map .data = .11 .num run tp @s[team=red] 93.5 -55.00 -44.5 -90 0
+#execute if score .map .data = .11 .num run tp @s[team=blue] 165.5 -55.00 -44.5 90 0
 
-execute if score .map .data = .13 .num run tp @s[team=red] 1.5 -34.00 241.5 90 0
-execute if score .map .data = .13 .num run tp @s[team=blue] -80.5 -34.00 241.5 -90 0
+#xecute if score .map .data = .12 .num run tp @s[team=red] -14.5 -53.00 -252.0 180 0
+#execute if score .map .data = .12 .num run tp @s[team=blue] 13.50 -53.00 -347.00 0 0
 
-execute if score .map .data = .14 .num run tp @s[team=red] -525.5 -19.00 -262.5 -135 0
-execute if score .map .data = .14 .num run tp @s[team=blue] -489.5 -19.00 -342.5 45 0
+#execute if score .map .data = .13 .num run tp @s[team=red] 1.5 -34.00 241.5 90 0
+#execute if score .map .data = .13 .num run tp @s[team=blue] -80.5 -34.00 241.5 -90 0
 
-execute if score .map .data = .15 .num run tp @s[team=red] -407.5 -38.50 203.5 90 8.3
-execute if score .map .data = .15 .num run tp @s[team=blue] -483.5 -38.50 191.5 -90 8.3
+#xecute if score .map .data = .14 .num run tp @s[team=red] -525.5 -19.00 -262.5 -135 0
+#execute if score .map .data = .14 .num run tp @s[team=blue] -489.5 -19.00 -342.5 45 0
+
+#xecute if score .map .data = .15 .num run tp @s[team=red] -407.5 -38.50 203.5 90 8.3
+#execute if score .map .data = .15 .num run tp @s[team=blue] -483.5 -38.50 191.5 -90 8.3
 
 effect give @s[scores={respawn=45..}] blindness 2 1 true
 effect clear @s[scores={respawn=31}] blindness
@@ -137,3 +139,4 @@ execute as @s[scores={respawn=30}] at @s run function game:player/tryspawn
 
 #
 scoreboard players set @s no_quiver_arrow 0
+scoreboard players set @s door_invul -2

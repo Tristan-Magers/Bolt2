@@ -1,0 +1,1 @@
+$fill ~ -60 ~ ~$(x) -60 ~$(z) air strict

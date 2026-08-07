@@ -1,0 +1,1 @@
+give @s gold_ingot[custom_name={"text":"Coin","italic":false,"color":"gray"},lore=[{"text":"Can use to get items","color":"white","italic":false},{"text":"Hold down to consume (in-game only)","color":"gray","italic":false}],consumable={consume_seconds:10000,has_consume_particles:false},use_effects={speed_multiplier:0.7,can_sprint:true}] 1

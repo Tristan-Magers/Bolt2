@@ -5,7 +5,7 @@ scoreboard players add @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,
 scoreboard players set .give_armor .calc 1
 execute if score .1v1_armor .data matches 0 if score .red_players .data matches 1.. if score .blue_players .data matches 1 run scoreboard players set .give_armor .calc 0
 
-execute if score .tmi .data = .0 .num if score .give_armor .calc = .1 .num run give @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] iron_ingot[custom_name={"text":"Armor","color":"gray","italic":false},lore=[{"text":"Survive one arrow hit","color":"white","italic":false},{"text":"Doesn\'t block explosions","color":"white","italic":false},{"text":"Drops the flag","color":"white","italic":false}],tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model","item_name"]}] 1
+execute if score .tmi .data = .0 .num if score .give_armor .calc = .1 .num run give @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] iron_ingot[custom_name={"text":"Armor","color":"gray","italic":false},lore=[{"text":"Survive one arrow hit","color":"white","italic":false},{"text":"Doesn't block explosions","color":"white","italic":false},{"text":"Drops the flag","color":"white","italic":false}],tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model","item_name"]}] 1
 execute if score .testing_mode .data matches 0 if score .mode .data matches 1 if score .tmi .data matches 0 as @a[team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] as @s[tag=totem,tag=locked_77,tag=playing] run function game:player/unlock/77
 execute as @a[team=red] at @s run playsound minecraft:block.conduit.deactivate master @a ~ ~ ~ 1 1
 execute as @a[team=red] at @s run playsound minecraft:block.conduit.activate master @s ~ ~ ~ 1 2
@@ -20,4 +20,5 @@ title @a[tag=!lobby] times 5 15 10
 title @a[tag=!lobby] subtitle {"text":"+15 Seconds","color":"white","font":"fancy"}
 title @a[tag=!lobby] title {"text":"RED SCORES!","color":"red","font":"fancy"}
 clear @a[team=red] blue_banner
+item replace entity @a[gamemode=adventure,team=red,distance=..10,dx=1,dy=1.5,dz=1,tag=hasflag] weapon.offhand with carrot_on_a_stick[item_model=air]
 tag @a[team=red] remove hasflag

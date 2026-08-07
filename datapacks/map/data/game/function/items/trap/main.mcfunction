@@ -5,13 +5,10 @@ execute if entity @s[scores={t4=4}] at @s run tp @s ~ ~-0.9 ~
 
 ##### CONTROL AND PLANT PARTICLES
 
-tag @s add ran_main
 scoreboard players add @s t4 1
 scoreboard players add @s timer 0
 
-#execute as @s[scores={t4=..2}] run data merge entity @s {HurtTime:0s}
-
-execute as @s[scores={t4=2}] at @s if block ~ -64 ~ redstone_block run tag @s add cant_place
+execute as @s[scores={t4=2}] at @s if block ~ -60 ~ redstone_block run tag @s add cant_place
 #execute as @s[scores={t4=2}] at @s if block ~ -64 ~ diamond_block run tag @s add cant_place
 execute as @s[scores={t4=2}] at @s positioned ~ ~-0.9 ~ if entity @e[type=creeper,distance=..0.2] run tag @s add cant_place
 
@@ -21,7 +18,7 @@ execute if entity @s[scores={t4=5}] at @s run function game:items/trap/particle
 execute if entity @s[scores={t4=14}] at @s run function game:items/trap/particle
 #scoreboard players set @s[scores={t4=200..}] t4 0
 
-data merge entity @s {Size:0,Silent:1,NoAI:1,Health:1}
+data merge entity @s {Size:0,Silent:1b,NoAI:1b,Health:1}
 
 execute as @s[team=red,scores={t4=2},tag=!cant_place] at @s run playsound minecraft:entity.creeper.hurt master @a[team=red] ~ ~ ~ 0.75 0.9
 execute as @s[team=blue,scores={t4=2},tag=!cant_place] at @s run playsound minecraft:entity.creeper.hurt master @a[team=blue] ~ ~ ~ 0.75 0.9

@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "minecraft:equipment": {
+            "mainhand": {
+              "items": "#game:offhand"
+            }
+          },
+          "minecraft:entity_tags": {
+            "none_of": [
+              "lobby"
+            ]
+          },
+          "minecraft:type_specific/player": {
+            "gamemode": [
+              "adventure"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "game:player/inventory/offhand"
+  }
+}

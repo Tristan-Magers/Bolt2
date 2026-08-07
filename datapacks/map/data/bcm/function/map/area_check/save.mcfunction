@@ -1,0 +1,1 @@
+return run function bcm:map/area_check/macro with storage bcm map.save

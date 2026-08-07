@@ -1,0 +1,1 @@
+$data modify storage item_structures save set from storage bcm maps[{registry:{mapName:"$(mapNameEditing)"}}].structure

@@ -1,0 +1,1 @@
+{"pools":[{"rolls":1,"entries":[{"type":"alternatives","children":[{"type":"item","name":"egg","functions":[{"function":"set_custom_data","tag":"{luminance:0}"}],"conditions":[{"condition":"location_check","predicate":{"block":{"state":{"berries":"false"}}}}]},{"type":"item","name":"egg","functions":[{"function":"set_custom_data","tag":"{luminance:14}"}]}]}]}]}

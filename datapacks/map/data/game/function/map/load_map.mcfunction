@@ -1,0 +1,1 @@
+$function maps:$(mapPack)/$(mapFolder)/config

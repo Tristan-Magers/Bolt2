@@ -6,9 +6,16 @@ execute if score .delay_10 .timer matches 10.. run scoreboard players set .delay
 tag @a[scores={leave_game=1..}] remove new_p_text
 scoreboard players set @a leave_game 0
 
+
+# long story
+forceload add 207 -496 16 -465
+
+# custom map enable/disable switch
+function game:lobby/temporary_custom_switch
+
 #
 execute positioned 234.32 -49.00 -223.08 if entity @a[distance=..10] run function game:tmi/chest_items
-execute positioned 234.32 -49.00 -223.08 if entity @a[distance=..10] run function game:menu/custom_random/container
+#execute positioned 234.32 -49.00 -223.08 if entity @a[distance=..10] run function game:menu/custom_random/deprecated/container
 execute positioned 234.32 -49.00 -223.08 if entity @a[distance=..10] run function game:menu/settings/container
 
 #
@@ -54,6 +61,9 @@ execute as @a[scores={boost_use=1..,delay_boost=..0,respawn=..0}] at @s run func
 execute as @a[scores={boost_use=1..}] at @s run function game:items/boost/fail
 scoreboard players remove @a[scores={delay_boost=0..}] delay_boost 1
 kill @e[type=egg]
+
+#
+scoreboard players remove @a[scores={delay_ping=1..}] delay_ping 1
 
 #
 execute as @a[scores={zoomies=1..}] at @s run function game:items/speed/effect
@@ -112,23 +122,70 @@ execute as @a[tag=lobby] at @s run function game:player/lobby
 scoreboard players set @a[tag=lobby] invul 40
 #scoreboard players set @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrowReload 32
 #clear @a[x=243.5,y=-44,z=-235.5,distance=3.5..60] arrow
+team join noCol @a[team=!noCol,tag=lobby,scores={team_pref=0}]
 team join red_lobby @a[team=!red_lobby,tag=lobby,scores={team_pref=1}]
 team join blue_lobby @a[team=!blue_lobby,tag=lobby,scores={team_pref=2}]
 team join Spectator @a[team=!Spectator,tag=lobby,scores={team_pref=-1}]
 
-title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=0..}] actionbar {"text":"SHOOT MENU BUTTONS","bold":true,"color":"gray"}
-title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=-1}] actionbar {"text":"READY UP TO USE MENU","bold":true,"color":"gray"}
+title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=-1..}] times 10 20 30
+title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=-1..}] title [{"text":""}]
+title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=-1..}] subtitle [{"obfuscated":false,"text":"Shoot Menu Buttons","bold":false,"color":"#ffffff","font":"low4"}]
+#title @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure,scores={team_pref=-1}] actionbar {"text":"READY UP TO USE MENU","bold":true,"color":"gray"}
 #clear @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] golden_apple
-tp @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] 243.5 -44.00 -235.5 -90 13
 
+tag @a[x=249,y=-56,z=-265,dx=30,dy=3,dz=70,gamemode=adventure] add join_menu
+execute as @a[tag=join_menu] run function game:menu/join_menu
+tag @a remove is_m_rider
+execute as @e[tag=menu_ride] run function game:menu/menu_ride
+
+scoreboard players add @e[tag=burst_delay] t1 1
+execute as @e[tag=burst_delay,scores={t1=2..}] at @s run function game:test4
+kill @e[tag=burst_delay,scores={t1=2..}]
+
+execute as @a[tag=!is_m_rider,tag=is_m_rider2] at @s run effect give @s slow_falling 1 0 true
+execute as @a[tag=!is_m_rider,tag=is_m_rider2] at @s rotated ~ 0 run summon marker ^ ^ ^-0.28 {Tags:["burst_delay"]}
+execute as @a[tag=!is_m_rider,tag=is_m_rider2] at @s rotated ~ 0 run summon marker ^ ^ ^-0.28 {Tags:["burst_delay"]}
+#execute as @a[tag=!is_m_rider,tag=is_m_rider2] at @s run summon minecraft:wind_charge ~ ~-1.2 ~ {Motion:[0.0,2.0,0.0]}
+#execute as @a[tag=!is_m_rider,tag=is_m_rider2] at @s run summon minecraft:wind_charge ~1 ~1 ~ {Motion:[-1.0,0.0,0.0]}
+#execute as @a[tag=!is_m_rider,tag=is_m_rider2] at @s run summon minecraft:wind_charge ~-1 ~1 ~ {Motion:[1.0,0.0,0.0]}
+execute as @a[tag=!is_m_rider,tag=is_m_rider2] at @s run scoreboard players set @s lowgravity 12
+#effect give @a[tag=!is_m_rider,tag=is_m_rider2] levitation 1 1 true
+execute as @a[tag=!is_m_rider,tag=is_m_rider2] run tag @s remove is_m_rider2
+
+execute as @a[scores={lowgravity=1..}] run attribute @s minecraft:explosion_knockback_resistance base set 0.4
+execute as @a[scores={lowgravity=..0}] run attribute @s minecraft:explosion_knockback_resistance base reset
+execute as @a[scores={lowgravity=1..}] run attribute @s minecraft:gravity base set 0.04
+execute as @a[scores={lowgravity=..0},tag=!has_balloon] run attribute @s minecraft:gravity base reset
+scoreboard players remove @a[scores={lowgravity=1..}] lowgravity 1
+
+#stopsound @a * minecraft:entity.breeze.wind_burst
+
+tag @a[tag=is_m_rider] add is_m_rider2
+#tag @a[tag=!is_m_rider] remove is_m_rider2
+
+
+#
 tag @e[type=arrow,x=245,y=-50,z=-235,distance=..80] add kill
 tag @e[type=arrow,x=233.0,y=-80,z=-266.9,dx=30,dy=60,dz=-25] remove kill
 
-execute as @a[x=243.5,y=-44,z=-235.5,distance=..50,scores={arrowReload=2..35}] as @s run scoreboard players set @s arrowReload 38
-execute as @a[x=243.5,y=-44,z=-235.5,distance=..4,scores={team_pref=-1}] run clear @s arrow
-execute as @a[x=243.5,y=-44,z=-235.5,distance=..4] run scoreboard players set @s lobby_text_time 80
-execute as @a[x=243.5,y=-44,z=-235.5,distance=..4,scores={team_pref=-1}] run scoreboard players set @s arrowReload 0
-execute as @a[x=243.5,y=-44,z=-235.5,distance=..2.9,scores={bowUse=1..}] as @s run function game:menu/hitscan_start
+#on menu platform
+execute as @a[x=243.5,y=-43,z=-235.5,distance=..50,scores={arrowReload=2..35}] as @s run scoreboard players set @s arrowReload 38
+#execute as @a[x=243.5,y=-44,z=-235.5,distance=..4,scores={team_pref=-1}] run clear @s arrow
+execute as @a[x=243.5,y=-43,z=-235.5,distance=..4] run scoreboard players set @s lobby_text_time 40
+#execute as @a[x=243.5,y=-44,z=-235.5,distance=..4,scores={team_pref=-1}] run scoreboard players set @s arrowReload 0
+execute as @a[x=243.5,y=-43,z=-235.5,distance=..2.9,scores={bowUse=1..}] as @s run function game:menu/hitscan_start
+
+tag @a remove in_menu
+tag @a[x=243.5,y=-43,z=-235.5,distance=..2.9] add in_menu
+
+#execute as @a[tag=!in_menu,tag=in_menu2] at @s run attribute @s minecraft:scale base set 1
+#execute as @a[tag=!in_menu,tag=in_menu2] at @s run effect give @s slow_falling 1 0 true
+#execute as @a[tag=!in_menu,tag=in_menu2] at @s run effect give @s levitation 1 0 true
+#execute as @a[tag=!in_menu,tag=in_menu2] at @s run playsound minecraft:block.note_block.basedrum master @s ~ ~ ~ 0.3 0
+#execute as @a[tag=!in_menu,tag=in_menu2] at @s run playsound minecraft:block.note_block.basedrum master @s ~ ~ ~ 0.3 0.5
+
+tag @a[tag=!in_menu] remove in_menu2
+tag @a[tag=in_menu] add in_menu2
 
 scoreboard players set @a[scores={deaths=..0}] KILL_ID 0
 
@@ -139,8 +196,11 @@ execute as @e[type=giant,scores={dead_head=1..}] run function game:menu/p_displa
 #team count
 function game:game/team_dif
 
-#spawns
+#spawns - REWORK
 function game:game/spawns
+execute as @a run function game:map/bounding_box
+
+function game:map/tick_script with storage maps:active settings
 
 #
 execute as @e[tag=cutscene] at @s run function game:cutscene/main
@@ -149,6 +209,9 @@ execute as @e[tag=cutscene] at @s run function game:cutscene/main
 
 # generator
 execute if score .running .data = .1 .num as @e[type=marker,tag=gen] at @s run function game:generator/main
+
+# gates
+execute if score .running .data = .1 .num as @e[type=marker,tag=!map_editor,tag=gate] at @s run function game:gate/main
 
 #placed_blocks
 execute as @e[type=marker,tag=temp_block] at @s run function game:items/temp_block/main
@@ -262,6 +325,32 @@ execute as @e[type=minecraft:area_effect_cloud] at @s run function game:items/ac
 #### PLAYERS ###
 execute as @a at @s run function game:player/main
 
+# balloon. has to come after player main
+function game:menu/ballooon_main
+
+#wise guy
+execute as @e[tag=wise_guy_interact] on target run function game:menu/wise_guy_interact
+
+scoreboard players add @e[tag=wise_guy] t1 1
+execute as @e[tag=wise_guy,scores={t1=1..5}] at @s run tp @s ~ ~-0.01 ~
+execute as @e[tag=wise_guy,scores={t1=6..10}] at @s run tp @s ~ ~-0.02 ~
+execute as @e[tag=wise_guy,scores={t1=11..15}] at @s run tp @s ~ ~-0.03 ~
+execute as @e[tag=wise_guy,scores={t1=16..20}] at @s run tp @s ~ ~-0.02 ~
+execute as @e[tag=wise_guy,scores={t1=21..25}] at @s run tp @s ~ ~-0.01 ~
+
+execute as @e[tag=wise_guy,scores={t1=31..35}] at @s run tp @s ~ ~0.01 ~
+execute as @e[tag=wise_guy,scores={t1=36..40}] at @s run tp @s ~ ~0.02 ~
+execute as @e[tag=wise_guy,scores={t1=41..45}] at @s run tp @s ~ ~0.03 ~
+execute as @e[tag=wise_guy,scores={t1=46..50}] at @s run tp @s ~ ~0.02 ~
+execute as @e[tag=wise_guy,scores={t1=51..55}] at @s run tp @s ~ ~0.01 ~
+
+scoreboard players set @e[tag=wise_guy,scores={t1=61..}] t1 0
+
+execute as @e[tag=wise_guy] at @s unless entity @p[distance=..6] run tp @s ~ ~ ~ 33 0
+execute as @e[tag=wise_guy] at @s if entity @p[distance=..6] run tp @s ~ ~ ~ facing entity @p
+execute as @e[tag=wise_guy] at @s if entity @p[distance=..6] run tp @s ~ ~ ~ ~ 0
+
+#
 scoreboard players set @a DamageTaken 0
 scoreboard players set @a DamageDealt 0
 scoreboard players set @a sword_break 0
@@ -353,6 +442,7 @@ scoreboard players set @a[tag=reloadCross] crossbowReload 0
 tag @a remove reloadCross
 scoreboard players set @a crossbowUse 0
 
+
 execute as @a[scores={crossbowTime=1..}] at @s run function game:items/crossbow/active
 
 #
@@ -384,6 +474,7 @@ execute if score .running .data = .0 .num run scoreboard players set .no_players
 execute if score .no_players .timer > .200 .num run scoreboard players set .no_players .timer -60
 
 #
+execute if score .edit_cd .data >= .0 .num run function game:game/edit_countdown
 execute if score .start_cd .data >= .0 .num run function game:game/start_countdown
 execute if score .start_cd .data = .n5 .num run scoreboard players set .start_cd .data -1
 

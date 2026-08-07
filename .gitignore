@@ -1,0 +1,10 @@
+*
+!*/
+!.gitignore
+
+!bleps_pack/**
+
+!datapacks/**
+datapacks/map.zip
+
+!dimensions/minecraft/overworld/**

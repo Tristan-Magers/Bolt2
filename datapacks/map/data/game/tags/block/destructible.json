@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:gravel",
+    "minecraft:small_dripleaf",
+    "minecraft:short_grass",
+    "minecraft:fern",
+    "minecraft:light",
+    "#minecraft:saplings",
+    "#minecraft:flowers",
+    "minecraft:brown_mushroom",
+    "minecraft:dead_bush",
+    "minecraft:hanging_roots",
+    "minecraft:nether_sprouts"
+  ]
+}

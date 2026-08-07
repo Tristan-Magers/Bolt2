@@ -17,3 +17,5 @@ execute as @s[scores={drop_zombie=1..}] run function game:player/give/zombie
 execute as @s[scores={drop_scrap=1..}] run function game:player/give/scrap
 execute as @s[scores={drop_turret=1..}] run function game:player/give/turret
 execute as @s[scores={drop_zoom=1..}] run function game:player/give/zoom
+execute as @s[scores={drop_balloon=1..},tag=!last_balloon] run function game:player/give/balloon
+execute as @s[scores={drop_balloon=1..},tag=last_balloon] run scoreboard players set @s drop_balloon 0

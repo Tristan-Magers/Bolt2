@@ -1,0 +1,348 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "minecraft:painting/variant",
+    "cases": [
+      {
+        "when": "alban",
+        "model": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "item/trap"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "item/overlay_1"
+            }
+          ]
+        }
+      },
+      {
+        "when": "aztec",
+        "model": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "item/trap"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "item/overlay_2"
+            }
+          ]
+        }
+      },
+      {
+        "when": "aztec2",
+        "model": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "item/blue_spawn"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "item/overlay_1"
+            }
+          ]
+        }
+      },
+      {
+        "when": "bomb",
+        "model": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "item/blue_spawn"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "item/overlay_2"
+            }
+          ]
+        }
+      },
+      {
+        "when": "kebab",
+        "model": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "item/red_spawn"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "item/overlay_1"
+            }
+          ]
+        }
+      },
+      {
+        "when": "meditative",
+        "model": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "item/red_spawn"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "item/overlay_2"
+            }
+          ]
+        }
+      },
+      {
+        "when": "plant",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/template_banner",
+          "model": {
+            "type": "minecraft:banner",
+            "color": "red"
+          },
+          "transformation": {
+            "left_rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "right_rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              0.6666667,
+              -0.6666667,
+              -0.6666667
+            ],
+            "translation": [
+              0.5,
+              0,
+              0.5
+            ]
+          }
+        }
+      },
+      {
+        "when": "wasteland",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/template_banner",
+          "model": {
+            "type": "minecraft:banner",
+            "color": "blue"
+          },
+          "transformation": {
+            "left_rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "right_rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              0.6666667,
+              -0.6666667,
+              -0.6666667
+            ],
+            "translation": [
+              0.5,
+              0,
+              0.5
+            ]
+          }
+        }
+      },
+      {
+        "when": "graham",
+        "model": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "minecraft:block/red_bed_head"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "minecraft:block/red_bed_foot",
+              "transformation": {
+                "left_rotation": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "right_rotation": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "translation": [
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "when": "prairie_ride",
+        "model": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "minecraft:block/blue_bed_head"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "minecraft:block/blue_bed_foot",
+              "transformation": {
+                "left_rotation": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "right_rotation": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "translation": [
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "when": "wanderer",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/template_skull",
+          "model": {
+            "type": "minecraft:player_head"
+          },
+          "transformation": {
+            "left_rotation": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "right_rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "translation": [
+              0.5,
+              0,
+              0.5
+            ]
+          }
+        }
+      },
+      {
+        "when": "creebet",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/crimson_door"
+        }
+      },
+      {
+        "when": "courbet",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/warped_door"
+        }
+      },
+      {
+        "when": "pool",
+        "model": {
+          "type": "minecraft:model",
+          "model": "block/oak_fence_gate"
+        }
+      },
+      {
+        "when": "sea",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/cauldron"
+        }
+      },
+      {
+        "when": "sunset",
+        "model": {
+          "type": "minecraft:model",
+          "model": "block/target"
+        }
+      },
+      {
+        "when": "baroque",
+        "model": {
+          "type": "minecraft:model",
+          "model": "block/deepslate_copper_ore"
+        }
+      },
+      {
+        "when": "bust",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/wall"
+        }
+      },
+      {
+        "when": "humble",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/knowledge_book"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "empty"
+    }
+  }
+}

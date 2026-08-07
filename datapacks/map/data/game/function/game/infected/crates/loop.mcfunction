@@ -51,7 +51,7 @@ execute if data entity @s[scores={t=10}] interaction run tellraw @a[gamemode=spe
 
 execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run scoreboard players add @s track_total_crates 1
 execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num as @s[scores={track_total_crates=8..},tag=locked_71] run function game:player/unlock/71
-execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run give @s[team=blue] minecraft:netherite_scrap[custom_name={"text":"Scrap (Return to Generator)","italic":false},tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model","item_name"]}] 1
+execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num run give @s[team=blue] minecraft:netherite_scrap[item_name="Scrap (Return to Generator)",custom_model_data={flags:[true]},tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model","item_name"]}] 1
 execute if data entity @s[scores={t=10}] interaction on target run execute if score .mode .data = .6 .num as @s[team=blue] run function game:player/scrap_correct
 
 data remove entity @s interaction

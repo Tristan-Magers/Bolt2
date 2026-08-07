@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "block/oak_log",
-		"2": "block/anvil",
-		"4": "block/smithing_table_top",
-		"5": "block/chiseled_stone_bricks",
+		"1": "item/oak_log",
+		"2": "item/anvil",
+		"4": "item/smithing_table_top",
+		"5": "item/chiseled_stone_bricks",
 		"particle": "item/crossbow_standby"
 	},
 	"elements": [

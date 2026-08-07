@@ -1,0 +1,1 @@
+$fill ~ ~ ~ ~$(length_minus_one) ~ ~ $(block) strict

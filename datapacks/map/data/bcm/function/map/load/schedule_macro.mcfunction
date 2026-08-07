@@ -1,0 +1,1 @@
+$execute positioned $(load_point) run function bcm:map/load {mapName:"$(mapName)",new:false}

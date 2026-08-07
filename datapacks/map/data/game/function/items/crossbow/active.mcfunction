@@ -32,5 +32,3 @@ execute as @s[scores={crossbowTime=1}] unless items entity @s container.* crossb
 
 scoreboard players set @s[scores={crossbowTime=1}] crossbowReload 0
 scoreboard players remove @s[scores={crossbowTime=1..}] crossbowTime 1
-
-

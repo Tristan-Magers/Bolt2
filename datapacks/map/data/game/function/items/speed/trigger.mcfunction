@@ -1,4 +1,4 @@
-effect give @s speed 8 2
+effect give @s speed 8 1
 effect give @s jump_boost 8 2
 
 scoreboard players set @s speed_use 0

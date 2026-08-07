@@ -1,0 +1,1 @@
+$fill ~ -60 ~ ~$(length_minus_one) -60 ~ diamond_block strict

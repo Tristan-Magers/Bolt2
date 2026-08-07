@@ -1,0 +1,1 @@
+{"pools":[{"rolls":1,"entries":[{"type":"alternatives","children":[{"type":"item","name":"egg","functions":[{"function":"set_custom_data","tag":"{\"jump_factor\":0.5d}"}],"conditions":[{"condition":"location_check","predicate":{"block":{"blocks":["honey_block"]}}}]},{"type":"item","name":"egg","functions":[{"function":"set_custom_data","tag":"{\"jump_factor\":1.0d}"}]}]}]}]}

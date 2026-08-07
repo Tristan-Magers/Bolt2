@@ -1,4 +1,10 @@
-advancement revoke @s everything
+advancement revoke @s from advancements:root_1
+advancement revoke @s from advancements:root_2
+advancement revoke @s from advancements:root_3
+advancement revoke @s from advancements:root_4
+advancement revoke @s from advancements:root_5
+advancement revoke @s from advancements:root_6
+advancement revoke @s from advancements:root_9
 
 tag @s remove unlocked_all
 

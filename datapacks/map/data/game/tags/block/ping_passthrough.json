@@ -1,0 +1,27 @@
+{
+    "values": [
+        "#air",
+        "#buttons",
+        "#wool_carpets",
+        "#candles",
+        "#cave_vines",
+        "#crops",
+        "#fire",
+        "#flowers",
+        "#leaves",
+        "#pressure_plates",
+        "#rails",
+        "redstone_wire",
+        "#saplings",
+        "#signs",
+        "#flowers",
+        "#wall_signs",
+        "#trapdoors",
+        "light",
+        "ladder",
+        "#doors",
+        "#replaceable",
+        "#lanterns",
+        "water"
+    ]
+}

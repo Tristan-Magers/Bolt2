@@ -3,7 +3,7 @@
 execute if score .zombie_evolve_type_1 .data = .1 .num run effect give @s jump_boost 120 2 true
 execute if score .zombie_evolve_type_1 .data = .1 .num run tag @s add zombie_jump
 
-execute if score .zombie_evolve_type_0 .data = .1 .num run effect give @s speed 120 1 true
+execute if score .zombie_evolve_type_0 .data = .1 .num run effect give @s speed 120 0 true
 #execute if score .zombie_evolve_type_0 .data = .1 .num if score .zombie_evolve_type_1 .data = .1 .num run effect give @s speed 120 2 true
 
 execute if score .zombie_evolve_type_2 .data = .1 .num run give @s[nbt=!{Inventory:[{id:"minecraft:netherite_sword"}]}] minecraft:netherite_sword[custom_name={"text":"Claws","italic":false,"color":"gray"},minecraft:max_damage=1,lore=[{"text":"Claw players, placables, and walls","color":"white","italic":false}],damage=0,can_break=[{blocks:"gravel"}],enchantments={"minecraft:knockback":3},attribute_modifiers=[{id:"attack_damage",type:"attack_damage",amount:100,operation:"add_value",slot:"any"}],tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model","item_name"]}] 1

@@ -31,9 +31,9 @@ scoreboard players set @s .num 1
 function game:items/lower
 execute at @s run tp @s ~ ~0.3 ~
 
-execute at @s if entity @e[type=pig,distance=..0.4,tag=old2,tag=!chair] run tag @s add cant_place
-execute at @s if block ~ -64 ~ redstone_block run tag @s add cant_place
-execute at @s if block ~ -64 ~ diamond_block run tag @s add cant_place
+execute at @s if entity @e[type=pig,distance=..0.4,tag=old2,tag=!chair,tag=!ballon] run tag @s add cant_place
+execute at @s if block ~ -60 ~ redstone_block run tag @s add cant_place
+execute at @s if block ~ -60 ~ diamond_block run tag @s add cant_place
 
 execute as @s[tag=cant_place] run tag @s add kill
 
@@ -51,11 +51,11 @@ execute as @s[tag=!kill] run playsound minecraft:entity.blaze.hurt master @a
 #particle minecraft:soul_fire_flame ~ ~1 ~ 0.3 0.3 0.3 0 40 force @a
 
 #
-execute as @s[tag=!kill,team=red] run summon armor_stand ~ ~-1.5 ~ {Marker:1,NoGravity:1b,Invisible:1b,equipment:{head:{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":{strings:["200"]}}}},Tags:["turret_stand","red"]}
-execute as @s[tag=!kill,team=red] run summon armor_stand ~ ~-.5 ~ {Marker:1,NoGravity:1b,Invisible:1b,equipment:{head:{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":{strings:["201"]}}}},Tags:["turret_head","red"]}
+execute as @s[tag=!kill,team=red] run summon armor_stand ~ ~-1.5 ~ {Marker:1b,NoGravity:1b,Invisible:1b,equipment:{head:{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":{strings:["200"]}}}},Tags:["turret_stand","red"]}
+execute as @s[tag=!kill,team=red] run summon armor_stand ~ ~-.5 ~ {Marker:1b,NoGravity:1b,Invisible:1b,equipment:{head:{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":{strings:["201"]}}}},Tags:["turret_head","red"]}
 
-execute as @s[tag=!kill,team=blue] run summon armor_stand ~ ~-1.5 ~ {Marker:1,NoGravity:1b,Invisible:1b,equipment:{head:{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":{strings:["210"]}}}},Tags:["turret_stand","blue"]}
-execute as @s[tag=!kill,team=blue] run summon armor_stand ~ ~-.5 ~ {Marker:1,NoGravity:1b,Invisible:1b,equipment:{head:{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":{strings:["211"]}}}},Tags:["turret_head","blue"]}
+execute as @s[tag=!kill,team=blue] run summon armor_stand ~ ~-1.5 ~ {Marker:1b,NoGravity:1b,Invisible:1b,equipment:{head:{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":{strings:["210"]}}}},Tags:["turret_stand","blue"]}
+execute as @s[tag=!kill,team=blue] run summon armor_stand ~ ~-.5 ~ {Marker:1b,NoGravity:1b,Invisible:1b,equipment:{head:{id:"minecraft:paper",count:1,components:{"minecraft:custom_model_data":{strings:["211"]}}}},Tags:["turret_head","blue"]}
 
 #
 execute as @s[tag=!kill] run effect give @s minecraft:invisibility infinite 10 true

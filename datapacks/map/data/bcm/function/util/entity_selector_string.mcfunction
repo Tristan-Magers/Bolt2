@@ -1,0 +1,1 @@
+$data modify storage bcm tmp.selector set value "dx=$(dx),dy=$(dy),dz=$(dz)"

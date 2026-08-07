@@ -102,6 +102,22 @@ scoreboard players set @s drop_map 0
 scoreboard players set @s drop_scrap 0
 scoreboard players set @s drop_egg 0
 scoreboard players set @s drop_turret 0
+scoreboard players set @s drop_balloon 0
+scoreboard players set @s wall_invul -1
+scoreboard players set @s door_invul -2
+scoreboard players set @s balloon_cooldown 0
+scoreboard players set @s lowgravity 0
+scoreboard players set @s coin_cooldown 0
+scoreboard players set @s coin_use 0
+
+tag @s remove is_m_rider
+tag @s remove is_m_rider2
+
+attribute @s minecraft:gravity base reset
+attribute @s minecraft:bounciness base reset
+attribute @s minecraft:explosion_knockback_resistance base reset
+
+function game:items/balloon/pop_all
 
 #
 stopsound @s

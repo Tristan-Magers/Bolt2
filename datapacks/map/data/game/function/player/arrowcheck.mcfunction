@@ -1,3 +1,10 @@
+# this file has been fully replaced by another function. The return is so I can have a quick/easy clickable link in the function commmand.
+return 0
+# check out
+function game:arrow/hit_detection/on_hit
+# for the current implementation. It's being triggered off an advancement.
+
+
 tag @s add me
 tag @s remove am_attaker
 

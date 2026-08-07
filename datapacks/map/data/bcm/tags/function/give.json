@@ -1,0 +1,23 @@
+{
+  "values":[
+    "bcm:give/master_menu",
+    "bcm:give/select_area/save1",
+    "bcm:give/select_area/save2",
+    "bcm:give/select_area/spawn_red1",
+    "bcm:give/select_area/spawn_red2",
+    "bcm:give/select_area/spawn_blue1",
+    "bcm:give/select_area/spawn_blue2",
+    "bcm:give/place/red_flag",
+    "bcm:give/place/blue_flag",
+    "bcm:give/place/red_spawnpoint",
+    "bcm:give/place/blue_spawnpoint",
+    "bcm:give/place/intro_camera",
+    "bcm:give/place/red_door",
+    "bcm:give/place/blue_door",
+    "bcm:give/place/gate",
+    "bcm:give/place/generator",
+    "bcm:give/place/target",
+    "bcm:give/place/crate",
+    "bcm:give/set_max_wall_height"
+  ]
+} 

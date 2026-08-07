@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "minecraft:type_specific/player": {
+            "gamemode": [
+              "creative"
+            ]
+          }
+        },
+        "items": [
+          {
+            "items": "minecraft:painting"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "game:player/inventory/give_creative_tools"
+  }
+}

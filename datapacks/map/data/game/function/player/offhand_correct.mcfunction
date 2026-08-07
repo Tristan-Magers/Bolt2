@@ -29,7 +29,7 @@ item replace entity @s[nbt=!{Inventory:[{Slot:6b}]},scores={t1=6}] hotbar.6 from
 item replace entity @s[nbt=!{Inventory:[{Slot:7b}]},scores={t1=7}] hotbar.7 from entity @s weapon.offhand
 item replace entity @s[nbt={Inventory:[{id:"minecraft:arrow",Slot:-106b}]},scores={t1=8}] hotbar.8 from entity @s weapon.offhand
 
-item replace entity @s weapon.offhand with air
+item replace entity @s weapon.offhand with carrot_on_a_stick[item_model=air]
 
 #
 function game:player/scrap_correct

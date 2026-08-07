@@ -1,0 +1,1 @@
+$data modify storage bcm maps[{registry:{mapName:"$(mapNameEditing)"}}].map.targets set from storage bcm map.targets

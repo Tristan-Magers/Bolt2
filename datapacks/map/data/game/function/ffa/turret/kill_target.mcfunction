@@ -14,7 +14,7 @@ execute unless entity @e[tag=currentTarget,type=minecraft:zombie_villager] at @e
 execute if entity @e[tag=currentTarget,type=minecraft:zombie_villager] at @e[tag=currentTarget] run playsound minecraft:entity.wither.shoot master @a ~ ~ ~ 0.5 1.1
 execute if entity @e[tag=currentTarget,type=minecraft:zombie_villager] at @e[tag=currentTarget] run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.5 1.5
 
-damage @e[tag=currentTarget,limit=1] 1 minecraft:arrow
+damage @e[tag=currentTarget,limit=1] 1
 
 #
 function game:id/player
@@ -33,7 +33,7 @@ execute if entity @p[tag=currentTarget,tag=!totem,scores={invul=..0,hurt=..1},ga
 
 #> Kill
 execute at @a[tag=hasTurret] if score @p ID = @s ID run tag @p add executioner
-damage @e[tag=currentTarget,limit=1] 982 minecraft:arrow by @a[tag=executioner,limit=1]
+damage @e[tag=currentTarget,limit=1] 982 minecraft:generic by @a[tag=executioner,limit=1]
 tag @e[tag=currentTarget,limit=1] add turretDead
 tag @e[tag=currentTarget,limit=1] add shot_by_turret
 

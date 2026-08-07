@@ -1,0 +1,1 @@
+execute as @e[tag=org_x,type=marker] if score #count vect_y matches 0.. at @s run function item_structures:zprivate/load/move_x

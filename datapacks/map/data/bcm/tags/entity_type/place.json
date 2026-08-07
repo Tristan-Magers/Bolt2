@@ -1,0 +1,8 @@
+{
+  "values":[
+    "minecraft:marker",
+    "minecraft:block_display",
+    "minecraft:item_display",
+    "minecraft:interaction"
+  ]
+}

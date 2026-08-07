@@ -1,0 +1,1 @@
+$function game:map/item_generator with storage maps:active gens[$(genID)]

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:pressure_plates",
+    "#minecraft:bars",
+    "#minecraft:fences",
+    "#minecraft:lanterns",
+    "minecraft:scaffolding",
+    "minecraft:warped_shelf",
+    "minecraft:mangrove_shelf",
+    "minecraft:glass_pane"
+  ]
+}

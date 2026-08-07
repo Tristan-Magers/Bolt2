@@ -6,5 +6,9 @@
   "gd_shoot": {
     "sounds": [
       "custom:gd_shoot"]
+  },
+  "balloon": {
+    "sounds": [
+      "custom:balloon"]
   }
 }

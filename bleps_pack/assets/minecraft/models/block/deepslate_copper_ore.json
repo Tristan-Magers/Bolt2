@@ -1,4 +1,5 @@
 {
+	"parent": "block/block",
 	"credit": "Made by Miffen Kop",
 	"textures": {
 		"particle": "block/crate/crate",

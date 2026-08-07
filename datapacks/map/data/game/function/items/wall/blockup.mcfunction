@@ -38,6 +38,7 @@ execute as @e[tag=up_stop4,distance=..1] at @s unless block ~ ~2.6 ~ air run tag
 
 #
 tag @s add me
+#execute as @a[tag=suff] run function game:items/wall/wall_adjust
 execute unless entity @e[tag=up_stop,tag=suff] as @s at @s run fill ~ ~ ~ ~ ~ ~ minecraft:gravel replace air
 
 tag @e remove ingravel
@@ -152,6 +153,7 @@ execute as @e[tag=up_stop,tag=ingravel,tag=!test_head_air] at @s run tag @s add 
 #
 scoreboard players set @a[tag=suff] invul 2
 scoreboard players set @a[tag=suff] wall_invul 2
+execute as @a[tag=suff] run function game:items/wall/wall_adjust
 execute if entity @e[tag=suff] run scoreboard players set @s timer 20
 
 tag @e remove suff

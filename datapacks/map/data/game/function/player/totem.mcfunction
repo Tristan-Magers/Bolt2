@@ -19,5 +19,8 @@ execute at @s[tag=hasflag,team=red] run summon armor_stand ~ ~-1 ~ {NoGravity:1b
 execute at @s[tag=hasflag,team=blue] run summon armor_stand ~ ~-1 ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,equipment:{head:{id:"minecraft:red_banner",count:1}},Tags:["redflag","flag","drop"]}
 
 tag @s remove hasflag
+tag @s remove killed_by_claw
+tag @s remove killed_by_poison
+tag @s remove killed_by_zombie
 
 effect clear @s minecraft:poison

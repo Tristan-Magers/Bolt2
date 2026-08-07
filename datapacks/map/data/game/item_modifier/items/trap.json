@@ -1,0 +1,81 @@
+[
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:custom_model_data": {
+        "strings": [
+          "0"
+        ]
+      },
+      "minecraft:can_place_on": [
+        {
+          "blocks": "#game:bolt_place"
+        }
+      ],
+      "minecraft:custom_name": {
+        "text": "Trap",
+        "color": "gray",
+        "italic": false
+      },
+      "minecraft:lore": [
+        {
+          "text": "Explodes when enemies get near",
+          "color": "white",
+          "italic": false
+        },
+        {
+          "text": "Outer ring - explosion radius",
+          "color": "white",
+          "italic": false
+        },
+        {
+          "text": "Inner ring - trigger radius",
+          "color": "white",
+          "italic": false
+        },
+        {
+          "text": "Can be shot",
+          "color": "white",
+          "italic": false
+        },
+        {
+          "text": "Max active: 12",
+          "color": "white",
+          "italic": false
+        }
+      ],
+      "minecraft:entity_data": {
+        "id": "minecraft:creeper",
+        "Silent": true,
+        "PersistenceRequired": true
+      },
+      "minecraft:tooltip_display": {
+        "hidden_components": [
+          "minecraft:attribute_modifiers",
+          "minecraft:can_break",
+          "minecraft:custom_model_data",
+          "minecraft:unbreakable",
+          "minecraft:tooltip_display",
+          "minecraft:weapon",
+          "minecraft:max_damage",
+          "minecraft:can_place_on",
+          "minecraft:trim",
+          "minecraft:dyed_color",
+          "minecraft:damage",
+          "minecraft:enchantments",
+          "minecraft:food",
+          "minecraft:tool",
+          "minecraft:tooltip_display",
+          "minecraft:potion_contents",
+          "minecraft:item_model",
+          "minecraft:item_name"
+        ]
+      }
+    },
+    "conditions": []
+  },
+  {
+    "function": "minecraft:set_item",
+    "item": "minecraft:creeper_spawn_egg"
+  }
+]

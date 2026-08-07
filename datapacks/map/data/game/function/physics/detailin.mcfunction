@@ -18,6 +18,9 @@ execute if block ~ ~ ~ #minecraft:banners run tag @s add in
 execute if block ~ ~ ~ #minecraft:trapdoors run tag @s add in
 execute if block ~ ~ ~ #minecraft:climbable run tag @s add in
 
+execute as @s[type=slime] if block ~ ~ ~ #game:spawnp run tag @s add in
+execute as @s[type=magma_cube] if block ~ ~ ~ #game:spawnp run tag @s add in
+
 execute if block ~ ~.5 ~ #minecraft:slabs[type=top] run tag @s add in
 execute if block ~ ~-.5 ~ #minecraft:slabs[type=bottom] run tag @s add in
 

@@ -1,0 +1,1 @@
+$function game:map/spawn_crate_markers with storage maps:active crates[$(crateID)]

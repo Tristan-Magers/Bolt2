@@ -1,0 +1,162 @@
+[
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:consumable": {
+        "consume_seconds": 0,
+        "animation": "none",
+        "sound": {
+          "sound_id": ""
+        },
+        "has_consume_particles": false,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:luck",
+                "amplifier": 36
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:use_cooldown": {
+        "seconds": 4
+      }
+    }
+  },
+  {
+    "function": "minecraft:set_lore",
+    "entity": "this",
+    "lore": [
+      {
+        "text": "Custom Bleps Map",
+        "italic": false,
+        "color": "dark_aqua"
+      },
+      "",
+      [
+        {
+          "text": "Map Size: ",
+          "italic": false,
+          "color": "white"
+        },
+        {
+          "nbt": "tmp",
+          "storage": "bcm",
+          "interpret": true
+        }
+      ],
+      [
+        {
+          "text": "Dimensions: ",
+          "italic": false,
+          "color": "white"
+        },
+        {
+          "nbt": "export.size[]",
+          "storage": "item_structures",
+          "separator": "x"
+        }
+      ]
+    ],
+    "mode": "replace_all"
+  },
+  {
+    "function": "minecraft:set_lore",
+    "entity": "this",
+    "lore": [
+      {
+        "text": "Walls item disabled",
+        "color": "#8F2929",
+        "italic": false
+      }
+    ],
+    "mode": "append",
+    "conditions": [
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:storage",
+          "storage": "bcm",
+          "path": "export.disable_walls"
+        },
+        "range": 1
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_name",
+    "entity": "this",
+    "name": {
+      "text": "Use an anvil to name this map!",
+      "italic": false,
+      "color": "red",
+      "bold": true
+    },
+    "target": "item_name"
+  },
+  {
+    "function": "minecraft:set_name",
+    "entity": "this",
+    "name": {
+      "storage": "bcm",
+      "nbt": "mapNameEditing",
+      "interpret": true
+    },
+    "target": "custom_name",
+    "conditions": [
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": ".overwrite"
+          },
+          "score": "save_map"
+        },
+        "range": 1
+      }
+    ]
+  },
+  {
+    "function": "minecraft:copy_custom_data",
+    "source": {
+      "type": "minecraft:storage",
+      "source": "minecraft:item_structures"
+    },
+    "ops": [
+      {
+        "source": "export",
+        "target": "structure",
+        "op": "merge"
+      }
+    ]
+  },
+  {
+    "function": "minecraft:copy_custom_data",
+    "source": {
+      "type": "minecraft:storage",
+      "source": "minecraft:bcm"
+    },
+    "ops": [
+      {
+        "source": "export",
+        "target": "bleps_map",
+        "op": "merge"
+      },
+      {
+        "source": "doors",
+        "target": "doors",
+        "op": "replace"
+      },
+      {
+        "source": "registry_export",
+        "target": "registry",
+        "op": "replace"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+$data modify storage bcm abs.$(type) set value "$(x) $(y) $(z) $(yaw) $(pitch)"

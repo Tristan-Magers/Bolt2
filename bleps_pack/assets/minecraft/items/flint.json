@@ -1,0 +1,61 @@
+{
+    "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/flint"
+    },
+    "cases": [
+      {
+        "when": "1",
+        "model": {
+          "type": "model",
+          "model": "item/spray1"
+        }
+      },
+      {
+        "when": "2",
+        "model": {
+          "type": "model",
+          "model": "item/spray2"
+        }
+      },
+      {
+        "when": "3",
+        "model": {
+          "type": "model",
+          "model": "item/spray3"
+        }
+      },
+      {
+        "when": "4",
+        "model": {
+          "type": "model",
+          "model": "item/spray4"
+        }
+      },
+      {
+        "when": "5",
+        "model": {
+          "type": "model",
+          "model": "item/spray5"
+        }
+      },
+      {
+        "when": "6",
+        "model": {
+          "type": "model",
+          "model": "item/spray6"
+        }
+      },
+      {
+        "when": "7",
+        "model": {
+          "type": "model",
+          "model": "item/vending_air"
+        }
+      }
+    ]
+  }
+  }

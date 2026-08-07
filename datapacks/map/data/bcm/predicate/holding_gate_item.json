@@ -1,0 +1,15 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "minecraft:equipment": {
+      "mainhand": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "bcm_gate": true
+          }
+        }
+      }
+    }
+  }
+}

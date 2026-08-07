@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "item/crossbow_standby",
-		"1": "block/chiseled_stone_bricks",
+		"1": "item/chiseled_stone_bricks",
 		"particle": "item/crossbow_standby"
 	},
 	"elements": [

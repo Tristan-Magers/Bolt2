@@ -1,0 +1,11 @@
+execute if entity @s[team=blue] if score .blue_spawn_box macro_counter matches 1.. run function game:map/blue_spawn_box with storage maps:active spawn.blueSpawnBoundingBox[0]
+execute if entity @s[team=blue] if score .blue_spawn_box macro_counter matches 2.. run function game:map/blue_spawn_box with storage maps:active spawn.blueSpawnBoundingBox[1]
+execute if entity @s[team=blue] if score .blue_spawn_box macro_counter matches 3.. run function game:map/blue_spawn_box with storage maps:active spawn.blueSpawnBoundingBox[2]
+execute if entity @s[team=blue] if score .blue_spawn_box macro_counter matches 4.. run function game:map/blue_spawn_box with storage maps:active spawn.blueSpawnBoundingBox[3]
+execute if entity @s[team=blue] if score .blue_spawn_box macro_counter matches 5.. run function game:map/blue_spawn_box with storage maps:active spawn.blueSpawnBoundingBox[4]
+
+execute if entity @s[team=red] if score .red_spawn_box macro_counter matches 1.. run function game:map/red_spawn_box with storage maps:active spawn.redSpawnBoundingBox[0]
+execute if entity @s[team=red] if score .red_spawn_box macro_counter matches 2.. run function game:map/red_spawn_box with storage maps:active spawn.redSpawnBoundingBox[1]
+execute if entity @s[team=red] if score .red_spawn_box macro_counter matches 3.. run function game:map/red_spawn_box with storage maps:active spawn.redSpawnBoundingBox[2]
+execute if entity @s[team=red] if score .red_spawn_box macro_counter matches 4.. run function game:map/red_spawn_box with storage maps:active spawn.redSpawnBoundingBox[3]
+execute if entity @s[team=red] if score .red_spawn_box macro_counter matches 5.. run function game:map/red_spawn_box with storage maps:active spawn.redSpawnBoundingBox[4]

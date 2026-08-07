@@ -1,0 +1,1 @@
+execute as @e[tag=map_icon_builder] at @s run function game:menu/rebuild_menu_macro with storage macro

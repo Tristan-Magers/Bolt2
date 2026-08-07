@@ -1,0 +1,1 @@
+$gamerule max_block_modifications $(max_blocks)

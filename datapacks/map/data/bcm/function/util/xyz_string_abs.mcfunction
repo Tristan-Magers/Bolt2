@@ -1,0 +1,1 @@
+$data modify storage bcm tmp.pos set value "$(x) $(y) $(z)"

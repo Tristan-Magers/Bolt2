@@ -14,7 +14,10 @@ scoreboard objectives remove place_slime_temp
 scoreboard objectives remove place_magmac_temp
 
 #
+# target area
 forceload add 268 -262 231 -294
+# tmi boxes
+forceload add 227 -246 221 -238
 
 #
 team add blue
@@ -23,8 +26,8 @@ team add red
 team add red_lobby {"text":"Red Lobby"}
 team add blue_lobby {"text":"Blue Lobby"}
 
-team modify red_lobby suffix [{"text":"["},{"text":"Red","color":"red"},{"text":"]"}]
-team modify blue_lobby suffix [{"text":"["},{"text":"Blue","color":"dark_aqua"},{"text":"]"}]
+team modify red_lobby suffix [{"text":" ["},{"text":"Red","color":"red"},{"text":"]"}]
+team modify blue_lobby suffix [{"text":" ["},{"text":"Blue","color":"dark_aqua"},{"text":"]"}]
 
 team add Spectator
 
@@ -43,6 +46,11 @@ team modify blue seeFriendlyInvisibles true
 
 team add noCol
 team modify noCol collisionRule never
+
+team modify red_lobby collisionRule never
+team modify blue_lobby collisionRule never
+
+team modify noCol suffix [{"text":" ["},{"text":"Random","color":"#A763FF"},{"text":"]"}]
 
 team add noColRed
 team modify noColRed collisionRule never
@@ -153,6 +161,27 @@ scoreboard objectives add track_total_crates dummy
 scoreboard objectives add track_total_ctf_walls dummy
 scoreboard objectives add track_total_games dummy
 scoreboard objectives add track_shot_head dummy
+scoreboard objectives add stats_deaths dummy
+scoreboard objectives add no_cap dummy
+scoreboard objectives add has_lev dummy
+scoreboard objectives add stats_ger_kills dummy
+scoreboard objectives add stats_trap_kills dummy
+scoreboard objectives add has_lev dummy
+
+scoreboard objectives add menu_afk dummy
+
+scoreboard objectives add use_balloon minecraft.used:minecraft.string
+scoreboard objectives add balloon_count dummy
+scoreboard objectives add balloon_cooldown dummy
+scoreboard objectives add balloon_release dummy
+scoreboard objectives add balloon_land_sound_cool dummy
+
+scoreboard objectives add coin_cooldown dummy
+scoreboard objectives add coin_use dummy
+
+scoreboard objectives add balloon_talk dummy
+scoreboard objectives add balloon_talk2 dummy
+scoreboard objectives add balloon_talk_cool dummy
 
 scoreboard objectives add code_1 dummy
 scoreboard objectives add code_2 dummy
@@ -169,6 +198,17 @@ scoreboard objectives add ID.turret dummy
 scoreboard objectives add turretCooldown dummy
 scoreboard objectives add turretTimer dummy
 #> End viral zone
+
+#> DUMB Guy zone
+scoreboard objectives add macro_counter dummy
+#> End DUMB Guy Zone
+
+#> woman zone
+scoreboard objectives add generator_duration dummy
+scoreboard objectives add generator_warmup dummy
+#> end woman zone
+
+scoreboard objectives add wallHeight dummy
 
 scoreboard objectives add timer dummy
 
@@ -248,6 +288,7 @@ scoreboard objectives add time_dead dummy
 
 scoreboard objectives add flagtime dummy
 scoreboard objectives add invul dummy
+scoreboard objectives add door_invul dummy
 scoreboard objectives add wall_invul dummy
 scoreboard objectives add danger dummy
 
@@ -317,6 +358,7 @@ scoreboard objectives add icon_y dummy
 scoreboard objectives add icon_t dummy
 
 scoreboard objectives add climb minecraft.custom:minecraft.climb_one_cm
+scoreboard objectives add jump_vine minecraft.custom:minecraft.jump
 
 scoreboard objectives add drop_egg_generic minecraft.dropped:minecraft.panda_spawn_egg
 scoreboard objectives add drop_snowball minecraft.dropped:minecraft.snowball
@@ -334,6 +376,7 @@ scoreboard objectives add drop_lingering minecraft.dropped:minecraft.lingering_p
 scoreboard objectives add drop_egg minecraft.dropped:minecraft.egg
 scoreboard objectives add drop_turret minecraft.dropped:minecraft.pig_spawn_egg
 scoreboard objectives add drop_zoom minecraft.dropped:minecraft.ender_pearl
+scoreboard objectives add drop_balloon minecraft.dropped:minecraft.string
 
 scoreboard objectives add boost_use minecraft.used:minecraft.egg
 scoreboard objectives add speed_use minecraft.used:minecraft.ender_pearl
@@ -348,6 +391,7 @@ scoreboard objectives add zoomies dummy
 
 scoreboard objectives add delay_boost dummy
 scoreboard objectives add delay_reveal dummy
+scoreboard objectives add delay_ping dummy
 
 scoreboard objectives add team_pref dummy
 scoreboard objectives add team_pref_temp dummy
@@ -361,6 +405,8 @@ scoreboard objectives add bow_texture_place dummy
 scoreboard objectives add bow_throw minecraft.dropped:minecraft.bow
 
 scoreboard objectives add golden_apple minecraft.used:minecraft.golden_apple
+scoreboard objectives add generator_duration dummy
+scoreboard objectives add generator_warmup dummy
 
 scoreboard objectives add crouch minecraft.custom:minecraft.sneak_time
 
@@ -392,21 +438,31 @@ scoreboard players set .tmi_objective .data 0
 scoreboard players set .tmi_arrow .data 0
 scoreboard players set .tmi_preset .data 1
 
-#
-scoreboard objectives add .custom_random dummy
+# for item maps
+execute unless score .custom_maps_enabled .data matches 0..1 run scoreboard players set .custom_maps_enabled .data 0
+execute unless score .custom_maps_trust_block_nbt .data matches 0..1 run scoreboard players set .custom_maps_trust_block_nbt .data 0
 
-scoreboard players set .map1 .custom_random 1
-scoreboard players set .map2 .custom_random 1
-scoreboard players set .map3 .custom_random 1
-scoreboard players set .map4 .custom_random 1
-scoreboard players set .map5 .custom_random 1
-scoreboard players set .map6 .custom_random 1
-scoreboard players set .map7 .custom_random 1
-scoreboard players set .map8 .custom_random 1
-scoreboard players set .map9 .custom_random 1
+execute unless entity 9193d285-e55d-4da1-b962-86a964871769 run summon minecraft:text_display 265.1875 -52.875 -238.0625 {UUID: uuid("9193d285-e55d-4da1-b962-86a964871769"), alignment: "center", background: 1073741824, default_background: 0b, line_width: 200, see_through: 0b, shadow: 0b, text: {bold: 0b, color: "#EEEEEE", font: "minecraft:fancy", text: " EDIT  "}, text_opacity: -1b, transformation: {left_rotation: [0.0f, -0.7071068f, 0.0f, 0.7071068f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [8.999994f, 7.4999995f, 7.499997f], translation: [0.0f, 0.0f, 0.0f]}}
+
+scoreboard objectives add custom_random_dialog trigger
+
+# deprecated old custom random menu
+# scoreboard objectives add .custom_random dummy
+
+# scoreboard players set .map1 .custom_random 1
+# scoreboard players set .map2 .custom_random 1
+# scoreboard players set .map3 .custom_random 1
+# scoreboard players set .map4 .custom_random 1
+# scoreboard players set .map5 .custom_random 1
+# scoreboard players set .map6 .custom_random 1
+# scoreboard players set .map7 .custom_random 1
+# scoreboard players set .map8 .custom_random 1
+# scoreboard players set .map9 .custom_random 1
 
 #
 scoreboard players set .ranked .data 1
+scoreboard players set .inf_ran .data 1
+scoreboard players set .1v1_armor .data 0
 
 #
 scoreboard players set .range1 .data 0
@@ -592,7 +648,11 @@ scoreboard players set .640 .num 640
 scoreboard players set .800 .num 800
 scoreboard players set .900 .num 900
 
+scoreboard players set .1000 .num 1000
+
 scoreboard players set .1200 .num 1200
+
+scoreboard players set .32768 .num 32768
 
 scoreboard players set .250000 .num 250000
 

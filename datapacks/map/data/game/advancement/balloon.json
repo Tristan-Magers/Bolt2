@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "fdsg": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:string"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "game:items/balloon/use_balloon"
+  }
+}

@@ -7,7 +7,8 @@ tag @e[tag=into_start] add teleported
 
 #
 execute as @s[scores={golden_apple=1..},tag=locked_14] at @s run function game:player/unlock/14
-execute as @s[scores={golden_apple=1..}] at @s run function game:test4
+execute as @s[scores={golden_apple=1..}] at @s run summon marker ~ ~ ~ {Tags:["burst_delay"]}
+execute as @s[scores={golden_apple=1..}] at @s run scoreboard players set @e[tag=burst_delay,limit=1] t1 1
 effect clear @s[scores={golden_apple=1..}] minecraft:absorption
 effect clear @s[scores={golden_apple=1..}] minecraft:regeneration
 scoreboard players set @s golden_apple 0
@@ -19,7 +20,7 @@ execute as @s[scores={intro_cutscene_time=1}] run title @s times 0 10 10
 execute as @s[scores={intro_cutscene_time=1}] run title @s title {"translate":"\u0001","font":"title"}
 execute as @s[scores={intro_cutscene_time=1..9}] run tp @s 244 -36 -225 -115 25
 
-execute as @s[scores={intro_cutscene_time=10}] run summon block_display 244 -35 -225 {teleport_duration:60,Rotation:[-115F,25F],Tags:["intro_start","new"]}
+execute as @s[scores={intro_cutscene_time=10}] run summon block_display 244 -35 -225 {teleport_duration:59,Rotation:[-115F,25F],Tags:["intro_start","new"]}
 execute as @s[scores={intro_cutscene_time=10}] run scoreboard players operation @e[tag=intro,tag=new,limit=1] ID = @s ID
 #execute as @s[scores={intro_cutscene_time=10}] run tag @e[tag=intro_start] remove my_intro
 #execute as @s[scores={intro_cutscene_time=10}] run tag @e remove me
@@ -90,6 +91,7 @@ execute unless items entity @s hotbar.0 bow run tag @s add off_correct
 tag @s[tag=lobby,tag=off_correct] remove lobby_inv_correct
 
 tag @s[gamemode=creative] remove off_correct
+tag @s[gamemode=spectator] remove off_correct
 tag @s[tag=lobby] remove off_correct
 
 execute as @s[tag=off_correct] run function game:player/offhand_correct
@@ -167,15 +169,15 @@ clear @s[tag=!lobby,tag=!item_chest] leather_chestplate
 clear @s[tag=!lobby,tag=!item_legs] leather_leggings
 clear @s[tag=!lobby,tag=!item_feet] leather_boots
 
-execute as @s[tag=!item_chest] if score .mode .data = .6 .num run item replace entity @s[team=red] armor.chest with leather_chestplate[trim={material:"minecraft:netherite",pattern:"minecraft:silence",show_in_tooltip:false},dyed_color=16711680,unbreakable={show_in_tooltip:false},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
-execute as @s[tag=!item_chest] unless score .mode .data = .6 .num run item replace entity @s[team=red] armor.chest with leather_chestplate[dyed_color=16711680,unbreakable={show_in_tooltip:false},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
-execute as @s[tag=!item_chest] run item replace entity @s[team=blue] armor.chest with leather_chestplate[dyed_color=22015,unbreakable={show_in_tooltip:false},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
+execute as @s[tag=!item_chest] if score .mode .data = .6 .num run item replace entity @s[team=red] armor.chest with leather_chestplate[trim={material:"minecraft:netherite",pattern:"minecraft:silence",},dyed_color=16711680,unbreakable={},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
+execute as @s[tag=!item_chest] unless score .mode .data = .6 .num run item replace entity @s[team=red] armor.chest with leather_chestplate[dyed_color=16711680,unbreakable={},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
+execute as @s[tag=!item_chest] run item replace entity @s[team=blue] armor.chest with leather_chestplate[dyed_color=22015,unbreakable={},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
 
-execute as @s[tag=!item_legs] run item replace entity @s[team=red] armor.legs with leather_leggings[dyed_color=16711680,unbreakable={show_in_tooltip:false},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
-execute as @s[tag=!item_legs] run item replace entity @s[team=blue] armor.legs with leather_leggings[dyed_color=22015,unbreakable={show_in_tooltip:false},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
+execute as @s[tag=!item_legs] run item replace entity @s[team=red] armor.legs with leather_leggings[dyed_color=16711680,unbreakable={},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
+execute as @s[tag=!item_legs] run item replace entity @s[team=blue] armor.legs with leather_leggings[dyed_color=22015,unbreakable={},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
 
-execute as @s[tag=!item_feet] run item replace entity @s[team=red] armor.feet with leather_boots[dyed_color=16711680,unbreakable={show_in_tooltip:false},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
-execute as @s[tag=!item_feet] run item replace entity @s[team=blue] armor.feet with leather_boots[dyed_color=22015,unbreakable={show_in_tooltip:false},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
+execute as @s[tag=!item_feet] run item replace entity @s[team=red] armor.feet with leather_boots[dyed_color=16711680,unbreakable={},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
+execute as @s[tag=!item_feet] run item replace entity @s[team=blue] armor.feet with leather_boots[dyed_color=22015,unbreakable={},attribute_modifiers=[{id:"armor",type:"armor",amount:0,operation:"add_multiplied_base",slot:"any"}]]
 
 #reload
 tag @s[scores={no_quiver_arrow=160..}] add arrow_hit
@@ -196,6 +198,8 @@ tag @s remove arrow_hit
 
 execute as @s store result score @s arrowCount run clear @s arrow 0
 scoreboard players set @s[gamemode=creative] arrowCount 3
+tag @s[tag=lobby] remove in_spec_area
+scoreboard players set @s[tag=in_spec_area] arrowCount 3
 execute if score .tmi .data = .1 .num if score .tmi_arrow .data = .2 .num run scoreboard players add @s[scores={arrowCount=0}] no_quiver_arrow 1
 scoreboard players add @s[scores={arrowCount=..2}] arrowReload 1
 scoreboard players set @s[scores={arrowCount=3..}] arrowReload 0
@@ -208,9 +212,9 @@ item replace entity @s[scores={arrowReload=40..,arrowCount=0}] hotbar.8 with min
 item replace entity @s[scores={arrowReload=40..,arrowCount=1}] hotbar.8 with minecraft:arrow 2
 item replace entity @s[scores={arrowReload=40..,arrowCount=2}] hotbar.8 with minecraft:arrow 3
 
-item modify entity @s[scores={arrowCount=1..},team=] hotbar.8 game:model_0
-item modify entity @s[scores={arrowCount=1..},team=red] hotbar.8 game:model_1
-item modify entity @s[scores={arrowCount=1..},team=blue] hotbar.8 game:model_2
+item modify entity @s[gamemode=!creative,gamemode=!spectator,scores={arrowCount=1..},team=] hotbar.8 game:model_0
+item modify entity @s[gamemode=!creative,gamemode=!spectator,scores={arrowCount=1..},team=red] hotbar.8 game:model_1
+item modify entity @s[gamemode=!creative,gamemode=!spectator,scores={arrowCount=1..},team=blue] hotbar.8 game:model_2
 
 scoreboard players remove @s[scores={arrowReload=40..}] arrowReload 40
 
@@ -320,14 +324,23 @@ execute as @s[scores={climb=1..}] at @s if block ~ ~0.24 ~ minecraft:ladder run 
 execute as @s[scores={has_lev=..0}] at @s if block ~ ~0.24 ~ minecraft:ladder if block ~ ~0.7 ~ minecraft:air run effect clear @s minecraft:levitation
 execute as @s[scores={climb=1..}] at @s if block ~ ~0.24 ~ minecraft:ladder if block ~ ~0.7 ~ minecraft:air run effect give @s minecraft:levitation 1 1 true
 
-execute as @s[nbt={OnGround:0b}] at @s if block ~ ~-0.2 ~ minecraft:vine run effect give @s minecraft:levitation 1 3 true
-execute as @s[scores={has_lev=..0}] at @s if block ~ ~-0.2 ~ minecraft:vine if block ~ ~0.7 ~ minecraft:air run effect clear @s minecraft:levitation
-execute as @s[nbt={OnGround:0b}] at @s if block ~ ~-0.2 ~ minecraft:vine if block ~ ~0.7 ~ minecraft:air run effect give @s minecraft:levitation 1 1 true
+#vines
+tag @s[tag=climb_vine,nbt={OnGround:1b}] remove climb_vine
+execute at @s[tag=climb_vine,scores={jump_vine=1..}] if block ~ ~-1 ~ minecraft:vine unless block ~ ~-0.4 ~ minecraft:vine run scoreboard players set @s jump_vine 0
+execute at @s[tag=climb_vine] if block ~ ~-1 ~ minecraft:vine unless block ~ ~-0.4 ~ minecraft:vine run tag @s remove climb_vine
+tag @s[scores={jump_vine=1..}] add climb_vine
+execute as @s[tag=!climb_vine,scores={climb=1..}] at @s if block ~ ~-0.2 ~ minecraft:vine run tag @s add climb_vine
+execute as @s[tag=!climb_vine,scores={climb=1..}] at @s if block ~ ~-0.4 ~ minecraft:vine run tag @s add climb_vine
 
-execute as @s[scores={has_lev=..0}] at @s unless block ~ ~0.24 ~ minecraft:ladder unless block ~ ~-0.2 ~ minecraft:vine run effect clear @s minecraft:levitation
-execute as @s[nbt={OnGround:0b}] at @s if block ~ ~-0.4 ~ minecraft:vine run effect give @s minecraft:levitation 1 1 true
+execute as @s[nbt={OnGround:0b},tag=climb_vine] at @s if block ~ ~-0.2 ~ minecraft:vine run effect give @s minecraft:levitation 1 3 true
+execute as @s[scores={has_lev=..0}] at @s if block ~ ~-0.2 ~ minecraft:vine if block ~ ~0.7 ~ minecraft:air run effect clear @s minecraft:levitation
+execute as @s[nbt={OnGround:0b},tag=climb_vine] at @s if block ~ ~-0.2 ~ minecraft:vine if block ~ ~0.7 ~ minecraft:air run effect give @s minecraft:levitation 1 1 true
+
+execute as @s[tag=!lobby,scores={has_lev=..0}] at @s unless block ~ ~0.24 ~ minecraft:ladder unless block ~ ~-0.2 ~ minecraft:vine run effect clear @s minecraft:levitation
+execute as @s[nbt={OnGround:0b},tag=climb_vine] at @s if block ~ ~-0.4 ~ minecraft:vine run effect give @s minecraft:levitation 1 1 true
 
 scoreboard players set @s climb 0
+scoreboard players set @s[nbt={OnGround:1b}] jump_vine 0
 
 effect clear @s[x=-224,y=-47,z=-14,dx=50,dy=40,dz=80] levitation
 #effect clear @s[scores={shift=1..}] levitation
@@ -371,14 +384,16 @@ clear @s[tag=!hasflag,team=blue,tag=item_head] red_dye
 item replace entity @s[tag=!hasflag,team=blue,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected,tag=item_head] armor.head with minecraft:air
 execute as @s[tag=hasflag,team=blue,scores={glowing=..0}] unless items entity @s armor.head red_banner run item replace entity @s armor.head with minecraft:red_banner
 execute as @s[tag=hasflag,team=blue] unless items entity @s weapon.offhand red_dye run clear @s minecraft:red_dye
-execute as @s[tag=hasflag,team=blue] unless items entity @s weapon.offhand red_dye run item replace entity @s weapon.offhand with minecraft:red_dye[custom_name={"text":"Red Flag"}]
+# custom model data shows offhand slot outline; "flags" named coincidentally
+execute as @s[tag=hasflag,team=blue] unless items entity @s weapon.offhand red_dye run item replace entity @s weapon.offhand with minecraft:red_dye[custom_model_data={flags:[true]},item_name="Red Flag"]
 
 clear @s[tag=!hasflag,team=red,tag=item_head] blue_banner
 clear @s[tag=!hasflag,team=red,tag=item_head] blue_dye
 item replace entity @s[tag=!hasflag,team=red,scores={invul=..0,glowing=..0,blind=..0},tag=!is_infected,tag=item_head] armor.head with minecraft:air
 execute as @s[tag=hasflag,team=red,scores={glowing=..0}] unless items entity @s armor.head blue_banner run item replace entity @s armor.head with minecraft:blue_banner
 execute as @s[tag=hasflag,team=red] unless items entity @s weapon.offhand blue_dye run clear @s minecraft:blue_dye
-execute as @s[tag=hasflag,team=red] unless items entity @s weapon.offhand blue_dye run item replace entity @s weapon.offhand with minecraft:blue_dye[custom_name={"text":"Blue Flag"}]
+# custom model data shows offhand slot outline; "flags" named coincidentally
+execute as @s[tag=hasflag,team=red] unless items entity @s weapon.offhand blue_dye run item replace entity @s weapon.offhand with minecraft:blue_dye[custom_model_data={flags:[true]},item_name="Blue Flag"]
 
 clear @s[scores={glowing=..0},tag=item_head] minecraft:carved_pumpkin
 execute as @s[tag=!is_infected,tag=hasflag,team=red,scores={glowing=1..}] unless items entity @s armor.head carved_pumpkin run item replace entity @s armor.head with minecraft:carved_pumpkin[custom_model_data={strings:["1"]}]
@@ -389,7 +404,7 @@ scoreboard players set @s[scores={blind=..0}] blind_new 0
 execute as @s[scores={blind=1..}] run function game:player/blind
 
 #bow correct
-execute if entity @s[nbt=!{Inventory:[{id:"minecraft:bow",Slot:0b}]},gamemode=!creative] run function game:player/inv_checks/no_bow
+execute as @s[gamemode=!creative,gamemode=!spectator] unless items entity @s hotbar.0 bow run function game:player/inv_checks/no_bow
 
 # OPTIMIZATION NEEDED : run only when give a new bow
 function game:bow/dynamic_bow_data
@@ -478,6 +493,7 @@ execute as @s[tag=playing,team=blue,scores={scrap=1..,stats_scrap=..0,title_paus
 scoreboard players remove @s[scores={title_pause=0..}] title_pause 1
 
 # Dark/Blind remove
+# REWORK - figure out what the fuck is happening here please
 scoreboard players remove @s[scores={fog_remove=-5..}] fog_remove 1
 execute if score .map .data matches 2 run effect clear @s[scores={fog_remove=0}] blindness
 execute if score .map .data matches 2 run effect clear @s[scores={fog_remove=0}] darkness
@@ -512,3 +528,20 @@ execute as @s[tag=locked_53,tag=!locked_3,tag=!locked_76,tag=!locked_74,tag=!loc
 execute as @s[tag=locked_58,tag=!locked_77,tag=!locked_27,tag=!locked_54,tag=!locked_17,tag=!locked_40,tag=!locked_69,tag=!locked_68,tag=!locked_67,tag=!locked_6,tag=!locked_61,tag=!locked_18,tag=!locked_65,tag=!locked_52,tag=!locked_26,tag=!locked_2,tag=!locked_60,tag=!locked_10,tag=!locked_66,tag=!locked_41,tag=!locked_7,tag=!locked_12] run function game:player/unlock/58
 execute as @s[tag=locked_35,tag=!locked_55,tag=!locked_43,tag=!locked_19,tag=!locked_44,tag=!locked_5,tag=!locked_15,tag=!locked_37,tag=!locked_42] run function game:player/unlock/35
 execute as @s[tag=locked_64,tag=!locked_58,tag=!locked_53,tag=!locked_23,tag=!locked_36,tag=!locked_31,tag=!locked_35,tag=!locked_8] run function game:player/unlock/64
+
+#
+scoreboard players set @s[tag=inspawn,scores={door_invul=-1}] invul 0
+scoreboard players remove @s[scores={door_invul=-1..}] door_invul 1
+
+# custom random dialog
+execute if score @s custom_random_dialog matches -2147483648..2147483647 run function game:menu/custom_random/check
+
+#coin
+scoreboard players set @s[tag=!using_coin] coin_use 0
+scoreboard players remove @s[scores={coin_use=0..}] coin_use 1
+
+scoreboard players remove @s[scores={coin_cooldown=0..}] coin_cooldown 1
+
+execute as @s[scores={coin_use=1},tag=using_coin] at @s run function game:items/coin/roll
+
+tag @s remove using_coin

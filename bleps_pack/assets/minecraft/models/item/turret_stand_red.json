@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "block/oak_log",
-		"2": "block/anvil",
-		"4": "block/smithing_table_top",
-		"6": "block/red_wool",
-		"7": "block/red_terracotta",
+		"1": "item/oak_log",
+		"2": "item/anvil",
+		"4": "item/smithing_table_top",
+		"6": "item/red_wool",
+		"7": "item/red_terracotta",
 		"particle": "item/crossbow_arrow"
 	},
 	"elements": [

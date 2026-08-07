@@ -81,12 +81,12 @@ scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .GrenadeKills .stats
 
 execute if score .mode .data = .1 .num run give @s[scores={t=0}] snowball[custom_name={"text":"Mini TNT","italic":false,"color":"gray"},lore=[{"text":"Explodes, killing players","color":"white","italic":false},{"text":"Kills traps and respawns","color":"white","italic":false},{"text":"Explodes slower if thrown close","color":"white","italic":false}],tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model","item_name"]}] 1
-execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] snowball[custom_name={"text":"Mini TNT (can\'t break emerald)","italic":false,"color":"gray"}] 1
+execute if score .mode .data = .7 .num run give @s[scores={t=0,kills=..30}] snowball[custom_name={"text":"Mini TNT (can't break emerald)","italic":false,"color":"gray"}] 1
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .WallKills .stats
 
-give @s[scores={t=0}] bat_spawn_egg[custom_model_data={strings:["1"]},can_place_on=[{blocks:"#game:bolt_place"}],custom_name={"text":"Walls","color":"gray","italic":false},lore=[{"text":"Four blocks of breakable gravel","color":"white","italic":false},{"text":"Pushes players and enitites up.","color":"white","italic":false}],entity_data={id:"minecraft:silverfish",Silent:1b,NoAI:1},tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model","item_name"]}] 4
+give @s[scores={t=0}] bat_spawn_egg[custom_model_data={strings:["1"]},can_place_on=[{blocks:"#game:bolt_place"}],custom_name={"text":"Walls","color":"gray","italic":false},lore=[{"text":"Four blocks of breakable gravel","color":"white","italic":false},{"text":"Pushes players and enitites up.","color":"white","italic":false}],entity_data={id:"minecraft:silverfish",Silent:1b,NoAI:1b},tooltip_display={hidden_components:["attribute_modifiers","can_break","custom_model_data","unbreakable","tooltip_display","weapon","max_damage","can_place_on","trim","dyed_color","damage","enchantments","food","tool","tooltip_display","potion_contents","item_model","item_name"]}] 4
 
 scoreboard players operation @s t = @s kills
 scoreboard players operation @s t %= .BoostKills .stats

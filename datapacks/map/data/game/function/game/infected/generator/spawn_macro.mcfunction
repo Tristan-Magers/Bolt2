@@ -1,0 +1,1 @@
+$execute at fd8107bb-c1fa-4ddf-b8fe-d1087da4ff6f positioned $(blueFlag) positioned ~ ~1 ~ run function game:game/infected/generator/spawn

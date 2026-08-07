@@ -1,0 +1,48 @@
+{
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+        "type": "minecraft:model",
+        "model": "minecraft:item/red_dye"
+      },
+      {
+        "type": "minecraft:condition",
+        "property": "minecraft:custom_model_data",
+        "on_true": {
+          "type": "minecraft:model",
+          "model": "item/offhand",
+          "transformation": {
+            "translation": [
+              -0.181818182,
+              -0.181818182,
+              -1
+            ],
+            "left_rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "right_rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1.375,
+              1.375,
+              1
+            ]
+          }
+        },
+        "on_false": {
+          "type": "minecraft:empty"
+        }
+      }
+    ]
+  },
+  "hand_animation_on_swap": false,
+  "oversized_in_gui": true
+}

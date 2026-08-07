@@ -1,0 +1,1 @@
+$execute at @s positioned $(start) run fill ~ -60 ~ ~$(dx) -60 ~$(dz) redstone_block strict

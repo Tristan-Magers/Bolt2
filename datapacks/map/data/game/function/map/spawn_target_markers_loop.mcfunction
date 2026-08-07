@@ -1,0 +1,1 @@
+$function game:map/spawn_target_markers with storage maps:active targets[$(targetID)]
